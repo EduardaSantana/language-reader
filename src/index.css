@@ -1,0 +1,31 @@
+:root {
+  --bg: #1a1a2e;
+  --surface: #23233b;
+  --text: #eceaf5;
+  --text-dim: #a5a3b8;
+  --accent: #d93f3f;
+  --border: #35354f;
+  color-scheme: dark;
+  font: 16px/1.6 system-ui, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
