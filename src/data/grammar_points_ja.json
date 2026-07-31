@@ -1,0 +1,312 @@
+[
+  {
+    "pattern": "~ています",
+    "explanation": "an action that's ongoing or continuing",
+    "lang": "ja",
+    "example_count_in_corpus": 72,
+    "examples": [
+      {
+        "story_index": 121,
+        "title_en": "The Wonder of Light",
+        "sentence": "光は 色色な 色が まじっています。"
+      },
+      {
+        "story_index": 65,
+        "title_en": "Meeting Jack Frost",
+        "sentence": "まるい 体に、とんがった ぼうしを かぶっています。"
+      },
+      {
+        "story_index": 129,
+        "title_en": "The History of Writing",
+        "sentence": "たとえば「山」は 山の かたちから きています。"
+      },
+      {
+        "story_index": 44,
+        "title_en": "A Stormy Night",
+        "sentence": "雨が つよく ふっています。"
+      },
+      {
+        "story_index": 46,
+        "title_en": "A Snowy Day",
+        "sentence": "雪が ふりつもっています。"
+      }
+    ]
+  },
+  {
+    "pattern": "~ました",
+    "explanation": "did something (polite past)",
+    "lang": "ja",
+    "example_count_in_corpus": 146,
+    "examples": [
+      {
+        "story_index": 145,
+        "title_en": "Special Week's Number One",
+        "sentence": "サイレンススズカの はしりかたを みて、かんどうしました。"
+      },
+      {
+        "story_index": 40,
+        "title_en": "To the Arcade",
+        "sentence": "」わたしは ピカチュウの ぬいぐるみを みつけました。"
+      },
+      {
+        "story_index": 112,
+        "title_en": "A Day with Your Smartphone",
+        "sentence": "スマートフォンは 毎日の せいかつを かえました。"
+      },
+      {
+        "story_index": 35,
+        "title_en": "While Gazing at Stars",
+        "sentence": "夜に お父さんと 公園に 来ました。"
+      },
+      {
+        "story_index": 144,
+        "title_en": "El Condor Pasa and Japan",
+        "sentence": "とくに グラスワンダーが やさしく おしえてくれました。"
+      }
+    ]
+  },
+  {
+    "pattern": "~ません",
+    "explanation": "don't / doesn't (polite negative)",
+    "lang": "ja",
+    "example_count_in_corpus": 11,
+    "examples": [
+      {
+        "story_index": 113,
+        "title_en": "The Mystery of Black Holes",
+        "sentence": "光も でられません。"
+      },
+      {
+        "story_index": 55,
+        "title_en": "The Midnight City",
+        "sentence": "」外に でると、人が だれも いません。"
+      },
+      {
+        "story_index": 71,
+        "title_en": "The Desert Expedition",
+        "sentence": "さばくには 水が ほとんど ありません。"
+      },
+      {
+        "story_index": 126,
+        "title_en": "Journey to Space",
+        "sentence": "宇宙では じゅうりょくが ありません。"
+      },
+      {
+        "story_index": 140,
+        "title_en": "Gold Ship's Secret",
+        "sentence": "メジロマックイーンは すでに しっているかも しれません。"
+      }
+    ]
+  },
+  {
+    "pattern": "~たいです",
+    "explanation": "wanting to do something",
+    "lang": "ja",
+    "example_count_in_corpus": 8,
+    "examples": [
+      {
+        "story_index": 25,
+        "title_en": "My Dream for the Future",
+        "sentence": "ゲームを つくりたいです。"
+      },
+      {
+        "story_index": 145,
+        "title_en": "Special Week's Number One",
+        "sentence": "ああなりたいと おもいました。"
+      },
+      {
+        "story_index": 16,
+        "title_en": "I Like Animals",
+        "sentence": "動物えんに いきたいです。"
+      },
+      {
+        "story_index": 84,
+        "title_en": "Going to the Hospital",
+        "sentence": "昨日から のどが いたいです。"
+      },
+      {
+        "story_index": 43,
+        "title_en": "Buying a Fish",
+        "sentence": "魚 を かいたいです。"
+      }
+    ]
+  },
+  {
+    "pattern": "~でした",
+    "explanation": "was (the past of です)",
+    "lang": "ja",
+    "example_count_in_corpus": 9,
+    "examples": [
+      {
+        "story_index": 8,
+        "title_en": "History of Video Games",
+        "sentence": "昔、ゲームは シンプルでした。"
+      },
+      {
+        "story_index": 8,
+        "title_en": "History of Video Games",
+        "sentence": "ピンポンの ゲームでした。"
+      },
+      {
+        "story_index": 125,
+        "title_en": "The City of Edo",
+        "sentence": "江戸は とても 大きい町でした。"
+      },
+      {
+        "story_index": 116,
+        "title_en": "Famous Game Companies",
+        "sentence": "にんてんどうは もともと トランプを つくる 会社でした。"
+      },
+      {
+        "story_index": 114,
+        "title_en": "The World of Dinosaurs",
+        "sentence": "ティラノサウルスは おおきくて、こわい 恐竜でした。"
+      }
+    ]
+  },
+  {
+    "pattern": "~てください",
+    "explanation": "asking someone to do something",
+    "lang": "ja",
+    "example_count_in_corpus": 3,
+    "examples": [
+      {
+        "story_index": 43,
+        "title_en": "Buying a Fish",
+        "sentence": "」「かいかたを おしえてください。"
+      },
+      {
+        "story_index": 76,
+        "title_en": "Visiting a Castle",
+        "sentence": "」「みせてください！"
+      },
+      {
+        "story_index": 84,
+        "title_en": "Going to the Hospital",
+        "sentence": "よく 寝て、あたたかく して いてください。"
+      }
+    ]
+  },
+  {
+    "pattern": "~から",
+    "explanation": "because, or starting from",
+    "lang": "ja",
+    "example_count_in_corpus": 65,
+    "examples": [
+      {
+        "story_index": 77,
+        "title_en": "The Secret of the Rainbow",
+        "sentence": "」「雨つぶが 光を わけるからだよ。"
+      },
+      {
+        "story_index": 48,
+        "title_en": "Talking on the Phone",
+        "sentence": "友達の さとしから 電話が かかってきました。"
+      },
+      {
+        "story_index": 69,
+        "title_en": "The Compass",
+        "sentence": "」「地球じたいが 大きな じしゃくだから。"
+      },
+      {
+        "story_index": 88,
+        "title_en": "An Earthquake Came",
+        "sentence": "」「日本は 地震が おおいから、いつも じゅんびがたいせつだよ。"
+      },
+      {
+        "story_index": 131,
+        "title_en": "Two Worlds",
+        "sentence": "」このちからで、シャドウと たたかいます。"
+      }
+    ]
+  },
+  {
+    "pattern": "~ので",
+    "explanation": "because (a bit softer than から)",
+    "lang": "ja",
+    "example_count_in_corpus": 8,
+    "examples": [
+      {
+        "story_index": 129,
+        "title_en": "The History of Writing",
+        "sentence": "ひらがなは 漢字を かんたんに 下 ものです。"
+      },
+      {
+        "story_index": 132,
+        "title_en": "The Evolution of Life",
+        "sentence": "ただ、人間が さるから 進化下 のではなくて、おなじそせんを もつ、という いいかたが ただしいですよ。"
+      },
+      {
+        "story_index": 121,
+        "title_en": "The Wonder of Light",
+        "sentence": "にじは 光が 雨で わかれたものです。"
+      },
+      {
+        "story_index": 141,
+        "title_en": "Silence Suzuka's Way of Running",
+        "sentence": "だれにも おわれたくないのです。"
+      },
+      {
+        "story_index": 143,
+        "title_en": "T.M. Opera O's Stage",
+        "sentence": "でも、それが 楽しいのです。"
+      }
+    ]
+  },
+  {
+    "pattern": "~とき",
+    "explanation": "when, or at the time that",
+    "lang": "ja",
+    "example_count_in_corpus": 15,
+    "examples": [
+      {
+        "story_index": 130,
+        "title_en": "Time Can Change",
+        "sentence": "えいせいの 時間と 地球の 時間が ちがうので、"
+      },
+      {
+        "story_index": 144,
+        "title_en": "El Condor Pasa and Japan",
+        "sentence": "日本に 北とき、すべてが あたらしかったです。"
+      },
+      {
+        "story_index": 135,
+        "title_en": "The Mystery of Quantum Physics",
+        "sentence": "」「みている ときと、みていない ときで ちがうんです。"
+      },
+      {
+        "story_index": 122,
+        "title_en": "Writing Code",
+        "sentence": "でも、うごいたときは とても うれしいです！"
+      },
+      {
+        "story_index": 78,
+        "title_en": "The Mystery of Sleep",
+        "sentence": "」「夢は 頭が はたらいているときに みるんだよ。"
+      }
+    ]
+  },
+  {
+    "pattern": "~でしょう",
+    "explanation": "probably",
+    "lang": "ja",
+    "example_count_in_corpus": 3,
+    "examples": [
+      {
+        "story_index": 139,
+        "title_en": "Agnes Tachyon's Research",
+        "sentence": "なぜ うまむすめは あんなに はやく はしれるのでしょうか。"
+      },
+      {
+        "story_index": 115,
+        "title_en": "AI and the Future",
+        "sentence": "しょうらいは AI と 人間が もっと ちかく なるでしょう。"
+      },
+      {
+        "story_index": 136,
+        "title_en": "Game Design",
+        "sentence": "でも 'たのしさ' とは なんでしょうか？"
+      }
+    ]
+  }
+]

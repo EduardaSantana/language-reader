@@ -10,13 +10,13 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Tadoku Reader',
-        short_name: 'Tadoku',
+        name: 'Language Reader',
+        short_name: 'Language Reader',
         description: 'Graded Japanese reading practice',
         start_url: '/',
         display: 'standalone',
-        background_color: '#1a1a2e',
-        theme_color: '#1a1a2e',
+        background_color: '#17161a',
+        theme_color: '#17161a',
         icons: [
           {
             src: 'pwa-192x192.png',

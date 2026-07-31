@@ -1,0 +1,123 @@
+[
+  {
+    "lang": "de",
+    "level": 0,
+    "index": 0,
+    "title_native": "Ich mag Videospiele",
+    "title_en": "I like video games",
+    "emoji": "🎮",
+    "sentences": [
+      [{"text": "Ich heiße Anna.", "annotation": null}],
+      [{"text": "Jeden Tag spiele ich Videospiele.", "annotation": null}],
+      [{"text": "Ich mag Rollenspiele.", "annotation": null}],
+      [{"text": "Ich kämpfe gegen starke Monster.", "annotation": null}],
+      [{"text": "Ich benutze ein Schwert.", "annotation": null}],
+      [{"text": "Mit meinen Freunden spiele ich zusammen.", "annotation": null}],
+      [{"text": "Das macht sehr viel Spaß!", "annotation": null}]
+    ],
+    "vocab": [
+      {"word": "das Videospiel", "annotation": "n", "english": "video game"},
+      {"word": "das Rollenspiel", "annotation": "n", "english": "role-playing game"},
+      {"word": "stark", "annotation": null, "english": "strong"},
+      {"word": "das Monster", "annotation": "n", "english": "monster"},
+      {"word": "das Schwert", "annotation": "n", "english": "sword"},
+      {"word": "der Freund", "annotation": "m", "english": "friend"},
+      {"word": "Spaß machen", "annotation": null, "english": "to be fun"}
+    ]
+  },
+  {
+    "lang": "de",
+    "level": 0,
+    "index": 1,
+    "title_native": "Ich mag Katzen",
+    "title_en": "I like cats",
+    "emoji": "🐱",
+    "sentences": [
+      [{"text": "Ich habe eine Katze.", "annotation": null}],
+      [{"text": "Meine Katze heißt Momo.", "annotation": null}],
+      [{"text": "Sie ist klein und weich.", "annotation": null}],
+      [{"text": "Momo schläft den ganzen Tag.", "annotation": null}],
+      [{"text": "Abends spielt sie gerne.", "annotation": null}],
+      [{"text": "Ich liebe meine Katze sehr.", "annotation": null}]
+    ],
+    "vocab": [
+      {"word": "die Katze", "annotation": "f", "english": "cat"},
+      {"word": "klein", "annotation": null, "english": "small"},
+      {"word": "weich", "annotation": null, "english": "soft"},
+      {"word": "schlafen", "annotation": null, "english": "to sleep"},
+      {"word": "spielen", "annotation": null, "english": "to play"},
+      {"word": "lieben", "annotation": null, "english": "to love"}
+    ]
+  },
+  {
+    "lang": "de",
+    "level": 0,
+    "index": 2,
+    "title_native": "Das Wetter heute",
+    "title_en": "Today's weather",
+    "emoji": "☀️",
+    "sentences": [
+      [{"text": "Heute ist es sonnig.", "annotation": null}],
+      [{"text": "Der Himmel ist blau.", "annotation": null}],
+      [{"text": "Es ist warm draußen.", "annotation": null}],
+      [{"text": "Ich gehe gern spazieren.", "annotation": null}],
+      [{"text": "Morgen regnet es vielleicht.", "annotation": null}],
+      [{"text": "Ich mag auch Regentage.", "annotation": null}]
+    ],
+    "vocab": [
+      {"word": "sonnig", "annotation": null, "english": "sunny"},
+      {"word": "der Himmel", "annotation": "m", "english": "sky"},
+      {"word": "warm", "annotation": null, "english": "warm"},
+      {"word": "spazieren gehen", "annotation": null, "english": "to go for a walk"},
+      {"word": "regnen", "annotation": null, "english": "to rain"},
+      {"word": "der Regentag", "annotation": "m", "english": "rainy day"}
+    ]
+  },
+  {
+    "lang": "de",
+    "level": 0,
+    "index": 3,
+    "title_native": "Mein Frühstück",
+    "title_en": "My breakfast",
+    "emoji": "🍳",
+    "sentences": [
+      [{"text": "Am Morgen esse ich Frühstück.", "annotation": null}],
+      [{"text": "Ich esse gern Brot mit Butter.", "annotation": null}],
+      [{"text": "Dazu trinke ich Kaffee.", "annotation": null}],
+      [{"text": "Manchmal esse ich auch ein Ei.", "annotation": null}],
+      [{"text": "Frühstück ist meine liebste Mahlzeit.", "annotation": null}]
+    ],
+    "vocab": [
+      {"word": "das Frühstück", "annotation": "n", "english": "breakfast"},
+      {"word": "das Brot", "annotation": "n", "english": "bread"},
+      {"word": "die Butter", "annotation": "f", "english": "butter"},
+      {"word": "der Kaffee", "annotation": "m", "english": "coffee"},
+      {"word": "das Ei", "annotation": "n", "english": "egg"},
+      {"word": "die Mahlzeit", "annotation": "f", "english": "meal"}
+    ]
+  },
+  {
+    "lang": "de",
+    "level": 0,
+    "index": 4,
+    "title_native": "Meine Familie",
+    "title_en": "My family",
+    "emoji": "👨‍👩‍👧‍👦",
+    "sentences": [
+      [{"text": "Ich habe eine große Familie.", "annotation": null}],
+      [{"text": "Meine Mutter heißt Julia.", "annotation": null}],
+      [{"text": "Mein Vater heißt Thomas.", "annotation": null}],
+      [{"text": "Ich habe einen Bruder und eine Schwester.", "annotation": null}],
+      [{"text": "Wir essen oft zusammen.", "annotation": null}],
+      [{"text": "Meine Familie ist mir sehr wichtig.", "annotation": null}]
+    ],
+    "vocab": [
+      {"word": "die Familie", "annotation": "f", "english": "family"},
+      {"word": "die Mutter", "annotation": "f", "english": "mother"},
+      {"word": "der Vater", "annotation": "m", "english": "father"},
+      {"word": "der Bruder", "annotation": "m", "english": "brother"},
+      {"word": "die Schwester", "annotation": "f", "english": "sister"},
+      {"word": "wichtig", "annotation": null, "english": "important"}
+    ]
+  }
+]

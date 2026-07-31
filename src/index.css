@@ -1,10 +1,11 @@
 :root {
-  --bg: #1a1a2e;
-  --surface: #23233b;
-  --text: #eceaf5;
-  --text-dim: #a5a3b8;
-  --accent: #d93f3f;
-  --border: #35354f;
+  --bg: #17161a;
+  --surface: #232228;
+  --text: #f1efe8;
+  --text-dim: #b4b2a9;
+  --accent: #d4537e;
+  --accent-secondary: #1d9e75;
+  --border: #35333d;
   color-scheme: dark;
   font: 16px/1.6 system-ui, 'Hiragino Sans', 'Yu Gothic', sans-serif;
 }

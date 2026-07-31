@@ -12,8 +12,8 @@ export default function JumpToStoryModal({ stories, onSelect, onClose }) {
           {stories.map((story, i) => (
             <li key={i}>
               <button className="story-list-item" onClick={() => onSelect(i)}>
-                <span className="story-list-title-ja">{story.title_ja}</span>
-                <span className="story-list-title-en">{story.title_en}</span>
+                <span className="story-list-title-ja">{story.titleNative}</span>
+                <span className="story-list-title-en">{story.titleEn}</span>
               </button>
             </li>
           ))}

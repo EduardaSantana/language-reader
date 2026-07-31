@@ -10,6 +10,7 @@ export function extractKanji(text) {
 
 export function extractKanjiFromStory(story) {
   const found = new Set()
+  if (story.lang !== 'ja') return found
   for (const sentence of story.sentences) {
     for (const seg of sentence) {
       for (const ch of extractKanji(seg.text)) found.add(ch)
