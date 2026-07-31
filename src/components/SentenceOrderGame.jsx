@@ -9,15 +9,15 @@ function buildPool(tiles) {
   return shuffle(tiles.map((seg, i) => ({ tileId: i, text: seg.text, originalIndex: i })))
 }
 
-export default function SentenceOrderGame({ stories, openedIndices, lang }) {
-  const [round, setRound] = useState(() => pickSentenceForOrder(stories, openedIndices, lang))
+export default function SentenceOrderGame({ stories, readIndices, lang }) {
+  const [round, setRound] = useState(() => pickSentenceForOrder(stories, readIndices, lang))
   const [pool, setPool] = useState(() => (round ? buildPool(round.tiles) : []))
   const [placed, setPlaced] = useState([])
   const [status, setStatus] = useState('playing')
   const [companionLine, setCompanionLine] = useState(null)
 
   function nextRound() {
-    const next = pickSentenceForOrder(stories, openedIndices, lang)
+    const next = pickSentenceForOrder(stories, readIndices, lang)
     setRound(next)
     setPool(next ? buildPool(next.tiles) : [])
     setPlaced([])

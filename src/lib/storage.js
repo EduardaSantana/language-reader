@@ -5,7 +5,7 @@ const KEYS = {
   favoriteStories: 'favorite_stories',
   savedWords: 'saved_words',
   unseenSavedWords: 'unseen_saved_words',
-  openedStories: 'opened_stories',
+  readStories: 'read_stories',
   activeLanguages: 'active_languages',
   activeLevels: 'active_levels',
   imageCache: 'image_cache',
@@ -19,7 +19,7 @@ const PROGRESS_KEYS = [
   KEYS.savedWords,
   KEYS.daysRead,
   KEYS.favoriteStories,
-  KEYS.openedStories,
+  KEYS.readStories,
   KEYS.unseenSavedWords,
   KEYS.exploreWeb,
 ]
@@ -125,15 +125,15 @@ export function clearUnseenSavedWords() {
   return new Set()
 }
 
-export function getOpenedStories() {
-  return new Set(readJSON(KEYS.openedStories, []))
+export function getReadStories() {
+  return new Set(readJSON(KEYS.readStories, []))
 }
 
-export function markStoryOpened(storyIndex) {
-  const current = getOpenedStories()
+export function markStoryRead(storyIndex) {
+  const current = getReadStories()
   if (current.has(storyIndex)) return current
   current.add(storyIndex)
-  writeJSON(KEYS.openedStories, [...current])
+  writeJSON(KEYS.readStories, [...current])
   return current
 }
 
@@ -168,7 +168,7 @@ export function clearAllProgress() {
 }
 
 export function getFeedOrder() {
-  return readJSON(KEYS.feedOrder, 'sequential')
+  return readJSON(KEYS.feedOrder, 'shuffled')
 }
 
 export function setFeedOrder(order) {
@@ -196,4 +196,9 @@ export function addExploreNodes(newNodes) {
   const updated = [...current, ...toAdd]
   writeJSON(KEYS.exploreWeb, updated)
   return updated
+}
+
+export function clearExploreWeb() {
+  writeJSON(KEYS.exploreWeb, [])
+  return []
 }

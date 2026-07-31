@@ -9,7 +9,8 @@ import {
   toggleFavoriteStory,
   getUnseenSavedWords,
   addSavedWord,
-  markStoryOpened,
+  getReadStories,
+  markStoryRead,
   getFeedOrder,
   setFeedOrder,
 } from '../lib/storage'
@@ -54,11 +55,12 @@ function shuffleArray(arr) {
   return copy
 }
 
-export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, activeTab, onChangeTab }) {
+export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, onStoryFinished, activeTab, onChangeTab }) {
   const [showFurigana, setShowFurigana] = useState(true)
   const [searchOpen, setSearchOpen] = useState(false)
   const [unseenCount, setUnseenCount] = useState(() => getUnseenSavedWords().size)
   const [favorites, setFavorites] = useState(() => getFavoriteStories())
+  const [readStories, setReadStories] = useState(() => getReadStories())
   const [activeIndex, setActiveIndex] = useState(-1)
   const [favoritesOnly, setFavoritesOnly] = useState(false)
   const [feedOrder, setFeedOrderState] = useState(() => getFeedOrder())
@@ -124,7 +126,6 @@ export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, ac
     setActiveIndex(index)
     if (card.type === 'story') {
       if (!isFiltering) setReadingPosition(card.storyIndex)
-      markStoryOpened(card.storyIndex)
     } else if (card.type === 'milestone') {
       markLoopMilestoneSeen()
     }
@@ -178,14 +179,15 @@ export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, ac
     syncAppBadge(unseen.size)
   }
 
+  function handleMarkRead(story) {
+    setReadStories(markStoryRead(story.idx))
+    onStoryFinished?.(story.lang, { type: 'story_finished', title_en: story.titleEn })
+  }
+
   return (
     <div className="feed-screen">
       <div className="top-bar">
-        <button
-          className="icon-button-bar"
-          onClick={() => setSearchOpen(true)}
-          aria-label="Search stories"
-        >
+        <button className="icon-button-bar" onClick={() => setSearchOpen(true)} aria-label="Search stories">
           🔍
         </button>
         <button
@@ -208,6 +210,14 @@ export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, ac
           aria-pressed={favoritesOnly}
         >
           {favoritesOnly ? '♥' : '♡'}
+        </button>
+        <button
+          className={`icon-button-bar furigana-toggle ${showFurigana ? 'active' : ''}`}
+          onClick={() => setShowFurigana((v) => !v)}
+          aria-pressed={showFurigana}
+          aria-label="Toggle furigana"
+        >
+          あ
         </button>
       </div>
 
@@ -241,22 +251,13 @@ export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, ac
               showFurigana={showFurigana}
               isActive={i === activeIndex}
               isFavorite={favorites.has(card.storyIndex)}
+              isRead={readStories.has(card.storyIndex)}
               onToggleFavorite={() => handleToggleFavorite(card.storyIndex)}
               onSaveWord={(vocab) => handleSaveWord(vocab, card.story)}
+              onMarkRead={() => handleMarkRead(card.story)}
             />
           )
         })}
-      </div>
-
-      <div className="floating-controls">
-        <button
-          className="floating-button"
-          onClick={() => setShowFurigana((v) => !v)}
-          aria-pressed={showFurigana}
-          aria-label="Toggle furigana"
-        >
-          <span className="floating-button-icon">あ</span>
-        </button>
       </div>
 
       {searchOpen && (

@@ -22,12 +22,15 @@ export default function StoryCard({
   cardIndex,
   isActive,
   isFavorite,
+  isRead,
   onToggleFavorite,
   onSaveWord,
+  onMarkRead,
 }) {
   const [revealed, setRevealed] = useState(false)
   const [gloss, setGloss] = useState(null)
   const [saved, setSaved] = useState(false)
+  const [justSaved, setJustSaved] = useState(false)
   const { name: levelName, color: levelColor } = levelMeta(story.level)
   const { avatar: langAvatar, label: langLabel } = langMeta(story.lang)
 
@@ -46,6 +49,8 @@ export default function StoryCard({
     e.stopPropagation()
     onSaveWord({ word: gloss.text, reading: gloss.reading, english: gloss.gloss })
     setSaved(true)
+    setJustSaved(true)
+    setTimeout(() => setJustSaved(false), 500)
   }
 
   return (
@@ -98,6 +103,16 @@ export default function StoryCard({
               ))}
             </p>
           ))}
+          <button
+            className={`mark-read-button ${isRead ? 'read' : ''}`}
+            onClick={(e) => {
+              e.stopPropagation()
+              onMarkRead()
+            }}
+            disabled={isRead}
+          >
+            {isRead ? '✓ Read' : 'Mark as read'}
+          </button>
         </div>
       )}
 
@@ -113,7 +128,11 @@ export default function StoryCard({
             )}
           </div>
           {gloss.gloss && (
-            <button className={`save-word-button ${saved ? 'saved' : ''}`} onClick={handleSave} disabled={saved}>
+            <button
+              className={`save-word-button ${saved ? 'saved' : ''} ${justSaved ? 'just-saved' : ''}`}
+              onClick={handleSave}
+              disabled={saved}
+            >
               {saved ? '✓ Saved' : '+ Save'}
             </button>
           )}

@@ -59,8 +59,8 @@ export function gojuuonRow(char) {
 export function sortDictionary(entries) {
   return [...entries].sort((a, b) => {
     if (a.lang !== b.lang) return a.lang < b.lang ? -1 : 1
-    const aKey = a.reading ?? a.word
-    const bKey = b.reading ?? b.word
+    const aKey = a.reading || a.word
+    const bKey = b.reading || b.word
     return aKey.localeCompare(bKey, a.lang === 'ja' ? 'ja' : 'de')
   })
 }
@@ -69,7 +69,7 @@ export function buildLetterIndex(sortedEntries) {
   const index = []
   const seen = new Set()
   sortedEntries.forEach((entry, i) => {
-    const firstChar = (entry.reading ?? entry.word)[0]
+    const firstChar = (entry.reading || entry.word)[0]
     const label = entry.lang === 'ja' ? gojuuonRow(firstChar) : firstChar.toUpperCase()
     const dedupeKey = `${entry.lang}:${label}`
     if (!seen.has(dedupeKey)) {

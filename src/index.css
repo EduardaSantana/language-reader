@@ -10,6 +10,10 @@
   --text-success: #04140e;
   --bg-warning: #d4a017;
   --text-warning: #1a1400;
+  --lang-ja-color: #e0678f;
+  --lang-ja-text: #250a13;
+  --lang-de-color: #3fb9c9;
+  --lang-de-text: #04191c;
   color-scheme: dark;
   font: 16px/1.6 system-ui, 'Hiragino Sans', 'Yu Gothic', sans-serif;
 }

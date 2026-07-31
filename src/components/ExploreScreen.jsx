@@ -2,7 +2,8 @@ import { useEffect, useMemo, useState } from 'react'
 import grammarPoints from '../data/grammar_points_ja.json'
 import { buildExploreGraph } from '../lib/explore'
 import { layoutWeb } from '../lib/exploreLayout'
-import { getExploreWeb, addExploreNodes, getUnseenSavedWords, getSavedWords } from '../lib/storage'
+import { getExploreWeb, addExploreNodes, clearExploreWeb, getUnseenSavedWords, getSavedWords } from '../lib/storage'
+import { getDigDeeperSuggestions } from '../lib/companion'
 import BottomNav from './BottomNav'
 
 function nodeId(key) {
@@ -15,6 +16,8 @@ export default function ExploreScreen({ stories, wordSeed, activeTab, onChangeTa
   const [webNodes, setWebNodes] = useState(() => getExploreWeb())
   const [selectedId, setSelectedId] = useState(null)
   const [starterOpen, setStarterOpen] = useState(false)
+  const [confirmingReset, setConfirmingReset] = useState(false)
+  const [diggingDeeper, setDiggingDeeper] = useState(false)
 
   const savedJaWords = useMemo(
     () => getSavedWords().filter((w) => w.lang === 'ja' && graph.hasVocabWord(w.word)),
@@ -30,7 +33,7 @@ export default function ExploreScreen({ stories, wordSeed, activeTab, onChangeTa
       setSelectedId(id)
       return
     }
-    const updated = addExploreNodes([{ id, type, text: key, parentId: null }])
+    const updated = addExploreNodes([{ id, type, source: 'corpus', lang: 'ja', text: key, parentId: null }])
     setWebNodes(updated)
     setSelectedId(id)
     setStarterOpen(false)
@@ -42,10 +45,18 @@ export default function ExploreScreen({ stories, wordSeed, activeTab, onChangeTa
     if (pick) addRoot(pick.type, pick.key)
   }
 
+  function handleReset() {
+    setWebNodes(clearExploreWeb())
+    setSelectedId(null)
+    setConfirmingReset(false)
+  }
+
   // Seed a root the first time a word is handed in from Collection, if it isn't already in the web.
   useEffect(() => {
     if (wordSeed?.lang === 'ja' && graph.hasVocabWord(wordSeed.word) && !nodesById.has(nodeId(wordSeed.word))) {
-      const updated = addExploreNodes([{ id: nodeId(wordSeed.word), type: 'vocab', text: wordSeed.word, parentId: null }])
+      const updated = addExploreNodes([
+        { id: nodeId(wordSeed.word), type: 'vocab', source: 'corpus', lang: 'ja', text: wordSeed.word, parentId: null },
+      ])
       setWebNodes(updated)
       setSelectedId(nodeId(wordSeed.word))
     }
@@ -54,28 +65,65 @@ export default function ExploreScreen({ stories, wordSeed, activeTab, onChangeTa
 
   function handleNodeTap(node) {
     setSelectedId(node.id)
+    if (node.source === 'ai') return
     const info = graph.getNode(node.type, node.text)
     if (!info) return
     const existingIds = new Set(webNodes.map((n) => n.id))
     const newNodes = info.related
       .filter((rel) => !existingIds.has(nodeId(rel.key)))
-      .map((rel) => ({ id: nodeId(rel.key), type: rel.type, text: rel.key, parentId: node.id }))
+      .map((rel) => ({ id: nodeId(rel.key), type: rel.type, source: 'corpus', lang: 'ja', text: rel.key, parentId: node.id }))
     if (newNodes.length > 0) {
       const updated = addExploreNodes(newNodes)
       setWebNodes(updated)
     }
   }
 
+  async function handleDigDeeper() {
+    if (!selectedNode || diggingDeeper) return
+    setDiggingDeeper(true)
+    const suggestions = await getDigDeeperSuggestions(selectedNode.lang ?? 'ja', selectedNode.text, selectedNode.type)
+    const existingIds = new Set(webNodes.map((n) => n.id))
+    const newNodes = suggestions
+      .filter((s) => !existingIds.has(`ai:${selectedNode.lang ?? 'ja'}:${s.text}`))
+      .map((s) => ({
+        id: `ai:${selectedNode.lang ?? 'ja'}:${s.text}`,
+        type: 'ai_suggested',
+        source: 'ai',
+        lang: selectedNode.lang ?? 'ja',
+        text: s.text,
+        note: s.note,
+        parentId: selectedNode.id,
+      }))
+    if (newNodes.length > 0) setWebNodes(addExploreNodes(newNodes))
+    setDiggingDeeper(false)
+  }
+
   const selectedNode = selectedId ? nodesById.get(selectedId) : null
-  const selectedInfo = selectedNode ? graph.getNode(selectedNode.type, selectedNode.text) : null
+  const selectedInfo = selectedNode
+    ? selectedNode.source === 'ai'
+      ? {
+          title: selectedNode.text,
+          subtitle: selectedNode.note || 'AI-suggested tangent — not verified from the corpus.',
+          exampleSentence: '',
+          exampleSource: '',
+        }
+      : graph.getNode(selectedNode.type, selectedNode.text)
+    : null
 
   return (
     <div className="screen explore-screen explore-screen-web">
       <header className="collection-header">
         <h1>Explore</h1>
-        <button className="icon-button explore-start-button" onClick={() => setStarterOpen(true)}>
-          + Start thread
-        </button>
+        <div className="explore-header-actions">
+          <button className="icon-button explore-start-button" onClick={() => setStarterOpen(true)}>
+            + Start thread
+          </button>
+          {webNodes.length > 0 && (
+            <button className="icon-button" onClick={() => setConfirmingReset(true)} aria-label="Reset web">
+              🗑
+            </button>
+          )}
+        </div>
       </header>
 
       {webNodes.length === 0 ? (
@@ -104,10 +152,11 @@ export default function ExploreScreen({ stories, wordSeed, activeTab, onChangeTa
               if (!pos) return null
               const isRoot = n.parentId == null
               const size = isRoot ? 76 : 60
+              const shape = n.source === 'ai' ? 'circle' : n.type === 'grammar' ? 'pill' : 'circle'
               return (
                 <button
                   key={n.id}
-                  className={`web-node web-node-${n.type} ${selectedId === n.id ? 'selected' : ''}`}
+                  className={`web-node web-node-lang-${n.lang ?? 'ja'} web-node-shape-${shape} ${n.source === 'ai' ? 'web-node-ai' : ''} ${selectedId === n.id ? 'selected' : ''}`}
                   style={{ left: pos.x, top: pos.y, width: size, height: size }}
                   onClick={() => handleNodeTap(n)}
                 >
@@ -121,8 +170,8 @@ export default function ExploreScreen({ stories, wordSeed, activeTab, onChangeTa
 
       {selectedInfo && (
         <div className="explore-detail-panel">
-          <div className={`explore-detail-kind explore-detail-${selectedNode.type}`}>
-            {selectedNode.type === 'grammar' ? 'Grammar' : 'Vocab'}
+          <div className={`explore-detail-kind explore-detail-${selectedNode.source === 'ai' ? 'ai' : selectedNode.type}`}>
+            {selectedNode.source === 'ai' ? 'AI-suggested' : selectedNode.type === 'grammar' ? 'Grammar' : 'Vocab'}
           </div>
           <div className="explore-detail-title">{selectedInfo.title}</div>
           {selectedInfo.subtitle && <div className="explore-detail-subtitle">{selectedInfo.subtitle}</div>}
@@ -132,6 +181,9 @@ export default function ExploreScreen({ stories, wordSeed, activeTab, onChangeTa
               {selectedInfo.exampleSource && <div className="explore-detail-source">— {selectedInfo.exampleSource}</div>}
             </div>
           )}
+          <button className="dig-deeper-button" onClick={handleDigDeeper} disabled={diggingDeeper}>
+            {diggingDeeper ? 'Digging…' : '🔮 Dig deeper'}
+          </button>
           <button className="gloss-dismiss" onClick={() => setSelectedId(null)} aria-label="Close">
             ✕
           </button>
@@ -165,6 +217,25 @@ export default function ExploreScreen({ stories, wordSeed, activeTab, onChangeTa
                 </ul>
               </>
             )}
+          </div>
+        </div>
+      )}
+
+      {confirmingReset && (
+        <div className="modal-backdrop" onClick={() => setConfirmingReset(false)}>
+          <div className="modal" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2>Reset your knowledge web?</h2>
+            </div>
+            <p>This clears everything you've grown in Explore. Your saved words and progress elsewhere are untouched. This can't be undone.</p>
+            <div className="modal-actions">
+              <button className="icon-button" onClick={() => setConfirmingReset(false)}>
+                Cancel
+              </button>
+              <button className="delete-progress-confirm-button" onClick={handleReset}>
+                Reset web
+              </button>
+            </div>
           </div>
         </div>
       )}

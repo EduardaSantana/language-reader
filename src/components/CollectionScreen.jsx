@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { getSavedWords, clearUnseenSavedWords, addSavedWord, isWordSaved } from '../lib/storage'
 import { buildDictionary, matchesDictionaryQuery, sortDictionary, buildLetterIndex } from '../lib/vocabIndex'
+import { getAvailableLangs, langMeta } from '../lib/langs'
 import { getWordImage } from '../lib/images'
 import { syncAppBadge } from '../lib/badge'
 import BottomNav from './BottomNav'
@@ -67,11 +68,23 @@ export default function CollectionScreen({ stories, activeTab, onChangeTab, onEx
   const [dictQuery, setDictQuery] = useState('')
   const [dictPage, setDictPage] = useState(0)
 
-  const dictionary = useMemo(() => sortDictionary(buildDictionary(stories)), [stories])
+  const allLangs = useMemo(() => getAvailableLangs(stories), [stories])
+  const [dictLang, setDictLang] = useState(allLangs[0])
+
+  const dictionary = useMemo(
+    () => sortDictionary(buildDictionary(stories).filter((entry) => entry.lang === dictLang)),
+    [stories, dictLang],
+  )
   const filteredDictionary = useMemo(
     () => dictionary.filter((entry) => matchesDictionaryQuery(entry, dictQuery)),
     [dictionary, dictQuery],
   )
+
+  function handleDictLangChange(lang) {
+    setDictLang(lang)
+    setDictQuery('')
+    setDictPage(0)
+  }
   const letterIndex = useMemo(() => buildLetterIndex(filteredDictionary), [filteredDictionary])
   const totalPages = Math.max(1, Math.ceil(filteredDictionary.length / PAGE_SIZE))
   const pageEntries = filteredDictionary.slice(dictPage * PAGE_SIZE, dictPage * PAGE_SIZE + PAGE_SIZE)
@@ -135,6 +148,19 @@ export default function CollectionScreen({ stories, activeTab, onChangeTab, onEx
         )
       ) : (
         <>
+          {allLangs.length > 1 && (
+            <div className="game-lang-select">
+              {allLangs.map((l) => (
+                <button
+                  key={l}
+                  className={`level-pill-button ${dictLang === l ? 'active' : ''}`}
+                  onClick={() => handleDictLangChange(l)}
+                >
+                  {langMeta(l).avatar} {langMeta(l).label}
+                </button>
+              ))}
+            </div>
+          )}
           <input
             className="search-input dictionary-search"
             value={dictQuery}

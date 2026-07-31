@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useMemo, useState } from 'react'
+import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react'
 import storiesJa from './data/stories.json'
 import storiesDe from './data/stories_de.json'
 import { mergeStorySets } from './lib/data'
@@ -18,6 +18,7 @@ function App() {
   const [tab, setTab] = useState('feed')
   const [jumpToIndex, setJumpToIndex] = useState(null)
   const [exploreWordSeed, setExploreWordSeed] = useState(null)
+  const companionRef = useRef(null)
 
   const allStories = useMemo(
     () =>
@@ -124,6 +125,7 @@ function App() {
         stories={feedStories}
         jumpToIndex={jumpToIndex}
         onConsumedJump={() => setJumpToIndex(null)}
+        onStoryFinished={(lang, context) => companionRef.current?.notifyStoryFinished(lang, context)}
         activeTab={tab}
         onChangeTab={setTab}
       />
@@ -133,7 +135,7 @@ function App() {
   return (
     <>
       {screen}
-      <CompanionOverlay langs={allLangs} />
+      <CompanionOverlay ref={companionRef} langs={allLangs} />
     </>
   )
 }

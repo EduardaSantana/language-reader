@@ -1,0 +1,1515 @@
+[
+  {
+    "kanji": "\u4e0a",
+    "components": [
+      "\u4e00",
+      "\u535c"
+    ]
+  },
+  {
+    "kanji": "\u4e0b",
+    "components": [
+      "\uff5c",
+      "\u4e00",
+      "\u535c"
+    ]
+  },
+  {
+    "kanji": "\u4e0d",
+    "components": [
+      "\uff5c",
+      "\u30ce",
+      "\u4e00",
+      "\u4e36"
+    ]
+  },
+  {
+    "kanji": "\u4e16",
+    "components": [
+      "\uff5c",
+      "\u4e00",
+      "\u4e16"
+    ]
+  },
+  {
+    "kanji": "\u4e2d",
+    "components": [
+      "\uff5c",
+      "\u53e3"
+    ]
+  },
+  {
+    "kanji": "\u4e57",
+    "components": [
+      "\uff5c",
+      "\u30ce",
+      "\u4e00",
+      "\u79be",
+      "\u30cf"
+    ]
+  },
+  {
+    "kanji": "\u4e8b",
+    "components": [
+      "\u4e00",
+      "\u53e3",
+      "\u4e85",
+      "\u30e8"
+    ]
+  },
+  {
+    "kanji": "\u4eac",
+    "components": [
+      "\u53e3",
+      "\u5c0f",
+      "\u4ea0"
+    ]
+  },
+  {
+    "kanji": "\u4ed5",
+    "components": [
+      "\u2e85",
+      "\u58eb"
+    ]
+  },
+  {
+    "kanji": "\u4ee3",
+    "components": [
+      "\u2e85",
+      "\u5f0b"
+    ]
+  },
+  {
+    "kanji": "\u4ef2",
+    "components": [
+      "\uff5c",
+      "\u2e85",
+      "\u53e3"
+    ]
+  },
+  {
+    "kanji": "\u4f1a",
+    "components": [
+      "\u4e8c",
+      "\ud840\udda2",
+      "\u53b6"
+    ]
+  },
+  {
+    "kanji": "\u4f53",
+    "components": [
+      "\u6728",
+      "\u4e00",
+      "\u2e85"
+    ]
+  },
+  {
+    "kanji": "\u4f5c",
+    "components": [
+      "\uff5c",
+      "\u30ce",
+      "\u2e85",
+      "\u4e00",
+      "\u4e5e"
+    ]
+  },
+  {
+    "kanji": "\u4f9b",
+    "components": [
+      "\uff5c",
+      "\u4e00",
+      "\u2e85",
+      "\u4e8c",
+      "\u30cf"
+    ]
+  },
+  {
+    "kanji": "\u5148",
+    "components": [
+      "\u30ce",
+      "\u571f",
+      "\u513f"
+    ]
+  },
+  {
+    "kanji": "\u5149",
+    "components": [
+      "\u4e00",
+      "\u2e8c",
+      "\u513f"
+    ]
+  },
+  {
+    "kanji": "\u516c",
+    "components": [
+      "\u30cf",
+      "\u53b6"
+    ]
+  },
+  {
+    "kanji": "\u51ac",
+    "components": [
+      "\u5902",
+      "\u4e36",
+      "\u6535"
+    ]
+  },
+  {
+    "kanji": "\u524d",
+    "components": [
+      "\u4e00",
+      "\u2e89",
+      "\u6708",
+      "\u4e37"
+    ]
+  },
+  {
+    "kanji": "\u52c9",
+    "components": [
+      "\u529b",
+      "\u514d",
+      "\u513f",
+      "\u52f9"
+    ]
+  },
+  {
+    "kanji": "\u52d5",
+    "components": [
+      "\uff5c",
+      "\u4e00",
+      "\u65e5",
+      "\u529b",
+      "\u91cc",
+      "\u30ce"
+    ]
+  },
+  {
+    "kanji": "\u5316",
+    "components": [
+      "\u2e85",
+      "\u5315"
+    ]
+  },
+  {
+    "kanji": "\u5317",
+    "components": [
+      "\u5315",
+      "\u723f"
+    ]
+  },
+  {
+    "kanji": "\u5348",
+    "components": [
+      "\u30ce",
+      "\u5e72",
+      "\u5341",
+      "\u4e5e"
+    ]
+  },
+  {
+    "kanji": "\u535a",
+    "components": [
+      "\u5341",
+      "\u5bf8",
+      "\u7530",
+      "\u4e36"
+    ]
+  },
+  {
+    "kanji": "\u53cb",
+    "components": [
+      "\u30ce",
+      "\u4e00",
+      "\u53c8"
+    ]
+  },
+  {
+    "kanji": "\u53e3",
+    "components": [
+      "\u56d7",
+      "\u53e3"
+    ]
+  },
+  {
+    "kanji": "\u53e4",
+    "components": [
+      "\u53e3",
+      "\u5341"
+    ]
+  },
+  {
+    "kanji": "\u53ef",
+    "components": [
+      "\u4e00",
+      "\u53e3",
+      "\u4e85"
+    ]
+  },
+  {
+    "kanji": "\u53f0",
+    "components": [
+      "\u53e3",
+      "\u53b6"
+    ]
+  },
+  {
+    "kanji": "\u53f2",
+    "components": [
+      "\u30ce",
+      "\u53e3"
+    ]
+  },
+  {
+    "kanji": "\u53f8",
+    "components": [
+      "\u4e00",
+      "\u53e3",
+      "\u4e85"
+    ]
+  },
+  {
+    "kanji": "\u540d",
+    "components": [
+      "\u53e3",
+      "\u5915"
+    ]
+  },
+  {
+    "kanji": "\u547d",
+    "components": [
+      "\u53e3",
+      "\ud840\udda2",
+      "\u5369",
+      "\u4e00"
+    ]
+  },
+  {
+    "kanji": "\u5584",
+    "components": [
+      "\u738b",
+      "\u53e3",
+      "\u4e37",
+      "\u7f8a"
+    ]
+  },
+  {
+    "kanji": "\u56f3",
+    "components": [
+      "\u6597",
+      "\u56d7"
+    ]
+  },
+  {
+    "kanji": "\u5712",
+    "components": [
+      "\u8863",
+      "\u53e3",
+      "\u571f",
+      "\u56d7"
+    ]
+  },
+  {
+    "kanji": "\u5730",
+    "components": [
+      "\u571f",
+      "\u4e5f"
+    ]
+  },
+  {
+    "kanji": "\u58f0",
+    "components": [
+      "\u58eb",
+      "\u5c38"
+    ]
+  },
+  {
+    "kanji": "\u590f",
+    "components": [
+      "\u4e00",
+      "\u81ea",
+      "\u5902",
+      "\u76ee"
+    ]
+  },
+  {
+    "kanji": "\u5916",
+    "components": [
+      "\u535c",
+      "\u5915"
+    ]
+  },
+  {
+    "kanji": "\u591c",
+    "components": [
+      "\u2e85",
+      "\u5915",
+      "\u4ea0"
+    ]
+  },
+  {
+    "kanji": "\u5922",
+    "components": [
+      "\u2eb2",
+      "\u5915",
+      "\u5196",
+      "\u2ebe"
+    ]
+  },
+  {
+    "kanji": "\u5929",
+    "components": [
+      "\u4e00",
+      "\u5927",
+      "\u4e8c"
+    ]
+  },
+  {
+    "kanji": "\u592a",
+    "components": [
+      "\u5927",
+      "\u4e36"
+    ]
+  },
+  {
+    "kanji": "\u59b9",
+    "components": [
+      "\uff5c",
+      "\u5973",
+      "\u4e8c",
+      "\u30cf",
+      "\u6728",
+      "\u4ea0"
+    ]
+  },
+  {
+    "kanji": "\u5b57",
+    "components": [
+      "\u5b50",
+      "\u5b80"
+    ]
+  },
+  {
+    "kanji": "\u5b63",
+    "components": [
+      "\u79be",
+      "\u5b50"
+    ]
+  },
+  {
+    "kanji": "\u5b66",
+    "components": [
+      "\u5b50",
+      "\u2e8c",
+      "\u5196"
+    ]
+  },
+  {
+    "kanji": "\u5b87",
+    "components": [
+      "\u5e72",
+      "\u4e85",
+      "\u5b80"
+    ]
+  },
+  {
+    "kanji": "\u5b99",
+    "components": [
+      "\uff5c",
+      "\u65e5",
+      "\u5b80",
+      "\u7530"
+    ]
+  },
+  {
+    "kanji": "\u5bb6",
+    "components": [
+      "\u5b80",
+      "\u8c55"
+    ]
+  },
+  {
+    "kanji": "\u5bc6",
+    "components": [
+      "\u30ce",
+      "\u5c71",
+      "\u5fc3",
+      "\u4e36",
+      "\u5b80"
+    ]
+  },
+  {
+    "kanji": "\u5bcc",
+    "components": [
+      "\u53e3",
+      "\u7530",
+      "\u5b80",
+      "\u4e00"
+    ]
+  },
+  {
+    "kanji": "\u5bdd",
+    "components": [
+      "\u30e8",
+      "\u53c8",
+      "\u5196",
+      "\u5b80",
+      "\u723f"
+    ]
+  },
+  {
+    "kanji": "\u5bff",
+    "components": [
+      "\u30ce",
+      "\u4e00",
+      "\u5bf8",
+      "\u4e8c"
+    ]
+  },
+  {
+    "kanji": "\u5c4b",
+    "components": [
+      "\u81f3",
+      "\u571f",
+      "\u53b6",
+      "\u5c38"
+    ]
+  },
+  {
+    "kanji": "\u5e74",
+    "components": [
+      "\u30ce",
+      "\u4e00",
+      "\u5e72",
+      "\u4e5e"
+    ]
+  },
+  {
+    "kanji": "\u5e79",
+    "components": [
+      "\u5e72",
+      "\u5341",
+      "\u65e5",
+      "\ud840\udda2"
+    ]
+  },
+  {
+    "kanji": "\u5e83",
+    "components": [
+      "\u53b6",
+      "\u5e7f"
+    ]
+  },
+  {
+    "kanji": "\u5f37",
+    "components": [
+      "\u5f13",
+      "\u866b",
+      "\u53b6"
+    ]
+  },
+  {
+    "kanji": "\u5f8c",
+    "components": [
+      "\u5902",
+      "\u5e7a",
+      "\u5f73"
+    ]
+  },
+  {
+    "kanji": "\u601d",
+    "components": [
+      "\u5fc3",
+      "\u7530"
+    ]
+  },
+  {
+    "kanji": "\u6050",
+    "components": [
+      "\u5de5",
+      "\u5fc3",
+      "\u4e36",
+      "\u51e0"
+    ]
+  },
+  {
+    "kanji": "\u60aa",
+    "components": [
+      "\uff5c",
+      "\u4e00",
+      "\u53e3",
+      "\u5fc3"
+    ]
+  },
+  {
+    "kanji": "\u611b",
+    "components": [
+      "\u5fc3",
+      "\u722a",
+      "\u5196",
+      "\u5902"
+    ]
+  },
+  {
+    "kanji": "\u6238",
+    "components": [
+      "\u6238",
+      "\u4e00",
+      "\u5c38"
+    ]
+  },
+  {
+    "kanji": "\u63a2",
+    "components": [
+      "\u6728",
+      "\u513f",
+      "\u5196",
+      "\u2e98"
+    ]
+  },
+  {
+    "kanji": "\u6570",
+    "components": [
+      "\u5973",
+      "\u7c73",
+      "\u6535",
+      "\u5902",
+      "\u4e5e"
+    ]
+  },
+  {
+    "kanji": "\u6599",
+    "components": [
+      "\u6597",
+      "\u7c73"
+    ]
+  },
+  {
+    "kanji": "\u65b0",
+    "components": [
+      "\u65a4",
+      "\u8f9b",
+      "\u4e37",
+      "\u6728",
+      "\u7acb",
+      "\u4ea0"
+    ]
+  },
+  {
+    "kanji": "\u65cf",
+    "components": [
+      "\u65b9",
+      "\u77e2",
+      "\u4e5e"
+    ]
+  },
+  {
+    "kanji": "\u6613",
+    "components": [
+      "\u65e5",
+      "\u52ff",
+      "\u52f9",
+      "\u30ce"
+    ]
+  },
+  {
+    "kanji": "\u6614",
+    "components": [
+      "\uff5c",
+      "\u4e00",
+      "\u4e8c",
+      "\u65e5"
+    ]
+  },
+  {
+    "kanji": "\u661f",
+    "components": [
+      "\u751f",
+      "\u65e5"
+    ]
+  },
+  {
+    "kanji": "\u6620",
+    "components": [
+      "\u30ce",
+      "\u65e5",
+      "\u5927",
+      "\u5196"
+    ]
+  },
+  {
+    "kanji": "\u6625",
+    "components": [
+      "\u4e00",
+      "\u4e8c",
+      "\u65e5",
+      "\u4eba",
+      "\u5927"
+    ]
+  },
+  {
+    "kanji": "\u6628",
+    "components": [
+      "\uff5c",
+      "\u30ce",
+      "\u65e5"
+    ]
+  },
+  {
+    "kanji": "\u663c",
+    "components": [
+      "\u4e00",
+      "\u65e5",
+      "\u5c38",
+      "\u4e36"
+    ]
+  },
+  {
+    "kanji": "\u6642",
+    "components": [
+      "\u5bf8",
+      "\u571f",
+      "\u65e5"
+    ]
+  },
+  {
+    "kanji": "\u6669",
+    "components": [
+      "\u514d",
+      "\u65e5",
+      "\u513f",
+      "\u52f9"
+    ]
+  },
+  {
+    "kanji": "\u66f8",
+    "components": [
+      "\u65e5",
+      "\u807f"
+    ]
+  },
+  {
+    "kanji": "\u6709",
+    "components": [
+      "\u30ce",
+      "\u4e00",
+      "\u6708"
+    ]
+  },
+  {
+    "kanji": "\u671d",
+    "components": [
+      "\u6708",
+      "\u5341",
+      "\u65e5"
+    ]
+  },
+  {
+    "kanji": "\u672a",
+    "components": [
+      "\uff5c",
+      "\u4e8c",
+      "\u30cf",
+      "\u6728",
+      "\u4ea0"
+    ]
+  },
+  {
+    "kanji": "\u672c",
+    "components": [
+      "\u4e00",
+      "\u6728"
+    ]
+  },
+  {
+    "kanji": "\u6765",
+    "components": [
+      "\uff5c",
+      "\u4e8c",
+      "\u7c73",
+      "\u4ea0",
+      "\u6728"
+    ]
+  },
+  {
+    "kanji": "\u6771",
+    "components": [
+      "\uff5c",
+      "\u4e00",
+      "\u65e5",
+      "\u6728",
+      "\u7530"
+    ]
+  },
+  {
+    "kanji": "\u679c",
+    "components": [
+      "\uff5c",
+      "\u7530",
+      "\u6728"
+    ]
+  },
+  {
+    "kanji": "\u6821",
+    "components": [
+      "\u7236",
+      "\u6728",
+      "\u4ea0"
+    ]
+  },
+  {
+    "kanji": "\u685c",
+    "components": [
+      "\u5973",
+      "\u2e8c",
+      "\u6728"
+    ]
+  },
+  {
+    "kanji": "\u691c",
+    "components": [
+      "\u53e3",
+      "\u4eba",
+      "\u6728",
+      "\ud840\udda2"
+    ]
+  },
+  {
+    "kanji": "\u697d",
+    "components": [
+      "\u767d",
+      "\u6728",
+      "\u51ab"
+    ]
+  },
+  {
+    "kanji": "\u69d8",
+    "components": [
+      "\u738b",
+      "\u6c34",
+      "\u4e37",
+      "\u6728",
+      "\u7f8a"
+    ]
+  },
+  {
+    "kanji": "\u6a5f",
+    "components": [
+      "\u30ce",
+      "\u6728",
+      "\u4e36",
+      "\u5e7a",
+      "\u6208"
+    ]
+  },
+  {
+    "kanji": "\u6b4c",
+    "components": [
+      "\u4e00",
+      "\u6b20",
+      "\u53e3",
+      "\u4e85"
+    ]
+  },
+  {
+    "kanji": "\u6b74",
+    "components": [
+      "\u6b62",
+      "\u9ebb",
+      "\u6728",
+      "\u5382",
+      "\u5e7f"
+    ]
+  },
+  {
+    "kanji": "\u6bcd",
+    "components": [
+      "\u6bcd",
+      "\u6bcb"
+    ]
+  },
+  {
+    "kanji": "\u6bce",
+    "components": [
+      "\u6bcd",
+      "\u6bcb",
+      "\u4e5e"
+    ]
+  },
+  {
+    "kanji": "\u6c17",
+    "components": [
+      "\u6c14",
+      "\u4e36",
+      "\u30ce",
+      "\u4e5e"
+    ]
+  },
+  {
+    "kanji": "\u6c37",
+    "components": [
+      "\u6c34",
+      "\u4e36"
+    ]
+  },
+  {
+    "kanji": "\u6c5f",
+    "components": [
+      "\u5de5",
+      "\u2ea1"
+    ]
+  },
+  {
+    "kanji": "\u6ce8",
+    "components": [
+      "\u738b",
+      "\u2ea1",
+      "\u4e36"
+    ]
+  },
+  {
+    "kanji": "\u6d77",
+    "components": [
+      "\u2ea1",
+      "\u6bcd",
+      "\u6bcb",
+      "\u4e5e"
+    ]
+  },
+  {
+    "kanji": "\u6f22",
+    "components": [
+      "\u2ea1",
+      "\u2ebe",
+      "\u53e3",
+      "\u4e00",
+      "\u5927",
+      "\u4e8c"
+    ]
+  },
+  {
+    "kanji": "\u6f2b",
+    "components": [
+      "\u2ea1",
+      "\u65e5",
+      "\u2eb2",
+      "\u53c8"
+    ]
+  },
+  {
+    "kanji": "\u7136",
+    "components": [
+      "\u72ac",
+      "\u5915",
+      "\u2ea3"
+    ]
+  },
+  {
+    "kanji": "\u7269",
+    "components": [
+      "\u52ff",
+      "\u725b",
+      "\u52f9",
+      "\u30ce"
+    ]
+  },
+  {
+    "kanji": "\u732b",
+    "components": [
+      "\u7530",
+      "\u2ea8",
+      "\u2ebe"
+    ]
+  },
+  {
+    "kanji": "\u73fe",
+    "components": [
+      "\u738b",
+      "\u898b"
+    ]
+  },
+  {
+    "kanji": "\u7403",
+    "components": [
+      "\u738b",
+      "\u6c34",
+      "\u4e36"
+    ]
+  },
+  {
+    "kanji": "\u7406",
+    "components": [
+      "\u738b",
+      "\u91cc"
+    ]
+  },
+  {
+    "kanji": "\u753a",
+    "components": [
+      "\u4e00",
+      "\u7530",
+      "\u4e85"
+    ]
+  },
+  {
+    "kanji": "\u753b",
+    "components": [
+      "\u4e00",
+      "\u7530",
+      "\u51f5"
+    ]
+  },
+  {
+    "kanji": "\u754c",
+    "components": [
+      "\u7530",
+      "\ud840\udda2",
+      "\u513f"
+    ]
+  },
+  {
+    "kanji": "\u75c5",
+    "components": [
+      "\u4e00",
+      "\u4eba",
+      "\u5182",
+      "\u7592"
+    ]
+  },
+  {
+    "kanji": "\u76e3",
+    "components": [
+      "\u76bf",
+      "\u81e3",
+      "\u4e8c",
+      "\u4e5e"
+    ]
+  },
+  {
+    "kanji": "\u7763",
+    "components": [
+      "\u5c0f",
+      "\u535c",
+      "\u53c8",
+      "\u76ee"
+    ]
+  },
+  {
+    "kanji": "\u793e",
+    "components": [
+      "\u571f",
+      "\u2ead"
+    ]
+  },
+  {
+    "kanji": "\u795e",
+    "components": [
+      "\uff5c",
+      "\u65e5",
+      "\u2ead",
+      "\u7530"
+    ]
+  },
+  {
+    "kanji": "\u796d",
+    "components": [
+      "\u793a",
+      "\u4e8c",
+      "\u5c0f",
+      "\ud840\udda2",
+      "\u7676"
+    ]
+  },
+  {
+    "kanji": "\u79cb",
+    "components": [
+      "\u706b",
+      "\u79be"
+    ]
+  },
+  {
+    "kanji": "\u79d8",
+    "components": [
+      "\u30ce",
+      "\u79be",
+      "\u5fc3",
+      "\u4e36"
+    ]
+  },
+  {
+    "kanji": "\u7a7a",
+    "components": [
+      "\u7a74",
+      "\u5de5",
+      "\u513f",
+      "\u5b80"
+    ]
+  },
+  {
+    "kanji": "\u7adc",
+    "components": [
+      "\u7acb",
+      "\u7adc",
+      "\u7530",
+      "\u4e59"
+    ]
+  },
+  {
+    "kanji": "\u7bc0",
+    "components": [
+      "\u826e",
+      "\u7af9",
+      "\u5369",
+      "\u4e5e"
+    ]
+  },
+  {
+    "kanji": "\u7dda",
+    "components": [
+      "\u7cf8",
+      "\u5e7a",
+      "\u5c0f",
+      "\u6c34",
+      "\u767d"
+    ]
+  },
+  {
+    "kanji": "\u7f8e",
+    "components": [
+      "\u738b",
+      "\u5927",
+      "\u4e37",
+      "\u7f8a"
+    ]
+  },
+  {
+    "kanji": "\u8003",
+    "components": [
+      "\u2eb9",
+      "\u52f9"
+    ]
+  },
+  {
+    "kanji": "\u8089",
+    "components": [
+      "\u8089",
+      "\u5182",
+      "\u4eba"
+    ]
+  },
+  {
+    "kanji": "\u81ea",
+    "components": [
+      "\u81ea",
+      "\u76ee"
+    ]
+  },
+  {
+    "kanji": "\u8272",
+    "components": [
+      "\u8272",
+      "\u5df4",
+      "\u52f9"
+    ]
+  },
+  {
+    "kanji": "\u82b1",
+    "components": [
+      "\u2e85",
+      "\u5315",
+      "\u2ebe"
+    ]
+  },
+  {
+    "kanji": "\u82f1",
+    "components": [
+      "\u30ce",
+      "\u2ebe",
+      "\u5927",
+      "\u5196"
+    ]
+  },
+  {
+    "kanji": "\u8336",
+    "components": [
+      "\ud840\udda2",
+      "\u2ebe",
+      "\u6728"
+    ]
+  },
+  {
+    "kanji": "\u83dc",
+    "components": [
+      "\u722a",
+      "\u6728",
+      "\u2ebe"
+    ]
+  },
+  {
+    "kanji": "\u8449",
+    "components": [
+      "\u6728",
+      "\u4e16",
+      "\u2ebe"
+    ]
+  },
+  {
+    "kanji": "\u884c",
+    "components": [
+      "\u884c",
+      "\u5f73"
+    ]
+  },
+  {
+    "kanji": "\u898b",
+    "components": [
+      "\u898b",
+      "\u76ee",
+      "\u513f"
+    ]
+  },
+  {
+    "kanji": "\u8a71",
+    "components": [
+      "\u8a00",
+      "\u53e3",
+      "\u820c"
+    ]
+  },
+  {
+    "kanji": "\u8a9e",
+    "components": [
+      "\u8a00",
+      "\u53e3",
+      "\u4e94"
+    ]
+  },
+  {
+    "kanji": "\u8aad",
+    "components": [
+      "\u8a00",
+      "\u58eb",
+      "\u513f",
+      "\u5196"
+    ]
+  },
+  {
+    "kanji": "\u8b70",
+    "components": [
+      "\u4e00",
+      "\u738b",
+      "\u8a00",
+      "\u4e37",
+      "\u7f8a",
+      "\u4e85",
+      "\u6208",
+      "\u624b"
+    ]
+  },
+  {
+    "kanji": "\u8cb7",
+    "components": [
+      "\u8c9d",
+      "\u76ee",
+      "\u30cf",
+      "\u2eb2"
+    ]
+  },
+  {
+    "kanji": "\u8d64",
+    "components": [
+      "\u8d64",
+      "\u571f"
+    ]
+  },
+  {
+    "kanji": "\u8db3",
+    "components": [
+      "\u53e3",
+      "\u8db3",
+      "\u6b62"
+    ]
+  },
+  {
+    "kanji": "\u8ee2",
+    "components": [
+      "\u8eca",
+      "\u4e8c",
+      "\u53b6"
+    ]
+  },
+  {
+    "kanji": "\u901f",
+    "components": [
+      "\uff5c",
+      "\u4e00",
+      "\u53e3",
+      "\u2ecc",
+      "\u30cf",
+      "\u6728"
+    ]
+  },
+  {
+    "kanji": "\u9031",
+    "components": [
+      "\u53e3",
+      "\u2ecc",
+      "\u571f",
+      "\u5182"
+    ]
+  },
+  {
+    "kanji": "\u9032",
+    "components": [
+      "\u2ecc",
+      "\u96b9"
+    ]
+  },
+  {
+    "kanji": "\u904a",
+    "components": [
+      "\u2ecc",
+      "\u5b50",
+      "\u65b9",
+      "\u4e5e"
+    ]
+  },
+  {
+    "kanji": "\u9054",
+    "components": [
+      "\u738b",
+      "\u2ecc",
+      "\u571f",
+      "\u4e37",
+      "\u7f8a"
+    ]
+  },
+  {
+    "kanji": "\u90e8",
+    "components": [
+      "\u53e3",
+      "\u2ecf",
+      "\u7acb"
+    ]
+  },
+  {
+    "kanji": "\u90fd",
+    "components": [
+      "\u65e5",
+      "\u2ecf",
+      "\u2eb9"
+    ]
+  },
+  {
+    "kanji": "\u91ce",
+    "components": [
+      "\u77db",
+      "\u91cc",
+      "\u4e85"
+    ]
+  },
+  {
+    "kanji": "\u91d1",
+    "components": [
+      "\u91d1",
+      "\u738b",
+      "\u30cf",
+      "\ud840\udda2",
+      "\u4e37"
+    ]
+  },
+  {
+    "kanji": "\u9593",
+    "components": [
+      "\u65e5",
+      "\u9580"
+    ]
+  },
+  {
+    "kanji": "\u9662",
+    "components": [
+      "\u4e8c",
+      "\u513f",
+      "\u5b80",
+      "\u2ed6",
+      "\u5143"
+    ]
+  },
+  {
+    "kanji": "\u967d",
+    "components": [
+      "\u4e00",
+      "\u65e5",
+      "\u52ff",
+      "\u2ed6",
+      "\u52ff"
+    ]
+  },
+  {
+    "kanji": "\u96e3",
+    "components": [
+      "\u2ebe",
+      "\u96b9",
+      "\u5927",
+      "\u53e3",
+      "\u4ea0",
+      "\u4e8c"
+    ]
+  },
+  {
+    "kanji": "\u96ea",
+    "components": [
+      "\u30e8",
+      "\u96e8"
+    ]
+  },
+  {
+    "kanji": "\u96f2",
+    "components": [
+      "\u4e00",
+      "\u96e8",
+      "\u4e8c",
+      "\u53b6"
+    ]
+  },
+  {
+    "kanji": "\u96f7",
+    "components": [
+      "\u96e8",
+      "\u7530"
+    ]
+  },
+  {
+    "kanji": "\u96fb",
+    "components": [
+      "\u96e8",
+      "\u7530",
+      "\u4e59"
+    ]
+  },
+  {
+    "kanji": "\u9707",
+    "components": [
+      "\u8863",
+      "\u96e8",
+      "\u8fb0",
+      "\u5382"
+    ]
+  },
+  {
+    "kanji": "\u9752",
+    "components": [
+      "\u6708",
+      "\u9752",
+      "\u571f",
+      "\u4e8c",
+      "\u4ea0"
+    ]
+  },
+  {
+    "kanji": "\u97f3",
+    "components": [
+      "\u97f3",
+      "\u65e5",
+      "\u7acb"
+    ]
+  },
+  {
+    "kanji": "\u982d",
+    "components": [
+      "\u8c9d",
+      "\u76ee",
+      "\u30cf",
+      "\u53e3",
+      "\u8c46",
+      "\u4e37",
+      "\u9801"
+    ]
+  },
+  {
+    "kanji": "\u9854",
+    "components": [
+      "\u8c9d",
+      "\u76ee",
+      "\u30cf",
+      "\u9801",
+      "\u7acb",
+      "\u4ea0",
+      "\u5382",
+      "\u5f61"
+    ]
+  },
+  {
+    "kanji": "\u98a8",
+    "components": [
+      "\u98a8",
+      "\u51e0",
+      "\u866b",
+      "\u30ce"
+    ]
+  },
+  {
+    "kanji": "\u98ef",
+    "components": [
+      "\u98df",
+      "\u53c8",
+      "\u5382"
+    ]
+  },
+  {
+    "kanji": "\u98f2",
+    "components": [
+      "\u6b20",
+      "\u98df"
+    ]
+  },
+  {
+    "kanji": "\u9928",
+    "components": [
+      "\u53e3",
+      "\u98df",
+      "\u5b80",
+      "\uff5c"
+    ]
+  },
+  {
+    "kanji": "\u99c5",
+    "components": [
+      "\u99ac",
+      "\u5c38",
+      "\u2ea3",
+      "\u4e36"
+    ]
+  },
+  {
+    "kanji": "\u9ad8",
+    "components": [
+      "\u53e3",
+      "\u9ad8",
+      "\u4ea0",
+      "\u5182"
+    ]
+  },
+  {
+    "kanji": "\u9b5a",
+    "components": [
+      "\u9b5a",
+      "\u7530",
+      "\u2ea3"
+    ]
+  },
+  {
+    "kanji": "\u9ce5",
+    "components": [
+      "\u9ce5",
+      "\u2ea3"
+    ]
+  },
+  {
+    "kanji": "\u9ed2",
+    "components": [
+      "\u9ed2",
+      "\u91cc",
+      "\u2ea3"
+    ]
+  }
+]

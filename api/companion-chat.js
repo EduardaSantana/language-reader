@@ -90,7 +90,7 @@ async function getOrCreateSession(sql, deviceId, lang) {
   return created[0].id
 }
 
-async function callGemini(apiKey, systemPrompt, history, userTurn) {
+async function callGemini(apiKey, systemPrompt, history, userTurn, generationConfigOverrides = {}) {
   const contents = [
     ...history.map((m) => ({ role: m.role === 'companion' ? 'model' : 'user', parts: [{ text: m.content }] })),
     { role: 'user', parts: [{ text: userTurn }] },
@@ -103,7 +103,10 @@ async function callGemini(apiKey, systemPrompt, history, userTurn) {
       body: JSON.stringify({
         systemInstruction: { parts: [{ text: systemPrompt }] },
         contents,
-        generationConfig: { maxOutputTokens: 200, temperature: 0.9 },
+        // This model spends part of its output budget on internal
+        // reasoning before the visible reply, so maxOutputTokens has to
+        // cover that overhead too, not just the final text length.
+        generationConfig: { maxOutputTokens: 500, temperature: 0.9, ...generationConfigOverrides },
       }),
     },
   )
@@ -112,6 +115,60 @@ async function callGemini(apiKey, systemPrompt, history, userTurn) {
   const text = data.candidates?.[0]?.content?.parts?.map((p) => p.text).join('') ?? null
   if (!text) throw new Error('Empty Gemini response')
   return text.trim()
+}
+
+const DIG_DEEPER_PROMPT = `You are suggesting related items for a personal language-learning
+knowledge web the person is building themselves, node by node.
+
+The current node is: "{{node_text}}" (a {{node_type}} in {{language}}).
+
+Suggest 2-3 genuinely interesting related items — a similar-sounding
+word, a common collocation, a cultural or etymological note. These are
+YOUR best guesses, not verified facts from the person's own material,
+so hedge appropriately ("might connect to...", "often paired with...")
+rather than asserting anything as flat fact.
+
+Respond with ONLY raw JSON, no markdown code fences, no other text, in
+exactly this shape:
+{"suggestions": [{"text": "short related word or phrase", "note": "one hedged sentence explaining the connection"}]}`
+
+function digDeeperPrompt(lang, nodeText, nodeType) {
+  const flavor = LANG_FLAVOR[lang] ?? { language: lang }
+  return DIG_DEEPER_PROMPT.replaceAll('{{node_text}}', nodeText)
+    .replaceAll('{{node_type}}', nodeType)
+    .replaceAll('{{language}}', flavor.language)
+}
+
+function parseSuggestions(text) {
+  const cleaned = text.replace(/^```json\s*/i, '').replace(/^```\s*/, '').replace(/```\s*$/, '').trim()
+  try {
+    const parsed = JSON.parse(cleaned)
+    if (!Array.isArray(parsed.suggestions)) return []
+    return parsed.suggestions
+      .filter((s) => s && typeof s.text === 'string')
+      .slice(0, 3)
+      .map((s) => ({ text: s.text, note: typeof s.note === 'string' ? s.note : '' }))
+  } catch {
+    return []
+  }
+}
+
+async function handleDigDeeper(req, res) {
+  const { lang, context } = req.body ?? {}
+  if (!process.env.GEMINI_API_KEY) {
+    res.status(503).json({ error: 'Companion backend not configured' })
+    return
+  }
+  try {
+    const prompt = digDeeperPrompt(lang, context.node_text, context.node_type)
+    const text = await callGemini(process.env.GEMINI_API_KEY, prompt, [], 'Suggest related items now.', {
+      maxOutputTokens: 1200,
+      responseMimeType: 'application/json',
+    })
+    res.status(200).json({ suggestions: parseSuggestions(text) })
+  } catch (err) {
+    res.status(500).json({ error: err.message ?? 'Dig deeper request failed' })
+  }
 }
 
 async function deleteConversation(sql, deviceId, lang) {
@@ -132,6 +189,11 @@ export default async function handler(req, res) {
   const { deviceId, lang, message, context } = req.body ?? {}
   if (!deviceId || !lang) {
     res.status(400).json({ error: 'deviceId and lang are required' })
+    return
+  }
+
+  if (req.method === 'POST' && context?.type === 'explore_dig_deeper') {
+    await handleDigDeeper(req, res)
     return
   }
 

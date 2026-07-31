@@ -1,14 +1,28 @@
-import { useState } from 'react'
+import { forwardRef, useImperativeHandle, useRef, useState } from 'react'
 import { langMeta } from '../lib/langs'
-import { sendCompanionMessage, deleteCompanionConversation } from '../lib/companion'
+import { sendCompanionMessage, deleteCompanionConversation, reactCompanion } from '../lib/companion'
+import { COMPANION_STORY_LINES } from '../lib/games'
 
-export default function CompanionOverlay({ langs }) {
+const TOAST_DURATION_MS = 5000
+
+const CompanionOverlay = forwardRef(function CompanionOverlay({ langs }, ref) {
   const [open, setOpen] = useState(false)
   const [lang, setLang] = useState(langs[0])
   const [messagesByLang, setMessagesByLang] = useState({})
   const [input, setInput] = useState('')
   const [sending, setSending] = useState(false)
   const [confirmingDelete, setConfirmingDelete] = useState(false)
+  const [toast, setToast] = useState(null)
+  const toastTimeoutRef = useRef(null)
+
+  useImperativeHandle(ref, () => ({
+    notifyStoryFinished(storyLang, context) {
+      if (open) return
+      clearTimeout(toastTimeoutRef.current)
+      reactCompanion(setToast, storyLang, context, COMPANION_STORY_LINES)
+      toastTimeoutRef.current = setTimeout(() => setToast(null), TOAST_DURATION_MS)
+    },
+  }))
 
   const messages = messagesByLang[lang] ?? []
 
@@ -41,6 +55,15 @@ export default function CompanionOverlay({ langs }) {
       <button className="companion-fab" onClick={() => setOpen(true)} aria-label="Open companion chat">
         💬
       </button>
+
+      {toast && !open && (
+        <div className="companion-toast">
+          <span>{toast}</span>
+          <button onClick={() => setToast(null)} aria-label="Dismiss">
+            ✕
+          </button>
+        </div>
+      )}
 
       {open && (
         <div className="modal-backdrop companion-overlay-backdrop" onClick={() => setOpen(false)}>
@@ -122,4 +145,6 @@ export default function CompanionOverlay({ langs }) {
       )}
     </>
   )
-}
+})
+
+export default CompanionOverlay
