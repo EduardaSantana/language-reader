@@ -137,6 +137,14 @@ export function markStoryRead(storyIndex) {
   return current
 }
 
+export function unmarkStoryRead(storyIndex) {
+  const current = getReadStories()
+  if (!current.has(storyIndex)) return current
+  current.delete(storyIndex)
+  writeJSON(KEYS.readStories, [...current])
+  return current
+}
+
 export function getActiveLanguages(allLangs) {
   return readJSON(KEYS.activeLanguages, allLangs)
 }

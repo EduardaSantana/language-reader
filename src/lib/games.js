@@ -70,7 +70,7 @@ export function pickFillInBlank(stories, readIndices, lang, pool) {
   return null
 }
 
-export function pickCategorySort(pool, lang, bucketCount = 2, itemsPerBucket = 3) {
+export function pickCategorySort(pool, lang, stories, bucketCount = 2, itemsPerBucket = 3) {
   const langPool = pool.filter((e) => e.lang === lang)
   const byStory = new Map()
   for (const e of langPool) {
@@ -80,17 +80,20 @@ export function pickCategorySort(pool, lang, bucketCount = 2, itemsPerBucket = 3
   const eligible = [...byStory.entries()].filter(([, list]) => list.length >= itemsPerBucket)
   if (eligible.length < bucketCount) return null
   const chosen = shuffle(eligible).slice(0, bucketCount)
-  const buckets = chosen.map(([storyIndex, list], i) => ({
-    bucketId: i,
-    storyIndex,
-    label: `Story ${storyIndex}`,
-    items: shuffle(list).slice(0, itemsPerBucket),
-  }))
+  const buckets = chosen.map(([storyIndex, list], i) => {
+    const story = stories.find((s) => s.idx === storyIndex)
+    return {
+      bucketId: i,
+      storyIndex,
+      label: story ? `${story.emoji ? story.emoji + ' ' : ''}${story.titleEn}` : `Story ${storyIndex}`,
+      items: shuffle(list).slice(0, itemsPerBucket),
+    }
+  })
   const allItems = shuffle(buckets.flatMap((b) => b.items.map((item) => ({ ...item, bucketId: b.bucketId }))))
   return { buckets, items: allItems }
 }
 
-export function pickKanjiBuild(kanjiComponents) {
+export function pickKanjiBuild(kanjiComponents, kanjiMeanings) {
   if (kanjiComponents.length === 0) return null
   const target = kanjiComponents[Math.floor(Math.random() * kanjiComponents.length)]
   const correct = target.components
@@ -98,7 +101,37 @@ export function pickKanjiBuild(kanjiComponents) {
   const distractorCount = Math.min(3, otherComponents.length)
   const distractors = shuffle(otherComponents).slice(0, distractorCount)
   const choices = shuffle([...correct, ...distractors])
-  return { kanji: target.kanji, correctComponents: correct, choices }
+  return {
+    kanji: target.kanji,
+    kanjiMeaning: kanjiMeanings?.kanji?.[target.kanji] ?? null,
+    correctComponents: correct,
+    componentMeanings: kanjiMeanings?.components ?? {},
+    choices,
+  }
+}
+
+export function pickOnomatopoeia(entries) {
+  if (entries.length < 4) return null
+  const target = entries[Math.floor(Math.random() * entries.length)]
+  const others = entries.filter((e) => e.word !== target.word)
+  const distractors = shuffle(others).slice(0, 3)
+  const choices = shuffle([target, ...distractors])
+  return { target, choices }
+}
+
+export function pickCompoundBuild(compounds) {
+  if (compounds.length === 0) return null
+  const target = compounds[Math.floor(Math.random() * compounds.length)]
+  const correctParts = target.parts.map((p) => p.text)
+  const otherParts = compounds
+    .filter((c) => c.word !== target.word)
+    .flatMap((c) => c.parts)
+    .filter((p) => !correctParts.includes(p.text))
+  const distractorCount = Math.min(2, otherParts.length)
+  const distractors = shuffle(otherParts).slice(0, distractorCount)
+  const meanings = Object.fromEntries([...target.parts, ...distractors].map((p) => [p.text, p.meaning]))
+  const choices = shuffle([...correctParts, ...distractors.map((p) => p.text)])
+  return { word: target.word, english: target.english, correctParts, choices, meanings }
 }
 
 export const COMPANION_CORRECT_LINES = [

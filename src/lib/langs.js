@@ -1,6 +1,8 @@
 const LANG_META = {
   ja: { avatar: '日', label: 'Japanese' },
   de: { avatar: 'DE', label: 'German' },
+  fr: { avatar: 'FR', label: 'French' },
+  ru: { avatar: 'RU', label: 'Russian' },
 }
 
 export function langMeta(lang) {

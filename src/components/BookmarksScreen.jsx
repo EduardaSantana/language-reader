@@ -1,12 +1,38 @@
 import { useEffect, useMemo, useState } from 'react'
-import { getSavedWords, clearUnseenSavedWords, addSavedWord, isWordSaved } from '../lib/storage'
+import {
+  getSavedWords,
+  clearUnseenSavedWords,
+  addSavedWord,
+  isWordSaved,
+  getReadStories,
+  unmarkStoryRead,
+} from '../lib/storage'
 import { buildDictionary, matchesDictionaryQuery, sortDictionary, buildLetterIndex } from '../lib/vocabIndex'
 import { getAvailableLangs, langMeta } from '../lib/langs'
 import { getWordImage } from '../lib/images'
 import { syncAppBadge } from '../lib/badge'
+import kanaJa from '../data/kana_ja.json'
+import alphabetRu from '../data/alphabet_ru.json'
 import BottomNav from './BottomNav'
 
 const PAGE_SIZE = 40
+
+const ALPHABET_LANGS = {
+  ja: { label: 'Japanese — hiragana & katakana' },
+  ru: { label: 'Russian — Cyrillic' },
+}
+
+function KANA_ROW_GROUPS() {
+  const rows = []
+  const seen = new Set()
+  for (const entry of kanaJa) {
+    if (!seen.has(entry.row)) {
+      seen.add(entry.row)
+      rows.push(entry.row)
+    }
+  }
+  return rows
+}
 
 function WordImage({ entry, fallbackEmoji }) {
   const [url, setUrl] = useState(null)
@@ -61,15 +87,117 @@ function DictionaryRow({ entry, onSave }) {
   )
 }
 
-export default function CollectionScreen({ stories, activeTab, onChangeTab, onExploreWord, onOpenStory }) {
+function ReadStoryRow({ story, onOpen, onUnmark }) {
+  return (
+    <li className="read-story-row">
+      <button className="read-story-open" onClick={() => onOpen(story.idx)}>
+        <span className="story-list-emoji">{story.emoji || '📖'}</span>
+        <span className="story-list-text">
+          <span className="story-list-title-ja">{story.titleNative}</span>
+          <span className="story-list-title-en">{story.titleEn}</span>
+        </span>
+      </button>
+      <button className="unmark-read-button" onClick={() => onUnmark(story.idx)} aria-label="Unmark as read">
+        ✕
+      </button>
+    </li>
+  )
+}
+
+function AlphabetScreenJa() {
+  const rows = useMemo(() => KANA_ROW_GROUPS(), [])
+  const [selected, setSelected] = useState(null)
+  return (
+    <>
+      {rows.map((row) => (
+        <div className="alphabet-row-group" key={row}>
+          <div className="alphabet-row-heading">{row}</div>
+          <div className="alphabet-grid">
+            {kanaJa
+              .filter((e) => e.row === row)
+              .map((entry) => (
+                <button
+                  key={entry.hiragana}
+                  className="alphabet-card"
+                  onClick={() => setSelected(entry)}
+                >
+                  <span className="alphabet-card-hira">{entry.hiragana}</span>
+                  <span className="alphabet-card-kata">{entry.katakana}</span>
+                  <span className="alphabet-card-romaji">{entry.romaji}</span>
+                </button>
+              ))}
+          </div>
+        </div>
+      ))}
+      {selected && (
+        <div className="modal-backdrop" onClick={() => setSelected(null)}>
+          <div className="modal" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2>{selected.romaji}</h2>
+              <button className="icon-button" onClick={() => setSelected(null)} aria-label="Close">
+                ✕
+              </button>
+            </div>
+            <p className="alphabet-detail-forms">
+              Hiragana <strong>{selected.hiragana}</strong> · Katakana <strong>{selected.katakana}</strong>
+            </p>
+          </div>
+        </div>
+      )}
+    </>
+  )
+}
+
+function AlphabetScreenRu() {
+  const [selected, setSelected] = useState(null)
+  return (
+    <>
+      <div className="alphabet-grid">
+        {alphabetRu.map((entry) => (
+          <button key={entry.letter} className="alphabet-card" onClick={() => setSelected(entry)}>
+            <span className="alphabet-card-hira">{entry.letter}</span>
+            <span className="alphabet-card-kata">{entry.lower}</span>
+            <span className="alphabet-card-romaji">{entry.romanization}</span>
+          </button>
+        ))}
+      </div>
+      {selected && (
+        <div className="modal-backdrop" onClick={() => setSelected(null)}>
+          <div className="modal" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2>
+                {selected.letter} {selected.lower}
+              </h2>
+              <button className="icon-button" onClick={() => setSelected(null)} aria-label="Close">
+                ✕
+              </button>
+            </div>
+            <p className="alphabet-detail-forms">
+              "{selected.name}" · romanized {selected.romanization}
+            </p>
+          </div>
+        </div>
+      )}
+    </>
+  )
+}
+
+export default function BookmarksScreen({ stories, activeTab, onChangeTab, onExploreWord, onOpenStory }) {
   const [savedWords, setSavedWords] = useState(() => getSavedWords())
   const [selectedWord, setSelectedWord] = useState(null)
   const [mode, setMode] = useState('saved')
   const [dictQuery, setDictQuery] = useState('')
   const [dictPage, setDictPage] = useState(0)
+  const [readStoryIndices, setReadStoryIndices] = useState(() => getReadStories())
 
   const allLangs = useMemo(() => getAvailableLangs(stories), [stories])
   const [dictLang, setDictLang] = useState(allLangs[0])
+
+  const availableAlphabetLangs = useMemo(
+    () => allLangs.filter((l) => ALPHABET_LANGS[l]),
+    [allLangs],
+  )
+  const [alphabetLang, setAlphabetLang] = useState(() => availableAlphabetLangs[0])
 
   const dictionary = useMemo(
     () => sortDictionary(buildDictionary(stories).filter((entry) => entry.lang === dictLang)),
@@ -114,23 +242,40 @@ export default function CollectionScreen({ stories, activeTab, onChangeTab, onEx
     setSavedWords(updated)
   }
 
+  function handleUnmarkRead(storyIndex) {
+    setReadStoryIndices(unmarkStoryRead(storyIndex))
+  }
+
+  const readStoriesList = useMemo(
+    () => stories.filter((s) => readStoryIndices.has(s.idx)),
+    [stories, readStoryIndices],
+  )
+
   return (
     <div className="screen collection-screen">
       <header className="collection-header">
-        <h1>Collection</h1>
+        <h1>Bookmarks</h1>
       </header>
 
       <div className="collection-mode-toggle">
         <button className={mode === 'saved' ? 'active' : ''} onClick={() => setMode('saved')}>
           My words ({savedWords.length})
         </button>
+        <button className={mode === 'read' ? 'active' : ''} onClick={() => setMode('read')}>
+          Read ({readStoriesList.length})
+        </button>
         <button className={mode === 'dictionary' ? 'active' : ''} onClick={() => setMode('dictionary')}>
           Dictionary
         </button>
+        {availableAlphabetLangs.length > 0 && (
+          <button className={mode === 'alphabets' ? 'active' : ''} onClick={() => setMode('alphabets')}>
+            Alphabets
+          </button>
+        )}
       </div>
 
-      {mode === 'saved' ? (
-        savedWords.length === 0 ? (
+      {mode === 'saved' &&
+        (savedWords.length === 0 ? (
           <p className="favorites-empty">
             Nothing saved yet — tap a word's gloss while reading, then "+ Save".
           </p>
@@ -145,8 +290,22 @@ export default function CollectionScreen({ stories, activeTab, onChangeTab, onEx
               />
             ))}
           </div>
-        )
-      ) : (
+        ))}
+
+      {mode === 'read' &&
+        (readStoriesList.length === 0 ? (
+          <p className="favorites-empty">
+            Nothing marked as read yet — finish a story and tap "Mark as read" to see it here.
+          </p>
+        ) : (
+          <ul className="story-list read-story-list">
+            {readStoriesList.map((story) => (
+              <ReadStoryRow key={story.idx} story={story} onOpen={onOpenStory} onUnmark={handleUnmarkRead} />
+            ))}
+          </ul>
+        ))}
+
+      {mode === 'dictionary' && (
         <>
           {allLangs.length > 1 && (
             <div className="game-lang-select">
@@ -201,6 +360,26 @@ export default function CollectionScreen({ stories, activeTab, onChangeTab, onEx
               </div>
             </>
           )}
+        </>
+      )}
+
+      {mode === 'alphabets' && (
+        <>
+          {availableAlphabetLangs.length > 1 && (
+            <div className="game-lang-select">
+              {availableAlphabetLangs.map((l) => (
+                <button
+                  key={l}
+                  className={`level-pill-button ${alphabetLang === l ? 'active' : ''}`}
+                  onClick={() => setAlphabetLang(l)}
+                >
+                  {langMeta(l).avatar} {langMeta(l).label}
+                </button>
+              ))}
+            </div>
+          )}
+          {alphabetLang === 'ja' && <AlphabetScreenJa />}
+          {alphabetLang === 'ru' && <AlphabetScreenRu />}
         </>
       )}
 

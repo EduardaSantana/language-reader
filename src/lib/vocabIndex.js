@@ -61,7 +61,7 @@ export function sortDictionary(entries) {
     if (a.lang !== b.lang) return a.lang < b.lang ? -1 : 1
     const aKey = a.reading || a.word
     const bKey = b.reading || b.word
-    return aKey.localeCompare(bKey, a.lang === 'ja' ? 'ja' : 'de')
+    return aKey.localeCompare(bKey, a.lang)
   })
 }
 

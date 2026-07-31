@@ -240,7 +240,7 @@ export default function ExploreScreen({ stories, wordSeed, activeTab, onChangeTa
         </div>
       )}
 
-      <BottomNav active={activeTab} onChange={onChangeTab} badges={{ collection: unseenCount }} />
+      <BottomNav active={activeTab} onChange={onChangeTab} badges={{ bookmarks: unseenCount }} />
     </div>
   )
 }

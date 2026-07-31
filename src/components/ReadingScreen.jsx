@@ -264,7 +264,7 @@ export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, on
         <SearchModal stories={stories} onSelect={handleJump} onClose={() => setSearchOpen(false)} />
       )}
 
-      <BottomNav active={activeTab} onChange={onChangeTab} badges={{ collection: unseenCount }} />
+      <BottomNav active={activeTab} onChange={onChangeTab} badges={{ bookmarks: unseenCount }} />
     </div>
   )
 }

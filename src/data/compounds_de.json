@@ -1,0 +1,17 @@
+[
+  { "word": "der Fußball", "english": "soccer, football", "parts": [{ "text": "Fuß", "meaning": "foot" }, { "text": "ball", "meaning": "ball" }] },
+  { "word": "das Krankenhaus", "english": "hospital", "parts": [{ "text": "Kranken", "meaning": "sick (people)" }, { "text": "haus", "meaning": "house" }] },
+  { "word": "der Handschuh", "english": "glove", "parts": [{ "text": "Hand", "meaning": "hand" }, { "text": "schuh", "meaning": "shoe" }] },
+  { "word": "das Feuerzeug", "english": "lighter", "parts": [{ "text": "Feuer", "meaning": "fire" }, { "text": "zeug", "meaning": "gear, stuff" }] },
+  { "word": "die Zahnbürste", "english": "toothbrush", "parts": [{ "text": "Zahn", "meaning": "tooth" }, { "text": "bürste", "meaning": "brush" }] },
+  { "word": "der Regenschirm", "english": "umbrella", "parts": [{ "text": "Regen", "meaning": "rain" }, { "text": "schirm", "meaning": "screen, shield" }] },
+  { "word": "das Frühstück", "english": "breakfast", "parts": [{ "text": "früh", "meaning": "early" }, { "text": "stück", "meaning": "piece" }] },
+  { "word": "die Hausaufgabe", "english": "homework", "parts": [{ "text": "Haus", "meaning": "house" }, { "text": "aufgabe", "meaning": "task, assignment" }] },
+  { "word": "der Schreibtisch", "english": "desk", "parts": [{ "text": "Schreib", "meaning": "write" }, { "text": "tisch", "meaning": "table" }] },
+  { "word": "das Wörterbuch", "english": "dictionary", "parts": [{ "text": "Wörter", "meaning": "words" }, { "text": "buch", "meaning": "book" }] },
+  { "word": "die Straßenbahn", "english": "tram, streetcar", "parts": [{ "text": "Straßen", "meaning": "streets" }, { "text": "bahn", "meaning": "track, path" }] },
+  { "word": "der Flughafen", "english": "airport", "parts": [{ "text": "Flug", "meaning": "flight" }, { "text": "hafen", "meaning": "harbor" }] },
+  { "word": "der Bahnhof", "english": "train station", "parts": [{ "text": "Bahn", "meaning": "track, path" }, { "text": "hof", "meaning": "yard, courtyard" }] },
+  { "word": "das Wohnzimmer", "english": "living room", "parts": [{ "text": "Wohn", "meaning": "live, dwell" }, { "text": "zimmer", "meaning": "room" }] },
+  { "word": "der Kühlschrank", "english": "refrigerator", "parts": [{ "text": "Kühl", "meaning": "cool" }, { "text": "schrank", "meaning": "cabinet" }] }
+]

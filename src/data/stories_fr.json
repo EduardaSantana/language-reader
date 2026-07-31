@@ -1,0 +1,397 @@
+[
+  {
+    "lang": "fr",
+    "level": 0,
+    "index": 0,
+    "title_native": "J'aime les jeux vid\u00e9o",
+    "title_en": "I like video games",
+    "emoji": "\ud83c\udfae",
+    "sentences": [
+      [
+        {
+          "text": "Je m'appelle Anna.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Tous les jours, je joue aux jeux vid\u00e9o.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "J'aime les jeux de r\u00f4le.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Je combats des monstres puissants.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "J'utilise une \u00e9p\u00e9e.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Je joue avec mes amis.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "C'est tr\u00e8s amusant !",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "le jeu vid\u00e9o",
+        "annotation": "m",
+        "english": "video game"
+      },
+      {
+        "word": "le jeu de r\u00f4le",
+        "annotation": "m",
+        "english": "role-playing game"
+      },
+      {
+        "word": "puissant",
+        "annotation": null,
+        "english": "powerful"
+      },
+      {
+        "word": "le monstre",
+        "annotation": "m",
+        "english": "monster"
+      },
+      {
+        "word": "l'\u00e9p\u00e9e",
+        "annotation": "f",
+        "english": "sword"
+      },
+      {
+        "word": "l'ami",
+        "annotation": "m",
+        "english": "friend"
+      },
+      {
+        "word": "amusant",
+        "annotation": null,
+        "english": "fun"
+      }
+    ]
+  },
+  {
+    "lang": "fr",
+    "level": 0,
+    "index": 1,
+    "title_native": "J'aime les chats",
+    "title_en": "I like cats",
+    "emoji": "\ud83d\udc31",
+    "sentences": [
+      [
+        {
+          "text": "J'ai un chat.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Mon chat s'appelle Momo.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Elle est petite et douce.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Momo dort toute la journ\u00e9e.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Le soir, elle aime jouer.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "J'aime beaucoup mon chat.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "le chat",
+        "annotation": "m",
+        "english": "cat"
+      },
+      {
+        "word": "petit",
+        "annotation": null,
+        "english": "small"
+      },
+      {
+        "word": "doux",
+        "annotation": null,
+        "english": "soft"
+      },
+      {
+        "word": "dormir",
+        "annotation": null,
+        "english": "to sleep"
+      },
+      {
+        "word": "jouer",
+        "annotation": null,
+        "english": "to play"
+      },
+      {
+        "word": "aimer",
+        "annotation": null,
+        "english": "to love"
+      }
+    ]
+  },
+  {
+    "lang": "fr",
+    "level": 0,
+    "index": 2,
+    "title_native": "Le temps aujourd'hui",
+    "title_en": "Today's weather",
+    "emoji": "\u2600\ufe0f",
+    "sentences": [
+      [
+        {
+          "text": "Aujourd'hui, il fait soleil.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Le ciel est bleu.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Il fait chaud dehors.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "J'aime me promener.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Demain, il pleuvra peut-\u00eatre.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "J'aime aussi les jours de pluie.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "le soleil",
+        "annotation": "m",
+        "english": "sun / sunny"
+      },
+      {
+        "word": "le ciel",
+        "annotation": "m",
+        "english": "sky"
+      },
+      {
+        "word": "chaud",
+        "annotation": null,
+        "english": "warm"
+      },
+      {
+        "word": "se promener",
+        "annotation": null,
+        "english": "to go for a walk"
+      },
+      {
+        "word": "pleuvoir",
+        "annotation": null,
+        "english": "to rain"
+      },
+      {
+        "word": "la pluie",
+        "annotation": "f",
+        "english": "rain"
+      }
+    ]
+  },
+  {
+    "lang": "fr",
+    "level": 0,
+    "index": 3,
+    "title_native": "Mon petit-d\u00e9jeuner",
+    "title_en": "My breakfast",
+    "emoji": "\ud83c\udf73",
+    "sentences": [
+      [
+        {
+          "text": "Le matin, je prends le petit-d\u00e9jeuner.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "J'aime le pain avec du beurre.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Je bois du caf\u00e9.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Parfois, je mange un \u0153uf.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Le petit-d\u00e9jeuner est mon repas pr\u00e9f\u00e9r\u00e9.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "le petit-d\u00e9jeuner",
+        "annotation": "m",
+        "english": "breakfast"
+      },
+      {
+        "word": "le pain",
+        "annotation": "m",
+        "english": "bread"
+      },
+      {
+        "word": "le beurre",
+        "annotation": "m",
+        "english": "butter"
+      },
+      {
+        "word": "le caf\u00e9",
+        "annotation": "m",
+        "english": "coffee"
+      },
+      {
+        "word": "l'\u0153uf",
+        "annotation": "m",
+        "english": "egg"
+      },
+      {
+        "word": "le repas",
+        "annotation": "m",
+        "english": "meal"
+      }
+    ]
+  },
+  {
+    "lang": "fr",
+    "level": 0,
+    "index": 4,
+    "title_native": "Ma famille",
+    "title_en": "My family",
+    "emoji": "\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc66",
+    "sentences": [
+      [
+        {
+          "text": "J'ai une grande famille.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Ma m\u00e8re s'appelle Julia.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Mon p\u00e8re s'appelle Thomas.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "J'ai un fr\u00e8re et une s\u0153ur.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Nous mangeons souvent ensemble.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Ma famille est tr\u00e8s importante pour moi.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "la famille",
+        "annotation": "f",
+        "english": "family"
+      },
+      {
+        "word": "la m\u00e8re",
+        "annotation": "f",
+        "english": "mother"
+      },
+      {
+        "word": "le p\u00e8re",
+        "annotation": "m",
+        "english": "father"
+      },
+      {
+        "word": "le fr\u00e8re",
+        "annotation": "m",
+        "english": "brother"
+      },
+      {
+        "word": "la s\u0153ur",
+        "annotation": "f",
+        "english": "sister"
+      },
+      {
+        "word": "important",
+        "annotation": null,
+        "english": "important"
+      }
+    ]
+  }
+]

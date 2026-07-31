@@ -1,0 +1,499 @@
+[
+  {
+    "hiragana": "\u3042",
+    "katakana": "\u30a2",
+    "romaji": "a",
+    "row": "a-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3044",
+    "katakana": "\u30a4",
+    "romaji": "i",
+    "row": "a-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3046",
+    "katakana": "\u30a6",
+    "romaji": "u",
+    "row": "a-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3048",
+    "katakana": "\u30a8",
+    "romaji": "e",
+    "row": "a-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u304a",
+    "katakana": "\u30aa",
+    "romaji": "o",
+    "row": "a-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u304b",
+    "katakana": "\u30ab",
+    "romaji": "ka",
+    "row": "k-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u304d",
+    "katakana": "\u30ad",
+    "romaji": "ki",
+    "row": "k-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u304f",
+    "katakana": "\u30af",
+    "romaji": "ku",
+    "row": "k-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3051",
+    "katakana": "\u30b1",
+    "romaji": "ke",
+    "row": "k-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3053",
+    "katakana": "\u30b3",
+    "romaji": "ko",
+    "row": "k-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3055",
+    "katakana": "\u30b5",
+    "romaji": "sa",
+    "row": "s-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3057",
+    "katakana": "\u30b7",
+    "romaji": "shi",
+    "row": "s-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3059",
+    "katakana": "\u30b9",
+    "romaji": "su",
+    "row": "s-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u305b",
+    "katakana": "\u30bb",
+    "romaji": "se",
+    "row": "s-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u305d",
+    "katakana": "\u30bd",
+    "romaji": "so",
+    "row": "s-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u305f",
+    "katakana": "\u30bf",
+    "romaji": "ta",
+    "row": "t-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3061",
+    "katakana": "\u30c1",
+    "romaji": "chi",
+    "row": "t-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3064",
+    "katakana": "\u30c4",
+    "romaji": "tsu",
+    "row": "t-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3066",
+    "katakana": "\u30c6",
+    "romaji": "te",
+    "row": "t-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3068",
+    "katakana": "\u30c8",
+    "romaji": "to",
+    "row": "t-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u306a",
+    "katakana": "\u30ca",
+    "romaji": "na",
+    "row": "n-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u306b",
+    "katakana": "\u30cb",
+    "romaji": "ni",
+    "row": "n-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u306c",
+    "katakana": "\u30cc",
+    "romaji": "nu",
+    "row": "n-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u306d",
+    "katakana": "\u30cd",
+    "romaji": "ne",
+    "row": "n-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u306e",
+    "katakana": "\u30ce",
+    "romaji": "no",
+    "row": "n-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u306f",
+    "katakana": "\u30cf",
+    "romaji": "ha",
+    "row": "h-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3072",
+    "katakana": "\u30d2",
+    "romaji": "hi",
+    "row": "h-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3075",
+    "katakana": "\u30d5",
+    "romaji": "fu",
+    "row": "h-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3078",
+    "katakana": "\u30d8",
+    "romaji": "he",
+    "row": "h-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u307b",
+    "katakana": "\u30db",
+    "romaji": "ho",
+    "row": "h-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u307e",
+    "katakana": "\u30de",
+    "romaji": "ma",
+    "row": "m-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u307f",
+    "katakana": "\u30df",
+    "romaji": "mi",
+    "row": "m-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3080",
+    "katakana": "\u30e0",
+    "romaji": "mu",
+    "row": "m-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3081",
+    "katakana": "\u30e1",
+    "romaji": "me",
+    "row": "m-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3082",
+    "katakana": "\u30e2",
+    "romaji": "mo",
+    "row": "m-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3084",
+    "katakana": "\u30e4",
+    "romaji": "ya",
+    "row": "y-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3086",
+    "katakana": "\u30e6",
+    "romaji": "yu",
+    "row": "y-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3088",
+    "katakana": "\u30e8",
+    "romaji": "yo",
+    "row": "y-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3089",
+    "katakana": "\u30e9",
+    "romaji": "ra",
+    "row": "r-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u308a",
+    "katakana": "\u30ea",
+    "romaji": "ri",
+    "row": "r-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u308b",
+    "katakana": "\u30eb",
+    "romaji": "ru",
+    "row": "r-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u308c",
+    "katakana": "\u30ec",
+    "romaji": "re",
+    "row": "r-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u308d",
+    "katakana": "\u30ed",
+    "romaji": "ro",
+    "row": "r-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u308f",
+    "katakana": "\u30ef",
+    "romaji": "wa",
+    "row": "w-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3092",
+    "katakana": "\u30f2",
+    "romaji": "wo",
+    "row": "w-row",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u3093",
+    "katakana": "\u30f3",
+    "romaji": "n",
+    "row": "n-final",
+    "kind": "basic"
+  },
+  {
+    "hiragana": "\u304c",
+    "katakana": "\u30ac",
+    "romaji": "ga",
+    "row": "g-row",
+    "kind": "dakuten"
+  },
+  {
+    "hiragana": "\u304e",
+    "katakana": "\u30ae",
+    "romaji": "gi",
+    "row": "g-row",
+    "kind": "dakuten"
+  },
+  {
+    "hiragana": "\u3050",
+    "katakana": "\u30b0",
+    "romaji": "gu",
+    "row": "g-row",
+    "kind": "dakuten"
+  },
+  {
+    "hiragana": "\u3052",
+    "katakana": "\u30b2",
+    "romaji": "ge",
+    "row": "g-row",
+    "kind": "dakuten"
+  },
+  {
+    "hiragana": "\u3054",
+    "katakana": "\u30b4",
+    "romaji": "go",
+    "row": "g-row",
+    "kind": "dakuten"
+  },
+  {
+    "hiragana": "\u3056",
+    "katakana": "\u30b6",
+    "romaji": "za",
+    "row": "z-row",
+    "kind": "dakuten"
+  },
+  {
+    "hiragana": "\u3058",
+    "katakana": "\u30b8",
+    "romaji": "ji",
+    "row": "z-row",
+    "kind": "dakuten"
+  },
+  {
+    "hiragana": "\u305a",
+    "katakana": "\u30ba",
+    "romaji": "zu",
+    "row": "z-row",
+    "kind": "dakuten"
+  },
+  {
+    "hiragana": "\u305c",
+    "katakana": "\u30bc",
+    "romaji": "ze",
+    "row": "z-row",
+    "kind": "dakuten"
+  },
+  {
+    "hiragana": "\u305e",
+    "katakana": "\u30be",
+    "romaji": "zo",
+    "row": "z-row",
+    "kind": "dakuten"
+  },
+  {
+    "hiragana": "\u3060",
+    "katakana": "\u30c0",
+    "romaji": "da",
+    "row": "d-row",
+    "kind": "dakuten"
+  },
+  {
+    "hiragana": "\u3062",
+    "katakana": "\u30c2",
+    "romaji": "ji",
+    "row": "d-row",
+    "kind": "dakuten"
+  },
+  {
+    "hiragana": "\u3065",
+    "katakana": "\u30c5",
+    "romaji": "zu",
+    "row": "d-row",
+    "kind": "dakuten"
+  },
+  {
+    "hiragana": "\u3067",
+    "katakana": "\u30c7",
+    "romaji": "de",
+    "row": "d-row",
+    "kind": "dakuten"
+  },
+  {
+    "hiragana": "\u3069",
+    "katakana": "\u30c9",
+    "romaji": "do",
+    "row": "d-row",
+    "kind": "dakuten"
+  },
+  {
+    "hiragana": "\u3070",
+    "katakana": "\u30d0",
+    "romaji": "ba",
+    "row": "b-row",
+    "kind": "dakuten"
+  },
+  {
+    "hiragana": "\u3073",
+    "katakana": "\u30d3",
+    "romaji": "bi",
+    "row": "b-row",
+    "kind": "dakuten"
+  },
+  {
+    "hiragana": "\u3076",
+    "katakana": "\u30d6",
+    "romaji": "bu",
+    "row": "b-row",
+    "kind": "dakuten"
+  },
+  {
+    "hiragana": "\u3079",
+    "katakana": "\u30d9",
+    "romaji": "be",
+    "row": "b-row",
+    "kind": "dakuten"
+  },
+  {
+    "hiragana": "\u307c",
+    "katakana": "\u30dc",
+    "romaji": "bo",
+    "row": "b-row",
+    "kind": "dakuten"
+  },
+  {
+    "hiragana": "\u3071",
+    "katakana": "\u30d1",
+    "romaji": "pa",
+    "row": "p-row",
+    "kind": "handakuten"
+  },
+  {
+    "hiragana": "\u3074",
+    "katakana": "\u30d4",
+    "romaji": "pi",
+    "row": "p-row",
+    "kind": "handakuten"
+  },
+  {
+    "hiragana": "\u3077",
+    "katakana": "\u30d7",
+    "romaji": "pu",
+    "row": "p-row",
+    "kind": "handakuten"
+  },
+  {
+    "hiragana": "\u307a",
+    "katakana": "\u30da",
+    "romaji": "pe",
+    "row": "p-row",
+    "kind": "handakuten"
+  },
+  {
+    "hiragana": "\u307d",
+    "katakana": "\u30dd",
+    "romaji": "po",
+    "row": "p-row",
+    "kind": "handakuten"
+  }
+]

@@ -5,8 +5,8 @@ import { reactCompanion } from '../lib/companion'
 const ADVANCE_DELAY_MS = 1200
 const WRONG_FLASH_MS = 400
 
-export default function KanjiBuildGame({ kanjiComponents }) {
-  const [round, setRound] = useState(() => pickKanjiBuild(kanjiComponents))
+export default function KanjiBuildGame({ kanjiComponents, kanjiMeanings }) {
+  const [round, setRound] = useState(() => pickKanjiBuild(kanjiComponents, kanjiMeanings))
   const [assembled, setAssembled] = useState([])
   const [wrongTap, setWrongTap] = useState(null)
   const [streak, setStreak] = useState(0)
@@ -14,7 +14,7 @@ export default function KanjiBuildGame({ kanjiComponents }) {
   const [complete, setComplete] = useState(false)
 
   function nextRound() {
-    setRound(pickKanjiBuild(kanjiComponents))
+    setRound(pickKanjiBuild(kanjiComponents, kanjiMeanings))
     setAssembled([])
     setWrongTap(null)
     setCompanionLine(null)
@@ -63,6 +63,7 @@ export default function KanjiBuildGame({ kanjiComponents }) {
       <div className="streak-counter">🔥 {streak}</div>
       <div className="game-instruction">Tap the components that build this kanji</div>
       <div className="kanji-build-target">{round.kanji}</div>
+      {round.kanjiMeaning && <div className="kanji-build-meaning">{round.kanjiMeaning}</div>}
 
       <div className="kanji-build-assembled">
         {round.correctComponents.map((_, i) => (
@@ -77,6 +78,7 @@ export default function KanjiBuildGame({ kanjiComponents }) {
           const usedCount = assembled.filter((a) => a === component).length
           const totalCount = round.correctComponents.filter((c) => c === component).length
           const isUsed = totalCount > 0 && usedCount >= totalCount
+          const meaning = round.componentMeanings[component]
           return (
             <button
               key={`${component}-${i}`}
@@ -84,7 +86,8 @@ export default function KanjiBuildGame({ kanjiComponents }) {
               disabled={isUsed || complete}
               onClick={() => handleTap(component, i)}
             >
-              {component}
+              <span className="kanji-component-char">{component}</span>
+              <span className="kanji-component-meaning">{meaning || '—'}</span>
             </button>
           )
         })}

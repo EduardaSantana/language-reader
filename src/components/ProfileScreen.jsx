@@ -79,7 +79,7 @@ export default function ProfileScreen({
               <h2>Delete all progress?</h2>
             </div>
             <p>
-              This clears your reading position, saved words, days read, favorites, opened
+              This clears your reading position, saved words, days read, favorites, read
               stories, and your Explore web. This can't be undone.
             </p>
             <div className="modal-actions">

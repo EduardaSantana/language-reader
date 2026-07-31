@@ -1,6 +1,8 @@
 import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react'
 import storiesJa from './data/stories.json'
 import storiesDe from './data/stories_de.json'
+import storiesFr from './data/stories_fr.json'
+import storiesRu from './data/stories_ru.json'
 import { mergeStorySets } from './lib/data'
 import ReadingScreen from './components/ReadingScreen'
 import CompanionOverlay from './components/CompanionOverlay'
@@ -9,7 +11,7 @@ import { getAvailableLangs } from './lib/langs'
 import { syncAppBadge } from './lib/badge'
 import './App.css'
 
-const CollectionScreen = lazy(() => import('./components/CollectionScreen'))
+const BookmarksScreen = lazy(() => import('./components/BookmarksScreen'))
 const ExploreScreen = lazy(() => import('./components/ExploreScreen'))
 const GamesScreen = lazy(() => import('./components/GamesScreen'))
 const ProfileScreen = lazy(() => import('./components/ProfileScreen'))
@@ -25,6 +27,8 @@ function App() {
       mergeStorySets([
         { stories: storiesJa, lang: 'ja' },
         { stories: storiesDe, lang: 'de' },
+        { stories: storiesFr, lang: 'fr' },
+        { stories: storiesRu, lang: 'ru' },
       ]),
     [],
   )
@@ -81,10 +85,10 @@ function App() {
   }
 
   let screen
-  if (tab === 'collection') {
+  if (tab === 'bookmarks') {
     screen = (
       <Suspense fallback={null}>
-        <CollectionScreen
+        <BookmarksScreen
           stories={allStories}
           activeTab={tab}
           onChangeTab={setTab}

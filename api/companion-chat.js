@@ -33,6 +33,8 @@ a finished story, or a direct message). Use it, don't ignore it.`
 const LANG_FLAVOR = {
   ja: { name: 'Mochi', language: 'Japanese' },
   de: { name: 'Anke', language: 'German' },
+  fr: { name: 'Luc', language: 'French' },
+  ru: { name: 'Vika', language: 'Russian' },
 }
 
 function systemPromptFor(lang) {

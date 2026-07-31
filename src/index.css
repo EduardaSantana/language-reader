@@ -14,6 +14,10 @@
   --lang-ja-text: #250a13;
   --lang-de-color: #3fb9c9;
   --lang-de-text: #04191c;
+  --lang-fr-color: #7c8ce0;
+  --lang-fr-text: #0c0f26;
+  --lang-ru-color: #e0a13f;
+  --lang-ru-text: #241704;
   color-scheme: dark;
   font: 16px/1.6 system-ui, 'Hiragino Sans', 'Yu Gothic', sans-serif;
 }

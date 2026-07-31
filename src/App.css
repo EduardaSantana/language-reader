@@ -729,6 +729,18 @@ ruby rt {
   border-color: var(--lang-de-color);
 }
 
+.web-node-lang-fr {
+  background: var(--lang-fr-color);
+  color: var(--lang-fr-text);
+  border-color: var(--lang-fr-color);
+}
+
+.web-node-lang-ru {
+  background: var(--lang-ru-color);
+  color: var(--lang-ru-text);
+  border-color: var(--lang-ru-color);
+}
+
 .web-node-shape-pill {
   border-radius: 16px;
 }
@@ -919,6 +931,87 @@ ruby rt {
 .dictionary-reading {
   color: var(--text-dim);
   font-size: 13px;
+}
+
+.read-story-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+.read-story-open {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  text-align: left;
+  color: var(--text);
+}
+
+.unmark-read-button {
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: var(--text-dim);
+}
+
+.alphabet-row-group {
+  margin-top: 10px;
+}
+
+.alphabet-row-heading {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 6px 0 4px;
+}
+
+.alphabet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+  gap: 8px;
+}
+
+.alphabet-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px 4px;
+  color: var(--text);
+}
+
+.alphabet-card-hira {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.alphabet-card-kata {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.alphabet-card-romaji {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.alphabet-detail-forms {
+  font-size: 15px;
 }
 
 .letter-index {
@@ -1127,6 +1220,13 @@ ruby rt {
   color: var(--text-dim);
   font-size: 13px;
   margin-top: 10px;
+}
+
+.game-subinstruction {
+  color: var(--text-dim);
+  font-size: 11px;
+  margin-top: 2px;
+  opacity: 0.75;
 }
 
 .game-prompt-english {
@@ -1455,6 +1555,13 @@ ruby rt {
   color: var(--text-dim);
 }
 
+.kanji-build-meaning {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-top: -4px;
+}
+
 .kanji-build-assembled {
   display: flex;
   justify-content: center;
@@ -1483,13 +1590,46 @@ ruby rt {
 }
 
 .kanji-component-button {
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  min-height: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--border);
   border-radius: 10px;
+  padding: 4px;
+}
+
+.kanji-component-char {
   font-size: 20px;
   font-weight: 700;
+}
+
+.kanji-component-meaning {
+  font-size: 9px;
+  color: var(--text-dim);
+  line-height: 1.2;
+  text-align: center;
+}
+
+.compound-slot {
+  width: auto;
+  min-width: 60px;
+  padding: 0 8px;
+  font-size: 15px;
+}
+
+.compound-button {
+  width: auto;
+  min-width: 76px;
+  padding: 6px 8px;
+}
+
+.compound-button .kanji-component-char {
+  font-size: 15px;
 }
 
 .kanji-component-button.wrong {

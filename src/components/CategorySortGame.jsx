@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { pickCategorySort, COMPANION_CORRECT_LINES, COMPANION_WRONG_LINES } from '../lib/games'
 import { reactCompanion } from '../lib/companion'
 
-export default function CategorySortGame({ pool, lang }) {
-  const [round, setRound] = useState(() => pickCategorySort(pool, lang))
+export default function CategorySortGame({ pool, lang, stories }) {
+  const [round, setRound] = useState(() => pickCategorySort(pool, lang, stories))
   const [selectedKey, setSelectedKey] = useState(null)
   const [placements, setPlacements] = useState({})
   const [companionLine, setCompanionLine] = useState(null)
@@ -13,7 +13,7 @@ export default function CategorySortGame({ pool, lang }) {
   }
 
   function nextRound() {
-    setRound(pickCategorySort(pool, lang))
+    setRound(pickCategorySort(pool, lang, stories))
     setSelectedKey(null)
     setPlacements({})
     setCompanionLine(null)
@@ -52,6 +52,9 @@ export default function CategorySortGame({ pool, lang }) {
   return (
     <div className="game-card category-sort-game">
       <div className="game-instruction">Sort each word into the story it came from</div>
+      <div className="game-subinstruction">
+        Buckets are grouped by source story, not real semantic categories — the corpus doesn't have those yet.
+      </div>
 
       <div className="category-buckets">
         {round.buckets.map((bucket) => (
