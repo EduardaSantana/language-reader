@@ -34,3 +34,12 @@ export function getAllKanji(stories) {
     .map(([char, sourceStoryIndex]) => ({ char, sourceStoryIndex }))
   return cachedAllKanji
 }
+
+export function getUnlockedKanjiFromSavedWords(savedWords) {
+  const found = new Set()
+  for (const w of savedWords) {
+    if (w.lang !== 'ja') continue
+    for (const ch of extractKanji(w.word)) found.add(ch)
+  }
+  return found
+}

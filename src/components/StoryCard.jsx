@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { levelMeta } from '../lib/levels'
 import { langMeta } from '../lib/langs'
+import { isWordSaved } from '../lib/storage'
 
 function Segment({ seg, showFurigana }) {
   if (seg.reading && showFurigana) {
@@ -17,15 +18,16 @@ function Segment({ seg, showFurigana }) {
 export default function StoryCard({
   story,
   showFurigana,
-  newlyPulled,
   cardRef,
   cardIndex,
   isActive,
   isFavorite,
   onToggleFavorite,
+  onSaveWord,
 }) {
   const [revealed, setRevealed] = useState(false)
   const [gloss, setGloss] = useState(null)
+  const [saved, setSaved] = useState(false)
   const { name: levelName, color: levelColor } = levelMeta(story.level)
   const { avatar: langAvatar, label: langLabel } = langMeta(story.lang)
 
@@ -42,7 +44,16 @@ export default function StoryCard({
   function handleWordTap(text) {
     const trimmed = text.trim()
     const match = vocabByWord.get(trimmed)
-    if (match) setGloss(match)
+    if (match) {
+      setGloss(match)
+      setSaved(isWordSaved(story.lang, match.word))
+    }
+  }
+
+  function handleSave(e) {
+    e.stopPropagation()
+    onSaveWord(gloss)
+    setSaved(true)
   }
 
   return (
@@ -62,16 +73,6 @@ export default function StoryCard({
       >
         {isFavorite ? '♥' : '♡'}
       </button>
-
-      {newlyPulled && newlyPulled.length > 0 && (
-        <div className="kanji-pull-toast" aria-live="polite">
-          {newlyPulled.map((ch) => (
-            <span key={ch} className="kanji-pull-char">
-              {ch}
-            </span>
-          ))}
-        </div>
-      )}
 
       {!revealed ? (
         <div className="story-cover" onClick={() => setRevealed(true)}>
@@ -109,10 +110,18 @@ export default function StoryCard({
       )}
 
       {gloss && (
-        <div className="gloss-panel" onClick={() => setGloss(null)}>
-          <strong>{gloss.word}</strong>
-          {gloss.reading && <span className="gloss-reading"> ({gloss.reading})</span>}
-          <span className="gloss-english"> — {gloss.english}</span>
+        <div className="gloss-panel" onClick={(e) => e.stopPropagation()}>
+          <div className="gloss-text">
+            <strong>{gloss.word}</strong>
+            {gloss.reading && <span className="gloss-reading"> ({gloss.reading})</span>}
+            <span className="gloss-english"> — {gloss.english}</span>
+          </div>
+          <button className={`save-word-button ${saved ? 'saved' : ''}`} onClick={handleSave} disabled={saved}>
+            {saved ? '✓ Saved' : '+ Save'}
+          </button>
+          <button className="gloss-dismiss" onClick={() => setGloss(null)} aria-label="Close">
+            ✕
+          </button>
         </div>
       )}
     </section>

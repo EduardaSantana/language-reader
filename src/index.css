@@ -6,6 +6,10 @@
   --accent: #d4537e;
   --accent-secondary: #1d9e75;
   --border: #35333d;
+  --bg-success: #1d9e75;
+  --text-success: #04140e;
+  --bg-warning: #d4a017;
+  --text-warning: #1a1400;
   color-scheme: dark;
   font: 16px/1.6 system-ui, 'Hiragino Sans', 'Yu Gothic', sans-serif;
 }

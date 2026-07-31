@@ -3,20 +3,22 @@ import storiesJa from './data/stories.json'
 import storiesDe from './data/stories_de.json'
 import { mergeStorySets } from './lib/data'
 import ReadingScreen from './components/ReadingScreen'
-import { getUnseenKanji } from './lib/storage'
+import { getUnseenSavedWords, getActiveLanguages, setActiveLanguages, getActiveLevels, setActiveLevels } from './lib/storage'
+import { getAvailableLangs } from './lib/langs'
 import { syncAppBadge } from './lib/badge'
 import './App.css'
 
 const CollectionScreen = lazy(() => import('./components/CollectionScreen'))
-const FavoritesScreen = lazy(() => import('./components/FavoritesScreen'))
 const ExploreScreen = lazy(() => import('./components/ExploreScreen'))
+const GamesScreen = lazy(() => import('./components/GamesScreen'))
+const ProfileScreen = lazy(() => import('./components/ProfileScreen'))
 
 function App() {
   const [tab, setTab] = useState('feed')
   const [jumpToIndex, setJumpToIndex] = useState(null)
   const [exploreCharSeed, setExploreCharSeed] = useState(null)
 
-  const stories = useMemo(
+  const allStories = useMemo(
     () =>
       mergeStorySets([
         { stories: storiesJa, lang: 'ja' },
@@ -24,12 +26,26 @@ function App() {
       ]),
     [],
   )
+  const allLangs = useMemo(() => getAvailableLangs(allStories), [allStories])
+
+  const [activeLanguages, setActiveLanguagesState] = useState(() => getActiveLanguages(allLangs))
+  const [activeLevels, setActiveLevelsState] = useState(() => getActiveLevels())
+
+  const feedStories = useMemo(
+    () =>
+      allStories.filter(
+        (story) =>
+          activeLanguages.includes(story.lang) &&
+          (activeLevels[story.lang] == null || activeLevels[story.lang].includes(story.level)),
+      ),
+    [allStories, activeLanguages, activeLevels],
+  )
 
   useEffect(() => {
     if (navigator.storage?.persist) {
       navigator.storage.persist()
     }
-    syncAppBadge(getUnseenKanji().size)
+    syncAppBadge(getUnseenSavedWords().size)
   }, [])
 
   function openStoryFromElsewhere(storyIndex) {
@@ -42,27 +58,35 @@ function App() {
     setTab('explore')
   }
 
+  function toggleLanguage(lang) {
+    setActiveLanguagesState((prev) => {
+      const next = prev.includes(lang) ? prev.filter((l) => l !== lang) : [...prev, lang]
+      const safe = next.length === 0 ? allLangs : next
+      setActiveLanguages(safe)
+      return safe
+    })
+  }
+
+  function toggleLevel(lang, level, allLevelsForLang) {
+    setActiveLevelsState((prev) => {
+      const current = prev[lang] ?? allLevelsForLang
+      const next = current.includes(level) ? current.filter((l) => l !== level) : [...current, level]
+      const safeForLang = next.length === 0 ? allLevelsForLang : next
+      const updated = { ...prev, [lang]: safeForLang }
+      setActiveLevels(updated)
+      return updated
+    })
+  }
+
   if (tab === 'collection') {
     return (
       <Suspense fallback={null}>
         <CollectionScreen
-          stories={stories}
+          stories={allStories}
           activeTab={tab}
           onChangeTab={setTab}
           onExploreChar={openExploreForChar}
-        />
-      </Suspense>
-    )
-  }
-
-  if (tab === 'favorites') {
-    return (
-      <Suspense fallback={null}>
-        <FavoritesScreen
-          stories={stories}
           onOpenStory={openStoryFromElsewhere}
-          activeTab={tab}
-          onChangeTab={setTab}
         />
       </Suspense>
     )
@@ -71,9 +95,28 @@ function App() {
   if (tab === 'explore') {
     return (
       <Suspense fallback={null}>
-        <ExploreScreen
-          stories={stories}
-          charSeed={exploreCharSeed}
+        <ExploreScreen stories={allStories} charSeed={exploreCharSeed} activeTab={tab} onChangeTab={setTab} />
+      </Suspense>
+    )
+  }
+
+  if (tab === 'games') {
+    return (
+      <Suspense fallback={null}>
+        <GamesScreen stories={allStories} activeTab={tab} onChangeTab={setTab} />
+      </Suspense>
+    )
+  }
+
+  if (tab === 'profile') {
+    return (
+      <Suspense fallback={null}>
+        <ProfileScreen
+          allStories={allStories}
+          activeLanguages={activeLanguages}
+          activeLevels={activeLevels}
+          onToggleLanguage={toggleLanguage}
+          onToggleLevel={toggleLevel}
           activeTab={tab}
           onChangeTab={setTab}
         />
@@ -83,7 +126,7 @@ function App() {
 
   return (
     <ReadingScreen
-      stories={stories}
+      stories={feedStories}
       jumpToIndex={jumpToIndex}
       onConsumedJump={() => setJumpToIndex(null)}
       activeTab={tab}

@@ -1,11 +1,24 @@
 const KEYS = {
   readingPosition: 'reading_position',
-  unlockedKanji: 'unlocked_kanji',
   daysRead: 'days_read',
-  unseenKanji: 'unseen_kanji',
   seenLoopMilestone: 'seen_loop_milestone',
   favoriteStories: 'favorite_stories',
+  savedWords: 'saved_words',
+  unseenSavedWords: 'unseen_saved_words',
+  openedStories: 'opened_stories',
+  activeLanguages: 'active_languages',
+  activeLevels: 'active_levels',
+  imageCache: 'image_cache',
 }
+
+const PROGRESS_KEYS = [
+  KEYS.readingPosition,
+  KEYS.savedWords,
+  KEYS.daysRead,
+  KEYS.favoriteStories,
+  KEYS.openedStories,
+  KEYS.unseenSavedWords,
+]
 
 function readJSON(key, fallback) {
   try {
@@ -20,6 +33,10 @@ function writeJSON(key, value) {
   localStorage.setItem(key, JSON.stringify(value))
 }
 
+function wordKey(lang, word) {
+  return `${lang}:${word}`
+}
+
 export function getReadingPosition() {
   const stored = readJSON(KEYS.readingPosition, { storyIndex: 0 })
   return { storyIndex: stored.storyIndex ?? 0 }
@@ -27,33 +44,6 @@ export function getReadingPosition() {
 
 export function setReadingPosition(storyIndex) {
   writeJSON(KEYS.readingPosition, { storyIndex })
-}
-
-export function getUnlockedKanji() {
-  return new Set(readJSON(KEYS.unlockedKanji, []))
-}
-
-export function addUnlockedKanji(kanjiChars) {
-  const current = getUnlockedKanji()
-  for (const ch of kanjiChars) current.add(ch)
-  writeJSON(KEYS.unlockedKanji, [...current])
-  return current
-}
-
-export function getUnseenKanji() {
-  return new Set(readJSON(KEYS.unseenKanji, []))
-}
-
-export function addUnseenKanji(kanjiChars) {
-  const current = getUnseenKanji()
-  for (const ch of kanjiChars) current.add(ch)
-  writeJSON(KEYS.unseenKanji, [...current])
-  return current
-}
-
-export function clearUnseenKanji() {
-  writeJSON(KEYS.unseenKanji, [])
-  return new Set()
 }
 
 export function getDaysRead() {
@@ -98,6 +88,77 @@ export function toggleFavoriteStory(storyIndex) {
   return current
 }
 
+export function getSavedWords() {
+  return readJSON(KEYS.savedWords, [])
+}
+
+export function isWordSaved(lang, word) {
+  return getSavedWords().some((w) => w.lang === lang && w.word === word)
+}
+
+export function addSavedWord(entry) {
+  const current = getSavedWords()
+  if (current.some((w) => w.lang === entry.lang && w.word === entry.word)) return current
+  const updated = [...current, entry]
+  writeJSON(KEYS.savedWords, updated)
+  addUnseenSavedWords([wordKey(entry.lang, entry.word)])
+  return updated
+}
+
+export function getUnseenSavedWords() {
+  return new Set(readJSON(KEYS.unseenSavedWords, []))
+}
+
+function addUnseenSavedWords(keys) {
+  const current = getUnseenSavedWords()
+  for (const k of keys) current.add(k)
+  writeJSON(KEYS.unseenSavedWords, [...current])
+  return current
+}
+
+export function clearUnseenSavedWords() {
+  writeJSON(KEYS.unseenSavedWords, [])
+  return new Set()
+}
+
+export function getOpenedStories() {
+  return new Set(readJSON(KEYS.openedStories, []))
+}
+
+export function markStoryOpened(storyIndex) {
+  const current = getOpenedStories()
+  if (current.has(storyIndex)) return current
+  current.add(storyIndex)
+  writeJSON(KEYS.openedStories, [...current])
+  return current
+}
+
+export function getActiveLanguages(allLangs) {
+  return readJSON(KEYS.activeLanguages, allLangs)
+}
+
+export function setActiveLanguages(langs) {
+  writeJSON(KEYS.activeLanguages, langs)
+}
+
+export function getActiveLevels() {
+  return readJSON(KEYS.activeLevels, {})
+}
+
+export function setActiveLevels(levelsByLang) {
+  writeJSON(KEYS.activeLevels, levelsByLang)
+}
+
+export function getImageCache() {
+  return readJSON(KEYS.imageCache, {})
+}
+
+export function cacheImage(query, url) {
+  const cache = getImageCache()
+  cache[query] = url
+  writeJSON(KEYS.imageCache, cache)
+}
+
 export function clearAllProgress() {
-  for (const key of Object.values(KEYS)) localStorage.removeItem(key)
+  for (const key of PROGRESS_KEYS) localStorage.removeItem(key)
 }

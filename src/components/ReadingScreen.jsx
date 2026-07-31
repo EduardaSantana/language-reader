@@ -2,87 +2,66 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import {
   getReadingPosition,
   setReadingPosition,
-  getUnlockedKanji,
-  addUnlockedKanji,
-  addUnseenKanji,
-  getUnseenKanji,
   markDayReadIfNeeded,
   hasSeenLoopMilestone,
   markLoopMilestoneSeen,
   getFavoriteStories,
   toggleFavoriteStory,
+  getUnseenSavedWords,
+  addSavedWord,
+  markStoryOpened,
 } from '../lib/storage'
-import { extractKanjiFromStory } from '../lib/kanji'
 import { syncAppBadge } from '../lib/badge'
-import { getAvailableLevels, levelMeta } from '../lib/levels'
-import { getAvailableLangs, langMeta } from '../lib/langs'
 import { matchesQuery } from '../lib/search'
 import StoryCard from './StoryCard'
 import JumpToStoryModal from './JumpToStoryModal'
 import BottomNav from './BottomNav'
 
-const PULL_ANIMATION_MS = 1800
-const ACTIVE_THRESHOLD = 0.6
-
 function buildCards(stories, milestoneAlreadySeen) {
-  const cards = stories.map((story, i) => ({
-    key: `story-${i}`,
+  const cards = stories.map((story) => ({
+    key: `story-${story.idx}`,
     type: 'story',
     story,
-    storyIndex: i,
+    storyIndex: story.idx,
   }))
   if (!milestoneAlreadySeen) {
     cards.push({ key: 'milestone', type: 'milestone' })
   }
-  cards.push({ key: 'wrap-0', type: 'story', story: stories[0], storyIndex: 0 })
+  cards.push({ key: 'wrap-0', type: 'story', story: stories[0], storyIndex: stories[0]?.idx })
   return cards
 }
 
-function buildFilteredCards(stories, selectedLevel, selectedLangs, query) {
+function buildFilteredCards(stories, favoritesOnly, favorites, query) {
   return stories
-    .map((story, i) => ({ story, storyIndex: i }))
-    .filter(({ story }) => selectedLevel == null || story.level === selectedLevel)
-    .filter(({ story }) => selectedLangs.has(story.lang))
-    .filter(({ story }) => matchesQuery(story, query))
-    .map(({ story, storyIndex }) => ({
-      key: `story-${storyIndex}`,
+    .filter((story) => !favoritesOnly || favorites.has(story.idx))
+    .filter((story) => matchesQuery(story, query))
+    .map((story) => ({
+      key: `story-${story.idx}`,
       type: 'story',
       story,
-      storyIndex,
+      storyIndex: story.idx,
     }))
 }
+
+const ACTIVE_THRESHOLD = 0.6
 
 export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, activeTab, onChangeTab }) {
   const [showFurigana, setShowFurigana] = useState(true)
   const [jumpOpen, setJumpOpen] = useState(false)
-  const [pulledByCard, setPulledByCard] = useState({})
-  const [unseenCount, setUnseenCount] = useState(() => getUnseenKanji().size)
+  const [unseenCount, setUnseenCount] = useState(() => getUnseenSavedWords().size)
   const [favorites, setFavorites] = useState(() => getFavoriteStories())
   const [activeIndex, setActiveIndex] = useState(-1)
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
-  const [selectedLevel, setSelectedLevel] = useState(null)
+  const [favoritesOnly, setFavoritesOnly] = useState(false)
 
-  const levels = useMemo(() => getAvailableLevels(stories), [stories])
-  const allLangs = useMemo(() => getAvailableLangs(stories), [stories])
-  const [selectedLangs, setSelectedLangs] = useState(() => new Set(allLangs))
-  const isFiltering =
-    selectedLevel != null || searchQuery.trim() !== '' || selectedLangs.size < allLangs.length
+  const isFiltering = favoritesOnly || searchQuery.trim() !== ''
 
   const cards = useMemo(() => {
-    if (isFiltering) return buildFilteredCards(stories, selectedLevel, selectedLangs, searchQuery)
+    if (isFiltering) return buildFilteredCards(stories, favoritesOnly, favorites, searchQuery)
     return buildCards(stories, hasSeenLoopMilestone())
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [stories, isFiltering, selectedLevel, selectedLangs, searchQuery])
-
-  function toggleLang(lang) {
-    setSelectedLangs((prev) => {
-      const next = new Set(prev)
-      if (next.has(lang)) next.delete(lang)
-      else next.add(lang)
-      return next.size === 0 ? new Set(allLangs) : next
-    })
-  }
+  }, [stories, isFiltering, favoritesOnly, favorites, searchQuery])
 
   const containerRef = useRef(null)
   const cardRefs = useRef([])
@@ -100,7 +79,7 @@ export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, ac
 
   useEffect(() => {
     if (isFiltering) containerRef.current?.scrollTo({ top: 0, behavior: 'instant' })
-  }, [isFiltering, selectedLevel, searchQuery])
+  }, [isFiltering, favoritesOnly, searchQuery])
 
   useEffect(() => {
     // Any real scroll interaction that day is enough — no separate
@@ -119,24 +98,7 @@ export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, ac
     setActiveIndex(index)
     if (card.type === 'story') {
       if (!isFiltering) setReadingPosition(card.storyIndex)
-      const kanjiHere = extractKanjiFromStory(card.story)
-      if (kanjiHere.size === 0) return
-      const before = getUnlockedKanji()
-      const fresh = [...kanjiHere].filter((ch) => !before.has(ch))
-      addUnlockedKanji(kanjiHere)
-      if (fresh.length > 0) {
-        setPulledByCard((prev) => ({ ...prev, [card.key]: fresh }))
-        const unseen = addUnseenKanji(fresh)
-        setUnseenCount(unseen.size)
-        syncAppBadge(unseen.size)
-        setTimeout(() => {
-          setPulledByCard((prev) => {
-            const next = { ...prev }
-            delete next[card.key]
-            return next
-          })
-        }, PULL_ANIMATION_MS)
-      }
+      markStoryOpened(card.storyIndex)
     } else if (card.type === 'milestone') {
       markLoopMilestoneSeen()
     }
@@ -175,6 +137,19 @@ export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, ac
     setFavorites(toggleFavoriteStory(storyIndex))
   }
 
+  function handleSaveWord(vocab, story) {
+    addSavedWord({
+      word: vocab.word,
+      reading: vocab.reading,
+      english: vocab.english,
+      lang: story.lang,
+      storyIndex: story.idx,
+    })
+    const unseen = getUnseenSavedWords()
+    setUnseenCount(unseen.size)
+    syncAppBadge(unseen.size)
+  }
+
   return (
     <div className="feed-screen">
       <div className="top-bar">
@@ -195,43 +170,21 @@ export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, ac
             autoFocus
           />
         )}
-        <div className="level-pills">
-          <button
-            className={`level-pill-button ${selectedLevel == null ? 'active' : ''}`}
-            onClick={() => setSelectedLevel(null)}
-          >
-            All
-          </button>
-          {levels.map((level) => (
-            <button
-              key={level}
-              className={`level-pill-button ${selectedLevel === level ? 'active' : ''}`}
-              style={selectedLevel === level ? { background: levelMeta(level).color } : undefined}
-              onClick={() => setSelectedLevel(level)}
-            >
-              Lv.{level}
-            </button>
-          ))}
-        </div>
-        {allLangs.length > 1 && (
-          <div className="lang-pills">
-            {allLangs.map((lang) => (
-              <button
-                key={lang}
-                className={`level-pill-button lang-pill-button ${selectedLangs.has(lang) ? 'active' : ''}`}
-                onClick={() => toggleLang(lang)}
-                aria-pressed={selectedLangs.has(lang)}
-              >
-                {langMeta(lang).avatar}
-              </button>
-            ))}
-          </div>
-        )}
+        <button
+          className={`icon-button-bar favorites-filter-toggle ${favoritesOnly ? 'active' : ''}`}
+          onClick={() => setFavoritesOnly((v) => !v)}
+          aria-label="Show favorites only"
+          aria-pressed={favoritesOnly}
+        >
+          {favoritesOnly ? '♥' : '♡'}
+        </button>
       </div>
 
       <div className="feed-container" ref={containerRef}>
         {cards.length === 0 && (
-          <div className="empty-results">No stories found — try a different search.</div>
+          <div className="empty-results">
+            {favoritesOnly ? 'No favorites yet — tap the heart on a story to save it here.' : 'No stories found — try a different search.'}
+          </div>
         )}
         {cards.map((card, i) => {
           if (card.type === 'milestone') {
@@ -257,10 +210,10 @@ export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, ac
               cardIndex={i}
               story={card.story}
               showFurigana={showFurigana}
-              newlyPulled={pulledByCard[card.key]}
               isActive={i === activeIndex}
               isFavorite={favorites.has(card.storyIndex)}
               onToggleFavorite={() => handleToggleFavorite(card.storyIndex)}
+              onSaveWord={(vocab) => handleSaveWord(vocab, card.story)}
             />
           )
         })}
@@ -287,7 +240,7 @@ export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, ac
       <BottomNav
         active={activeTab}
         onChange={onChangeTab}
-        badges={{ collection: unseenCount, favorites: favorites.size }}
+        badges={{ collection: unseenCount }}
       />
     </div>
   )

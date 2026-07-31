@@ -19,3 +19,16 @@ export function levelMeta(level) {
 export function getAvailableLevels(stories) {
   return [...new Set(stories.map((s) => s.level))].sort((a, b) => a - b)
 }
+
+export function getLevelsPerLang(stories) {
+  const byLang = {}
+  for (const story of stories) {
+    if (!byLang[story.lang]) byLang[story.lang] = new Set()
+    byLang[story.lang].add(story.level)
+  }
+  const result = {}
+  for (const [lang, levels] of Object.entries(byLang)) {
+    result[lang] = [...levels].sort((a, b) => a - b)
+  }
+  return result
+}

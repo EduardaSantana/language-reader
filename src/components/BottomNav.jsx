@@ -1,8 +1,9 @@
 const TABS = [
   { key: 'feed', icon: '📖', label: 'Feed' },
-  { key: 'favorites', icon: '♥', label: 'Favorites' },
   { key: 'collection', icon: '🀄', label: 'Collection' },
   { key: 'explore', icon: '✦', label: 'Explore' },
+  { key: 'games', icon: '🎮', label: 'Games' },
+  { key: 'profile', icon: '👤', label: 'Profile' },
 ]
 
 export default function BottomNav({ active, onChange, badges = {} }) {

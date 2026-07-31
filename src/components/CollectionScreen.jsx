@@ -1,33 +1,96 @@
 import { useEffect, useMemo, useState } from 'react'
-import { getAllKanji } from '../lib/kanji'
-import {
-  getUnlockedKanji,
-  getDaysRead,
-  clearUnseenKanji,
-  clearAllProgress,
-  getFavoriteStories,
-} from '../lib/storage'
+import { getAllKanji, getUnlockedKanjiFromSavedWords } from '../lib/kanji'
+import { getSavedWords, getDaysRead, clearUnseenSavedWords, addSavedWord, isWordSaved } from '../lib/storage'
+import { buildDictionary, matchesDictionaryQuery } from '../lib/vocabIndex'
+import { getWordImage } from '../lib/images'
 import { syncAppBadge } from '../lib/badge'
 import BottomNav from './BottomNav'
 
-export default function CollectionScreen({ stories, activeTab, onChangeTab, onExploreChar }) {
-  const allKanji = useMemo(() => getAllKanji(stories), [stories])
-  const unlocked = useMemo(() => getUnlockedKanji(), [])
-  const daysRead = useMemo(() => getDaysRead(), [])
-  const favoritesCount = useMemo(() => getFavoriteStories().size, [])
-  const [selected, setSelected] = useState(null)
-  const [confirmingDelete, setConfirmingDelete] = useState(false)
+function WordImage({ entry, fallbackEmoji }) {
+  const [url, setUrl] = useState(null)
 
   useEffect(() => {
-    clearUnseenKanji()
+    let cancelled = false
+    getWordImage(entry.english).then((result) => {
+      if (!cancelled) setUrl(result)
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [entry.english])
+
+  if (url) return <img className="word-image" src={url} alt={entry.english} loading="lazy" />
+  return <div className="word-image word-image-fallback">{fallbackEmoji}</div>
+}
+
+function SavedWordCard({ entry, story, onOpen }) {
+  return (
+    <button className="saved-word-card" onClick={() => onOpen(entry)}>
+      <WordImage entry={entry} fallbackEmoji={story?.emoji || '📗'} />
+      <div className="saved-word-text">
+        <div className="saved-word-word">{entry.word}</div>
+        {entry.reading && <div className="saved-word-reading">{entry.reading}</div>}
+        <div className="saved-word-english">{entry.english}</div>
+      </div>
+    </button>
+  )
+}
+
+function DictionaryRow({ entry, onSave }) {
+  const [saved, setSaved] = useState(() => isWordSaved(entry.lang, entry.word))
+  return (
+    <li className="dictionary-row">
+      <div>
+        <span className="story-list-title-ja">{entry.word}</span>
+        {entry.reading && <span className="dictionary-reading"> ({entry.reading})</span>}
+        <div className="story-list-title-en">{entry.english}</div>
+      </div>
+      <button
+        className={`save-word-button ${saved ? 'saved' : ''}`}
+        disabled={saved}
+        onClick={() => {
+          onSave(entry)
+          setSaved(true)
+        }}
+      >
+        {saved ? '✓ Saved' : '+ Save'}
+      </button>
+    </li>
+  )
+}
+
+export default function CollectionScreen({ stories, activeTab, onChangeTab, onExploreChar, onOpenStory }) {
+  const allKanji = useMemo(() => getAllKanji(stories), [stories])
+  const [savedWords, setSavedWords] = useState(() => getSavedWords())
+  const unlocked = useMemo(() => getUnlockedKanjiFromSavedWords(savedWords), [savedWords])
+  const daysRead = useMemo(() => getDaysRead(), [])
+  const [selectedKanji, setSelectedKanji] = useState(null)
+  const [selectedWord, setSelectedWord] = useState(null)
+  const [mode, setMode] = useState('saved')
+  const [dictQuery, setDictQuery] = useState('')
+
+  const dictionary = useMemo(() => buildDictionary(stories), [stories])
+  const filteredDictionary = useMemo(
+    () => dictionary.filter((entry) => matchesDictionaryQuery(entry, dictQuery)),
+    [dictionary, dictQuery],
+  )
+
+  useEffect(() => {
+    clearUnseenSavedWords()
     syncAppBadge(0)
   }, [])
 
   const unlockedCount = allKanji.filter((k) => unlocked.has(k.char)).length
 
-  function handleDeleteAll() {
-    clearAllProgress()
-    window.location.reload()
+  function handleSaveFromDictionary(entry) {
+    const updated = addSavedWord({
+      word: entry.word,
+      reading: entry.reading,
+      english: entry.english,
+      lang: entry.lang,
+      storyIndex: entry.storyIndex,
+    })
+    setSavedWords(updated)
   }
 
   return (
@@ -57,7 +120,7 @@ export default function CollectionScreen({ stories, activeTab, onChangeTab, onEx
               key={char}
               className={`kanji-tile ${isUnlocked ? 'unlocked' : 'locked'}`}
               disabled={!isUnlocked}
-              onClick={() => setSelected({ char, sourceStoryIndex })}
+              onClick={() => setSelectedKanji({ char, sourceStoryIndex })}
             >
               {char}
             </button>
@@ -65,27 +128,65 @@ export default function CollectionScreen({ stories, activeTab, onChangeTab, onEx
         })}
       </div>
 
-      <button className="delete-progress-button" onClick={() => setConfirmingDelete(true)}>
-        Delete all progress
-      </button>
+      <div className="collection-mode-toggle">
+        <button className={mode === 'saved' ? 'active' : ''} onClick={() => setMode('saved')}>
+          My words ({savedWords.length})
+        </button>
+        <button className={mode === 'dictionary' ? 'active' : ''} onClick={() => setMode('dictionary')}>
+          Dictionary
+        </button>
+      </div>
 
-      {selected && (
-        <div className="modal-backdrop" onClick={() => setSelected(null)}>
+      {mode === 'saved' ? (
+        savedWords.length === 0 ? (
+          <p className="favorites-empty">
+            Nothing saved yet — tap a word's gloss while reading, then "+ Save".
+          </p>
+        ) : (
+          <div className="saved-words-grid">
+            {savedWords.map((entry) => (
+              <SavedWordCard
+                key={`${entry.lang}:${entry.word}`}
+                entry={entry}
+                story={stories[entry.storyIndex]}
+                onOpen={setSelectedWord}
+              />
+            ))}
+          </div>
+        )
+      ) : (
+        <>
+          <input
+            className="search-input dictionary-search"
+            value={dictQuery}
+            onChange={(e) => setDictQuery(e.target.value)}
+            placeholder="Search the dictionary…"
+          />
+          <ul className="story-list dictionary-list">
+            {filteredDictionary.map((entry) => (
+              <DictionaryRow key={`${entry.lang}:${entry.word}`} entry={entry} onSave={handleSaveFromDictionary} />
+            ))}
+          </ul>
+        </>
+      )}
+
+      {selectedKanji && (
+        <div className="modal-backdrop" onClick={() => setSelectedKanji(null)}>
           <div className="modal" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
-              <h2>{selected.char}</h2>
-              <button className="icon-button" onClick={() => setSelected(null)} aria-label="Close">
+              <h2>{selectedKanji.char}</h2>
+              <button className="icon-button" onClick={() => setSelectedKanji(null)} aria-label="Close">
                 ✕
               </button>
             </div>
             <p>First seen in:</p>
-            <p className="story-list-title-ja">{stories[selected.sourceStoryIndex].titleNative}</p>
-            <p className="story-list-title-en">{stories[selected.sourceStoryIndex].titleEn}</p>
+            <p className="story-list-title-ja">{stories[selectedKanji.sourceStoryIndex].titleNative}</p>
+            <p className="story-list-title-en">{stories[selectedKanji.sourceStoryIndex].titleEn}</p>
             <button
               className="explore-link-button"
               onClick={() => {
-                onExploreChar(selected.char)
-                setSelected(null)
+                onExploreChar(selectedKanji.char)
+                setSelectedKanji(null)
               }}
             >
               Explore this word →
@@ -94,29 +195,33 @@ export default function CollectionScreen({ stories, activeTab, onChangeTab, onEx
         </div>
       )}
 
-      {confirmingDelete && (
-        <div className="modal-backdrop" onClick={() => setConfirmingDelete(false)}>
+      {selectedWord && (
+        <div className="modal-backdrop" onClick={() => setSelectedWord(null)}>
           <div className="modal" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
-              <h2>Delete all progress?</h2>
-            </div>
-            <p>
-              This clears your reading position, unlocked kanji, days read, and favorites. This
-              can't be undone.
-            </p>
-            <div className="modal-actions">
-              <button className="icon-button" onClick={() => setConfirmingDelete(false)}>
-                Cancel
-              </button>
-              <button className="delete-progress-confirm-button" onClick={handleDeleteAll}>
-                Delete everything
+              <h2>{selectedWord.word}</h2>
+              <button className="icon-button" onClick={() => setSelectedWord(null)} aria-label="Close">
+                ✕
               </button>
             </div>
+            <WordImage entry={selectedWord} fallbackEmoji={stories[selectedWord.storyIndex]?.emoji || '📗'} />
+            {selectedWord.reading && <p className="story-list-title-en">{selectedWord.reading}</p>}
+            <p>{selectedWord.english}</p>
+            <p>From: {stories[selectedWord.storyIndex]?.titleEn}</p>
+            <button
+              className="explore-link-button"
+              onClick={() => {
+                onOpenStory(selectedWord.storyIndex)
+                setSelectedWord(null)
+              }}
+            >
+              Read this story →
+            </button>
           </div>
         </div>
       )}
 
-      <BottomNav active={activeTab} onChange={onChangeTab} badges={{ favorites: favoritesCount }} />
+      <BottomNav active={activeTab} onChange={onChangeTab} />
     </div>
   )
 }

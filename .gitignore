@@ -25,3 +25,8 @@ dist-ssr
 
 # Spec + source data files, not deployed with the app
 docs
+
+# Local secrets
+.env
+.env.*
+!.env.example
