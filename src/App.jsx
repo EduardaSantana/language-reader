@@ -3,6 +3,7 @@ import storiesJa from './data/stories.json'
 import storiesDe from './data/stories_de.json'
 import { mergeStorySets } from './lib/data'
 import ReadingScreen from './components/ReadingScreen'
+import CompanionOverlay from './components/CompanionOverlay'
 import { getUnseenSavedWords, getActiveLanguages, setActiveLanguages, getActiveLevels, setActiveLevels } from './lib/storage'
 import { getAvailableLangs } from './lib/langs'
 import { syncAppBadge } from './lib/badge'
@@ -78,8 +79,9 @@ function App() {
     })
   }
 
+  let screen
   if (tab === 'collection') {
-    return (
+    screen = (
       <Suspense fallback={null}>
         <CollectionScreen
           stories={allStories}
@@ -90,26 +92,20 @@ function App() {
         />
       </Suspense>
     )
-  }
-
-  if (tab === 'explore') {
-    return (
+  } else if (tab === 'explore') {
+    screen = (
       <Suspense fallback={null}>
         <ExploreScreen stories={allStories} wordSeed={exploreWordSeed} activeTab={tab} onChangeTab={setTab} />
       </Suspense>
     )
-  }
-
-  if (tab === 'games') {
-    return (
+  } else if (tab === 'games') {
+    screen = (
       <Suspense fallback={null}>
         <GamesScreen stories={allStories} activeLanguages={activeLanguages} activeTab={tab} onChangeTab={setTab} />
       </Suspense>
     )
-  }
-
-  if (tab === 'profile') {
-    return (
+  } else if (tab === 'profile') {
+    screen = (
       <Suspense fallback={null}>
         <ProfileScreen
           allStories={allStories}
@@ -122,16 +118,23 @@ function App() {
         />
       </Suspense>
     )
+  } else {
+    screen = (
+      <ReadingScreen
+        stories={feedStories}
+        jumpToIndex={jumpToIndex}
+        onConsumedJump={() => setJumpToIndex(null)}
+        activeTab={tab}
+        onChangeTab={setTab}
+      />
+    )
   }
 
   return (
-    <ReadingScreen
-      stories={feedStories}
-      jumpToIndex={jumpToIndex}
-      onConsumedJump={() => setJumpToIndex(null)}
-      activeTab={tab}
-      onChangeTab={setTab}
-    />
+    <>
+      {screen}
+      <CompanionOverlay langs={allLangs} />
+    </>
   )
 }
 

@@ -14,9 +14,8 @@ import {
   setFeedOrder,
 } from '../lib/storage'
 import { syncAppBadge } from '../lib/badge'
-import { matchesQuery } from '../lib/search'
 import StoryCard from './StoryCard'
-import JumpToStoryModal from './JumpToStoryModal'
+import SearchModal from './SearchModal'
 import BottomNav from './BottomNav'
 
 function buildCards(stories, milestoneAlreadySeen) {
@@ -33,10 +32,9 @@ function buildCards(stories, milestoneAlreadySeen) {
   return cards
 }
 
-function buildFilteredCards(stories, favoritesOnly, favorites, query) {
+function buildFavoritesCards(stories, favorites) {
   return stories
-    .filter((story) => !favoritesOnly || favorites.has(story.idx))
-    .filter((story) => matchesQuery(story, query))
+    .filter((story) => favorites.has(story.idx))
     .map((story) => ({
       key: `story-${story.idx}`,
       type: 'story',
@@ -58,36 +56,41 @@ function shuffleArray(arr) {
 
 export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, activeTab, onChangeTab }) {
   const [showFurigana, setShowFurigana] = useState(true)
-  const [jumpOpen, setJumpOpen] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
   const [unseenCount, setUnseenCount] = useState(() => getUnseenSavedWords().size)
   const [favorites, setFavorites] = useState(() => getFavoriteStories())
   const [activeIndex, setActiveIndex] = useState(-1)
-  const [searchOpen, setSearchOpen] = useState(false)
-  const [searchQuery, setSearchQuery] = useState('')
   const [favoritesOnly, setFavoritesOnly] = useState(false)
   const [feedOrder, setFeedOrderState] = useState(() => getFeedOrder())
   const [shuffledStories, setShuffledStories] = useState(() =>
     getFeedOrder() === 'shuffled' ? shuffleArray(stories) : null,
   )
 
-  const isFiltering = favoritesOnly || searchQuery.trim() !== ''
+  const isFiltering = favoritesOnly
   const orderedStories = feedOrder === 'shuffled' && shuffledStories ? shuffledStories : stories
-
-  function toggleFeedOrder() {
-    const next = feedOrder === 'shuffled' ? 'sequential' : 'shuffled'
-    setFeedOrderState(next)
-    setFeedOrder(next)
-    setShuffledStories(next === 'shuffled' ? shuffleArray(stories) : null)
-  }
-
-  const cards = useMemo(() => {
-    if (isFiltering) return buildFilteredCards(orderedStories, favoritesOnly, favorites, searchQuery)
-    return buildCards(orderedStories, hasSeenLoopMilestone())
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [orderedStories, isFiltering, favoritesOnly, favorites, searchQuery])
 
   const containerRef = useRef(null)
   const cardRefs = useRef([])
+
+  function handleShuffleTap() {
+    setShuffledStories(shuffleArray(stories))
+    setFeedOrderState('shuffled')
+    setFeedOrder('shuffled')
+    containerRef.current?.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  function handleResetSequential() {
+    setShuffledStories(null)
+    setFeedOrderState('sequential')
+    setFeedOrder('sequential')
+    containerRef.current?.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const cards = useMemo(() => {
+    if (isFiltering) return buildFavoritesCards(orderedStories, favorites)
+    return buildCards(orderedStories, hasSeenLoopMilestone())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [orderedStories, isFiltering, favorites])
 
   useLayoutEffect(() => {
     const targetStoryIndex = jumpToIndex ?? getReadingPosition().storyIndex
@@ -102,7 +105,7 @@ export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, ac
 
   useEffect(() => {
     if (isFiltering) containerRef.current?.scrollTo({ top: 0, behavior: 'instant' })
-  }, [isFiltering, favoritesOnly, searchQuery])
+  }, [isFiltering])
 
   useEffect(() => {
     // Any real scroll interaction that day is enough — no separate
@@ -152,8 +155,10 @@ export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, ac
     const targetIndex = cards.findIndex(
       (c) => c.type === 'story' && c.storyIndex === storyIndex && c.key !== 'wrap-0',
     )
-    cardRefs.current[targetIndex]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    setJumpOpen(false)
+    if (targetIndex >= 0) {
+      cardRefs.current[targetIndex]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+    setSearchOpen(false)
   }
 
   function handleToggleFavorite(storyIndex) {
@@ -178,29 +183,24 @@ export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, ac
       <div className="top-bar">
         <button
           className="icon-button-bar"
-          onClick={() => setSearchOpen((v) => !v)}
+          onClick={() => setSearchOpen(true)}
           aria-label="Search stories"
-          aria-pressed={searchOpen}
         >
           🔍
         </button>
-        {searchOpen && (
-          <input
-            className="search-input"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search stories or vocab…"
-            autoFocus
-          />
-        )}
         <button
           className={`icon-button-bar shuffle-toggle ${feedOrder === 'shuffled' ? 'active' : ''}`}
-          onClick={toggleFeedOrder}
+          onClick={handleShuffleTap}
           aria-label="Shuffle feed order"
           aria-pressed={feedOrder === 'shuffled'}
         >
           🔀
         </button>
+        {feedOrder === 'shuffled' && (
+          <button className="icon-button-bar" onClick={handleResetSequential} aria-label="Back to sequential order">
+            ↺
+          </button>
+        )}
         <button
           className={`icon-button-bar favorites-filter-toggle ${favoritesOnly ? 'active' : ''}`}
           onClick={() => setFavoritesOnly((v) => !v)}
@@ -213,9 +213,7 @@ export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, ac
 
       <div className="feed-container" ref={containerRef}>
         {cards.length === 0 && (
-          <div className="empty-results">
-            {favoritesOnly ? 'No favorites yet — tap the heart on a story to save it here.' : 'No stories found — try a different search.'}
-          </div>
+          <div className="empty-results">No favorites yet — tap the heart on a story to save it here.</div>
         )}
         {cards.map((card, i) => {
           if (card.type === 'milestone') {
@@ -251,9 +249,6 @@ export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, ac
       </div>
 
       <div className="floating-controls">
-        <button className="floating-button" onClick={() => setJumpOpen(true)} aria-label="Jump to story">
-          <span className="floating-button-icon">📑</span>
-        </button>
         <button
           className="floating-button"
           onClick={() => setShowFurigana((v) => !v)}
@@ -264,15 +259,11 @@ export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, ac
         </button>
       </div>
 
-      {jumpOpen && (
-        <JumpToStoryModal stories={stories} onSelect={handleJump} onClose={() => setJumpOpen(false)} />
+      {searchOpen && (
+        <SearchModal stories={stories} onSelect={handleJump} onClose={() => setSearchOpen(false)} />
       )}
 
-      <BottomNav
-        active={activeTab}
-        onChange={onChangeTab}
-        badges={{ collection: unseenCount }}
-      />
+      <BottomNav active={activeTab} onChange={onChangeTab} badges={{ collection: unseenCount }} />
     </div>
   )
 }

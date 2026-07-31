@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react'
 import { getLevelsPerLang, levelMeta } from '../lib/levels'
 import { getAvailableLangs, langMeta } from '../lib/langs'
 import { clearAllProgress } from '../lib/storage'
-import CompanionChat from './CompanionChat'
 import BottomNav from './BottomNav'
 
 export default function ProfileScreen({
@@ -67,11 +66,6 @@ export default function ProfileScreen({
       </div>
 
       <div className="profile-section">
-        <div className="profile-section-title">Companion</div>
-        <CompanionChat langs={allLangs} />
-      </div>
-
-      <div className="profile-section">
         <div className="profile-section-title">Data</div>
         <button className="delete-progress-button" onClick={() => setConfirmingDelete(true)}>
           Delete all progress
@@ -85,8 +79,8 @@ export default function ProfileScreen({
               <h2>Delete all progress?</h2>
             </div>
             <p>
-              This clears your reading position, saved words, days read, favorites, and opened
-              stories. This can't be undone.
+              This clears your reading position, saved words, days read, favorites, opened
+              stories, and your Explore web. This can't be undone.
             </p>
             <div className="modal-actions">
               <button className="icon-button" onClick={() => setConfirmingDelete(false)}>

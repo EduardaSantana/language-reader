@@ -114,8 +114,17 @@ async function callGemini(apiKey, systemPrompt, history, userTurn) {
   return text.trim()
 }
 
+async function deleteConversation(sql, deviceId, lang) {
+  const existing = await sql`
+    select id from companion_sessions where device_id = ${deviceId} and lang = ${lang} limit 1
+  `
+  if (existing.length === 0) return
+  await sql`delete from companion_messages where session_id = ${existing[0].id}`
+  await sql`delete from companion_sessions where id = ${existing[0].id}`
+}
+
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
+  if (req.method !== 'POST' && req.method !== 'DELETE') {
     res.status(405).json({ error: 'Method not allowed' })
     return
   }
@@ -126,8 +135,20 @@ export default async function handler(req, res) {
     return
   }
 
-  if (!process.env.DATABASE_URL || !process.env.GEMINI_API_KEY) {
+  if (!process.env.DATABASE_URL || (req.method === 'POST' && !process.env.GEMINI_API_KEY)) {
     res.status(503).json({ error: 'Companion backend not configured' })
+    return
+  }
+
+  if (req.method === 'DELETE') {
+    try {
+      const sql = neon(process.env.DATABASE_URL)
+      await ensureSchema(sql)
+      await deleteConversation(sql, deviceId, lang)
+      res.status(200).json({ ok: true })
+    } catch (err) {
+      res.status(500).json({ error: err.message ?? 'Delete failed' })
+    }
     return
   }
 
@@ -147,14 +168,19 @@ export default async function handler(req, res) {
     const userTurn = contextToUserTurn(message, context)
     const reply = await callGemini(process.env.GEMINI_API_KEY, systemPromptFor(lang), history, userTurn)
 
-    await sql`
-      insert into companion_messages (session_id, role, content, context)
-      values (${sessionId}, 'user', ${userTurn}, ${context ? JSON.stringify(context) : null})
-    `
-    await sql`
-      insert into companion_messages (session_id, role, content, context)
-      values (${sessionId}, 'companion', ${reply}, null)
-    `
+    // The session may have been deleted (via DELETE) while Gemini was
+    // still responding — don't resurrect it with an orphaned insert.
+    const stillExists = await sql`select 1 from companion_sessions where id = ${sessionId} limit 1`
+    if (stillExists.length > 0) {
+      await sql`
+        insert into companion_messages (session_id, role, content, context)
+        values (${sessionId}, 'user', ${userTurn}, ${context ? JSON.stringify(context) : null})
+      `
+      await sql`
+        insert into companion_messages (session_id, role, content, context)
+        values (${sessionId}, 'companion', ${reply}, null)
+      `
+    }
 
     res.status(200).json({ reply })
   } catch (err) {

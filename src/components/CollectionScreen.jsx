@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { getSavedWords, clearUnseenSavedWords, addSavedWord, isWordSaved } from '../lib/storage'
-import { buildDictionary, matchesDictionaryQuery } from '../lib/vocabIndex'
+import { buildDictionary, matchesDictionaryQuery, sortDictionary, buildLetterIndex } from '../lib/vocabIndex'
 import { getWordImage } from '../lib/images'
 import { syncAppBadge } from '../lib/badge'
 import BottomNav from './BottomNav'
+
+const PAGE_SIZE = 40
 
 function WordImage({ entry, fallbackEmoji }) {
   const [url, setUrl] = useState(null)
@@ -63,9 +65,25 @@ export default function CollectionScreen({ stories, activeTab, onChangeTab, onEx
   const [selectedWord, setSelectedWord] = useState(null)
   const [mode, setMode] = useState('saved')
   const [dictQuery, setDictQuery] = useState('')
+  const [dictPage, setDictPage] = useState(0)
 
-  const dictionary = buildDictionary(stories)
-  const filteredDictionary = dictionary.filter((entry) => matchesDictionaryQuery(entry, dictQuery))
+  const dictionary = useMemo(() => sortDictionary(buildDictionary(stories)), [stories])
+  const filteredDictionary = useMemo(
+    () => dictionary.filter((entry) => matchesDictionaryQuery(entry, dictQuery)),
+    [dictionary, dictQuery],
+  )
+  const letterIndex = useMemo(() => buildLetterIndex(filteredDictionary), [filteredDictionary])
+  const totalPages = Math.max(1, Math.ceil(filteredDictionary.length / PAGE_SIZE))
+  const pageEntries = filteredDictionary.slice(dictPage * PAGE_SIZE, dictPage * PAGE_SIZE + PAGE_SIZE)
+
+  function handleDictQueryChange(value) {
+    setDictQuery(value)
+    setDictPage(0)
+  }
+
+  function jumpToLetter(firstIndex) {
+    setDictPage(Math.floor(firstIndex / PAGE_SIZE))
+  }
 
   useEffect(() => {
     clearUnseenSavedWords()
@@ -120,14 +138,43 @@ export default function CollectionScreen({ stories, activeTab, onChangeTab, onEx
           <input
             className="search-input dictionary-search"
             value={dictQuery}
-            onChange={(e) => setDictQuery(e.target.value)}
+            onChange={(e) => handleDictQueryChange(e.target.value)}
             placeholder="Search the dictionary…"
           />
-          <ul className="story-list dictionary-list">
-            {filteredDictionary.map((entry) => (
-              <DictionaryRow key={`${entry.lang}:${entry.word}`} entry={entry} onSave={handleSaveFromDictionary} />
+
+          <div className="letter-index">
+            {letterIndex.map(({ label, lang, firstIndex }) => (
+              <button key={`${lang}-${label}`} className="letter-index-button" onClick={() => jumpToLetter(firstIndex)}>
+                {label}
+              </button>
             ))}
-          </ul>
+          </div>
+
+          {filteredDictionary.length === 0 ? (
+            <p className="favorites-empty">No matching words.</p>
+          ) : (
+            <>
+              <ul className="story-list dictionary-list">
+                {pageEntries.map((entry) => (
+                  <DictionaryRow key={`${entry.lang}:${entry.word}`} entry={entry} onSave={handleSaveFromDictionary} />
+                ))}
+              </ul>
+              <div className="dictionary-pagination">
+                <button disabled={dictPage === 0} onClick={() => setDictPage((p) => Math.max(0, p - 1))}>
+                  ← Previous
+                </button>
+                <span className="dictionary-page-label">
+                  Page {dictPage + 1} / {totalPages}
+                </span>
+                <button
+                  disabled={dictPage >= totalPages - 1}
+                  onClick={() => setDictPage((p) => Math.min(totalPages - 1, p + 1))}
+                >
+                  Next →
+                </button>
+              </div>
+            </>
+          )}
         </>
       )}
 

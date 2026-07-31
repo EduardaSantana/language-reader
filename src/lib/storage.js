@@ -11,6 +11,7 @@ const KEYS = {
   imageCache: 'image_cache',
   feedOrder: 'feed_order',
   companionDeviceId: 'companion_device_id',
+  exploreWeb: 'explore_web',
 }
 
 const PROGRESS_KEYS = [
@@ -20,6 +21,7 @@ const PROGRESS_KEYS = [
   KEYS.favoriteStories,
   KEYS.openedStories,
   KEYS.unseenSavedWords,
+  KEYS.exploreWeb,
 ]
 
 function readJSON(key, fallback) {
@@ -180,4 +182,18 @@ export function getCompanionDeviceId() {
     writeJSON(KEYS.companionDeviceId, id)
   }
   return id
+}
+
+export function getExploreWeb() {
+  return readJSON(KEYS.exploreWeb, [])
+}
+
+export function addExploreNodes(newNodes) {
+  const current = getExploreWeb()
+  const existingIds = new Set(current.map((n) => n.id))
+  const toAdd = newNodes.filter((n) => !existingIds.has(n.id))
+  if (toAdd.length === 0) return current
+  const updated = [...current, ...toAdd]
+  writeJSON(KEYS.exploreWeb, updated)
+  return updated
 }

@@ -32,3 +32,22 @@ export function reactCompanion(setLine, lang, context, fallbackLines) {
     if (reply) setLine(reply)
   })
 }
+
+export async function deleteCompanionConversation(lang) {
+  const deviceId = getCompanionDeviceId()
+  const controller = new AbortController()
+  const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS)
+  try {
+    const res = await fetch('/api/companion-chat', {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ deviceId, lang }),
+      signal: controller.signal,
+    })
+    return res.ok
+  } catch {
+    return false
+  } finally {
+    clearTimeout(timeout)
+  }
+}
