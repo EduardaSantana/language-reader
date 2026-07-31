@@ -9,6 +9,8 @@ const KEYS = {
   activeLanguages: 'active_languages',
   activeLevels: 'active_levels',
   imageCache: 'image_cache',
+  feedOrder: 'feed_order',
+  companionDeviceId: 'companion_device_id',
 }
 
 const PROGRESS_KEYS = [
@@ -161,4 +163,21 @@ export function cacheImage(query, url) {
 
 export function clearAllProgress() {
   for (const key of PROGRESS_KEYS) localStorage.removeItem(key)
+}
+
+export function getFeedOrder() {
+  return readJSON(KEYS.feedOrder, 'sequential')
+}
+
+export function setFeedOrder(order) {
+  writeJSON(KEYS.feedOrder, order)
+}
+
+export function getCompanionDeviceId() {
+  let id = readJSON(KEYS.companionDeviceId, null)
+  if (!id) {
+    id = crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`
+    writeJSON(KEYS.companionDeviceId, id)
+  }
+  return id
 }

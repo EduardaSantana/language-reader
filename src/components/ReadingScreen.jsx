@@ -10,6 +10,8 @@ import {
   getUnseenSavedWords,
   addSavedWord,
   markStoryOpened,
+  getFeedOrder,
+  setFeedOrder,
 } from '../lib/storage'
 import { syncAppBadge } from '../lib/badge'
 import { matchesQuery } from '../lib/search'
@@ -45,6 +47,15 @@ function buildFilteredCards(stories, favoritesOnly, favorites, query) {
 
 const ACTIVE_THRESHOLD = 0.6
 
+function shuffleArray(arr) {
+  const copy = [...arr]
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[copy[i], copy[j]] = [copy[j], copy[i]]
+  }
+  return copy
+}
+
 export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, activeTab, onChangeTab }) {
   const [showFurigana, setShowFurigana] = useState(true)
   const [jumpOpen, setJumpOpen] = useState(false)
@@ -54,14 +65,26 @@ export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, ac
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [favoritesOnly, setFavoritesOnly] = useState(false)
+  const [feedOrder, setFeedOrderState] = useState(() => getFeedOrder())
+  const [shuffledStories, setShuffledStories] = useState(() =>
+    getFeedOrder() === 'shuffled' ? shuffleArray(stories) : null,
+  )
 
   const isFiltering = favoritesOnly || searchQuery.trim() !== ''
+  const orderedStories = feedOrder === 'shuffled' && shuffledStories ? shuffledStories : stories
+
+  function toggleFeedOrder() {
+    const next = feedOrder === 'shuffled' ? 'sequential' : 'shuffled'
+    setFeedOrderState(next)
+    setFeedOrder(next)
+    setShuffledStories(next === 'shuffled' ? shuffleArray(stories) : null)
+  }
 
   const cards = useMemo(() => {
-    if (isFiltering) return buildFilteredCards(stories, favoritesOnly, favorites, searchQuery)
-    return buildCards(stories, hasSeenLoopMilestone())
+    if (isFiltering) return buildFilteredCards(orderedStories, favoritesOnly, favorites, searchQuery)
+    return buildCards(orderedStories, hasSeenLoopMilestone())
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [stories, isFiltering, favoritesOnly, favorites, searchQuery])
+  }, [orderedStories, isFiltering, favoritesOnly, favorites, searchQuery])
 
   const containerRef = useRef(null)
   const cardRefs = useRef([])
@@ -171,6 +194,14 @@ export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, ac
           />
         )}
         <button
+          className={`icon-button-bar shuffle-toggle ${feedOrder === 'shuffled' ? 'active' : ''}`}
+          onClick={toggleFeedOrder}
+          aria-label="Shuffle feed order"
+          aria-pressed={feedOrder === 'shuffled'}
+        >
+          🔀
+        </button>
+        <button
           className={`icon-button-bar favorites-filter-toggle ${favoritesOnly ? 'active' : ''}`}
           onClick={() => setFavoritesOnly((v) => !v)}
           aria-label="Show favorites only"
@@ -221,7 +252,7 @@ export default function ReadingScreen({ stories, jumpToIndex, onConsumedJump, ac
 
       <div className="floating-controls">
         <button className="floating-button" onClick={() => setJumpOpen(true)} aria-label="Jump to story">
-          <span className="floating-button-icon">🔀</span>
+          <span className="floating-button-icon">📑</span>
         </button>
         <button
           className="floating-button"

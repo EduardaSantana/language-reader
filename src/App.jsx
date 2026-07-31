@@ -16,7 +16,7 @@ const ProfileScreen = lazy(() => import('./components/ProfileScreen'))
 function App() {
   const [tab, setTab] = useState('feed')
   const [jumpToIndex, setJumpToIndex] = useState(null)
-  const [exploreCharSeed, setExploreCharSeed] = useState(null)
+  const [exploreWordSeed, setExploreWordSeed] = useState(null)
 
   const allStories = useMemo(
     () =>
@@ -53,8 +53,8 @@ function App() {
     setTab('feed')
   }
 
-  function openExploreForChar(char) {
-    setExploreCharSeed(char)
+  function openExploreForWord(lang, word) {
+    setExploreWordSeed({ lang, word })
     setTab('explore')
   }
 
@@ -85,7 +85,7 @@ function App() {
           stories={allStories}
           activeTab={tab}
           onChangeTab={setTab}
-          onExploreChar={openExploreForChar}
+          onExploreWord={openExploreForWord}
           onOpenStory={openStoryFromElsewhere}
         />
       </Suspense>
@@ -95,7 +95,7 @@ function App() {
   if (tab === 'explore') {
     return (
       <Suspense fallback={null}>
-        <ExploreScreen stories={allStories} charSeed={exploreCharSeed} activeTab={tab} onChangeTab={setTab} />
+        <ExploreScreen stories={allStories} wordSeed={exploreWordSeed} activeTab={tab} onChangeTab={setTab} />
       </Suspense>
     )
   }
@@ -103,7 +103,7 @@ function App() {
   if (tab === 'games') {
     return (
       <Suspense fallback={null}>
-        <GamesScreen stories={allStories} activeTab={tab} onChangeTab={setTab} />
+        <GamesScreen stories={allStories} activeLanguages={activeLanguages} activeTab={tab} onChangeTab={setTab} />
       </Suspense>
     )
   }

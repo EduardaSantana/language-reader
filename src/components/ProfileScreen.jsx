@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { getLevelsPerLang, levelMeta } from '../lib/levels'
 import { getAvailableLangs, langMeta } from '../lib/langs'
 import { clearAllProgress } from '../lib/storage'
+import CompanionChat from './CompanionChat'
 import BottomNav from './BottomNav'
 
 export default function ProfileScreen({
@@ -63,6 +64,11 @@ export default function ProfileScreen({
             </div>
           )
         })}
+      </div>
+
+      <div className="profile-section">
+        <div className="profile-section-title">Companion</div>
+        <CompanionChat langs={allLangs} />
       </div>
 
       <div className="profile-section">

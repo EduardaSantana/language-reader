@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { levelMeta } from '../lib/levels'
 import { langMeta } from '../lib/langs'
 import { isWordSaved } from '../lib/storage'
@@ -35,24 +35,16 @@ export default function StoryCard({
     if (!isActive) setRevealed(false)
   }, [isActive])
 
-  const vocabByWord = useMemo(() => {
-    const map = new Map()
-    for (const v of story.vocab) map.set(v.word, v)
-    return map
-  }, [story])
-
-  function handleWordTap(text) {
-    const trimmed = text.trim()
-    const match = vocabByWord.get(trimmed)
-    if (match) {
-      setGloss(match)
-      setSaved(isWordSaved(story.lang, match.word))
-    }
+  function handleSegmentTap(seg) {
+    const trimmed = seg.text.trim()
+    if (!trimmed || (!seg.reading && !seg.gloss)) return
+    setGloss(seg)
+    setSaved(isWordSaved(story.lang, seg.text))
   }
 
   function handleSave(e) {
     e.stopPropagation()
-    onSaveWord(gloss)
+    onSaveWord({ word: gloss.text, reading: gloss.reading, english: gloss.gloss })
     setSaved(true)
   }
 
@@ -95,10 +87,10 @@ export default function StoryCard({
               {sentence.map((seg, i) => (
                 <span
                   key={i}
-                  className="segment"
+                  className={`segment ${seg.gloss || seg.reading ? 'segment-taggable' : ''}`}
                   onClick={(e) => {
                     e.stopPropagation()
-                    handleWordTap(seg.text)
+                    handleSegmentTap(seg)
                   }}
                 >
                   <Segment seg={seg} showFurigana={showFurigana} />
@@ -112,13 +104,19 @@ export default function StoryCard({
       {gloss && (
         <div className="gloss-panel" onClick={(e) => e.stopPropagation()}>
           <div className="gloss-text">
-            <strong>{gloss.word}</strong>
+            <strong>{gloss.text}</strong>
             {gloss.reading && <span className="gloss-reading"> ({gloss.reading})</span>}
-            <span className="gloss-english"> — {gloss.english}</span>
+            {gloss.gloss ? (
+              <span className="gloss-english"> — {gloss.gloss}</span>
+            ) : (
+              <span className="gloss-english gloss-unknown"> — no meaning on file yet</span>
+            )}
           </div>
-          <button className={`save-word-button ${saved ? 'saved' : ''}`} onClick={handleSave} disabled={saved}>
-            {saved ? '✓ Saved' : '+ Save'}
-          </button>
+          {gloss.gloss && (
+            <button className={`save-word-button ${saved ? 'saved' : ''}`} onClick={handleSave} disabled={saved}>
+              {saved ? '✓ Saved' : '+ Save'}
+            </button>
+          )}
           <button className="gloss-dismiss" onClick={() => setGloss(null)} aria-label="Close">
             ✕
           </button>

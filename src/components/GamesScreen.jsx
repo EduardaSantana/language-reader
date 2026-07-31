@@ -1,97 +1,69 @@
 import { useMemo, useState } from 'react'
-import { getSavedWords, getUnseenSavedWords } from '../lib/storage'
+import { getSavedWords, getUnseenSavedWords, getOpenedStories } from '../lib/storage'
 import { buildDictionary } from '../lib/vocabIndex'
-import { pickRound, COMPANION_CORRECT_LINES, COMPANION_WRONG_LINES, randomCompanionLine } from '../lib/games'
+import { langMeta } from '../lib/langs'
+import GuessWordGame from './GuessWordGame'
+import MatchingPairsGame from './MatchingPairsGame'
+import SentenceOrderGame from './SentenceOrderGame'
 import BottomNav from './BottomNav'
 
-const ADVANCE_DELAY_MS = 1100
+const GAMES = [
+  { key: 'guess', title: 'Guess the word', icon: '🎯', description: 'Pick the right word for the meaning shown.' },
+  { key: 'match', title: 'Matching pairs', icon: '🃏', description: 'Flip cards to match a word to its meaning.' },
+  { key: 'order', title: 'Sentence order', icon: '🧩', description: 'Rebuild a sentence from a story you\'ve read.' },
+]
 
-export default function GamesScreen({ stories, activeTab, onChangeTab }) {
+export default function GamesScreen({ stories, activeLanguages, activeTab, onChangeTab }) {
   const savedWords = useMemo(() => getSavedWords(), [])
   const dictionary = useMemo(() => buildDictionary(stories), [stories])
+  const openedIndices = useMemo(() => getOpenedStories(), [])
   const unseenCount = useMemo(() => getUnseenSavedWords().size, [])
   const pool = savedWords.length >= 4 ? savedWords : dictionary
 
-  const [round, setRound] = useState(() => pickRound(pool))
-  const [streak, setStreak] = useState(0)
-  const [status, setStatus] = useState('playing') // 'playing' | 'correct' | 'wrong'
-  const [pickedWord, setPickedWord] = useState(null)
-  const [companionLine, setCompanionLine] = useState(null)
-
-  function nextRound() {
-    setRound(pickRound(pool))
-    setStatus('playing')
-    setPickedWord(null)
-    setCompanionLine(null)
-  }
-
-  function handleChoice(choice) {
-    if (status !== 'playing') return
-    setPickedWord(choice.word)
-    if (choice.word === round.target.word) {
-      setStatus('correct')
-      setStreak((s) => s + 1)
-      setCompanionLine(randomCompanionLine(COMPANION_CORRECT_LINES))
-    } else {
-      setStatus('wrong')
-      setStreak(0)
-      setCompanionLine(randomCompanionLine(COMPANION_WRONG_LINES))
-    }
-    setTimeout(nextRound, ADVANCE_DELAY_MS)
-  }
-
-  if (!round) {
-    return (
-      <div className="screen games-screen">
-        <header className="collection-header">
-          <h1>Games</h1>
-        </header>
-        <p className="favorites-empty">Read a few stories first to build up a word pool to play with.</p>
-        <BottomNav active={activeTab} onChange={onChangeTab} />
-      </div>
-    )
-  }
-
-  const promptStory = stories[round.target.storyIndex]
+  const langs = activeLanguages?.length ? activeLanguages : ['ja']
+  const [lang, setLang] = useState(langs[0])
+  const [activeGame, setActiveGame] = useState(null)
 
   return (
     <div className="screen games-screen">
       <header className="collection-header">
         <h1>Games</h1>
-        <div className="streak-counter">🔥 {streak}</div>
+        {activeGame && (
+          <button className="icon-button games-back-button" onClick={() => setActiveGame(null)} aria-label="Back to games">
+            ← All games
+          </button>
+        )}
       </header>
 
-      <div className="game-card">
-        <div className="game-prompt-emoji">{promptStory?.emoji || '📗'}</div>
-        <div className="game-instruction">What's the word for…</div>
-        <div className="game-prompt-english">{round.target.english}</div>
-
-        <div className="game-choices">
-          {round.choices.map((choice) => {
-            const isPicked = pickedWord === choice.word
-            const isTarget = choice.word === round.target.word
-            let cls = 'game-choice-button'
-            if (status !== 'playing' && isTarget) cls += ' game-choice-correct'
-            else if (status === 'wrong' && isPicked) cls += ' game-choice-wrong'
-            return (
-              <button
-                key={`${choice.lang}:${choice.word}`}
-                className={cls}
-                disabled={status !== 'playing'}
-                onClick={() => handleChoice(choice)}
-              >
-                {choice.word}
-              </button>
-            )
-          })}
-        </div>
-
-        {companionLine && (
-          <div className={`companion-line companion-line-${status}`} aria-live="polite">
-            {companionLine}
-          </div>
-        )}
+      <div className="game-lang-select">
+        {langs.map((l) => (
+          <button
+            key={l}
+            className={`level-pill-button ${lang === l ? 'active' : ''}`}
+            onClick={() => setLang(l)}
+          >
+            {langMeta(l).avatar} {langMeta(l).label}
+          </button>
+        ))}
       </div>
+
+      {!activeGame ? (
+        <div className="games-hub">
+          {GAMES.map((g) => (
+            <button key={g.key} className="game-hub-card" onClick={() => setActiveGame(g.key)}>
+              <div className="game-hub-icon">{g.icon}</div>
+              <div className="game-hub-title">{g.title}</div>
+              <div className="game-hub-description">{g.description}</div>
+            </button>
+          ))}
+        </div>
+      ) : activeGame === 'guess' ? (
+        <GuessWordGame key={lang} pool={pool} stories={stories} lang={lang} />
+      ) : activeGame === 'match' ? (
+        <MatchingPairsGame key={lang} pool={pool} lang={lang} />
+      ) : (
+        <SentenceOrderGame key={lang} stories={stories} openedIndices={openedIndices} lang={lang} />
+      )}
 
       <BottomNav active={activeTab} onChange={onChangeTab} badges={{ collection: unseenCount }} />
     </div>

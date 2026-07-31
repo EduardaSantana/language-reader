@@ -11,6 +11,7 @@ function normalizeStory(raw, defaultLang) {
       sentence.map((seg) => ({
         text: seg.text,
         reading: seg.furigana ?? seg.annotation ?? null,
+        gloss: seg.gloss ?? null,
       })),
     ),
     vocab: raw.vocab.map((v) => ({

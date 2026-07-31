@@ -84,16 +84,9 @@ export function buildExploreGraph(stories, grammarPoints) {
     return type === 'grammar' ? getGrammarNode(key) : getVocabNode(key)
   }
 
-  function findWordContainingChar(char) {
-    for (const word of vocabFirstSeen.keys()) {
-      if (word.includes(char)) return word
-    }
-    return null
-  }
-
   return {
     getNode,
-    findWordContainingChar,
+    hasVocabWord: (word) => vocabFirstSeen.has(word),
     startingVocab: [...vocabFirstSeen.keys()].slice(0, 24),
     grammarPatterns: grammarPoints.map((g) => g.pattern),
   }

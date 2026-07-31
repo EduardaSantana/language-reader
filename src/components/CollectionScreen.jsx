@@ -1,6 +1,5 @@
-import { useEffect, useMemo, useState } from 'react'
-import { getAllKanji, getUnlockedKanjiFromSavedWords } from '../lib/kanji'
-import { getSavedWords, getDaysRead, clearUnseenSavedWords, addSavedWord, isWordSaved } from '../lib/storage'
+import { useEffect, useState } from 'react'
+import { getSavedWords, clearUnseenSavedWords, addSavedWord, isWordSaved } from '../lib/storage'
 import { buildDictionary, matchesDictionaryQuery } from '../lib/vocabIndex'
 import { getWordImage } from '../lib/images'
 import { syncAppBadge } from '../lib/badge'
@@ -59,28 +58,19 @@ function DictionaryRow({ entry, onSave }) {
   )
 }
 
-export default function CollectionScreen({ stories, activeTab, onChangeTab, onExploreChar, onOpenStory }) {
-  const allKanji = useMemo(() => getAllKanji(stories), [stories])
+export default function CollectionScreen({ stories, activeTab, onChangeTab, onExploreWord, onOpenStory }) {
   const [savedWords, setSavedWords] = useState(() => getSavedWords())
-  const unlocked = useMemo(() => getUnlockedKanjiFromSavedWords(savedWords), [savedWords])
-  const daysRead = useMemo(() => getDaysRead(), [])
-  const [selectedKanji, setSelectedKanji] = useState(null)
   const [selectedWord, setSelectedWord] = useState(null)
   const [mode, setMode] = useState('saved')
   const [dictQuery, setDictQuery] = useState('')
 
-  const dictionary = useMemo(() => buildDictionary(stories), [stories])
-  const filteredDictionary = useMemo(
-    () => dictionary.filter((entry) => matchesDictionaryQuery(entry, dictQuery)),
-    [dictionary, dictQuery],
-  )
+  const dictionary = buildDictionary(stories)
+  const filteredDictionary = dictionary.filter((entry) => matchesDictionaryQuery(entry, dictQuery))
 
   useEffect(() => {
     clearUnseenSavedWords()
     syncAppBadge(0)
   }, [])
-
-  const unlockedCount = allKanji.filter((k) => unlocked.has(k.char)).length
 
   function handleSaveFromDictionary(entry) {
     const updated = addSavedWord({
@@ -98,35 +88,6 @@ export default function CollectionScreen({ stories, activeTab, onChangeTab, onEx
       <header className="collection-header">
         <h1>Collection</h1>
       </header>
-
-      <div className="stats">
-        <div className="stat">
-          <div className="stat-value">{daysRead.count}</div>
-          <div className="stat-label">days read</div>
-        </div>
-        <div className="stat">
-          <div className="stat-value">
-            {unlockedCount} / {allKanji.length}
-          </div>
-          <div className="stat-label">kanji unlocked</div>
-        </div>
-      </div>
-
-      <div className="kanji-grid">
-        {allKanji.map(({ char, sourceStoryIndex }) => {
-          const isUnlocked = unlocked.has(char)
-          return (
-            <button
-              key={char}
-              className={`kanji-tile ${isUnlocked ? 'unlocked' : 'locked'}`}
-              disabled={!isUnlocked}
-              onClick={() => setSelectedKanji({ char, sourceStoryIndex })}
-            >
-              {char}
-            </button>
-          )
-        })}
-      </div>
 
       <div className="collection-mode-toggle">
         <button className={mode === 'saved' ? 'active' : ''} onClick={() => setMode('saved')}>
@@ -170,31 +131,6 @@ export default function CollectionScreen({ stories, activeTab, onChangeTab, onEx
         </>
       )}
 
-      {selectedKanji && (
-        <div className="modal-backdrop" onClick={() => setSelectedKanji(null)}>
-          <div className="modal" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
-              <h2>{selectedKanji.char}</h2>
-              <button className="icon-button" onClick={() => setSelectedKanji(null)} aria-label="Close">
-                ✕
-              </button>
-            </div>
-            <p>First seen in:</p>
-            <p className="story-list-title-ja">{stories[selectedKanji.sourceStoryIndex].titleNative}</p>
-            <p className="story-list-title-en">{stories[selectedKanji.sourceStoryIndex].titleEn}</p>
-            <button
-              className="explore-link-button"
-              onClick={() => {
-                onExploreChar(selectedKanji.char)
-                setSelectedKanji(null)
-              }}
-            >
-              Explore this word →
-            </button>
-          </div>
-        </div>
-      )}
-
       {selectedWord && (
         <div className="modal-backdrop" onClick={() => setSelectedWord(null)}>
           <div className="modal" onClick={(e) => e.stopPropagation()}>
@@ -208,15 +144,26 @@ export default function CollectionScreen({ stories, activeTab, onChangeTab, onEx
             {selectedWord.reading && <p className="story-list-title-en">{selectedWord.reading}</p>}
             <p>{selectedWord.english}</p>
             <p>From: {stories[selectedWord.storyIndex]?.titleEn}</p>
-            <button
-              className="explore-link-button"
-              onClick={() => {
-                onOpenStory(selectedWord.storyIndex)
-                setSelectedWord(null)
-              }}
-            >
-              Read this story →
-            </button>
+            <div className="modal-actions">
+              <button
+                className="icon-button"
+                onClick={() => {
+                  onOpenStory(selectedWord.storyIndex)
+                  setSelectedWord(null)
+                }}
+              >
+                Read this story →
+              </button>
+              <button
+                className="explore-link-button"
+                onClick={() => {
+                  onExploreWord(selectedWord.lang, selectedWord.word)
+                  setSelectedWord(null)
+                }}
+              >
+                Explore this word →
+              </button>
+            </div>
           </div>
         </div>
       )}

@@ -6,12 +6,12 @@ import BottomNav from './BottomNav'
 
 const SWIPE_THRESHOLD = 70
 
-export default function ExploreScreen({ stories, charSeed, activeTab, onChangeTab }) {
+export default function ExploreScreen({ stories, wordSeed, activeTab, onChangeTab }) {
   const graph = useMemo(() => buildExploreGraph(stories, grammarPoints), [stories])
   const unseenCount = useMemo(() => getUnseenSavedWords().size, [])
   const [current, setCurrent] = useState(() => {
-    const seededWord = charSeed ? graph.findWordContainingChar(charSeed) : null
-    return seededWord ? { type: 'vocab', key: seededWord } : { type: 'vocab', key: graph.startingVocab[0] }
+    const seeded = wordSeed?.lang === 'ja' && graph.hasVocabWord(wordSeed.word) ? wordSeed.word : null
+    return seeded ? { type: 'vocab', key: seeded } : { type: 'vocab', key: graph.startingVocab[0] }
   })
   const [dragX, setDragX] = useState(0)
   const [dragging, setDragging] = useState(false)
