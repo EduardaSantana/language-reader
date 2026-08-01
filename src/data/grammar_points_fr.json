@@ -2,6 +2,7 @@
   {
     "id": "fr-gender-01",
     "lang": "fr",
+    "difficulty": 1,
     "title": "Grammatical gender",
     "explanation": "French nouns are masculine or feminine, and the article (le/la, un/une) has to agree.",
     "example_native": "la table, le soleil",
@@ -14,18 +15,26 @@
   {
     "id": "fr-negation-01",
     "lang": "fr",
+    "difficulty": 1,
     "title": "Negation wraps around the verb",
     "explanation": "Standard negation uses two particles, ne before the verb and pas after it — the verb sits inside the negation, not after it.",
     "example_native": "Je ne comprends pas.",
     "example_gloss": "I don't understand.",
     "bridge_lang": "pt",
     "bridge_note": "Portuguese just puts não once before the verb (eu não entendo) — no wrapping. This is one of the real differences, not a shortcut.",
-    "related_game_id": "fr-negation-01",
+    "related_game_id": null,
+    "see_also": [
+      {
+        "lang": "de",
+        "id": "de-verb-second-01"
+      }
+    ],
     "confidence": "first_pass"
   },
   {
     "id": "fr-subjunctive-01",
     "lang": "fr",
+    "difficulty": 3,
     "title": "The subjunctive mood",
     "explanation": "Triggered by doubt, wish, emotion, necessity, and certain conjunctions (bien que, pour que, avant que).",
     "example_native": "Il faut que tu sois à l'heure.",
@@ -38,18 +47,20 @@
   {
     "id": "fr-adjective-position-01",
     "lang": "fr",
+    "difficulty": 2,
     "title": "Certain common adjectives go before the noun",
     "explanation": "A specific, memorizable set (grand, petit, bon, jeune, vieux, beau, nouveau, a few others) front the noun instead of following it.",
     "example_native": "J'ai une petite maison.",
     "example_gloss": "I have a small house.",
     "bridge_lang": "pt",
     "bridge_note": "Portuguese defaults to noun-then-adjective (uma casa pequena), so this is a genuine placement rule, not a free transfer.",
-    "related_game_id": "fr-adjective-01",
+    "related_game_id": null,
     "confidence": "first_pass"
   },
   {
     "id": "fr-adjective-agreement-01",
     "lang": "fr",
+    "difficulty": 1,
     "title": "Adjective agreement",
     "explanation": "French adjectives agree in gender and number with the noun they describe.",
     "example_native": "Il est grand. Elle est grande.",
@@ -62,6 +73,7 @@
   {
     "id": "fr-object-pronouns-01",
     "lang": "fr",
+    "difficulty": 2,
     "title": "Object pronouns generally sit before the conjugated verb",
     "explanation": "Unlike English, French object pronouns come before the verb they attach to, not after it.",
     "example_native": "Je te vois.",
@@ -74,6 +86,7 @@
   {
     "id": "fr-articles-01",
     "lang": "fr",
+    "difficulty": 1,
     "title": "Nouns almost always need an article, even in general statements",
     "explanation": "French uses an article before a noun even when talking about something in general, not just a specific one.",
     "example_native": "J'aime le café.",
@@ -86,6 +99,7 @@
   {
     "id": "fr-plural-liaison-01",
     "lang": "fr",
+    "difficulty": 2,
     "title": "Plural is usually silent on the noun — the article carries it",
     "explanation": "The written -s that marks plural is almost never pronounced, so spoken French tells singular from plural mostly by the article, not the noun's ending.",
     "example_native": "le chat / les chats",
@@ -98,18 +112,20 @@
   {
     "id": "fr-passe-compose-01",
     "lang": "fr",
+    "difficulty": 2,
     "title": "Everyday past tense is built with avoir/être + past participle",
     "explanation": "The passé composé — the tense used for most spoken past-tense statements — is formed with a helper verb (avoir or être) plus the past participle, not a single conjugated past-tense verb form.",
     "example_native": "J'ai mangé une pomme.",
     "example_gloss": "I ate an apple. (literally: I have eaten an apple)",
     "bridge_lang": "pt",
     "bridge_note": "Portuguese has a simple one-word past tense (comi) for exactly this everyday use, so the two-part French construction can feel like overkill for something plain and finished — but in French it's the default, not a special \"have done\" nuance like English's present perfect.",
-    "related_game_id": "fr-passe-compose-01",
+    "related_game_id": null,
     "confidence": "first_pass"
   },
   {
     "id": "fr-y-en-01",
     "lang": "fr",
+    "difficulty": 3,
     "title": "y and en replace whole prepositional phrases with one word",
     "explanation": "The pronouns y (a place, or \"about/to it\") and en (\"of/from it,\" or an unspecified quantity) stand in for an entire preposition + noun phrase, placed before the verb like other object pronouns.",
     "example_native": "J'y vais. / J'en veux.",

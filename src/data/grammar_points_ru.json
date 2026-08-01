@@ -2,6 +2,7 @@
   {
     "id": "ru-case-01",
     "lang": "ru",
+    "difficulty": 3,
     "title": "Six grammatical cases mark a noun's role",
     "explanation": "Russian nouns (and their adjectives) change ending depending on their role in the sentence — nominative, genitive, accusative, dative, instrumental, prepositional.",
     "example_native": "Я вижу книгу.",
@@ -9,11 +10,13 @@
     "bridge_lang": "en",
     "bridge_note": "English marks this only in pronouns (I/me, he/him) — Russian does it on every noun and its adjectives, closer in spirit to German's four cases, just with two more of them.",
     "related_game_id": null,
+    "see_also": [{ "lang": "de", "id": "de-case-01" }],
     "confidence": "first_pass"
   },
   {
     "id": "ru-aspect-01",
     "lang": "ru",
+    "difficulty": 2,
     "title": "Verbs come in aspect pairs",
     "explanation": "Most Russian verbs have two versions — imperfective (ongoing, repeated, or in-progress) and perfective (completed, one-time) — rather than one verb used with different tenses.",
     "example_native": "Я писал письмо. / Я написал письмо.",
@@ -26,6 +29,7 @@
   {
     "id": "ru-no-articles-01",
     "lang": "ru",
+    "difficulty": 1,
     "title": "No words for \"a\" or \"the\"",
     "explanation": "Russian has no articles at all — definiteness is inferred entirely from context and word order.",
     "example_native": "Книга на столе.",
@@ -38,6 +42,7 @@
   {
     "id": "ru-motion-verbs-01",
     "lang": "ru",
+    "difficulty": 2,
     "title": "Separate verbs for one-way vs. back-and-forth motion",
     "explanation": "Verbs of motion like \"go\" split into distinct words depending on whether the movement is a single trip in one direction or repeated/habitual/round-trip.",
     "example_native": "Я иду в школу. / Я хожу в школу.",
@@ -50,6 +55,7 @@
   {
     "id": "ru-gender-01",
     "lang": "ru",
+    "difficulty": 1,
     "title": "Grammatical gender is usually predictable from the noun's ending",
     "explanation": "Nouns are masculine, feminine, or neuter, but unlike French or German, the ending is a fairly reliable clue: consonant endings are usually masculine, -а/-я usually feminine, -о/-е usually neuter.",
     "example_native": "стол (m), книга (f), окно (n)",
@@ -62,6 +68,7 @@
   {
     "id": "ru-word-order-01",
     "lang": "ru",
+    "difficulty": 3,
     "title": "Word order is flexible because case endings carry the grammar",
     "explanation": "Since case endings already show which noun is subject and which is object, word order is free to shift for emphasis rather than being fixed by grammar.",
     "example_native": "Книгу читает Анна. / Анна читает книгу.",

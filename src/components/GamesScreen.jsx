@@ -14,7 +14,7 @@ import CategorySortGame from './CategorySortGame'
 import KanjiBuildGame from './KanjiBuildGame'
 import OnomatopoeiaGame from './OnomatopoeiaGame'
 import CompoundBuilderGame from './CompoundBuilderGame'
-import SentenceBuildGame from './SentenceBuildGame'
+import AlphabetGame from './AlphabetGame'
 import BottomNav from './BottomNav'
 
 function matchesLang(onlyLang, lang) {
@@ -34,11 +34,11 @@ const GAMES = [
   { key: 'onomatopoeia', title: 'Onomatopoeia match', icon: '💫', description: 'Match the sound-word to what it describes.', onlyLang: 'ja' },
   { key: 'compound', title: 'Compound builder', icon: '🧱', description: 'Assemble a German compound from its pieces.', onlyLang: 'de' },
   {
-    key: 'sentence-build',
-    title: 'Sentence build',
-    icon: '🧩',
-    description: 'Tap two tiles to swap them until the word order is right.',
-    onlyLang: ['fr', 'de'],
+    key: 'alphabet',
+    title: 'Alphabet match',
+    icon: '🔤',
+    description: 'Pick the romanization for the letter shown.',
+    onlyLang: ['ja', 'ru'],
   },
 ]
 
@@ -94,10 +94,9 @@ export default function GamesScreen({ stories, activeLanguages, activeTab, onCha
       {!activeGame ? (
         <div className="games-hub">
           {availableGames.map((g) => (
-            <button key={g.key} className="game-hub-card" onClick={() => setActiveGame(g.key)}>
+            <button key={g.key} className="game-hub-card" onClick={() => setActiveGame(g.key)} title={g.description}>
               <div className="game-hub-icon">{g.icon}</div>
               <div className="game-hub-title">{g.title}</div>
-              <div className="game-hub-description">{g.description}</div>
             </button>
           ))}
         </div>
@@ -121,12 +120,8 @@ export default function GamesScreen({ stories, activeLanguages, activeTab, onCha
         <OnomatopoeiaGame />
       ) : activeGame === 'compound' ? (
         <CompoundBuilderGame />
-      ) : activeGame === 'sentence-build' ? (
-        <SentenceBuildGame
-          key={`${lang}-${gameSeed?.gameKey === 'sentence-build' ? gameSeed.puzzleId : 'random'}`}
-          lang={lang}
-          initialPuzzleId={gameSeed?.gameKey === 'sentence-build' ? gameSeed.puzzleId : null}
-        />
+      ) : activeGame === 'alphabet' ? (
+        <AlphabetGame key={lang} lang={lang} />
       ) : null}
 
       <BottomNav active={activeTab} onChange={onChangeTab} badges={{ bookmarks: unseenCount }} />

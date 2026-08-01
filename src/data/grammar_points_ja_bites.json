@@ -2,6 +2,7 @@
   {
     "id": "ja-word-order-01",
     "lang": "ja",
+    "difficulty": 1,
     "title": "Verb-final (SOV) word order",
     "explanation": "The verb comes at the end of the sentence, after the subject and object, instead of in the middle.",
     "example_native": "私はりんごを食べます。",
@@ -14,6 +15,7 @@
   {
     "id": "ja-particles-01",
     "lang": "ja",
+    "difficulty": 1,
     "title": "Particles mark grammatical role instead of word order",
     "explanation": "Small words after each noun (は, が, を, に, で...) show whether it's the topic, subject, object, location, and so on — word order alone doesn't tell you.",
     "example_native": "友達に手紙を書きます。",
@@ -26,6 +28,7 @@
   {
     "id": "ja-verb-no-person-01",
     "lang": "ja",
+    "difficulty": 1,
     "title": "Verbs don't conjugate for person or number",
     "explanation": "The same verb form is used whether the subject is I, you, he, she, we, or they — Japanese verbs only change for tense and politeness level, never for who's doing the action.",
     "example_native": "食べます。",
@@ -38,6 +41,7 @@
   {
     "id": "ja-adjectives-01",
     "lang": "ja",
+    "difficulty": 2,
     "title": "I-adjectives conjugate like verbs",
     "explanation": "One class of adjectives (ending in い) changes form for past tense and negation on its own, without needing a separate \"to be\" verb.",
     "example_native": "高い → 高かった",
@@ -50,6 +54,7 @@
   {
     "id": "ja-topic-marker-01",
     "lang": "ja",
+    "difficulty": 3,
     "title": "は marks the topic, が marks the subject — and they're not the same thing",
     "explanation": "は introduces what the sentence is about; が marks the grammatical subject of the action. A sentence can have a topic that isn't its subject.",
     "example_native": "象は鼻が長い。",
@@ -62,6 +67,7 @@
   {
     "id": "ja-politeness-01",
     "lang": "ja",
+    "difficulty": 2,
     "title": "Politeness is built into the verb form itself",
     "explanation": "The same action is expressed with a different verb ending depending on how formal the situation is — plain form among friends, polite ます form with strangers or in public.",
     "example_native": "食べる (plain) / 食べます (polite)",

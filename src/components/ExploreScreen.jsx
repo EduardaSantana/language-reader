@@ -1,243 +1,417 @@
-import { useEffect, useMemo, useState } from 'react'
-import grammarPoints from '../data/grammar_points_ja.json'
-import { buildExploreGraph } from '../lib/explore'
-import { layoutWeb } from '../lib/exploreLayout'
-import { getExploreWeb, addExploreNodes, clearExploreWeb, getUnseenSavedWords, getSavedWords } from '../lib/storage'
+import { Fragment, useEffect, useMemo, useState } from 'react'
+import { buildExploreGraph, EXPLORE_LANGS, grammarPointsForLang, vocabNodeId } from '../lib/exploreGraph'
+import { buildGrammarPath, buildVocabPath, classifyVocab } from '../lib/explorePaths'
+import { buildDictionary } from '../lib/vocabIndex'
+import {
+  getExploreTrail,
+  setExploreTrail,
+  clearExploreTrail,
+  addSavedWord,
+  isWordSaved,
+  getUnseenSavedWords,
+} from '../lib/storage'
 import { getDigDeeperSuggestions } from '../lib/companion'
+import { langMeta } from '../lib/langs'
 import BottomNav from './BottomNav'
 
-function nodeId(key) {
-  return `ja:${key}`
+const CATEGORIES = [
+  { key: 'grammar', label: 'Grammar' },
+  { key: 'noun', label: 'Nouns' },
+  { key: 'verb', label: 'Verbs' },
+]
+
+function grammarPointToNode(g) {
+  return {
+    id: `${g.lang}:grammar:${g.id}`,
+    lang: g.lang,
+    type: 'grammar',
+    pos: null,
+    title: g.title,
+    reading: null,
+    subtitle: g.explanation,
+    example: { native: g.example_native, gloss: g.example_gloss, source: null },
+    note: g.bridge_note ?? null,
+    relatedGameId: g.related_game_id ?? null,
+    vocabEntry: null,
+    related: [],
+  }
 }
 
-export default function ExploreScreen({ stories, wordSeed, activeTab, onChangeTab }) {
-  const graph = useMemo(() => buildExploreGraph(stories, grammarPoints), [stories])
-  const unseenCount = useMemo(() => getUnseenSavedWords().size, [])
-  const [webNodes, setWebNodes] = useState(() => getExploreWeb())
-  const [selectedId, setSelectedId] = useState(null)
-  const [starterOpen, setStarterOpen] = useState(false)
-  const [confirmingReset, setConfirmingReset] = useState(false)
-  const [diggingDeeper, setDiggingDeeper] = useState(false)
+function vocabEntryToNode(entry) {
+  const pos = classifyVocab(entry)
+  return {
+    id: vocabNodeId(entry.lang, entry.word),
+    lang: entry.lang,
+    type: 'vocab',
+    pos: pos === 'other' ? null : pos,
+    title: entry.word,
+    reading: entry.reading && !/^[mfn]$/i.test(entry.reading.trim()) ? entry.reading : null,
+    subtitle: entry.english,
+    example: null,
+    note: null,
+    relatedGameId: null,
+    vocabEntry: entry,
+    related: [],
+  }
+}
 
-  const savedJaWords = useMemo(
-    () => getSavedWords().filter((w) => w.lang === 'ja' && graph.hasVocabWord(w.word)),
-    [graph],
+function EntryCard({
+  node,
+  stepLabel,
+  showRefs,
+  onNavigate,
+  onSave,
+  saved,
+  onPractice,
+  onDigDeeper,
+  diggingDeeper,
+  onOpenRabbitHole,
+}) {
+  const { avatar, label } = langMeta(node.lang)
+  const posLabel = node.type === 'grammar' ? 'grammar point' : node.pos
+
+  return (
+    <div
+      className={`entry-card ${onOpenRabbitHole ? 'entry-card-clickable' : ''}`}
+      onClick={onOpenRabbitHole}
+      role={onOpenRabbitHole ? 'button' : undefined}
+      tabIndex={onOpenRabbitHole ? 0 : undefined}
+    >
+      <div className="entry-eyebrow">
+        <span className={`lang-tag lang-tag-${node.lang}`}>
+          {avatar} {label}
+        </span>
+        {posLabel && <span className="entry-pos">{posLabel}</span>}
+        {stepLabel && <span className="step-badge">{stepLabel}</span>}
+      </div>
+
+      <div className="entry-headword" lang={node.lang}>
+        {node.title}
+      </div>
+      {node.reading && <div className="entry-reading">{node.reading}</div>}
+      {node.subtitle && <p className="entry-definition">{node.subtitle}</p>}
+
+      {node.example?.native && (
+        <div className="citation">
+          <div className="citation-native" lang={node.lang}>
+            {node.example.native}
+          </div>
+          {node.example.gloss && <div className="citation-gloss">{node.example.gloss}</div>}
+          {node.example.source && <div className="citation-source">— {node.example.source}</div>}
+        </div>
+      )}
+
+      {node.note && (
+        <div className="bridge-note">
+          <div className="bridge-note-label">Bridge note</div>
+          <div className="bridge-note-text">{node.note}</div>
+        </div>
+      )}
+
+      {node.type === 'vocab' && onSave && (
+        <button
+          className={`save-word-button ${saved ? 'saved' : ''}`}
+          disabled={saved}
+          onClick={(e) => {
+            e.stopPropagation()
+            onSave()
+          }}
+        >
+          {saved ? '✓ Saved' : '+ Save'}
+        </button>
+      )}
+
+      {node.relatedGameId && onPractice && (
+        <button
+          className="explore-link-button"
+          onClick={(e) => {
+            e.stopPropagation()
+            onPractice()
+          }}
+        >
+          Practice this →
+        </button>
+      )}
+
+      {showRefs && (
+        <>
+          {node.related.length > 0 && (
+            <>
+              <div className="refs-label">See also</div>
+              <div className="refs-list">
+                {node.related.map((rel) => {
+                  const relMeta = langMeta(rel.lang)
+                  return (
+                    <button key={rel.id} className="ref-button" onClick={() => onNavigate(rel.id)}>
+                      <span className={`ref-mark lang-tag-${rel.lang}`}>{relMeta.avatar}</span>
+                      <span className="ref-word" lang={rel.lang}>
+                        {rel.title}
+                      </span>
+                    </button>
+                  )
+                })}
+              </div>
+            </>
+          )}
+          {onDigDeeper && (
+            <button className="dig-deeper-button" onClick={onDigDeeper} disabled={diggingDeeper}>
+              {diggingDeeper ? 'Digging…' : '🔮 Dig deeper'}
+            </button>
+          )}
+        </>
+      )}
+    </div>
   )
+}
 
-  const { positions, width, height } = useMemo(() => layoutWeb(webNodes), [webNodes])
-  const nodesById = useMemo(() => new Map(webNodes.map((n) => [n.id, n])), [webNodes])
+export default function ExploreScreen({ stories, wordSeed, onOpenGame, activeTab, onChangeTab }) {
+  const graph = useMemo(() => buildExploreGraph(stories), [stories])
+  const unseenCount = useMemo(() => getUnseenSavedWords().size, [])
 
-  function addRoot(type, key) {
-    const id = nodeId(key)
-    if (nodesById.has(id)) {
-      setSelectedId(id)
-      return
-    }
-    const updated = addExploreNodes([{ id, type, source: 'corpus', lang: 'ja', text: key, parentId: null }])
-    setWebNodes(updated)
-    setSelectedId(id)
-    setStarterOpen(false)
-  }
+  const [mode, setMode] = useState('random')
+  const [trail, setTrail] = useState(() => getExploreTrail() ?? [graph.startingIds[0]])
+  const [aiNodes, setAiNodes] = useState(() => new Map())
+  const [diggingDeeper, setDiggingDeeper] = useState(false)
+  const [, forceUpdate] = useState(0)
 
-  function handleSurpriseMe() {
-    const pool = [...graph.startingVocab.map((w) => ({ type: 'vocab', key: w })), ...graph.grammarPatterns.map((p) => ({ type: 'grammar', key: p }))]
-    const pick = pool[Math.floor(Math.random() * pool.length)]
-    if (pick) addRoot(pick.type, pick.key)
-  }
+  const [pathLang, setPathLang] = useState(EXPLORE_LANGS[0])
+  const [pathCategory, setPathCategory] = useState('grammar')
 
-  function handleReset() {
-    setWebNodes(clearExploreWeb())
-    setSelectedId(null)
-    setConfirmingReset(false)
-  }
-
-  // Seed a root the first time a word is handed in from Collection, if it isn't already in the web.
   useEffect(() => {
-    if (wordSeed?.lang === 'ja' && graph.hasVocabWord(wordSeed.word) && !nodesById.has(nodeId(wordSeed.word))) {
-      const updated = addExploreNodes([
-        { id: nodeId(wordSeed.word), type: 'vocab', source: 'corpus', lang: 'ja', text: wordSeed.word, parentId: null },
-      ])
-      setWebNodes(updated)
-      setSelectedId(nodeId(wordSeed.word))
+    setExploreTrail(trail)
+  }, [trail])
+
+  useEffect(() => {
+    if (!wordSeed) return
+    const id = vocabNodeId(wordSeed.lang, wordSeed.word)
+    if (graph.getNode(id)) {
+      setMode('random')
+      setTrail([id])
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wordSeed])
 
-  function handleNodeTap(node) {
-    setSelectedId(node.id)
-    if (node.source === 'ai') return
-    const info = graph.getNode(node.type, node.text)
-    if (!info) return
-    const existingIds = new Set(webNodes.map((n) => n.id))
-    const newNodes = info.related
-      .filter((rel) => !existingIds.has(nodeId(rel.key)))
-      .map((rel) => ({ id: nodeId(rel.key), type: rel.type, source: 'corpus', lang: 'ja', text: rel.key, parentId: node.id }))
-    if (newNodes.length > 0) {
-      const updated = addExploreNodes(newNodes)
-      setWebNodes(updated)
-    }
+  function resolveNode(id) {
+    return aiNodes.get(id) ?? graph.getNode(id)
   }
+
+  function navigateTo(id) {
+    setTrail((prev) => {
+      const existingIndex = prev.indexOf(id)
+      return existingIndex >= 0 ? prev.slice(0, existingIndex + 1) : [...prev, id]
+    })
+  }
+
+  function jumpToTrailIndex(i) {
+    setTrail((prev) => prev.slice(0, i + 1))
+  }
+
+  function beginElsewhere() {
+    const unvisited = graph.startingIds.filter((id) => !trail.includes(id))
+    const pool = unvisited.length ? unvisited : graph.startingIds
+    setTrail([pool[Math.floor(Math.random() * pool.length)]])
+  }
+
+  function startRabbitHole(id) {
+    setMode('random')
+    setTrail([id])
+  }
+
+  function resetTrail() {
+    setTrail([graph.startingIds[0]])
+    setAiNodes(new Map())
+    clearExploreTrail()
+  }
+
+  const currentId = trail[trail.length - 1]
+  const currentNode = resolveNode(currentId)
 
   async function handleDigDeeper() {
-    if (!selectedNode || diggingDeeper) return
+    if (!currentNode || diggingDeeper) return
     setDiggingDeeper(true)
-    const suggestions = await getDigDeeperSuggestions(selectedNode.lang ?? 'ja', selectedNode.text, selectedNode.type)
-    const existingIds = new Set(webNodes.map((n) => n.id))
-    const newNodes = suggestions
-      .filter((s) => !existingIds.has(`ai:${selectedNode.lang ?? 'ja'}:${s.text}`))
-      .map((s) => ({
-        id: `ai:${selectedNode.lang ?? 'ja'}:${s.text}`,
-        type: 'ai_suggested',
-        source: 'ai',
-        lang: selectedNode.lang ?? 'ja',
-        text: s.text,
-        note: s.note,
-        parentId: selectedNode.id,
-      }))
-    if (newNodes.length > 0) setWebNodes(addExploreNodes(newNodes))
+    const suggestions = await getDigDeeperSuggestions(currentNode.lang, currentNode.title, currentNode.type)
     setDiggingDeeper(false)
+    if (!suggestions.length) return
+    setAiNodes((prev) => {
+      const next = new Map(prev)
+      const related = [...currentNode.related]
+      for (const s of suggestions) {
+        const id = `ai:${currentNode.lang}:${s.text}`
+        if (!next.has(id)) {
+          next.set(id, {
+            id,
+            lang: currentNode.lang,
+            type: 'ai',
+            pos: null,
+            title: s.text,
+            reading: null,
+            subtitle: s.note || 'AI-suggested tangent — not verified from the corpus.',
+            example: null,
+            note: null,
+            relatedGameId: null,
+            vocabEntry: null,
+            related: [],
+          })
+          related.push({ id, lang: currentNode.lang, type: 'ai', title: s.text })
+        }
+      }
+      next.set(currentId, { ...currentNode, related })
+      return next
+    })
   }
 
-  const selectedNode = selectedId ? nodesById.get(selectedId) : null
-  const selectedInfo = selectedNode
-    ? selectedNode.source === 'ai'
-      ? {
-          title: selectedNode.text,
-          subtitle: selectedNode.note || 'AI-suggested tangent — not verified from the corpus.',
-          exampleSentence: '',
-          exampleSource: '',
-        }
-      : graph.getNode(selectedNode.type, selectedNode.text)
-    : null
+  function handleSave(node) {
+    if (!node.vocabEntry) return
+    addSavedWord({
+      word: node.vocabEntry.word,
+      reading: node.vocabEntry.reading,
+      english: node.vocabEntry.english,
+      lang: node.lang,
+      storyIndex: node.vocabEntry.storyIndex,
+    })
+    forceUpdate((t) => t + 1)
+  }
+
+  function handlePractice(node) {
+    onOpenGame?.('sentence-build', node.relatedGameId, node.lang)
+  }
+
+  const grammarPath = useMemo(() => buildGrammarPath(grammarPointsForLang(pathLang)), [pathLang])
+  const vocabDictForPathLang = useMemo(
+    () => buildDictionary(stories.filter((s) => s.lang === pathLang)),
+    [stories, pathLang],
+  )
+  const vocabPath = useMemo(
+    () => (pathCategory === 'grammar' ? [] : buildVocabPath(vocabDictForPathLang, pathCategory)),
+    [vocabDictForPathLang, pathCategory],
+  )
 
   return (
-    <div className="screen explore-screen explore-screen-web">
+    <div className="screen explore-screen">
       <header className="collection-header">
         <h1>Explore</h1>
-        <div className="explore-header-actions">
-          <button className="icon-button explore-start-button" onClick={() => setStarterOpen(true)}>
-            + Start thread
-          </button>
-          {webNodes.length > 0 && (
-            <button className="icon-button" onClick={() => setConfirmingReset(true)} aria-label="Reset web">
-              🗑
-            </button>
-          )}
-        </div>
       </header>
 
-      {webNodes.length === 0 ? (
-        <div className="explore-empty-state">
-          <p className="favorites-empty">
-            Your knowledge web is empty. Start from a word you've saved, or let it surprise you.
-          </p>
-          <button className="save-word-button" onClick={handleSurpriseMe}>
-            🎲 Surprise me
-          </button>
-        </div>
-      ) : (
-        <div className="explore-web-canvas-wrap">
-          <div className="explore-web-canvas" style={{ width, height }}>
-            <svg className="explore-web-lines" width={width} height={height}>
-              {webNodes
-                .filter((n) => n.parentId && positions.get(n.id) && positions.get(n.parentId))
-                .map((n) => {
-                  const a = positions.get(n.parentId)
-                  const b = positions.get(n.id)
-                  return <line key={n.id} x1={a.x} y1={a.y} x2={b.x} y2={b.y} className="web-line" />
-                })}
-            </svg>
-            {webNodes.map((n) => {
-              const pos = positions.get(n.id)
-              if (!pos) return null
-              const isRoot = n.parentId == null
-              const size = isRoot ? 76 : 60
-              const shape = n.source === 'ai' ? 'circle' : n.type === 'grammar' ? 'pill' : 'circle'
+      <div className="collection-mode-toggle">
+        <button className={mode === 'random' ? 'active' : ''} onClick={() => setMode('random')}>
+          Random
+        </button>
+        <button className={mode === 'paths' ? 'active' : ''} onClick={() => setMode('paths')}>
+          Paths
+        </button>
+      </div>
+
+      {mode === 'random' ? (
+        <>
+          <div className="masthead-actions">
+            <button onClick={beginElsewhere}>🔀 Begin elsewhere</button>
+            <button onClick={resetTrail}>Clear trail</button>
+          </div>
+
+          <nav className="trail" aria-label="Reading trail">
+            {trail.map((id, i) => {
+              const n = resolveNode(id)
+              const isCurrent = i === trail.length - 1
               return (
-                <button
-                  key={n.id}
-                  className={`web-node web-node-lang-${n.lang ?? 'ja'} web-node-shape-${shape} ${n.source === 'ai' ? 'web-node-ai' : ''} ${selectedId === n.id ? 'selected' : ''}`}
-                  style={{ left: pos.x, top: pos.y, width: size, height: size }}
-                  onClick={() => handleNodeTap(n)}
-                >
-                  {n.text}
-                </button>
+                <Fragment key={id}>
+                  {i > 0 && <span className="trail-sep">›</span>}
+                  <button
+                    className={`trail-item ${isCurrent ? 'current' : ''}`}
+                    onClick={() => !isCurrent && jumpToTrailIndex(i)}
+                    disabled={isCurrent}
+                  >
+                    §{i + 1} {n?.title ?? '…'}
+                  </button>
+                </Fragment>
               )
             })}
-          </div>
-        </div>
-      )}
+          </nav>
 
-      {selectedInfo && (
-        <div className="explore-detail-panel">
-          <div className={`explore-detail-kind explore-detail-${selectedNode.source === 'ai' ? 'ai' : selectedNode.type}`}>
-            {selectedNode.source === 'ai' ? 'AI-suggested' : selectedNode.type === 'grammar' ? 'Grammar' : 'Vocab'}
-          </div>
-          <div className="explore-detail-title">{selectedInfo.title}</div>
-          {selectedInfo.subtitle && <div className="explore-detail-subtitle">{selectedInfo.subtitle}</div>}
-          {selectedInfo.exampleSentence && (
-            <div className="explore-detail-example" lang="ja">
-              {selectedInfo.exampleSentence}
-              {selectedInfo.exampleSource && <div className="explore-detail-source">— {selectedInfo.exampleSource}</div>}
-            </div>
+          {currentNode ? (
+            <EntryCard
+              node={currentNode}
+              showRefs
+              onNavigate={navigateTo}
+              onSave={currentNode.vocabEntry ? () => handleSave(currentNode) : null}
+              saved={currentNode.vocabEntry ? isWordSaved(currentNode.lang, currentNode.vocabEntry.word) : false}
+              onPractice={currentNode.relatedGameId ? () => handlePractice(currentNode) : null}
+              onDigDeeper={handleDigDeeper}
+              diggingDeeper={diggingDeeper}
+            />
+          ) : (
+            <p className="favorites-empty">Nothing here yet — try "Begin elsewhere."</p>
           )}
-          <button className="dig-deeper-button" onClick={handleDigDeeper} disabled={diggingDeeper}>
-            {diggingDeeper ? 'Digging…' : '🔮 Dig deeper'}
-          </button>
-          <button className="gloss-dismiss" onClick={() => setSelectedId(null)} aria-label="Close">
-            ✕
-          </button>
-        </div>
-      )}
-
-      {starterOpen && (
-        <div className="modal-backdrop" onClick={() => setStarterOpen(false)}>
-          <div className="modal" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
-              <h2>Start a new thread</h2>
-              <button className="icon-button" onClick={() => setStarterOpen(false)} aria-label="Close">
-                ✕
+        </>
+      ) : (
+        <>
+          <div className="pill-row">
+            {EXPLORE_LANGS.map((l) => (
+              <button
+                key={l}
+                className={`level-pill-button ${pathLang === l ? 'active' : ''}`}
+                onClick={() => setPathLang(l)}
+              >
+                {langMeta(l).avatar} {langMeta(l).label}
               </button>
-            </div>
-            <button className="save-word-button explore-surprise-button" onClick={handleSurpriseMe}>
-              🎲 Surprise me
-            </button>
-            {savedJaWords.length > 0 && (
+            ))}
+          </div>
+          <div className="pill-row">
+            {CATEGORIES.map((c) => (
+              <button
+                key={c.key}
+                className={`level-pill-button ${pathCategory === c.key ? 'active' : ''}`}
+                onClick={() => setPathCategory(c.key)}
+              >
+                {c.label}
+              </button>
+            ))}
+          </div>
+
+          {pathCategory === 'grammar' ? (
+            grammarPath.length === 0 ? (
+              <p className="path-empty">Nothing charted for this path yet.</p>
+            ) : (
               <>
-                <p className="explore-starters-label">Or start from a saved word</p>
-                <ul className="story-list">
-                  {savedJaWords.map((w) => (
-                    <li key={w.word}>
-                      <button className="story-list-item" onClick={() => addRoot('vocab', w.word)}>
-                        <span className="story-list-title-ja">{w.word}</span>
-                        <span className="story-list-title-en">{w.english}</span>
-                      </button>
-                    </li>
-                  ))}
-                </ul>
+                <p className="path-progress">
+                  {grammarPath.length} stop{grammarPath.length === 1 ? '' : 's'} — basic to complex
+                </p>
+                {grammarPath.map((g, i) => {
+                  const node = grammarPointToNode(g)
+                  return (
+                    <EntryCard
+                      key={g.id}
+                      node={node}
+                      stepLabel={`${i + 1} / ${grammarPath.length}`}
+                      onPractice={node.relatedGameId ? () => handlePractice(node) : null}
+                      onOpenRabbitHole={() => startRabbitHole(node.id)}
+                    />
+                  )
+                })}
               </>
-            )}
-          </div>
-        </div>
-      )}
-
-      {confirmingReset && (
-        <div className="modal-backdrop" onClick={() => setConfirmingReset(false)}>
-          <div className="modal" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
-              <h2>Reset your knowledge web?</h2>
-            </div>
-            <p>This clears everything you've grown in Explore. Your saved words and progress elsewhere are untouched. This can't be undone.</p>
-            <div className="modal-actions">
-              <button className="icon-button" onClick={() => setConfirmingReset(false)}>
-                Cancel
-              </button>
-              <button className="delete-progress-confirm-button" onClick={handleReset}>
-                Reset web
-              </button>
-            </div>
-          </div>
-        </div>
+            )
+          ) : vocabPath.length === 0 ? (
+            <p className="path-empty">Nothing charted for this path yet.</p>
+          ) : (
+            <>
+              <p className="path-progress">
+                {vocabPath.length} stop{vocabPath.length === 1 ? '' : 's'} — basic to complex
+              </p>
+              {vocabPath.map((entry, i) => {
+                const node = vocabEntryToNode(entry)
+                return (
+                  <EntryCard
+                    key={entry.word}
+                    node={node}
+                    stepLabel={`${i + 1} / ${vocabPath.length}`}
+                    onSave={() => handleSave(node)}
+                    saved={isWordSaved(entry.lang, entry.word)}
+                    onOpenRabbitHole={() => startRabbitHole(node.id)}
+                  />
+                )
+              })}
+            </>
+          )}
+        </>
       )}
 
       <BottomNav active={activeTab} onChange={onChangeTab} badges={{ bookmarks: unseenCount }} />

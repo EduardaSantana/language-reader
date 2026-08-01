@@ -119,14 +119,20 @@ function App() {
           onChangeTab={changeTab}
           onExploreWord={openExploreForWord}
           onOpenStory={openStoryFromElsewhere}
-          onOpenGame={openGame}
         />
       </Suspense>
     )
   } else if (tab === 'explore') {
     screen = (
       <Suspense fallback={null}>
-        <ExploreScreen key={resetKey} stories={allStories} wordSeed={exploreWordSeed} activeTab={tab} onChangeTab={changeTab} />
+        <ExploreScreen
+          key={resetKey}
+          stories={allStories}
+          wordSeed={exploreWordSeed}
+          onOpenGame={openGame}
+          activeTab={tab}
+          onChangeTab={changeTab}
+        />
       </Suspense>
     )
   } else if (tab === 'games') {

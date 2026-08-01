@@ -72,6 +72,13 @@ function stripLeadingArticle(word, lang) {
   return stripped || word
 }
 
+export function hasLeadingArticle(word, lang) {
+  const re = LEADING_ARTICLE_RE[lang]
+  return re ? re.test(word) : false
+}
+
+export { stripLeadingArticle }
+
 // Only Japanese vocab carries a real phonetic reading (furigana) worth sorting by.
 // French/German/Russian reuse this field for grammatical gender (m/f/n), which must
 // never drive alphabetical order or letter grouping.
