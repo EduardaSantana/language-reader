@@ -143,8 +143,19 @@ export function pickCompoundBuild(compounds) {
 export function pickAlphabetRound(pool) {
   if (pool.length < 4) return null
   const target = pool[Math.floor(Math.random() * pool.length)]
-  const others = pool.filter((e) => e.char !== target.char)
-  const distractors = shuffle(others).slice(0, 3)
+  // Some alphabets have two letters that romanize identically (Russian й/ы
+  // both → "y") — picking one as a distractor for the other would show two
+  // choices with the same displayed answer, so distractors must have a
+  // unique answer as well as a unique char.
+  const seenAnswers = new Set([target.answer])
+  const distractors = []
+  for (const e of shuffle(pool.filter((x) => x.char !== target.char))) {
+    if (seenAnswers.has(e.answer)) continue
+    seenAnswers.add(e.answer)
+    distractors.push(e)
+    if (distractors.length === 3) break
+  }
+  if (distractors.length < 3) return null
   const choices = shuffle([target, ...distractors])
   return { target, choices }
 }

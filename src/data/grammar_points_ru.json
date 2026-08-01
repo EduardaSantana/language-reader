@@ -1,171 +1,2190 @@
 [
   {
-    "id": "ru-case-01",
-    "lang": "ru",
-    "difficulty": 3,
-    "title": "Six grammatical cases mark a noun's role",
-    "explanation": "Russian nouns (and their adjectives) change ending depending on their role in the sentence — nominative, genitive, accusative, dative, instrumental, prepositional.",
-    "example_native": "Я вижу книгу.",
-    "example_gloss": "I see a book. (книга → книгу, accusative)",
-    "bridge_lang": "en",
-    "bridge_note": "English marks this only in pronouns (I/me, he/him) — Russian does it on every noun and its adjectives, closer in spirit to German's four cases, just with two more of them.",
-    "related_game_id": "blank",
-    "related_oddity_id": { "lang": "ru", "id": "ru-odd-numbers-case" },
-    "branch": "Nouns: gender & case",
-    "prerequisites": ["ru-gender-01"],
-    "see_also": [{ "lang": "de", "id": "de-case-01" }],
-    "confidence": "first_pass"
-  },
-  {
-    "id": "ru-aspect-01",
-    "lang": "ru",
-    "difficulty": 2,
-    "title": "Verbs come in aspect pairs",
-    "explanation": "Most Russian verbs have two versions — imperfective (ongoing, repeated, or in-progress) and perfective (completed, one-time) — rather than one verb used with different tenses.",
-    "example_native": "Я писал письмо. / Я написал письмо.",
-    "example_gloss": "I was writing a letter. / I wrote (finished) a letter.",
-    "bridge_lang": "en",
-    "bridge_note": "English leans on phrasing to make this distinction (\"was writing\" vs \"wrote\") rather than a fully separate verb — Russian grammaticalizes it as two related but distinct words you have to learn as a pair.",
-    "related_game_id": "blank",
-    "related_oddity_id": { "lang": "ru", "id": "ru-odd-aspect-imperative" },
-    "branch": "Verbs: aspect & motion",
-    "prerequisites": ["ru-present-tense-01"],
-    "confidence": "first_pass"
-  },
-  {
-    "id": "ru-no-articles-01",
+    "id": "ru-u1-the-cyrillic-alphabet-33",
     "lang": "ru",
     "difficulty": 1,
-    "title": "No words for \"a\" or \"the\"",
-    "explanation": "Russian has no articles at all — definiteness is inferred entirely from context and word order.",
-    "example_native": "Книга на столе.",
-    "example_gloss": "The book is on the table. (or: a book, depending on context)",
+    "cefr": "A1",
+    "title": "The Cyrillic alphabet: 33 letters",
+    "explanation": "Some letters are \"false friends\" of Latin (В=v, Н=n, Р=r, С=s, У=u, Х=kh).",
+    "examples": [
+      {
+        "native": "мама",
+        "gloss": "máma — \"mum\""
+      },
+      {
+        "native": "да",
+        "gloss": "da — \"yes\""
+      },
+      {
+        "native": "Москва",
+        "gloss": "Moskvá"
+      }
+    ],
     "bridge_lang": "en",
-    "bridge_note": "English speakers learning Russian often keep reaching for a word that isn't there — the opposite problem of French/German, where the article is mandatory even in places English drops it.",
+    "bridge_note": "both scripts descend from Greek, so shapes overlap but sound-values diverged.",
+    "mistake": "reading Р as \"p\", Н as \"h\".",
+    "source": null,
     "related_game_id": null,
-    "branch": "Sentence structure",
+    "branch": "Cyrillic Alphabet, Sound System, and Reading (Prerequisite Unit)",
     "prerequisites": [],
-    "confidence": "first_pass"
+    "confidence": "verified"
   },
   {
-    "id": "ru-motion-verbs-01",
-    "lang": "ru",
-    "difficulty": 2,
-    "title": "Separate verbs for one-way vs. back-and-forth motion",
-    "explanation": "Verbs of motion like \"go\" split into distinct words depending on whether the movement is a single trip in one direction or repeated/habitual/round-trip.",
-    "example_native": "Я иду в школу. / Я хожу в школу.",
-    "example_gloss": "I am going to school (right now). / I go to school (regularly).",
-    "bridge_lang": "en",
-    "bridge_note": "English makes this distinction with context or extra words (\"right now\" vs \"every day\"), never with a different verb — this is a real vocabulary split English speakers have to build from scratch.",
-    "related_game_id": null,
-    "related_oddity_id": { "lang": "ru", "id": "ru-odd-motion-verbs" },
-    "branch": "Verbs: aspect & motion",
-    "prerequisites": ["ru-aspect-01"],
-    "confidence": "first_pass"
-  },
-  {
-    "id": "ru-gender-01",
+    "id": "ru-u1-vowels-hard-series-vs-soft-series",
     "lang": "ru",
     "difficulty": 1,
-    "title": "Grammatical gender is usually predictable from the noun's ending",
-    "explanation": "Nouns are masculine, feminine, or neuter, but unlike French or German, the ending is a fairly reliable clue: consonant endings are usually masculine, -а/-я usually feminine, -о/-е usually neuter.",
-    "example_native": "стол (m), книга (f), окно (n)",
-    "example_gloss": "table (m), book (f), window (n)",
+    "cefr": "A1",
+    "title": "Vowels: hard-series vs soft-series (а/я, о/ё, у/ю, э/е, ы/и)",
+    "explanation": "The \"soft\" vowel letters signal palatalization of the preceding consonant.",
+    "examples": [
+      {
+        "native": "мат / мять",
+        "gloss": "hard vs. soft \"m\" before the vowel (а vs я)"
+      },
+      {
+        "native": "лук / люк",
+        "gloss": "onion / manhole — same hard/soft pattern with у vs ю"
+      }
+    ],
     "bridge_lang": "en",
-    "bridge_note": "English has no grammatical gender to unlearn, but the comparison worth making is to French/German gender — where the ending usually gives no hint at all. Russian's endings do most of the guessing work for you.",
+    "bridge_note": "the two series encode consonant softness in the vowel letter.",
+    "mistake": "treating я/ю/е as plain vowels.",
+    "source": null,
     "related_game_id": null,
-    "branch": "Nouns: gender & case",
-    "prerequisites": [],
-    "confidence": "first_pass"
+    "branch": "Cyrillic Alphabet, Sound System, and Reading (Prerequisite Unit)",
+    "prerequisites": [
+      "ru-u1-the-cyrillic-alphabet-33"
+    ],
+    "confidence": "verified"
   },
   {
-    "id": "ru-word-order-01",
+    "id": "ru-u1-the-soft-sign-ь",
     "lang": "ru",
-    "difficulty": 3,
-    "title": "Word order is flexible because case endings carry the grammar",
-    "explanation": "Since case endings already show which noun is subject and which is object, word order is free to shift for emphasis rather than being fixed by grammar.",
-    "example_native": "Книгу читает Анна. / Анна читает книгу.",
-    "example_gloss": "Both mean \"Anna is reading the book\" — the emphasis just shifts.",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "The soft sign ь and hard sign ъ",
+    "explanation": "ь palatalizes and has no sound of its own; ъ is a rare separator.",
+    "examples": [
+      {
+        "native": "день",
+        "gloss": "den' — day (ь softens the н)"
+      },
+      {
+        "native": "семья",
+        "gloss": "sem'yá — family"
+      }
+    ],
     "bridge_lang": "en",
-    "bridge_note": "English relies on rigid subject-verb-object order to show who's doing what to whom, so reordering a sentence changes its meaning. Russian can reorder freely because the case endings — not the position — carry that information.",
+    "bridge_note": "ь is a fossil of a once-pronounced ultra-short vowel (jer).",
+    "mistake": "ignoring ь (changes meaning/form).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Cyrillic Alphabet, Sound System, and Reading (Prerequisite Unit)",
+    "prerequisites": [
+      "ru-u1-vowels-hard-series-vs-soft-series"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u1-voicedvoiceless-pairs-and-final",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Voiced/voiceless pairs and final devoicing",
+    "explanation": "год sounds like \"got\"; друг → \"druk\".",
+    "examples": [
+      {
+        "native": "год, друг",
+        "gloss": "year, friend — final voiced consonants devoice: sound like \"got\", \"druk\""
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "pronouncing final voiced consonants as in English.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Cyrillic Alphabet, Sound System, and Reading (Prerequisite Unit)",
+    "prerequisites": [
+      "ru-u1-the-soft-sign-ь"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u1-word-stress-and-vowel",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Word stress and vowel reduction (акание)",
+    "explanation": "Unstressed о reduces to an \"a\"-like sound; stress is unpredictable and mobile.",
+    "examples": [
+      {
+        "native": "молоко",
+        "gloss": "məlakó — milk (unstressed o's reduce toward \"a\")"
+      },
+      {
+        "native": "хорошо",
+        "gloss": "khərashó — good/well"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "Russian is stress-timed with strong reduction.",
+    "mistake": "equal weight on every syllable.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Cyrillic Alphabet, Sound System, and Reading (Prerequisite Unit)",
+    "prerequisites": [
+      "ru-u1-voicedvoiceless-pairs-and-final"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u1-intonation-contours-ик-1-to",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Intonation contours ИК-1 to ИК-5",
+    "explanation": "Pitch, not word order, distinguishes a statement (ИК-1) from a yes/no question (ИК-3). Example: Это Анна. vs Это Анна?",
+    "examples": [
+      {
+        "native": "Это Анна.",
+        "gloss": "This is Anna. (falling pitch, ИК-1)"
+      },
+      {
+        "native": "Это Анна?",
+        "gloss": "Is this Anna? (rising pitch, ИК-3 — same words)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "using English rising tags.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Cyrillic Alphabet, Sound System, and Reading (Prerequisite Unit)",
+    "prerequisites": [
+      "ru-u1-word-stress-and-vowel"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u2-noun-gender-from-the",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Noun gender from the ending",
+    "explanation": "Consonant/-й → m (стол, музей); -а/-я → f (книга, неделя); -о/-е → n (окно, море).",
+    "examples": [
+      {
+        "native": "Это стол",
+        "gloss": null
+      },
+      {
+        "native": "Это книга",
+        "gloss": null
+      },
+      {
+        "native": "Это окно",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "gender is agreement machinery, largely divorced from sex, surviving from PIE.",
+    "mistake": "assigning gender by meaning.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Bones of the Simple Sentence: Gender, \"to be\", and \"to have\"",
+    "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u2-the-soft-sign-gender-ambiguity",
+    "lang": "ru",
+    "difficulty": 2,
+    "cefr": "A1–B1",
+    "title": "The soft-sign gender ambiguity (-ь nouns)",
+    "explanation": "Nouns in -ь are masculine OR feminine and must be learned individually; roughly two-thirds are feminine. Signposts: -ость always f (радость, новость); -тель, -арь m (учитель, словарь); days/months m (день, январь); -чь/-щь tend f (ночь, вещь).",
+    "examples": [
+      {
+        "native": "день",
+        "gloss": "m"
+      },
+      {
+        "native": "ночь",
+        "gloss": "f"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "these descend from an old i-stem declension that merged endings.",
+    "mistake": "guessing feminine every time; forgetting gender governs agreement (Дверь была открыта).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Bones of the Simple Sentence: Gender, \"to be\", and \"to have\"",
+    "prerequisites": [
+      "ru-u2-noun-gender-from-the"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u2-no-present-tense-to-be",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "No present-tense \"to be\": the zero copula",
+    "explanation": "Russian omits \"is\" in the present; \"X is Y\" is \"X — Y\".",
+    "examples": [
+      {
+        "native": "Москва — столица",
+        "gloss": null
+      },
+      {
+        "native": "Он врач",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "the old present forms of быть fell out of use, leaving a gap English speakers keep filling.",
+    "mistake": "inserting a word for \"is\".",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Bones of the Simple Sentence: Gender, \"to be\", and \"to have\"",
+    "prerequisites": [
+      "ru-u2-the-soft-sign-gender-ambiguity"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u2-possession-without-to-have",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Possession without \"to have\": у меня есть",
+    "explanation": "\"I have a book\" = \"by me there-is a book\": у + genitive of possessor + есть + thing in the nominative.",
+    "examples": [
+      {
+        "native": "У меня есть книга",
+        "gloss": null
+      },
+      {
+        "native": "У Андрея есть машина",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "Russian kept the older Indo-European be-possessive/locative pattern (location-derived possession), reinforced in East Slavic.",
+    "mistake": "seeking a verb \"to have\"; putting the possessed thing in the accusative.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Bones of the Simple Sentence: Gender, \"to be\", and \"to have\"",
+    "prerequisites": [
+      "ru-u2-no-present-tense-to-be"
+    ],
+    "confidence": "verified",
+    "related_oddity_id": {
+      "lang": "ru",
+      "id": "ru-odd-no-have-verb"
+    }
+  },
+  {
+    "id": "ru-u2-negated-existencepossession-нет-genitive",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Negated existence/possession: нет + genitive",
+    "explanation": "Absence uses нет + the genitive.",
+    "examples": [
+      {
+        "native": "У меня нет брата",
+        "gloss": null
+      },
+      {
+        "native": "В городе нет театра",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "the \"genitive of negation\" marks the thing as removed from the set of existing things.",
+    "mistake": "keeping the noun nominative after нет.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Bones of the Simple Sentence: Gender, \"to be\", and \"to have\"",
+    "prerequisites": [
+      "ru-u2-possession-without-to-have"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u3-what-case-is-and",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "What case is, and why endings replace word order",
+    "explanation": "Russian marks a noun's role by changing its ending, freeing word order.",
+    "examples": [
+      {
+        "native": "Мама любит сына",
+        "gloss": null
+      },
+      {
+        "native": "Сына любит мама",
+        "gloss": "both \"Mum loves the son\""
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "English lost case (keeping I/me, he/him); Russian kept the Proto-Slavic system minus the vocative.",
+    "mistake": "the cardinal English error — ignoring endings, reading by position.",
+    "source": null,
     "related_game_id": "order",
-    "branch": "Sentence structure",
-    "prerequisites": ["ru-case-01"],
-    "confidence": "first_pass"
+    "branch": "Case System Fundamentals: The First Three Cases",
+    "prerequisites": [],
+    "confidence": "verified"
   },
   {
-    "id": "ru-adjective-agreement-01",
-    "lang": "ru",
-    "difficulty": 2,
-    "title": "Adjectives agree in gender, number, and case with their noun",
-    "explanation": "An adjective isn't one fixed word — its ending changes to match whatever noun it describes, across all three genders, both numbers, and all six cases.",
-    "example_native": "большой стол, большая книга, большое окно",
-    "example_gloss": "big table (m), big book (f), big window (n) — same adjective, three different endings",
-    "bridge_lang": "en",
-    "bridge_note": "English adjectives never change form no matter what they describe. Russian adjectives carry the same agreement burden nouns do — learning a noun's gender also means learning how every adjective attached to it will need to flex.",
-    "related_game_id": null,
-    "branch": "Nouns: gender & case",
-    "prerequisites": ["ru-case-01"],
-    "confidence": "first_pass"
-  },
-  {
-    "id": "ru-instrumental-01",
-    "lang": "ru",
-    "difficulty": 2,
-    "title": "\"With\" or \"by means of\" is a noun ending, not a preposition",
-    "explanation": "The instrumental case marks the tool or means by which something is done, often with no preposition needed at all — the case ending alone does the job.",
-    "example_native": "Я пишу ручкой.",
-    "example_gloss": "I write with a pen. (ручка → ручкой, instrumental)",
-    "bridge_lang": "en",
-    "bridge_note": "English always needs the word \"with\" to introduce a tool. Russian can fold that entire meaning into how the noun itself ends.",
-    "related_game_id": null,
-    "branch": "Nouns: gender & case",
-    "prerequisites": ["ru-case-01"],
-    "confidence": "first_pass"
-  },
-  {
-    "id": "ru-reflexive-verbs-01",
-    "lang": "ru",
-    "difficulty": 2,
-    "title": "Reflexive verbs carry a fixed suffix, not a separate pronoun",
-    "explanation": "Verbs describing an action done to oneself (or with a passive/reciprocal flavor) attach a permanent -ся/-сь ending rather than pairing with a separate reflexive pronoun like \"myself.\"",
-    "example_native": "Я умываюсь.",
-    "example_gloss": "I wash (myself). (умывать \"to wash [someone]\" → умываться \"to wash oneself\")",
-    "bridge_lang": "en",
-    "bridge_note": "English bolts on a separate word (\"myself,\" \"each other\") after the verb. Russian bakes the same meaning directly into the verb's own ending, so the reflexive verb is really its own vocabulary word to learn, not a formula.",
-    "related_game_id": null,
-    "branch": "Verbs: aspect & motion",
-    "prerequisites": ["ru-present-tense-01"],
-    "confidence": "first_pass"
-  },
-  {
-    "id": "ru-present-tense-01",
+    "id": "ru-u3-nominative-case",
     "lang": "ru",
     "difficulty": 1,
-    "title": "Present-tense verbs split into two conjugation patterns",
-    "explanation": "Nearly every verb follows one of two conjugation groups once the infinitive ending is stripped off — the endings that attach for I/you/he/we/they differ by which group the verb belongs to.",
-    "example_native": "Я читаю. Ты читаешь. Он читает.",
-    "example_gloss": "I read. You read. He reads.",
+    "cefr": "A1",
+    "title": "Nominative case",
+    "explanation": "The subject and the predicate noun after zero-copula.",
+    "examples": [
+      {
+        "native": "Нина смотрит телевизор",
+        "gloss": null
+      },
+      {
+        "native": "Брат — врач",
+        "gloss": null
+      }
+    ],
     "bridge_lang": "en",
-    "bridge_note": "English barely conjugates at all (read/read/reads). Russian marks every person distinctly, but at least the ending is predictable once you know which of the two conjugation groups a verb belongs to.",
+    "bridge_note": null,
+    "mistake": "forgetting the predicate noun stays nominative.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Case System Fundamentals: The First Three Cases",
+    "prerequisites": [
+      "ru-u3-what-case-is-and"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u3-accusative-singular-direct-object",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Accusative singular: direct object + animacy rule",
+    "explanation": "Inanimate m/n look like nominative; f -а→-у, -я→-ю; animate masculine takes the genitive-looking ending.",
+    "examples": [
+      {
+        "native": "Я читаю книгу",
+        "gloss": null
+      },
+      {
+        "native": "Я вижу брата",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "the animate-accusative-copies-genitive pattern keeps subject and object distinct after m nom/acc merged.",
+    "mistake": "not marking feminine objects; ignoring animacy.",
+    "source": null,
     "related_game_id": "blank",
-    "branch": "Verbs: aspect & motion",
+    "branch": "Case System Fundamentals: The First Three Cases",
+    "prerequisites": [
+      "ru-u3-nominative-case"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u3-accusative-of-direction-вна",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Accusative of direction: в/на + accusative",
+    "explanation": "Motion \"to/into\" uses в/на + accusative (Куда?).",
+    "examples": [
+      {
+        "native": "Я иду в кино",
+        "gloss": null
+      },
+      {
+        "native": "Мы едем на работу",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "the accusative marks the endpoint of motion.",
+    "mistake": "using the prepositional for destination.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Case System Fundamentals: The First Three Cases",
+    "prerequisites": [
+      "ru-u3-accusative-singular-direct-object"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u3-prepositional-case-location-and",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Prepositional case: location (в/на) and topic (о)",
+    "explanation": "Never appears without a preposition; -е default. Answers Где? and \"about what?\".",
+    "examples": [
+      {
+        "native": "Я живу в Москве",
+        "gloss": null
+      },
+      {
+        "native": "Книга на столе",
+        "gloss": null
+      },
+      {
+        "native": "Мы говорим о фильме",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "shrunken descendant of the Proto-Slavic locative.",
+    "mistake": "confusing в+prep (location) with в+acc (direction).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Case System Fundamentals: The First Three Cases",
+    "prerequisites": [
+      "ru-u3-accusative-of-direction-вна"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u3-в-vs-на-for",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "в vs на for place",
+    "explanation": "в = \"in/at\" (enclosed); на = \"on/at\" (surfaces, certain institutions/events: на почте, на концерте).",
+    "examples": [
+      {
+        "native": "в университете but на вокзале",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "на collocations are partly lexicalized.",
+    "mistake": "over-applying в.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Case System Fundamentals: The First Three Cases",
+    "prerequisites": [
+      "ru-u3-prepositional-case-location-and"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u4-personal-pronouns-and-declension",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Personal pronouns and declension",
+    "explanation": "я, ты, он/она/оно, мы, вы, они decline (меня, мне, мной...); third-person forms add н- after prepositions (у него, с ней).",
+    "examples": [
+      {
+        "native": "Я вижу его",
+        "gloss": null
+      },
+      {
+        "native": "Я звоню ему",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "н- is a fragment of old prepositions ending in -n.",
+    "mistake": "dropping н-; overusing subject pronouns.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Pronoun System",
     "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u4-possessive-pronouns-agreement",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Possessive pronouns: agreement",
+    "explanation": "мой/твой/наш/ваш agree with the thing possessed; его/её/их invariable.",
+    "examples": [
+      {
+        "native": "моя книга, моё окно, мой стол",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "making его/её agree; failing to decline мой.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Pronoun System",
+    "prerequisites": [
+      "ru-u4-personal-pronouns-and-declension"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u4-demonstrative-этоттот-determinative-веськаждый",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Demonstrative этот/тот, determinative весь/каждый",
+    "explanation": "этот agrees with its noun (\"this\"); это is invariable (\"this is...\"); весь/каждый mark \"all/every\".",
+    "examples": [
+      {
+        "native": "этот дом, эта книга, эти люди",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "confusing это (\"this is...\", invariable) with этот (agreeing).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Pronoun System",
+    "prerequisites": [
+      "ru-u4-possessive-pronouns-agreement"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u4-interrogatives-кточтокакойчейсколько",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Interrogatives кто/что/какой/чей/сколько",
+    "explanation": "Question words that ask who, what, which, whose, and how many — кто and что decline like nouns through all six cases.",
+    "examples": [
+      {
+        "native": "Чья это книга? Какой сегодня день?",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "not declining кто/что (кого, кому).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Pronoun System",
+    "prerequisites": [
+      "ru-u4-demonstrative-этоттот-determinative-веськаждый"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u4-relative-который",
+    "lang": "ru",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Relative который",
+    "explanation": "Agrees in gender/number with its antecedent but takes case from its role in the relative clause.",
+    "examples": [
+      {
+        "native": "Человек, который живёт здесь..",
+        "gloss": null
+      },
+      {
+        "native": "Книга, которую я читаю..",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "the everyday spoken alternative to participles.",
+    "mistake": "giving который the antecedent's case.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Pronoun System",
+    "prerequisites": [
+      "ru-u4-interrogatives-кточтокакойчейсколько"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u4-reflexive-себя-and-possessive",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Reflexive себя and possessive свой",
+    "explanation": "себя = \"-self\" for any person; свой = \"one's own\", pointing back to the subject.",
+    "examples": [
+      {
+        "native": "Он купил себе машину",
+        "gloss": null
+      },
+      {
+        "native": "Он любит свою работу",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "свой disambiguates possessor identity.",
+    "mistake": "using его/её where свой is required.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Pronoun System",
+    "prerequisites": [
+      "ru-u4-relative-который"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u4-negative-pronouns-никтоничто-and",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Negative pronouns никто/ничто and the double negative",
+    "explanation": "Russian requires не on the verb even with никто.",
+    "examples": [
+      {
+        "native": "Никто не знает",
+        "gloss": null
+      },
+      {
+        "native": "Я ничего не вижу",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "Slavic negative concord.",
+    "mistake": "dropping не.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Pronoun System",
+    "prerequisites": [
+      "ru-u4-reflexive-себя-and-possessive"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u5-genitive-singular",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Genitive singular",
+    "explanation": "-а/-я (m/n), -ы/-и (f). Uses: \"X of Y\" (центр города), absence (нет времени), origin из/с, possessor у, after numbers 2+.",
+    "examples": [
+      {
+        "native": "машина брата, из Англии",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "not using it after нет and numbers.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Rest of the Case System (Singular)",
+    "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u5-dative-singular",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Dative singular",
+    "explanation": "-у/-ю (m/n), -е (f). Uses: indirect object (звоню отцу), age (Ему двадцать лет), necessity (Мне надо...), motion к + dative.",
+    "examples": [
+      {
+        "native": "Я дал книгу другу",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "the dative is the experiencer/beneficiary case — age and necessity happen to you, with no nominative subject.",
+    "mistake": "accusative for the recipient.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Rest of the Case System (Singular)",
+    "prerequisites": [
+      "ru-u5-genitive-singular"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u5-instrumental-singular",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Instrumental singular",
+    "explanation": "-ом/-ем (m/n), -ой/-ей (f), special -ью for -ь feminines (ночью). Uses: instrument (пишу ручкой), accompaniment с + instr (с братом), profession (работает врачом), predicate after быть past/future (Он был студентом).",
+    "examples": [
+      {
+        "native": "Я горжусь сыном",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "instrumental predicate signals a temporary/role state vs permanent identity.",
+    "mistake": "using с for a plain instrument; leaving the predicate nominative after был.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Rest of the Case System (Singular)",
+    "prerequisites": [
+      "ru-u5-dative-singular"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u5-case-after-common-prepositions",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Case after common prepositions (consolidation)",
+    "explanation": "Fixed government — из/с/от/у/до/без + gen; к + dat; про/через/в/на(dir) + acc; с/над/под/за/между + instr; в/на(loc)/о/при + prep.",
+    "examples": [
+      {
+        "native": "из дома, к другу, с братом",
+        "gloss": "from home (genitive), to a friend (dative), with a brother (instrumental) — each preposition fixes its own case"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "wrong case per preposition. [Wade: prepositional government is a major problem area.]",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Rest of the Case System (Singular)",
+    "prerequisites": [
+      "ru-u5-instrumental-singular"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u6-long-form-agreement-in-the",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Long-form agreement in the nominative",
+    "explanation": "-ый/-ий/-ой (m), -ая/-яя (f), -ое/-ее (n), -ые/-ие (pl).",
+    "examples": [
+      {
+        "native": "новый дом, новая книга, новое окно",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "not agreeing; mishandling spelling rules.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Adjectives: Agreement, Declension, and Comparison",
+    "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u6-the-spelling-rules",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "The spelling rules (7-letter / 5-letter)",
+    "explanation": "After г,к,х,ж,ч,ш,щ write и not ы; after ж,ч,ш,щ,ц write е not unstressed о.",
+    "examples": [
+      {
+        "native": "русский, хорошее",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "mechanical ending application without the filter.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Adjectives: Agreement, Declension, and Comparison",
+    "prerequisites": [
+      "ru-u6-long-form-agreement-in-the"
+    ],
     "confidence": "first_pass"
   },
   {
-    "id": "ru-participles-01",
+    "id": "ru-u6-full-adjective-declension-across",
+    "lang": "ru",
+    "difficulty": 2,
+    "cefr": "A2–B1",
+    "title": "Full adjective declension across all six cases",
+    "explanation": "Adjectives take pronominal endings harmonizing with the noun's case.",
+    "examples": [
+      {
+        "native": "в новом доме, с новой книгой",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "declining the noun but not the adjective.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Adjectives: Agreement, Declension, and Comparison",
+    "prerequisites": [
+      "ru-u6-the-spelling-rules"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u6-hard-stem-vs-soft-stem-adjectives",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Hard-stem vs soft-stem adjectives",
+    "explanation": "Soft-stem (синий, последний) shift the ending series into soft vowels.",
+    "examples": [
+      {
+        "native": "синее небо, в синем небе",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "hard endings on soft stems.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Adjectives: Agreement, Declension, and Comparison",
+    "prerequisites": [
+      "ru-u6-full-adjective-declension-across"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-u6-short-form-adjectives",
+    "lang": "ru",
+    "difficulty": 2,
+    "cefr": "A1–B1",
+    "title": "Short-form adjectives",
+    "explanation": "Predicate-only forms (рад, занят, болен, готов, должен at A1; productively at B1) expressing a temporary state, sometimes differing in meaning from the long form.",
+    "examples": [
+      {
+        "native": "Он болен",
+        "gloss": null
+      },
+      {
+        "native": "Я занят",
+        "gloss": null
+      },
+      {
+        "native": "Она была рада",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "short forms are the older predicative adjective; long forms fused a demonstrative onto them.",
+    "mistake": "using them attributively.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Adjectives: Agreement, Declension, and Comparison",
+    "prerequisites": [
+      "ru-u6-hard-stem-vs-soft-stem-adjectives"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u6-comparative-degree",
+    "lang": "ru",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Comparative degree",
+    "explanation": "Synthetic (-ее/-е with mutation: интереснее, дороже, лучше) or compound более + adj; \"than\" = чем or bare genitive.",
+    "examples": [
+      {
+        "native": "Этот дом выше",
+        "gloss": null
+      },
+      {
+        "native": "Он умнее, чем я / умнее меня",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "doubling (более интереснее); forgetting mutations (к→ч, г→ж, х→ш).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Adjectives: Agreement, Declension, and Comparison",
+    "prerequisites": [
+      "ru-u6-short-form-adjectives"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u6-superlative-degree",
+    "lang": "ru",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Superlative degree",
+    "explanation": "самый + adj (самый интересный) or synthetic -ейший/-айший (literary).",
+    "examples": [
+      {
+        "native": "самый большой город; лучший",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "combining самый with a synthetic comparative.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Adjectives: Agreement, Declension, and Comparison",
+    "prerequisites": [
+      "ru-u6-comparative-degree"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u7-nominative-plural-of-nouns",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Nominative plural of nouns",
+    "explanation": "-ы/-и (most m/f), -а/-я (n and some m: города, дома), plus irregulars (друзья, братья, дети, люди).",
+    "examples": [
+      {
+        "native": "столы, книги, окна, города",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "over-regularizing (домы); spelling rule (книги not книгы).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Plural Formation and the Plural Case System",
+    "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u7-genitive-plural-the-hardest",
+    "lang": "ru",
+    "difficulty": 2,
+    "cefr": "A2–B1",
+    "title": "Genitive plural — the hardest ending set",
+    "explanation": "Masculine consonant stems add -ов/-ев (столов); feminines/neuters often take a zero ending with a fleeting vowel (девушка→девушек, окно→окон, сестра→сестёр).",
+    "examples": [
+      {
+        "native": "пять столов, много книг, мало окон",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "the zero ending is inherited from Proto-Slavic; the inserted vowel breaks the consonant cluster.",
+    "mistake": "defaulting to one ending; missing the fleeting vowel.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Plural Formation and the Plural Case System",
+    "prerequisites": [
+      "ru-u7-nominative-plural-of-nouns"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u7-dativeinstrumentalprepositional-plural",
+    "lang": "ru",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Dative/instrumental/prepositional plural (-ам/-ами/-ах)",
+    "explanation": "Uniform across genders — dat -ам/-ям, instr -ами/-ями, prep -ах/-ях (irregular людьми, детьми).",
+    "examples": [
+      {
+        "native": "к друзьям, с друзьями, о друзьях",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "the plural oblique cases levelled to a single set early.",
+    "mistake": "mixing them; forgetting irregular instrumentals.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Plural Formation and the Plural Case System",
+    "prerequisites": [
+      "ru-u7-genitive-plural-the-hardest"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u7-accusative-plural-and-animacy",
+    "lang": "ru",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Accusative plural and animacy",
+    "explanation": "Animate plural = genitive plural; inanimate plural = nominative plural, across all genders.",
+    "examples": [
+      {
+        "native": "Я вижу столы",
+        "gloss": null
+      },
+      {
+        "native": "Я вижу студентов",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "not extending animacy to the plural.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Plural Formation and the Plural Case System",
+    "prerequisites": [
+      "ru-u7-dativeinstrumentalprepositional-plural"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u7-adjectivepronoun-agreement-in-the",
+    "lang": "ru",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Adjective/pronoun agreement in the plural",
+    "explanation": "Adjectives and pronouns modifying a plural noun all take the plural's case ending, across all six cases.",
+    "examples": [
+      {
+        "native": "новые дома, в новых домах, моих друзей",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "freezing modifiers in the nominative.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Plural Formation and the Plural Case System",
+    "prerequisites": [
+      "ru-u7-accusative-plural-and-animacy"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u8-present-tense-first-conjugation",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Present tense: first conjugation (-е-/-ё-)",
+    "explanation": "читать→читаю, читаешь, читает, читаем, читаете, читают.",
+    "examples": [
+      {
+        "native": "Я работаю",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "keeping the infinitive stem unchanged; dropping person endings.",
+    "source": null,
+    "related_game_id": "blank",
+    "branch": "Verb Conjugation and the Tense System",
+    "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u8-present-tense-second-conjugation",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Present tense: second conjugation (-и-)",
+    "explanation": "говорить→говорю, говоришь... говорят.",
+    "examples": [
+      {
+        "native": "Она любит",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "applying first-conjugation endings.",
+    "source": null,
+    "related_game_id": "blank",
+    "branch": "Verb Conjugation and the Tense System",
+    "prerequisites": [
+      "ru-u8-present-tense-first-conjugation"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u8-consonant-mutations-in-conjugation",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Consonant mutations in conjugation",
+    "explanation": "Stem consonants alternate, esp. 1sg of 2nd conj (любить→люблю, видеть→вижу, писать→пишу).",
+    "examples": [
+      {
+        "native": "я хожу but ты ходишь",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "fossilized ancient palatalization before a front vowel/j.",
+    "mistake": "no mutation (я ходю).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Verb Conjugation and the Tense System",
+    "prerequisites": [
+      "ru-u8-present-tense-second-conjugation"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u8-the-verb-classesgroups",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "The verb classes/groups (1–14)",
+    "explanation": "The standard organizes verbs into productive classes; learning the class predicts the paradigm.",
+    "examples": [
+      {
+        "native": "читать, говорить, давать",
+        "gloss": "to read, to speak, to give — each belongs to one of 14 standard conjugation classes"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "memorizing verbs atomically.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Verb Conjugation and the Tense System",
+    "prerequisites": [
+      "ru-u8-consonant-mutations-in-conjugation"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-u8--овать-евать-verbs",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "-овать/-евать verbs",
+    "explanation": "-ова-/-ева- becomes -у- in the present (советовать→советую).",
+    "examples": [
+      {
+        "native": "советовать → я советую",
+        "gloss": "to advise → I advise (-ова- becomes -у- in the present)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "keeping -ова- in the present.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Verb Conjugation and the Tense System",
+    "prerequisites": [
+      "ru-u8-the-verb-classesgroups"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u8-past-tense-the-л",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Past tense: the -л participle",
+    "explanation": "Past agrees in gender and number, not person: -л/-ла/-ло/-ли.",
+    "examples": [
+      {
+        "native": "Он читал, она читала, они читали",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "the modern past is historically a participle (old perfect with dropped auxiliary).",
+    "mistake": "conjugating the past for person.",
+    "source": null,
+    "related_game_id": "blank",
+    "branch": "Verb Conjugation and the Tense System",
+    "prerequisites": [
+      "ru-u8--овать-евать-verbs"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u8-compound-future-буду-infinitive",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Compound (imperfective) future: буду + infinitive",
+    "explanation": "Future of imperfectives = conjugated быть + imperfective infinitive.",
+    "examples": [
+      {
+        "native": "Я буду читать",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "буду + perfective infinitive.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Verb Conjugation and the Tense System",
+    "prerequisites": [
+      "ru-u8-past-tense-the-л"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u8-high-frequency-irregularathematic-verbs",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "High-frequency irregular/athematic verbs",
+    "explanation": "хотеть (mixed), есть/дать (athematic), мочь, идти, ехать, жить, брать.",
+    "examples": [
+      {
+        "native": "я хочу, ты хочешь... они хотят",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "regularizing.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Verb Conjugation and the Tense System",
+    "prerequisites": [
+      "ru-u8-compound-future-буду-infinitive"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u8-the-imperative-mood",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "The imperative mood",
+    "explanation": "From the present stem: -й/-и/-ь (читай(те), говори(те), будь(те)).",
+    "examples": [
+      {
+        "native": "Читайте текст!",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "wrong stem; wrong aspect (Unit 9).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Verb Conjugation and the Tense System",
+    "prerequisites": [
+      "ru-u8-high-frequency-irregularathematic-verbs"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u8-verb-government",
+    "lang": "ru",
+    "difficulty": 2,
+    "cefr": "A2–B1",
+    "title": "Verb government (глагольное управление)",
+    "explanation": "Verbs fix the case of their complement (заниматься + instr, помогать + dat, ждать + gen/acc).",
+    "examples": [
+      {
+        "native": "Я занимаюсь спортом",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "importing English preposition patterns.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Verb Conjugation and the Tense System",
+    "prerequisites": [
+      "ru-u8-the-imperative-mood"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u9-the-core-opposition",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "The core opposition",
+    "explanation": "Imperfective = ongoing/habitual/general; perfective = a single completed whole with a result.",
+    "examples": [
+      {
+        "native": "Я читал книгу",
+        "gloss": "was reading / used to read"
+      },
+      {
+        "native": "Я прочитал книгу",
+        "gloss": "read it through"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "aspect is grammaticalized from Proto-Slavic; Slavic rebuilt its verb around aspect after losing older tense oppositions.",
+    "mistake": "mapping aspect onto English tense.",
+    "source": null,
+    "related_game_id": "blank",
+    "branch": "Verbal Aspect: The Central Organizing Feature",
+    "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u9-aspect-pairs-and-formation",
+    "lang": "ru",
+    "difficulty": 2,
+    "cefr": "A2–B1",
+    "title": "Aspect pairs and formation",
+    "explanation": "Pairs differ by prefix (писать→написать), suffix (-ыва-/-ива-: рассказать→рассказывать), or suppletion (говорить→сказать, брать→взять).",
+    "examples": [
+      {
+        "native": "делать/сделать, решать/решить",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "-ыва-/-ива- \"re-imperfectivizes\" a prefixed perfective (secondary imperfective).",
+    "mistake": "assuming a prefix only adds meaning.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Verbal Aspect: The Central Organizing Feature",
+    "prerequisites": [
+      "ru-u9-the-core-opposition"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u9-perfective-future",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Perfective future (the \"present-form\" future)",
+    "explanation": "A perfective verb with present-tense endings = future.",
+    "examples": [
+      {
+        "native": "Я прочитаю",
+        "gloss": null
+      },
+      {
+        "native": "Contrast Я буду читать",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "perfectives can't denote present ongoing action, so their \"present\" forms became future.",
+    "mistake": "буду + perfective; thinking prochitáyu is present.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Verbal Aspect: The Central Organizing Feature",
+    "prerequisites": [
+      "ru-u9-aspect-pairs-and-formation"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u9-aspect-in-the-past",
+    "lang": "ru",
+    "difficulty": 2,
+    "cefr": "A2–B1",
+    "title": "Aspect in the past",
+    "explanation": "Imperfective past narrates an ongoing/repeated action; perfective past reports a single completed event with a result.",
+    "examples": [
+      {
+        "native": "Вчера я писал письмо",
+        "gloss": "process"
+      },
+      {
+        "native": "Я написал письмо",
+        "gloss": "completed"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "perfective for repeated/habitual past.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Verbal Aspect: The Central Organizing Feature",
+    "prerequisites": [
+      "ru-u9-perfective-future"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u9-aspect-in-the-imperative",
+    "lang": "ru",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Aspect in the imperative",
+    "explanation": "Perfective for a specific one-off request (Прочитай это!); imperfective for general instructions, invitations, and (with negation) prohibitions (Не читай это!).",
+    "examples": [
+      {
+        "native": "Садитесь!",
+        "gloss": null
+      },
+      {
+        "native": "Сядьте!",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "negated imperfective = \"don't do\"; negated perfective = \"be careful not to accidentally\".",
+    "mistake": "negated perfective accidentally warning of danger (Не упади! = \"don't fall!\").",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Verbal Aspect: The Central Organizing Feature",
+    "prerequisites": [
+      "ru-u9-aspect-in-the-past"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u9-aspect-in-the-infinitive",
+    "lang": "ru",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Aspect in the infinitive (phase/modal verbs)",
+    "explanation": "начать/кончать/продолжать take imperfective; забыть/успеть/удаться take perfective.",
+    "examples": [
+      {
+        "native": "Я начал читать",
+        "gloss": null
+      },
+      {
+        "native": "Я успел прочитать",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "wrong aspect after phase verbs.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Verbal Aspect: The Central Organizing Feature",
+    "prerequisites": [
+      "ru-u9-aspect-in-the-imperative"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u9-aspect-with-negation-and",
     "lang": "ru",
     "difficulty": 3,
-    "title": "Participles fold a whole relative clause into one adjective-like word",
-    "explanation": "Active and passive participles (читающий \"reading,\" прочитанный \"having been read\") let Russian avoid a separate relative clause much of the time — a single verb-derived word that still agrees in gender, case, and number like any adjective.",
-    "example_native": "Мальчик, читающий книгу.",
-    "example_gloss": "The boy who is reading a book.",
+    "cefr": "B2",
+    "title": "Aspect with negation, and in the subjunctive",
+    "explanation": "B2 requires aspect choice in all moods including the subjunctive and under negation. Example: Не надо было это делать. [B2 Std: \"употребление видовых форм в изъявительном, повелительном, сослагательном наклонении... с отрицанием\".]",
+    "examples": [
+      {
+        "native": "Не надо было это делать.",
+        "gloss": "One shouldn't have done that. (aspect choice matters even under negation)"
+      }
+    ],
     "bridge_lang": "en",
-    "bridge_note": "English needs a full relative clause (\"who is reading\") to express this. Russian can compress it into one word that behaves grammatically like an adjective, agreeing with the noun it modifies.",
+    "bridge_note": null,
+    "mistake": null,
+    "source": null,
     "related_game_id": null,
-    "branch": "Nouns: gender & case",
-    "prerequisites": ["ru-adjective-agreement-01"],
+    "branch": "Verbal Aspect: The Central Organizing Feature",
+    "prerequisites": [
+      "ru-u9-aspect-in-the-infinitive"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u10-unidirectional-vs-multidirectional-pairs",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Unidirectional vs multidirectional pairs",
+    "explanation": "идти (one direction, now) vs ходить (repeatedly/around/there-and-back); ехать vs ездить (by vehicle).",
+    "examples": [
+      {
+        "native": "Я иду в кино",
+        "gloss": null
+      },
+      {
+        "native": "Я хожу в кино каждую неделю",
+        "gloss": null
+      },
+      {
+        "native": "Вчера мы ходили в кино",
+        "gloss": "went and came back"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "Russian grammaticalized a directionality distinction English leaves to context.",
+    "mistake": "the signature error — confusing pair members; идти for habitual motion.",
+    "source": null,
+    "related_game_id": "blank",
+    "branch": "Verbs of Motion",
+    "prerequisites": [],
+    "confidence": "verified",
+    "related_oddity_id": {
+      "lang": "ru",
+      "id": "ru-odd-motion-verbs"
+    }
+  },
+  {
+    "id": "ru-u10-foot-vs-vehicle-distinction",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Foot vs vehicle distinction",
+    "explanation": "идти/ходить (on foot) vs ехать/ездить (by transport); also нести/носить, вести/водить, лететь/летать, плыть/плавать.",
+    "examples": [
+      {
+        "native": "Я еду в Москву",
+        "gloss": "not иду"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "идти for intercity travel.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Verbs of Motion",
+    "prerequisites": [
+      "ru-u10-unidirectional-vs-multidirectional-pairs"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u10-prefixed-motion-verbs",
+    "lang": "ru",
+    "difficulty": 2,
+    "cefr": "A2–B1",
+    "title": "Prefixed motion verbs (по-, при-, у-, в-, вы-, пере-, до-, за-, под-, от-)",
+    "explanation": "Prefixes add spatial meaning and aspect: по- makes a perfective \"set off\" (пойти, поехать); при-/у- = arrive/leave; в-/вы- = enter/exit. The multidirectional stem becomes imperfective, the unidirectional becomes perfective (приходить/прийти).",
+    "examples": [
+      {
+        "native": "Он пришёл домой",
+        "gloss": null
+      },
+      {
+        "native": "Она уехала",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "a spatial prefix bounds the motion, making it perfective, which then needs a re-derived imperfective.",
+    "mistake": "mismatching aspect stems.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Verbs of Motion",
+    "prerequisites": [
+      "ru-u10-foot-vs-vehicle-distinction"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u10-figurativeidiomatic-motion-verbs",
+    "lang": "ru",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "Figurative/idiomatic motion verbs",
+    "explanation": "время идёт, дождь идёт, речь идёт о.",
+    "examples": [
+      {
+        "native": "Время идёт. Дождь идёт.",
+        "gloss": "Time goes by / passes. It's raining. (literally: \"rain goes/walks\")"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "over-literal reading.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Verbs of Motion",
+    "prerequisites": [
+      "ru-u10-prefixed-motion-verbs"
+    ],
     "confidence": "first_pass"
+  },
+  {
+    "id": "ru-u11-cardinal-110-and-the",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Cardinal 1–10 and the counting-case rule",
+    "explanation": "1 agrees like an adjective (один стол, одна книга); 2, 3, 4 → genitive singular (два стола, три книги); 5+ → genitive plural (пять столов).",
+    "examples": [
+      {
+        "native": "одна минута, две минуты, пять минут",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "2 historically took the dual (now lost), 3–4 a plural merged with the genitive singular; 5+ were nouns (\"a fiver of tables\") governing the genitive plural — the 4-vs-5 \"barrier\".",
+    "mistake": "nominative plural after 2–4 (the English instinct); genitive singular after 5+.",
+    "source": null,
+    "related_game_id": "blank",
+    "branch": "Numerals and Quantity",
+    "prerequisites": [],
+    "confidence": "verified",
+    "related_oddity_id": {
+      "lang": "ru",
+      "id": "ru-odd-numbers-case"
+    }
+  },
+  {
+    "id": "ru-u11-compound-numerals-and-the",
+    "lang": "ru",
+    "difficulty": 2,
+    "cefr": "A2–B1",
+    "title": "Compound numerals and the \"last digit\" rule",
+    "explanation": "The noun's case follows the last word (21 → 1-rule: двадцать один стол; 22 → 2-rule: двадцать два стола).",
+    "examples": [
+      {
+        "native": "тридцать одна книга",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "keying off the whole number's size.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Numerals and Quantity",
+    "prerequisites": [
+      "ru-u11-cardinal-110-and-the"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u11-ordinal-numerals",
+    "lang": "ru",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Ordinal numerals",
+    "explanation": "Decline like adjectives (первый, второй, пятый); used for dates.",
+    "examples": [
+      {
+        "native": "первое января, в две тысячи двадцатом году",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "not declining; confusing cardinal/ordinal in dates.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Numerals and Quantity",
+    "prerequisites": [
+      "ru-u11-compound-numerals-and-the"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u11-declension-of-cardinal-numerals",
+    "lang": "ru",
+    "difficulty": 3,
+    "cefr": "B1–B2",
+    "title": "Declension of cardinal numerals",
+    "explanation": "Numerals themselves decline (пяти, пятью; both parts of compound numbers decline).",
+    "examples": [
+      {
+        "native": "с пятью рублями; о двухстах студентах",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "leaving numerals undeclined in oblique cases. [Wade flags numeral declension as a notorious problem area.]",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Numerals and Quantity",
+    "prerequisites": [
+      "ru-u11-ordinal-numerals"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u11-collective-numerals",
+    "lang": "ru",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Collective numerals (двое, трое, четверо)",
+    "explanation": "Used with groups of people, male groups, pluralia tantum, \"children\".",
+    "examples": [
+      {
+        "native": "двое детей, трое суток",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "using with feminine nouns.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Numerals and Quantity",
+    "prerequisites": [
+      "ru-u11-declension-of-cardinal-numerals"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u11-time-age-dates-quantity",
+    "lang": "ru",
+    "difficulty": 2,
+    "cefr": "A2–B1",
+    "title": "Time, age, dates, quantity words",
+    "explanation": "Age → dative (Мне двадцать лет); много/мало/несколько + genitive plural.",
+    "examples": [
+      {
+        "native": "Сейчас два часа",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "nominative after quantity words.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Numerals and Quantity",
+    "prerequisites": [
+      "ru-u11-collective-numerals"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u12-the-concept-of-the",
+    "lang": "ru",
+    "difficulty": 3,
+    "cefr": "B1–B2",
+    "title": "The concept of the participle (причастие)",
+    "explanation": "A verb form behaving like an adjective, agreeing in gender/number/case while keeping the verb's aspect and government. Four types: active present, active past, passive present, passive past.",
+    "examples": [
+      {
+        "native": "читающий, читавший, читаемый, прочитанный",
+        "gloss": "reading (active present), who read (active past), being read (passive present), having been read (passive past)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "participles are the written language's compression device; speech prefers который. [Std B1: \"Понятие о причастии\"; B2: \"Причастие, причастный оборот\".]",
+    "mistake": "expecting them in speech (they are bookish).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Participles and Gerunds (Verbal Adverbs)",
+    "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u12-active-present-participle",
+    "lang": "ru",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "Active present participle (-ущ-/-ющ-/-ащ-/-ящ-)",
+    "explanation": "\"The one who is doing X\"; from the 3pl present stem.",
+    "examples": [
+      {
+        "native": "читающий студент",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "forming from perfectives (impossible).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Participles and Gerunds (Verbal Adverbs)",
+    "prerequisites": [
+      "ru-u12-the-concept-of-the"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u12-active-past-participle",
+    "lang": "ru",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "Active past participle (-вш-/-ш-)",
+    "explanation": "\"The one who did X\"; either aspect.",
+    "examples": [
+      {
+        "native": "студент, сдавший экзамен",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "aspect mismatch.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Participles and Gerunds (Verbal Adverbs)",
+    "prerequisites": [
+      "ru-u12-active-present-participle"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u12-passive-present-participle",
+    "lang": "ru",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "Passive present participle (-ем-/-им-)",
+    "explanation": "\"Being X-ed\"; from imperfective transitives.",
+    "examples": [
+      {
+        "native": "изучаемый язык",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "forming from intransitives.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Participles and Gerunds (Verbal Adverbs)",
+    "prerequisites": [
+      "ru-u12-active-past-participle"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u12-passive-past-participle-long",
+    "lang": "ru",
+    "difficulty": 3,
+    "cefr": "B1–B2",
+    "title": "Passive past participle (-нн-/-енн-/-т-) — long and short",
+    "explanation": "\"Having been X-ed\"; the short form is very common as a predicate and forms the passive. Examples (long): прочитанная книга; (short): Книга прочитана. Дом построен в 1990 году.",
+    "examples": [
+      {
+        "native": "прочитанная книга / Книга прочитана.",
+        "gloss": "the book that was read (long form) / The book is read. (short-form predicate)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "short passive participle + (был/будет) is the normal analytic passive for perfective verbs.",
+    "mistake": "-н-/-нн- spelling; leaving the short form unagreed.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Participles and Gerunds (Verbal Adverbs)",
+    "prerequisites": [
+      "ru-u12-passive-present-participle"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u12-the-passive-voice-and",
+    "lang": "ru",
+    "difficulty": 3,
+    "cefr": "B1–B2",
+    "title": "The passive voice and active↔passive transformation",
+    "explanation": "Two passives — the -ся passive (imperfective: Дом строится) and the short past passive participle (perfective: Дом построен), with the agent in the instrumental (построен рабочими).",
+    "examples": [
+      {
+        "native": "Город основан Петром Первым",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "agent in nominative; wrong passive per aspect. [B2 Std §2.3.7: \"Правила трансформации действительных и страдательных конструкций\".]",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Participles and Gerunds (Verbal Adverbs)",
+    "prerequisites": [
+      "ru-u12-passive-past-participle-long"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u12-the-gerundverbal-adverb",
+    "lang": "ru",
+    "difficulty": 3,
+    "cefr": "B1–B2",
+    "title": "The gerund/verbal adverb (деепричастие)",
+    "explanation": "Indeclinable, \"while/having done X\", sharing its subject with the main verb. Imperfective -я/-а (simultaneous: Читая, он улыбался); perfective -в/-вши (prior: Прочитав письмо, она заплакала).",
+    "examples": [
+      {
+        "native": "Посмотрев налево",
+        "gloss": null
+      },
+      {
+        "native": "Сергей перешёл улицу",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "the shared-subject rule is strict; violating it is a recognized error.",
+    "mistake": "the classic dangling error (Подъезжая к станции, у меня слетела шляпа is famously wrong).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Participles and Gerunds (Verbal Adverbs)",
+    "prerequisites": [
+      "ru-u12-the-passive-voice-and"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u12-transforming-participialgerund-phrases-clauses",
+    "lang": "ru",
+    "difficulty": 3,
+    "cefr": "C1",
+    "title": "Transforming participial/gerund phrases ↔ clauses",
+    "explanation": "Converting причастный оборот to a который-clause and деепричастный оборот to an adverbial clause — required for B2 writing, essential for C1 stylistic control. Example: Студент, сдавший экзамен ↔ Студент, который сдал экзамен.",
+    "examples": [
+      {
+        "native": "Студент, сдавший экзамен ↔ Студент, который сдал экзамен.",
+        "gloss": "The student who passed the exam (participle phrase ↔ который-clause, same meaning)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "comma errors; aspect drift. [B2 §2.3.7 lists exactly these transformations.]",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Participles and Gerunds (Verbal Adverbs)",
+    "prerequisites": [
+      "ru-u12-the-gerundverbal-adverb"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u13-subordinating-conjunctions",
+    "lang": "ru",
+    "difficulty": 3,
+    "cefr": "B1–B2",
+    "title": "Subordinating conjunctions (cause, time, concession, result)",
+    "explanation": "потому что/так как (cause), когда/пока/после того как/прежде чем (time), хотя/несмотря на то что (concession), поэтому/так что (result). B2 adds благодаря тому что, из-за того что, по мере того как.",
+    "examples": [
+      {
+        "native": "Я остался дома, потому что шёл дождь",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "comma placement; mixing что/чтобы. [B1 vs B2 inventories per Std.]",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Complex Sentences, Mood, and Reported Speech",
+    "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u13-что-vs-чтобы",
+    "lang": "ru",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "что vs чтобы",
+    "explanation": "что = \"that\" (fact, indicative); чтобы = \"in order to / so that\" (purpose/desire, + infinitive or + past-form verb).",
+    "examples": [
+      {
+        "native": "Я знаю, что он здесь",
+        "gloss": null
+      },
+      {
+        "native": "Я хочу, чтобы он пришёл",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "чтобы contains бы and demands the irrealis past-form verb.",
+    "mistake": "что after verbs of wishing/requesting.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Complex Sentences, Mood, and Reported Speech",
+    "prerequisites": [
+      "ru-u13-subordinating-conjunctions"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u13-the-conditionalsubjunctive-mood-with",
+    "lang": "ru",
+    "difficulty": 3,
+    "cefr": "B1–B2",
+    "title": "The conditional/subjunctive mood with бы",
+    "explanation": "Past-tense verb + invariable бы = hypothetical/counterfactual and polite wishes; real conditions use если + future, unreal use если бы + past + past+бы.",
+    "examples": [
+      {
+        "native": "Я хотел бы..",
+        "gloss": null
+      },
+      {
+        "native": "Если бы я знал, я бы сказал",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "Russian has no morphological conditional — it recycles the past tense plus бы (a reduced old aorist of быть). [B2 Std names сослагательное наклонение and adds бы to the particle set.]",
+    "mistake": "conjugating a special conditional; future after если бы.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Complex Sentences, Mood, and Reported Speech",
+    "prerequisites": [
+      "ru-u13-что-vs-чтобы"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u13-reported-speech",
+    "lang": "ru",
+    "difficulty": 3,
+    "cefr": "B1–B2",
+    "title": "Reported (indirect) speech",
+    "explanation": "Unlike English, Russian keeps the original tense; statements → что, commands → чтобы, questions → ли or the question word.",
+    "examples": [
+      {
+        "native": "Он сказал, что придёт",
+        "gloss": "lit. \"he said that he will come\""
+      },
+      {
+        "native": "Она спросила, приду ли я",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "Russian reports from the original speaker's vantage — no sequence-of-tenses shift. [B1 §2.3.4: \"Правила перевода прямой речи в косвенную\".]",
+    "mistake": "importing English backshift.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Complex Sentences, Mood, and Reported Speech",
+    "prerequisites": [
+      "ru-u13-the-conditionalsubjunctive-mood-with"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u14-neutral-svo-and-why",
+    "lang": "ru",
+    "difficulty": 3,
+    "cefr": "A1–B2",
+    "title": "Neutral SVO and why order is \"free but not random\"",
+    "explanation": "Because case marks roles, constituents reorder; neutral order is SVO but any order is grammatical.",
+    "examples": [
+      {
+        "native": "Студент читает книгу",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "assuming order shows subject/object (endings do).",
+    "source": null,
+    "related_game_id": "order",
+    "branch": "Word Order, Information Structure, and Register",
+    "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "ru-u14-themerheme-givennew-the-focus",
+    "lang": "ru",
+    "difficulty": 3,
+    "cefr": "B1–B2",
+    "title": "Theme–rheme / given–new: the focus goes last",
+    "explanation": "Known info (тема) first; new/important info (рема) last, carrying logical stress.",
+    "examples": [
+      {
+        "native": "На столе книги",
+        "gloss": "\"what's on the table is books\""
+      },
+      {
+        "native": "Книги на столе",
+        "gloss": "\"where the books are is the table\""
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "with no articles, Russian uses position to mark a/the and old/new. [Prague-school/FSP analysis; exact level is JC.]",
+    "mistake": "front-loading new info as in English.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Word Order, Information Structure, and Register",
+    "prerequisites": [
+      "ru-u14-neutral-svo-and-why"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-u14-focusemphatic-particles",
+    "lang": "ru",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "Focus/emphatic particles (же, ведь, -то, даже, именно, только)",
+    "explanation": "Tag a constituent as contrastive/salient; depend on placement.",
+    "examples": [
+      {
+        "native": "Я же говорил! Именно он это сделал",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "omitting them (flat) or misplacing them.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Word Order, Information Structure, and Register",
+    "prerequisites": [
+      "ru-u14-themerheme-givennew-the-focus"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-u14-negation-scope-with-не",
+    "lang": "ru",
+    "difficulty": 3,
+    "cefr": "B1–B2",
+    "title": "Negation scope with не",
+    "explanation": "не immediately precedes the word it negates, changing meaning by position.",
+    "examples": [
+      {
+        "native": "Я не читаю книгу / Не я читаю книгу / Я читаю не книгу",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "fixed English-style pre-verb negation only.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Word Order, Information Structure, and Register",
+    "prerequisites": [
+      "ru-u14-focusemphatic-particles"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-u14-register-ты-vs-вы",
+    "lang": "ru",
+    "difficulty": 3,
+    "cefr": "A1–B1–B2",
+    "title": "Register: ты vs вы and politeness",
+    "explanation": "ты (informal singular) vs вы (formal or plural); the choice signals social distance and is obligatory.",
+    "examples": [
+      {
+        "native": "Как вас зовут?",
+        "gloss": null
+      },
+      {
+        "native": "Как тебя зовут?",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "вы-politeness is a European convention layered onto the true plural.",
+    "mistake": "ты with strangers/superiors.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Word Order, Information Structure, and Register",
+    "prerequisites": [
+      "ru-u14-negation-scope-with-не"
+    ],
+    "confidence": "verified",
+    "related_oddity_id": {
+      "lang": "ru",
+      "id": "ru-odd-vy-ty"
+    }
+  },
+  {
+    "id": "ru-u14-functional-stylistic-register",
+    "lang": "ru",
+    "difficulty": 3,
+    "cefr": "B2–C1",
+    "title": "Functional-stylistic register (colloquial vs neutral vs bookish/official)",
+    "explanation": "B2 requires matching grammar to register — nominal style and stock verb-noun collocations in scientific/journalistic/official texts, participles/gerunds for formal writing.",
+    "examples": [
+      {
+        "native": "Настоящим сообщаю... vs Слушай, короче...",
+        "gloss": "I hereby inform you... (bookish/official) vs Listen, basically... (colloquial) — same content, different register"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "bookish participles in casual speech; slang in formal writing. [B2 Std §2.3.8: \"Функционально-стилистическое употребление\".]",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Word Order, Information Structure, and Register",
+    "prerequisites": [
+      "ru-u14-register-ты-vs-вы"
+    ],
+    "confidence": "verified"
   }
 ]

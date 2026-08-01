@@ -65,6 +65,22 @@ function findExampleSentence(story, word, lang) {
   return match ? sentenceText(match) : null
 }
 
+// Grammar/oddity points historically stored one example as example_native/
+// example_gloss; richer research-backed content (starting with French) stores
+// several as an `examples` array instead. Both shapes normalize to the same
+// `examples` array on the returned node, so every renderer only ever deals
+// with one shape.
+function exampleList(entry) {
+  if (Array.isArray(entry.examples)) return entry.examples
+  return entry.example_native ? [{ native: entry.example_native, gloss: entry.example_gloss ?? null }] : []
+}
+
+function exampleText(entry) {
+  return exampleList(entry)
+    .map((e) => e.native)
+    .join(' ')
+}
+
 /** Builds a lookup graph of vocab + grammar entries across all four languages,
  * linked by shared story context (vocab-vocab) and shared example wording
  * (vocab-grammar), plus a small set of hand-curated cross-language `see_also` links. */
@@ -80,11 +96,13 @@ export function buildExploreGraph(stories) {
   // Finds a real story whose text actually contains a grammar point's example
   // sentence, so "Read it in a story" only ever links to a genuine citation —
   // same "don't show a fabricated match" rule findExampleSentence follows above.
-  function findStoryForExample(lang, exampleNative) {
-    if (!exampleNative) return null
-    for (const story of storiesByLang[lang] ?? []) {
-      if (story.sentences.some((s) => sentenceText(s).includes(exampleNative))) {
-        return { storyIndex: story.idx, titleEn: story.titleEn }
+  function findStoryForExample(lang, examples) {
+    for (const example of examples) {
+      if (!example.native) continue
+      for (const story of storiesByLang[lang] ?? []) {
+        if (story.sentences.some((s) => sentenceText(s).includes(example.native))) {
+          return { storyIndex: story.idx, titleEn: story.titleEn }
+        }
       }
     }
     return null
@@ -127,7 +145,7 @@ export function buildExploreGraph(stories) {
     }
     const wordKey = stripLeadingArticle(word, lang)
     for (const g of GRAMMAR_BY_LANG[lang] ?? []) {
-      if (g.example_native?.includes(wordKey)) {
+      if (exampleText(g).includes(wordKey)) {
         related.push({ id: grammarNodeId(lang, g.id), lang, type: 'grammar', title: g.title })
       }
     }
@@ -145,9 +163,9 @@ export function buildExploreGraph(stories) {
       title: word,
       reading: entry.reading && !/^[mfn]$/i.test(entry.reading.trim()) ? entry.reading : null,
       subtitle: entry.english,
-      example: (() => {
+      examples: (() => {
         const native = story ? findExampleSentence(story, word, lang) : null
-        return native ? { native, gloss: entry.english, source: story.titleEn } : null
+        return native ? [{ native, gloss: entry.english, source: story.titleEn }] : []
       })(),
       note: null,
       relatedGameId: null,
@@ -160,7 +178,7 @@ export function buildExploreGraph(stories) {
     const g = (GRAMMAR_BY_LANG[lang] ?? []).find((p) => p.id === id)
     if (!g) return null
     const related = []
-    for (const word of mentionedVocab(lang, g.example_native)) {
+    for (const word of mentionedVocab(lang, exampleText(g))) {
       related.push({ id: vocabNodeId(lang, word), lang, type: 'vocab', title: word })
     }
     for (const ref of g.see_also ?? []) {
@@ -191,10 +209,14 @@ export function buildExploreGraph(stories) {
       title: g.title,
       reading: null,
       subtitle: g.explanation,
-      example: { native: g.example_native, gloss: g.example_gloss, source: null },
+      examples: exampleList(g),
       note: g.bridge_note ?? null,
+      mistake: g.mistake ?? null,
+      cefr: g.cefr ?? null,
+      source: g.source ?? null,
+      confidence: g.confidence ?? null,
       relatedGameId: g.related_game_id ?? null,
-      storyContext: findStoryForExample(lang, g.example_native),
+      storyContext: findStoryForExample(lang, exampleList(g)),
       vocabEntry: null,
       related,
       prerequisiteRefs,
@@ -236,7 +258,7 @@ export function buildExploreGraph(stories) {
       title: o.title,
       reading: null,
       subtitle: null,
-      example: { native: o.example_native, gloss: o.example_gloss, source: null },
+      examples: exampleList(o),
       note: o.bridge_note ?? null,
       relatedGameId: o.related_game_id ?? null,
       vocabEntry: null,
@@ -270,7 +292,7 @@ export function buildExploreGraph(stories) {
       title: c.title,
       reading: null,
       subtitle: c.concept_note,
-      example: null,
+      examples: [],
       note: null,
       relatedGameId: null,
       vocabEntry: null,

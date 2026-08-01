@@ -21,17 +21,32 @@ screen consumes the seed in a `useEffect` keyed on it. Current seeds:
 twice in a row — a raw primitive wouldn't retrigger a `useEffect` on a
 repeat value.
 
-**Tab-reset convention**: tapping the tab you're already on should feel like
-arriving fresh, not resume where you left off. `App.jsx`'s `changeTab`
-detects a same-tab tap and bumps `tabResetNonce`; every screen is mounted
-with `key={resetKey}` where `resetKey = \`${tab}-${tabResetNonce}\``, forcing
-a full remount (fresh `useState` initializers) instead of a no-op re-render.
-Feed's reading position is the one exception — `restorePosition` is only
-`true` on the very first Feed mount of the session (`App.jsx`'s
-`canRestoreFeedPosition`), so reopening the app resumes your spot but
-re-tapping Feed later always scrolls to top.
+**Tabs persist, mounted-once-per-session**: every tab keeps its internal
+state (open modals, filters, scroll position, mid-game state) when you
+switch away and back — screens are never unmounted just for a tab switch.
+`App.jsx` renders all six screens as permanent siblings; `visitedTabs` (a
+`Set`) gates each non-Feed screen behind `lazy()`/`Suspense` so it's still
+only imported the first time you actually visit that tab, and each screen's
+own wrapper div toggles `display: contents` (active) vs `display: none`
+(inactive) rather than conditionally rendering. Feed is the exception to the
+lazy-mount (eagerly imported, always mounted from app start, matching its
+role as the landing tab). The one remaining reset case: tapping the tab
+you're already **on** still forces that one screen fresh — `changeTab`
+bumps a per-tab entry in `tabResetNonces`, used as that screen's `key`, so
+only the re-tapped screen remounts; every other already-visited screen is
+untouched. Screens that need to react every time they *become* the active
+tab again (not just on first mount — e.g. `BookmarksScreen` clearing the
+unseen-saved-words badge) must key that logic off the `activeTab` prop
+changing, not off mount (`useEffect(() => {...}, [activeTab])` with an
+`if (activeTab !== 'x') return` guard), since a plain mount-only effect will
+now only ever fire once per session. Feed's reading position continues to
+work the same way it always did — `restorePosition` is only `true` on the
+very first Feed mount of the session (`App.jsx`'s `canRestoreFeedPosition`)
+— but now that Feed rarely remounts at all, scroll position mostly just
+stays put on its own; re-tapping Feed while already on it is still the one
+way to force it back to the top.
 
-**Global floating overlays** (mounted as siblings after `{screen}` in
+**Global floating overlays** (mounted as siblings after the tab screens in
 `App.jsx`, so reachable from every tab): `CompanionOverlay` (AI chat bubble,
 bottom-right) and `SurpriseMeOverlay` (random-content "slot machine",
 bottom-left — deliberately mirrored to avoid colliding with the companion

@@ -13,6 +13,7 @@ const KEYS = {
   companionDeviceId: 'companion_device_id',
   exploreTrail: 'explore_trail',
   seenOddities: 'seen_oddities',
+  bookmarksView: 'bookmarks_view',
 }
 
 const PROGRESS_KEYS = [
@@ -201,6 +202,19 @@ export function getExploreTrail() {
 export function setExploreTrail(trail) {
   writeJSON(KEYS.exploreTrail, trail)
   return trail
+}
+
+// Persisted like the explore trail above — restored unconditionally on every
+// mount (not just the first of the session), so switching tabs away from
+// Bookmarks and back doesn't lose which reference view (e.g. an alphabet)
+// was open, the same way Explore's rabbit-hole trail already survives it.
+export function getBookmarksView() {
+  return readJSON(KEYS.bookmarksView, null)
+}
+
+export function setBookmarksView(view) {
+  writeJSON(KEYS.bookmarksView, view)
+  return view
 }
 
 export function clearExploreTrail() {

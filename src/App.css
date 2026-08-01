@@ -864,6 +864,7 @@ ruby rt {
   font-weight: 700;
   line-height: 1.2;
   margin: 0 0 2px;
+  overflow-wrap: break-word;
 }
 
 .entry-reading {
@@ -888,6 +889,7 @@ ruby rt {
 .citation-native {
   font-size: 16px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .citation-gloss {
@@ -2072,6 +2074,7 @@ ruby rt {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 6px;
+  overflow-wrap: break-word;
 }
 
 .lesson-explanation {
@@ -2079,5 +2082,100 @@ ruby rt {
   color: var(--text-dim);
   line-height: 1.5;
   margin-bottom: 12px;
+}
+
+.curriculum-header {
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.lesson-nav {
+  display: flex;
+  gap: 10px;
+  margin: 4px 0 20px;
+}
+
+.lesson-nav-button {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.lesson-nav-button:disabled {
+  opacity: 0.35;
+}
+
+.lesson-check {
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+.lesson-check-label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+
+.lesson-check-sentence {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.cefr-badge {
+  font-size: 10px;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-dim);
+  border-radius: 999px;
+  padding: 3px 8px;
+}
+
+.verified-badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-success);
+  background: var(--bg-success);
+  border-radius: 999px;
+  padding: 3px 8px;
+}
+
+.mistake-note {
+  border: 1px dashed var(--bg-warning);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+}
+
+.mistake-note-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--bg-warning);
+}
+
+.mistake-note-text {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.source-caption {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-style: italic;
+  margin-bottom: 8px;
 }
 

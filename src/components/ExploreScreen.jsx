@@ -18,7 +18,6 @@ import {
   clearExploreTrail,
   addSavedWord,
   isWordSaved,
-  getUnseenSavedWords,
   getSeenOddities,
   markOdditySeen,
   markOdditiesSeen,
@@ -27,7 +26,6 @@ import {
 import { getDigDeeperSuggestions } from '../lib/companion'
 import { GAMES_REQUIRING_READ_STORY } from '../lib/games'
 import { langMeta } from '../lib/langs'
-import BottomNav from './BottomNav'
 import EntryCard from './EntryCard'
 
 const CATEGORIES = [
@@ -57,9 +55,8 @@ function vocabEntryToNode(entry) {
 }
 
 
-export default function ExploreScreen({ stories, wordSeed, nodeSeed, onOpenGame, onOpenStory, activeTab, onChangeTab }) {
+export default function ExploreScreen({ stories, wordSeed, nodeSeed, onOpenGame, onOpenStory, onSavedWordsChange }) {
   const graph = useMemo(() => buildExploreGraph(stories), [stories])
-  const unseenCount = useMemo(() => getUnseenSavedWords().size, [])
 
   const [mode, setMode] = useState('random')
   const [trail, setTrail] = useState(() => getExploreTrail() ?? [graph.startingIds[0]])
@@ -179,6 +176,7 @@ export default function ExploreScreen({ stories, wordSeed, nodeSeed, onOpenGame,
       storyIndex: node.vocabEntry.storyIndex,
     })
     forceUpdate((t) => t + 1)
+    onSavedWordsChange?.()
   }
 
   function handlePractice(node) {
@@ -437,8 +435,6 @@ export default function ExploreScreen({ stories, wordSeed, nodeSeed, onOpenGame,
           )}
         </>
       )}
-
-      <BottomNav active={activeTab} onChange={onChangeTab} badges={{ bookmarks: unseenCount }} />
     </div>
   )
 }

@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react'
 import { getLevelsPerLang, levelMeta } from '../lib/levels'
 import { getAvailableLangs, langMeta } from '../lib/langs'
 import { clearAllProgress } from '../lib/storage'
-import BottomNav from './BottomNav'
 
 export default function ProfileScreen({
   allStories,
@@ -10,8 +9,6 @@ export default function ProfileScreen({
   activeLevels,
   onToggleLanguage,
   onToggleLevel,
-  activeTab,
-  onChangeTab,
 }) {
   const allLangs = useMemo(() => getAvailableLangs(allStories), [allStories])
   const levelsPerLang = useMemo(() => getLevelsPerLang(allStories), [allStories])
@@ -93,8 +90,6 @@ export default function ProfileScreen({
           </div>
         </div>
       )}
-
-      <BottomNav active={activeTab} onChange={onChangeTab} />
     </div>
   )
 }

@@ -1,182 +1,1918 @@
 [
   {
-    "id": "de-verb-second-01",
+    "id": "de-u1-the-v2-rule",
     "lang": "de",
     "difficulty": 1,
-    "title": "Verb-second (V2) word order",
-    "explanation": "The finite verb is always the second element of a main clause, whatever occupies the first slot.",
-    "example_native": "Gestern ging ich nach Hause.",
-    "example_gloss": "Yesterday, I went home.",
-    "bridge_lang": "en",
-    "bridge_note": "English does the same thing, just only after certain fronted words — \"Never have I seen such a thing,\" \"Only then did she realize.\" German just runs on this constantly instead of in a few fossilized cases.",
-    "related_game_id": "order",
-    "branch": "Word order & clauses",
-    "prerequisites": [],
-    "see_also": [
+    "cefr": "A1",
+    "title": "The V2 rule (finite verb second in statements)",
+    "explanation": "In a German main-clause statement the conjugated verb is always the second element — not necessarily the second word, but the second slot. Whatever you put first (subject, time phrase, object), the verb follows immediately, and the subject then jumps behind the verb if it wasn't first.",
+    "examples": [
       {
-        "lang": "fr",
-        "id": "fr-negation-01"
+        "native": "Ich trinke morgens Kaffee.",
+        "gloss": "I drink coffee in the mornings."
+      },
+      {
+        "native": "Morgens trinke ich Kaffee.",
+        "gloss": "[lit.] \"Mornings drink I coffee.\""
       }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "V2 is a shared inheritance of the Germanic languages; even Old English had it. Modern English lost general V2 and kept only fragments (\"Never have I seen…,\" \"Here comes the bus\"). German simply never dropped it. V2 feels alien to English speakers precisely because English is the Germanic outlier, not German.",
+    "mistake": "English speakers keep rigid Subject-Verb-Object and produce \"Morgens ich trinke Kaffee\" (verb third). They forget subject-verb inversion after a fronted element.",
+    "source": "Aussagesatz/W-Frage/Ja-Nein-Frage/Imperativ verb positions are core A1 — Goethe A1 curriculum & Profile Deutsch",
+    "related_game_id": "order",
+    "branch": "Sentence Skeleton & Verb Position (V2, the Satzklammer)",
+    "prerequisites": [],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u1-w-questions",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "W-questions (open questions)",
+    "explanation": "Question word first, then verb second: Woher kommst du? (Where are you from?), Was macht ihr? (What are you doing?).",
+    "examples": [
+      {
+        "native": "Woher kommst du? Was macht ihr?",
+        "gloss": "Where are you from? What are you doing?"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "inserting do-support (\"Was du machst?\" modeled on \"What do you…\").",
+    "source": "Aussagesatz/W-Frage/Ja-Nein-Frage/Imperativ verb positions are core A1 — Goethe A1 curriculum & Profile Deutsch",
+    "related_game_id": null,
+    "branch": "Sentence Skeleton & Verb Position (V2, the Satzklammer)",
+    "prerequisites": [
+      "de-u1-the-v2-rule"
     ],
     "confidence": "first_pass"
   },
   {
-    "id": "de-case-01",
+    "id": "de-u1-yesno-questions",
     "lang": "de",
-    "difficulty": 2,
-    "title": "Case marks articles and adjectives, not just pronouns",
-    "explanation": "German has four cases (nominative, accusative, dative, genitive) marked throughout the sentence.",
-    "example_native": "Ich sehe den Mann.",
-    "example_gloss": "I see the man.",
-    "bridge_lang": "en",
-    "bridge_note": "English mostly lost this except in pronouns (I/me, he/him, who/whom) — the concept isn't foreign, just far more limited in English.",
-    "related_game_id": null,
-    "branch": "Nouns: gender, case & plurals",
-    "prerequisites": ["de-gender-01"],
-    "see_also": [
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Yes/no questions (Satzfrage)",
+    "explanation": "Verb goes first: Trinkst du Kaffee? (Do you drink coffee?), Kommt sie heute? (Is she coming today?).",
+    "examples": [
       {
-        "lang": "ru",
-        "id": "ru-case-01"
+        "native": "Trinkst du Kaffee? Kommt sie heute?",
+        "gloss": "Do you drink coffee? Is she coming today?"
       }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "inventing \"Tust du Kaffee trinken?\" by translating \"do.\"",
+    "source": "Aussagesatz/W-Frage/Ja-Nein-Frage/Imperativ verb positions are core A1 — Goethe A1 curriculum & Profile Deutsch",
+    "related_game_id": null,
+    "branch": "Sentence Skeleton & Verb Position (V2, the Satzklammer)",
+    "prerequisites": [
+      "de-u1-w-questions"
     ],
     "confidence": "first_pass"
   },
   {
-    "id": "de-modal-01",
-    "lang": "de",
-    "difficulty": 2,
-    "title": "Modal verbs push the infinitive to the end of the clause",
-    "explanation": "The modal verb keeps second position, but the infinitive it governs parks at the very end, with anything else in between.",
-    "example_native": "Ich muss heute arbeiten.",
-    "example_gloss": "I have to work today.",
-    "bridge_lang": "en",
-    "bridge_note": "English keeps modal and infinitive stuck together (\"have to work\") — German is happy to separate them by a whole clause's worth.",
-    "related_game_id": null,
-    "branch": "Word order & clauses",
-    "prerequisites": ["de-verb-second-01"],
-    "confidence": "first_pass"
-  },
-  {
-    "id": "de-separable-verbs-01",
-    "lang": "de",
-    "difficulty": 2,
-    "title": "Separable-prefix verbs split apart in main clauses",
-    "explanation": "Verbs like aufstehen (to get up) split into the base verb and a stranded prefix at the end of the clause.",
-    "example_native": "Ich stehe früh auf.",
-    "example_gloss": "I get up early.",
-    "bridge_lang": "en",
-    "bridge_note": "The closest English cousin is phrasal verbs behaving similarly (\"I put my coat on\"), though German is much stricter about exactly where the prefix lands.",
-    "related_game_id": null,
-    "related_oddity_id": { "lang": "de", "id": "de-odd-separable-verb-distance" },
-    "branch": "Word order & clauses",
-    "prerequisites": ["de-verb-second-01"],
-    "confidence": "first_pass"
-  },
-  {
-    "id": "de-gender-01",
+    "id": "de-u1-imperative",
     "lang": "de",
     "difficulty": 1,
-    "title": "Grammatical gender doesn't map onto English (or Portuguese) at all",
-    "explanation": "der/die/das is a genuinely arbitrary system with no reliable shortcut from either language.",
-    "example_native": "der Tisch, die Tür, das Buch",
-    "example_gloss": "the table, the door, the book",
+    "cefr": "A1",
+    "title": "Imperative",
+    "explanation": "Command form; verb first. Sie-form keeps the pronoun (Kommen Sie!), du-form drops pronoun and ending (Komm!), ihr-form = present tense minus pronoun (Kommt!).",
+    "examples": [
+      {
+        "native": "Nehmen Sie Platz!",
+        "gloss": "Take a seat. [nat.] / Sei ruhig! — Be quiet."
+      }
+    ],
     "bridge_lang": "en",
-    "bridge_note": "Worth stating plainly rather than forcing a false bridge — this is the one point that's just memorization.",
+    "bridge_note": null,
+    "mistake": "keeping du (\"Du komm!\"); using the -st ending; mishandling vowel-change verbs (correct Nimm!, Iss!, Lies! — the e→i change is kept but the -st is dropped).",
+    "source": "Aussagesatz/W-Frage/Ja-Nein-Frage/Imperativ verb positions are core A1 — Goethe A1 curriculum & Profile Deutsch",
     "related_game_id": null,
-    "related_oddity_id": { "lang": "de", "id": "de-odd-madchen-neuter" },
-    "branch": "Nouns: gender, case & plurals",
-    "prerequisites": [],
+    "branch": "Sentence Skeleton & Verb Position (V2, the Satzklammer)",
+    "prerequisites": [
+      "de-u1-yesno-questions"
+    ],
     "confidence": "first_pass"
   },
   {
-    "id": "de-plural-01",
-    "lang": "de",
-    "difficulty": 2,
-    "title": "Plural formation is irregular and has to be memorized per noun",
-    "explanation": "There's no single plural rule — nouns pluralize with an umlaut, an ending (-e, -er, -n, -s), both, or neither, and which one applies isn't predictable from the singular alone.",
-    "example_native": "das Buch → die Bücher / das Auto → die Autos",
-    "example_gloss": "the book → the books / the car → the cars",
-    "bridge_lang": "en",
-    "bridge_note": "English mostly just adds -s and calls it done, with a small memorized set of exceptions (child/children, mouse/mice). German flips that ratio — the exceptions are the rule, and every new noun's plural has to be learned alongside its gender.",
-    "related_game_id": null,
-    "branch": "Nouns: gender, case & plurals",
-    "prerequisites": ["de-gender-01"],
-    "confidence": "first_pass"
-  },
-  {
-    "id": "de-perfect-tense-01",
-    "lang": "de",
-    "difficulty": 2,
-    "title": "Everyday past tense is built with haben/sein + past participle",
-    "explanation": "Spoken German mostly uses the Perfekt tense — a helper verb (haben or sein) plus the past participle — as its default past tense, even for plain, finished actions.",
-    "example_native": "Ich habe gegessen.",
-    "example_gloss": "I ate. (literally: I have eaten)",
-    "bridge_lang": "en",
-    "bridge_note": "The shape matches English's present perfect (\"I have eaten\") exactly, but English reserves that for actions with present relevance, using simple past (\"I ate\") for a finished event. German uses the Perfekt for both — the familiar shape, doing more work than it does in English.",
-    "related_game_id": "blank",
-    "branch": "Tense & register",
-    "prerequisites": [],
-    "confidence": "first_pass"
-  },
-  {
-    "id": "de-adjective-endings-01",
-    "lang": "de",
-    "difficulty": 3,
-    "title": "Adjectives before a noun take an ending that shifts with case, gender, and article",
-    "explanation": "An adjective placed directly before a noun isn't left in its plain form — it takes an ending that changes depending on the noun's gender, case, and whether an article (and which kind) comes before it.",
-    "example_native": "der gute Mann / ein guter Mann",
-    "example_gloss": "the good man / a good man (same adjective, different ending)",
-    "bridge_lang": "en",
-    "bridge_note": "English adjectives never change form no matter what they describe — this layer of agreement doesn't exist at all in English, so it's one of the purely additive rules with no shortcut, not just a different version of something already known.",
-    "related_game_id": null,
-    "branch": "Nouns: gender, case & plurals",
-    "prerequisites": ["de-case-01"],
-    "confidence": "first_pass"
-  },
-  {
-    "id": "de-subordinate-clause-verb-01",
-    "lang": "de",
-    "difficulty": 3,
-    "title": "In subordinate clauses, the verb moves to the very end",
-    "explanation": "Clauses introduced by words like weil (because), dass (that), or wenn (if/when) push the finite verb all the way to the end of the clause, instead of keeping it in second position.",
-    "example_native": "..., weil ich krank bin.",
-    "example_gloss": "..., because I am sick.",
-    "bridge_lang": "en",
-    "bridge_note": "English keeps the verb right after its subject no matter what kind of clause it's in (\"because I am sick\" — verb stays put). German's main-clause V2 rule gets suspended entirely here, which trips up learners who've just gotten comfortable with verb-second.",
-    "related_game_id": "order",
-    "branch": "Word order & clauses",
-    "prerequisites": ["de-verb-second-01"],
-    "confidence": "first_pass"
-  },
-  {
-    "id": "de-negation-01",
+    "id": "de-u1-the-satzklammer",
     "lang": "de",
     "difficulty": 1,
-    "title": "\"nicht\" or \"kein\" — negating a verb vs. negating a noun",
-    "explanation": "nicht negates verbs, adjectives, or a whole clause; kein negates a noun that would otherwise take ein or no article at all. Picking the wrong one is one of the most common beginner slips.",
-    "example_native": "Ich habe kein Auto. Ich fahre nicht.",
-    "example_gloss": "I don't have a car. I'm not driving.",
+    "cefr": "A1",
+    "title": "The Satzklammer (sentence bracket)",
+    "explanation": "German routinely splits the verb into two poles: the finite verb in slot 2 and a second verbal element (infinitive, participle, or separable prefix) pushed to the very end. Everything in between is the Mittelfeld. This is the single most important structural template in the language.",
+    "examples": [
+      {
+        "native": "Ich rufe dich morgen an.",
+        "gloss": "I'll call you tomorrow. (prefix an at end)"
+      },
+      {
+        "native": "Ich habe den Film gesehen.",
+        "gloss": "I have seen the film. (participle at end)"
+      }
+    ],
     "bridge_lang": "en",
-    "bridge_note": "English just uses \"not\"/\"no\" for both cases without needing to pick a lane — German forces the choice every time based on whether a noun or something else is being negated.",
-    "related_game_id": "blank",
-    "related_oddity_id": { "lang": "de", "id": "de-odd-doch" },
-    "branch": "Tense & register",
+    "bridge_note": "Cognitively this is why German is famously \"back-loaded\" — Mark Twain lampooned it in \"The Awful German Language\" (Appendix D of A Tramp Abroad, 1880): \"…all the parentheses and reparentheses are massed together between a couple of king-parentheses… AFTER WHICH COMES THE VERB, and you find out for the first time what the man has been talking about.\" The bracket is what makes subordinate-clause verb-final order (Unit 12) feel less arbitrary later: it's the same instinct to close a clause with a verb.",
+    "mistake": "placing the second element too early (\"Ich habe gesehen den Film\").",
+    "source": "Aussagesatz/W-Frage/Ja-Nein-Frage/Imperativ verb positions are core A1 — Goethe A1 curriculum & Profile Deutsch",
+    "related_game_id": "order",
+    "branch": "Sentence Skeleton & Verb Position (V2, the Satzklammer)",
+    "prerequisites": [
+      "de-u1-imperative"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u2-regular-present-tense-conjugation",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Regular (weak) present-tense conjugation",
+    "explanation": "Stem + endings -e, -st, -t, -en, -t, -en. lernen → ich lerne, du lernst, er lernt, wir lernen, ihr lernt, sie lernen.",
+    "examples": [
+      {
+        "native": "lernen: ich lerne, du lernst, er lernt, wir lernen, ihr lernt, sie lernen",
+        "gloss": "to learn: I learn, you learn, he learns, we learn, you learn, they learn"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "These endings are worn-down descendants of fuller Proto-Germanic endings; English eroded almost all of its equivalents, keeping only 3rd-sg -s. German kept a fuller set, which is why person can be read off the verb.",
+    "mistake": "dropping endings (\"ich lern\").",
+    "source": "officially, the B1 word list supplies Infinitiv, 3rd-sg Präsens, 3rd-sg Präteritum and Partizip Perfekt for every verb, confirming present tense as baseline",
+    "related_game_id": null,
+    "branch": "The Present Tense & the Verb Engine",
     "prerequisites": [],
     "confidence": "first_pass"
   },
   {
-    "id": "de-relative-clauses-01",
+    "id": "de-u2-sein-and-haben",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "sein and haben (present)",
+    "explanation": "Highly irregular, learned as whole paradigms: ich bin/du bist/er ist/wir sind/ihr seid/sie sind; ich habe/du hast/er hat/wir haben/ihr habt/sie haben.",
+    "examples": [
+      {
+        "native": "ich bin, du bist, er ist / ich habe, du hast, er hat",
+        "gloss": "I am, you are, he is / I have, you have, he has"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "\"er hast,\" \"wir seid.\"",
+    "source": "officially, the B1 word list supplies Infinitiv, 3rd-sg Präsens, 3rd-sg Präteritum and Partizip Perfekt for every verb, confirming present tense as baseline",
+    "related_game_id": null,
+    "branch": "The Present Tense & the Verb Engine",
+    "prerequisites": [
+      "de-u2-regular-present-tense-conjugation"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u2-stem-vowel-changing-verbs",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Stem-vowel-changing (strong) verbs",
+    "explanation": "Many common verbs change the stem vowel in du- and er/sie/es-forms only: a→ä (fahren → du fährst), e→i (geben → du gibst), e→ie (sehen → du siehst, lesen → du liest).",
+    "examples": [
+      {
+        "native": "Er spricht Deutsch.",
+        "gloss": "He speaks German. / Du nimmst den Bus. — You take the bus."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "These vowel alternations are relics of Proto-Germanic ablaut and i-umlaut — the same phenomenon behind English sing/sang/sung. The fronting was originally triggered by an -i- in the old ending that has since vanished.",
+    "mistake": "regularizing (\"du gebst,\" \"er sprecht\").",
+    "source": "officially, the B1 word list supplies Infinitiv, 3rd-sg Präsens, 3rd-sg Präteritum and Partizip Perfekt for every verb, confirming present tense as baseline",
+    "related_game_id": null,
+    "branch": "The Present Tense & the Verb Engine",
+    "prerequisites": [
+      "de-u2-sein-and-haben"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u2-separable-prefix-verbs",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Separable-prefix verbs",
+    "explanation": "Prefixes like an-, auf-, aus-, ein-, mit-, zu-, ab-, vor-, nach- detach in a main clause and go to the end: aufstehen → Ich stehe um sieben auf.",
+    "examples": [
+      {
+        "native": "Der Zug fährt gleich ab.",
+        "gloss": "The train is departing shortly."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "These prefixes were originally independent adverbs/prepositions (like English \"stand up,\" \"go out\"); German fused them onto the infinitive but they still \"remember\" their freedom in finite clauses — analogous to English phrasal verbs (I called him up).",
+    "mistake": "not separating (\"Ich aufstehe\").",
+    "source": "officially, the B1 word list supplies Infinitiv, 3rd-sg Präsens, 3rd-sg Präteritum and Partizip Perfekt for every verb, confirming present tense as baseline",
+    "related_game_id": null,
+    "branch": "The Present Tense & the Verb Engine",
+    "prerequisites": [
+      "de-u2-stem-vowel-changing-verbs"
+    ],
+    "confidence": "first_pass",
+    "related_oddity_id": {
+      "lang": "de",
+      "id": "de-odd-separable-verb-distance"
+    }
+  },
+  {
+    "id": "de-u2-inseparable-prefix-verbs",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Inseparable-prefix verbs",
+    "explanation": "Prefixes be-, emp-, ent-, er-, ge-, ver-, zer- (unstressed) never detach and take no ge- in the perfect: verstehen → Ich verstehe; ich habe verstanden.",
+    "examples": [
+      {
+        "native": "verstehen → ich verstehe; ich habe verstanden",
+        "gloss": "to understand → I understand; I have understood"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "Stress is the reliable signal: stressed prefix = separable, unstressed = inseparable.",
+    "mistake": "separating them; adding ge- (\"gevertanden\").",
+    "source": "officially, the B1 word list supplies Infinitiv, 3rd-sg Präsens, 3rd-sg Präteritum and Partizip Perfekt for every verb, confirming present tense as baseline",
+    "related_game_id": null,
+    "branch": "The Present Tense & the Verb Engine",
+    "prerequisites": [
+      "de-u2-separable-prefix-verbs"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u2-present-tense-for-future",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Present tense for future",
+    "explanation": "With a time adverb, the present covers future meaning: Morgen fahre ich nach Berlin.",
+    "examples": [
+      {
+        "native": "Morgen fahre ich nach Berlin.",
+        "gloss": "Tomorrow I'm going to Berlin. (present tense, future meaning)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "over-using werden where the present is more natural.",
+    "source": "officially, the B1 word list supplies Infinitiv, 3rd-sg Präsens, 3rd-sg Präteritum and Partizip Perfekt for every verb, confirming present tense as baseline",
+    "related_game_id": null,
+    "branch": "The Present Tense & the Verb Engine",
+    "prerequisites": [
+      "de-u2-inseparable-prefix-verbs"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u3-the-three-genders",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "The three genders",
+    "explanation": "German nouns are der, die, or das. Gender is grammatical, not (mostly) natural: das Mädchen (the girl) is neuter.",
+    "examples": [
+      {
+        "native": "der Mann, die Frau, das Mädchen",
+        "gloss": "the man (m), the woman (f), the girl (n) — Mädchen is neuter despite meaning \"girl\""
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "English once had three genders too (Old English sēo sunne = \"the sun,\" feminine). English lost grammatical gender in the same medieval inflectional collapse that leveled its case endings; German kept the system.",
+    "mistake": "assuming gender follows meaning; defaulting everything to der.",
+    "source": "for core gender/plural, extended through A2; Hammer's ch. 1",
+    "related_game_id": null,
+    "branch": "Gender & Noun Morphology",
+    "prerequisites": [],
+    "confidence": "first_pass",
+    "related_oddity_id": {
+      "lang": "de",
+      "id": "de-odd-madchen-neuter"
+    }
+  },
+  {
+    "id": "de-u3-gender-cues-by-form",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Gender cues by form and meaning",
+    "explanation": "High-yield rules: -ung, -heit, -keit, -schaft, -tion, -ei → feminine; -chen, -lein, -um, -ment → neuter; -er (agent), -ig, -ling, days/months/seasons, male persons → masculine.",
+    "examples": [
+      {
+        "native": "die Zeitung, das Mädchen, der Lehrer",
+        "gloss": "the newspaper (-ung → fem.), the girl (-chen → neut.), the teacher (-er → masc.)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "treating cues as absolute (they're highly but not 100% reliable).",
+    "source": "for core gender/plural, extended through A2; Hammer's ch. 1",
+    "related_game_id": null,
+    "branch": "Gender & Noun Morphology",
+    "prerequisites": [
+      "de-u3-the-three-genders"
+    ],
+    "confidence": "first_pass",
+    "related_oddity_id": {
+      "lang": "de",
+      "id": "de-odd-see-gender-flip"
+    }
+  },
+  {
+    "id": "de-u3-noun-plurals",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Noun plurals",
+    "explanation": "Five main patterns: -e (often + umlaut: Stuhl→Stühle), -er (+ umlaut where possible: Kind→Kinder, Buch→Bücher), -(e)n (Frau→Frauen), -s (loanwords: Auto→Autos), and zero/umlaut-only (Lehrer→Lehrer, Mutter→Mütter).",
+    "examples": [
+      {
+        "native": "der Stuhl → die Stühle / das Kind → die Kinder / die Frau → die Frauen",
+        "gloss": "the chair → the chairs / the child → the children / the woman → the women"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "The umlaut plural is i-umlaut fossilized: an old plural ending -i fronted the stem vowel before disappearing — exactly as in English foot/feet, mouse/mice.",
+    "mistake": "adding English -s everywhere; forgetting umlaut.",
+    "source": "for core gender/plural, extended through A2; Hammer's ch. 1",
+    "related_game_id": null,
+    "branch": "Gender & Noun Morphology",
+    "prerequisites": [
+      "de-u3-gender-cues-by-form"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u3-compound-nouns-and-capitalization",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Compound nouns and capitalization",
+    "explanation": "Compounds take the gender of their last element (das Haus + die Tür → die Haustür). All nouns are capitalized.",
+    "examples": [
+      {
+        "native": "das Haus + die Tür → die Haustür",
+        "gloss": "the house + the door → the front door (a compound takes the gender of its last element)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "taking gender from the first element; not capitalizing.",
+    "source": "for core gender/plural, extended through A2; Hammer's ch. 1",
+    "related_game_id": null,
+    "branch": "Gender & Noun Morphology",
+    "prerequisites": [
+      "de-u3-noun-plurals"
+    ],
+    "confidence": "first_pass",
+    "related_oddity_id": {
+      "lang": "de",
+      "id": "de-odd-capitalize-nouns"
+    }
+  },
+  {
+    "id": "de-u3-the-n-declension",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "The n-declension (weak masculine nouns)",
+    "explanation": "A class of masculine nouns (der Junge, der Kunde, der Mensch, der Student, der Kollege, der Name) adds -(e)n in every case except nominative singular: Ich sehe den Studenten; mit dem Menschen.",
+    "examples": [
+      {
+        "native": "Ich sehe den Studenten; mit dem Menschen.",
+        "gloss": "I see the student; with the person. (weak masculine nouns add -(e)n in every case but nominative singular)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "leaving them unmarked (\"Ich kenne den Student\").",
+    "source": "the official B1 word list marks these entries",
+    "related_game_id": null,
+    "branch": "Gender & Noun Morphology",
+    "prerequisites": [
+      "de-u3-compound-nouns-and-capitalization"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u4-what-case-is",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "What case is (and why German has it)",
+    "explanation": "Case is a marking on articles/adjectives/pronouns/some nouns that signals a word's job in the clause. Because case carries that information, German word order can flex in ways English cannot.",
+    "examples": [
+      {
+        "native": "Der Mann sieht den Hund.",
+        "gloss": "The man sees the dog. (case marks the subject/object roles, not word position)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "English and German descend from the same case-marked Proto-Germanic. English's endings eroded — phonetically (unstressed final syllables weakened to a uniform -e then vanished) and through Norse contact in the Danelaw, where speakers of similar languages dropped confusing endings. German, spared that intense contact and standardized later, kept four cases. This is the master \"why\" of the course: German retained the case system English discarded, so English speakers must relearn a distinction their language outsourced to word order and prepositions.",
+    "mistake": null,
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Four-Case System (Core Engine)",
+    "prerequisites": [],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u4-nominative-the-subject-case",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Nominative — the subject case",
+    "explanation": "The doer/subject and predicate nouns after sein/werden/bleiben. Der Mann arbeitet. Das ist ein Hund.",
+    "examples": [
+      {
+        "native": "Der Mann arbeitet. Das ist ein Hund.",
+        "gloss": "The man works. That is a dog."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "assuming the first noun is always nominative.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Four-Case System (Core Engine)",
+    "prerequisites": [
+      "de-u4-what-case-is"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u4-accusative-the-direct-object-case",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Accusative — the direct-object case",
+    "explanation": "The thing directly acted on. Only masculine changes visibly: der→den, ein→einen, kein→keinen. Feminine/neuter/plural look like the nominative.",
+    "examples": [
+      {
+        "native": "Ich sehe den Mann / einen Hund.",
+        "gloss": "I see the man / a dog."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "ignoring the masculine change (\"Ich sehe der Mann\") — the #1 beginner case error.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Four-Case System (Core Engine)",
+    "prerequisites": [
+      "de-u4-nominative-the-subject-case"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u4-dative-the-indirect-object-case",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Dative — the indirect-object case",
+    "explanation": "The recipient/beneficiary (\"to/for whom\"). All genders change: dem, der, dem, den + -n on the plural noun; einem, einer, einem.",
+    "examples": [
+      {
+        "native": "Ich gebe dem Mann das Buch.",
+        "gloss": "I give the man the book. [nat.] / Ich helfe der Frau. — I help the woman."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "using accusative for recipients; forgetting the dative-plural -n (den Kindern, mit den Freunden).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Four-Case System (Core Engine)",
+    "prerequisites": [
+      "de-u4-accusative-the-direct-object-case"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u4-two-object-order",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Two-object order (nouns vs pronouns)",
+    "explanation": "Two noun objects: dative before accusative (Ich gebe dem Kind den Ball). With pronouns the order flips: accusative before dative (Ich gebe ihn ihm). Pronoun objects precede noun objects.",
+    "examples": [
+      {
+        "native": "Ich gebe dem Kind den Ball.",
+        "gloss": "I give the child the ball. (dative before accusative with two nouns)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "keeping dative-first order with pronouns.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Four-Case System (Core Engine)",
+    "prerequisites": [
+      "de-u4-dative-the-indirect-object-case"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u4-genitive-the-possessor-case",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Genitive — the possessor case",
+    "explanation": "Shows possession/relationship (\"of\"). Masc/neut: des …-(e)s (des Mannes); fem/plural der.",
+    "examples": [
+      {
+        "native": "das Auto meines Vaters",
+        "gloss": "my father's car [nat.] / die Farbe des Himmels — the color of the sky"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "The English possessive -'s (father's car) is the same Germanic genitive ending, now the only case ending left on English nouns. In spoken German the genitive is itself receding in favor of von + dative — a live example of the same erosion that reshaped English.",
+    "mistake": "omitting the noun's -s; using genitive where spoken German uses von + dative (das Auto von meinem Vater).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Four-Case System (Core Engine)",
+    "prerequisites": [
+      "de-u4-two-object-order"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u4-verbs-governing-the-dative",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Verbs governing the dative",
+    "explanation": "A memorized set takes a dative object where English expects a direct object: helfen, danken, folgen, gefallen, gehören, antworten, glauben, passen.",
+    "examples": [
+      {
+        "native": "Das Buch gehört mir.",
+        "gloss": "The book belongs to me. [nat.] / Der Film gefällt mir. — I like the film. ([lit.] \"the film pleases to-me\")"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "using accusative (\"Ich helfe dich\" → correct dir).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Four-Case System (Core Engine)",
+    "prerequisites": [
+      "de-u4-genitive-the-possessor-case"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u5-definite-article-declension",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Definite article declension (der/die/das full table)",
+    "explanation": "The 16-cell table across four cases × three genders + plural. Present it as the \"master key,\" since these endings recur on every der-word and (as signals) on adjectives.",
+    "examples": [
+      {
+        "native": "der Mann, den Mann, dem Mann, des Mannes",
+        "gloss": "the man in nominative, accusative, dative, genitive"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "memorizing nominative only; not internalizing that den = masc-acc and dative-plural.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Articles & Determiners (der-words and ein-words)",
+    "prerequisites": [],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u5-indefinite-article-and-its",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Indefinite article (ein/eine/ein) and its \"missing\" plural",
+    "explanation": "ein has no plural (bare noun or kein-/possessive fills the gap).",
+    "examples": [
+      {
+        "native": "ein Mann / Männer",
+        "gloss": "a man / men (ein has no plural form of its own)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "inventing a plural ein.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Articles & Determiners (der-words and ein-words)",
+    "prerequisites": [
+      "de-u5-definite-article-declension"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u5-kein",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "kein (negation of nouns)",
+    "explanation": "Negates a noun that would take ein or no article; declines like ein but has a plural (keine).",
+    "examples": [
+      {
+        "native": "Ich habe keine Zeit / keinen Hund.",
+        "gloss": "I have no time / no dog."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "using nicht where kein is required (see Unit 13).",
+    "source": null,
+    "related_game_id": "blank",
+    "branch": "Articles & Determiners (der-words and ein-words)",
+    "prerequisites": [
+      "de-u5-indefinite-article-and-its"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u5-der-words",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "der-words (dieser, jeder, welcher, mancher, solcher, alle)",
+    "explanation": "Take the same endings as the definite article. dieser Mann, jedes Kind, welche Frau.",
+    "examples": [
+      {
+        "native": "dieser Mann, jedes Kind, welche Frau",
+        "gloss": "this man, every child, which woman"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "treating them as indeclinable.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Articles & Determiners (der-words and ein-words)",
+    "prerequisites": [
+      "de-u5-kein"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u5-ein-words",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "ein-words (possessives mein/dein/sein/ihr/unser/euer/Ihr and kein)",
+    "explanation": "Take ein-endings. Possessive choice depends on the possessor; the ending depends on the possessed noun's gender/case.",
+    "examples": [
+      {
+        "native": "Das ist mein Bruder. Ich besuche meinen Bruder.",
+        "gloss": "That's my brother. I'm visiting my brother."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "matching the possessive to the wrong noun; euer → eure (the -e- drops before an ending).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Articles & Determiners (der-words and ein-words)",
+    "prerequisites": [
+      "de-u5-der-words"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u5-interrogative-determiners-welch-and",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Interrogative determiners: welch- and was für ein-",
+    "explanation": "Welcher (which, from a set) vs was für ein (what kind of).",
+    "examples": [
+      {
+        "native": "Welches Buch? / Was für ein Buch?",
+        "gloss": "Which book? (from a known set) / What kind of book?"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": null,
+    "source": null,
+    "related_game_id": null,
+    "branch": "Articles & Determiners (der-words and ein-words)",
+    "prerequisites": [
+      "de-u5-ein-words"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u6-personal-pronouns-in-all",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Personal pronouns in all three core cases",
+    "explanation": "ich/mich/mir, du/dich/dir, er/ihn/ihm, sie/sie/ihr, es/es/ihm, wir/uns/uns, ihr/euch/euch, sie/sie/ihnen, Sie/Sie/Ihnen.",
+    "examples": [
+      {
+        "native": "ich/mich/mir, du/dich/dir, er/ihn/ihm",
+        "gloss": "I/me/to-me, you/you/to-you, he/him/to-him — nominative/accusative/dative"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "mich/mir and dich/dir confusion (accusative vs dative) — persistent even at B1.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Pronouns (Personal, Possessive, Reflexive, Demonstrative)",
+    "prerequisites": [],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u6-formal-vs-informal-address",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Formal vs informal address (du/ihr vs Sie)",
+    "explanation": "Sie (capitalized, plural verb) for formal/strangers; du for friends/family/children; ihr plural informal.",
+    "examples": [
+      {
+        "native": "Wie heißen Sie? / Wie heißt du?",
+        "gloss": "What's your name? (formal) / What's your name? (informal)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "Sie as a polite pronoun is the 3rd-person-plural repurposed for deference — a politeness-through-distancing strategy (cf. archaic English \"your Grace\").",
+    "mistake": "over-using du; forgetting Sie takes the same verb form as sie (they).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Pronouns (Personal, Possessive, Reflexive, Demonstrative)",
+    "prerequisites": [
+      "de-u6-personal-pronouns-in-all"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u6-third-person-pronouns-track-grammatical",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Third-person pronouns track grammatical gender",
+    "explanation": "er/sie/es replace der/die/das nouns regardless of animacy: a table (der Tisch) is er.",
+    "examples": [
+      {
+        "native": "Wo ist der Schlüssel?",
+        "gloss": "Er ist hier. — Where's the key? It's here."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "defaulting inanimate objects to es (English \"it\").",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Pronouns (Personal, Possessive, Reflexive, Demonstrative)",
+    "prerequisites": [
+      "de-u6-formal-vs-informal-address"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u6-possessive-pronouns",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Possessive pronouns (standalone)",
+    "explanation": "meiner/meine/meins used without a following noun.",
+    "examples": [
+      {
+        "native": "Das ist nicht meiner, das ist deiner.",
+        "gloss": "That's not mine, that's yours."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": null,
+    "source": null,
+    "related_game_id": null,
+    "branch": "Pronouns (Personal, Possessive, Reflexive, Demonstrative)",
+    "prerequisites": [
+      "de-u6-third-person-pronouns-track-grammatical"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u6-reflexive-pronouns-and-reflexive",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "A2–B1",
+    "title": "Reflexive pronouns and reflexive verbs",
+    "explanation": "mich/dich/sich/uns/euch/sich (accusative) and mir/dir/sich… (dative). Many verbs are inherently reflexive (sich freuen, sich erinnern, sich beeilen).",
+    "examples": [
+      {
+        "native": "Ich freue mich. Ich wasche mir die Hände.",
+        "gloss": "I'm glad. I wash my hands."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "omitting the reflexive; wrong case (accusative vs dative reflexive when there's also a direct object).",
+    "source": "reflexive verbs are in the official B1 list",
+    "related_game_id": null,
+    "branch": "Pronouns (Personal, Possessive, Reflexive, Demonstrative)",
+    "prerequisites": [
+      "de-u6-possessive-pronouns"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u6-demonstrative-pronouns",
     "lang": "de",
     "difficulty": 3,
-    "title": "Relative pronouns decline like der/die/das, matched to the clause's own grammar",
-    "explanation": "The relative pronoun (der, die, das, or a case-inflected form like dem/den/deren) agrees with the noun it refers back to in gender and number, but takes its case from the role it plays inside the relative clause itself.",
-    "example_native": "Der Mann, der dort steht, ist mein Lehrer.",
-    "example_gloss": "The man who is standing there is my teacher.",
+    "cefr": "B1–B2",
+    "title": "Demonstrative pronouns (der/die/das as \"that one\")",
+    "explanation": "Stressed der, die, das used pronominally for emphasis.",
+    "examples": [
+      {
+        "native": "Den kenne ich!",
+        "gloss": "That one I know!"
+      }
+    ],
     "bridge_lang": "en",
-    "bridge_note": "English uses one flat \"who/that/which\" regardless of role. German's relative pronoun carries the same case-marking work as any other article, so it changes shape depending on what job it's doing inside its own clause.",
+    "bridge_note": null,
+    "mistake": null,
+    "source": null,
+    "related_game_id": null,
+    "branch": "Pronouns (Personal, Possessive, Reflexive, Demonstrative)",
+    "prerequisites": [
+      "de-u6-reflexive-pronouns-and-reflexive"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u7-the-core-principle-the",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "The core principle: the case/gender signal appears once",
+    "explanation": "If the determiner shows case and gender clearly, the adjective \"relaxes\" (weak endings). If there's no determiner, the adjective must do the work (strong endings). After ein-words, they share the job (mixed).",
+    "examples": [
+      {
+        "native": "Why this is the master insight: teach this before the tables. It converts 48 cells into one idea: strong = adjective does the grammar; weak = article does it; mixed = they split it",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": null,
+    "source": "introduction, consolidated B1; Hammer's ch. 6; GGP places adjective inflection across A2–B2",
+    "related_game_id": null,
+    "branch": "Adjective Endings (Weak / Mixed / Strong Declension)",
+    "prerequisites": [],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u7-weak-declension",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Weak declension (after der-words)",
+    "explanation": "Only two endings: -e (nominative singular all genders + accusative fem/neut) and -en (everywhere else).",
+    "examples": [
+      {
+        "native": "der große Mann, die alte Frau, ich sehe den großen Mann, mit dem kleinen Kind",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "\"der großer Mann\" (importing a strong ending after der).",
+    "source": "introduction, consolidated B1; Hammer's ch. 6; GGP places adjective inflection across A2–B2",
+    "related_game_id": null,
+    "branch": "Adjective Endings (Weak / Mixed / Strong Declension)",
+    "prerequisites": [
+      "de-u7-the-core-principle-the"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u7-mixed-declension",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Mixed declension (after ein-words)",
+    "explanation": "Like weak, except three \"gaps\" where ein shows nothing, so the adjective must: nominative masculine (ein guter Mann), nominative neuter and accusative neuter (ein gutes Kind).",
+    "examples": [
+      {
+        "native": "ein guter Mann, ein gutes Kind",
+        "gloss": "a good man, a good child (the adjective fills the gap ein doesn't mark)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "\"ein gute Mann\" — the single most common adjective error; the masculine nominative gap must be filled.",
+    "source": "introduction, consolidated B1; Hammer's ch. 6; GGP places adjective inflection across A2–B2",
+    "related_game_id": null,
+    "branch": "Adjective Endings (Weak / Mixed / Strong Declension)",
+    "prerequisites": [
+      "de-u7-weak-declension"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u7-strong-declension",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Strong declension (no determiner)",
+    "explanation": "The adjective takes the definite-article-like endings itself. Common with mass nouns, plurals without article, after numbers.",
+    "examples": [
+      {
+        "native": "guter Wein, kalte Milch, frische Brötchen, mit gutem Wein",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "Exception to teach: genitive masc/neut singular takes -en not -es (guten Weines), because the noun's -s already signals genitive.",
+    "mistake": "using weak endings when there's no article (\"gut Wein\").",
+    "source": "introduction, consolidated B1; Hammer's ch. 6; GGP places adjective inflection across A2–B2",
+    "related_game_id": null,
+    "branch": "Adjective Endings (Weak / Mixed / Strong Declension)",
+    "prerequisites": [
+      "de-u7-mixed-declension"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u7-parallel-adjectives-and-dative-plural",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Parallel adjectives and dative-plural default",
+    "explanation": "Multiple adjectives all take the same ending (guten alten Wein); dative plural is essentially always -en (mit den guten Freunden).",
+    "examples": [
+      {
+        "native": "guten alten Wein / mit den guten Freunden",
+        "gloss": "good old wine / with the good friends"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "varying endings across stacked adjectives.",
+    "source": "introduction, consolidated B1; Hammer's ch. 6; GGP places adjective inflection across A2–B2",
+    "related_game_id": null,
+    "branch": "Adjective Endings (Weak / Mixed / Strong Declension)",
+    "prerequisites": [
+      "de-u7-strong-declension"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u7-participles-as-adjectives",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Participles as adjectives (preview of C1)",
+    "explanation": "Present participle (-end: lachend) and past participle (gebaut) used attributively decline like ordinary adjectives (das lachende Kind, der gebaute Turm).",
+    "examples": [
+      {
+        "native": "das lachende Kind, der gebaute Turm",
+        "gloss": "the laughing child, the built tower"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": null,
+    "source": "the extended version is C1 — see Unit 14",
+    "related_game_id": null,
+    "branch": "Adjective Endings (Weak / Mixed / Strong Declension)",
+    "prerequisites": [
+      "de-u7-parallel-adjectives-and-dative-plural"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u8-the-six-modals-möchten",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "The six modals + möchten and the modal pattern",
+    "explanation": "können (can), müssen (must), dürfen (may), sollen (should), wollen (want), mögen (like), + möchten (would like). Conjugated modal in slot 2, infinitive at the end.",
+    "examples": [
+      {
+        "native": "Ich muss jeden Tag arbeiten.",
+        "gloss": "I have to work every day. [nat.] / Kannst du mir helfen? — Can you help me?"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "adding zu before the infinitive (\"Ich muss zu arbeiten\"); putting the infinitive next to the modal.",
+    "source": "for können/müssen/wollen/möchten; full set A2; Hammer's verb chapters",
+    "related_game_id": null,
+    "branch": "Modal Verbs",
+    "prerequisites": [],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u8-the-irregular-present-singular",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "The irregular present singular",
+    "explanation": "Modals change stem vowel in singular and take no ending in ich- and er/sie/es-forms: ich kann, du kannst, er kann; ich muss, er muss; ich darf, er darf. (sollen doesn't change vowel.)",
+    "examples": [
+      {
+        "native": "ich kann, du kannst, er kann",
+        "gloss": "I can, you can, he can (no personal ending in ich-/er-forms)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "Modals are preterite-present verbs — an ancient class whose present-tense forms are historically old past-tense (strong-preterite) forms. Because old singular past forms had no personal ending, the modern modals still lack the -e/-t in ich/er. English shows the identical fossil: I can, he can (never \"he cans\"), I must, he must — English modals behave irregularly for exactly the same historical reason. Pointing out can/must as English preterite-presents makes the German pattern feel familiar rather than arbitrary.",
+    "mistake": "\"ich kanne,\" \"er kannt.\"",
+    "source": "for können/müssen/wollen/möchten; full set A2; Hammer's verb chapters",
+    "related_game_id": null,
+    "branch": "Modal Verbs",
+    "prerequisites": [
+      "de-u8-the-six-modals-möchten"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u8-modals-in-the-simple",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Modals in the simple past (Präteritum)",
+    "explanation": "Here modals are actually easier: drop the umlaut, add weak past endings: konnte, musste, durfte, sollte, wollte, mochte. First and third singular identical.",
+    "examples": [
+      {
+        "native": "Ich musste gestern arbeiten.",
+        "gloss": "I had to work yesterday."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "keeping the umlaut (\"müsste\" — which is actually the subjunctive, a real trap).",
+    "source": "for können/müssen/wollen/möchten; full set A2; Hammer's verb chapters",
+    "related_game_id": null,
+    "branch": "Modal Verbs",
+    "prerequisites": [
+      "de-u8-the-irregular-present-singular"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u8-möchten-vs-mögen",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "möchten vs mögen",
+    "explanation": "mögen = to like (something); möchten (subjunctive form of mögen) = would like (to). Its past is supplied by wollte.",
+    "examples": [
+      {
+        "native": "Ich mag Kaffee. Ich möchte einen Kaffee.",
+        "gloss": "I like coffee. I would like a coffee."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "treating möchten as a separate infinitive verb.",
+    "source": "for können/müssen/wollen/möchten; full set A2; Hammer's verb chapters",
+    "related_game_id": null,
+    "branch": "Modal Verbs",
+    "prerequisites": [
+      "de-u8-modals-in-the-simple"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u9-accusative-prepositions",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Accusative prepositions (fixed)",
+    "explanation": "durch, für, gegen, ohne, um (+ bis, entlang, wider). Always accusative, no motion test.",
+    "examples": [
+      {
+        "native": "Ich gehe durch den Park. Ein Geschenk für dich",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "applying a motion rule that doesn't exist here.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Prepositions by Case",
+    "prerequisites": [],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u9-dative-prepositions",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Dative prepositions (fixed)",
+    "explanation": "aus, bei, mit, nach, seit, von, zu (+ gegenüber, ab). Always dative.",
+    "examples": [
+      {
+        "native": "Ich fahre mit dem Bus zu meiner Freundin.",
+        "gloss": "I go by bus to my friend's."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "contractions (zum = zu dem, zur = zu der, beim, vom) are obligatory and worth teaching as fixed forms.",
+    "mistake": "the nach/zu split (destinations) and aus/von split (origins); using accusative.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Prepositions by Case",
+    "prerequisites": [
+      "de-u9-accusative-prepositions"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u9-two-way-prepositions",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Two-way prepositions (Wechselpräpositionen)",
+    "explanation": "an, auf, hinter, in, neben, über, unter, vor, zwischen. Take accusative for motion toward a goal (answers wohin?), dative for location (answers wo?).",
+    "examples": [
+      {
+        "native": "Ich hänge das Bild an die Wand (acc., motion) / Das Bild hängt an der Wand (dat., location)",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "the contractions encode the case as a free clue: ins/ans always = accusative/direction; im/am always = dative/location.",
+    "mistake": "using the \"movement\" heuristic too crudely — the real test is crossing a boundary into a new location vs action unfolding within a place (dancing in the room is dative even though it's energetic).",
+    "source": null,
+    "related_game_id": "blank",
+    "branch": "Prepositions by Case",
+    "prerequisites": [
+      "de-u9-dative-prepositions"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u9-genitive-prepositions",
+    "lang": "de",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "Genitive prepositions",
+    "explanation": "während, trotz, wegen, (an)statt, innerhalb, außerhalb, aufgrund.",
+    "examples": [
+      {
+        "native": "Wegen des schlechten Wetters bleibe ich zu Hause.",
+        "gloss": "Because of the bad weather I'm staying home."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "using dative in formal writing where genitive is expected.",
+    "source": "note in spoken German these increasingly take dative",
+    "related_game_id": null,
+    "branch": "Prepositions by Case",
+    "prerequisites": [
+      "de-u9-two-way-prepositions"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u9-verbs-with-fixed-prepositions",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Verbs with fixed prepositions (Rektion)",
+    "explanation": "A large class governs a specific preposition with a fixed case, rarely matching English: warten auf (+acc), denken an (+acc), teilnehmen an (+dat), sich freuen auf/über, abhängen von.",
+    "examples": [
+      {
+        "native": "Ich warte auf den Bus. Ich denke an dich.",
+        "gloss": "I'm waiting for the bus. I'm thinking of you."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "translating the English preposition literally (\"warten für\").",
+    "source": "in the official B1 list",
+    "related_game_id": null,
+    "branch": "Prepositions by Case",
+    "prerequisites": [
+      "de-u9-genitive-prepositions"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u10-the-perfekt-the-spoken",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "The Perfekt (present perfect) — the spoken past",
+    "explanation": "haben/sein (slot 2) + past participle (end). This is the default past in conversation for all verbs, not just \"perfect\" meanings.",
+    "examples": [
+      {
+        "native": "Ich habe den Film gesehen. Wir sind nach Berlin gefahren",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "mapping it onto English present-perfect meaning only; English speakers under-use it and over-use Präteritum.",
+    "source": null,
+    "related_game_id": "blank",
+    "branch": "The Past-Tense System (Perfekt, Präteritum, Plusquamperfekt)",
+    "prerequisites": [],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u10-past-participle-formation",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Past participle formation",
+    "explanation": "Weak: ge- + stem + -t (gemacht). Strong: ge- + stem (often vowel-changed) + -en (gesehen, gegangen). Inseparable-prefix and -ieren verbs take no ge- (verstanden, studiert). Separable: prefix + ge + … (aufgestanden).",
+    "examples": [
+      {
+        "native": "machen → gemacht / sehen → gesehen",
+        "gloss": "to do → done / to see → seen"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "adding ge- to inseparable/-ieren verbs; regularizing strong participles.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Past-Tense System (Perfekt, Präteritum, Plusquamperfekt)",
+    "prerequisites": [
+      "de-u10-the-perfekt-the-spoken"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u10-haben-vs-sein-as",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "haben vs sein as auxiliary",
+    "explanation": "sein with verbs of motion/change of state and sein/bleiben/werden (gefahren, gegangen, aufgestanden, gestorben); haben with the rest (esp. transitive verbs).",
+    "examples": [
+      {
+        "native": "Ich bin gefahren. Ich habe gegessen.",
+        "gloss": "I went (by vehicle). I ate. (sein for motion/change of state, haben for the rest)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "English once used \"be\" for motion verbs too (\"He is come,\" \"the sun is risen\" in the King James Bible). German kept the split; English generalized \"have.\"",
+    "mistake": "using haben everywhere (English has only \"have\").",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Past-Tense System (Perfekt, Präteritum, Plusquamperfekt)",
+    "prerequisites": [
+      "de-u10-past-participle-formation"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u10-the-präteritum-the-writtennarrative",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "The Präteritum (simple past) — the written/narrative past",
+    "explanation": "Weak: stem + -te- + endings (machte, arbeitete). Strong: vowel change, no -te- (ging, sah, fuhr), with no ending in 1st/3rd singular. Used in writing/narration; in speech mainly for sein (war), haben (hatte), and modals.",
+    "examples": [
+      {
+        "native": "Er ging nach Hause. Ich war müde",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "using Präteritum in casual speech (sounds bookish outside the north); confusing weak Präteritum forms with present (wartete vs wartet).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Past-Tense System (Perfekt, Präteritum, Plusquamperfekt)",
+    "prerequisites": [
+      "de-u10-haben-vs-sein-as"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u10-seinhabenmodals-in-the-präteritum",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "sein/haben/modals in the Präteritum",
+    "explanation": "war, hatte, konnte, musste, wollte… used even in speech.",
+    "examples": [
+      {
+        "native": "Ich war müde. Ich hatte Zeit. Ich konnte kommen.",
+        "gloss": "I was tired. I had time. I could come."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "saying \"ich habe gewesen/gehabt\" where war/hatte is far more idiomatic.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Past-Tense System (Perfekt, Präteritum, Plusquamperfekt)",
+    "prerequisites": [
+      "de-u10-the-präteritum-the-writtennarrative"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u10-the-plusquamperfekt",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "The Plusquamperfekt (past perfect)",
+    "explanation": "hatte/war + past participle; marks an event before another past event, especially with nachdem.",
+    "examples": [
+      {
+        "native": "Nachdem er gegessen hatte, ging er ins Bett.",
+        "gloss": "After he had eaten, he went to bed."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "tense-sequence errors with nachdem (which pairs Plusquamperfekt + Präteritum/Perfekt).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Past-Tense System (Perfekt, Präteritum, Plusquamperfekt)",
+    "prerequisites": [
+      "de-u10-seinhabenmodals-in-the-präteritum"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u11-futur-i",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Futur I",
+    "explanation": "werden (slot 2) + infinitive (end). Expresses future (often with modal/prediction flavor) and assumptions about the present.",
+    "examples": [
+      {
+        "native": "Ich werde dich morgen anrufen. Er wird wohl krank sein",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "English \"will\" and German wollen are cognates, both from a verb meaning \"to want\" — hence the false-friend trap. German grammaticalized werden (\"become\") for future instead.",
+    "mistake": "confusing werden (will/become) with wollen (want); overusing Futur I where present suffices.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Future, Passive & the Conditional/Subjunctive II",
+    "prerequisites": [],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u11-futur-ii",
+    "lang": "de",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "Futur II (future perfect)",
+    "explanation": "werden + past participle + haben/sein (end). Chiefly for assumptions about the past.",
+    "examples": [
+      {
+        "native": "Er wird es schon vergessen haben.",
+        "gloss": "He'll have forgotten it by now."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "rare in production; teach mainly for recognition.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Future, Passive & the Conditional/Subjunctive II",
+    "prerequisites": [
+      "de-u11-futur-i"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u11-vorgangspassiv",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Vorgangspassiv (process passive)",
+    "explanation": "werden + past participle; focuses on the action, agent optional (von + dative). Forms across tenses: wird gebaut / wurde gebaut / ist gebaut worden (note participle worden, not geworden).",
+    "examples": [
+      {
+        "native": "Das Haus wird gebaut. Der Brief wurde gestern geschrieben",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "using geworden instead of worden in the perfect passive; forcing passive where German prefers man (Man baut das Haus).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Future, Passive & the Conditional/Subjunctive II",
+    "prerequisites": [
+      "de-u11-futur-ii"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u11-zustandspassiv",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Zustandspassiv (state passive)",
+    "explanation": "sein + past participle; describes the resulting state, not the process.",
+    "examples": [
+      {
+        "native": "Das Haus ist gebaut (state: it stands finished) vs wird gebaut (process). Das Geschäft ist geschlossen",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "conflating the two passives; using sein-passive for ongoing actions.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Future, Passive & the Conditional/Subjunctive II",
+    "prerequisites": [
+      "de-u11-vorgangspassiv"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u11-passive-with-modals",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Passive with modals",
+    "explanation": "Modal + past participle + werden (end): Das muss gemacht werden.",
+    "examples": [
+      {
+        "native": "Das muss gemacht werden.",
+        "gloss": "That has to be done."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "word-order slips in the triple-verb cluster.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Future, Passive & the Conditional/Subjunctive II",
+    "prerequisites": [
+      "de-u11-zustandspassiv"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u11-konjunktiv-ii-formation",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Konjunktiv II — formation",
+    "explanation": "Two routes: (a) würde + infinitive (default, especially for weak verbs); (b) synthetic forms for high-frequency verbs: wäre, hätte, könnte, müsste, sollte, würde, gäbe, käme. Past Konjunktiv II = hätte/wäre + past participle.",
+    "examples": [
+      {
+        "native": "Ich würde kommen. Ich wäre froh. Ich hätte Zeit.",
+        "gloss": "I would come. I would be glad. I would have time."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "würde + haben/sein where hätte/wäre is expected; confusing müsste (subjunctive) with musste (past).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Future, Passive & the Conditional/Subjunctive II",
+    "prerequisites": [
+      "de-u11-passive-with-modals"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u11-konjunktiv-ii-uses",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Konjunktiv II — uses",
+    "explanation": "Hypotheticals/irreal conditions (Wenn ich Zeit hätte, würde ich kommen), polite requests (Könnten Sie mir helfen? Ich hätte gern…), wishes (Ich wäre gern reich), and past irrealis (Hätte ich das gewusst, wäre ich gekommen).",
+    "examples": [
+      {
+        "native": "An deiner Stelle würde ich das nicht machen.",
+        "gloss": "In your position I wouldn't do that."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "English \"would/could/should\" + the subjunctive-ish \"If I were\" are the direct functional and etymological parallels; German uses the pattern far more systematically for politeness.",
+    "mistake": "using indicative in polite requests (blunt); mishandling the wenn-clause verb-final order.",
+    "source": "the official B1 inventory requires Konjunktiv II",
+    "related_game_id": null,
+    "branch": "Future, Passive & the Conditional/Subjunctive II",
+    "prerequisites": [
+      "de-u11-konjunktiv-ii-formation"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u12-coordinating-conjunctions",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Coordinating conjunctions (position 0)",
+    "explanation": "und, aber, oder, denn, sondern connect two main clauses without changing word order (they sit in \"position zero,\" verb stays second).",
+    "examples": [
+      {
+        "native": "Ich bleibe zu Hause, denn ich bin müde",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "treating denn (coordinating \"for/because\") like weil (subordinating) and sending the verb to the end; aber vs sondern (the latter only after a negation).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Clause Combination: Coordination, Subordination, Relative Clauses & Word Order",
+    "prerequisites": [],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u12-subordinating-conjunctions-and-verb-final",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Subordinating conjunctions and verb-final order",
+    "explanation": "weil, dass, wenn, als, obwohl, damit, ob, während, bevor, nachdem, seit(dem) push the finite verb to the end of their clause.",
+    "examples": [
+      {
+        "native": "Ich bleibe zu Hause, weil ich müde bin.",
+        "gloss": "I'm staying home because I'm tired. ([lit.] \"…because I tired am\")"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "Subordinate-clause verb-final order is arguably the older Germanic default; main-clause V2 is the \"marked\" innovation (finite verb raised to the front). So the subordinate clause preserves the deeper pattern — which is why German feels \"verb-final underneath.\"",
+    "mistake": "keeping V2 in the subordinate clause (\"…weil ich bin müde\") — the archetypal intermediate error.",
+    "source": null,
     "related_game_id": "order",
-    "branch": "Nouns: gender, case & plurals",
-    "prerequisites": ["de-case-01"],
+    "branch": "Clause Combination: Coordination, Subordination, Relative Clauses & Word Order",
+    "prerequisites": [
+      "de-u12-coordinating-conjunctions"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u12-wenn-vs-als-vs",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "wenn vs als vs wann",
+    "explanation": "wenn = if / whenever (repeated/present-future); als = when (single past event); wann = when (questions/indirect questions).",
+    "examples": [
+      {
+        "native": "Als ich klein war… / Wenn ich Zeit habe… / Ich weiß nicht, wann er kommt",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "using wenn for a one-time past event; using wann as a statement conjunction.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Clause Combination: Coordination, Subordination, Relative Clauses & Word Order",
+    "prerequisites": [
+      "de-u12-subordinating-conjunctions-and-verb-final"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u12-fronted-subordinate-clauses",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Fronted subordinate clauses",
+    "explanation": "When a subordinate clause comes first, the main clause still starts with its verb (the whole subordinate clause = element 1): Weil ich müde bin, bleibe ich zu Hause. (verb-comma-verb).",
+    "examples": [
+      {
+        "native": "Weil ich müde bin, bleibe ich zu Hause.",
+        "gloss": "Because I'm tired, I'm staying home. (verb-comma-verb)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "forgetting the main-clause inversion after a leading subordinate clause.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Clause Combination: Coordination, Subordination, Relative Clauses & Word Order",
+    "prerequisites": [
+      "de-u12-wenn-vs-als-vs"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u12-relative-clauses",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Relative clauses",
+    "explanation": "Introduced by der/die/das (or welcher); the pronoun takes its gender/number from the antecedent but its case from its job inside the relative clause; verb goes to the end; commas obligatory; the pronoun is never omitted.",
+    "examples": [
+      {
+        "native": "Der Mann, der dort steht, ist mein Lehrer. (nom.) / Das Buch, das ich lese… (acc.) / Die Frau, deren Sohn ich kenne… (gen., B2)",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "English can drop the relative pronoun (the book I read) and never marks its case beyond who/whom; German requires it and marks full case.",
+    "mistake": "dropping the pronoun (English \"the man I saw\"); matching case to the antecedent instead of the internal role; forgetting verb-final.",
+    "source": "for nom/acc/dat; genitive relative (dessen/deren) B2",
+    "related_game_id": "order",
+    "branch": "Clause Combination: Coordination, Subordination, Relative Clauses & Word Order",
+    "prerequisites": [
+      "de-u12-fronted-subordinate-clauses"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u12-tekamolo",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "TeKaMoLo (middle-field order)",
+    "explanation": "Adverbials default to Temporal → Kausal → Modal → Lokal (time, reason, manner, place). It's a strong default, not a law; fronting one element for emphasis leaves the rest in order.",
+    "examples": [
+      {
+        "native": "Ich fahre morgen wegen der Arbeit mit dem Zug nach Berlin.",
+        "gloss": "I'm going to Berlin by train tomorrow because of work."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "English \"place before time\" order (\"…nach Berlin morgen\"); German is time-before-place.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Clause Combination: Coordination, Subordination, Relative Clauses & Word Order",
+    "prerequisites": [
+      "de-u12-relative-clauses"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u12-infinitive-clauses-with-zu",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Infinitive clauses with zu, and um…zu / ohne…zu / (an)statt…zu",
+    "explanation": "zu + infinitive at clause end for purpose/etc. um…zu = \"in order to\" (same subject).",
+    "examples": [
+      {
+        "native": "Ich habe vergessen, die Tür zu schließen. Ich lerne Deutsch, um in Wien zu studieren",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "using um…zu with different subjects (should be damit); omitting zu.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Clause Combination: Coordination, Subordination, Relative Clauses & Word Order",
+    "prerequisites": [
+      "de-u12-tekamolo"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u12-the-position-of-nicht",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "The position of nicht",
+    "explanation": "nicht comes late for whole-clause negation but immediately before the specific element it contradicts; before predicate adjectives/nouns and before the final verb element.",
+    "examples": [
+      {
+        "native": "Ich kenne ihn nicht. Ich fahre nicht nach Berlin (sondern nach Bonn)",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": null,
+    "source": null,
+    "related_game_id": null,
+    "branch": "Clause Combination: Coordination, Subordination, Relative Clauses & Word Order",
+    "prerequisites": [
+      "de-u12-infinitive-clauses-with-zu"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u13-nicht-vs-kein",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "nicht vs kein",
+    "explanation": "kein negates nouns with ein or no article; nicht negates verbs, adjectives, adverbs, and nouns with a definite article/possessive.",
+    "examples": [
+      {
+        "native": "Ich habe kein Auto vs Das ist nicht mein Auto",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "\"Ich habe nicht ein Auto\" (should be kein).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Negation, Comparison, da-/wo-Compounds & Discourse Glue",
+    "prerequisites": [],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u13-comparative-and-superlative",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Comparative and superlative",
+    "explanation": "Comparative + -er (+ often umlaut: älter, größer) + als for \"than\"; superlative am …-sten (predicative) or der/die/das …-ste (attributive). Irregulars: gut/besser/best-, viel/mehr/meist-, gern/lieber/liebst-, hoch/höher/höchst-.",
+    "examples": [
+      {
+        "native": "Sie ist größer als ich. Das ist der schönste Tag",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "English -er/-est and better/best are the exact Germanic cognate patterns; the umlaut in älter is (again) i-umlaut.",
+    "mistake": "using wie instead of als for \"than\"; regularizing irregulars; forgetting the attributive superlative still takes adjective endings.",
+    "source": null,
+    "related_game_id": "blank",
+    "branch": "Negation, Comparison, da-/wo-Compounds & Discourse Glue",
+    "prerequisites": [
+      "de-u13-nicht-vs-kein"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u13-da-wo-compounds",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "da-/wo-compounds (pronominal adverbs)",
+    "explanation": "For things (not people), a preposition + pronoun fuses into da(r)- (statements: dafür, darauf, damit, darüber) or wo(r)- (questions: wofür, worauf, womit). The -r- is inserted before a vowel (darauf, worüber).",
+    "examples": [
+      {
+        "native": "Ich warte darauf. Worauf wartest du?",
+        "gloss": "I'm waiting for it. What are you waiting for?"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "English lets prepositions dangle (What are you waiting for?); German fuses them into a single word instead.",
+    "mistake": "using them for people (about a person you need \"Von wem sprichst du?\"); stranding prepositions English-style.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Negation, Comparison, da-/wo-Compounds & Discourse Glue",
+    "prerequisites": [
+      "de-u13-comparative-and-superlative"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u13-conjunctional-adverbs",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Conjunctional adverbs (position affects word order)",
+    "explanation": "deshalb, deswegen, trotzdem, außerdem, dann, danach, also count as element 1 and trigger inversion (verb still second): Es regnet, deshalb bleibe ich zu Hause.",
+    "examples": [
+      {
+        "native": "Es regnet, deshalb bleibe ich zu Hause.",
+        "gloss": "It's raining, so I'm staying home."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "treating them like coordinating conjunctions (no inversion).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Negation, Comparison, da-/wo-Compounds & Discourse Glue",
+    "prerequisites": [
+      "de-u13-da-wo-compounds"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u14-konjunktiv-i",
+    "lang": "de",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "Konjunktiv I (indirect/reported speech)",
+    "explanation": "Formed from the infinitive stem + subjunctive endings (er komme, er habe, er sei); signals that the writer is relaying a claim without endorsing it. When Konjunktiv I coincides with the indicative, German substitutes Konjunktiv II.",
+    "examples": [
+      {
+        "native": "Der Minister sagte, er sei zuversichtlich und werde die Reform unterstützen.",
+        "gloss": "The minister said he was confident and would support the reform."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "English marks reported speech clumsily, with backshifting tenses plus \"reportedly/allegedly.\" German has a dedicated mood for it, which is why German journalism can sustain pages of attributed claims unambiguously. The Goethe/ÖSD B1 inventory states verbatim that active mastery of less-frequent structures \"…wie Konjunktiv I oder Partizip I wird daher nicht verlangt\" — so Konjunktiv I belongs above B1.",
+    "mistake": "using indicative (loses the \"reporting\" nuance); not switching to Konjunktiv II when the K-I form is ambiguous (sie haben → sie hätten).",
+    "source": "for production; officially NOT required at B1",
+    "related_game_id": null,
+    "branch": "Register, Reported Speech & Foundational C1 Structures",
+    "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "de-u14-extended-participial-attributes",
+    "lang": "de",
+    "difficulty": 3,
+    "cefr": "C1",
+    "title": "Extended participial attributes (erweitertes Partizipialattribut)",
+    "explanation": "Formal German packs a whole modifying phrase between article and noun, headed by a declined participle.",
+    "examples": [
+      {
+        "native": "der in der Zeitung veröffentlichte Artikel",
+        "gloss": "the article published in the newspaper [nat.] / die von Experten geprüften Daten — the data checked by experts"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "losing the thread over long pre-nominal blocks; teach unpacking them into relative clauses (der Artikel, der in der Zeitung veröffentlicht wurde).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Register, Reported Speech & Foundational C1 Structures",
+    "prerequisites": [
+      "de-u14-konjunktiv-i"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u14-nominal-style-and-nominalization",
+    "lang": "de",
+    "difficulty": 3,
+    "cefr": "C1",
+    "title": "Nominal style (Nominalstil) and nominalization",
+    "explanation": "Formal/administrative/academic German converts verbs to nouns and builds genitive chains: nach Prüfung des Antrags rather than nachdem der Antrag geprüft worden war.",
+    "examples": [
+      {
+        "native": "Nach eingehender Prüfung des Antrags wurde die Genehmigung erteilt.",
+        "gloss": "After thorough examination of the application, approval was granted."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "overusing it (even Germans criticize overstuffed Beamtendeutsch); learn to read fluently and deploy sparingly.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Register, Reported Speech & Foundational C1 Structures",
+    "prerequisites": [
+      "de-u14-extended-participial-attributes"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u14-funktionsverbgefüge",
+    "lang": "de",
+    "difficulty": 3,
+    "cefr": "C1",
+    "title": "Funktionsverbgefüge (light-verb constructions)",
+    "explanation": "Fixed noun+verb collocations where the verb is semantically bleached: in Frage stellen (to question), zur Verfügung stehen (to be available), in Erscheinung treten (to appear), Kritik üben (to criticize).",
+    "examples": [
+      {
+        "native": "Das steht zur Verfügung. Das stellt er in Frage.",
+        "gloss": "That's available. He's questioning that."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "translating literally; not recognizing the whole unit as one meaning.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Register, Reported Speech & Foundational C1 Structures",
+    "prerequisites": [
+      "de-u14-nominal-style-and-nominalization"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-u14-concessivecausal-register-connectors-and",
+    "lang": "de",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "Concessive/causal register connectors and da vs weil",
+    "explanation": "Formal da (since/as, often clause-initial), concessive obwohl/obgleich, indem (by …-ing), sodass (so that).",
+    "examples": [
+      {
+        "native": "Da er krank war, blieb er zu Hause.",
+        "gloss": "Since he was ill, he stayed home."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": null,
+    "mistake": "using da for one-off because answers (where weil is preferred).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Register, Reported Speech & Foundational C1 Structures",
+    "prerequisites": [
+      "de-u14-funktionsverbgefüge"
+    ],
     "confidence": "first_pass"
   }
 ]

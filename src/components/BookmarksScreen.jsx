@@ -6,6 +6,8 @@ import {
   isWordSaved,
   getReadStories,
   unmarkStoryRead,
+  getBookmarksView,
+  setBookmarksView,
 } from '../lib/storage'
 import {
   buildDictionary,
@@ -19,7 +21,8 @@ import { getWordImage } from '../lib/images'
 import { syncAppBadge } from '../lib/badge'
 import kanaJa from '../data/kana_ja.json'
 import alphabetRu from '../data/alphabet_ru.json'
-import BottomNav from './BottomNav'
+import kanjiComponents from '../data/kanji_components.json'
+import kanjiMeanings from '../data/kanji_meanings.json'
 
 const PAGE_SIZE = 40
 
@@ -27,6 +30,12 @@ const ALPHABET_LANGS = {
   ja: { label: 'Japanese — hiragana & katakana' },
   ru: { label: 'Russian — Cyrillic' },
 }
+
+const KANJI_LEVELS = [
+  { key: 'all', label: 'All levels' },
+  { key: 'N5', label: 'N5' },
+  { key: 'N4', label: 'N4' },
+]
 
 function KANA_ROW_GROUPS() {
   const rows = []
@@ -188,23 +197,117 @@ function AlphabetScreenRu() {
   )
 }
 
-export default function BookmarksScreen({ stories, activeTab, onChangeTab, onExploreWord, onOpenStory }) {
-  const [savedWords, setSavedWords] = useState(() => getSavedWords())
-  const [selectedWord, setSelectedWord] = useState(null)
-  const [mode, setMode] = useState('saved')
-  const [dictQuery, setDictQuery] = useState('')
-  const [dictPage, setDictPage] = useState(0)
-  const [selectedLetter, setSelectedLetter] = useState(null)
-  const [readStoryIndices, setReadStoryIndices] = useState(() => getReadStories())
+function KanjiReference({ level, onLevelChange }) {
+  const [selected, setSelected] = useState(null)
+  const filtered = level === 'all' ? kanjiComponents : kanjiComponents.filter((k) => k.level === level)
 
+  return (
+    <>
+      <div className="pill-row">
+        {KANJI_LEVELS.map((l) => (
+          <button
+            key={l.key}
+            className={`level-pill-button ${level === l.key ? 'active' : ''}`}
+            onClick={() => onLevelChange(l.key)}
+          >
+            {l.label}
+          </button>
+        ))}
+      </div>
+
+      {filtered.length === 0 ? (
+        <p className="favorites-empty">No kanji charted for this level yet.</p>
+      ) : (
+        <div className="alphabet-grid">
+          {filtered.map((entry) => (
+            <button key={entry.kanji} className="alphabet-card" onClick={() => setSelected(entry)}>
+              <span className="alphabet-card-hira">{entry.kanji}</span>
+              {entry.kunyomi && <span className="alphabet-card-kata">{entry.kunyomi.split(',')[0]}</span>}
+              {entry.onyomi && <span className="alphabet-card-romaji">on: {entry.onyomi.split(',')[0]}</span>}
+              <span className="alphabet-card-romaji">{kanjiMeanings.kanji?.[entry.kanji] ?? '—'}</span>
+              {entry.level && <span className="cefr-badge">{entry.level}</span>}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {selected && (
+        <div className="modal-backdrop" onClick={() => setSelected(null)}>
+          <div className="modal" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2>{selected.kanji}</h2>
+              <button className="icon-button" onClick={() => setSelected(null)} aria-label="Close">
+                ✕
+              </button>
+            </div>
+            <p className="alphabet-detail-forms">{kanjiMeanings.kanji?.[selected.kanji] ?? 'meaning not on file'}</p>
+            {(selected.kunyomi || selected.onyomi) && (
+              <p className="alphabet-detail-forms">
+                {selected.kunyomi && <>Kun'yomi: <strong>{selected.kunyomi}</strong></>}
+                {selected.kunyomi && selected.onyomi && ' · '}
+                {selected.onyomi && <>On'yomi: <strong>{selected.onyomi}</strong></>}
+              </p>
+            )}
+            {selected.components?.length > 0 && (
+              <>
+                <div className="refs-label">Built from</div>
+                <div className="refs-list">
+                  {selected.components.map((c, i) => (
+                    <span key={`${c}-${i}`} className="ref-button">
+                      <span className="ref-word">{c}</span>
+                      {kanjiMeanings.components?.[c] && (
+                        <span className="dictionary-reading"> ({kanjiMeanings.components[c]})</span>
+                      )}
+                    </span>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
+    </>
+  )
+}
+
+export default function BookmarksScreen({ stories, activeTab, onExploreWord, onOpenStory, onSavedWordsChange }) {
   const allLangs = useMemo(() => getAvailableLangs(stories), [stories])
-  const [dictLang, setDictLang] = useState(allLangs[0])
-
   const availableAlphabetLangs = useMemo(
     () => allLangs.filter((l) => ALPHABET_LANGS[l]),
     [allLangs],
   )
-  const [alphabetLang, setAlphabetLang] = useState(() => availableAlphabetLangs[0])
+  const availableKanji = allLangs.includes('ja')
+
+  // Restored unconditionally (not just the session's first mount) so leaving
+  // e.g. the Russian alphabet open and switching tabs away and back doesn't
+  // lose it — see getBookmarksView's own note for the precedent this follows.
+  const savedView = useMemo(() => getBookmarksView() ?? {}, [])
+  const initialMode =
+    (savedView.mode === 'alphabets' && availableAlphabetLangs.length > 0) ||
+    (savedView.mode === 'kanji' && availableKanji) ||
+    savedView.mode === 'saved' ||
+    savedView.mode === 'read' ||
+    savedView.mode === 'dictionary'
+      ? savedView.mode
+      : 'saved'
+
+  const [savedWords, setSavedWords] = useState(() => getSavedWords())
+  const [selectedWord, setSelectedWord] = useState(null)
+  const [mode, setMode] = useState(initialMode)
+  const [dictQuery, setDictQuery] = useState('')
+  const [dictPage, setDictPage] = useState(0)
+  const [selectedLetter, setSelectedLetter] = useState(null)
+  const [readStoryIndices, setReadStoryIndices] = useState(() => getReadStories())
+  const [dictLang, setDictLang] = useState(allLangs[0])
+
+  const [alphabetLang, setAlphabetLang] = useState(() =>
+    availableAlphabetLangs.includes(savedView.alphabetLang) ? savedView.alphabetLang : availableAlphabetLangs[0],
+  )
+  const [kanjiLevel, setKanjiLevel] = useState(() => savedView.kanjiLevel ?? 'all')
+
+  useEffect(() => {
+    setBookmarksView({ mode, alphabetLang, kanjiLevel })
+  }, [mode, alphabetLang, kanjiLevel])
 
   const dictionary = useMemo(
     () => sortDictionary(buildDictionary(stories).filter((entry) => entry.lang === dictLang)),
@@ -244,9 +347,15 @@ export default function BookmarksScreen({ stories, activeTab, onChangeTab, onExp
   }
 
   useEffect(() => {
+    // Bookmarks now stays mounted across tab switches instead of remounting
+    // on every visit, so this has to react to becoming the active tab again,
+    // not just to the one-time mount.
+    if (activeTab !== 'bookmarks') return
     clearUnseenSavedWords()
     syncAppBadge(0)
-  }, [])
+    onSavedWordsChange?.()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeTab])
 
   function handleSaveFromDictionary(entry) {
     const updated = addSavedWord({
@@ -257,6 +366,7 @@ export default function BookmarksScreen({ stories, activeTab, onChangeTab, onExp
       storyIndex: entry.storyIndex,
     })
     setSavedWords(updated)
+    onSavedWordsChange?.()
   }
 
   function handleUnmarkRead(storyIndex) {
@@ -287,6 +397,11 @@ export default function BookmarksScreen({ stories, activeTab, onChangeTab, onExp
         {availableAlphabetLangs.length > 0 && (
           <button className={mode === 'alphabets' ? 'active' : ''} onClick={() => setMode('alphabets')}>
             Alphabets
+          </button>
+        )}
+        {availableKanji && (
+          <button className={mode === 'kanji' ? 'active' : ''} onClick={() => setMode('kanji')}>
+            Kanji
           </button>
         )}
       </div>
@@ -413,6 +528,8 @@ export default function BookmarksScreen({ stories, activeTab, onChangeTab, onExp
         </>
       )}
 
+      {mode === 'kanji' && <KanjiReference level={kanjiLevel} onLevelChange={setKanjiLevel} />}
+
       {selectedWord && (
         <div className="modal-backdrop" onClick={() => setSelectedWord(null)}>
           <div className="modal" onClick={(e) => e.stopPropagation()}>
@@ -449,8 +566,6 @@ export default function BookmarksScreen({ stories, activeTab, onChangeTab, onExp
           </div>
         </div>
       )}
-
-      <BottomNav active={activeTab} onChange={onChangeTab} />
     </div>
   )
 }

@@ -291,9 +291,9 @@
       }
     ],
     "see_also": [
-      { "lang": "fr", "id": "fr-adjective-position-01" },
-      { "lang": "de", "id": "de-adjective-endings-01" },
-      { "lang": "ru", "id": "ru-adjective-agreement-01" },
+      { "lang": "fr", "id": "fr-u4-adjective-placement-the-bangsbags" },
+      { "lang": "de", "id": "de-u7-the-core-principle-the" },
+      { "lang": "ru", "id": "ru-u7-adjectivepronoun-agreement-in-the" },
       { "lang": "ja", "id": "ja-adjectives-01" }
     ],
     "confidence": "first_pass"
@@ -401,7 +401,7 @@
         "note": "No grammatical aspect marking at all — a single past tense covers both, disambiguated only by context."
       }
     ],
-    "see_also": [{ "lang": "ru", "id": "ru-aspect-01" }],
+    "see_also": [{ "lang": "ru", "id": "ru-u9-the-core-opposition" }],
     "confidence": "first_pass"
   },
   {

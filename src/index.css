@@ -41,4 +41,9 @@ body {
 button {
   font: inherit;
   color: inherit;
+  /* No touch-action anywhere previously meant mobile browsers could impose
+     their ~300ms double-tap-to-zoom disambiguation delay on every tap,
+     surfacing as "the first tap doesn't register" throughout the app —
+     most visibly on the bottom nav's tap-to-reset behavior. */
+  touch-action: manipulation;
 }

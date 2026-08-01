@@ -12,6 +12,8 @@ export default function LessonCard({ node, lessonNumber, totalLessons, accentCol
         <span className="lesson-of">
           Lesson {lessonNumber} of {totalLessons}
         </span>
+        {node.cefr && <span className="cefr-badge">{node.cefr}</span>}
+        {node.confidence === 'verified' && <span className="verified-badge">✓ verified</span>}
       </div>
 
       <h3 className="lesson-title" lang={node.lang}>
@@ -19,12 +21,19 @@ export default function LessonCard({ node, lessonNumber, totalLessons, accentCol
       </h3>
       {node.subtitle && <p className="lesson-explanation">{node.subtitle}</p>}
 
-      {node.example?.native && (
-        <div className="citation">
+      {node.examples?.map((ex, i) => (
+        <div className="citation" key={i}>
           <div className="citation-native" lang={node.lang}>
-            {node.example.native}
+            {ex.native}
           </div>
-          {node.example.gloss && <div className="citation-gloss">{node.example.gloss}</div>}
+          {ex.gloss && <div className="citation-gloss">{ex.gloss}</div>}
+        </div>
+      ))}
+
+      {node.mistake && (
+        <div className="mistake-note">
+          <div className="mistake-note-label">Common mistake</div>
+          <div className="mistake-note-text">{node.mistake}</div>
         </div>
       )}
 
@@ -34,6 +43,8 @@ export default function LessonCard({ node, lessonNumber, totalLessons, accentCol
           <div className="bridge-note-text">{node.note}</div>
         </div>
       )}
+
+      {node.source && <div className="source-caption">Source: {node.source}</div>}
 
       {node.relatedGameId && onPractice && (
         <button className="explore-link-button" onClick={onPractice}>

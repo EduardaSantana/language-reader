@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { getSavedWords, getUnseenSavedWords, getReadStories } from '../lib/storage'
+import { getSavedWords, getReadStories } from '../lib/storage'
 import { buildDictionary } from '../lib/vocabIndex'
 import { langMeta } from '../lib/langs'
 import kanjiComponents from '../data/kanji_components.json'
@@ -15,7 +15,6 @@ import KanjiBuildGame from './KanjiBuildGame'
 import OnomatopoeiaGame from './OnomatopoeiaGame'
 import CompoundBuilderGame from './CompoundBuilderGame'
 import AlphabetGame from './AlphabetGame'
-import BottomNav from './BottomNav'
 
 function matchesLang(onlyLang, lang) {
   if (!onlyLang) return true
@@ -42,11 +41,10 @@ const GAMES = [
   },
 ]
 
-export default function GamesScreen({ stories, activeLanguages, activeTab, onChangeTab, gameSeed }) {
+export default function GamesScreen({ stories, activeLanguages, gameSeed }) {
   const savedWords = useMemo(() => getSavedWords(), [])
   const dictionary = useMemo(() => buildDictionary(stories), [stories])
   const readIndices = useMemo(() => getReadStories(), [])
-  const unseenCount = useMemo(() => getUnseenSavedWords().size, [])
   const pool = savedWords.length >= 4 ? savedWords : dictionary
 
   const langs = activeLanguages?.length ? activeLanguages : ['ja']
@@ -123,8 +121,6 @@ export default function GamesScreen({ stories, activeLanguages, activeTab, onCha
       ) : activeGame === 'alphabet' ? (
         <AlphabetGame key={lang} lang={lang} />
       ) : null}
-
-      <BottomNav active={activeTab} onChange={onChangeTab} badges={{ bookmarks: unseenCount }} />
     </div>
   )
 }

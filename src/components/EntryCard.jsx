@@ -92,6 +92,8 @@ export default function EntryCard({
           {avatar} {label}
         </span>
         {posLabel && <span className="entry-pos">{posLabel}</span>}
+        {node.cefr && <span className="cefr-badge">{node.cefr}</span>}
+        {node.confidence === 'verified' && <span className="verified-badge">✓ verified</span>}
         {isNew && <span className="new-badge">NEW</span>}
         {stepLabel && <span className="step-badge">{stepLabel}</span>}
       </div>
@@ -102,13 +104,20 @@ export default function EntryCard({
       {node.reading && <div className="entry-reading">{node.reading}</div>}
       {node.subtitle && <p className="entry-definition">{node.subtitle}</p>}
 
-      {node.example?.native && (
-        <div className="citation">
+      {node.examples?.map((ex, i) => (
+        <div className="citation" key={i}>
           <div className="citation-native" lang={node.lang}>
-            {node.example.native}
+            {ex.native}
           </div>
-          {node.example.gloss && <div className="citation-gloss">{node.example.gloss}</div>}
-          {node.example.source && <div className="citation-source">— {node.example.source}</div>}
+          {ex.gloss && <div className="citation-gloss">{ex.gloss}</div>}
+          {ex.source && <div className="citation-source">— {ex.source}</div>}
+        </div>
+      ))}
+
+      {node.mistake && (
+        <div className="mistake-note">
+          <div className="mistake-note-label">Common mistake</div>
+          <div className="mistake-note-text">{node.mistake}</div>
         </div>
       )}
 
@@ -118,6 +127,8 @@ export default function EntryCard({
           <div className="bridge-note-text">{node.note}</div>
         </div>
       )}
+
+      {node.source && <div className="source-caption">Source: {node.source}</div>}
 
       {node.type === 'vocab' && onSave && (
         <button

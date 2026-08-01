@@ -1,24 +1,43 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { pickKanjiBuild, COMPANION_CORRECT_LINES, COMPANION_WRONG_LINES } from '../lib/games'
 import { reactCompanion } from '../lib/companion'
 
 const ADVANCE_DELAY_MS = 1200
 const WRONG_FLASH_MS = 400
 
+const LEVELS = [
+  { key: 'all', label: 'All levels' },
+  { key: 'N5', label: 'N5' },
+  { key: 'N4', label: 'N4' },
+]
+
+function poolForLevel(kanjiComponents, level) {
+  return level === 'all' ? kanjiComponents : kanjiComponents.filter((k) => k.level === level)
+}
+
 export default function KanjiBuildGame({ kanjiComponents, kanjiMeanings }) {
-  const [round, setRound] = useState(() => pickKanjiBuild(kanjiComponents, kanjiMeanings))
+  const [level, setLevel] = useState('all')
+  const pool = useMemo(() => poolForLevel(kanjiComponents, level), [kanjiComponents, level])
+  const [round, setRound] = useState(() => pickKanjiBuild(pool, kanjiMeanings))
   const [assembled, setAssembled] = useState([])
   const [wrongTap, setWrongTap] = useState(null)
   const [streak, setStreak] = useState(0)
   const [companionLine, setCompanionLine] = useState(null)
   const [complete, setComplete] = useState(false)
 
-  function nextRound() {
-    setRound(pickKanjiBuild(kanjiComponents, kanjiMeanings))
+  function nextRound(nextPool = pool) {
+    setRound(pickKanjiBuild(nextPool, kanjiMeanings))
     setAssembled([])
     setWrongTap(null)
     setCompanionLine(null)
     setComplete(false)
+  }
+
+  function handleLevelChange(nextLevel) {
+    if (nextLevel === level) return
+    setLevel(nextLevel)
+    setStreak(0)
+    nextRound(poolForLevel(kanjiComponents, nextLevel))
   }
 
   function handleTap(component, index) {
@@ -54,12 +73,24 @@ export default function KanjiBuildGame({ kanjiComponents, kanjiMeanings }) {
     }
   }
 
-  if (!round) {
-    return <p className="favorites-empty">No kanji breakdown data available.</p>
-  }
-
   return (
     <div className="game-card">
+      <div className="pill-row kanji-level-row">
+        {LEVELS.map((l) => (
+          <button
+            key={l.key}
+            className={`level-pill-button ${level === l.key ? 'active' : ''}`}
+            onClick={() => handleLevelChange(l.key)}
+          >
+            {l.label}
+          </button>
+        ))}
+      </div>
+
+      {!round ? (
+        <p className="favorites-empty">No kanji breakdown data available for this level yet.</p>
+      ) : (
+        <>
       <div className="streak-counter">🔥 {streak}</div>
       <div className="game-instruction">Tap the components that build this kanji</div>
       <div className="kanji-build-target">{round.kanji}</div>
@@ -97,6 +128,8 @@ export default function KanjiBuildGame({ kanjiComponents, kanjiMeanings }) {
         <div className={`companion-line companion-line-${complete ? 'correct' : 'wrong'}`} aria-live="polite">
           {companionLine}
         </div>
+      )}
+        </>
       )}
     </div>
   )

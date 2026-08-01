@@ -1,191 +1,2192 @@
 [
   {
-    "id": "fr-gender-01",
+    "id": "fr-u1-subject-pronouns",
     "lang": "fr",
     "difficulty": 1,
-    "title": "Grammatical gender",
-    "explanation": "French nouns are masculine or feminine, and the article (le/la, un/une) has to agree.",
-    "example_native": "la table, le soleil",
-    "example_gloss": "the table, the sun",
+    "cefr": "A1",
+    "title": "Subject pronouns (je, tu, il/elle, on, nous, vous, ils/elles)",
+    "explanation": "French verbs almost always need a stated subject pronoun (unlike Spanish/Italian, which drop it). On is a chameleon meaning \"we\" (colloquial), \"one,\" or \"people/they.\"",
+    "examples": [
+      {
+        "native": "Je parle français.",
+        "gloss": "I speak French."
+      },
+      {
+        "native": "On y va !",
+        "gloss": "Let's go! / We're off!"
+      },
+      {
+        "native": "Vous êtes prêts ?",
+        "gloss": "Are you (pl./formal) ready?"
+      }
+    ],
     "bridge_lang": "pt",
-    "bridge_note": "A lot of Portuguese cognates share gender (a mesa, o sol) — but not always: la mer is feminine while o mar is masculine, a real mismatch, not just an exception to memorize away.",
+    "bridge_note": "French eroded its Latin verb endings phonetically (many now sound identical — parle/parles/parlent are all /paʁl/), so the pronoun became obligatory to mark person. English did the same thing centuries earlier for the same reason.",
+    "mistake": "dropping the subject (\"Suis fatigué\" ✗ → \"Je suis fatigué\" ✓); using tu to a stranger (see Unit 14).",
+    "source": "Eaquals tags \"pronoms personnels sujets\" at A1",
     "related_game_id": null,
-    "related_oddity_id": { "lang": "fr", "id": "fr-odd-gender-flip" },
-    "branch": "Nouns & agreement",
+    "branch": "Foundations: The Sentence Skeleton",
     "prerequisites": [],
-    "confidence": "first_pass"
+    "confidence": "verified"
   },
   {
-    "id": "fr-negation-01",
+    "id": "fr-u1-basic-word-order-and",
     "lang": "fr",
     "difficulty": 1,
-    "title": "Negation wraps around the verb",
-    "explanation": "Standard negation uses two particles, ne before the verb and pas after it — the verb sits inside the negation, not after it.",
-    "example_native": "Je ne comprends pas.",
-    "example_gloss": "I don't understand.",
-    "bridge_lang": "pt",
-    "bridge_note": "Portuguese just puts não once before the verb (eu não entendo) — no wrapping. This is one of the real differences, not a shortcut.",
-    "related_game_id": "blank",
-    "related_oddity_id": { "lang": "fr", "id": "fr-odd-ne-dropping" },
-    "branch": "Verbs & tense",
-    "prerequisites": [],
-    "see_also": [
+    "cefr": "A1",
+    "title": "Basic word order (SVO) and the \"no do-support\" rule",
+    "explanation": "French is Subject–Verb–Object like English, but has no auxiliary \"do.\" Questions and negations don't insert a helper verb.",
+    "examples": [
       {
-        "lang": "de",
-        "id": "de-verb-second-01"
+        "native": "Je mange une pomme.",
+        "gloss": "I eat / am eating an apple."
+      },
+      {
+        "native": "Elle aime le café.",
+        "gloss": "She likes coffee."
       }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "English speakers over-apply \"do/does/did\" (\"Est-ce que tu fais aimer...\" ✗). Also, French has no continuous \"am ...-ing\" tense — je mange covers both \"I eat\" and \"I am eating.\"",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Foundations: The Sentence Skeleton",
+    "prerequisites": [
+      "fr-u1-subject-pronouns"
     ],
     "confidence": "first_pass"
   },
   {
-    "id": "fr-subjunctive-01",
-    "lang": "fr",
-    "difficulty": 3,
-    "title": "The subjunctive mood",
-    "explanation": "Triggered by doubt, wish, emotion, necessity, and certain conjunctions (bien que, pour que, avant que).",
-    "example_native": "Il faut que tu sois à l'heure.",
-    "example_gloss": "It's necessary that you be on time.",
-    "bridge_lang": "pt",
-    "bridge_note": "This uses the same logic as Portuguese \"é preciso que você seja pontual\" — should feel the most instantly familiar, since English subjunctive barely survives (\"I insist that he be present\" is close to all that's left of it).",
-    "related_game_id": null,
-    "branch": "Sentence-building",
-    "prerequisites": [],
-    "confidence": "first_pass"
-  },
-  {
-    "id": "fr-adjective-position-01",
-    "lang": "fr",
-    "difficulty": 2,
-    "title": "Certain common adjectives go before the noun",
-    "explanation": "A specific, memorizable set (grand, petit, bon, jeune, vieux, beau, nouveau, a few others) front the noun instead of following it.",
-    "example_native": "J'ai une petite maison.",
-    "example_gloss": "I have a small house.",
-    "bridge_lang": "pt",
-    "bridge_note": "Portuguese defaults to noun-then-adjective (uma casa pequena), so this is a genuine placement rule, not a free transfer.",
-    "related_game_id": null,
-    "branch": "Nouns & agreement",
-    "prerequisites": ["fr-adjective-agreement-01"],
-    "confidence": "first_pass"
-  },
-  {
-    "id": "fr-adjective-agreement-01",
+    "id": "fr-u1-être-present",
     "lang": "fr",
     "difficulty": 1,
-    "title": "Adjective agreement",
-    "explanation": "French adjectives agree in gender and number with the noun they describe.",
-    "example_native": "Il est grand. Elle est grande.",
-    "example_gloss": "He is tall. She is tall.",
+    "cefr": "A1",
+    "title": "être (to be) — present",
+    "explanation": "",
+    "examples": [
+      {
+        "native": "Je suis étudiant.",
+        "gloss": "I am a student. (note: no article before an unmodified profession)"
+      },
+      {
+        "native": "Nous sommes en France.",
+        "gloss": "We are in France."
+      }
+    ],
     "bridge_lang": "pt",
-    "bridge_note": "Same underlying concept as Portuguese (alto/alta) — just different endings to learn.",
+    "bridge_note": null,
+    "mistake": "inserting un/une before a bare profession (\"Je suis un étudiant\" is marked/emphatic, not the default).",
+    "source": null,
     "related_game_id": null,
-    "branch": "Nouns & agreement",
-    "prerequisites": ["fr-gender-01"],
+    "branch": "Foundations: The Sentence Skeleton",
+    "prerequisites": [
+      "fr-u1-basic-word-order-and"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u1-avoir-present-and-its",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "avoir (to have) — present, and its idioms",
+    "explanation": "Where English uses \"to be\" for states, French often uses avoir: age, hunger, fear.",
+    "examples": [
+      {
+        "native": "J'ai vingt ans.",
+        "gloss": "I am twenty (literal: I have twenty years)."
+      },
+      {
+        "native": "Elle a faim.",
+        "gloss": "She is hungry (literal: she has hunger)."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "Latin used habere (\"have\") for such states; French kept the pattern, English shifted to \"be.\"",
+    "mistake": "\"Je suis 20 ans\" ✗ / \"Je suis faim\" ✗.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Foundations: The Sentence Skeleton",
+    "prerequisites": [
+      "fr-u1-être-present"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u1-cest-vs-ilelle-est",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "c'est vs il/elle est",
+    "explanation": "C'est + article/name (\"it's a...\", \"it's [name]\"); il/elle est + bare adjective or profession.",
+    "examples": [
+      {
+        "native": "C'est un médecin. / Il est médecin.",
+        "gloss": "He's a doctor."
+      },
+      {
+        "native": "C'est Marie. Elle est gentille.",
+        "gloss": "It's Marie. She's kind."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "\"Il est un médecin\" ✗ (must be either c'est un médecin or il est médecin).",
+    "source": "Kwiziq tags at A1",
+    "related_game_id": null,
+    "branch": "Foundations: The Sentence Skeleton",
+    "prerequisites": [
+      "fr-u1-avoir-present-and-its"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u2-grammatical-gender-of-nouns",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Grammatical gender of nouns",
+    "explanation": "Every noun is masculine or feminine, including inanimate objects (le livre = the book, la table = the table). Word endings are a strong predictor: per Roy Lyster's 2006 corpus analysis of 9,961 nouns in Le Robert Junior Illustré (published in Journal of French Language Studies 16, Cambridge University Press), \"81 per cent of all feminine nouns and 80 per cent of all masculine nouns in the corpus are rule governed, having endings that systematically predict their gender.\" Endings in -tion/-té/-ette/-ence tend feminine; -age/-ment/-eau/-isme tend masculine.",
+    "examples": [
+      {
+        "native": "le livre, la table",
+        "gloss": "the book, the table (masculine, feminine)"
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "French inherited Latin's masculine/feminine but lost Latin's neuter, folding most neuters into the masculine. That's why the \"default\"/unmarked gender is masculine.",
+    "mistake": "assuming inanimate = neuter (English habit); assuming a word is masculine because its referent is (la personne, la victime are always feminine; le professeur historically masculine).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Gender, Number & Noun Agreement",
+    "prerequisites": [],
+    "confidence": "verified",
+    "related_oddity_id": {
+      "lang": "fr",
+      "id": "fr-odd-gender-flip"
+    }
+  },
+  {
+    "id": "fr-u2-plural-of-nouns",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Plural of nouns (-s, -x, -aux)",
+    "explanation": "Most add silent -s; nouns in -eau/-eu add -x; many in -al → -aux.",
+    "examples": [
+      {
+        "native": "un cheval → des chevaux",
+        "gloss": "a horse → horses."
+      },
+      {
+        "native": "un gâteau → des gâteaux",
+        "gloss": "a cake → cakes."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "the -x plural is a medieval scribal abbreviation for \"-us\" that fossilized into spelling.",
+    "mistake": "pronouncing the plural -s; forgetting the -al/-aux switch.",
+    "source": null,
+    "related_game_id": "blank",
+    "branch": "Gender, Number & Noun Agreement",
+    "prerequisites": [
+      "fr-u2-grammatical-gender-of-nouns"
+    ],
+    "confidence": "verified",
+    "related_oddity_id": {
+      "lang": "fr",
+      "id": "fr-odd-liaison"
+    }
+  },
+  {
+    "id": "fr-u2-the-agreement-principle",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "The agreement principle (overview)",
+    "explanation": "Introduce the concept early: determiners and adjectives copy the noun's gender and number. This is the single organizing idea behind Units 3 and 4.",
+    "examples": [],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": null,
+    "source": null,
+    "related_game_id": null,
+    "branch": "Gender, Number & Noun Agreement",
+    "prerequisites": [
+      "fr-u2-plural-of-nouns"
+    ],
     "confidence": "first_pass"
   },
   {
-    "id": "fr-object-pronouns-01",
+    "id": "fr-u3-definite-articles",
     "lang": "fr",
-    "difficulty": 2,
-    "title": "Object pronouns generally sit before the conjugated verb",
-    "explanation": "Unlike English, French object pronouns come before the verb they attach to, not after it.",
-    "example_native": "Je te vois.",
-    "example_gloss": "I you see = I see you.",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Definite articles (le, la, l', les)",
+    "explanation": "\"The,\" but also used for general/abstract statements where English uses no article.",
+    "examples": [
+      {
+        "native": "J'aime le chocolat.",
+        "gloss": "I like chocolate (in general)."
+      },
+      {
+        "native": "La liberté est précieuse.",
+        "gloss": "Freedom is precious."
+      }
+    ],
     "bridge_lang": "pt",
-    "bridge_note": "Lighter touch on this one — Portuguese pronoun placement varies enough by register and region that it isn't a clean one-to-one, flagged as \"similar tendency,\" not a strong claim.",
+    "bridge_note": null,
+    "mistake": "omitting the article in generalizations (\"J'aime chocolat\" ✗).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Articles & Determiners",
+    "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u3-indefinite-articles",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Indefinite articles (un, une, des)",
+    "explanation": "\"A/an\"; des = \"some\" (plural), which English usually drops.",
+    "examples": [
+      {
+        "native": "J'ai des amis à Paris.",
+        "gloss": "I have friends in Paris."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "dropping des (\"J'ai amis\" ✗).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Articles & Determiners",
+    "prerequisites": [
+      "fr-u3-definite-articles"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u3-partitive-articles",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Partitive articles (du, de la, de l', des)",
+    "explanation": "\"Some/any\" of an uncountable mass. Contrast with definite: j'aime le café (coffee in general) vs je bois du café (some coffee).",
+    "examples": [
+      {
+        "native": "Je mange du pain et de la confiture.",
+        "gloss": "I'm eating (some) bread and jam."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "the partitive is a contraction of de + definite article (\"of the\"), literally \"some of the.\" It marks an unmeasured portion.",
+    "mistake": "the deepest A2 trap — using the definite where the partitive is needed, and vice versa.",
+    "source": "Eaquals; the du/le distinction tagged A2",
+    "related_game_id": null,
+    "branch": "Articles & Determiners",
+    "prerequisites": [
+      "fr-u3-indefinite-articles"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u3-articles-become-de-after",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Articles become \"de\" after negation and quantity",
+    "explanation": "Indefinite and partitive articles collapse to bare de after a negative or an expression of quantity. Definite articles do NOT change; and after être the article stays.",
+    "examples": [
+      {
+        "native": "Je mange des pommes. → Je ne mange pas de pommes.",
+        "gloss": "I don't eat apples."
+      },
+      {
+        "native": "beaucoup de vin, un litre d'eau",
+        "gloss": "a lot of wine, a litre of water."
+      },
+      {
+        "native": "BUT: Ce n'est pas un problème.",
+        "gloss": "It's not a problem (être keeps un)."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "\"Je ne mange pas des pommes\" ✗; reducing after être.",
+    "source": "Lawless/Kwiziq; Eaquals under negation",
+    "related_game_id": null,
+    "branch": "Articles & Determiners",
+    "prerequisites": [
+      "fr-u3-partitive-articles"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u3-contractions-à-le-au",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Contractions: à + le = au, de + le = du (au/aux/du/des)",
+    "explanation": "Obligatory fusion; à la and à l' do NOT contract.",
+    "examples": [
+      {
+        "native": "Je vais au cinéma.",
+        "gloss": "I'm going to the cinema."
+      },
+      {
+        "native": "la porte du garage",
+        "gloss": "the door of the garage."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "\"à le cinéma\" ✗, \"de le garage\" ✗.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Articles & Determiners",
+    "prerequisites": [
+      "fr-u3-articles-become-de-after"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u3-demonstrative-adjectives",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Demonstrative adjectives (ce, cet, cette, ces)",
+    "explanation": "\"This/that/these/those.\" Cet before a masculine vowel/mute-h word. Add -ci/-là to disambiguate this vs that.",
+    "examples": [
+      {
+        "native": "ce livre, cet homme, cette femme, ces enfants",
+        "gloss": null
+      },
+      {
+        "native": "Je préfère cette robe-ci à cette robe-là.",
+        "gloss": "I prefer this dress to that dress."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": null,
+    "source": null,
+    "related_game_id": null,
+    "branch": "Articles & Determiners",
+    "prerequisites": [
+      "fr-u3-contractions-à-le-au"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u3-possessive-adjectives",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Possessive adjectives (mon/ma/mes, ton/ta/tes, son/sa/ses, notre/votre/leur…)",
+    "explanation": "They agree with the thing possessed, not the possessor — so son/sa means \"his\" OR \"her,\" decided by the noun's gender.",
+    "examples": [
+      {
+        "native": "son livre = his/her book; sa voiture = his/her car",
+        "gloss": null
+      },
+      {
+        "native": "Ma → mon before a feminine noun starting with a vowel: mon amie",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "Latin possessives agreed with the possessed noun; French kept this, so gender is grammatical, not referential.",
+    "mistake": "the single biggest error — choosing the possessive by the owner's sex (\"sa\" for \"his\" only). Also \"ma amie\" ✗ → mon amie.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Articles & Determiners",
+    "prerequisites": [
+      "fr-u3-demonstrative-adjectives"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u4-adjective-agreement",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Adjective agreement (gender + number)",
+    "explanation": "Default: add -e for feminine, -s for plural. Many irregular feminines (-eux→-euse, -f→-ve, -er→-ère).",
+    "examples": [
+      {
+        "native": "un petit chat / une petite chatte / des petits chats",
+        "gloss": null
+      },
+      {
+        "native": "un homme heureux / une femme heureuse",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "leaving the adjective invariable (English habit).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Adjectives: Agreement, Placement, Comparison",
+    "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u4-adjective-placement-the-bangsbags",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Adjective placement: the BANGS/BAGS exception",
+    "explanation": "Most adjectives FOLLOW the noun (une voiture rouge). A small high-frequency set precedes it: Beauty, Age, Numbers, Goodness, Size (beau, jeune/vieux, premier, bon/mauvais, grand/petit).",
+    "examples": [
+      {
+        "native": "une grande maison blanche",
+        "gloss": "a big white house."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "the pre-posed set is the oldest, most frequent, most \"inherent-quality\" adjective group — frequency entrenched their Latin-era front position while newer/descriptive adjectives took the analytic post-position.",
+    "mistake": "placing all adjectives after (\"une rouge voiture\" ✗) or all before.",
+    "source": null,
     "related_game_id": "order",
-    "branch": "Sentence-building",
-    "prerequisites": [],
+    "branch": "Adjectives: Agreement, Placement, Comparison",
+    "prerequisites": [
+      "fr-u4-adjective-agreement"
+    ],
     "confidence": "first_pass"
   },
   {
-    "id": "fr-articles-01",
+    "id": "fr-u4-adjectives-that-change-meaning",
+    "lang": "fr",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Adjectives that change meaning by position",
+    "explanation": "ancien (former/old), cher (dear/expensive), propre (own/clean), grand (great/tall), dernier (last-in-series/previous).",
+    "examples": [
+      {
+        "native": "mon ancien appartement (my former flat) vs un meuble ancien (an antique)",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "assuming position is free.",
+    "source": "Kwiziq B1",
+    "related_game_id": null,
+    "branch": "Adjectives: Agreement, Placement, Comparison",
+    "prerequisites": [
+      "fr-u4-adjective-placement-the-bangsbags"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u4-comparatives",
     "lang": "fr",
     "difficulty": 1,
-    "title": "Nouns almost always need an article, even in general statements",
-    "explanation": "French uses an article before a noun even when talking about something in general, not just a specific one.",
-    "example_native": "J'aime le café.",
-    "example_gloss": "I like coffee. (literally: I like the coffee)",
+    "cefr": "A2",
+    "title": "Comparatives (plus/moins/aussi … que)",
+    "explanation": "",
+    "examples": [
+      {
+        "native": "Elle est plus grande que moi.",
+        "gloss": "She is taller than me."
+      },
+      {
+        "native": "Il court aussi vite que toi.",
+        "gloss": "He runs as fast as you."
+      }
+    ],
     "bridge_lang": "pt",
-    "bridge_note": "Portuguese does the same thing (eu gosto do café/eu gosto de café varies), so this one transfers more easily than it does from English, which drops the article entirely for general or uncountable nouns (\"I like coffee,\" no \"the\").",
+    "bridge_note": null,
+    "mistake": "\"plus bon\" ✗ → meilleur; confusing meilleur (adj.) with mieux (adv.).",
+    "source": "Eaquals A2",
     "related_game_id": null,
-    "branch": "Nouns & agreement",
-    "prerequisites": [],
-    "confidence": "first_pass"
+    "branch": "Adjectives: Agreement, Placement, Comparison",
+    "prerequisites": [
+      "fr-u4-adjectives-that-change-meaning"
+    ],
+    "confidence": "verified"
   },
   {
-    "id": "fr-plural-liaison-01",
+    "id": "fr-u4-superlatives",
     "lang": "fr",
     "difficulty": 2,
-    "title": "Plural is usually silent on the noun — the article carries it",
-    "explanation": "The written -s that marks plural is almost never pronounced, so spoken French tells singular from plural mostly by the article, not the noun's ending.",
-    "example_native": "le chat / les chats",
-    "example_gloss": "the cat / the cats (chat and chats sound identical)",
+    "cefr": "A2–B1",
+    "title": "Superlatives (le plus / le moins …)",
+    "explanation": "",
+    "examples": [
+      {
+        "native": "C'est le restaurant le plus cher de la ville.",
+        "gloss": "It's the most expensive restaurant in the city."
+      }
+    ],
     "bridge_lang": "pt",
-    "bridge_note": "Portuguese pronounces its plural -s, so the ear can rely on the noun itself. In French the article (le vs les) is doing the work the noun ending does in Portuguese — worth retraining the ear to listen there instead.",
+    "bridge_note": null,
+    "mistake": "using dans instead of de for \"in\" after a superlative (\"le plus cher dans la ville\" ✗).",
+    "source": null,
     "related_game_id": null,
-    "related_oddity_id": { "lang": "fr", "id": "fr-odd-liaison" },
-    "branch": "Nouns & agreement",
-    "prerequisites": ["fr-articles-01"],
-    "confidence": "first_pass"
+    "branch": "Adjectives: Agreement, Placement, Comparison",
+    "prerequisites": [
+      "fr-u4-comparatives"
+    ],
+    "confidence": "verified"
   },
   {
-    "id": "fr-passe-compose-01",
+    "id": "fr-u5-regular-er-verbs",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Regular -er verbs (présent)",
+    "explanation": "parler: je parle, tu parles, il parle, nous parlons, vous parlez, ils parlent. The first conjugation (-er, except aller) contains roughly 6,000 verbs and is the only class still productive — new coinages join it (téléviser, atomiser, googliser), whereas the -ir group has only about 300 verbs.",
+    "examples": [
+      {
+        "native": "je parle, tu parles, il parle, nous parlons, vous parlez, ils parlent",
+        "gloss": "I speak, you speak, he speaks, we speak, you speak, they speak (parler = to speak)"
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "pronouncing -ent (it is silent).",
+    "source": "Eaquals A1; the largest, most productive class",
+    "related_game_id": null,
+    "branch": "The Present-Tense Verb System",
+    "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u5-regular-ir-verbs-and",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Regular -ir verbs (finir type) and -re verbs (vendre type)",
+    "explanation": "finir: je finis … nous finissons (note the -iss- infix). vendre: je vends, il vend (no ending in 3sg).",
+    "examples": [
+      {
+        "native": "je finis, nous finissons / je vends, il vend",
+        "gloss": "I finish, we finish / I sell, he sells"
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "forgetting -iss- in the plural; adding an ending to il vend.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Present-Tense Verb System",
+    "prerequisites": [
+      "fr-u5-regular-er-verbs"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u5-key-irregular-verbs-aller",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Key irregular verbs: aller, faire, venir, pouvoir, vouloir, devoir, savoir",
+    "explanation": "High-frequency and each anchors later constructions (aller→futur proche; venir→passé récent; pouvoir/vouloir/devoir = modals).",
+    "examples": [
+      {
+        "native": "Je vais, tu fais, il vient, nous pouvons, ils veulent",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": null,
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Present-Tense Verb System",
+    "prerequisites": [
+      "fr-u5-regular-ir-verbs-and"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u5-reflexivepronominal-verbs",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Reflexive/pronominal verbs (se laver, se lever)",
+    "explanation": "The subject acts on itself; the reflexive pronoun (me/te/se/nous/vous/se) sits before the verb.",
+    "examples": [
+      {
+        "native": "Je me lève à sept heures.",
+        "gloss": "I get up at seven."
+      },
+      {
+        "native": "Ils se parlent.",
+        "gloss": "They talk to each other (reciprocal)."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "many \"reflexives\" are really middle-voice (se souvenir = to remember) — a Latin deponent/middle relic where the action folds back on the subject.",
+    "mistake": "omitting the reflexive (\"Je lève\" = I lift [something else]); wrong pronoun agreement.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Present-Tense Verb System",
+    "prerequisites": [
+      "fr-u5-key-irregular-verbs-aller"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u5-modal-infinitive",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Modal + infinitive (pouvoir/vouloir/devoir/savoir + inf.)",
+    "explanation": "",
+    "examples": [
+      {
+        "native": "Je peux venir. Je veux partir. Je dois travailler. Je sais nager",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "conjugating the second verb (\"Je peux viens\" ✗ → infinitive).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Present-Tense Verb System",
+    "prerequisites": [
+      "fr-u5-reflexivepronominal-verbs"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u5-futur-proche",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Futur proche (aller + infinitive)",
+    "explanation": "\"Going to\" future.",
+    "examples": [
+      {
+        "native": "Je vais manger.",
+        "gloss": "I'm going to eat."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": null,
+    "source": "Eaquals A1",
+    "related_game_id": null,
+    "branch": "The Present-Tense Verb System",
+    "prerequisites": [
+      "fr-u5-modal-infinitive"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u5-passé-récent",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Passé récent (venir de + infinitive)",
+    "explanation": "\"To have just done.\"",
+    "examples": [
+      {
+        "native": "Je viens de finir.",
+        "gloss": "I've just finished."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "using passé composé instead (\"J'ai juste fini\" is an anglicism).",
+    "source": "Eaquals A2",
+    "related_game_id": null,
+    "branch": "The Present-Tense Verb System",
+    "prerequisites": [
+      "fr-u5-futur-proche"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u5-present-progressive",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Present progressive (être en train de + infinitive)",
+    "explanation": "Emphasizes action in progress — used far less than English \"-ing.\"",
+    "examples": [
+      {
+        "native": "Je suis en train de cuisiner.",
+        "gloss": "I'm (in the middle of) cooking."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "over-using it as a default present (the French present already covers \"-ing\").",
+    "source": "Eaquals A2",
+    "related_game_id": null,
+    "branch": "The Present-Tense Verb System",
+    "prerequisites": [
+      "fr-u5-passé-récent"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u5-impératif",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Impératif (commands)",
+    "explanation": "Drop the subject; -er verbs drop the -s in the tu form (Mange! Parle!). Irregular: sois/aie/sache.",
+    "examples": [
+      {
+        "native": "Écoutez ! Allons-y ! Ne parle pas !",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "keeping the subject; pronoun order in affirmative commands (see 8.6).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Present-Tense Verb System",
+    "prerequisites": [
+      "fr-u5-present-progressive"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u6-ne-pas",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "ne … pas",
+    "explanation": "The verb sits inside the clamp; in compound tenses the clamp wraps the auxiliary.",
+    "examples": [
+      {
+        "native": "Je ne parle pas anglais.",
+        "gloss": "I don't speak English."
+      },
+      {
+        "native": "Je n'ai pas mangé.",
+        "gloss": "I haven't eaten."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "ne was the original Latin negator (non); pas (\"step\") was an intensifier (\"not a step\") that got reanalyzed as the real negative — which is why colloquial French now drops ne and keeps pas.",
+    "mistake": "dropping ne (fine in casual speech — \"je sais pas\" — but flag as register, Unit 14); placing pas after the participle (\"Je n'ai mangé pas\" ✗).",
+    "source": null,
+    "related_game_id": "blank",
+    "branch": "Negation",
+    "prerequisites": [],
+    "confidence": "verified",
+    "related_oddity_id": {
+      "lang": "fr",
+      "id": "fr-odd-ne-dropping"
+    },
+    "see_also": [{ "lang": "de", "id": "de-u1-the-v2-rule" }]
+  },
+  {
+    "id": "fr-u6-ne-jamais-rien-personne",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "ne … jamais / rien / personne / plus",
+    "explanation": "never / nothing / nobody / no longer.",
+    "examples": [
+      {
+        "native": "Je ne bois jamais d'alcool.",
+        "gloss": "I never drink alcohol."
+      },
+      {
+        "native": "Il n'y a personne.",
+        "gloss": "There's nobody."
+      },
+      {
+        "native": "Je ne veux rien.",
+        "gloss": "I want nothing."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "personne and rien as subjects invert (\"Personne ne vient\" — nobody's coming); double-translating (\"Je ne veux pas rien\" ✗).",
+    "source": "Eaquals sequences jamais at A1, plus/personne/rien at A2",
+    "related_game_id": null,
+    "branch": "Negation",
+    "prerequisites": [
+      "fr-u6-ne-pas"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u6-ne-que",
     "lang": "fr",
     "difficulty": 2,
-    "title": "Everyday past tense is built with avoir/être + past participle",
-    "explanation": "The passé composé — the tense used for most spoken past-tense statements — is formed with a helper verb (avoir or être) plus the past participle, not a single conjugated past-tense verb form.",
-    "example_native": "J'ai mangé une pomme.",
-    "example_gloss": "I ate an apple. (literally: I have eaten an apple)",
+    "cefr": "B1",
+    "title": "ne … que (restrictive \"only\")",
+    "explanation": "Not a true negative — it restricts. que precedes the restricted element.",
+    "examples": [
+      {
+        "native": "Je n'ai que dix euros.",
+        "gloss": "I only have ten euros."
+      }
+    ],
     "bridge_lang": "pt",
-    "bridge_note": "Portuguese has a simple one-word past tense (comi) for exactly this everyday use, so the two-part French construction can feel like overkill for something plain and finished — but in French it's the default, not a special \"have done\" nuance like English's present perfect.",
+    "bridge_note": "ne…que = \"nothing except,\" a fossilized comparative-exceptive; that's why it doesn't trigger the de-reduction that real negatives do.",
+    "mistake": "treating it as negative and reducing the article (\"Je n'ai que de dix euros\" ✗ — after ne…que the normal article stays: Je ne bois que du vin).",
+    "source": "Eaquals B1",
+    "related_game_id": null,
+    "branch": "Negation",
+    "prerequisites": [
+      "fr-u6-ne-jamais-rien-personne"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u6-ne-aucun-ni-ni",
+    "lang": "fr",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "ne … aucun, ni … ni",
+    "explanation": "",
+    "examples": [
+      {
+        "native": "Je n'ai aucune idée.",
+        "gloss": "I have no idea whatsoever."
+      },
+      {
+        "native": "Il ne mange ni viande ni poisson.",
+        "gloss": "He eats neither meat nor fish."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": null,
+    "source": "Eaquals B1",
+    "related_game_id": null,
+    "branch": "Negation",
+    "prerequisites": [
+      "fr-u6-ne-que"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u7-the-three-yesno-question",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "The three yes/no question strategies",
+    "explanation": "(1) Intonation (casual): Tu viens ? (2) Est-ce que (neutral): Est-ce que tu viens ? (3) Inversion (formal): Viens-tu ?",
+    "examples": [
+      {
+        "native": "Tu viens ? / Est-ce que tu viens ? / Viens-tu ?",
+        "gloss": "Are you coming? — casual / neutral / formal"
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "over-using inversion in speech (sounds stiff); forgetting the euphonic -t- (A-t-il ?).",
+    "source": null,
+    "related_game_id": "order",
+    "branch": "Question Formation",
+    "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u7-information-words-qui-quequoi",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Information words: qui, que/quoi, où, quand, comment, combien, pourquoi, quel",
+    "explanation": "",
+    "examples": [
+      {
+        "native": "Où habites-tu ? / Tu habites où ?",
+        "gloss": "Where do you live?"
+      },
+      {
+        "native": "Quel âge as-tu ?",
+        "gloss": "How old are you?"
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "quel (adjective, agrees) vs qu'est-ce que (pronoun); \"Qu'est-ce que\" vs \"qui est-ce qui\" for things vs people.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Question Formation",
+    "prerequisites": [
+      "fr-u7-the-three-yesno-question"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u7-quest-ce-que-cest-quest-ce",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Qu'est-ce que c'est / Qu'est-ce qui / Qui est-ce que",
+    "explanation": "The \"long forms\" that avoid inversion.",
+    "examples": [
+      {
+        "native": "Qu'est-ce qui se passe ?",
+        "gloss": "What's happening? (subject)"
+      },
+      {
+        "native": "Qui est-ce que tu vois ?",
+        "gloss": "Whom do you see? (object)"
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "mixing the qui/que and subject/object slots.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Question Formation",
+    "prerequisites": [
+      "fr-u7-information-words-qui-quequoi"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u7-lequel-and-inversion-in",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B1–B2",
+    "title": "lequel (which one) and inversion in compound tenses",
+    "explanation": "",
+    "examples": [
+      {
+        "native": "Lequel préfères-tu ?",
+        "gloss": "Which one do you prefer?"
+      },
+      {
+        "native": "As-tu mangé ?",
+        "gloss": "Have you eaten? (inversion wraps the auxiliary)."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": null,
+    "source": "Eaquals B1/B2",
+    "related_game_id": null,
+    "branch": "Question Formation",
+    "prerequisites": [
+      "fr-u7-quest-ce-que-cest-quest-ce"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u8-direct-object-pronouns",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Direct object pronouns (me, te, le, la, nous, vous, les)",
+    "explanation": "Placed BEFORE the conjugated verb (unlike English, which puts objects after).",
+    "examples": [
+      {
+        "native": "Je le vois.",
+        "gloss": "I see him/it."
+      },
+      {
+        "native": "Tu me connais.",
+        "gloss": "You know me."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "French lost noun case endings but kept the Latin rule that unstressed object pronouns lean (procliticize) onto the verb — hence they precede it. This is the deep reason French kept \"pronoun cases\" (me/te/le/lui) while abandoning noun cases.",
+    "mistake": "English word order (\"Je vois le\" ✗).",
+    "source": "Eaquals A2",
+    "related_game_id": "order",
+    "branch": "Object Pronouns, y/en, and Pronoun Ordering",
+    "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u8-indirect-object-pronouns",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Indirect object pronouns (me, te, lui, nous, vous, leur)",
+    "explanation": "Replace à + person. lui = to him/her; leur = to them.",
+    "examples": [
+      {
+        "native": "Je lui parle.",
+        "gloss": "I speak to him/her."
+      },
+      {
+        "native": "Je leur donne le livre.",
+        "gloss": "I give them the book."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "confusing lui (indirect, to him/her) with le/la (direct); using leur + -s (it's invariable as a pronoun).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Object Pronouns, y/en, and Pronoun Ordering",
+    "prerequisites": [
+      "fr-u8-direct-object-pronouns"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u8-y",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "y (there / to it)",
+    "explanation": "Replaces à + thing/place.",
+    "examples": [
+      {
+        "native": "J'y vais.",
+        "gloss": "I'm going there."
+      },
+      {
+        "native": "J'y pense.",
+        "gloss": "I'm thinking about it."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "using y for people (use lui/leur).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Object Pronouns, y/en, and Pronoun Ordering",
+    "prerequisites": [
+      "fr-u8-indirect-object-pronouns"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u8-en",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "en (some / of it / from there)",
+    "explanation": "Replaces de + noun, and quantities.",
+    "examples": [
+      {
+        "native": "J'en veux.",
+        "gloss": "I want some."
+      },
+      {
+        "native": "J'en ai trois.",
+        "gloss": "I have three (of them)."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "dropping en where French requires the quantity resumption (\"J'ai trois\" ✗ when standing alone → J'en ai trois).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Object Pronouns, y/en, and Pronoun Ordering",
+    "prerequisites": [
+      "fr-u8-y"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u8-double-object-pronoun-ordering",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "Double object pronoun ordering",
+    "explanation": "Fixed order before the verb: me/te/se/nous/vous → le/la/les → lui/leur → y → en.",
+    "examples": [
+      {
+        "native": "Je le lui donne.",
+        "gloss": "I give it to him."
+      },
+      {
+        "native": "Il y en a.",
+        "gloss": "There is some."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "wrong internal order (\"Je lui le donne\" ✗).",
+    "source": "Kwiziq B2",
+    "related_game_id": null,
+    "branch": "Object Pronouns, y/en, and Pronoun Ordering",
+    "prerequisites": [
+      "fr-u8-en"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u8-pronouns-in-affirmative-commands",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B1–B2",
+    "title": "Pronouns in affirmative commands",
+    "explanation": "In positive commands pronouns follow the verb, hyphenated, and me/te → moi/toi.",
+    "examples": [
+      {
+        "native": "Donne-le-moi !",
+        "gloss": "Give it to me!"
+      },
+      {
+        "native": "BUT negative: Ne me le donne pas",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "keeping the pre-verbal order in positive commands.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Object Pronouns, y/en, and Pronoun Ordering",
+    "prerequisites": [
+      "fr-u8-double-object-pronoun-ordering"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u8-stresstonic-pronouns",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Stress/tonic pronouns (moi, toi, lui, elle, nous, vous, eux, elles)",
+    "explanation": "After prepositions, for emphasis, and in c'est ….",
+    "examples": [
+      {
+        "native": "avec moi, chez eux; Moi, je pense que… ; C'est lui",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "using subject pronouns after prepositions (\"avec je\" ✗).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Object Pronouns, y/en, and Pronoun Ordering",
+    "prerequisites": [
+      "fr-u8-pronouns-in-affirmative-commands"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u9-passé-composé-with-avoir",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1–A2",
+    "title": "Passé composé with avoir",
+    "explanation": "avoir (present) + past participle. Participles: -er→-é, -ir→-i, -re→-u, plus many irregulars (fait, pris, eu, été).",
+    "examples": [
+      {
+        "native": "J'ai mangé.",
+        "gloss": "I ate / I have eaten."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "choosing the wrong auxiliary; irregular participles.",
+    "source": "Eaquals tags p.c. with avoir at A1, with être at A2",
     "related_game_id": "blank",
-    "branch": "Verbs & tense",
+    "branch": "The Past-Tense System",
+    "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u9-passé-composé-with-être",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Passé composé with être (the DR & MRS VANDERTRAMP verbs)",
+    "explanation": "The standard \"DR MRS VANDERTRAMP\" mnemonic covers the 17 intransitive motion/state-change verbs (aller, venir, naître, mourir, monter, descendre, rester, partir, arriver, entrer, sortir, tomber, retourner, passer, devenir, revenir, and the reflexives) that conjugate with être; the participle then agrees with the SUBJECT. Of these, only naître→né, mourir→mort, and venir→venu have irregular participles.",
+    "examples": [
+      {
+        "native": "Elle est allée.",
+        "gloss": "She went. / Nous sommes arrivés. — We arrived."
+      },
+      {
+        "native": "Ils se sont levés.",
+        "gloss": "They got up."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "the être-verbs describe change of state/location — their subject undergoes the action, so French treats it like a predicate adjective that agrees, mirroring the Latin/Romance \"unaccusative\" pattern.",
+    "mistake": "using avoir with these (\"Elle a allé\" ✗); forgetting subject agreement.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Past-Tense System",
+    "prerequisites": [
+      "fr-u9-passé-composé-with-avoir"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u9-past-participle-agreement-with-a",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B1–B2",
+    "title": "Past-participle agreement with a preceding direct object (avoir)",
+    "explanation": "With avoir, the participle agrees with a direct object ONLY when that object comes before the verb.",
+    "examples": [
+      {
+        "native": "Les fleurs que j'ai achetées.",
+        "gloss": "The flowers I bought (achetées agrees with fleurs, which precedes)."
+      },
+      {
+        "native": "BUT: J'ai acheté les fleurs (no agreement)",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "the single most error-prone spelling rule in French; agreeing with a following object.",
+    "source": "Kwiziq B2 for \"special cases\"",
+    "related_game_id": null,
+    "branch": "The Past-Tense System",
+    "prerequisites": [
+      "fr-u9-passé-composé-with-être"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u9-imparfait",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Imparfait (formation and core uses)",
+    "explanation": "Stem from the nous form + -ais/-ais/-ait/-ions/-iez/-aient. Uses: ongoing/background action, habits, description, states.",
+    "examples": [
+      {
+        "native": "Il pleuvait et j'avais froid.",
+        "gloss": "It was raining and I was cold."
+      },
+      {
+        "native": "Quand j'étais petit, je jouais au foot.",
+        "gloss": "When I was little, I used to play football."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "mapping it one-to-one onto English past (it covers \"was ...-ing,\" \"used to,\" and descriptive \"was\").",
+    "source": "Eaquals A2",
+    "related_game_id": "blank",
+    "branch": "The Past-Tense System",
+    "prerequisites": [
+      "fr-u9-past-participle-agreement-with-a"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u9-passé-composé-vs-imparfait",
+    "lang": "fr",
+    "difficulty": 2,
+    "cefr": "A2–B1",
+    "title": "Passé composé vs imparfait (the aspect contrast)",
+    "explanation": "PC = completed, bounded events (foreground); imparfait = ongoing/repeated/descriptive (background). One often interrupts the other.",
+    "examples": [
+      {
+        "native": "Je regardais la télé quand le téléphone a sonné.",
+        "gloss": "I was watching TV when the phone rang."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "French grammaticalizes aspect (bounded vs unbounded) where English uses one form and relies on context. This is the \"narrate past events distinguishing completed actions from background\" capability.",
+    "mistake": "the central B1 challenge; English's simple past collapses this distinction, so learners must relearn it as aspect, not tense.",
+    "source": "Eaquals \"alternance\" A2, \"temps du passé dans le récit\" B1",
+    "related_game_id": null,
+    "branch": "The Past-Tense System",
+    "prerequisites": [
+      "fr-u9-imparfait"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u9-plus-que-parfait",
+    "lang": "fr",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Plus-que-parfait",
+    "explanation": "imparfait of avoir/être + past participle = \"had done\" (a past before the past). Essential for reported speech and si-clauses.",
+    "examples": [
+      {
+        "native": "Il avait déjà mangé quand je suis arrivé.",
+        "gloss": "He had already eaten when I arrived."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "Documented level split: Eaquals/Beacco place plus-que-parfait at B1; Kwiziq at B2. Recommendation: introduce at B1, consolidate at B2.",
+    "mistake": "using passé composé where anteriority is needed.",
+    "source": "Eaquals B1; note Kwiziq tags B2 — flag the split",
+    "related_game_id": null,
+    "branch": "The Past-Tense System",
+    "prerequisites": [
+      "fr-u9-passé-composé-vs-imparfait"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u9-passé-simple",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B2–C1",
+    "title": "Passé simple (recognition only)",
+    "explanation": "The literary/historical narrative past — learners need to recognize it (il fut, il eut, il alla, il fit), not produce it.",
+    "examples": [
+      {
+        "native": "Il naquit en 1802 et mourut en 1885.",
+        "gloss": "He was born in 1802 and died in 1885."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": null,
+    "source": "Eaquals explicitly rejected teacher intuition to teach it at B1; Kwiziq B2–C1",
+    "related_game_id": null,
+    "branch": "The Past-Tense System",
+    "prerequisites": [
+      "fr-u9-plus-que-parfait"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u10-futur-simple",
+    "lang": "fr",
+    "difficulty": 2,
+    "cefr": "A2–B1",
+    "title": "Futur simple",
+    "explanation": "Infinitive + -ai/-as/-a/-ons/-ez/-ont (irregular stems: aller→ir-, être→ser-, avoir→aur-, faire→fer-).",
+    "examples": [
+      {
+        "native": "Je partirai demain.",
+        "gloss": "I will leave tomorrow."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "Documented level split: Eaquals A2 vs Kwiziq B1. Recommendation: introduce A2, master B1.",
+    "mistake": "over-using futur proche vs futur simple; irregular stems.",
+    "source": "Eaquals A2, Kwiziq B1 — flag the split",
+    "related_game_id": null,
+    "branch": "Future & Conditional, and the si-Clause System",
+    "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u10-conditionnel-présent",
+    "lang": "fr",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Conditionnel présent",
+    "explanation": "Future stem + imparfait endings. Uses: politeness, wishes, hypothesis, \"future-in-the-past.\"",
+    "examples": [
+      {
+        "native": "Je voudrais un café.",
+        "gloss": "I would like a coffee."
+      },
+      {
+        "native": "À ta place, je partirais.",
+        "gloss": "In your place, I'd leave."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "the conditional is literally \"future + past\" morphology — a Romance innovation (\"infinitive + habēbam\") expressing a future seen from a past/hypothetical vantage.",
+    "mistake": "confusing the near-identical spellings of je parlerai (futur, \"I will\") and je parlerais (conditionnel, \"I would\") — a classic homophone trap.",
+    "source": "Eaquals B1",
+    "related_game_id": null,
+    "branch": "Future & Conditional, and the si-Clause System",
+    "prerequisites": [
+      "fr-u10-futur-simple"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u10-conditionnel-passé",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "Conditionnel passé",
+    "explanation": "conditionnel of avoir/être + participle = \"would have.\"",
+    "examples": [
+      {
+        "native": "J'aurais aimé venir.",
+        "gloss": "I would have liked to come."
+      },
+      {
+        "native": "Elle serait partie plus tôt.",
+        "gloss": "She would have left earlier (note être agreement)."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "\"J'aurais aller\" ✗ (participle needed, not infinitive).",
+    "source": "Eaquals B2",
+    "related_game_id": null,
+    "branch": "Future & Conditional, and the si-Clause System",
+    "prerequisites": [
+      "fr-u10-conditionnel-présent"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u10-futur-antérieur",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "Futur antérieur",
+    "explanation": "futur of avoir/être + participle = \"will have done.\"",
+    "examples": [
+      {
+        "native": "Quand tu arriveras, j'aurai fini.",
+        "gloss": "When you arrive, I'll have finished."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "using the simple future where anteriority is meant.",
+    "source": "Eaquals B2",
+    "related_game_id": null,
+    "branch": "Future & Conditional, and the si-Clause System",
+    "prerequisites": [
+      "fr-u10-conditionnel-passé"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u10-the-three-si-clause-types",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "A2/B1/B2",
+    "title": "The three si-clause types",
+    "explanation": "",
+    "examples": [
+      {
+        "native": "Type 1 (real): Si + présent → présent/futur/impératif. Si tu viens, je serai content",
+        "gloss": null
+      },
+      {
+        "native": "Type 2 (unreal present): Si + imparfait → conditionnel présent. Si j'étais riche, je voyagerais",
+        "gloss": null
+      },
+      {
+        "native": "Type 3 (unreal past): Si + plus-que-parfait → conditionnel passé. Si tu étais venu, tu aurais vu le spectacle",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "the si clause states the hypothesis in the indicative/imparfait; the conditional lives only in the consequence clause. English's \"if I were\" (an old subjunctive) becomes plain imparfait si j'étais — no special form.",
+    "mistake": "THE cardinal error — putting futur or conditionnel directly after si (\"Si je serais…\" ✗). French teachers chant « Les si n'aiment pas les -rais » (\"si's don't like -rais endings\").",
+    "source": "Eaquals sequences type 1 at A2/B1, type 2 at B1, type 3 at B2",
+    "related_game_id": "blank",
+    "branch": "Future & Conditional, and the si-Clause System",
+    "prerequisites": [
+      "fr-u10-futur-antérieur"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u11-subjonctif-présent-formation",
+    "lang": "fr",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Subjonctif présent — formation",
+    "explanation": "Stem from the ils form + -e/-es/-e/-ions/-iez/-ent; key irregulars (aille, soit, ait, fasse, puisse, sache, veuille).",
+    "examples": [
+      {
+        "native": "que je parle, que nous fassions, qu'il soit",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "the subjunctive marks non-factual/subjective content in a subordinate clause after que; French preserved the Latin mood robustly, unlike English which largely lost it.",
+    "mistake": "trying to \"translate\" it — English has only a vestigial subjunctive (\"that he be\"), so learners don't feel the trigger.",
+    "source": "Eaquals introduces formation at B1",
+    "related_game_id": "blank",
+    "branch": "The Subjunctive Mood",
+    "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u11-core-triggers-il-faut",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B1–B2",
+    "title": "Core triggers: il faut que, vouloir que, necessity/will",
+    "explanation": "",
+    "examples": [
+      {
+        "native": "Il faut que tu partes.",
+        "gloss": "You must leave."
+      },
+      {
+        "native": "Je veux qu'il vienne.",
+        "gloss": "I want him to come."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "using an infinitive across a change of subject (\"Je veux qu'il venir\" ✗); \"Je veux que je…\" (same subject → use infinitive: Je veux venir).",
+    "source": "Eaquals; Kwiziq tags the il faut que / vouloir que + subjunctive lessons at B2",
+    "related_game_id": "blank",
+    "branch": "The Subjunctive Mood",
+    "prerequisites": [
+      "fr-u11-subjonctif-présent-formation"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u11-triggers-emotion-doubt-subjective",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "Triggers: emotion, doubt, subjective judgment",
+    "explanation": "aimer que, être content que, avoir peur que, douter que, il est important que.",
+    "examples": [
+      {
+        "native": "Je suis content que tu sois là.",
+        "gloss": "I'm glad you're here."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": null,
+    "source": "Eaquals B2 \"différents emplois\"",
+    "related_game_id": null,
+    "branch": "The Subjunctive Mood",
+    "prerequisites": [
+      "fr-u11-core-triggers-il-faut"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u11-opinion-verbs-indicative-when",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "Opinion verbs: indicative when affirmative, subjunctive when negated/questioned",
+    "explanation": "",
+    "examples": [
+      {
+        "native": "Je pense qu'il est là. (indicative) BUT Je ne pense pas qu'il soit là. (subjunctive)",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "not flipping the mood under negation.",
+    "source": "Kwiziq B2",
+    "related_game_id": null,
+    "branch": "The Subjunctive Mood",
+    "prerequisites": [
+      "fr-u11-triggers-emotion-doubt-subjective"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u11-subjunctive-after-conjunctions",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "Subjunctive after conjunctions (bien que, pour que, avant que, jusqu'à ce que)",
+    "explanation": "",
+    "examples": [
+      {
+        "native": "Bien qu'il soit fatigué, il travaille.",
+        "gloss": "Although he's tired, he works."
+      },
+      {
+        "native": "Je t'explique pour que tu comprennes.",
+        "gloss": "I'm explaining so that you understand."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "using indicative after these; note après que historically takes the indicative.",
+    "source": "Kwiziq/Eaquals B2",
+    "related_game_id": null,
+    "branch": "The Subjunctive Mood",
+    "prerequisites": [
+      "fr-u11-opinion-verbs-indicative-when"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u11-subjonctif-passé",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "Subjonctif passé",
+    "explanation": "subjunctive of avoir/être + participle = completed action in a subjunctive context.",
+    "examples": [
+      {
+        "native": "Je suis content que tu sois venu.",
+        "gloss": "I'm glad you came."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": null,
+    "source": "Eaquals/Kwiziq B2",
+    "related_game_id": null,
+    "branch": "The Subjunctive Mood",
+    "prerequisites": [
+      "fr-u11-subjunctive-after-conjunctions"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u11-subjonctif-imparfait",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "C1",
+    "title": "Subjonctif imparfait (recognition, foundational only)",
+    "explanation": "Recognize forms like qu'il fût, qu'il eût in literary/formal texts; not for production. Flagged as recognition-only, foundational-C1.",
+    "examples": [
+      {
+        "native": "qu'il fût, qu'il eût",
+        "gloss": "that he were, that he had (literary subjunctive imperfect, recognition only)"
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": null,
+    "source": "literary/formal, recognition",
+    "related_game_id": null,
+    "branch": "The Subjunctive Mood",
+    "prerequisites": [
+      "fr-u11-subjonctif-passé"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u12-qui-and-que",
+    "lang": "fr",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "qui and que (simple relative pronouns)",
+    "explanation": "qui = subject (\"who/which\"), que = direct object (\"whom/which\"). que elides to qu'; qui never does.",
+    "examples": [
+      {
+        "native": "L'homme qui parle est mon prof.",
+        "gloss": "The man who is speaking is my teacher."
+      },
+      {
+        "native": "Le livre que je lis est bon.",
+        "gloss": "The book (that) I'm reading is good."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "choosing by \"who vs which\" (English logic) instead of by grammatical role (subject vs object); dropping the relative pronoun (English can — \"the book I read\" — French cannot).",
+    "source": "Eaquals B1",
+    "related_game_id": "order",
+    "branch": "Relative & Complex Clauses",
+    "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u12-où-and-dont",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B1–B2",
+    "title": "où (where/when) and dont (of which/whose)",
+    "explanation": "dont replaces de + noun: \"whose,\" \"of which,\" \"about which.\"",
+    "examples": [
+      {
+        "native": "la ville où j'habite",
+        "gloss": "the city where I live."
+      },
+      {
+        "native": "le film dont je parle",
+        "gloss": "the film I'm talking about."
+      },
+      {
+        "native": "l'homme dont la voiture est rouge",
+        "gloss": "the man whose car is red."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "dont's word order (French keeps subject-verb: dont la voiture est…, not English \"whose car…\"); using que where dont is required by a de-verb (parler de → dont).",
+    "source": "Eaquals B1 for dont",
+    "related_game_id": null,
+    "branch": "Relative & Complex Clauses",
+    "prerequisites": [
+      "fr-u12-qui-and-que"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u12-lequellaquelle-and-preposition-relative",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "lequel/laquelle and preposition + relative",
+    "explanation": "After a preposition, use lequel/laquelle/lesquels/lesquelles (contracting: auquel, duquel). For people, qui is also possible after a preposition.",
+    "examples": [
+      {
+        "native": "la table sur laquelle je travaille",
+        "gloss": "the table on which I work."
+      },
+      {
+        "native": "l'ami avec qui je voyage",
+        "gloss": "the friend with whom I travel."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "stranding the preposition at the end (English habit — \"the table I work on\" ✗ literal).",
+    "source": "Eaquals B2 \"pronoms relatifs composés\"; Kwiziq B2",
+    "related_game_id": null,
+    "branch": "Relative & Complex Clauses",
+    "prerequisites": [
+      "fr-u12-où-and-dont"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u12-ce-qui-ce-que",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "ce qui / ce que / ce dont (indefinite relatives) and mise en relief",
+    "explanation": "\"What\" (= the thing that); and cleft emphasis.",
+    "examples": [
+      {
+        "native": "Je ne comprends pas ce que tu dis.",
+        "gloss": "I don't understand what you say."
+      },
+      {
+        "native": "Ce qui m'intéresse, c'est la musique.",
+        "gloss": "What interests me is music."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "using qu'est-ce que (a question form) inside a statement.",
+    "source": "Kwiziq B2, Eaquals B2",
+    "related_game_id": null,
+    "branch": "Relative & Complex Clauses",
+    "prerequisites": [
+      "fr-u12-lequellaquelle-and-preposition-relative"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u13-the-passive-voice",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "The passive voice (être + past participle + par/de)",
+    "explanation": "Participle agrees with subject. Only verbs with a direct object can be passivized (unlike English, indirect objects cannot become passive subjects).",
+    "examples": [
+      {
+        "native": "La lettre a été écrite par Marie.",
+        "gloss": "The letter was written by Marie."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "French prefers active on (\"on parle français ici\") where English reaches for the passive; the on-construction is the everyday alternative.",
+    "mistake": "trying to passivize an indirect object (\"I was given a book\" has no direct French passive — French uses on m'a donné un livre).",
+    "source": "Eaquals tags passive at B2; Elon.io's \"Parcours B2\" lists it as a headline B2 acquisition",
+    "related_game_id": null,
+    "branch": "Advanced Verb Structures: Passive, Reported Speech, Gérondif, Causative",
+    "prerequisites": [],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u13-reportedindirect-speech-present",
+    "lang": "fr",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Reported/indirect speech — present",
+    "explanation": "Statements → que; yes/no questions → si; imperatives → de + infinitive.",
+    "examples": [
+      {
+        "native": "Il dit qu'il est fatigué.",
+        "gloss": "He says he's tired."
+      },
+      {
+        "native": "Elle demande si tu viens.",
+        "gloss": "She asks whether you're coming."
+      },
+      {
+        "native": "Il me dit de partir.",
+        "gloss": "He tells me to leave."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "keeping the interrogative inversion inside the reported clause (\"Il demande viens-tu\" ✗).",
+    "source": "Eaquals B1 \"discours indirect au présent\"",
+    "related_game_id": null,
+    "branch": "Advanced Verb Structures: Passive, Reported Speech, Gérondif, Causative",
+    "prerequisites": [
+      "fr-u13-the-passive-voice"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u13-reported-speech-in-the",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "Reported speech in the past — concordance des temps",
+    "explanation": "When the reporting verb is past, tenses shift back: présent→imparfait, passé composé→plus-que-parfait, futur→conditionnel; time words shift (demain→le lendemain, hier→la veille).",
+    "examples": [
+      {
+        "native": "« Je viendrai demain » → Il a dit qu'il viendrait le lendemain.",
+        "gloss": "He said he would come the next day."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "not backshifting the tense or the time adverbs.",
+    "source": "Eaquals B2",
+    "related_game_id": null,
+    "branch": "Advanced Verb Structures: Passive, Reported Speech, Gérondif, Causative",
+    "prerequisites": [
+      "fr-u13-reportedindirect-speech-present"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u13-gérondif",
+    "lang": "fr",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Gérondif (en + present participle)",
+    "explanation": "Present participle = verb stem + -ant. En + -ant expresses simultaneity (\"while ...-ing\") or means (\"by ...-ing\"). The subject of the gérondif MUST be the main-clause subject.",
+    "examples": [
+      {
+        "native": "En arrivant, j'ai vu la lettre.",
+        "gloss": "On arriving, I saw the letter."
+      },
+      {
+        "native": "Il apprend en pratiquant.",
+        "gloss": "He learns by practising."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "over-using it as an English \"-ing\" (French uses it far less; \"I like swimming\" = j'aime nager, an infinitive, not a participle).",
+    "source": "Eaquals B1",
+    "related_game_id": null,
+    "branch": "Advanced Verb Structures: Passive, Reported Speech, Gérondif, Causative",
+    "prerequisites": [
+      "fr-u13-reported-speech-in-the"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u13-present-participle-adjectif-verbal",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "Present participle & adjectif verbal",
+    "explanation": "The bare participle (without en) can act adjectivally (agreeing) or verbally (invariable): une histoire amusante (adj., agrees) vs un enfant obéissant à ses parents (verbal, invariable).",
+    "examples": [
+      {
+        "native": "une histoire amusante / un enfant obéissant à ses parents",
+        "gloss": "an amusing story (adjective, agrees) / a child obedient to his parents (verbal, invariable)"
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "agreeing the verbal participle.",
+    "source": "Eaquals B2",
+    "related_game_id": null,
+    "branch": "Advanced Verb Structures: Passive, Reported Speech, Gérondif, Causative",
+    "prerequisites": [
+      "fr-u13-gérondif"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u13-causative-faire-infinitive",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "Causative faire + infinitive",
+    "explanation": "\"To have/make something done.\" faire + infinitive is an unbreakable unit; nouns follow the infinitive, but ALL object pronouns go before faire, and the participle fait is invariable.",
+    "examples": [
+      {
+        "native": "Je fais réparer ma voiture.",
+        "gloss": "I'm having my car repaired."
+      },
+      {
+        "native": "Je la lui fais réparer.",
+        "gloss": "I'm having it repaired by him."
+      },
+      {
+        "native": "se faire + inf.: Il s'est fait couper les cheveux.",
+        "gloss": "He got his hair cut."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "faire + infinitive fuses into one predicate, so the clitics attach to the whole unit at its front, exactly as they do to a simple verb.",
+    "mistake": "placing pronouns before the infinitive (\"Je fais la réparer\" ✗); agreeing fait (\"Elle s'est faite opérer\" ✗ → fait).",
+    "source": "Kwiziq/consensus B2; Elon.io \"Parcours B2\" lists the faire-causative among headline B2 acquisitions; Eaquals not separately tagged",
+    "related_game_id": null,
+    "branch": "Advanced Verb Structures: Passive, Reported Speech, Gérondif, Causative",
+    "prerequisites": [
+      "fr-u13-present-participle-adjectif-verbal"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u13-infinitive-constructions-verbs-à",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B1–B2",
+    "title": "Infinitive constructions: verbs + à / de / ø + infinitive",
+    "explanation": "Some verbs take a bare infinitive (aimer, vouloir), some need à (commencer à, apprendre à), some need de (décider de, essayer de).",
+    "examples": [
+      {
+        "native": "J'ai décidé de partir. / Il a commencé à pleuvoir",
+        "gloss": null
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "wrong preposition — must be memorized per verb; this is a persistent B2 accuracy issue.",
+    "source": "Eaquals A2 for basic infinitive structures, extended B1/B2",
+    "related_game_id": null,
+    "branch": "Advanced Verb Structures: Passive, Reported Speech, Gérondif, Causative",
+    "prerequisites": [
+      "fr-u13-causative-faire-infinitive"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u14-tu-vs-vous",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "tu vs vous",
+    "explanation": "tu = singular familiar (friends, family, children, peers, animals); vous = formal singular AND all plurals.",
+    "examples": [
+      {
+        "native": "Tu viens ? (à un ami) / Vous venez ? (à un professeur)",
+        "gloss": "Are you coming? — to a friend / to a teacher (formal)"
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "the \"polite plural\" vous is the medieval \"royal you\" — addressing one important person as many — a pan-Romance courtesy pattern.",
+    "mistake": "tu to a stranger/superior (over-familiar); the verbs tutoyer/vouvoyer name the choice.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Register & Sociolinguistic Variation",
+    "prerequisites": [],
+    "confidence": "verified",
+    "related_oddity_id": {
+      "lang": "fr",
+      "id": "fr-odd-tu-vous"
+    }
+  },
+  {
+    "id": "fr-u14-register-in-negation-dropping",
+    "lang": "fr",
+    "difficulty": 2,
+    "cefr": "A2–B1",
+    "title": "Register in negation: dropping ne",
+    "explanation": "Spoken casual French routinely drops ne (je sais pas); formal/written French keeps it. Teach as register, not error.",
+    "examples": [
+      {
+        "native": "Je sais pas. (spoken) / Je ne sais pas. (formal)",
+        "gloss": "I don't know."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": null,
+    "source": null,
+    "related_game_id": null,
+    "branch": "Register & Sociolinguistic Variation",
+    "prerequisites": [
+      "fr-u14-tu-vs-vous"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "fr-u14-register-in-questions",
+    "lang": "fr",
+    "difficulty": 2,
+    "cefr": "A2–B1",
+    "title": "Register in questions",
+    "explanation": "Intonation questions = casual; est-ce que = neutral; inversion = formal/written. Same meaning, different register.",
+    "examples": [
+      {
+        "native": "Tu viens ? / Est-ce que tu viens ? / Viens-tu ?",
+        "gloss": "Are you coming? — casual / neutral / formal"
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": null,
+    "source": null,
+    "related_game_id": null,
+    "branch": "Register & Sociolinguistic Variation",
+    "prerequisites": [
+      "fr-u14-register-in-negation-dropping"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "fr-u14-on-for-nous",
+    "lang": "fr",
+    "difficulty": 2,
+    "cefr": "A1–B1",
+    "title": "on for nous",
+    "explanation": "Colloquial \"we\" (on y va), impersonal \"one/people\" (on parle français ici), and passive-avoidance (on m'a dit).",
+    "examples": [
+      {
+        "native": "On y va ! / On parle français ici. / On m'a dit...",
+        "gloss": "Let's go! / People speak French here. / I was told... (lit. \"one told me\")"
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "over-formal nous in casual speech; forgetting on takes a 3rd-singular verb but plural agreement of adjectives (on est contents).",
+    "source": "Eaquals \"ON les trois valeurs\" B1",
+    "related_game_id": null,
+    "branch": "Register & Sociolinguistic Variation",
+    "prerequisites": [
+      "fr-u14-register-in-questions"
+    ],
+    "confidence": "verified"
+  },
+  {
+    "id": "fr-u14-formal-vs-familiar-vocabulary",
+    "lang": "fr",
+    "difficulty": 3,
+    "cefr": "B2",
+    "title": "Formal vs familiar vocabulary and structures",
+    "explanation": "e.g., bosser (fam.) vs travailler; bouquin vs livre; slang and verlan awareness (recognition). Flagged as needing native-teacher curation.",
+    "examples": [
+      {
+        "native": "bosser (fam.) vs travailler / bouquin vs livre",
+        "gloss": "to work (casual) vs to work (neutral) / book (casual) vs book (neutral)"
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": null,
+    "source": null,
+    "related_game_id": null,
+    "branch": "Register & Sociolinguistic Variation",
+    "prerequisites": [
+      "fr-u14-on-for-nous"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "fr-u15-shared-architecture",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "all levels; contrastive",
+    "title": "Shared architecture (positive transfer)",
+    "explanation": "Both descend from Latin and share: two grammatical genders with agreeing articles/adjectives; definite/indefinite articles; conjugated verb systems with indicative, subjunctive, and conditional moods; tense/aspect distinctions; SVO order; and a large cognate learned vocabulary (nation/nação, information/informação, culture/cultura). A learner of one has a substantial head start on the other.",
+    "examples": [
+      {
+        "native": "la nation, l’information, la culture",
+        "gloss": "nation, information, culture — cognates shared with Portuguese (a nação, a informação, a cultura)"
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": null,
+    "source": null,
+    "related_game_id": null,
+    "branch": "The French–Portuguese Bridge",
     "prerequisites": [],
     "confidence": "first_pass"
   },
   {
-    "id": "fr-y-en-01",
+    "id": "fr-u15-cognate-grammar-point-the",
     "lang": "fr",
-    "difficulty": 3,
-    "title": "y and en replace whole prepositional phrases with one word",
-    "explanation": "The pronouns y (a place, or \"about/to it\") and en (\"of/from it,\" or an unspecified quantity) stand in for an entire preposition + noun phrase, placed before the verb like other object pronouns.",
-    "example_native": "J'y vais. / J'en veux.",
-    "example_gloss": "I'm going there. / I want some (of it).",
+    "difficulty": 1,
+    "cefr": "all levels; contrastive",
+    "title": "Cognate grammar point — the subjunctive",
+    "explanation": "Both languages use the subjunctive robustly after que for will, emotion, doubt, and after concessive conjunctions (Fr. bien que + subj. ≈ Pt. embora + conjuntivo). Divergence to flag: Portuguese has a living future subjunctive (quando eu for, se eu quiser) — a distinctively Ibero-Romance development preserving the Latin future-perfect/subjunctive-perfect after quando/se — with no French equivalent; French uses the present indicative after quand/si in those contexts. Portuguese also has a productive personal (inflected) infinitive (é importante nós estudarmos) that French entirely lacks; French must use que + subjunctive. Note terminology: Portugal calls it conjuntivo, Brazil subjuntivo.",
+    "examples": [
+      {
+        "native": "Il faut que je parte.",
+        "gloss": "I have to leave. (French: present indicative after quand/si; Portuguese would use a future subjunctive in the equivalent quando/se clause)"
+      }
+    ],
     "bridge_lang": "pt",
-    "bridge_note": "Portuguese doesn't compress a prepositional phrase into a single pronoun this way — it tends to just repeat or drop the phrase (vou lá / quero um pouco). French's y/en are a genuinely new compact tool, not a direct swap for anything already familiar.",
+    "bridge_note": null,
+    "mistake": null,
+    "source": null,
     "related_game_id": null,
-    "branch": "Sentence-building",
-    "prerequisites": ["fr-object-pronouns-01"],
+    "branch": "The French–Portuguese Bridge",
+    "prerequisites": [
+      "fr-u15-shared-architecture"
+    ],
     "confidence": "first_pass"
   },
   {
-    "id": "fr-conditional-01",
+    "id": "fr-u15-cognate-grammar-point-clitic",
     "lang": "fr",
-    "difficulty": 3,
-    "title": "The conditional mood for hypotheticals and politeness",
-    "explanation": "Built from the future stem plus imperfect endings, the conditional expresses what would happen (often in a si-clause) and softens requests into something politer.",
-    "example_native": "Si j'avais le temps, je viendrais.",
-    "example_gloss": "If I had time, I would come.",
+    "difficulty": 1,
+    "cefr": "all levels; contrastive",
+    "title": "Cognate grammar point — clitic (object) pronoun placement",
+    "explanation": "Both have unstressed object pronouns. Major divergence: French fixes clitics BEFORE the conjugated verb in almost all cases (je le vois). European Portuguese has a three-way system — enclisis (after the verb, the default: vejo-o), proclisis (before, triggered by negation, wh-words, and certain conjunctions: não o vejo), and mesoclisis (inside the future/conditional: vê-lo-ei). Brazilian Portuguese generalizes proclisis in speech. A French speaker's instinct to front the clitic is correct for Portuguese only in the triggered (proclisis) cases and always wrong for the default enclitic case.",
+    "examples": [
+      {
+        "native": "Je le vois.",
+        "gloss": "I see him/it. (clitic fixed before the verb — contrast Portuguese’s default enclisis: vejo-o)"
+      }
+    ],
     "bridge_lang": "pt",
-    "bridge_note": "Portuguese has the same two-part logic split across a dedicated conditional tense (viria) — the concept transfers cleanly, just built from different pieces.",
-    "related_game_id": "blank",
-    "branch": "Verbs & tense",
-    "prerequisites": ["fr-passe-compose-01"],
+    "bridge_note": null,
+    "mistake": null,
+    "source": null,
+    "related_game_id": null,
+    "branch": "The French–Portuguese Bridge",
+    "prerequisites": [
+      "fr-u15-cognate-grammar-point-the"
+    ],
     "confidence": "first_pass"
   },
   {
-    "id": "fr-relative-pronouns-01",
+    "id": "fr-u15-cognate-grammar-point-compound",
     "lang": "fr",
-    "difficulty": 3,
-    "title": "Relative pronouns qui/que/dont/où each pick up a different grammatical role",
-    "explanation": "qui replaces a subject, que a direct object, dont anything governed by \"de,\" and où a place or time — English collapses all of this into \"that/which/whose/where\" fairly loosely, French doesn't.",
-    "example_native": "La maison où j'habite. Le livre dont je parle.",
-    "example_gloss": "The house where I live. The book I'm talking about.",
+    "difficulty": 1,
+    "cefr": "all levels; contrastive",
+    "title": "Cognate grammar point — compound tenses",
+    "explanation": "Both build compound pasts with an auxiliary + past participle. Divergence: French splits the auxiliary between avoir and être (with subject agreement for être-verbs and reflexives); Portuguese uses ter (and rarely haver) as the sole auxiliary and does NOT alternate to a \"be\"-auxiliary for motion verbs. Also, French passé composé doubles as the everyday spoken past, whereas Portuguese's pretérito perfeito is a distinct simple form (falei), and the Portuguese pretérito perfeito composto (tenho falado) means \"have been repeatedly doing,\" not a simple past — a genuine false-friend of tense.",
+    "examples": [
+      {
+        "native": "J’ai parlé. / Elle est arrivée.",
+        "gloss": "I spoke. / She arrived. (French splits the auxiliary avoir/être; Portuguese uses ter for both)"
+      }
+    ],
     "bridge_lang": "pt",
-    "bridge_note": "Portuguese leans on \"que\" for almost everything colloquially, so French's four-way split (especially dont) is a genuinely new distinction to build, not a relabeling of something already automatic.",
+    "bridge_note": null,
+    "mistake": null,
+    "source": null,
     "related_game_id": null,
-    "branch": "Sentence-building",
-    "prerequisites": [],
+    "branch": "The French–Portuguese Bridge",
+    "prerequisites": [
+      "fr-u15-cognate-grammar-point-clitic"
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "fr-u15-false-friend-traps",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "all levels; contrastive",
+    "title": "False-friend traps (lexical, that derail grammar)",
+    "explanation": "Watch cross-language faux amis that cause grammatical mis-selection. Within French for English speakers: actuellement = \"currently\" (not \"actually\"); assister à = \"to attend\" (not \"assist\"); attendre = \"to wait for\" (not \"attend\"); demander = \"to ask\" (not \"demand\"); passer un examen = \"to take\" (not pass) an exam; sensible = \"sensitive\"; librairie = \"bookshop\" (not library). Across French↔Portuguese, the shared Latin stock produces both true cognates and traps, and gender can differ on cognate nouns (a persistent transfer error documented in French-Portuguese translation studies), so gender should never be assumed to transfer.",
+    "examples": [
+      {
+        "native": "Il assiste à la réunion.",
+        "gloss": "He attends the meeting. (assister à = \"to attend,\" not \"to assist\" — a false friend)"
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": null,
+    "source": null,
+    "related_game_id": null,
+    "branch": "The French–Portuguese Bridge",
+    "prerequisites": [
+      "fr-u15-cognate-grammar-point-compound"
+    ],
     "confidence": "first_pass"
   }
 ]

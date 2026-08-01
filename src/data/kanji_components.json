@@ -1,1515 +1,2052 @@
 [
   {
-    "kanji": "\u4e0a",
+    "kanji": "年",
     "components": [
-      "\u4e00",
-      "\u535c"
-    ]
+      "ノ",
+      "一",
+      "干",
+      "乞"
+    ],
+    "level": "N5",
+    "onyomi": "nen",
+    "kunyomi": "toshi"
   },
   {
-    "kanji": "\u4e0b",
+    "kanji": "本",
     "components": [
-      "\uff5c",
-      "\u4e00",
-      "\u535c"
-    ]
+      "一",
+      "木"
+    ],
+    "level": "N5",
+    "onyomi": "hon",
+    "kunyomi": "moto"
   },
   {
-    "kanji": "\u4e0d",
+    "kanji": "中",
     "components": [
-      "\uff5c",
-      "\u30ce",
-      "\u4e00",
-      "\u4e36"
-    ]
+      "｜",
+      "口"
+    ],
+    "level": "N5",
+    "onyomi": "chuu",
+    "kunyomi": "naka, uchi, ata(ru)"
   },
   {
-    "kanji": "\u4e16",
+    "kanji": "時",
     "components": [
-      "\uff5c",
-      "\u4e00",
-      "\u4e16"
-    ]
+      "寸",
+      "土",
+      "日"
+    ],
+    "level": "N5",
+    "onyomi": "ji",
+    "kunyomi": "toki, -doki"
   },
   {
-    "kanji": "\u4e2d",
+    "kanji": "行",
     "components": [
-      "\uff5c",
-      "\u53e3"
-    ]
+      "行",
+      "彳"
+    ],
+    "level": "N5",
+    "onyomi": "kou, gyou, an",
+    "kunyomi": "i(ku), yu(ku), okona(u)"
   },
   {
-    "kanji": "\u4e57",
+    "kanji": "見",
     "components": [
-      "\uff5c",
-      "\u30ce",
-      "\u4e00",
-      "\u79be",
-      "\u30cf"
-    ]
+      "見",
+      "目",
+      "儿"
+    ],
+    "level": "N5",
+    "onyomi": "ken",
+    "kunyomi": "mi(ru), mi(seru)"
   },
   {
-    "kanji": "\u4e8b",
+    "kanji": "後",
     "components": [
-      "\u4e00",
-      "\u53e3",
-      "\u4e85",
-      "\u30e8"
-    ]
+      "夂",
+      "幺",
+      "彳"
+    ],
+    "level": "N5",
+    "onyomi": "go, kou",
+    "kunyomi": "nochi, ushi(ro), ato"
   },
   {
-    "kanji": "\u4eac",
+    "kanji": "前",
     "components": [
-      "\u53e3",
-      "\u5c0f",
-      "\u4ea0"
-    ]
+      "一",
+      "⺉",
+      "月",
+      "丷"
+    ],
+    "level": "N5",
+    "onyomi": "zen",
+    "kunyomi": "mae"
   },
   {
-    "kanji": "\u4ed5",
+    "kanji": "間",
     "components": [
-      "\u2e85",
-      "\u58eb"
-    ]
+      "日",
+      "門"
+    ],
+    "level": "N5",
+    "onyomi": "kan, ken",
+    "kunyomi": "aida, ma, ai"
   },
   {
-    "kanji": "\u4ee3",
+    "kanji": "上",
     "components": [
-      "\u2e85",
-      "\u5f0b"
-    ]
+      "一",
+      "卜"
+    ],
+    "level": "N5",
+    "onyomi": "jou, shou, shan",
+    "kunyomi": "ue, uwa, kami, a(geru), nobo(ru)"
   },
   {
-    "kanji": "\u4ef2",
+    "kanji": "東",
     "components": [
-      "\uff5c",
-      "\u2e85",
-      "\u53e3"
-    ]
+      "｜",
+      "一",
+      "日",
+      "木",
+      "田"
+    ],
+    "level": "N5",
+    "onyomi": "tou",
+    "kunyomi": "higashi"
   },
   {
-    "kanji": "\u4f1a",
-    "components": [
-      "\u4e8c",
-      "\ud840\udda2",
-      "\u53b6"
-    ]
+    "kanji": "金",
+    "components": [
+      "金",
+      "王",
+      "ハ",
+      "𠆢",
+      "丷"
+    ],
+    "level": "N5",
+    "onyomi": "kin, kon, gon",
+    "kunyomi": "kane, kana, gane"
   },
   {
-    "kanji": "\u4f53",
+    "kanji": "学",
     "components": [
-      "\u6728",
-      "\u4e00",
-      "\u2e85"
-    ]
+      "子",
+      "⺌",
+      "冖"
+    ],
+    "level": "N5",
+    "onyomi": "gaku",
+    "kunyomi": "mana(bu)"
   },
   {
-    "kanji": "\u4f5c",
+    "kanji": "高",
     "components": [
-      "\uff5c",
-      "\u30ce",
-      "\u2e85",
-      "\u4e00",
-      "\u4e5e"
-    ]
+      "口",
+      "高",
+      "亠",
+      "冂"
+    ],
+    "level": "N5",
+    "onyomi": "kou",
+    "kunyomi": "taka(i)"
   },
   {
-    "kanji": "\u4f9b",
+    "kanji": "外",
     "components": [
-      "\uff5c",
-      "\u4e00",
-      "\u2e85",
-      "\u4e8c",
-      "\u30cf"
-    ]
+      "卜",
+      "夕"
+    ],
+    "level": "N5",
+    "onyomi": "gai, ge",
+    "kunyomi": "soto, hoka, hazu, to"
   },
   {
-    "kanji": "\u5148",
+    "kanji": "下",
     "components": [
-      "\u30ce",
-      "\u571f",
-      "\u513f"
-    ]
+      "｜",
+      "一",
+      "卜"
+    ],
+    "level": "N5",
+    "onyomi": "ka, ge",
+    "kunyomi": "shita, shimo, moto, sa(geru), kuda(ru)"
   },
   {
-    "kanji": "\u5149",
+    "kanji": "来",
     "components": [
-      "\u4e00",
-      "\u2e8c",
-      "\u513f"
-    ]
+      "｜",
+      "二",
+      "米",
+      "亠",
+      "木"
+    ],
+    "level": "N5",
+    "onyomi": "rai, tai",
+    "kunyomi": "kuru, kitaru, ki, ko"
   },
   {
-    "kanji": "\u516c",
+    "kanji": "気",
     "components": [
-      "\u30cf",
-      "\u53b6"
-    ]
+      "气",
+      "丶",
+      "ノ",
+      "乞"
+    ],
+    "level": "N5",
+    "onyomi": "ki, ke",
+    "kunyomi": "iki"
   },
   {
-    "kanji": "\u51ac",
+    "kanji": "話",
     "components": [
-      "\u5902",
-      "\u4e36",
-      "\u6535"
-    ]
+      "言",
+      "口",
+      "舌"
+    ],
+    "level": "N5",
+    "onyomi": "wa",
+    "kunyomi": "hana(su), hanashi"
   },
   {
-    "kanji": "\u524d",
+    "kanji": "北",
     "components": [
-      "\u4e00",
-      "\u2e89",
-      "\u6708",
-      "\u4e37"
-    ]
+      "匕",
+      "爿"
+    ],
+    "level": "N5",
+    "onyomi": "hoku",
+    "kunyomi": "kita"
   },
   {
-    "kanji": "\u52c9",
+    "kanji": "午",
     "components": [
-      "\u529b",
-      "\u514d",
-      "\u513f",
-      "\u52f9"
-    ]
+      "ノ",
+      "干",
+      "十",
+      "乞"
+    ],
+    "level": "N5",
+    "onyomi": "go",
+    "kunyomi": "uma"
   },
   {
-    "kanji": "\u52d5",
+    "kanji": "書",
     "components": [
-      "\uff5c",
-      "\u4e00",
-      "\u65e5",
-      "\u529b",
-      "\u91cc",
-      "\u30ce"
-    ]
+      "日",
+      "聿"
+    ],
+    "level": "N5",
+    "onyomi": "sho",
+    "kunyomi": "kaku"
   },
   {
-    "kanji": "\u5316",
+    "kanji": "先",
     "components": [
-      "\u2e85",
-      "\u5315"
-    ]
+      "ノ",
+      "土",
+      "儿"
+    ],
+    "level": "N5",
+    "onyomi": "sen",
+    "kunyomi": "saki, ma(zu)"
   },
   {
-    "kanji": "\u5317",
+    "kanji": "名",
     "components": [
-      "\u5315",
-      "\u723f"
-    ]
+      "口",
+      "夕"
+    ],
+    "level": "N5",
+    "onyomi": "mei, myou",
+    "kunyomi": "na"
   },
   {
-    "kanji": "\u5348",
+    "kanji": "電",
     "components": [
-      "\u30ce",
-      "\u5e72",
-      "\u5341",
-      "\u4e5e"
-    ]
+      "雨",
+      "田",
+      "乙"
+    ],
+    "level": "N5",
+    "onyomi": "den",
+    "kunyomi": "(not listed)"
   },
   {
-    "kanji": "\u535a",
+    "kanji": "校",
     "components": [
-      "\u5341",
-      "\u5bf8",
-      "\u7530",
-      "\u4e36"
-    ]
+      "父",
+      "木",
+      "亠"
+    ],
+    "level": "N5",
+    "onyomi": "kou",
+    "kunyomi": "(not listed)"
   },
   {
-    "kanji": "\u53cb",
+    "kanji": "語",
     "components": [
-      "\u30ce",
-      "\u4e00",
-      "\u53c8"
-    ]
+      "言",
+      "口",
+      "五"
+    ],
+    "level": "N5",
+    "onyomi": "go",
+    "kunyomi": "kata(ru)"
   },
   {
-    "kanji": "\u53e3",
+    "kanji": "毎",
     "components": [
-      "\u56d7",
-      "\u53e3"
-    ]
+      "母",
+      "毋",
+      "乞"
+    ],
+    "level": "N5",
+    "onyomi": "mai",
+    "kunyomi": "goto(ni)"
   },
   {
-    "kanji": "\u53e4",
+    "kanji": "天",
     "components": [
-      "\u53e3",
-      "\u5341"
-    ]
+      "一",
+      "大",
+      "二"
+    ],
+    "level": "N5",
+    "onyomi": "ten",
+    "kunyomi": "amatsu"
   },
   {
-    "kanji": "\u53ef",
+    "kanji": "母",
     "components": [
-      "\u4e00",
-      "\u53e3",
-      "\u4e85"
-    ]
+      "母",
+      "毋"
+    ],
+    "level": "N5",
+    "onyomi": "bo",
+    "kunyomi": "haha, kaa"
   },
   {
-    "kanji": "\u53f0",
+    "kanji": "読",
     "components": [
-      "\u53e3",
-      "\u53b6"
-    ]
+      "言",
+      "士",
+      "儿",
+      "冖"
+    ],
+    "level": "N5",
+    "onyomi": "doku, toku, tou",
+    "kunyomi": "yo(mu)"
   },
   {
-    "kanji": "\u53f2",
+    "kanji": "友",
     "components": [
-      "\u30ce",
-      "\u53e3"
-    ]
+      "ノ",
+      "一",
+      "又"
+    ],
+    "level": "N5",
+    "onyomi": "yuu",
+    "kunyomi": "tomo"
   },
   {
-    "kanji": "\u53f8",
+    "kanji": "悪",
     "components": [
-      "\u4e00",
-      "\u53e3",
-      "\u4e85"
-    ]
+      "｜",
+      "一",
+      "口",
+      "心"
+    ],
+    "level": "N4",
+    "onyomi": "AKU, O",
+    "kunyomi": "waru(i)"
   },
   {
-    "kanji": "\u540d",
+    "kanji": "院",
     "components": [
-      "\u53e3",
-      "\u5915"
-    ]
+      "二",
+      "儿",
+      "宀",
+      "⻖",
+      "元"
+    ],
+    "level": "N4",
+    "onyomi": "IN",
+    "kunyomi": null
   },
   {
-    "kanji": "\u547d",
+    "kanji": "英",
     "components": [
-      "\u53e3",
-      "\ud840\udda2",
-      "\u5369",
-      "\u4e00"
-    ]
+      "ノ",
+      "⺾",
+      "大",
+      "冖"
+    ],
+    "level": "N4",
+    "onyomi": "EI",
+    "kunyomi": null
   },
   {
-    "kanji": "\u5584",
+    "kanji": "映",
     "components": [
-      "\u738b",
-      "\u53e3",
-      "\u4e37",
-      "\u7f8a"
-    ]
+      "ノ",
+      "日",
+      "大",
+      "冖"
+    ],
+    "level": "N4",
+    "onyomi": "EI",
+    "kunyomi": "utsu(su), he(eru)"
   },
   {
-    "kanji": "\u56f3",
+    "kanji": "屋",
     "components": [
-      "\u6597",
-      "\u56d7"
-    ]
+      "至",
+      "土",
+      "厶",
+      "尸"
+    ],
+    "level": "N4",
+    "onyomi": "OKU",
+    "kunyomi": "ya"
   },
   {
-    "kanji": "\u5712",
+    "kanji": "音",
     "components": [
-      "\u8863",
-      "\u53e3",
-      "\u571f",
-      "\u56d7"
-    ]
+      "音",
+      "日",
+      "立"
+    ],
+    "level": "N4",
+    "onyomi": "ON, IN",
+    "kunyomi": "oto, ne"
   },
   {
-    "kanji": "\u5730",
+    "kanji": "歌",
     "components": [
-      "\u571f",
-      "\u4e5f"
-    ]
+      "一",
+      "欠",
+      "口",
+      "亅"
+    ],
+    "level": "N4",
+    "onyomi": "KA",
+    "kunyomi": "uta, uta(u)"
   },
   {
-    "kanji": "\u58f0",
+    "kanji": "夏",
     "components": [
-      "\u58eb",
-      "\u5c38"
-    ]
+      "一",
+      "自",
+      "夂",
+      "目"
+    ],
+    "level": "N4",
+    "onyomi": "KA",
+    "kunyomi": "natsu"
   },
   {
-    "kanji": "\u590f",
+    "kanji": "家",
     "components": [
-      "\u4e00",
-      "\u81ea",
-      "\u5902",
-      "\u76ee"
-    ]
+      "宀",
+      "豕"
+    ],
+    "level": "N4",
+    "onyomi": "KA, KE",
+    "kunyomi": "ie, ya"
   },
   {
-    "kanji": "\u5916",
+    "kanji": "画",
     "components": [
-      "\u535c",
-      "\u5915"
-    ]
+      "一",
+      "田",
+      "凵"
+    ],
+    "level": "N4",
+    "onyomi": "GA, KAKU",
+    "kunyomi": null
   },
   {
-    "kanji": "\u591c",
+    "kanji": "海",
     "components": [
-      "\u2e85",
-      "\u5915",
-      "\u4ea0"
-    ]
+      "⺡",
+      "母",
+      "毋",
+      "乞"
+    ],
+    "level": "N4",
+    "onyomi": "KAI",
+    "kunyomi": "umi"
   },
   {
-    "kanji": "\u5922",
+    "kanji": "界",
     "components": [
-      "\u2eb2",
-      "\u5915",
-      "\u5196",
-      "\u2ebe"
-    ]
+      "田",
+      "𠆢",
+      "儿"
+    ],
+    "level": "N4",
+    "onyomi": "KAI",
+    "kunyomi": null
   },
   {
-    "kanji": "\u5929",
+    "kanji": "楽",
     "components": [
-      "\u4e00",
-      "\u5927",
-      "\u4e8c"
-    ]
+      "白",
+      "木",
+      "冫"
+    ],
+    "level": "N4",
+    "onyomi": "GAKU, RAKU",
+    "kunyomi": "tano(shii), tano(shimu)"
   },
   {
-    "kanji": "\u592a",
+    "kanji": "館",
     "components": [
-      "\u5927",
-      "\u4e36"
-    ]
+      "口",
+      "食",
+      "宀",
+      "｜"
+    ],
+    "level": "N4",
+    "onyomi": "KAN",
+    "kunyomi": null
   },
   {
-    "kanji": "\u59b9",
+    "kanji": "漢",
     "components": [
-      "\uff5c",
-      "\u5973",
-      "\u4e8c",
-      "\u30cf",
-      "\u6728",
-      "\u4ea0"
-    ]
+      "⺡",
+      "⺾",
+      "口",
+      "一",
+      "大",
+      "二"
+    ],
+    "level": "N4",
+    "onyomi": "KAN",
+    "kunyomi": null
   },
   {
-    "kanji": "\u5b57",
+    "kanji": "顔",
     "components": [
-      "\u5b50",
-      "\u5b80"
-    ]
+      "貝",
+      "目",
+      "ハ",
+      "頁",
+      "立",
+      "亠",
+      "厂",
+      "彡"
+    ],
+    "level": "N4",
+    "onyomi": "GAN",
+    "kunyomi": "kao"
   },
   {
-    "kanji": "\u5b63",
+    "kanji": "強",
     "components": [
-      "\u79be",
-      "\u5b50"
-    ]
+      "弓",
+      "虫",
+      "厶"
+    ],
+    "level": "N4",
+    "onyomi": "KYOU, GOU",
+    "kunyomi": "tsuyo(i), tsuyo(maru), shi(iru)"
   },
   {
-    "kanji": "\u5b66",
+    "kanji": "京",
     "components": [
-      "\u5b50",
-      "\u2e8c",
-      "\u5196"
-    ]
+      "口",
+      "小",
+      "亠"
+    ],
+    "level": "N4",
+    "onyomi": "KYOU, KEI",
+    "kunyomi": null
   },
   {
-    "kanji": "\u5b87",
+    "kanji": "広",
     "components": [
-      "\u5e72",
-      "\u4e85",
-      "\u5b80"
-    ]
+      "厶",
+      "广"
+    ],
+    "level": "N4",
+    "onyomi": "KOU",
+    "kunyomi": "hiro(i), hiro(geru)"
   },
   {
-    "kanji": "\u5b99",
+    "kanji": "考",
     "components": [
-      "\uff5c",
-      "\u65e5",
-      "\u5b80",
-      "\u7530"
-    ]
+      "⺹",
+      "勹"
+    ],
+    "level": "N4",
+    "onyomi": "KOU",
+    "kunyomi": "kanga(eru)"
   },
   {
-    "kanji": "\u5bb6",
+    "kanji": "光",
     "components": [
-      "\u5b80",
-      "\u8c55"
-    ]
+      "一",
+      "⺌",
+      "儿"
+    ],
+    "level": "N4",
+    "onyomi": "KOU",
+    "kunyomi": "hikari, hika(ru)"
   },
   {
-    "kanji": "\u5bc6",
+    "kanji": "黒",
     "components": [
-      "\u30ce",
-      "\u5c71",
-      "\u5fc3",
-      "\u4e36",
-      "\u5b80"
-    ]
+      "黒",
+      "里",
+      "⺣"
+    ],
+    "level": "N4",
+    "onyomi": "KOKU",
+    "kunyomi": "kuro(i), kuro"
   },
   {
-    "kanji": "\u5bcc",
+    "kanji": "菜",
     "components": [
-      "\u53e3",
-      "\u7530",
-      "\u5b80",
-      "\u4e00"
-    ]
+      "爪",
+      "木",
+      "⺾"
+    ],
+    "level": "N4",
+    "onyomi": "SAI",
+    "kunyomi": "na"
   },
   {
-    "kanji": "\u5bdd",
+    "kanji": "作",
     "components": [
-      "\u30e8",
-      "\u53c8",
-      "\u5196",
-      "\u5b80",
-      "\u723f"
-    ]
+      "｜",
+      "ノ",
+      "⺅",
+      "一",
+      "乞"
+    ],
+    "level": "N4",
+    "onyomi": "SAKU, SA",
+    "kunyomi": "tsuku(ru)"
   },
   {
-    "kanji": "\u5bff",
+    "kanji": "思",
     "components": [
-      "\u30ce",
-      "\u4e00",
-      "\u5bf8",
-      "\u4e8c"
-    ]
+      "心",
+      "田"
+    ],
+    "level": "N4",
+    "onyomi": "SHI",
+    "kunyomi": "omo(u)"
   },
   {
-    "kanji": "\u5c4b",
+    "kanji": "仕",
     "components": [
-      "\u81f3",
-      "\u571f",
-      "\u53b6",
-      "\u5c38"
-    ]
+      "⺅",
+      "士"
+    ],
+    "level": "N4",
+    "onyomi": "SHI, JI",
+    "kunyomi": "tsuka(eru)"
   },
   {
-    "kanji": "\u5e74",
+    "kanji": "字",
     "components": [
-      "\u30ce",
-      "\u4e00",
-      "\u5e72",
-      "\u4e5e"
-    ]
+      "子",
+      "宀"
+    ],
+    "level": "N4",
+    "onyomi": "JI",
+    "kunyomi": "aza"
   },
   {
-    "kanji": "\u5e79",
+    "kanji": "自",
     "components": [
-      "\u5e72",
-      "\u5341",
-      "\u65e5",
-      "\ud840\udda2"
-    ]
+      "自",
+      "目"
+    ],
+    "level": "N4",
+    "onyomi": "JI, SHI",
+    "kunyomi": "mizuka(ra)"
   },
   {
-    "kanji": "\u5e83",
+    "kanji": "事",
     "components": [
-      "\u53b6",
-      "\u5e7f"
-    ]
+      "一",
+      "口",
+      "亅",
+      "ヨ"
+    ],
+    "level": "N4",
+    "onyomi": "JI",
+    "kunyomi": "koto"
   },
   {
-    "kanji": "\u5f37",
+    "kanji": "秋",
     "components": [
-      "\u5f13",
-      "\u866b",
-      "\u53b6"
-    ]
+      "火",
+      "禾"
+    ],
+    "level": "N4",
+    "onyomi": "SHUU",
+    "kunyomi": "aki"
   },
   {
-    "kanji": "\u5f8c",
+    "kanji": "春",
     "components": [
-      "\u5902",
-      "\u5e7a",
-      "\u5f73"
-    ]
+      "一",
+      "二",
+      "日",
+      "人",
+      "大"
+    ],
+    "level": "N4",
+    "onyomi": "SHUN",
+    "kunyomi": "haru"
   },
   {
-    "kanji": "\u601d",
+    "kanji": "乗",
     "components": [
-      "\u5fc3",
-      "\u7530"
-    ]
+      "｜",
+      "ノ",
+      "一",
+      "禾",
+      "ハ"
+    ],
+    "level": "N4",
+    "onyomi": "JOU",
+    "kunyomi": "no(ru), no(seru)"
   },
   {
-    "kanji": "\u6050",
+    "kanji": "色",
     "components": [
-      "\u5de5",
-      "\u5fc3",
-      "\u4e36",
-      "\u51e0"
-    ]
+      "色",
+      "巴",
+      "勹"
+    ],
+    "level": "N4",
+    "onyomi": "SHOKU",
+    "kunyomi": "iro"
   },
   {
-    "kanji": "\u60aa",
+    "kanji": "進",
     "components": [
-      "\uff5c",
-      "\u4e00",
-      "\u53e3",
-      "\u5fc3"
-    ]
+      "⻌",
+      "隹"
+    ],
+    "level": "N4",
+    "onyomi": "SHIN",
+    "kunyomi": "susu(mu), susu(meru)"
   },
   {
-    "kanji": "\u611b",
+    "kanji": "図",
     "components": [
-      "\u5fc3",
-      "\u722a",
-      "\u5196",
-      "\u5902"
-    ]
+      "斗",
+      "囗"
+    ],
+    "level": "N4",
+    "onyomi": "ZU, TO",
+    "kunyomi": "haka(ru)"
   },
   {
-    "kanji": "\u6238",
+    "kanji": "青",
     "components": [
-      "\u6238",
-      "\u4e00",
-      "\u5c38"
-    ]
+      "月",
+      "青",
+      "土",
+      "二",
+      "亠"
+    ],
+    "level": "N4",
+    "onyomi": "SEI",
+    "kunyomi": "ao(i), ao"
   },
   {
-    "kanji": "\u63a2",
+    "kanji": "声",
     "components": [
-      "\u6728",
-      "\u513f",
-      "\u5196",
-      "\u2e98"
-    ]
+      "士",
+      "尸"
+    ],
+    "level": "N4",
+    "onyomi": "SEI",
+    "kunyomi": "koe"
   },
   {
-    "kanji": "\u6570",
+    "kanji": "世",
     "components": [
-      "\u5973",
-      "\u7c73",
-      "\u6535",
-      "\u5902",
-      "\u4e5e"
-    ]
+      "｜",
+      "一",
+      "世"
+    ],
+    "level": "N4",
+    "onyomi": "SEI, SE",
+    "kunyomi": "yo"
   },
   {
-    "kanji": "\u6599",
+    "kanji": "赤",
     "components": [
-      "\u6597",
-      "\u7c73"
-    ]
+      "赤",
+      "土"
+    ],
+    "level": "N4",
+    "onyomi": "SEKI, SHAKU",
+    "kunyomi": "aka(i), aka(maru), aka(rameru)"
   },
   {
-    "kanji": "\u65b0",
+    "kanji": "族",
     "components": [
-      "\u65a4",
-      "\u8f9b",
-      "\u4e37",
-      "\u6728",
-      "\u7acb",
-      "\u4ea0"
-    ]
+      "方",
+      "矢",
+      "乞"
+    ],
+    "level": "N4",
+    "onyomi": "ZOKU",
+    "kunyomi": null
   },
   {
-    "kanji": "\u65cf",
+    "kanji": "体",
     "components": [
-      "\u65b9",
-      "\u77e2",
-      "\u4e5e"
-    ]
+      "木",
+      "一",
+      "⺅"
+    ],
+    "level": "N4",
+    "onyomi": "TAI, TEI",
+    "kunyomi": "karada"
   },
   {
-    "kanji": "\u6613",
+    "kanji": "太",
     "components": [
-      "\u65e5",
-      "\u52ff",
-      "\u52f9",
-      "\u30ce"
-    ]
+      "大",
+      "丶"
+    ],
+    "level": "N4",
+    "onyomi": "TAI, TA",
+    "kunyomi": "futo(i), futo(ru)"
   },
   {
-    "kanji": "\u6614",
+    "kanji": "台",
     "components": [
-      "\uff5c",
-      "\u4e00",
-      "\u4e8c",
-      "\u65e5"
-    ]
+      "口",
+      "厶"
+    ],
+    "level": "N4",
+    "onyomi": "DAI, TAI",
+    "kunyomi": null
   },
   {
-    "kanji": "\u661f",
+    "kanji": "代",
     "components": [
-      "\u751f",
-      "\u65e5"
-    ]
+      "⺅",
+      "弋"
+    ],
+    "level": "N4",
+    "onyomi": "DAI, TAI",
+    "kunyomi": "ka(waru), ka(eru), yo, shiro"
   },
   {
-    "kanji": "\u6620",
+    "kanji": "地",
     "components": [
-      "\u30ce",
-      "\u65e5",
-      "\u5927",
-      "\u5196"
-    ]
+      "土",
+      "也"
+    ],
+    "level": "N4",
+    "onyomi": "CHI, JI",
+    "kunyomi": null
   },
   {
-    "kanji": "\u6625",
+    "kanji": "茶",
     "components": [
-      "\u4e00",
-      "\u4e8c",
-      "\u65e5",
-      "\u4eba",
-      "\u5927"
-    ]
+      "𠆢",
+      "⺾",
+      "木"
+    ],
+    "level": "N4",
+    "onyomi": "CHA, SA",
+    "kunyomi": null
   },
   {
-    "kanji": "\u6628",
+    "kanji": "昼",
     "components": [
-      "\uff5c",
-      "\u30ce",
-      "\u65e5"
-    ]
+      "一",
+      "日",
+      "尸",
+      "丶"
+    ],
+    "level": "N4",
+    "onyomi": "CHUU",
+    "kunyomi": "hiru"
   },
   {
-    "kanji": "\u663c",
+    "kanji": "注",
     "components": [
-      "\u4e00",
-      "\u65e5",
-      "\u5c38",
-      "\u4e36"
-    ]
+      "王",
+      "⺡",
+      "丶"
+    ],
+    "level": "N4",
+    "onyomi": "CHUU",
+    "kunyomi": "soso(gu)"
   },
   {
-    "kanji": "\u6642",
+    "kanji": "町",
     "components": [
-      "\u5bf8",
-      "\u571f",
-      "\u65e5"
-    ]
+      "一",
+      "田",
+      "亅"
+    ],
+    "level": "N4",
+    "onyomi": "CHOU",
+    "kunyomi": "machi"
   },
   {
-    "kanji": "\u6669",
+    "kanji": "鳥",
     "components": [
-      "\u514d",
-      "\u65e5",
-      "\u513f",
-      "\u52f9"
-    ]
+      "鳥",
+      "⺣"
+    ],
+    "level": "N4",
+    "onyomi": "CHOU",
+    "kunyomi": "tori"
   },
   {
-    "kanji": "\u66f8",
+    "kanji": "朝",
     "components": [
-      "\u65e5",
-      "\u807f"
-    ]
+      "月",
+      "十",
+      "日"
+    ],
+    "level": "N4",
+    "onyomi": "CHOU",
+    "kunyomi": "asa"
   },
   {
-    "kanji": "\u6709",
+    "kanji": "転",
     "components": [
-      "\u30ce",
-      "\u4e00",
-      "\u6708"
-    ]
+      "車",
+      "二",
+      "厶"
+    ],
+    "level": "N4",
+    "onyomi": "TEN",
+    "kunyomi": "koro(bu), koro(garu/geru), koro(gasu)"
   },
   {
-    "kanji": "\u671d",
+    "kanji": "都",
     "components": [
-      "\u6708",
-      "\u5341",
-      "\u65e5"
-    ]
+      "日",
+      "⻏",
+      "⺹"
+    ],
+    "level": "N4",
+    "onyomi": "TO, TSU",
+    "kunyomi": "miyako"
   },
   {
-    "kanji": "\u672a",
+    "kanji": "冬",
     "components": [
-      "\uff5c",
-      "\u4e8c",
-      "\u30cf",
-      "\u6728",
-      "\u4ea0"
-    ]
+      "夂",
+      "丶",
+      "攵"
+    ],
+    "level": "N4",
+    "onyomi": "TOU",
+    "kunyomi": "fuyu"
   },
   {
-    "kanji": "\u672c",
+    "kanji": "頭",
     "components": [
-      "\u4e00",
-      "\u6728"
-    ]
+      "貝",
+      "目",
+      "ハ",
+      "口",
+      "豆",
+      "丷",
+      "頁"
+    ],
+    "level": "N4",
+    "onyomi": "TOU, ZU",
+    "kunyomi": "atama, kashira"
   },
   {
-    "kanji": "\u6765",
+    "kanji": "動",
     "components": [
-      "\uff5c",
-      "\u4e8c",
-      "\u7c73",
-      "\u4ea0",
-      "\u6728"
-    ]
+      "｜",
+      "一",
+      "日",
+      "力",
+      "里",
+      "ノ"
+    ],
+    "level": "N4",
+    "onyomi": "DOU",
+    "kunyomi": "ugo(ku), ugo(kasu)"
   },
   {
-    "kanji": "\u6771",
+    "kanji": "肉",
     "components": [
-      "\uff5c",
-      "\u4e00",
-      "\u65e5",
-      "\u6728",
-      "\u7530"
-    ]
+      "肉",
+      "冂",
+      "人"
+    ],
+    "level": "N4",
+    "onyomi": "NIKU",
+    "kunyomi": null
   },
   {
-    "kanji": "\u679c",
+    "kanji": "飯",
     "components": [
-      "\uff5c",
-      "\u7530",
-      "\u6728"
-    ]
+      "食",
+      "又",
+      "厂"
+    ],
+    "level": "N4",
+    "onyomi": "HAN",
+    "kunyomi": "meshi"
   },
   {
-    "kanji": "\u6821",
+    "kanji": "病",
     "components": [
-      "\u7236",
-      "\u6728",
-      "\u4ea0"
-    ]
+      "一",
+      "人",
+      "冂",
+      "疒"
+    ],
+    "level": "N4",
+    "onyomi": "BYOU",
+    "kunyomi": "ya(mu), yamai"
   },
   {
-    "kanji": "\u685c",
+    "kanji": "不",
     "components": [
-      "\u5973",
-      "\u2e8c",
-      "\u6728"
-    ]
+      "｜",
+      "ノ",
+      "一",
+      "丶"
+    ],
+    "level": "N4",
+    "onyomi": "FU, BU",
+    "kunyomi": null
   },
   {
-    "kanji": "\u691c",
+    "kanji": "風",
     "components": [
-      "\u53e3",
-      "\u4eba",
-      "\u6728",
-      "\ud840\udda2"
-    ]
+      "風",
+      "几",
+      "虫",
+      "ノ"
+    ],
+    "level": "N4",
+    "onyomi": "FUU",
+    "kunyomi": "kaze"
   },
   {
-    "kanji": "\u697d",
+    "kanji": "物",
     "components": [
-      "\u767d",
-      "\u6728",
-      "\u51ab"
-    ]
+      "勿",
+      "牛",
+      "勹",
+      "ノ"
+    ],
+    "level": "N4",
+    "onyomi": "BUTSU, MOTSU",
+    "kunyomi": "mono"
   },
   {
-    "kanji": "\u69d8",
+    "kanji": "勉",
     "components": [
-      "\u738b",
-      "\u6c34",
-      "\u4e37",
-      "\u6728",
-      "\u7f8a"
-    ]
+      "力",
+      "免",
+      "儿",
+      "勹"
+    ],
+    "level": "N4",
+    "onyomi": "BEN",
+    "kunyomi": null
   },
   {
-    "kanji": "\u6a5f",
+    "kanji": "妹",
     "components": [
-      "\u30ce",
-      "\u6728",
-      "\u4e36",
-      "\u5e7a",
-      "\u6208"
-    ]
+      "｜",
+      "女",
+      "二",
+      "ハ",
+      "木",
+      "亠"
+    ],
+    "level": "N4",
+    "onyomi": "MAI",
+    "kunyomi": "imouto"
   },
   {
-    "kanji": "\u6b4c",
+    "kanji": "夜",
     "components": [
-      "\u4e00",
-      "\u6b20",
-      "\u53e3",
-      "\u4e85"
-    ]
+      "⺅",
+      "夕",
+      "亠"
+    ],
+    "level": "N4",
+    "onyomi": "YA",
+    "kunyomi": "yoro, yo~"
   },
   {
-    "kanji": "\u6b74",
+    "kanji": "野",
     "components": [
-      "\u6b62",
-      "\u9ebb",
-      "\u6728",
-      "\u5382",
-      "\u5e7f"
-    ]
+      "矛",
+      "里",
+      "亅"
+    ],
+    "level": "N4",
+    "onyomi": "YA",
+    "kunyomi": "no"
   },
   {
-    "kanji": "\u6bcd",
+    "kanji": "有",
     "components": [
-      "\u6bcd",
-      "\u6bcb"
-    ]
+      "ノ",
+      "一",
+      "月"
+    ],
+    "level": "N4",
+    "onyomi": "YUU, U",
+    "kunyomi": "a(ru)"
   },
   {
-    "kanji": "\u6bce",
+    "kanji": "理",
     "components": [
-      "\u6bcd",
-      "\u6bcb",
-      "\u4e5e"
-    ]
+      "王",
+      "里"
+    ],
+    "level": "N4",
+    "onyomi": "RI",
+    "kunyomi": null
   },
   {
-    "kanji": "\u6c17",
+    "kanji": "料",
     "components": [
-      "\u6c14",
-      "\u4e36",
-      "\u30ce",
-      "\u4e5e"
-    ]
+      "斗",
+      "米"
+    ],
+    "level": "N4",
+    "onyomi": "RYOU",
+    "kunyomi": null
   },
   {
-    "kanji": "\u6c37",
+    "kanji": "仲",
     "components": [
-      "\u6c34",
-      "\u4e36"
-    ]
+      "｜",
+      "⺅",
+      "口"
+    ],
+    "level": null,
+    "onyomi": "CHUU",
+    "kunyomi": "naka"
   },
   {
-    "kanji": "\u6c5f",
+    "kanji": "会",
     "components": [
-      "\u5de5",
-      "\u2ea1"
-    ]
+      "二",
+      "𠆢",
+      "厶"
+    ],
+    "level": null,
+    "onyomi": "KAI, E",
+    "kunyomi": "a(u)"
   },
   {
-    "kanji": "\u6ce8",
+    "kanji": "供",
     "components": [
-      "\u738b",
-      "\u2ea1",
-      "\u4e36"
-    ]
+      "｜",
+      "一",
+      "⺅",
+      "二",
+      "ハ"
+    ],
+    "level": null,
+    "onyomi": "KYOU, KU",
+    "kunyomi": "tomo, sona(eru)"
   },
   {
-    "kanji": "\u6d77",
+    "kanji": "公",
     "components": [
-      "\u2ea1",
-      "\u6bcd",
-      "\u6bcb",
-      "\u4e5e"
-    ]
+      "ハ",
+      "厶"
+    ],
+    "level": null,
+    "onyomi": "KOU",
+    "kunyomi": "ooyake"
   },
   {
-    "kanji": "\u6f22",
+    "kanji": "化",
     "components": [
-      "\u2ea1",
-      "\u2ebe",
-      "\u53e3",
-      "\u4e00",
-      "\u5927",
-      "\u4e8c"
-    ]
+      "⺅",
+      "匕"
+    ],
+    "level": null,
+    "onyomi": "KA, KE",
+    "kunyomi": "ba(keru), ba(kasu)"
   },
   {
-    "kanji": "\u6f2b",
+    "kanji": "博",
     "components": [
-      "\u2ea1",
-      "\u65e5",
-      "\u2eb2",
-      "\u53c8"
-    ]
+      "十",
+      "寸",
+      "田",
+      "丶"
+    ],
+    "level": null,
+    "onyomi": "HAKU, BAKU",
+    "kunyomi": null
   },
   {
-    "kanji": "\u7136",
+    "kanji": "口",
     "components": [
-      "\u72ac",
-      "\u5915",
-      "\u2ea3"
-    ]
+      "囗",
+      "口"
+    ],
+    "level": null,
+    "onyomi": "KOU, KU",
+    "kunyomi": "kuchi"
   },
   {
-    "kanji": "\u7269",
+    "kanji": "古",
     "components": [
-      "\u52ff",
-      "\u725b",
-      "\u52f9",
-      "\u30ce"
-    ]
+      "口",
+      "十"
+    ],
+    "level": null,
+    "onyomi": "KO",
+    "kunyomi": "furu(i)"
   },
   {
-    "kanji": "\u732b",
+    "kanji": "可",
     "components": [
-      "\u7530",
-      "\u2ea8",
-      "\u2ebe"
-    ]
+      "一",
+      "口",
+      "亅"
+    ],
+    "level": null,
+    "onyomi": "KA",
+    "kunyomi": null
   },
   {
-    "kanji": "\u73fe",
+    "kanji": "史",
     "components": [
-      "\u738b",
-      "\u898b"
-    ]
+      "ノ",
+      "口"
+    ],
+    "level": null,
+    "onyomi": "SHI",
+    "kunyomi": null
   },
   {
-    "kanji": "\u7403",
+    "kanji": "司",
     "components": [
-      "\u738b",
-      "\u6c34",
-      "\u4e36"
-    ]
+      "一",
+      "口",
+      "亅"
+    ],
+    "level": null,
+    "onyomi": "SHI",
+    "kunyomi": null
   },
   {
-    "kanji": "\u7406",
+    "kanji": "命",
     "components": [
-      "\u738b",
-      "\u91cc"
-    ]
+      "口",
+      "𠆢",
+      "卩",
+      "一"
+    ],
+    "level": null,
+    "onyomi": "MEI, MYOU",
+    "kunyomi": "inochi"
   },
   {
-    "kanji": "\u753a",
+    "kanji": "善",
     "components": [
-      "\u4e00",
-      "\u7530",
-      "\u4e85"
-    ]
+      "王",
+      "口",
+      "丷",
+      "羊"
+    ],
+    "level": null,
+    "onyomi": "ZEN",
+    "kunyomi": "yo(i)"
   },
   {
-    "kanji": "\u753b",
+    "kanji": "園",
     "components": [
-      "\u4e00",
-      "\u7530",
-      "\u51f5"
-    ]
+      "衣",
+      "口",
+      "土",
+      "囗"
+    ],
+    "level": null,
+    "onyomi": "EN",
+    "kunyomi": "sono"
   },
   {
-    "kanji": "\u754c",
+    "kanji": "夢",
     "components": [
-      "\u7530",
-      "\ud840\udda2",
-      "\u513f"
-    ]
+      "⺲",
+      "夕",
+      "冖",
+      "⺾"
+    ],
+    "level": null,
+    "onyomi": "MU",
+    "kunyomi": "yume"
   },
   {
-    "kanji": "\u75c5",
+    "kanji": "季",
     "components": [
-      "\u4e00",
-      "\u4eba",
-      "\u5182",
-      "\u7592"
-    ]
+      "禾",
+      "子"
+    ],
+    "level": null,
+    "onyomi": "KI",
+    "kunyomi": null
   },
   {
-    "kanji": "\u76e3",
+    "kanji": "宇",
     "components": [
-      "\u76bf",
-      "\u81e3",
-      "\u4e8c",
-      "\u4e5e"
-    ]
+      "干",
+      "亅",
+      "宀"
+    ],
+    "level": null,
+    "onyomi": "U",
+    "kunyomi": null
   },
   {
-    "kanji": "\u7763",
+    "kanji": "宙",
     "components": [
-      "\u5c0f",
-      "\u535c",
-      "\u53c8",
-      "\u76ee"
-    ]
+      "｜",
+      "日",
+      "宀",
+      "田"
+    ],
+    "level": null,
+    "onyomi": "CHUU",
+    "kunyomi": null
   },
   {
-    "kanji": "\u793e",
+    "kanji": "密",
     "components": [
-      "\u571f",
-      "\u2ead"
-    ]
+      "ノ",
+      "山",
+      "心",
+      "丶",
+      "宀"
+    ],
+    "level": null,
+    "onyomi": "MITSU",
+    "kunyomi": null
   },
   {
-    "kanji": "\u795e",
+    "kanji": "富",
     "components": [
-      "\uff5c",
-      "\u65e5",
-      "\u2ead",
-      "\u7530"
-    ]
+      "口",
+      "田",
+      "宀",
+      "一"
+    ],
+    "level": null,
+    "onyomi": "FU, FUU",
+    "kunyomi": "to(mu), tomi"
   },
   {
-    "kanji": "\u796d",
+    "kanji": "寝",
     "components": [
-      "\u793a",
-      "\u4e8c",
-      "\u5c0f",
-      "\ud840\udda2",
-      "\u7676"
-    ]
+      "ヨ",
+      "又",
+      "冖",
+      "宀",
+      "爿"
+    ],
+    "level": null,
+    "onyomi": "SHIN",
+    "kunyomi": "ne(ru), ne(kasu)"
   },
   {
-    "kanji": "\u79cb",
+    "kanji": "寿",
     "components": [
-      "\u706b",
-      "\u79be"
-    ]
+      "ノ",
+      "一",
+      "寸",
+      "二"
+    ],
+    "level": null,
+    "onyomi": "JU",
+    "kunyomi": "kotobuki"
   },
   {
-    "kanji": "\u79d8",
+    "kanji": "幹",
     "components": [
-      "\u30ce",
-      "\u79be",
-      "\u5fc3",
-      "\u4e36"
-    ]
+      "干",
+      "十",
+      "日",
+      "𠆢"
+    ],
+    "level": null,
+    "onyomi": "KAN",
+    "kunyomi": "miki"
   },
   {
-    "kanji": "\u7a7a",
+    "kanji": "恐",
     "components": [
-      "\u7a74",
-      "\u5de5",
-      "\u513f",
-      "\u5b80"
-    ]
+      "工",
+      "心",
+      "丶",
+      "几"
+    ],
+    "level": null,
+    "onyomi": "KYOU",
+    "kunyomi": "oso(reru), oso(roshii)"
   },
   {
-    "kanji": "\u7adc",
+    "kanji": "愛",
     "components": [
-      "\u7acb",
-      "\u7adc",
-      "\u7530",
-      "\u4e59"
-    ]
+      "心",
+      "爪",
+      "冖",
+      "夂"
+    ],
+    "level": null,
+    "onyomi": "AI",
+    "kunyomi": null
   },
   {
-    "kanji": "\u7bc0",
+    "kanji": "戸",
     "components": [
-      "\u826e",
-      "\u7af9",
-      "\u5369",
-      "\u4e5e"
-    ]
+      "戸",
+      "一",
+      "尸"
+    ],
+    "level": null,
+    "onyomi": "KO",
+    "kunyomi": "to"
   },
   {
-    "kanji": "\u7dda",
+    "kanji": "探",
     "components": [
-      "\u7cf8",
-      "\u5e7a",
-      "\u5c0f",
-      "\u6c34",
-      "\u767d"
-    ]
+      "木",
+      "儿",
+      "冖",
+      "⺘"
+    ],
+    "level": null,
+    "onyomi": "TAN",
+    "kunyomi": "saga(su), sagu(ru)"
   },
   {
-    "kanji": "\u7f8e",
+    "kanji": "数",
     "components": [
-      "\u738b",
-      "\u5927",
-      "\u4e37",
-      "\u7f8a"
-    ]
+      "女",
+      "米",
+      "攵",
+      "夂",
+      "乞"
+    ],
+    "level": null,
+    "onyomi": "SUU",
+    "kunyomi": "kazu, kazo(eru)"
   },
   {
-    "kanji": "\u8003",
+    "kanji": "新",
     "components": [
-      "\u2eb9",
-      "\u52f9"
-    ]
+      "斤",
+      "辛",
+      "丷",
+      "木",
+      "立",
+      "亠"
+    ],
+    "level": null,
+    "onyomi": "SHIN",
+    "kunyomi": "atara(shii), ara(ta)"
   },
   {
-    "kanji": "\u8089",
+    "kanji": "易",
     "components": [
-      "\u8089",
-      "\u5182",
-      "\u4eba"
-    ]
+      "日",
+      "勿",
+      "勹",
+      "ノ"
+    ],
+    "level": null,
+    "onyomi": "EKI, I",
+    "kunyomi": "yasa(shii)"
   },
   {
-    "kanji": "\u81ea",
+    "kanji": "昔",
     "components": [
-      "\u81ea",
-      "\u76ee"
-    ]
+      "｜",
+      "一",
+      "二",
+      "日"
+    ],
+    "level": null,
+    "onyomi": "SEKI, SHAKU",
+    "kunyomi": "mukashi"
   },
   {
-    "kanji": "\u8272",
+    "kanji": "星",
     "components": [
-      "\u8272",
-      "\u5df4",
-      "\u52f9"
-    ]
+      "生",
+      "日"
+    ],
+    "level": null,
+    "onyomi": "SEI",
+    "kunyomi": "hoshi"
   },
   {
-    "kanji": "\u82b1",
+    "kanji": "昨",
     "components": [
-      "\u2e85",
-      "\u5315",
-      "\u2ebe"
-    ]
+      "｜",
+      "ノ",
+      "日"
+    ],
+    "level": null,
+    "onyomi": "SAKU",
+    "kunyomi": null
   },
   {
-    "kanji": "\u82f1",
+    "kanji": "晩",
     "components": [
-      "\u30ce",
-      "\u2ebe",
-      "\u5927",
-      "\u5196"
-    ]
+      "免",
+      "日",
+      "儿",
+      "勹"
+    ],
+    "level": null,
+    "onyomi": "BAN",
+    "kunyomi": null
   },
   {
-    "kanji": "\u8336",
+    "kanji": "未",
     "components": [
-      "\ud840\udda2",
-      "\u2ebe",
-      "\u6728"
-    ]
+      "｜",
+      "二",
+      "ハ",
+      "木",
+      "亠"
+    ],
+    "level": null,
+    "onyomi": "MI",
+    "kunyomi": null
   },
   {
-    "kanji": "\u83dc",
+    "kanji": "果",
     "components": [
-      "\u722a",
-      "\u6728",
-      "\u2ebe"
-    ]
+      "｜",
+      "田",
+      "木"
+    ],
+    "level": null,
+    "onyomi": "KA",
+    "kunyomi": "ha(tasu), ha(teru), kuda(mono)"
   },
   {
-    "kanji": "\u8449",
+    "kanji": "桜",
     "components": [
-      "\u6728",
-      "\u4e16",
-      "\u2ebe"
-    ]
+      "女",
+      "⺌",
+      "木"
+    ],
+    "level": null,
+    "onyomi": "OU",
+    "kunyomi": "sakura"
   },
   {
-    "kanji": "\u884c",
+    "kanji": "検",
     "components": [
-      "\u884c",
-      "\u5f73"
-    ]
+      "口",
+      "人",
+      "木",
+      "𠆢"
+    ],
+    "level": null,
+    "onyomi": "KEN",
+    "kunyomi": null
   },
   {
-    "kanji": "\u898b",
+    "kanji": "様",
     "components": [
-      "\u898b",
-      "\u76ee",
-      "\u513f"
-    ]
+      "王",
+      "水",
+      "丷",
+      "木",
+      "羊"
+    ],
+    "level": null,
+    "onyomi": "YOU",
+    "kunyomi": "sama"
   },
   {
-    "kanji": "\u8a71",
+    "kanji": "機",
     "components": [
-      "\u8a00",
-      "\u53e3",
-      "\u820c"
-    ]
+      "ノ",
+      "木",
+      "丶",
+      "幺",
+      "戈"
+    ],
+    "level": null,
+    "onyomi": "KI",
+    "kunyomi": "hata"
   },
   {
-    "kanji": "\u8a9e",
+    "kanji": "歴",
     "components": [
-      "\u8a00",
-      "\u53e3",
-      "\u4e94"
-    ]
+      "止",
+      "麻",
+      "木",
+      "厂",
+      "广"
+    ],
+    "level": null,
+    "onyomi": "REKI",
+    "kunyomi": null
   },
   {
-    "kanji": "\u8aad",
+    "kanji": "氷",
     "components": [
-      "\u8a00",
-      "\u58eb",
-      "\u513f",
-      "\u5196"
-    ]
+      "水",
+      "丶"
+    ],
+    "level": null,
+    "onyomi": "HYOU",
+    "kunyomi": "koori, hi"
   },
   {
-    "kanji": "\u8b70",
+    "kanji": "江",
     "components": [
-      "\u4e00",
-      "\u738b",
-      "\u8a00",
-      "\u4e37",
-      "\u7f8a",
-      "\u4e85",
-      "\u6208",
-      "\u624b"
-    ]
+      "工",
+      "⺡"
+    ],
+    "level": null,
+    "onyomi": "KOU",
+    "kunyomi": "e"
   },
   {
-    "kanji": "\u8cb7",
+    "kanji": "漫",
     "components": [
-      "\u8c9d",
-      "\u76ee",
-      "\u30cf",
-      "\u2eb2"
-    ]
+      "⺡",
+      "日",
+      "⺲",
+      "又"
+    ],
+    "level": null,
+    "onyomi": "MAN",
+    "kunyomi": null
   },
   {
-    "kanji": "\u8d64",
+    "kanji": "然",
     "components": [
-      "\u8d64",
-      "\u571f"
-    ]
+      "犬",
+      "夕",
+      "⺣"
+    ],
+    "level": null,
+    "onyomi": "ZEN, NEN",
+    "kunyomi": null
   },
   {
-    "kanji": "\u8db3",
+    "kanji": "猫",
     "components": [
-      "\u53e3",
-      "\u8db3",
-      "\u6b62"
-    ]
+      "田",
+      "⺨",
+      "⺾"
+    ],
+    "level": null,
+    "onyomi": "BYOU",
+    "kunyomi": "neko"
   },
   {
-    "kanji": "\u8ee2",
+    "kanji": "現",
     "components": [
-      "\u8eca",
-      "\u4e8c",
-      "\u53b6"
-    ]
+      "王",
+      "見"
+    ],
+    "level": null,
+    "onyomi": "GEN",
+    "kunyomi": "araw(reru), araw(su)"
   },
   {
-    "kanji": "\u901f",
+    "kanji": "球",
     "components": [
-      "\uff5c",
-      "\u4e00",
-      "\u53e3",
-      "\u2ecc",
-      "\u30cf",
-      "\u6728"
-    ]
+      "王",
+      "水",
+      "丶"
+    ],
+    "level": null,
+    "onyomi": "KYUU",
+    "kunyomi": "tama"
   },
   {
-    "kanji": "\u9031",
+    "kanji": "監",
     "components": [
-      "\u53e3",
-      "\u2ecc",
-      "\u571f",
-      "\u5182"
-    ]
+      "皿",
+      "臣",
+      "二",
+      "乞"
+    ],
+    "level": null,
+    "onyomi": "KAN",
+    "kunyomi": null
   },
   {
-    "kanji": "\u9032",
+    "kanji": "督",
     "components": [
-      "\u2ecc",
-      "\u96b9"
-    ]
+      "小",
+      "卜",
+      "又",
+      "目"
+    ],
+    "level": null,
+    "onyomi": "TOKU",
+    "kunyomi": null
   },
   {
-    "kanji": "\u904a",
+    "kanji": "社",
     "components": [
-      "\u2ecc",
-      "\u5b50",
-      "\u65b9",
-      "\u4e5e"
-    ]
+      "土",
+      "⺭"
+    ],
+    "level": null,
+    "onyomi": "SHA",
+    "kunyomi": "yashiro"
   },
   {
-    "kanji": "\u9054",
+    "kanji": "神",
     "components": [
-      "\u738b",
-      "\u2ecc",
-      "\u571f",
-      "\u4e37",
-      "\u7f8a"
-    ]
+      "｜",
+      "日",
+      "⺭",
+      "田"
+    ],
+    "level": null,
+    "onyomi": "SHIN, JIN",
+    "kunyomi": "kami, kan, kou"
   },
   {
-    "kanji": "\u90e8",
+    "kanji": "祭",
     "components": [
-      "\u53e3",
-      "\u2ecf",
-      "\u7acb"
-    ]
+      "示",
+      "二",
+      "小",
+      "𠆢",
+      "癶"
+    ],
+    "level": null,
+    "onyomi": "SAI",
+    "kunyomi": "matsu(ri), matsu(ru)"
   },
   {
-    "kanji": "\u90fd",
+    "kanji": "秘",
     "components": [
-      "\u65e5",
-      "\u2ecf",
-      "\u2eb9"
-    ]
+      "ノ",
+      "禾",
+      "心",
+      "丶"
+    ],
+    "level": null,
+    "onyomi": "HI",
+    "kunyomi": "hi(meru)"
   },
   {
-    "kanji": "\u91ce",
+    "kanji": "空",
     "components": [
-      "\u77db",
-      "\u91cc",
-      "\u4e85"
-    ]
+      "穴",
+      "工",
+      "儿",
+      "宀"
+    ],
+    "level": null,
+    "onyomi": "KUU",
+    "kunyomi": "sora, a(ku), a(keru), kara"
   },
   {
-    "kanji": "\u91d1",
+    "kanji": "竜",
     "components": [
-      "\u91d1",
-      "\u738b",
-      "\u30cf",
-      "\ud840\udda2",
-      "\u4e37"
-    ]
+      "立",
+      "竜",
+      "田",
+      "乙"
+    ],
+    "level": null,
+    "onyomi": "RYUU",
+    "kunyomi": "tatsu"
   },
   {
-    "kanji": "\u9593",
+    "kanji": "節",
     "components": [
-      "\u65e5",
-      "\u9580"
-    ]
+      "艮",
+      "竹",
+      "卩",
+      "乞"
+    ],
+    "level": null,
+    "onyomi": "SETSU",
+    "kunyomi": "fushi"
   },
   {
-    "kanji": "\u9662",
+    "kanji": "線",
     "components": [
-      "\u4e8c",
-      "\u513f",
-      "\u5b80",
-      "\u2ed6",
-      "\u5143"
-    ]
+      "糸",
+      "幺",
+      "小",
+      "水",
+      "白"
+    ],
+    "level": null,
+    "onyomi": "SEN",
+    "kunyomi": null
   },
   {
-    "kanji": "\u967d",
+    "kanji": "美",
     "components": [
-      "\u4e00",
-      "\u65e5",
-      "\u52ff",
-      "\u2ed6",
-      "\u52ff"
-    ]
+      "王",
+      "大",
+      "丷",
+      "羊"
+    ],
+    "level": null,
+    "onyomi": "BI",
+    "kunyomi": "utsuku(shii)"
   },
   {
-    "kanji": "\u96e3",
+    "kanji": "花",
     "components": [
-      "\u2ebe",
-      "\u96b9",
-      "\u5927",
-      "\u53e3",
-      "\u4ea0",
-      "\u4e8c"
-    ]
+      "⺅",
+      "匕",
+      "⺾"
+    ],
+    "level": null,
+    "onyomi": "KA",
+    "kunyomi": "hana"
   },
   {
-    "kanji": "\u96ea",
+    "kanji": "葉",
     "components": [
-      "\u30e8",
-      "\u96e8"
-    ]
+      "木",
+      "世",
+      "⺾"
+    ],
+    "level": null,
+    "onyomi": "YOU",
+    "kunyomi": "ha"
   },
   {
-    "kanji": "\u96f2",
+    "kanji": "議",
     "components": [
-      "\u4e00",
-      "\u96e8",
-      "\u4e8c",
-      "\u53b6"
-    ]
+      "一",
+      "王",
+      "言",
+      "丷",
+      "羊",
+      "亅",
+      "戈",
+      "手"
+    ],
+    "level": null,
+    "onyomi": "GI",
+    "kunyomi": null
   },
   {
-    "kanji": "\u96f7",
+    "kanji": "買",
     "components": [
-      "\u96e8",
-      "\u7530"
-    ]
+      "貝",
+      "目",
+      "ハ",
+      "⺲"
+    ],
+    "level": null,
+    "onyomi": "BAI",
+    "kunyomi": "ka(u)"
   },
   {
-    "kanji": "\u96fb",
+    "kanji": "足",
     "components": [
-      "\u96e8",
-      "\u7530",
-      "\u4e59"
-    ]
+      "口",
+      "足",
+      "止"
+    ],
+    "level": null,
+    "onyomi": "SOKU",
+    "kunyomi": "ashi, ta(riru), ta(su)"
   },
   {
-    "kanji": "\u9707",
+    "kanji": "速",
     "components": [
-      "\u8863",
-      "\u96e8",
-      "\u8fb0",
-      "\u5382"
-    ]
+      "｜",
+      "一",
+      "口",
+      "⻌",
+      "ハ",
+      "木"
+    ],
+    "level": null,
+    "onyomi": "SOKU",
+    "kunyomi": "haya(i), sumi(yaka)"
   },
   {
-    "kanji": "\u9752",
+    "kanji": "週",
     "components": [
-      "\u6708",
-      "\u9752",
-      "\u571f",
-      "\u4e8c",
-      "\u4ea0"
-    ]
+      "口",
+      "⻌",
+      "土",
+      "冂"
+    ],
+    "level": null,
+    "onyomi": "SHUU",
+    "kunyomi": null
   },
   {
-    "kanji": "\u97f3",
+    "kanji": "遊",
     "components": [
-      "\u97f3",
-      "\u65e5",
-      "\u7acb"
-    ]
+      "⻌",
+      "子",
+      "方",
+      "乞"
+    ],
+    "level": null,
+    "onyomi": "YUU, YU",
+    "kunyomi": "aso(bu)"
   },
   {
-    "kanji": "\u982d",
+    "kanji": "達",
     "components": [
-      "\u8c9d",
-      "\u76ee",
-      "\u30cf",
-      "\u53e3",
-      "\u8c46",
-      "\u4e37",
-      "\u9801"
-    ]
+      "王",
+      "⻌",
+      "土",
+      "丷",
+      "羊"
+    ],
+    "level": null,
+    "onyomi": "TATSU",
+    "kunyomi": null
   },
   {
-    "kanji": "\u9854",
+    "kanji": "部",
     "components": [
-      "\u8c9d",
-      "\u76ee",
-      "\u30cf",
-      "\u9801",
-      "\u7acb",
-      "\u4ea0",
-      "\u5382",
-      "\u5f61"
-    ]
+      "口",
+      "⻏",
+      "立"
+    ],
+    "level": null,
+    "onyomi": "BU",
+    "kunyomi": null
   },
   {
-    "kanji": "\u98a8",
+    "kanji": "陽",
     "components": [
-      "\u98a8",
-      "\u51e0",
-      "\u866b",
-      "\u30ce"
-    ]
+      "一",
+      "日",
+      "勿",
+      "⻖",
+      "勿"
+    ],
+    "level": null,
+    "onyomi": "YOU",
+    "kunyomi": "hi"
   },
   {
-    "kanji": "\u98ef",
+    "kanji": "難",
     "components": [
-      "\u98df",
-      "\u53c8",
-      "\u5382"
-    ]
+      "⺾",
+      "隹",
+      "大",
+      "口",
+      "亠",
+      "二"
+    ],
+    "level": null,
+    "onyomi": "NAN",
+    "kunyomi": "muzuka(shii), kata(i)"
   },
   {
-    "kanji": "\u98f2",
+    "kanji": "雪",
     "components": [
-      "\u6b20",
-      "\u98df"
-    ]
+      "ヨ",
+      "雨"
+    ],
+    "level": null,
+    "onyomi": "SETSU",
+    "kunyomi": "yuki"
   },
   {
-    "kanji": "\u9928",
+    "kanji": "雲",
     "components": [
-      "\u53e3",
-      "\u98df",
-      "\u5b80",
-      "\uff5c"
-    ]
+      "一",
+      "雨",
+      "二",
+      "厶"
+    ],
+    "level": null,
+    "onyomi": "UN",
+    "kunyomi": "kumo"
   },
   {
-    "kanji": "\u99c5",
+    "kanji": "雷",
     "components": [
-      "\u99ac",
-      "\u5c38",
-      "\u2ea3",
-      "\u4e36"
-    ]
+      "雨",
+      "田"
+    ],
+    "level": null,
+    "onyomi": "RAI",
+    "kunyomi": "kaminari"
   },
   {
-    "kanji": "\u9ad8",
+    "kanji": "震",
     "components": [
-      "\u53e3",
-      "\u9ad8",
-      "\u4ea0",
-      "\u5182"
-    ]
+      "衣",
+      "雨",
+      "辰",
+      "厂"
+    ],
+    "level": null,
+    "onyomi": "SHIN",
+    "kunyomi": "furu(eru), furu(u)"
   },
   {
-    "kanji": "\u9b5a",
+    "kanji": "飲",
     "components": [
-      "\u9b5a",
-      "\u7530",
-      "\u2ea3"
-    ]
+      "欠",
+      "食"
+    ],
+    "level": null,
+    "onyomi": "IN",
+    "kunyomi": "no(mu)"
   },
   {
-    "kanji": "\u9ce5",
+    "kanji": "駅",
     "components": [
-      "\u9ce5",
-      "\u2ea3"
-    ]
+      "馬",
+      "尸",
+      "⺣",
+      "丶"
+    ],
+    "level": null,
+    "onyomi": "EKI",
+    "kunyomi": null
   },
   {
-    "kanji": "\u9ed2",
+    "kanji": "魚",
     "components": [
-      "\u9ed2",
-      "\u91cc",
-      "\u2ea3"
-    ]
+      "魚",
+      "田",
+      "⺣"
+    ],
+    "level": null,
+    "onyomi": "GYO",
+    "kunyomi": "sakana, uo"
   }
 ]

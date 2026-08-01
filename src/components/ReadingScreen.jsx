@@ -20,7 +20,6 @@ import StoryCard from './StoryCard'
 import BiteCard from './BiteCard'
 import SearchModal from './SearchModal'
 import BiteSearchModal from './BiteSearchModal'
-import BottomNav from './BottomNav'
 import grammarFr from '../data/grammar_points_fr.json'
 import grammarDe from '../data/grammar_points_de.json'
 import grammarRu from '../data/grammar_points_ru.json'
@@ -77,13 +76,11 @@ export default function ReadingScreen({
   onOpenGame,
   restorePosition,
   onConsumedRestore,
-  activeTab,
-  onChangeTab,
+  onSavedWordsChange,
 }) {
   const [feedMode, setFeedMode] = useState('stories')
   const [showFurigana, setShowFurigana] = useState(true)
   const [searchOpen, setSearchOpen] = useState(false)
-  const [unseenCount, setUnseenCount] = useState(() => getUnseenSavedWords().size)
   const [favorites, setFavorites] = useState(() => getFavoriteStories())
   const [readStories, setReadStories] = useState(() => getReadStories())
   const [activeIndex, setActiveIndex] = useState(-1)
@@ -235,9 +232,8 @@ export default function ReadingScreen({
       lang: story.lang,
       storyIndex: story.idx,
     })
-    const unseen = getUnseenSavedWords()
-    setUnseenCount(unseen.size)
-    syncAppBadge(unseen.size)
+    syncAppBadge(getUnseenSavedWords().size)
+    onSavedWordsChange?.()
   }
 
   function handleMarkRead(story) {
@@ -369,8 +365,6 @@ export default function ReadingScreen({
           onClose={() => setSearchOpen(false)}
         />
       )}
-
-      <BottomNav active={activeTab} onChange={onChangeTab} badges={{ bookmarks: unseenCount }} />
     </div>
   )
 }
