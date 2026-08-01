@@ -18,8 +18,25 @@ const ProfileScreen = lazy(() => import('./components/ProfileScreen'))
 
 function App() {
   const [tab, setTab] = useState('feed')
+  const [tabResetNonce, setTabResetNonce] = useState(0)
   const [jumpToIndex, setJumpToIndex] = useState(null)
   const [exploreWordSeed, setExploreWordSeed] = useState(null)
+  const [gameSeed, setGameSeed] = useState(null)
+  // Only the very first Feed mount of the session resumes the last reading
+  // position (app reopen); every later visit — including re-tapping the Feed
+  // tab — starts fresh at the top, like any other tab reset.
+  const [canRestoreFeedPosition, setCanRestoreFeedPosition] = useState(true)
+
+  // Tapping the tab you're already on should feel like arriving fresh —
+  // force the screen to remount instead of leaving stale internal state
+  // (open modals, mid-game state, scroll position) in place.
+  function changeTab(next) {
+    if (next === tab) {
+      setTabResetNonce((n) => n + 1)
+    } else {
+      setTab(next)
+    }
+  }
   const companionRef = useRef(null)
 
   const allStories = useMemo(
@@ -64,6 +81,11 @@ function App() {
     setTab('explore')
   }
 
+  function openGame(gameKey, puzzleId, lang) {
+    setGameSeed({ gameKey, puzzleId, lang })
+    setTab('games')
+  }
+
   function toggleLanguage(lang) {
     setActiveLanguagesState((prev) => {
       const next = prev.includes(lang) ? prev.filter((l) => l !== lang) : [...prev, lang]
@@ -84,54 +106,70 @@ function App() {
     })
   }
 
+  const resetKey = `${tab}-${tabResetNonce}`
+
   let screen
   if (tab === 'bookmarks') {
     screen = (
       <Suspense fallback={null}>
         <BookmarksScreen
+          key={resetKey}
           stories={allStories}
           activeTab={tab}
-          onChangeTab={setTab}
+          onChangeTab={changeTab}
           onExploreWord={openExploreForWord}
           onOpenStory={openStoryFromElsewhere}
+          onOpenGame={openGame}
         />
       </Suspense>
     )
   } else if (tab === 'explore') {
     screen = (
       <Suspense fallback={null}>
-        <ExploreScreen stories={allStories} wordSeed={exploreWordSeed} activeTab={tab} onChangeTab={setTab} />
+        <ExploreScreen key={resetKey} stories={allStories} wordSeed={exploreWordSeed} activeTab={tab} onChangeTab={changeTab} />
       </Suspense>
     )
   } else if (tab === 'games') {
     screen = (
       <Suspense fallback={null}>
-        <GamesScreen stories={allStories} activeLanguages={activeLanguages} activeTab={tab} onChangeTab={setTab} />
+        <GamesScreen
+          key={resetKey}
+          stories={allStories}
+          activeLanguages={activeLanguages}
+          activeTab={tab}
+          onChangeTab={changeTab}
+          gameSeed={gameSeed}
+        />
       </Suspense>
     )
   } else if (tab === 'profile') {
     screen = (
       <Suspense fallback={null}>
         <ProfileScreen
+          key={resetKey}
           allStories={allStories}
           activeLanguages={activeLanguages}
           activeLevels={activeLevels}
           onToggleLanguage={toggleLanguage}
           onToggleLevel={toggleLevel}
           activeTab={tab}
-          onChangeTab={setTab}
+          onChangeTab={changeTab}
         />
       </Suspense>
     )
   } else {
     screen = (
       <ReadingScreen
+        key={resetKey}
         stories={feedStories}
         jumpToIndex={jumpToIndex}
         onConsumedJump={() => setJumpToIndex(null)}
         onStoryFinished={(lang, context) => companionRef.current?.notifyStoryFinished(lang, context)}
+        onOpenGame={openGame}
+        restorePosition={canRestoreFeedPosition}
+        onConsumedRestore={() => setCanRestoreFeedPosition(false)}
         activeTab={tab}
-        onChangeTab={setTab}
+        onChangeTab={changeTab}
       />
     )
   }

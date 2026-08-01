@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { getSavedWords, getUnseenSavedWords, getReadStories } from '../lib/storage'
 import { buildDictionary } from '../lib/vocabIndex'
 import { langMeta } from '../lib/langs'
@@ -14,7 +14,13 @@ import CategorySortGame from './CategorySortGame'
 import KanjiBuildGame from './KanjiBuildGame'
 import OnomatopoeiaGame from './OnomatopoeiaGame'
 import CompoundBuilderGame from './CompoundBuilderGame'
+import SentenceBuildGame from './SentenceBuildGame'
 import BottomNav from './BottomNav'
+
+function matchesLang(onlyLang, lang) {
+  if (!onlyLang) return true
+  return Array.isArray(onlyLang) ? onlyLang.includes(lang) : onlyLang === lang
+}
 
 const GAMES = [
   { key: 'guess', title: 'Guess the word', icon: '🎯', description: 'Pick the right word for the meaning shown.' },
@@ -27,9 +33,16 @@ const GAMES = [
   { key: 'kanji', title: 'Kanji build', icon: '構', description: 'Assemble a kanji from its components.', onlyLang: 'ja' },
   { key: 'onomatopoeia', title: 'Onomatopoeia match', icon: '💫', description: 'Match the sound-word to what it describes.', onlyLang: 'ja' },
   { key: 'compound', title: 'Compound builder', icon: '🧱', description: 'Assemble a German compound from its pieces.', onlyLang: 'de' },
+  {
+    key: 'sentence-build',
+    title: 'Sentence build',
+    icon: '🧩',
+    description: 'Tap two tiles to swap them until the word order is right.',
+    onlyLang: ['fr', 'de'],
+  },
 ]
 
-export default function GamesScreen({ stories, activeLanguages, activeTab, onChangeTab }) {
+export default function GamesScreen({ stories, activeLanguages, activeTab, onChangeTab, gameSeed }) {
   const savedWords = useMemo(() => getSavedWords(), [])
   const dictionary = useMemo(() => buildDictionary(stories), [stories])
   const readIndices = useMemo(() => getReadStories(), [])
@@ -40,11 +53,17 @@ export default function GamesScreen({ stories, activeLanguages, activeTab, onCha
   const [lang, setLang] = useState(langs[0])
   const [activeGame, setActiveGame] = useState(null)
 
-  const availableGames = GAMES.filter((g) => !g.onlyLang || g.onlyLang === lang)
+  const availableGames = GAMES.filter((g) => matchesLang(g.onlyLang, lang))
+
+  useEffect(() => {
+    if (!gameSeed) return
+    if (gameSeed.lang) setLang(gameSeed.lang)
+    setActiveGame(gameSeed.gameKey)
+  }, [gameSeed])
 
   function handleLangChange(l) {
     setLang(l)
-    if (activeGame && !GAMES.find((g) => g.key === activeGame && (!g.onlyLang || g.onlyLang === l))) {
+    if (activeGame && !GAMES.find((g) => g.key === activeGame && matchesLang(g.onlyLang, l))) {
       setActiveGame(null)
     }
   }
@@ -102,6 +121,12 @@ export default function GamesScreen({ stories, activeLanguages, activeTab, onCha
         <OnomatopoeiaGame />
       ) : activeGame === 'compound' ? (
         <CompoundBuilderGame />
+      ) : activeGame === 'sentence-build' ? (
+        <SentenceBuildGame
+          key={`${lang}-${gameSeed?.gameKey === 'sentence-build' ? gameSeed.puzzleId : 'random'}`}
+          lang={lang}
+          initialPuzzleId={gameSeed?.gameKey === 'sentence-build' ? gameSeed.puzzleId : null}
+        />
       ) : null}
 
       <BottomNav active={activeTab} onChange={onChangeTab} badges={{ bookmarks: unseenCount }} />

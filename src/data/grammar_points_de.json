@@ -1,0 +1,110 @@
+[
+  {
+    "id": "de-verb-second-01",
+    "lang": "de",
+    "title": "Verb-second (V2) word order",
+    "explanation": "The finite verb is always the second element of a main clause, whatever occupies the first slot.",
+    "example_native": "Gestern ging ich nach Hause.",
+    "example_gloss": "Yesterday, I went home.",
+    "bridge_lang": "en",
+    "bridge_note": "English does the same thing, just only after certain fronted words — \"Never have I seen such a thing,\" \"Only then did she realize.\" German just runs on this constantly instead of in a few fossilized cases.",
+    "related_game_id": "de-v2-01",
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-case-01",
+    "lang": "de",
+    "title": "Case marks articles and adjectives, not just pronouns",
+    "explanation": "German has four cases (nominative, accusative, dative, genitive) marked throughout the sentence.",
+    "example_native": "Ich sehe den Mann.",
+    "example_gloss": "I see the man.",
+    "bridge_lang": "en",
+    "bridge_note": "English mostly lost this except in pronouns (I/me, he/him, who/whom) — the concept isn't foreign, just far more limited in English.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-modal-01",
+    "lang": "de",
+    "title": "Modal verbs push the infinitive to the end of the clause",
+    "explanation": "The modal verb keeps second position, but the infinitive it governs parks at the very end, with anything else in between.",
+    "example_native": "Ich muss heute arbeiten.",
+    "example_gloss": "I have to work today.",
+    "bridge_lang": "en",
+    "bridge_note": "English keeps modal and infinitive stuck together (\"have to work\") — German is happy to separate them by a whole clause's worth.",
+    "related_game_id": "de-modal-01",
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-separable-verbs-01",
+    "lang": "de",
+    "title": "Separable-prefix verbs split apart in main clauses",
+    "explanation": "Verbs like aufstehen (to get up) split into the base verb and a stranded prefix at the end of the clause.",
+    "example_native": "Ich stehe früh auf.",
+    "example_gloss": "I get up early.",
+    "bridge_lang": "en",
+    "bridge_note": "The closest English cousin is phrasal verbs behaving similarly (\"I put my coat on\"), though German is much stricter about exactly where the prefix lands.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-gender-01",
+    "lang": "de",
+    "title": "Grammatical gender doesn't map onto English (or Portuguese) at all",
+    "explanation": "der/die/das is a genuinely arbitrary system with no reliable shortcut from either language.",
+    "example_native": "der Tisch, die Tür, das Buch",
+    "example_gloss": "the table, the door, the book",
+    "bridge_lang": "en",
+    "bridge_note": "Worth stating plainly rather than forcing a false bridge — this is the one point that's just memorization.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-plural-01",
+    "lang": "de",
+    "title": "Plural formation is irregular and has to be memorized per noun",
+    "explanation": "There's no single plural rule — nouns pluralize with an umlaut, an ending (-e, -er, -n, -s), both, or neither, and which one applies isn't predictable from the singular alone.",
+    "example_native": "das Buch → die Bücher / das Auto → die Autos",
+    "example_gloss": "the book → the books / the car → the cars",
+    "bridge_lang": "en",
+    "bridge_note": "English mostly just adds -s and calls it done, with a small memorized set of exceptions (child/children, mouse/mice). German flips that ratio — the exceptions are the rule, and every new noun's plural has to be learned alongside its gender.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-perfect-tense-01",
+    "lang": "de",
+    "title": "Everyday past tense is built with haben/sein + past participle",
+    "explanation": "Spoken German mostly uses the Perfekt tense — a helper verb (haben or sein) plus the past participle — as its default past tense, even for plain, finished actions.",
+    "example_native": "Ich habe gegessen.",
+    "example_gloss": "I ate. (literally: I have eaten)",
+    "bridge_lang": "en",
+    "bridge_note": "The shape matches English's present perfect (\"I have eaten\") exactly, but English reserves that for actions with present relevance, using simple past (\"I ate\") for a finished event. German uses the Perfekt for both — the familiar shape, doing more work than it does in English.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-adjective-endings-01",
+    "lang": "de",
+    "title": "Adjectives before a noun take an ending that shifts with case, gender, and article",
+    "explanation": "An adjective placed directly before a noun isn't left in its plain form — it takes an ending that changes depending on the noun's gender, case, and whether an article (and which kind) comes before it.",
+    "example_native": "der gute Mann / ein guter Mann",
+    "example_gloss": "the good man / a good man (same adjective, different ending)",
+    "bridge_lang": "en",
+    "bridge_note": "English adjectives never change form no matter what they describe — this layer of agreement doesn't exist at all in English, so it's one of the purely additive rules with no shortcut, not just a different version of something already known.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-subordinate-clause-verb-01",
+    "lang": "de",
+    "title": "In subordinate clauses, the verb moves to the very end",
+    "explanation": "Clauses introduced by words like weil (because), dass (that), or wenn (if/when) push the finite verb all the way to the end of the clause, instead of keeping it in second position.",
+    "example_native": "..., weil ich krank bin.",
+    "example_gloss": "..., because I am sick.",
+    "bridge_lang": "en",
+    "bridge_note": "English keeps the verb right after its subject no matter what kind of clause it's in (\"because I am sick\" — verb stays put). German's main-clause V2 rule gets suspended entirely here, which trips up learners who've just gotten comfortable with verb-second.",
+    "related_game_id": "de-subclause-01",
+    "confidence": "first_pass"
+  }
+]

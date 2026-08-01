@@ -1,0 +1,74 @@
+[
+  {
+    "id": "ru-case-01",
+    "lang": "ru",
+    "title": "Six grammatical cases mark a noun's role",
+    "explanation": "Russian nouns (and their adjectives) change ending depending on their role in the sentence — nominative, genitive, accusative, dative, instrumental, prepositional.",
+    "example_native": "Я вижу книгу.",
+    "example_gloss": "I see a book. (книга → книгу, accusative)",
+    "bridge_lang": "en",
+    "bridge_note": "English marks this only in pronouns (I/me, he/him) — Russian does it on every noun and its adjectives, closer in spirit to German's four cases, just with two more of them.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-aspect-01",
+    "lang": "ru",
+    "title": "Verbs come in aspect pairs",
+    "explanation": "Most Russian verbs have two versions — imperfective (ongoing, repeated, or in-progress) and perfective (completed, one-time) — rather than one verb used with different tenses.",
+    "example_native": "Я писал письмо. / Я написал письмо.",
+    "example_gloss": "I was writing a letter. / I wrote (finished) a letter.",
+    "bridge_lang": "en",
+    "bridge_note": "English leans on phrasing to make this distinction (\"was writing\" vs \"wrote\") rather than a fully separate verb — Russian grammaticalizes it as two related but distinct words you have to learn as a pair.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-no-articles-01",
+    "lang": "ru",
+    "title": "No words for \"a\" or \"the\"",
+    "explanation": "Russian has no articles at all — definiteness is inferred entirely from context and word order.",
+    "example_native": "Книга на столе.",
+    "example_gloss": "The book is on the table. (or: a book, depending on context)",
+    "bridge_lang": "en",
+    "bridge_note": "English speakers learning Russian often keep reaching for a word that isn't there — the opposite problem of French/German, where the article is mandatory even in places English drops it.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-motion-verbs-01",
+    "lang": "ru",
+    "title": "Separate verbs for one-way vs. back-and-forth motion",
+    "explanation": "Verbs of motion like \"go\" split into distinct words depending on whether the movement is a single trip in one direction or repeated/habitual/round-trip.",
+    "example_native": "Я иду в школу. / Я хожу в школу.",
+    "example_gloss": "I am going to school (right now). / I go to school (regularly).",
+    "bridge_lang": "en",
+    "bridge_note": "English makes this distinction with context or extra words (\"right now\" vs \"every day\"), never with a different verb — this is a real vocabulary split English speakers have to build from scratch.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-gender-01",
+    "lang": "ru",
+    "title": "Grammatical gender is usually predictable from the noun's ending",
+    "explanation": "Nouns are masculine, feminine, or neuter, but unlike French or German, the ending is a fairly reliable clue: consonant endings are usually masculine, -а/-я usually feminine, -о/-е usually neuter.",
+    "example_native": "стол (m), книга (f), окно (n)",
+    "example_gloss": "table (m), book (f), window (n)",
+    "bridge_lang": "en",
+    "bridge_note": "English has no grammatical gender to unlearn, but the comparison worth making is to French/German gender — where the ending usually gives no hint at all. Russian's endings do most of the guessing work for you.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-word-order-01",
+    "lang": "ru",
+    "title": "Word order is flexible because case endings carry the grammar",
+    "explanation": "Since case endings already show which noun is subject and which is object, word order is free to shift for emphasis rather than being fixed by grammar.",
+    "example_native": "Книгу читает Анна. / Анна читает книгу.",
+    "example_gloss": "Both mean \"Anna is reading the book\" — the emphasis just shifts.",
+    "bridge_lang": "en",
+    "bridge_note": "English relies on rigid subject-verb-object order to show who's doing what to whom, so reordering a sentence changes its meaning. Russian can reorder freely because the case endings — not the position — carry that information.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  }
+]

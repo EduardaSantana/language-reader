@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { levelMeta } from '../lib/levels'
 import { langMeta } from '../lib/langs'
 import { isWordSaved } from '../lib/storage'
+import { tokenizeWords, buildVocabLookup, lookupWord } from '../lib/tokenize'
 
 function Segment({ seg, showFurigana }) {
   if (seg.reading && showFurigana) {
@@ -33,16 +34,26 @@ export default function StoryCard({
   const [justSaved, setJustSaved] = useState(false)
   const { name: levelName, color: levelColor } = levelMeta(story.level)
   const { avatar: langAvatar, label: langLabel } = langMeta(story.lang)
+  const vocabLookup = useMemo(() => buildVocabLookup(story.vocab), [story.vocab])
 
   useEffect(() => {
     if (!isActive) setRevealed(false)
   }, [isActive])
 
+  function showGloss(text, reading, glossText) {
+    const trimmed = text.trim()
+    if (!trimmed) return
+    setGloss({ text, reading, gloss: glossText })
+    setSaved(isWordSaved(story.lang, text))
+  }
+
   function handleSegmentTap(seg) {
-    const trimmed = seg.text.trim()
-    if (!trimmed || (!seg.reading && !seg.gloss)) return
-    setGloss(seg)
-    setSaved(isWordSaved(story.lang, seg.text))
+    showGloss(seg.text, seg.reading, seg.gloss)
+  }
+
+  function handleWordTap(word) {
+    const found = lookupWord(vocabLookup, word)
+    showGloss(word, found?.reading ?? null, found?.english ?? null)
   }
 
   function handleSave(e) {
@@ -89,18 +100,37 @@ export default function StoryCard({
           </div>
           {story.sentences.map((sentence, sIdx) => (
             <p className="sentence" key={sIdx}>
-              {sentence.map((seg, i) => (
-                <span
-                  key={i}
-                  className={`segment ${seg.gloss || seg.reading ? 'segment-taggable' : ''}`}
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    handleSegmentTap(seg)
-                  }}
-                >
-                  <Segment seg={seg} showFurigana={showFurigana} />
-                </span>
-              ))}
+              {sentence.map((seg, i) =>
+                seg.gloss || seg.reading ? (
+                  <span
+                    key={i}
+                    className="segment segment-taggable"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      handleSegmentTap(seg)
+                    }}
+                  >
+                    <Segment seg={seg} showFurigana={showFurigana} />
+                  </span>
+                ) : (
+                  tokenizeWords(seg.text).map((tok, tIdx) =>
+                    tok.isWord ? (
+                      <span
+                        key={`${i}-${tIdx}`}
+                        className="segment segment-taggable"
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          handleWordTap(tok.text)
+                        }}
+                      >
+                        {tok.text}
+                      </span>
+                    ) : (
+                      <span key={`${i}-${tIdx}`}>{tok.text}</span>
+                    ),
+                  )
+                ),
+              )}
             </p>
           ))}
           <button

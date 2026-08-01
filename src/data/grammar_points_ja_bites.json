@@ -1,0 +1,74 @@
+[
+  {
+    "id": "ja-word-order-01",
+    "lang": "ja",
+    "title": "Verb-final (SOV) word order",
+    "explanation": "The verb comes at the end of the sentence, after the subject and object, instead of in the middle.",
+    "example_native": "私はりんごを食べます。",
+    "example_gloss": "I apple eat = I eat an apple.",
+    "bridge_lang": "en",
+    "bridge_note": "English fixes the verb in the middle (subject-verb-object), so the eat/action word always comes right after \"I.\" Japanese saves it for last — you often don't know what's actually happening in a sentence until the very end.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ja-particles-01",
+    "lang": "ja",
+    "title": "Particles mark grammatical role instead of word order",
+    "explanation": "Small words after each noun (は, が, を, に, で...) show whether it's the topic, subject, object, location, and so on — word order alone doesn't tell you.",
+    "example_native": "友達に手紙を書きます。",
+    "example_gloss": "Friend-to letter-[object] write = I write a letter to my friend.",
+    "bridge_lang": "en",
+    "bridge_note": "English uses prepositions before a noun (\"to my friend\") and relies on word order for subject/object. Japanese puts a small marker after the noun instead — the role is glued to the word itself, not to where it sits in the sentence.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ja-verb-no-person-01",
+    "lang": "ja",
+    "title": "Verbs don't conjugate for person or number",
+    "explanation": "The same verb form is used whether the subject is I, you, he, she, we, or they — Japanese verbs only change for tense and politeness level, never for who's doing the action.",
+    "example_native": "食べます。",
+    "example_gloss": "Eat(s). — could mean I eat, you eat, she eats, they eat, depending on context.",
+    "bridge_lang": "en",
+    "bridge_note": "English still marks this a little (\"I eat\" vs \"she eats\"), and Portuguese marks it heavily (como/comes/come/comemos). Japanese drops person-marking entirely — the subject is often left unsaid once it's clear from context.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ja-adjectives-01",
+    "lang": "ja",
+    "title": "I-adjectives conjugate like verbs",
+    "explanation": "One class of adjectives (ending in い) changes form for past tense and negation on its own, without needing a separate \"to be\" verb.",
+    "example_native": "高い → 高かった",
+    "example_gloss": "expensive → was expensive",
+    "bridge_lang": "en",
+    "bridge_note": "English adjectives never change form — you always need a separate verb (\"was\") to shift tense. Japanese i-adjectives carry the tense themselves, behaving more like a verb than like an English adjective.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ja-topic-marker-01",
+    "lang": "ja",
+    "title": "は marks the topic, が marks the subject — and they're not the same thing",
+    "explanation": "は introduces what the sentence is about; が marks the grammatical subject of the action. A sentence can have a topic that isn't its subject.",
+    "example_native": "象は鼻が長い。",
+    "example_gloss": "As for elephants, the trunk is long. (topic: elephants; subject of \"long\": trunk)",
+    "bridge_lang": "en",
+    "bridge_note": "English collapses topic and subject into the same word (\"elephants have long trunks\" — one subject, one role). Japanese can name a topic and then a separate subject within it — a distinction English grammar doesn't really have a slot for.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ja-politeness-01",
+    "lang": "ja",
+    "title": "Politeness is built into the verb form itself",
+    "explanation": "The same action is expressed with a different verb ending depending on how formal the situation is — plain form among friends, polite ます form with strangers or in public.",
+    "example_native": "食べる (plain) / 食べます (polite)",
+    "example_gloss": "eat / eat (polite)",
+    "bridge_lang": "en",
+    "bridge_note": "English signals formality through word choice and tone (\"grab a bite\" vs \"would you care to dine\"), never through the verb's grammatical ending. Japanese makes register a fixed grammatical choice on every single verb, not just a style preference.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  }
+]

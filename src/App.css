@@ -39,9 +39,40 @@
   z-index: 6;
   padding: calc(env(safe-area-inset-top, 12px) + 6px) 16px 10px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 10px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent);
+}
+
+.top-bar-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.feed-mode-toggle {
+  display: flex;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 3px;
+}
+
+.feed-mode-toggle button {
+  background: none;
+  border: none;
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+
+.feed-mode-toggle button.active {
+  background: var(--accent);
+  color: #1a0a10;
 }
 
 .icon-button-bar {
@@ -134,7 +165,7 @@
 
 .level-tag {
   position: absolute;
-  top: calc(env(safe-area-inset-top, 16px) + 56px);
+  top: calc(env(safe-area-inset-top, 16px) + 100px);
   left: 20px;
   font-size: 12px;
   font-weight: 700;
@@ -145,7 +176,7 @@
 
 .heart-button {
   position: absolute;
-  top: calc(env(safe-area-inset-top, 16px) + 52px);
+  top: calc(env(safe-area-inset-top, 16px) + 96px);
   right: 20px;
   z-index: 7;
   background: none;
@@ -1031,6 +1062,21 @@ ruby rt {
   font-weight: 700;
 }
 
+.letter-index-button.active {
+  background: var(--accent);
+  color: #1a0a10;
+  border-color: var(--accent);
+}
+
+.dictionary-letter-active {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+
 .dictionary-pagination {
   display: flex;
   align-items: center;
@@ -1685,4 +1731,168 @@ ruby rt {
 .companion-chat-input {
   flex: 1;
   width: auto;
+}
+
+/* Bites feed (grammar, scrollable) */
+
+.bite-card-body {
+  justify-content: center;
+}
+
+.bite-card-title {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.bite-card-explanation {
+  color: var(--text-dim);
+  font-size: 14px;
+  text-align: center;
+}
+
+.bite-card-example {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.bite-card-gloss {
+  color: var(--text-dim);
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.bite-practice-button {
+  align-self: center;
+}
+
+/* Grammar (Bookmarks) */
+
+.grammar-point-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.grammar-point-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.grammar-point-title {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.grammar-point-explanation {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.grammar-point-example {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.grammar-point-gloss {
+  color: var(--text-dim);
+  font-size: 13px;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+/* Bridge note — a comparative claim, not verified corpus fact. Reuses the
+   dashed/dimmed visual language from Explore's AI-tangent treatment. */
+
+.bridge-note {
+  margin-top: 12px;
+  background: transparent;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.bridge-note-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+}
+
+.bridge-note-text {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.grammar-point-card .explore-link-button {
+  margin-top: 12px;
+}
+
+/* Sentence build */
+
+.sentence-build-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.sentence-build-tile {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  transition:
+    transform 0.2s ease-out,
+    background 0.2s ease-out;
+}
+
+.sentence-build-tile.selected {
+  border-color: var(--accent-secondary);
+  background: rgba(255, 255, 255, 0.12);
+  transform: scale(1.05);
+}
+
+.sentence-build-tile.verb-tile {
+  border-color: var(--accent);
+}
+
+.sentence-build-tile-text {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.sentence-build-tile-gloss {
+  color: var(--text-dim);
+  font-size: 11px;
+}
+
+.sentence-build-row.settling .sentence-build-tile {
+  animation: sentence-build-settle 0.55s ease-out;
+}
+
+@keyframes sentence-build-settle {
+  0% {
+    transform: translateY(-6px) scale(1.06);
+  }
+  60% {
+    transform: translateY(2px) scale(0.98);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
 }

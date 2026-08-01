@@ -134,6 +134,13 @@ export function pickCompoundBuild(compounds) {
   return { word: target.word, english: target.english, correctParts, choices, meanings }
 }
 
+export function pickSentencePuzzle(puzzles, excludeId) {
+  const candidates = puzzles.filter((p) => p.id !== excludeId)
+  const pool = candidates.length > 0 ? candidates : puzzles
+  if (pool.length === 0) return null
+  return pool[Math.floor(Math.random() * pool.length)]
+}
+
 export const COMPANION_CORRECT_LINES = [
   "Yes! That's it.",
   'Nice — you got it.',
