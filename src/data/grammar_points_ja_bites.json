@@ -9,7 +9,9 @@
     "example_gloss": "I apple eat = I eat an apple.",
     "bridge_lang": "en",
     "bridge_note": "English fixes the verb in the middle (subject-verb-object), so the eat/action word always comes right after \"I.\" Japanese saves it for last — you often don't know what's actually happening in a sentence until the very end.",
-    "related_game_id": null,
+    "related_game_id": "order",
+    "branch": "Sentence structure & particles",
+    "prerequisites": [],
     "confidence": "first_pass"
   },
   {
@@ -23,6 +25,8 @@
     "bridge_lang": "en",
     "bridge_note": "English uses prepositions before a noun (\"to my friend\") and relies on word order for subject/object. Japanese puts a small marker after the noun instead — the role is glued to the word itself, not to where it sits in the sentence.",
     "related_game_id": null,
+    "branch": "Sentence structure & particles",
+    "prerequisites": ["ja-word-order-01"],
     "confidence": "first_pass"
   },
   {
@@ -36,6 +40,8 @@
     "bridge_lang": "en",
     "bridge_note": "English still marks this a little (\"I eat\" vs \"she eats\"), and Portuguese marks it heavily (como/comes/come/comemos). Japanese drops person-marking entirely — the subject is often left unsaid once it's clear from context.",
     "related_game_id": null,
+    "branch": "Verb forms",
+    "prerequisites": [],
     "confidence": "first_pass"
   },
   {
@@ -49,6 +55,8 @@
     "bridge_lang": "en",
     "bridge_note": "English adjectives never change form — you always need a separate verb (\"was\") to shift tense. Japanese i-adjectives carry the tense themselves, behaving more like a verb than like an English adjective.",
     "related_game_id": null,
+    "branch": "Register & adjectives",
+    "prerequisites": [],
     "confidence": "first_pass"
   },
   {
@@ -62,6 +70,8 @@
     "bridge_lang": "en",
     "bridge_note": "English collapses topic and subject into the same word (\"elephants have long trunks\" — one subject, one role). Japanese can name a topic and then a separate subject within it — a distinction English grammar doesn't really have a slot for.",
     "related_game_id": null,
+    "branch": "Sentence structure & particles",
+    "prerequisites": ["ja-particles-01"],
     "confidence": "first_pass"
   },
   {
@@ -74,7 +84,10 @@
     "example_gloss": "eat / eat (polite)",
     "bridge_lang": "en",
     "bridge_note": "English signals formality through word choice and tone (\"grab a bite\" vs \"would you care to dine\"), never through the verb's grammatical ending. Japanese makes register a fixed grammatical choice on every single verb, not just a style preference.",
-    "related_game_id": null,
+    "related_game_id": "blank",
+    "related_oddity_id": { "lang": "ja", "id": "ja-odd-keigo" },
+    "branch": "Register & adjectives",
+    "prerequisites": ["ja-verb-no-person-01"],
     "confidence": "first_pass"
   },
   {
@@ -87,7 +100,9 @@
     "example_gloss": "I get up, wash my face, and eat breakfast. (three verbs chained with て, only the last one fully conjugated)",
     "bridge_lang": "en",
     "bridge_note": "English repeats \"and\" between each verb (\"I get up and wash and eat\"). Japanese instead shifts every verb but the last into this one shared connector shape — a single form doing several jobs at once.",
-    "related_game_id": null,
+    "related_game_id": "blank",
+    "branch": "Verb forms",
+    "prerequisites": ["ja-verb-no-person-01"],
     "confidence": "first_pass"
   },
   {
@@ -101,6 +116,8 @@
     "bridge_lang": "en",
     "bridge_note": "English needs \"that\"/\"which\" to glue the clause onto the noun. Japanese doesn't glue anything — the clause just sits where an adjective would, doing the same job with zero extra words.",
     "related_game_id": null,
+    "branch": "Sentence structure & particles",
+    "prerequisites": ["ja-topic-marker-01"],
     "confidence": "first_pass"
   },
   {
@@ -114,6 +131,38 @@
     "bridge_lang": "en",
     "bridge_note": "English usually reuses the exact same verb for both (\"I open the door\" / \"the door opens\") and lets context sort out who's doing what. Japanese marks the difference with a genuinely different verb, learned as its own pair.",
     "related_game_id": null,
+    "branch": "Verb forms",
+    "prerequisites": ["ja-verb-no-person-01"],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ja-conditional-01",
+    "lang": "ja",
+    "difficulty": 3,
+    "title": "Four different ways to say \"if\"",
+    "explanation": "Japanese has four conditional forms (と, ば, たら, なら), and they aren't interchangeable — each implies a different relationship between the condition and what follows it (automatic result, general truth, sequential event, or premise).",
+    "example_native": "雨が降ったら、行きません。",
+    "example_gloss": "If it rains, I won't go.",
+    "bridge_lang": "en",
+    "bridge_note": "English gets by with one word, \"if,\" for all of these cases. Japanese forces a choice among four forms up front, each nudging the sentence's logic in a slightly different direction.",
+    "related_game_id": "blank",
+    "branch": "Verb forms",
+    "prerequisites": ["ja-te-form-01"],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ja-causative-passive-01",
+    "lang": "ja",
+    "difficulty": 3,
+    "title": "Causative and passive verb forms are built the same way, but mean opposite things",
+    "explanation": "The causative (\"make/let someone do\") and passive (\"have something done to you\") each attach their own ending to the verb stem, and for some verb classes the two endings look nearly identical — only the surrounding particles and context tell them apart.",
+    "example_native": "先生が学生を勉強させる。 学生が先生に褒められる。",
+    "example_gloss": "The teacher makes the student study. The student is praised by the teacher.",
+    "bridge_lang": "en",
+    "bridge_note": "English marks causative and passive with completely different sentence structures (\"makes X do\" vs. \"is done to\"), so there's no risk of confusing them. In Japanese the verb endings can look close enough that the particle attached to the noun is what actually disambiguates which one it is.",
+    "related_game_id": null,
+    "branch": "Verb forms",
+    "prerequisites": ["ja-transitive-intransitive-01"],
     "confidence": "first_pass"
   }
 ]

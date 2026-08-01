@@ -74,6 +74,21 @@ export function buildExploreGraph(stories) {
   const vocabByWord = {}
   const vocabByStory = {}
   const allOddities = EXPLORE_LANGS.flatMap((lang) => (ODDITIES_BY_LANG[lang] ?? []).map((o) => ({ ...o, lang })))
+  const storiesByLang = {}
+  for (const lang of EXPLORE_LANGS) storiesByLang[lang] = stories.filter((s) => s.lang === lang)
+
+  // Finds a real story whose text actually contains a grammar point's example
+  // sentence, so "Read it in a story" only ever links to a genuine citation —
+  // same "don't show a fabricated match" rule findExampleSentence follows above.
+  function findStoryForExample(lang, exampleNative) {
+    if (!exampleNative) return null
+    for (const story of storiesByLang[lang] ?? []) {
+      if (story.sentences.some((s) => sentenceText(s).includes(exampleNative))) {
+        return { storyIndex: story.idx, titleEn: story.titleEn }
+      }
+    }
+    return null
+  }
 
   for (const lang of EXPLORE_LANGS) {
     const dict = buildDictionary(stories.filter((s) => s.lang === lang))
@@ -154,6 +169,20 @@ export function buildExploreGraph(stories) {
         related.push({ id: grammarNodeId(ref.lang, ref.id), lang: ref.lang, type: 'grammar', title: target.title })
       }
     }
+    if (g.related_oddity_id) {
+      const ref = g.related_oddity_id
+      const target = (ODDITIES_BY_LANG[ref.lang] ?? []).find((p) => p.id === ref.id)
+      if (target) {
+        related.push({ id: oddityNodeId(ref.lang, ref.id), lang: ref.lang, type: 'oddity', title: target.title })
+      }
+    }
+    const prerequisiteRefs = []
+    for (const prereqId of g.prerequisites ?? []) {
+      const target = (GRAMMAR_BY_LANG[lang] ?? []).find((p) => p.id === prereqId)
+      if (target) {
+        prerequisiteRefs.push({ id: grammarNodeId(lang, prereqId), lang, type: 'grammar', title: target.title })
+      }
+    }
     return {
       id: grammarNodeId(lang, id),
       lang,
@@ -165,8 +194,10 @@ export function buildExploreGraph(stories) {
       example: { native: g.example_native, gloss: g.example_gloss, source: null },
       note: g.bridge_note ?? null,
       relatedGameId: g.related_game_id ?? null,
+      storyContext: findStoryForExample(lang, g.example_native),
       vocabEntry: null,
       related,
+      prerequisiteRefs,
     }
   }
 
@@ -216,6 +247,21 @@ export function buildExploreGraph(stories) {
   function getComparativeNode(id) {
     const c = comparativeOddities.find((p) => p.id === id)
     if (!c) return null
+    const related = []
+    for (const ref of c.see_also ?? []) {
+      const target =
+        (GRAMMAR_BY_LANG[ref.lang] ?? []).find((p) => p.id === ref.id) ??
+        (ODDITIES_BY_LANG[ref.lang] ?? []).find((p) => p.id === ref.id)
+      if (target) {
+        const isGrammar = (GRAMMAR_BY_LANG[ref.lang] ?? []).includes(target)
+        related.push({
+          id: isGrammar ? grammarNodeId(ref.lang, ref.id) : oddityNodeId(ref.lang, ref.id),
+          lang: ref.lang,
+          type: isGrammar ? 'grammar' : 'oddity',
+          title: target.title,
+        })
+      }
+    }
     return {
       id: comparativeNodeId(id),
       lang: COMPARATIVE_LANG,
@@ -229,7 +275,7 @@ export function buildExploreGraph(stories) {
       relatedGameId: null,
       vocabEntry: null,
       entries: c.entries,
-      related: [],
+      related,
     }
   }
 

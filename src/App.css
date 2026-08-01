@@ -138,6 +138,19 @@
   color: #1a0a10;
 }
 
+.level-pill-button-comparative {
+  background: rgba(169, 126, 224, 0.16);
+  color: #d9c6f5;
+  font-weight: 700;
+  border: 1px solid rgba(169, 126, 224, 0.4);
+}
+
+.level-pill-button-comparative.active {
+  background: linear-gradient(135deg, #a97ee0, #d4537e);
+  color: #fff;
+  border-color: transparent;
+}
+
 .empty-results {
   height: 100dvh;
   display: flex;
@@ -156,7 +169,7 @@
   scroll-snap-stop: always;
   max-width: 480px;
   margin: 0 auto;
-  padding: env(safe-area-inset-top, 20px) 20px calc(env(safe-area-inset-bottom, 20px) + 150px);
+  padding: calc(env(safe-area-inset-top, 16px) + 100px) 20px calc(env(safe-area-inset-bottom, 20px) + 150px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -958,6 +971,17 @@ ruby rt {
   margin: 0 0 10px;
 }
 
+.path-tier-header {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  margin: 20px 0 4px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
 .path-empty {
   color: var(--text-dim);
   font-size: 14px;
@@ -1219,7 +1243,7 @@ ruby rt {
 .companion-fab {
   position: fixed;
   right: 16px;
-  bottom: calc(88px + env(safe-area-inset-bottom));
+  bottom: calc(160px + env(safe-area-inset-bottom));
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -1234,7 +1258,7 @@ ruby rt {
 .surprise-fab {
   position: fixed;
   left: 16px;
-  bottom: calc(88px + env(safe-area-inset-bottom));
+  bottom: calc(160px + env(safe-area-inset-bottom));
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -1269,7 +1293,7 @@ ruby rt {
 .companion-toast {
   position: fixed;
   right: 16px;
-  bottom: calc(148px + env(safe-area-inset-bottom));
+  bottom: calc(220px + env(safe-area-inset-bottom));
   max-width: 220px;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -1930,5 +1954,130 @@ ruby rt {
   color: var(--text-dim);
   font-size: 13px;
   margin-top: 4px;
+}
+
+/* Curriculum tab — deliberately distinct from Explore's EntryCard-based lists */
+
+.unit-map-card {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.unit-map-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.unit-map-title {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.unit-map-narrative {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.unit-map-footer {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+
+.unit-map-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.unit-map-preview-chip {
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 10px;
+  color: var(--text-dim);
+}
+
+.unit-back-button {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 4px 0;
+  margin-bottom: 12px;
+}
+
+.unit-lesson-header {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+}
+
+.unit-lesson-header .unit-map-narrative {
+  margin-bottom: 0;
+}
+
+.lesson-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--accent);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.lesson-card-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.lesson-number {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.lesson-of {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+}
+
+.lesson-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.lesson-explanation {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin-bottom: 12px;
 }
 

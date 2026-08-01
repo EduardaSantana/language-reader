@@ -10,6 +10,9 @@
     "bridge_lang": "pt",
     "bridge_note": "A lot of Portuguese cognates share gender (a mesa, o sol) — but not always: la mer is feminine while o mar is masculine, a real mismatch, not just an exception to memorize away.",
     "related_game_id": null,
+    "related_oddity_id": { "lang": "fr", "id": "fr-odd-gender-flip" },
+    "branch": "Nouns & agreement",
+    "prerequisites": [],
     "confidence": "first_pass"
   },
   {
@@ -22,7 +25,10 @@
     "example_gloss": "I don't understand.",
     "bridge_lang": "pt",
     "bridge_note": "Portuguese just puts não once before the verb (eu não entendo) — no wrapping. This is one of the real differences, not a shortcut.",
-    "related_game_id": null,
+    "related_game_id": "blank",
+    "related_oddity_id": { "lang": "fr", "id": "fr-odd-ne-dropping" },
+    "branch": "Verbs & tense",
+    "prerequisites": [],
     "see_also": [
       {
         "lang": "de",
@@ -42,6 +48,8 @@
     "bridge_lang": "pt",
     "bridge_note": "This uses the same logic as Portuguese \"é preciso que você seja pontual\" — should feel the most instantly familiar, since English subjunctive barely survives (\"I insist that he be present\" is close to all that's left of it).",
     "related_game_id": null,
+    "branch": "Sentence-building",
+    "prerequisites": [],
     "confidence": "first_pass"
   },
   {
@@ -55,6 +63,8 @@
     "bridge_lang": "pt",
     "bridge_note": "Portuguese defaults to noun-then-adjective (uma casa pequena), so this is a genuine placement rule, not a free transfer.",
     "related_game_id": null,
+    "branch": "Nouns & agreement",
+    "prerequisites": ["fr-adjective-agreement-01"],
     "confidence": "first_pass"
   },
   {
@@ -68,6 +78,8 @@
     "bridge_lang": "pt",
     "bridge_note": "Same underlying concept as Portuguese (alto/alta) — just different endings to learn.",
     "related_game_id": null,
+    "branch": "Nouns & agreement",
+    "prerequisites": ["fr-gender-01"],
     "confidence": "first_pass"
   },
   {
@@ -80,7 +92,9 @@
     "example_gloss": "I you see = I see you.",
     "bridge_lang": "pt",
     "bridge_note": "Lighter touch on this one — Portuguese pronoun placement varies enough by register and region that it isn't a clean one-to-one, flagged as \"similar tendency,\" not a strong claim.",
-    "related_game_id": null,
+    "related_game_id": "order",
+    "branch": "Sentence-building",
+    "prerequisites": [],
     "confidence": "first_pass"
   },
   {
@@ -94,6 +108,8 @@
     "bridge_lang": "pt",
     "bridge_note": "Portuguese does the same thing (eu gosto do café/eu gosto de café varies), so this one transfers more easily than it does from English, which drops the article entirely for general or uncountable nouns (\"I like coffee,\" no \"the\").",
     "related_game_id": null,
+    "branch": "Nouns & agreement",
+    "prerequisites": [],
     "confidence": "first_pass"
   },
   {
@@ -107,6 +123,9 @@
     "bridge_lang": "pt",
     "bridge_note": "Portuguese pronounces its plural -s, so the ear can rely on the noun itself. In French the article (le vs les) is doing the work the noun ending does in Portuguese — worth retraining the ear to listen there instead.",
     "related_game_id": null,
+    "related_oddity_id": { "lang": "fr", "id": "fr-odd-liaison" },
+    "branch": "Nouns & agreement",
+    "prerequisites": ["fr-articles-01"],
     "confidence": "first_pass"
   },
   {
@@ -119,7 +138,9 @@
     "example_gloss": "I ate an apple. (literally: I have eaten an apple)",
     "bridge_lang": "pt",
     "bridge_note": "Portuguese has a simple one-word past tense (comi) for exactly this everyday use, so the two-part French construction can feel like overkill for something plain and finished — but in French it's the default, not a special \"have done\" nuance like English's present perfect.",
-    "related_game_id": null,
+    "related_game_id": "blank",
+    "branch": "Verbs & tense",
+    "prerequisites": [],
     "confidence": "first_pass"
   },
   {
@@ -133,6 +154,38 @@
     "bridge_lang": "pt",
     "bridge_note": "Portuguese doesn't compress a prepositional phrase into a single pronoun this way — it tends to just repeat or drop the phrase (vou lá / quero um pouco). French's y/en are a genuinely new compact tool, not a direct swap for anything already familiar.",
     "related_game_id": null,
+    "branch": "Sentence-building",
+    "prerequisites": ["fr-object-pronouns-01"],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "fr-conditional-01",
+    "lang": "fr",
+    "difficulty": 3,
+    "title": "The conditional mood for hypotheticals and politeness",
+    "explanation": "Built from the future stem plus imperfect endings, the conditional expresses what would happen (often in a si-clause) and softens requests into something politer.",
+    "example_native": "Si j'avais le temps, je viendrais.",
+    "example_gloss": "If I had time, I would come.",
+    "bridge_lang": "pt",
+    "bridge_note": "Portuguese has the same two-part logic split across a dedicated conditional tense (viria) — the concept transfers cleanly, just built from different pieces.",
+    "related_game_id": "blank",
+    "branch": "Verbs & tense",
+    "prerequisites": ["fr-passe-compose-01"],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "fr-relative-pronouns-01",
+    "lang": "fr",
+    "difficulty": 3,
+    "title": "Relative pronouns qui/que/dont/où each pick up a different grammatical role",
+    "explanation": "qui replaces a subject, que a direct object, dont anything governed by \"de,\" and où a place or time — English collapses all of this into \"that/which/whose/where\" fairly loosely, French doesn't.",
+    "example_native": "La maison où j'habite. Le livre dont je parle.",
+    "example_gloss": "The house where I live. The book I'm talking about.",
+    "bridge_lang": "pt",
+    "bridge_note": "Portuguese leans on \"que\" for almost everything colloquially, so French's four-way split (especially dont) is a genuinely new distinction to build, not a relabeling of something already automatic.",
+    "related_game_id": null,
+    "branch": "Sentence-building",
+    "prerequisites": [],
     "confidence": "first_pass"
   }
 ]

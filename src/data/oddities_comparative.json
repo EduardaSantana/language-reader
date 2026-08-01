@@ -126,5 +126,415 @@
       }
     ],
     "confidence": "first_pass"
+  },
+  {
+    "id": "cmp-negation",
+    "title": "How many words does it take to say \"no\"?",
+    "concept_note": "Negating a sentence looks like a small grammatical detail, but each language handles it in a completely different shape.",
+    "entries": [
+      {
+        "lang": "fr",
+        "native": "Je ne sais pas.",
+        "gloss": "I don't know.",
+        "note": "Historically two pieces wrapped around the verb (ne...pas) — though casual spoken French quietly drops the ne entirely."
+      },
+      {
+        "lang": "de",
+        "native": "Ich weiß es nicht.",
+        "gloss": "I don't know it.",
+        "note": "A single word, nicht, placed after the verb and object rather than wrapped around anything."
+      },
+      {
+        "lang": "ru",
+        "native": "Я не знаю.",
+        "gloss": "I don't know.",
+        "note": "Just не directly before the verb — the simplest of the four."
+      },
+      {
+        "lang": "ja",
+        "native": "分かりません。",
+        "gloss": "I don't understand/know.",
+        "note": "No separate negation word at all — negation is a verb ending swap (-ません/-ない)."
+      }
+    ],
+    "see_also": [{ "lang": "fr", "id": "fr-odd-ne-dropping" }],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "cmp-past-tense",
+    "title": "One past tense, or does the shape of the verb do the work?",
+    "concept_note": "\"I ate\" looks like a single idea, but these four languages build it with entirely different machinery.",
+    "entries": [
+      {
+        "lang": "fr",
+        "native": "J'ai mangé.",
+        "gloss": "I ate / I have eaten.",
+        "note": "Compound: avoir + past participle — an auxiliary verb doing half the work."
+      },
+      {
+        "lang": "de",
+        "native": "Ich habe gegessen.",
+        "gloss": "I ate / I have eaten.",
+        "note": "The same compound structure as French — haben + past participle."
+      },
+      {
+        "lang": "ru",
+        "native": "Я поел.",
+        "gloss": "I ate.",
+        "note": "A single verb form, no auxiliary — but it also encodes aspect (poel = completed the eating), not just tense."
+      },
+      {
+        "lang": "ja",
+        "native": "食べました。",
+        "gloss": "I ate.",
+        "note": "Also no auxiliary verb — the verb ending itself swaps (-ます → -ました) to mark past tense."
+      }
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "cmp-questions",
+    "title": "How do you turn a statement into a question?",
+    "concept_note": "Same underlying sentence, four different mechanisms for flagging \"this is a question.\"",
+    "entries": [
+      {
+        "lang": "fr",
+        "native": "Tu viens ? / Est-ce que tu viens ? / Viens-tu ?",
+        "gloss": "Are you coming?",
+        "note": "Three coexisting strategies: rising intonation alone, adding the est-ce que particle, or inverting subject and verb."
+      },
+      {
+        "lang": "de",
+        "native": "Kommst du?",
+        "gloss": "Are you coming?",
+        "note": "Just invert verb and subject — no extra particle needed."
+      },
+      {
+        "lang": "ru",
+        "native": "Ты придёшь?",
+        "gloss": "Are you coming?",
+        "note": "Identical word order to the statement — only intonation (and the question mark in writing) signals it's a question."
+      },
+      {
+        "lang": "ja",
+        "native": "来ますか？",
+        "gloss": "Are you coming?",
+        "note": "Add the particle か to the end of the statement — nothing else in the sentence changes at all."
+      }
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "cmp-plurals",
+    "title": "How do you show there's more than one?",
+    "concept_note": "\"Add an -s\" is an English habit — none of these four languages actually agree on how to mark plural.",
+    "entries": [
+      {
+        "lang": "fr",
+        "native": "le chat → les chats",
+        "gloss": "the cat → the cats",
+        "note": "The -s is silent — the plural is really carried by the article (le → les), not the noun's pronunciation."
+      },
+      {
+        "lang": "de",
+        "native": "das Kind → die Kinder, der Tisch → die Tische",
+        "gloss": "the child → the children, the table → the tables",
+        "note": "Several irregular patterns (umlaut, -er, -e, -(e)n, or no change) that have to be memorized per noun."
+      },
+      {
+        "lang": "ru",
+        "native": "книга → книги, but две книги / пять книг",
+        "gloss": "book → books, but two books / five books",
+        "note": "Plural endings shift again depending on the number counting them — see the numbers-and-case oddity."
+      },
+      {
+        "lang": "ja",
+        "native": "猫",
+        "gloss": "cat / cats",
+        "note": "No plural marking at all — the same word covers one or many, left to context."
+      }
+    ],
+    "see_also": [
+      { "lang": "ru", "id": "ru-odd-numbers-case" },
+      { "lang": "ja", "id": "ja-odd-no-plural" }
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "cmp-adjective-order",
+    "title": "Does the describing word come before or after the thing it describes?",
+    "concept_note": "Adjective placement looks trivial until you realize these languages split roughly down the middle on it.",
+    "entries": [
+      {
+        "lang": "fr",
+        "native": "une voiture rouge, but une belle voiture",
+        "gloss": "a red car, but a beautiful car",
+        "note": "Most adjectives follow the noun — but a small, common set (beauty, age, goodness, size) goes before it instead."
+      },
+      {
+        "lang": "de",
+        "native": "ein rotes Auto",
+        "gloss": "a red car",
+        "note": "Always before the noun, but the adjective's ending shifts with the noun's case, gender, and article."
+      },
+      {
+        "lang": "ru",
+        "native": "красная машина",
+        "gloss": "a red car",
+        "note": "Also always before the noun, agreeing in gender, number, and case with it."
+      },
+      {
+        "lang": "ja",
+        "native": "赤い車",
+        "gloss": "a red car",
+        "note": "Before the noun too — but i-adjectives like 赤い conjugate for tense/negation the same way verbs do."
+      }
+    ],
+    "see_also": [
+      { "lang": "fr", "id": "fr-adjective-position-01" },
+      { "lang": "de", "id": "de-adjective-endings-01" },
+      { "lang": "ru", "id": "ru-adjective-agreement-01" },
+      { "lang": "ja", "id": "ja-adjectives-01" }
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "cmp-diminutives",
+    "title": "How do you make a word sound small or affectionate?",
+    "concept_note": "Making something sound \"little\" or dear is a live, everyday grammatical process in some of these languages — and barely exists in others.",
+    "entries": [
+      {
+        "lang": "ru",
+        "native": "кошка → кошечка, Анна → Анечка/Анюта/Анюша",
+        "gloss": "cat → little cat, Anna → a dozen affectionate variants",
+        "note": "An extremely productive suffix system, stackable onto nearly any noun or name."
+      },
+      {
+        "lang": "de",
+        "native": "das Mädchen (from Magd + -chen)",
+        "gloss": "girl (from \"maid\" + a diminutive suffix)",
+        "note": "The -chen/-lein suffixes are productive too, and always force the resulting word to be neuter — regardless of the original noun's own gender."
+      },
+      {
+        "lang": "fr",
+        "native": "une fille → fillette",
+        "gloss": "a girl → a little girl",
+        "note": "Diminutive suffixes (-ette, -on) exist but are far less productive — mostly fixed, individually-memorized words rather than a live rule."
+      },
+      {
+        "lang": "ja",
+        "native": "たろう → たろうちゃん",
+        "gloss": "Taro → little/dear Taro",
+        "note": "Achieved through a name suffix (ちゃん) rather than reshaping the noun itself."
+      }
+    ],
+    "see_also": [
+      { "lang": "ru", "id": "ru-odd-name-diminutives" },
+      { "lang": "de", "id": "de-odd-madchen-neuter" }
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "cmp-counting",
+    "title": "Can you just say the number, or does something else have to agree with it?",
+    "concept_note": "Counting looks universal, but each language attaches its own extra grammatical baggage to numbers.",
+    "entries": [
+      {
+        "lang": "ja",
+        "native": "三匹の猫、三本の鉛筆",
+        "gloss": "three cats, three pencils",
+        "note": "You can't just say the number — a counter word tied to the object's shape or category comes with it every time."
+      },
+      {
+        "lang": "ru",
+        "native": "один стол, два стола, пять столов",
+        "gloss": "one table, two tables, five tables",
+        "note": "The number itself forces the following noun into a different case/form depending on which number it is."
+      },
+      {
+        "lang": "fr",
+        "native": "quatre-vingt-dix",
+        "gloss": "ninety (literally \"four-twenty-ten\")",
+        "note": "A base-20 counting system still hides inside standard French for 70-99."
+      },
+      {
+        "lang": "de",
+        "native": "einundzwanzig",
+        "gloss": "twenty-one (literally \"one-and-twenty\")",
+        "note": "Units are read before tens, reversed from English's order."
+      }
+    ],
+    "see_also": [
+      { "lang": "ja", "id": "ja-odd-counters" },
+      { "lang": "ru", "id": "ru-odd-numbers-case" },
+      { "lang": "fr", "id": "fr-odd-base-twenty" }
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "cmp-aspect",
+    "title": "Is the action finished, or still going — and is that baked into the verb itself?",
+    "concept_note": "English leans on tense plus a few helper words for this. One of these languages builds it straight into the verb's identity.",
+    "entries": [
+      {
+        "lang": "ru",
+        "native": "читать / прочитать",
+        "gloss": "to read (ongoing) / to read (to completion)",
+        "note": "Verbs come in aspect pairs — completion vs. ongoing-ness is marked independently of tense, on almost every verb."
+      },
+      {
+        "lang": "ja",
+        "native": "食べている",
+        "gloss": "eating / has eaten (depending on the verb)",
+        "note": "Ongoing/resultant aspect is built with a separate periphrastic form (-ている) rather than a distinct verb pair."
+      },
+      {
+        "lang": "fr",
+        "native": "je mangeais (imparfait) vs. j'ai mangé (passé composé)",
+        "gloss": "I was eating / used to eat vs. I ate",
+        "note": "No lexical aspect pairs — ongoing vs. completed is a choice between two separate past tenses instead."
+      },
+      {
+        "lang": "de",
+        "native": "ich aß",
+        "gloss": "I ate / I was eating",
+        "note": "No grammatical aspect marking at all — a single past tense covers both, disambiguated only by context."
+      }
+    ],
+    "see_also": [{ "lang": "ru", "id": "ru-aspect-01" }],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "cmp-space",
+    "title": "Does a single word change meaning depending on whether something is moving or staying still?",
+    "concept_note": "Talking about \"in\" or \"at\" a place sounds simple — two of these languages make the exact same preposition mean something different depending on grammar alone.",
+    "entries": [
+      {
+        "lang": "de",
+        "native": "in der Schule (dative) vs. in die Schule (accusative)",
+        "gloss": "in the school (staying) vs. into the school (moving)",
+        "note": "The same preposition, in, flips between marking static location and motion-toward purely via which case follows it."
+      },
+      {
+        "lang": "ru",
+        "native": "в школе (locative) vs. в школу (accusative)",
+        "gloss": "in the school (staying) vs. into the school (moving)",
+        "note": "Same mechanism as German — one preposition, two different cases, two different meanings."
+      },
+      {
+        "lang": "ja",
+        "native": "学校にいる vs. 学校で勉強する",
+        "gloss": "to be at school vs. to study at school",
+        "note": "Two different particles (に vs. で) split this instead — に for existing somewhere, で for an action happening somewhere."
+      },
+      {
+        "lang": "fr",
+        "native": "à l'école",
+        "gloss": "at/to school",
+        "note": "One invariant preposition either way — motion vs. location is disambiguated by the verb, not the preposition."
+      }
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "cmp-colors",
+    "title": "Is that blue, or is that a completely different color?",
+    "concept_note": "Basic color vocabulary feels like a universal, physical fact — until you notice languages don't slice the color wheel the same way.",
+    "entries": [
+      {
+        "lang": "ja",
+        "native": "青信号",
+        "gloss": "the \"blue\" traffic light",
+        "note": "青 (ao) historically spans what English splits into blue and green — the \"go\" light is called blue even though it looks green."
+      },
+      {
+        "lang": "ru",
+        "native": "синий / голубой",
+        "gloss": "dark blue / light blue",
+        "note": "Treated as two entirely separate basic colors, not shades of one \"blue\" — there's no single umbrella word for blue at all."
+      },
+      {
+        "lang": "fr",
+        "native": "bleu, vert",
+        "gloss": "blue, green",
+        "note": "Maps onto English's basic color set fairly closely, one word per color."
+      },
+      {
+        "lang": "de",
+        "native": "blau, grün",
+        "gloss": "blue, green",
+        "note": "Also a close one-to-one match with English's basic palette."
+      }
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "cmp-kinship",
+    "title": "Does your word for \"brother\" depend on whose family, or who's older?",
+    "concept_note": "\"Brother\" and \"mother\" feel like fixed, single words — some of these languages instead encode relative age or whose family you're talking about.",
+    "entries": [
+      {
+        "lang": "ja",
+        "native": "母 vs. お母さん",
+        "gloss": "my mother vs. (your/someone else's) mother",
+        "note": "The word changes depending on whether you're referring to your own family or someone else's — not just politeness, a real vocabulary split."
+      },
+      {
+        "lang": "ru",
+        "native": "Иван Петрович",
+        "gloss": "Ivan, son of Pyotr",
+        "note": "Formal names embed a patronymic — literally naming whose child you are, in every official reference to a person."
+      },
+      {
+        "lang": "de",
+        "native": "der Bruder",
+        "gloss": "brother",
+        "note": "One flat word regardless of relative age or whose family — no built-in distinction at all."
+      },
+      {
+        "lang": "fr",
+        "native": "le frère",
+        "gloss": "brother",
+        "note": "Same as German — a single word covers the relation with no age or ownership distinction."
+      }
+    ],
+    "see_also": [{ "lang": "ru", "id": "ru-odd-patronymic" }],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "cmp-large-numbers",
+    "title": "Does your language even group large numbers the same way?",
+    "concept_note": "English chunks big numbers in thousands. Not every one of these four languages agrees that's the natural unit.",
+    "entries": [
+      {
+        "lang": "ja",
+        "native": "一万 (10,000), 十万 (100,000)",
+        "gloss": "ten-thousand, hundred-thousand",
+        "note": "Numbers group in units of 10,000 (万), not 1,000 — so large numbers are chunked and read completely differently than in English."
+      },
+      {
+        "lang": "de",
+        "native": "einhundertdreiundzwanzig",
+        "gloss": "one hundred twenty-three",
+        "note": "Written and spoken as one long compound word, with the units-before-tens reversal baked into every number above twenty."
+      },
+      {
+        "lang": "ru",
+        "native": "сто двадцать три рубля",
+        "gloss": "one hundred twenty-three rubles",
+        "note": "The number-forces-noun-case rule still applies even at this size, compounding the complexity as numbers get bigger."
+      },
+      {
+        "lang": "fr",
+        "native": "quatre-vingt-treize",
+        "gloss": "ninety-three (literally \"four-twenty-thirteen\")",
+        "note": "The base-20 leftover keeps compounding for every number in the 80s and 90s, not just round tens."
+      }
+    ],
+    "see_also": [
+      { "lang": "ru", "id": "ru-odd-numbers-case" },
+      { "lang": "fr", "id": "fr-odd-base-twenty" }
+    ],
+    "confidence": "first_pass"
   }
 ]

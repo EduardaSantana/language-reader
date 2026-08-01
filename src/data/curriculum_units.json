@@ -1,0 +1,74 @@
+[
+  {
+    "lang": "de",
+    "branch": "Word order & clauses",
+    "narrative": "German sentences aren't built left-to-right the way English ones are — the verb has fixed addresses depending on what kind of clause it's in, and everything else gets arranged around it. By the end of this unit you'll be able to read (and build) a German sentence of any shape — main clause, modal, separable verb, subordinate clause — without losing track of where the action word actually is.",
+    "confidence": "first_pass"
+  },
+  {
+    "lang": "de",
+    "branch": "Nouns: gender, case & plurals",
+    "narrative": "German nouns don't just have a gender — that gender ripples out into every article and adjective around them, and shifts again depending on the noun's role in the sentence. By the end of this unit you'll be able to correctly decline a full noun phrase, not just memorize der/die/das in isolation.",
+    "confidence": "first_pass"
+  },
+  {
+    "lang": "de",
+    "branch": "Tense & register",
+    "narrative": "Two small, everyday decisions — how to say something didn't happen, and how to talk about the past — trip up beginners constantly because German splits each into two distinct options with real rules behind them. This unit gets both decisions automatic, so they stop being a pause before every sentence.",
+    "confidence": "first_pass"
+  },
+  {
+    "lang": "fr",
+    "branch": "Nouns & agreement",
+    "narrative": "Every French noun carries a gender that has to agree across its article and any adjective describing it — and a few common adjectives even jump to the front of the noun when they do. This unit builds that agreement into instinct, from picking le/la correctly through to hearing plural in speech even when it's silent on the page.",
+    "confidence": "first_pass"
+  },
+  {
+    "lang": "fr",
+    "branch": "Verbs & tense",
+    "narrative": "French's everyday past tense and its conditional mood share the same two-part structure — a helper piece plus a modified verb — once you've got the first, the second stops feeling new. By the end of this unit you can talk about what happened and what would happen, plus negate either one correctly.",
+    "confidence": "first_pass"
+  },
+  {
+    "lang": "fr",
+    "branch": "Sentence-building",
+    "narrative": "This unit is about the small words that hold a French sentence together — where pronouns sit, how y and en compress whole phrases into one syllable, and how relative pronouns pick apart exactly which role a clause is playing. These are the pieces that make longer, more natural sentences possible instead of short, choppy ones.",
+    "confidence": "first_pass"
+  },
+  {
+    "lang": "ru",
+    "branch": "Nouns: gender & case",
+    "narrative": "Russian's six cases mark almost everything English leaves to word order and prepositions — once gender clicks (it's more predictable than French or German), case is really just learning what each of those six roles sounds like on top of it. By the end of this unit you can read why a noun ending changed, not just recognize that it did.",
+    "confidence": "first_pass"
+  },
+  {
+    "lang": "ru",
+    "branch": "Verbs: aspect & motion",
+    "narrative": "Russian verbs carry information English puts into extra words — whether an action is finished or ongoing, and whether \"going\" means a single trip or a habit. This unit builds the two-verb instinct for both distinctions, which is most of what makes a Russian verb choice feel foreign at first.",
+    "confidence": "first_pass"
+  },
+  {
+    "lang": "ru",
+    "branch": "Sentence structure",
+    "narrative": "With cases doing the grammatical work, Russian word order is free to do something else entirely — carry emphasis. This short unit connects that freedom back to the case system from the previous unit, so reordered sentences read as a choice, not a puzzle.",
+    "confidence": "first_pass"
+  },
+  {
+    "lang": "ja",
+    "branch": "Sentence structure & particles",
+    "narrative": "Japanese doesn't use word order to show who's doing what — it uses small particles glued onto each word instead, which is why the verb can safely wait until the very end. This unit builds that particle-reading habit from the ground up, ending with topic-vs-subject and relative clauses, the two places beginners most often lose the thread.",
+    "confidence": "first_pass"
+  },
+  {
+    "lang": "ja",
+    "branch": "Verb forms",
+    "narrative": "One verb ending — the て form — is the hinge this whole unit turns on: it chains actions, builds requests, and feeds directly into the conditional and causative/passive forms covered later in the unit. Learn て form solidly and the rest of this unit is mostly reusing it in new contexts, not new material from scratch.",
+    "confidence": "first_pass"
+  },
+  {
+    "lang": "ja",
+    "branch": "Register & adjectives",
+    "narrative": "Politeness in Japanese isn't tone of voice — it's a grammatical choice built on the same verb-form instincts from the Verb forms unit, and i-adjectives conjugate on their own rules that don't map onto anything in English. This unit is short but changes how every sentence you build actually sounds to a listener.",
+    "confidence": "first_pass"
+  }
+]

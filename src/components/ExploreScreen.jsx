@@ -5,6 +5,7 @@ import {
   grammarPointsForLang,
   oddityPointsForLang,
   oddityNodeId,
+  grammarNodeId,
   comparativeOddityPoints,
   comparativeNodeId,
   vocabNodeId,
@@ -21,8 +22,10 @@ import {
   getSeenOddities,
   markOdditySeen,
   markOdditiesSeen,
+  getReadStories,
 } from '../lib/storage'
 import { getDigDeeperSuggestions } from '../lib/companion'
+import { GAMES_REQUIRING_READ_STORY } from '../lib/games'
 import { langMeta } from '../lib/langs'
 import BottomNav from './BottomNav'
 import EntryCard from './EntryCard'
@@ -33,22 +36,7 @@ const CATEGORIES = [
   { key: 'verb', label: 'Verbs' },
 ]
 
-function grammarPointToNode(g) {
-  return {
-    id: `${g.lang}:grammar:${g.id}`,
-    lang: g.lang,
-    type: 'grammar',
-    pos: null,
-    title: g.title,
-    reading: null,
-    subtitle: g.explanation,
-    example: { native: g.example_native, gloss: g.example_gloss, source: null },
-    note: g.bridge_note ?? null,
-    relatedGameId: g.related_game_id ?? null,
-    vocabEntry: null,
-    related: [],
-  }
-}
+const TIER_LABELS = { 1: 'Beginner', 2: 'Intermediate', 3: 'Advanced' }
 
 function vocabEntryToNode(entry) {
   const pos = classifyVocab(entry)
@@ -69,7 +57,7 @@ function vocabEntryToNode(entry) {
 }
 
 
-export default function ExploreScreen({ stories, wordSeed, nodeSeed, onOpenGame, activeTab, onChangeTab }) {
+export default function ExploreScreen({ stories, wordSeed, nodeSeed, onOpenGame, onOpenStory, activeTab, onChangeTab }) {
   const graph = useMemo(() => buildExploreGraph(stories), [stories])
   const unseenCount = useMemo(() => getUnseenSavedWords().size, [])
 
@@ -194,7 +182,7 @@ export default function ExploreScreen({ stories, wordSeed, nodeSeed, onOpenGame,
   }
 
   function handlePractice(node) {
-    onOpenGame?.('sentence-build', node.relatedGameId, node.lang)
+    onOpenGame?.(node.relatedGameId, null, node.lang)
   }
 
   const oddities = useMemo(() => oddityPointsForLang(pathLang), [pathLang])
@@ -212,6 +200,21 @@ export default function ExploreScreen({ stories, wordSeed, nodeSeed, onOpenGame,
     setSeenOddities(markOdditiesSeen(comparativeOddities.map((c) => comparativeNodeId(c.id))))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode, showComparative, comparativeOddities])
+
+  const readStoriesByLang = useMemo(() => {
+    const readIndices = getReadStories()
+    const byLang = new Set()
+    for (const s of stories) {
+      if (readIndices.has(s.idx)) byLang.add(s.lang)
+    }
+    return byLang
+  }, [stories])
+
+  function canPractice(node) {
+    if (!node.relatedGameId) return false
+    if (GAMES_REQUIRING_READ_STORY.has(node.relatedGameId)) return readStoriesByLang.has(node.lang)
+    return true
+  }
 
   const grammarPath = useMemo(() => buildGrammarPath(grammarPointsForLang(pathLang)), [pathLang])
   const vocabDictForPathLang = useMemo(
@@ -274,7 +277,10 @@ export default function ExploreScreen({ stories, wordSeed, nodeSeed, onOpenGame,
               onNavigate={navigateTo}
               onSave={currentNode.vocabEntry ? () => handleSave(currentNode) : null}
               saved={currentNode.vocabEntry ? isWordSaved(currentNode.lang, currentNode.vocabEntry.word) : false}
-              onPractice={currentNode.relatedGameId ? () => handlePractice(currentNode) : null}
+              onPractice={canPractice(currentNode) ? () => handlePractice(currentNode) : null}
+              onReadInStory={
+                currentNode.storyContext ? () => onOpenStory?.(currentNode.storyContext.storyIndex) : null
+              }
               onDigDeeper={() => handleDigDeeper(currentNode)}
               diggingDeeper={diggingDeeperId === currentNode.id}
             />
@@ -316,15 +322,23 @@ export default function ExploreScreen({ stories, wordSeed, nodeSeed, onOpenGame,
                   {grammarPath.length} stop{grammarPath.length === 1 ? '' : 's'} — basic to complex
                 </p>
                 {grammarPath.map((g, i) => {
-                  const node = grammarPointToNode(g)
+                  const node = graph.getNode(grammarNodeId(g.lang, g.id))
+                  if (!node) return null
+                  const tier = TIER_LABELS[g.difficulty] ?? null
+                  const showTierHeader = tier && g.difficulty !== grammarPath[i - 1]?.difficulty
                   return (
-                    <EntryCard
-                      key={g.id}
-                      node={node}
-                      stepLabel={`${i + 1} / ${grammarPath.length}`}
-                      onPractice={node.relatedGameId ? () => handlePractice(node) : null}
-                      onOpenRabbitHole={() => startRabbitHole(node.id)}
-                    />
+                    <Fragment key={g.id}>
+                      {showTierHeader && <div className="path-tier-header">{tier}</div>}
+                      <EntryCard
+                        node={node}
+                        stepLabel={`${i + 1} / ${grammarPath.length}`}
+                        showRefs
+                        onNavigate={startRabbitHole}
+                        onPractice={canPractice(node) ? () => handlePractice(node) : null}
+                        onReadInStory={node.storyContext ? () => onOpenStory?.(node.storyContext.storyIndex) : null}
+                        onOpenRabbitHole={() => startRabbitHole(node.id)}
+                      />
+                    </Fragment>
                   )
                 })}
               </>
@@ -368,26 +382,34 @@ export default function ExploreScreen({ stories, wordSeed, nodeSeed, onOpenGame,
               </button>
             ))}
             <button
-              className={`level-pill-button ${showComparative ? 'active' : ''}`}
+              className={`level-pill-button level-pill-button-comparative ${showComparative ? 'active' : ''}`}
               onClick={() => setShowComparative(true)}
             >
-              🌐 All languages
+              🌐 All languages compared
             </button>
           </div>
 
           {showComparative ? (
-            comparativeOddities.map((c) => {
-              const node = graph.getNode(comparativeNodeId(c.id))
-              if (!node) return null
-              return (
-                <EntryCard
-                  key={c.id}
-                  node={node}
-                  isNew={!seenOddities.has(node.id)}
-                  onOpenRabbitHole={() => startRabbitHole(node.id)}
-                />
-              )
-            })
+            <>
+              <p className="path-progress">
+                🌐 {comparativeOddities.length} concept{comparativeOddities.length === 1 ? '' : 's'} compared across
+                all 4 languages
+              </p>
+              {comparativeOddities.map((c) => {
+                const node = graph.getNode(comparativeNodeId(c.id))
+                if (!node) return null
+                return (
+                  <EntryCard
+                    key={c.id}
+                    node={node}
+                    showRefs
+                    isNew={!seenOddities.has(node.id)}
+                    onNavigate={startRabbitHole}
+                    onOpenRabbitHole={() => startRabbitHole(node.id)}
+                  />
+                )
+              })}
+            </>
           ) : oddities.length === 0 ? (
             <p className="path-empty">No oddities charted for this language yet.</p>
           ) : (

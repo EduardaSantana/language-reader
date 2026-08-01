@@ -19,7 +19,7 @@ export default function BiteCard({ entry, cardRef, cardIndex, onPractice }) {
             <div className="bridge-note-text">{entry.bridge_note}</div>
           </div>
         )}
-        {entry.related_game_id && (
+        {entry.related_game_id && onPractice && (
           <button className="explore-link-button bite-practice-button" onClick={onPractice}>
             Practice this →
           </button>

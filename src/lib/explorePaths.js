@@ -65,6 +65,42 @@ export function buildGrammarPath(grammarPoints) {
   return [...grammarPoints].sort((a, b) => a.difficulty - b.difficulty)
 }
 
+// Prerequisites can point outside the branch (a genuine cross-branch link) —
+// those don't constrain this branch's own ordering, only same-branch ones do.
+function topoSortBranch(points) {
+  const idsInBranch = new Set(points.map((p) => p.id))
+  const placed = new Set()
+  const remaining = [...points]
+  const result = []
+  while (remaining.length > 0) {
+    const idx = remaining.findIndex((p) =>
+      (p.prerequisites ?? []).every((prereqId) => !idsInBranch.has(prereqId) || placed.has(prereqId)),
+    )
+    const [next] = remaining.splice(idx === -1 ? 0 : idx, 1)
+    placed.add(next.id)
+    result.push(next)
+  }
+  return result
+}
+
+/** Groups grammar points into named branches (first-seen order), each
+ * internally ordered by real prerequisite edges rather than difficulty —
+ * the "skill-tree" curriculum view, as opposed to buildGrammarPath's flat
+ * difficulty sort. */
+export function buildCurriculum(grammarPoints) {
+  const branchOrder = []
+  const byBranch = new Map()
+  for (const g of grammarPoints) {
+    const key = g.branch ?? 'General'
+    if (!byBranch.has(key)) {
+      byBranch.set(key, [])
+      branchOrder.push(key)
+    }
+    byBranch.get(key).push(g)
+  }
+  return branchOrder.map((branch) => ({ branch, points: topoSortBranch(byBranch.get(branch)) }))
+}
+
 /** Vocab entries of one category (noun/verb) for a language, ordered by the story
  * level they were first introduced at — basic → complex, using real progression
  * data rather than an invented difficulty score. */

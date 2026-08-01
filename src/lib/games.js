@@ -1,3 +1,9 @@
+// 'order' and 'blank' rebuild/quote a sentence from a story the learner has
+// actually read (see pickSentenceForOrder/pickFillInBlank below) — offering
+// "Practice this" for either without at least one read story in that
+// language is a dead end (the game has nothing to show).
+export const GAMES_REQUIRING_READ_STORY = new Set(['order', 'blank'])
+
 export function shuffle(arr) {
   const copy = [...arr]
   for (let i = copy.length - 1; i > 0; i--) {

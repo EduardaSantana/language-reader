@@ -8,6 +8,7 @@ export default function EntryCard({
   onSave,
   saved,
   onPractice,
+  onReadInStory,
   onDigDeeper,
   diggingDeeper,
   onOpenRabbitHole,
@@ -44,6 +45,32 @@ export default function EntryCard({
             )
           })}
         </div>
+
+        {showRefs && node.related.length > 0 && (
+          <>
+            <div className="refs-label">See also</div>
+            <div className="refs-list">
+              {node.related.map((rel) => {
+                const relMeta = langMeta(rel.lang)
+                return (
+                  <button
+                    key={rel.id}
+                    className="ref-button"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      onNavigate(rel.id)
+                    }}
+                  >
+                    <span className={`ref-mark lang-tag-${rel.lang}`}>{relMeta.avatar}</span>
+                    <span className="ref-word" lang={rel.lang}>
+                      {rel.title}
+                    </span>
+                  </button>
+                )
+              })}
+            </div>
+          </>
+        )}
       </div>
     )
   }
@@ -117,8 +144,45 @@ export default function EntryCard({
         </button>
       )}
 
+      {node.storyContext && onReadInStory && (
+        <button
+          className="explore-link-button"
+          onClick={(e) => {
+            e.stopPropagation()
+            onReadInStory()
+          }}
+        >
+          Read it in a story →
+        </button>
+      )}
+
       {showRefs && (
         <>
+          {node.prerequisiteRefs?.length > 0 && (
+            <>
+              <div className="refs-label">Builds on</div>
+              <div className="refs-list">
+                {node.prerequisiteRefs.map((rel) => {
+                  const relMeta = langMeta(rel.lang)
+                  return (
+                    <button
+                      key={rel.id}
+                      className="ref-button"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        onNavigate(rel.id)
+                      }}
+                    >
+                      <span className={`ref-mark lang-tag-${rel.lang}`}>{relMeta.avatar}</span>
+                      <span className="ref-word" lang={rel.lang}>
+                        {rel.title}
+                      </span>
+                    </button>
+                  )
+                })}
+              </div>
+            </>
+          )}
           {node.related.length > 0 && (
             <>
               <div className="refs-label">See also</div>

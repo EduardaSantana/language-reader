@@ -9,7 +9,10 @@
     "example_gloss": "I see a book. (книга → книгу, accusative)",
     "bridge_lang": "en",
     "bridge_note": "English marks this only in pronouns (I/me, he/him) — Russian does it on every noun and its adjectives, closer in spirit to German's four cases, just with two more of them.",
-    "related_game_id": null,
+    "related_game_id": "blank",
+    "related_oddity_id": { "lang": "ru", "id": "ru-odd-numbers-case" },
+    "branch": "Nouns: gender & case",
+    "prerequisites": ["ru-gender-01"],
     "see_also": [{ "lang": "de", "id": "de-case-01" }],
     "confidence": "first_pass"
   },
@@ -23,7 +26,10 @@
     "example_gloss": "I was writing a letter. / I wrote (finished) a letter.",
     "bridge_lang": "en",
     "bridge_note": "English leans on phrasing to make this distinction (\"was writing\" vs \"wrote\") rather than a fully separate verb — Russian grammaticalizes it as two related but distinct words you have to learn as a pair.",
-    "related_game_id": null,
+    "related_game_id": "blank",
+    "related_oddity_id": { "lang": "ru", "id": "ru-odd-aspect-imperative" },
+    "branch": "Verbs: aspect & motion",
+    "prerequisites": ["ru-present-tense-01"],
     "confidence": "first_pass"
   },
   {
@@ -37,6 +43,8 @@
     "bridge_lang": "en",
     "bridge_note": "English speakers learning Russian often keep reaching for a word that isn't there — the opposite problem of French/German, where the article is mandatory even in places English drops it.",
     "related_game_id": null,
+    "branch": "Sentence structure",
+    "prerequisites": [],
     "confidence": "first_pass"
   },
   {
@@ -50,6 +58,9 @@
     "bridge_lang": "en",
     "bridge_note": "English makes this distinction with context or extra words (\"right now\" vs \"every day\"), never with a different verb — this is a real vocabulary split English speakers have to build from scratch.",
     "related_game_id": null,
+    "related_oddity_id": { "lang": "ru", "id": "ru-odd-motion-verbs" },
+    "branch": "Verbs: aspect & motion",
+    "prerequisites": ["ru-aspect-01"],
     "confidence": "first_pass"
   },
   {
@@ -63,6 +74,8 @@
     "bridge_lang": "en",
     "bridge_note": "English has no grammatical gender to unlearn, but the comparison worth making is to French/German gender — where the ending usually gives no hint at all. Russian's endings do most of the guessing work for you.",
     "related_game_id": null,
+    "branch": "Nouns: gender & case",
+    "prerequisites": [],
     "confidence": "first_pass"
   },
   {
@@ -75,7 +88,9 @@
     "example_gloss": "Both mean \"Anna is reading the book\" — the emphasis just shifts.",
     "bridge_lang": "en",
     "bridge_note": "English relies on rigid subject-verb-object order to show who's doing what to whom, so reordering a sentence changes its meaning. Russian can reorder freely because the case endings — not the position — carry that information.",
-    "related_game_id": null,
+    "related_game_id": "order",
+    "branch": "Sentence structure",
+    "prerequisites": ["ru-case-01"],
     "confidence": "first_pass"
   },
   {
@@ -89,6 +104,8 @@
     "bridge_lang": "en",
     "bridge_note": "English adjectives never change form no matter what they describe. Russian adjectives carry the same agreement burden nouns do — learning a noun's gender also means learning how every adjective attached to it will need to flex.",
     "related_game_id": null,
+    "branch": "Nouns: gender & case",
+    "prerequisites": ["ru-case-01"],
     "confidence": "first_pass"
   },
   {
@@ -102,6 +119,8 @@
     "bridge_lang": "en",
     "bridge_note": "English always needs the word \"with\" to introduce a tool. Russian can fold that entire meaning into how the noun itself ends.",
     "related_game_id": null,
+    "branch": "Nouns: gender & case",
+    "prerequisites": ["ru-case-01"],
     "confidence": "first_pass"
   },
   {
@@ -115,6 +134,38 @@
     "bridge_lang": "en",
     "bridge_note": "English bolts on a separate word (\"myself,\" \"each other\") after the verb. Russian bakes the same meaning directly into the verb's own ending, so the reflexive verb is really its own vocabulary word to learn, not a formula.",
     "related_game_id": null,
+    "branch": "Verbs: aspect & motion",
+    "prerequisites": ["ru-present-tense-01"],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-present-tense-01",
+    "lang": "ru",
+    "difficulty": 1,
+    "title": "Present-tense verbs split into two conjugation patterns",
+    "explanation": "Nearly every verb follows one of two conjugation groups once the infinitive ending is stripped off — the endings that attach for I/you/he/we/they differ by which group the verb belongs to.",
+    "example_native": "Я читаю. Ты читаешь. Он читает.",
+    "example_gloss": "I read. You read. He reads.",
+    "bridge_lang": "en",
+    "bridge_note": "English barely conjugates at all (read/read/reads). Russian marks every person distinctly, but at least the ending is predictable once you know which of the two conjugation groups a verb belongs to.",
+    "related_game_id": "blank",
+    "branch": "Verbs: aspect & motion",
+    "prerequisites": [],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-participles-01",
+    "lang": "ru",
+    "difficulty": 3,
+    "title": "Participles fold a whole relative clause into one adjective-like word",
+    "explanation": "Active and passive participles (читающий \"reading,\" прочитанный \"having been read\") let Russian avoid a separate relative clause much of the time — a single verb-derived word that still agrees in gender, case, and number like any adjective.",
+    "example_native": "Мальчик, читающий книгу.",
+    "example_gloss": "The boy who is reading a book.",
+    "bridge_lang": "en",
+    "bridge_note": "English needs a full relative clause (\"who is reading\") to express this. Russian can compress it into one word that behaves grammatically like an adjective, agreeing with the noun it modifies.",
+    "related_game_id": null,
+    "branch": "Nouns: gender & case",
+    "prerequisites": ["ru-adjective-agreement-01"],
     "confidence": "first_pass"
   }
 ]

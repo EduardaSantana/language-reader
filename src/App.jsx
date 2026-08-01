@@ -14,6 +14,7 @@ import './App.css'
 
 const BookmarksScreen = lazy(() => import('./components/BookmarksScreen'))
 const ExploreScreen = lazy(() => import('./components/ExploreScreen'))
+const CurriculumScreen = lazy(() => import('./components/CurriculumScreen'))
 const GamesScreen = lazy(() => import('./components/GamesScreen'))
 const ProfileScreen = lazy(() => import('./components/ProfileScreen'))
 
@@ -138,6 +139,21 @@ function App() {
           wordSeed={exploreWordSeed}
           nodeSeed={exploreNodeSeed}
           onOpenGame={openGame}
+          onOpenStory={openStoryFromElsewhere}
+          activeTab={tab}
+          onChangeTab={changeTab}
+        />
+      </Suspense>
+    )
+  } else if (tab === 'curriculum') {
+    screen = (
+      <Suspense fallback={null}>
+        <CurriculumScreen
+          key={resetKey}
+          stories={allStories}
+          onOpenGame={openGame}
+          onOpenStory={openStoryFromElsewhere}
+          onExploreNode={openExploreForNode}
           activeTab={tab}
           onChangeTab={changeTab}
         />

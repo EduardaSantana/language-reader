@@ -15,6 +15,7 @@ import {
   setFeedOrder,
 } from '../lib/storage'
 import { syncAppBadge } from '../lib/badge'
+import { GAMES_REQUIRING_READ_STORY } from '../lib/games'
 import StoryCard from './StoryCard'
 import BiteCard from './BiteCard'
 import SearchModal from './SearchModal'
@@ -127,8 +128,14 @@ export default function ReadingScreen({
     containerRef.current?.scrollTo({ top: 0, behavior: 'instant' })
   }
 
+  function canPracticeBite(point) {
+    if (!point.related_game_id) return false
+    if (!GAMES_REQUIRING_READ_STORY.has(point.related_game_id)) return true
+    return stories.some((s) => s.lang === point.lang && readStories.has(s.idx))
+  }
+
   function handlePracticeBite(point) {
-    onOpenGame?.('sentence-build', point.related_game_id, point.lang)
+    onOpenGame?.(point.related_game_id, null, point.lang)
   }
 
   function handleShuffleBites() {
@@ -314,7 +321,7 @@ export default function ReadingScreen({
                 cardRef={(el) => (cardRefs.current[i] = el)}
                 cardIndex={i}
                 entry={card.point}
-                onPractice={() => handlePracticeBite(card.point)}
+                onPractice={canPracticeBite(card.point) ? () => handlePracticeBite(card.point) : null}
               />
             ))
           : cards.map((card, i) => {

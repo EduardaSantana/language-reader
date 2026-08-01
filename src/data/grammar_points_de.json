@@ -9,7 +9,9 @@
     "example_gloss": "Yesterday, I went home.",
     "bridge_lang": "en",
     "bridge_note": "English does the same thing, just only after certain fronted words — \"Never have I seen such a thing,\" \"Only then did she realize.\" German just runs on this constantly instead of in a few fossilized cases.",
-    "related_game_id": null,
+    "related_game_id": "order",
+    "branch": "Word order & clauses",
+    "prerequisites": [],
     "see_also": [
       {
         "lang": "fr",
@@ -29,6 +31,8 @@
     "bridge_lang": "en",
     "bridge_note": "English mostly lost this except in pronouns (I/me, he/him, who/whom) — the concept isn't foreign, just far more limited in English.",
     "related_game_id": null,
+    "branch": "Nouns: gender, case & plurals",
+    "prerequisites": ["de-gender-01"],
     "see_also": [
       {
         "lang": "ru",
@@ -48,6 +52,8 @@
     "bridge_lang": "en",
     "bridge_note": "English keeps modal and infinitive stuck together (\"have to work\") — German is happy to separate them by a whole clause's worth.",
     "related_game_id": null,
+    "branch": "Word order & clauses",
+    "prerequisites": ["de-verb-second-01"],
     "confidence": "first_pass"
   },
   {
@@ -61,6 +67,9 @@
     "bridge_lang": "en",
     "bridge_note": "The closest English cousin is phrasal verbs behaving similarly (\"I put my coat on\"), though German is much stricter about exactly where the prefix lands.",
     "related_game_id": null,
+    "related_oddity_id": { "lang": "de", "id": "de-odd-separable-verb-distance" },
+    "branch": "Word order & clauses",
+    "prerequisites": ["de-verb-second-01"],
     "confidence": "first_pass"
   },
   {
@@ -74,6 +83,9 @@
     "bridge_lang": "en",
     "bridge_note": "Worth stating plainly rather than forcing a false bridge — this is the one point that's just memorization.",
     "related_game_id": null,
+    "related_oddity_id": { "lang": "de", "id": "de-odd-madchen-neuter" },
+    "branch": "Nouns: gender, case & plurals",
+    "prerequisites": [],
     "confidence": "first_pass"
   },
   {
@@ -87,6 +99,8 @@
     "bridge_lang": "en",
     "bridge_note": "English mostly just adds -s and calls it done, with a small memorized set of exceptions (child/children, mouse/mice). German flips that ratio — the exceptions are the rule, and every new noun's plural has to be learned alongside its gender.",
     "related_game_id": null,
+    "branch": "Nouns: gender, case & plurals",
+    "prerequisites": ["de-gender-01"],
     "confidence": "first_pass"
   },
   {
@@ -99,7 +113,9 @@
     "example_gloss": "I ate. (literally: I have eaten)",
     "bridge_lang": "en",
     "bridge_note": "The shape matches English's present perfect (\"I have eaten\") exactly, but English reserves that for actions with present relevance, using simple past (\"I ate\") for a finished event. German uses the Perfekt for both — the familiar shape, doing more work than it does in English.",
-    "related_game_id": null,
+    "related_game_id": "blank",
+    "branch": "Tense & register",
+    "prerequisites": [],
     "confidence": "first_pass"
   },
   {
@@ -113,6 +129,8 @@
     "bridge_lang": "en",
     "bridge_note": "English adjectives never change form no matter what they describe — this layer of agreement doesn't exist at all in English, so it's one of the purely additive rules with no shortcut, not just a different version of something already known.",
     "related_game_id": null,
+    "branch": "Nouns: gender, case & plurals",
+    "prerequisites": ["de-case-01"],
     "confidence": "first_pass"
   },
   {
@@ -125,7 +143,40 @@
     "example_gloss": "..., because I am sick.",
     "bridge_lang": "en",
     "bridge_note": "English keeps the verb right after its subject no matter what kind of clause it's in (\"because I am sick\" — verb stays put). German's main-clause V2 rule gets suspended entirely here, which trips up learners who've just gotten comfortable with verb-second.",
-    "related_game_id": null,
+    "related_game_id": "order",
+    "branch": "Word order & clauses",
+    "prerequisites": ["de-verb-second-01"],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-negation-01",
+    "lang": "de",
+    "difficulty": 1,
+    "title": "\"nicht\" or \"kein\" — negating a verb vs. negating a noun",
+    "explanation": "nicht negates verbs, adjectives, or a whole clause; kein negates a noun that would otherwise take ein or no article at all. Picking the wrong one is one of the most common beginner slips.",
+    "example_native": "Ich habe kein Auto. Ich fahre nicht.",
+    "example_gloss": "I don't have a car. I'm not driving.",
+    "bridge_lang": "en",
+    "bridge_note": "English just uses \"not\"/\"no\" for both cases without needing to pick a lane — German forces the choice every time based on whether a noun or something else is being negated.",
+    "related_game_id": "blank",
+    "related_oddity_id": { "lang": "de", "id": "de-odd-doch" },
+    "branch": "Tense & register",
+    "prerequisites": [],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-relative-clauses-01",
+    "lang": "de",
+    "difficulty": 3,
+    "title": "Relative pronouns decline like der/die/das, matched to the clause's own grammar",
+    "explanation": "The relative pronoun (der, die, das, or a case-inflected form like dem/den/deren) agrees with the noun it refers back to in gender and number, but takes its case from the role it plays inside the relative clause itself.",
+    "example_native": "Der Mann, der dort steht, ist mein Lehrer.",
+    "example_gloss": "The man who is standing there is my teacher.",
+    "bridge_lang": "en",
+    "bridge_note": "English uses one flat \"who/that/which\" regardless of role. German's relative pronoun carries the same case-marking work as any other article, so it changes shape depending on what job it's doing inside its own clause.",
+    "related_game_id": "order",
+    "branch": "Nouns: gender, case & plurals",
+    "prerequisites": ["de-case-01"],
     "confidence": "first_pass"
   }
 ]
