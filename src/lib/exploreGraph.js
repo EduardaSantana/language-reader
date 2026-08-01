@@ -6,6 +6,7 @@ import oddityFr from '../data/oddities_fr.json'
 import oddityDe from '../data/oddities_de.json'
 import oddityRu from '../data/oddities_ru.json'
 import oddityJa from '../data/oddities_ja.json'
+import comparativeOddities from '../data/oddities_comparative.json'
 import { buildDictionary, stripLeadingArticle } from './vocabIndex'
 import { classifyVocab } from './explorePaths'
 
@@ -13,12 +14,20 @@ const GRAMMAR_BY_LANG = { fr: grammarFr, de: grammarDe, ru: grammarRu, ja: gramm
 const ODDITIES_BY_LANG = { fr: oddityFr, de: oddityDe, ru: oddityRu, ja: oddityJa }
 export const EXPLORE_LANGS = Object.keys(GRAMMAR_BY_LANG)
 
+// Comparative oddities aren't tied to one language — id uses "all" as the
+// pseudo-lang segment so they still fit the existing lang:type:key id scheme.
+const COMPARATIVE_LANG = 'all'
+
 export function grammarPointsForLang(lang) {
   return GRAMMAR_BY_LANG[lang] ?? []
 }
 
 export function oddityPointsForLang(lang) {
   return ODDITIES_BY_LANG[lang] ?? []
+}
+
+export function comparativeOddityPoints() {
+  return comparativeOddities
 }
 
 export function vocabNodeId(lang, word) {
@@ -31,6 +40,10 @@ export function grammarNodeId(lang, id) {
 
 export function oddityNodeId(lang, id) {
   return `${lang}:oddity:${id}`
+}
+
+export function comparativeNodeId(id) {
+  return `${COMPARATIVE_LANG}:comparative:${id}`
 }
 
 function sentenceText(sentence) {
@@ -60,6 +73,7 @@ export function buildExploreGraph(stories) {
   const dictByLang = {}
   const vocabByWord = {}
   const vocabByStory = {}
+  const allOddities = EXPLORE_LANGS.flatMap((lang) => (ODDITIES_BY_LANG[lang] ?? []).map((o) => ({ ...o, lang })))
 
   for (const lang of EXPLORE_LANGS) {
     const dict = buildDictionary(stories.filter((s) => s.lang === lang))
@@ -177,6 +191,12 @@ export function buildExploreGraph(stories) {
         })
       }
     }
+    if (o.cluster) {
+      const clusterMates = allOddities.filter((other) => other.cluster === o.cluster && other.id !== o.id)
+      for (const mate of clusterMates.slice(0, 2)) {
+        related.push({ id: oddityNodeId(mate.lang, mate.id), lang: mate.lang, type: 'oddity', title: mate.title })
+      }
+    }
     return {
       id: oddityNodeId(lang, id),
       lang,
@@ -193,11 +213,32 @@ export function buildExploreGraph(stories) {
     }
   }
 
+  function getComparativeNode(id) {
+    const c = comparativeOddities.find((p) => p.id === id)
+    if (!c) return null
+    return {
+      id: comparativeNodeId(id),
+      lang: COMPARATIVE_LANG,
+      type: 'comparative',
+      pos: null,
+      title: c.title,
+      reading: null,
+      subtitle: c.concept_note,
+      example: null,
+      note: null,
+      relatedGameId: null,
+      vocabEntry: null,
+      entries: c.entries,
+      related: [],
+    }
+  }
+
   function getNode(id) {
     const [lang, type, ...rest] = id.split(':')
     const key = rest.join(':')
     if (type === 'grammar') return getGrammarNode(lang, key)
     if (type === 'oddity') return getOddityNode(lang, key)
+    if (type === 'comparative') return getComparativeNode(key)
     return getVocabNode(lang, key)
   }
 
@@ -214,6 +255,10 @@ export function buildExploreGraph(stories) {
     }
     for (const entry of dictByLang[lang].slice(0, 15)) startingIds.push(vocabNodeId(lang, entry.word))
     for (const entry of dictByLang[lang]) allIds.push(vocabNodeId(lang, entry.word))
+  }
+  for (const c of comparativeOddities) {
+    startingIds.push(comparativeNodeId(c.id))
+    allIds.push(comparativeNodeId(c.id))
   }
 
   return { getNode, startingIds, allIds }

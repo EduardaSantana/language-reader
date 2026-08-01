@@ -7,7 +7,8 @@
     "example_gloss": "literally \"staircase wit\" — thinking of the perfect retort only after you've already left, on the stairs",
     "bridge_note": "English has no single word for this at all — it borrows the French phrase wholesale when it needs one.",
     "related_game_id": null,
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "cluster": "feelings-with-no-english-word"
   },
   {
     "id": "fr-odd-silent-letters",
@@ -17,7 +18,8 @@
     "example_gloss": "a lot, time, twenty — each ends in one or more letters that are simply never pronounced",
     "bridge_note": "French spelling often preserves how a word used to sound centuries ago, even after the pronunciation itself moved on — you're reading a fossil.",
     "related_game_id": null,
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "cluster": null
   },
   {
     "id": "fr-odd-il-y-a",
@@ -27,7 +29,8 @@
     "example_gloss": "There is a cat. (literally: it there has a cat)",
     "bridge_note": "English's \"there is\" already hides a similar oddity (why \"there\"?), but French makes it stranger by routing it through \"avoir\" (to have) instead of \"to be.\"",
     "related_game_id": null,
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "cluster": null
   },
   {
     "id": "fr-odd-liaison",
@@ -37,7 +40,8 @@
     "example_gloss": "the friends — pronounced \"lez-ami\": the normally-silent -s of \"les\" appears only because \"amis\" starts with a vowel",
     "bridge_note": "The consonant is a kind of grammatical ghost — invisible on its own, audible only when summoned by the next word.",
     "related_game_id": null,
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "cluster": null
   },
   {
     "id": "fr-odd-depaysement",
@@ -47,7 +51,8 @@
     "example_gloss": "literally \"un-country-ment\" — the disoriented, not-quite-yourself feeling of being outside your own country/culture",
     "bridge_note": "It's not quite homesickness and not quite culture shock — English has to describe around it, French just names it.",
     "related_game_id": null,
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "cluster": "feelings-with-no-english-word"
   },
   {
     "id": "fr-odd-base-twenty",
@@ -57,6 +62,57 @@
     "example_gloss": "99 = literally \"four-twenty-ten-nine\" (4×20 + 10 + 9)",
     "bridge_note": "This is a leftover from a Celtic/Norman base-20 counting system that never got fully replaced — French counts normally 1-60, then switches counting systems mid-language for 70-99.",
     "related_game_id": null,
+    "confidence": "first_pass",
+    "cluster": null
+  },
+  {
+    "id": "fr-odd-gender-flip",
+    "lang": "fr",
+    "title": "Same spelling, different gender, unrelated meaning",
+    "example_native": "le tour / la tour",
+    "example_gloss": "the trick/turn (m) / the tower (f) — identical spelling, only the article tells them apart",
+    "bridge_note": "There's no way to guess this from the word itself — gender here isn't just grammar, it's the only thing separating two completely different meanings.",
+    "related_game_id": null,
+    "cluster": "just-memorize-it",
+    "confidence": "first_pass"
+  },
+  {
+    "id": "fr-odd-tu-vous",
+    "lang": "fr",
+    "title": "Two words for \"you,\" and picking wrong is a real mistake",
+    "example_native": "tu / vous",
+    "example_gloss": "you (familiar) / you (formal or plural)",
+    "bridge_note": "Using tu with the wrong person can come across as rude or presumptuous — this isn't a style choice, it's a social rule with real stakes.",
+    "related_game_id": null,
+    "cluster": null,
+    "confidence": "first_pass",
+    "see_also": [
+      {
+        "lang": "ru",
+        "id": "ru-odd-vy-ty"
+      }
+    ]
+  },
+  {
+    "id": "fr-odd-elision",
+    "lang": "fr",
+    "title": "Vowels get swallowed before the next word, every time",
+    "example_native": "l'ami, j'aime, qu'est-ce",
+    "example_gloss": "the friend, I love, what is (le/je/que all drop their vowel before a vowel sound)",
+    "bridge_note": "This isn't optional or casual — it's mandatory, baked directly into spelling. Saying \"le ami\" out loud would just sound wrong to a French speaker.",
+    "related_game_id": null,
+    "cluster": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "fr-odd-ne-dropping",
+    "lang": "fr",
+    "title": "Spoken French quietly deletes half of \"no\"",
+    "example_native": "Je sais pas.",
+    "example_gloss": "I don't know. (formally: Je ne sais pas — the ne is just dropped in casual speech)",
+    "bridge_note": "Textbook French keeps both negation particles; real spoken French routinely drops the first one entirely, and native speakers barely notice it's gone.",
+    "related_game_id": null,
+    "cluster": null,
     "confidence": "first_pass"
   }
 ]

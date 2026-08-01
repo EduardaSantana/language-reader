@@ -7,7 +7,8 @@
     "example_gloss": "I have a cat. (literally: at me, [there] exists, a cat)",
     "bridge_note": "Possession isn't a verb you do in Russian — it's a location you're near. \"Having\" something is just that thing existing in your vicinity.",
     "related_game_id": null,
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "cluster": null
   },
   {
     "id": "ru-odd-toska",
@@ -17,7 +18,8 @@
     "example_gloss": "a deep spiritual anguish, often with no specific cause — Nabokov called it \"a sensation of great spiritual anguish\" that no single English word captures",
     "bridge_note": "It sits somewhere between longing, melancholy, and existential ache — close to all three, fully none of them.",
     "related_game_id": null,
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "cluster": "feelings-with-no-english-word"
   },
   {
     "id": "ru-odd-motion-verbs",
@@ -27,7 +29,8 @@
     "example_gloss": "go on foot one-way / go on foot habitually / go by vehicle one-way / go by vehicle habitually — four different verbs for what English calls just \"go\"",
     "bridge_note": "Russian has 14+ paired verbs of motion, splitting by manner (on foot vs. by vehicle) and by whether the trip is a single occurrence or a repeated/round-trip habit — English folds all of this into context and extra words.",
     "related_game_id": null,
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "cluster": null
   },
   {
     "id": "ru-odd-hard-sign",
@@ -37,7 +40,8 @@
     "example_gloss": "the \"hard sign\" — pronounced as nothing; it just blocks the consonant before it from softening",
     "bridge_note": "It's a purely grammatical instruction with zero sound of its own — the opposite of what a letter is usually for.",
     "related_game_id": null,
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "cluster": null
   },
   {
     "id": "ru-odd-patronymic",
@@ -47,7 +51,8 @@
     "example_gloss": "Ivan, son of Pyotr (Petrovich = \"son of Pyotr\") — used instead of Mr./Mrs. in formal address",
     "bridge_note": "Formal Russian address uses first name + patronymic together, no surname needed — it's simultaneously a name and a small family tree.",
     "related_game_id": null,
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "cluster": null
   },
   {
     "id": "ru-odd-numbers-case",
@@ -57,6 +62,57 @@
     "example_gloss": "one table, two tables, five tables — three different grammatical endings on \"table,\" triggered purely by which number precedes it",
     "bridge_note": "1 takes singular, 2-4 take a special \"counting\" form, 5+ take full plural genitive — the number itself dictates the noun's grammar, not just its meaning.",
     "related_game_id": null,
+    "confidence": "first_pass",
+    "cluster": "counting-and-numbers"
+  },
+  {
+    "id": "ru-odd-name-diminutives",
+    "lang": "ru",
+    "title": "One name, a dozen versions, each a different level of closeness",
+    "example_native": "Александр → Саша, Шурик, Саня, Сашенька",
+    "example_gloss": "Alexander → Sasha, Shurik, Sanya, Sashenka — each carries its own shade of affection or familiarity",
+    "bridge_note": "English nicknames are casual and few (Alex, Al). Russian diminutives form a whole ladder of emotional closeness, and picking the wrong one can feel oddly intimate or oddly cold.",
+    "related_game_id": null,
+    "cluster": null,
     "confidence": "first_pass"
+  },
+  {
+    "id": "ru-odd-consonant-clusters",
+    "lang": "ru",
+    "title": "Four consonants in a row, no vowel in sight",
+    "example_native": "взгляд",
+    "example_gloss": "glance (vzglyad — v-z-g-l are four consonants stacked with no vowel between them)",
+    "bridge_note": "English avoids clusters this dense almost entirely — Russian treats a four-consonant pileup as completely unremarkable, ordinary spelling.",
+    "related_game_id": null,
+    "cluster": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-odd-aspect-imperative",
+    "lang": "ru",
+    "title": "Even a command changes shape depending on how urgent it is",
+    "example_native": "Закрывай дверь! / Закрой дверь!",
+    "example_gloss": "Close the door! (routine reminder) / Close the door! (one-time, urgent)",
+    "bridge_note": "English uses tone of voice to tell these apart. Russian uses two entirely different verb forms — the aspect system reaches even into commands.",
+    "related_game_id": null,
+    "cluster": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-odd-vy-ty",
+    "lang": "ru",
+    "title": "Two words for \"you\" that map exactly onto French's",
+    "example_native": "ты / вы",
+    "example_gloss": "you (familiar) / you (formal or plural)",
+    "bridge_note": "This system was historically borrowed from French — the same tu/vous logic, transplanted wholesale into Russian.",
+    "related_game_id": null,
+    "cluster": null,
+    "confidence": "first_pass",
+    "see_also": [
+      {
+        "lang": "fr",
+        "id": "fr-odd-tu-vous"
+      }
+    ]
   }
 ]

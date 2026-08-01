@@ -12,6 +12,7 @@ const KEYS = {
   feedOrder: 'feed_order',
   companionDeviceId: 'companion_device_id',
   exploreTrail: 'explore_trail',
+  seenOddities: 'seen_oddities',
 }
 
 const PROGRESS_KEYS = [
@@ -22,6 +23,7 @@ const PROGRESS_KEYS = [
   KEYS.readStories,
   KEYS.unseenSavedWords,
   KEYS.exploreTrail,
+  KEYS.seenOddities,
 ]
 
 function readJSON(key, fallback) {
@@ -204,4 +206,29 @@ export function setExploreTrail(trail) {
 export function clearExploreTrail() {
   writeJSON(KEYS.exploreTrail, null)
   return null
+}
+
+export function getSeenOddities() {
+  return new Set(readJSON(KEYS.seenOddities, []))
+}
+
+export function markOdditySeen(id) {
+  const current = getSeenOddities()
+  if (current.has(id)) return current
+  current.add(id)
+  writeJSON(KEYS.seenOddities, [...current])
+  return current
+}
+
+export function markOdditiesSeen(ids) {
+  const current = getSeenOddities()
+  let changed = false
+  for (const id of ids) {
+    if (!current.has(id)) {
+      current.add(id)
+      changed = true
+    }
+  }
+  if (changed) writeJSON(KEYS.seenOddities, [...current])
+  return current
 }

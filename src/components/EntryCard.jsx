@@ -11,7 +11,43 @@ export default function EntryCard({
   onDigDeeper,
   diggingDeeper,
   onOpenRabbitHole,
+  isNew,
 }) {
+  if (node.type === 'comparative') {
+    return (
+      <div
+        className={`entry-card entry-card-oddity ${onOpenRabbitHole ? 'entry-card-clickable' : ''}`}
+        onClick={onOpenRabbitHole}
+        role={onOpenRabbitHole ? 'button' : undefined}
+        tabIndex={onOpenRabbitHole ? 0 : undefined}
+      >
+        <div className="entry-eyebrow">
+          <span className="lang-tag lang-tag-comparative">🌐 compared</span>
+          {isNew && <span className="new-badge">NEW</span>}
+        </div>
+        <div className="entry-headword">{node.title}</div>
+        {node.subtitle && <p className="entry-definition">{node.subtitle}</p>}
+        <div className="comparative-rows">
+          {node.entries.map((e) => {
+            const meta = langMeta(e.lang)
+            return (
+              <div className="comparative-row" key={e.lang}>
+                <span className={`lang-tag lang-tag-${e.lang}`}>
+                  {meta.avatar} {meta.label}
+                </span>
+                <div className="citation-native" lang={e.lang}>
+                  {e.native}
+                </div>
+                <div className="citation-gloss">{e.gloss}</div>
+                {e.note && <div className="comparative-note">{e.note}</div>}
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    )
+  }
+
   const { avatar, label } = langMeta(node.lang)
   const posLabel = node.type === 'grammar' ? 'grammar point' : node.type === 'oddity' ? '✨ oddity' : node.pos
 
@@ -29,6 +65,7 @@ export default function EntryCard({
           {avatar} {label}
         </span>
         {posLabel && <span className="entry-pos">{posLabel}</span>}
+        {isNew && <span className="new-badge">NEW</span>}
         {stepLabel && <span className="step-badge">{stepLabel}</span>}
       </div>
 
@@ -89,7 +126,14 @@ export default function EntryCard({
                 {node.related.map((rel) => {
                   const relMeta = langMeta(rel.lang)
                   return (
-                    <button key={rel.id} className="ref-button" onClick={() => onNavigate(rel.id)}>
+                    <button
+                      key={rel.id}
+                      className="ref-button"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        onNavigate(rel.id)
+                      }}
+                    >
                       <span className={`ref-mark lang-tag-${rel.lang}`}>{relMeta.avatar}</span>
                       <span className="ref-word" lang={rel.lang}>
                         {rel.title}
@@ -101,7 +145,14 @@ export default function EntryCard({
             </>
           )}
           {onDigDeeper && (
-            <button className="dig-deeper-button" onClick={onDigDeeper} disabled={diggingDeeper}>
+            <button
+              className="dig-deeper-button"
+              onClick={(e) => {
+                e.stopPropagation()
+                onDigDeeper()
+              }}
+              disabled={diggingDeeper}
+            >
               {diggingDeeper ? 'Digging…' : '🔮 Dig deeper'}
             </button>
           )}

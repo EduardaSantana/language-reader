@@ -4,6 +4,9 @@ import {
   EXPLORE_LANGS,
   grammarPointsForLang,
   oddityPointsForLang,
+  oddityNodeId,
+  comparativeOddityPoints,
+  comparativeNodeId,
   vocabNodeId,
 } from '../lib/exploreGraph'
 import { buildGrammarPath, buildVocabPath, classifyVocab } from '../lib/explorePaths'
@@ -15,6 +18,9 @@ import {
   addSavedWord,
   isWordSaved,
   getUnseenSavedWords,
+  getSeenOddities,
+  markOdditySeen,
+  markOdditiesSeen,
 } from '../lib/storage'
 import { getDigDeeperSuggestions } from '../lib/companion'
 import { langMeta } from '../lib/langs'
@@ -39,23 +45,6 @@ function grammarPointToNode(g) {
     example: { native: g.example_native, gloss: g.example_gloss, source: null },
     note: g.bridge_note ?? null,
     relatedGameId: g.related_game_id ?? null,
-    vocabEntry: null,
-    related: [],
-  }
-}
-
-function oddityToNode(o) {
-  return {
-    id: `${o.lang}:oddity:${o.id}`,
-    lang: o.lang,
-    type: 'oddity',
-    pos: null,
-    title: o.title,
-    reading: null,
-    subtitle: null,
-    example: { native: o.example_native, gloss: o.example_gloss, source: null },
-    note: o.bridge_note ?? null,
-    relatedGameId: o.related_game_id ?? null,
     vocabEntry: null,
     related: [],
   }
@@ -87,11 +76,13 @@ export default function ExploreScreen({ stories, wordSeed, nodeSeed, onOpenGame,
   const [mode, setMode] = useState('random')
   const [trail, setTrail] = useState(() => getExploreTrail() ?? [graph.startingIds[0]])
   const [aiNodes, setAiNodes] = useState(() => new Map())
-  const [diggingDeeper, setDiggingDeeper] = useState(false)
+  const [diggingDeeperId, setDiggingDeeperId] = useState(null)
   const [, forceUpdate] = useState(0)
 
   const [pathLang, setPathLang] = useState(EXPLORE_LANGS[0])
   const [pathCategory, setPathCategory] = useState('grammar')
+  const [seenOddities, setSeenOddities] = useState(() => getSeenOddities())
+  const [showComparative, setShowComparative] = useState(false)
 
   useEffect(() => {
     setExploreTrail(trail)
@@ -151,21 +142,26 @@ export default function ExploreScreen({ stories, wordSeed, nodeSeed, onOpenGame,
   const currentId = trail[trail.length - 1]
   const currentNode = resolveNode(currentId)
 
-  async function handleDigDeeper() {
-    if (!currentNode || diggingDeeper) return
-    setDiggingDeeper(true)
-    const suggestions = await getDigDeeperSuggestions(currentNode.lang, currentNode.title, currentNode.type)
-    setDiggingDeeper(false)
+  useEffect(() => {
+    if (currentNode?.type === 'oddity') setSeenOddities(markOdditySeen(currentNode.id))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentId])
+
+  async function handleDigDeeper(node) {
+    if (!node || diggingDeeperId) return
+    setDiggingDeeperId(node.id)
+    const suggestions = await getDigDeeperSuggestions(node.lang, node.title, node.type)
+    setDiggingDeeperId(null)
     if (!suggestions.length) return
     setAiNodes((prev) => {
       const next = new Map(prev)
-      const related = [...currentNode.related]
+      const related = [...node.related]
       for (const s of suggestions) {
-        const id = `ai:${currentNode.lang}:${s.text}`
+        const id = `ai:${node.lang}:${s.text}`
         if (!next.has(id)) {
           next.set(id, {
             id,
-            lang: currentNode.lang,
+            lang: node.lang,
             type: 'ai',
             pos: null,
             title: s.text,
@@ -177,10 +173,10 @@ export default function ExploreScreen({ stories, wordSeed, nodeSeed, onOpenGame,
             vocabEntry: null,
             related: [],
           })
-          related.push({ id, lang: currentNode.lang, type: 'ai', title: s.text })
+          related.push({ id, lang: node.lang, type: 'ai', title: s.text })
         }
       }
-      next.set(currentId, { ...currentNode, related })
+      next.set(node.id, { ...node, related })
       return next
     })
   }
@@ -202,6 +198,21 @@ export default function ExploreScreen({ stories, wordSeed, nodeSeed, onOpenGame,
   }
 
   const oddities = useMemo(() => oddityPointsForLang(pathLang), [pathLang])
+  const comparativeOddities = useMemo(() => comparativeOddityPoints(), [])
+  const oddityFoundCount = oddities.filter((o) => seenOddities.has(oddityNodeId(pathLang, o.id))).length
+
+  useEffect(() => {
+    if (mode !== 'oddities' || showComparative || oddities.length === 0) return
+    setSeenOddities(markOdditiesSeen(oddities.map((o) => oddityNodeId(pathLang, o.id))))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode, pathLang, showComparative, oddities])
+
+  useEffect(() => {
+    if (mode !== 'oddities' || !showComparative || comparativeOddities.length === 0) return
+    setSeenOddities(markOdditiesSeen(comparativeOddities.map((c) => comparativeNodeId(c.id))))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode, showComparative, comparativeOddities])
+
   const grammarPath = useMemo(() => buildGrammarPath(grammarPointsForLang(pathLang)), [pathLang])
   const vocabDictForPathLang = useMemo(
     () => buildDictionary(stories.filter((s) => s.lang === pathLang)),
@@ -264,8 +275,8 @@ export default function ExploreScreen({ stories, wordSeed, nodeSeed, onOpenGame,
               onSave={currentNode.vocabEntry ? () => handleSave(currentNode) : null}
               saved={currentNode.vocabEntry ? isWordSaved(currentNode.lang, currentNode.vocabEntry.word) : false}
               onPractice={currentNode.relatedGameId ? () => handlePractice(currentNode) : null}
-              onDigDeeper={handleDigDeeper}
-              diggingDeeper={diggingDeeper}
+              onDigDeeper={() => handleDigDeeper(currentNode)}
+              diggingDeeper={diggingDeeperId === currentNode.id}
             />
           ) : (
             <p className="favorites-empty">Nothing here yet — try "Begin elsewhere."</p>
@@ -347,21 +358,60 @@ export default function ExploreScreen({ stories, wordSeed, nodeSeed, onOpenGame,
             {EXPLORE_LANGS.map((l) => (
               <button
                 key={l}
-                className={`level-pill-button ${pathLang === l ? 'active' : ''}`}
-                onClick={() => setPathLang(l)}
+                className={`level-pill-button ${!showComparative && pathLang === l ? 'active' : ''}`}
+                onClick={() => {
+                  setShowComparative(false)
+                  setPathLang(l)
+                }}
               >
                 {langMeta(l).avatar} {langMeta(l).label}
               </button>
             ))}
+            <button
+              className={`level-pill-button ${showComparative ? 'active' : ''}`}
+              onClick={() => setShowComparative(true)}
+            >
+              🌐 All languages
+            </button>
           </div>
 
-          {oddities.length === 0 ? (
+          {showComparative ? (
+            comparativeOddities.map((c) => {
+              const node = graph.getNode(comparativeNodeId(c.id))
+              if (!node) return null
+              return (
+                <EntryCard
+                  key={c.id}
+                  node={node}
+                  isNew={!seenOddities.has(node.id)}
+                  onOpenRabbitHole={() => startRabbitHole(node.id)}
+                />
+              )
+            })
+          ) : oddities.length === 0 ? (
             <p className="path-empty">No oddities charted for this language yet.</p>
           ) : (
-            oddities.map((o) => {
-              const node = oddityToNode(o)
-              return <EntryCard key={o.id} node={node} onOpenRabbitHole={() => startRabbitHole(node.id)} />
-            })
+            <>
+              <p className="path-progress">
+                ✨ {oddityFoundCount} / {oddities.length} found
+              </p>
+              {oddities.map((o) => {
+                const node = graph.getNode(oddityNodeId(pathLang, o.id))
+                if (!node) return null
+                return (
+                  <EntryCard
+                    key={o.id}
+                    node={node}
+                    showRefs
+                    isNew={!seenOddities.has(node.id)}
+                    onNavigate={startRabbitHole}
+                    onDigDeeper={() => handleDigDeeper(node)}
+                    diggingDeeper={diggingDeeperId === node.id}
+                    onOpenRabbitHole={() => startRabbitHole(node.id)}
+                  />
+                )
+              })}
+            </>
           )}
         </>
       )}

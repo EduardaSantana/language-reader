@@ -97,10 +97,37 @@ rewrite; don't confuse the two files. `grammar_points_ja_bites.json` is the
 one everything (Bites, Bookmarks-era Grammar section, Explore) actually uses.
 
 **Oddities** (`src/data/oddities_{fr,de,ru,ja}.json`) — same shape as
-grammar points minus `difficulty`/`bridge_lang`/`confidence`'s role in
-ordering (oddities have no natural difficulty order — they're
-Explore-Random-only, never in Paths). Tonally distinct: delight/wonder, not
-instruction. Rendered with a violet `.entry-card-oddity` accent.
+grammar points minus `difficulty`/`bridge_lang`'s role in ordering (oddities
+have no natural difficulty order). Tonally distinct: delight/wonder, not
+instruction. Rendered with a violet `.entry-card-oddity` accent. Explore has
+a dedicated third mode for these (`Random | Paths | ✨ Oddities`) — don't
+build a bug where the Oddities tab's own list uses a different code path
+than Random mode's; both must go through `graph.getNode(oddityNodeId(lang,
+id))` so cross-links (`see_also`, cluster mates) and "Dig deeper" actually
+populate. An optional `"cluster"` string field (e.g.
+`"feelings-with-no-english-word"`) lets otherwise-unconnected oddities across
+different languages surface each other as `related` links —
+`exploreGraph.js` resolves this by building one flat cross-language oddity
+list (`allOddities`) inside `buildExploreGraph` and matching on `cluster`.
+
+**Comparative oddities** (`src/data/oddities_comparative.json`) — a fourth,
+language-agnostic shape: one concept shown side-by-side across all 4
+languages at once. `{ id, title, concept_note, entries: [{ lang, native,
+gloss, note }] }`. Node ids use `"all"` as the pseudo-lang segment
+(`all:comparative:${id}`) to fit the existing `lang:type:key` id scheme
+without changing it. `EntryCard.jsx` has an early-return branch for
+`node.type === 'comparative'` that renders a loop of per-language rows
+instead of the normal single-citation layout — don't thread comparative
+nodes through the normal citation/eyebrow rendering path, it doesn't fit.
+
+**Seen-oddities tracking** (`lib/storage.js` `getSeenOddities`/
+`markOdditySeen`/`markOdditiesSeen`) — a Set persisted under `seen_oddities`,
+same pattern as `getReadStories`. Deliberately zero-pressure: pure
+accumulation, no streak, nothing ever un-marks. Marked seen (a) when an
+oddity becomes Random mode's `currentNode`, (b) in bulk the moment a
+language's Oddities-tab list (or the comparative list) is opened — no
+scroll-tracking, since the whole list is already visible at once. Drives the
+"✨ N / total found" counter and the `isNew` "NEW" badge in `EntryCard`.
 
 **Dictionary entries** (built by `lib/vocabIndex.js` `buildDictionary(stories)`
 from every story's `vocab[]`, deduped by `${lang}:${word}`): `{ word,
@@ -148,10 +175,11 @@ reading, english, lang, level, storyIndex }`.
 - `vocabIndex.js` — dictionary building/sorting/lettering for Bookmarks'
   Dictionary tab; `stripLeadingArticle`/`hasLeadingArticle` (shared with
   `exploreGraph.js`).
-- `exploreGraph.js` — builds the cross-language vocab/grammar/oddity node
-  graph for Explore's Random rabbit-hole mode; `getNode(id)` dispatches on
-  the id's embedded type (`lang:type:key`); `startingIds` (curated pool) vs.
-  `allIds` (full pool, used by Surprise Me for true randomness).
+- `exploreGraph.js` — builds the cross-language vocab/grammar/oddity/
+  comparative node graph for Explore's Random rabbit-hole mode; `getNode(id)`
+  dispatches on the id's embedded type (`lang:type:key`, `"all"` pseudo-lang
+  for comparative); `startingIds` (curated pool) vs. `allIds` (full pool,
+  used by Surprise Me for true randomness).
 - `explorePaths.js` — `classifyVocab`, `buildGrammarPath`/`buildVocabPath`
   for Explore's Paths mode (basic→complex ordering).
 - `tokenize.js` — client-side word tokenization + vocab lookup so every word

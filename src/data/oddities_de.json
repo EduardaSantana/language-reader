@@ -7,7 +7,8 @@
     "example_gloss": "literally \"grief bacon\" — the weight you gain from emotional overeating",
     "bridge_note": "German just... has a word for this. One compound noun, no explanation needed if you're German.",
     "related_game_id": null,
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "cluster": "feelings-with-no-english-word"
   },
   {
     "id": "de-odd-backpfeifengesicht",
@@ -17,7 +18,8 @@
     "example_gloss": "literally \"a face in need of a slap\"",
     "bridge_note": "Compound nouns let German build extremely specific insults in a single word — no phrase required.",
     "related_game_id": null,
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "cluster": null
   },
   {
     "id": "de-odd-madchen-neuter",
@@ -27,7 +29,8 @@
     "example_gloss": "the girl (grammatically neuter, das — not feminine, die)",
     "bridge_note": "The diminutive suffix -chen always forces neuter gender, no matter what it's attached to. It overrides the natural gender of the word entirely — grammar wins over meaning.",
     "related_game_id": null,
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "cluster": "just-memorize-it"
   },
   {
     "id": "de-odd-doch",
@@ -37,7 +40,8 @@
     "example_gloss": "You don't have time? — Yes I do! (doch specifically answers a negative question with a positive)",
     "bridge_note": "English has to add a whole extra word (\"yes I do\") to override a negative question. German just has a dedicated single-word rebuttal.",
     "related_game_id": null,
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "cluster": null
   },
   {
     "id": "de-odd-compound-length",
@@ -47,7 +51,8 @@
     "example_gloss": "\"law on the delegation of duties for the supervision of cattle marking and beef labeling\" — a real, formerly official law name",
     "bridge_note": "German lets you glue nouns together indefinitely to build one exact-fit word instead of a phrase. There's no hard grammatical limit — just a limit on human patience.",
     "related_game_id": null,
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "cluster": null
   },
   {
     "id": "de-odd-schadenfreude",
@@ -57,6 +62,57 @@
     "example_gloss": "literally \"harm-joy\" — pleasure taken in someone else's misfortune",
     "bridge_note": "English speaks this word in German because English never bothered to compress the concept into one word of its own.",
     "related_game_id": null,
+    "confidence": "first_pass",
+    "cluster": "feelings-with-no-english-word"
+  },
+  {
+    "id": "de-odd-capitalize-nouns",
+    "lang": "de",
+    "title": "Every noun is capitalized, not just proper names",
+    "example_native": "Ich lese ein Buch über einen Hund.",
+    "example_gloss": "I read a book about a dog. (Buch and Hund are ordinary nouns, both capitalized)",
+    "bridge_note": "English only capitalizes names and titles. German capitalizes every single noun, all the time — an entire extra visual grammar layer baked into spelling.",
+    "related_game_id": null,
+    "cluster": null,
     "confidence": "first_pass"
+  },
+  {
+    "id": "de-odd-halb-neun",
+    "lang": "de",
+    "title": "\"Half nine\" doesn't mean what you'd think",
+    "example_native": "halb neun",
+    "example_gloss": "8:30 (literally \"half nine\" — half toward nine, not half past eight)",
+    "bridge_note": "English \"half nine\" (informally) usually means 9:30. German's halb neun points at the next hour instead — a real, common trap for learners telling time.",
+    "related_game_id": null,
+    "cluster": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-odd-see-gender-flip",
+    "lang": "de",
+    "title": "Same word, different gender, opposite body of water",
+    "example_native": "der See / die See",
+    "example_gloss": "the lake (m) / the sea (f) — identical spelling, only the article distinguishes them",
+    "bridge_note": "Just like French's le/la tour, gender alone carries the entire meaning difference here — misgender it and you've said something else.",
+    "related_game_id": null,
+    "cluster": "just-memorize-it",
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-odd-separable-verb-distance",
+    "lang": "de",
+    "title": "A verb's meaning can wait until the very last word",
+    "example_native": "Ich rufe meine alte Freundin heute Abend endlich mal wieder an.",
+    "example_gloss": "I'm finally calling my old friend again tonight. (anrufen \"to call\" — the an- doesn't arrive until the sentence's last word)",
+    "bridge_note": "The separable prefix can be stranded an entire clause away from its verb, so a sentence's actual meaning is sometimes only clear once you reach the very end.",
+    "related_game_id": null,
+    "cluster": null,
+    "confidence": "first_pass",
+    "see_also": [
+      {
+        "lang": "de",
+        "id": "de-separable-verbs-01"
+      }
+    ]
   }
 ]

@@ -791,6 +791,35 @@ ruby rt {
   color: var(--lang-ru-text);
 }
 
+.lang-tag-comparative {
+  background: #a97ee0;
+  color: #1a0a10;
+}
+
+.comparative-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.comparative-row {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.comparative-row .lang-tag {
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+.comparative-note {
+  color: var(--text-dim);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
 .entry-pos {
   font-size: 12px;
   color: var(--text-dim);
@@ -804,6 +833,17 @@ ruby rt {
   font-size: 11px;
   color: var(--text-dim);
   font-weight: 700;
+}
+
+.new-badge {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: var(--accent-secondary);
+  color: #04140e;
+  border-radius: 999px;
+  padding: 2px 8px;
 }
 
 .entry-headword {

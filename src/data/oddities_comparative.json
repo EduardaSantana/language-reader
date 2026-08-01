@@ -1,0 +1,130 @@
+[
+  {
+    "id": "cmp-possession",
+    "title": "Do you \"have\" things, or are they just near you?",
+    "concept_note": "Four languages, four different ways of expressing the same basic idea of possession.",
+    "entries": [
+      {
+        "lang": "ru",
+        "native": "У меня есть кошка.",
+        "gloss": "I have a cat. (literally: at me, there exists, a cat)",
+        "note": "No verb \"to have\" at all — possession is a location, not an action."
+      },
+      {
+        "lang": "fr",
+        "native": "J'ai un chat.",
+        "gloss": "I have a cat.",
+        "note": "A dedicated possession verb (avoir), used constantly, including as a grammatical helper elsewhere."
+      },
+      {
+        "lang": "de",
+        "native": "Ich habe eine Katze.",
+        "gloss": "I have a cat.",
+        "note": "Same structure as French — a real \"to have\" verb (haben), also doubling as a grammatical helper."
+      },
+      {
+        "lang": "ja",
+        "native": "猫がいます。",
+        "gloss": "There is a cat. (used to mean \"I have a cat\" when context makes the owner clear)",
+        "note": "No possession verb either — existence itself (いる/ある) stands in for \"having,\" with the owner often left unsaid."
+      }
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "cmp-gender",
+    "title": "Does this word feel more like a \"he\" or a \"she\"?",
+    "concept_note": "Three of these four languages assign every noun a gender — but the systems don't agree with each other, or even with logic.",
+    "entries": [
+      {
+        "lang": "fr",
+        "native": "le soleil (m), la lune (f)",
+        "gloss": "the sun, the moon",
+        "note": "Two genders, largely arbitrary — no reliable ending to predict which."
+      },
+      {
+        "lang": "de",
+        "native": "der Tisch (m), die Tür (f), das Buch (n)",
+        "gloss": "the table, the door, the book",
+        "note": "Three genders, just as arbitrary as French, plus a third option."
+      },
+      {
+        "lang": "ru",
+        "native": "стол (m), книга (f), окно (n)",
+        "gloss": "table, book, window",
+        "note": "Three genders too, but the noun's own ending is a much more reliable clue than in French/German."
+      },
+      {
+        "lang": "ja",
+        "native": "猫、本、椅子",
+        "gloss": "cat, book, chair",
+        "note": "No grammatical gender at all — nouns are just nouns, full stop."
+      }
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "cmp-formality",
+    "title": "How does your language say \"you\" differently to a stranger?",
+    "concept_note": "Every one of these languages marks social distance — just through a completely different piece of grammar.",
+    "entries": [
+      {
+        "lang": "fr",
+        "native": "tu / vous",
+        "gloss": "you (familiar) / you (formal or plural)",
+        "note": "A second-person pronoun swap — pick the wrong one and it's an actual social misstep."
+      },
+      {
+        "lang": "ru",
+        "native": "ты / вы",
+        "gloss": "you (familiar) / you (formal or plural)",
+        "note": "The exact same two-pronoun system as French, historically borrowed from it."
+      },
+      {
+        "lang": "de",
+        "native": "du / Sie",
+        "gloss": "you (familiar) / you (formal)",
+        "note": "Same idea again, though Sie is also, confusingly, the same word as \"she\" and \"they.\""
+      },
+      {
+        "lang": "ja",
+        "native": "食べる → 召し上がる / いただく",
+        "gloss": "to eat → to eat (respectful) / to eat (humble)",
+        "note": "No pronoun swap at all — formality is instead built directly into the verb itself (keigo)."
+      }
+    ],
+    "confidence": "first_pass"
+  },
+  {
+    "id": "cmp-word-order",
+    "title": "How much can you scramble a sentence before it breaks?",
+    "concept_note": "Some languages need strict word order to know who's doing what to whom. Others barely need order at all.",
+    "entries": [
+      {
+        "lang": "ja",
+        "native": "私はりんごを食べます。",
+        "gloss": "I apple eat.",
+        "note": "Verb-final, but particles (は/を) mark each word's role, so order can shift somewhat since the particles carry the grammar."
+      },
+      {
+        "lang": "ru",
+        "native": "Анна читает книгу. / Книгу читает Анна.",
+        "gloss": "Anna is reading the book. (both orders, same meaning)",
+        "note": "Case endings mark subject/object directly, so word order is free to shift purely for emphasis."
+      },
+      {
+        "lang": "de",
+        "native": "Gestern ging ich nach Hause.",
+        "gloss": "Yesterday, I went home.",
+        "note": "Rigid verb-second rule — whatever comes first, the verb must be second, no exceptions."
+      },
+      {
+        "lang": "fr",
+        "native": "Je vois le chat.",
+        "gloss": "I see the cat.",
+        "note": "Strict subject-verb-object order — reordering it doesn't just shift emphasis, it can just be wrong."
+      }
+    ],
+    "confidence": "first_pass"
+  }
+]
