@@ -6,6 +6,7 @@ import storiesRu from './data/stories_ru.json'
 import { mergeStorySets } from './lib/data'
 import ReadingScreen from './components/ReadingScreen'
 import CompanionOverlay from './components/CompanionOverlay'
+import SurpriseMeOverlay from './components/SurpriseMeOverlay'
 import { getUnseenSavedWords, getActiveLanguages, setActiveLanguages, getActiveLevels, setActiveLevels } from './lib/storage'
 import { getAvailableLangs } from './lib/langs'
 import { syncAppBadge } from './lib/badge'
@@ -21,6 +22,7 @@ function App() {
   const [tabResetNonce, setTabResetNonce] = useState(0)
   const [jumpToIndex, setJumpToIndex] = useState(null)
   const [exploreWordSeed, setExploreWordSeed] = useState(null)
+  const [exploreNodeSeed, setExploreNodeSeed] = useState(null)
   const [gameSeed, setGameSeed] = useState(null)
   // Only the very first Feed mount of the session resumes the last reading
   // position (app reopen); every later visit — including re-tapping the Feed
@@ -81,6 +83,11 @@ function App() {
     setTab('explore')
   }
 
+  function openExploreForNode(nodeId) {
+    setExploreNodeSeed({ id: nodeId })
+    setTab('explore')
+  }
+
   function openGame(gameKey, puzzleId, lang) {
     setGameSeed({ gameKey, puzzleId, lang })
     setTab('games')
@@ -129,6 +136,7 @@ function App() {
           key={resetKey}
           stories={allStories}
           wordSeed={exploreWordSeed}
+          nodeSeed={exploreNodeSeed}
           onOpenGame={openGame}
           activeTab={tab}
           onChangeTab={changeTab}
@@ -184,6 +192,7 @@ function App() {
     <>
       {screen}
       <CompanionOverlay ref={companionRef} langs={allLangs} />
+      <SurpriseMeOverlay stories={allStories} onOpenNode={openExploreForNode} />
     </>
   )
 }

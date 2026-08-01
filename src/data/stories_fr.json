@@ -3,9 +3,9 @@
     "lang": "fr",
     "level": 0,
     "index": 0,
-    "title_native": "J'aime les jeux vid\u00e9o",
+    "title_native": "J'aime les jeux vidéo",
     "title_en": "I like video games",
-    "emoji": "\ud83c\udfae",
+    "emoji": "🎮",
     "sentences": [
       [
         {
@@ -15,13 +15,13 @@
       ],
       [
         {
-          "text": "Tous les jours, je joue aux jeux vid\u00e9o.",
+          "text": "Tous les jours, je joue aux jeux vidéo.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "J'aime les jeux de r\u00f4le.",
+          "text": "J'aime les jeux de rôle.",
           "annotation": null
         }
       ],
@@ -33,7 +33,7 @@
       ],
       [
         {
-          "text": "J'utilise une \u00e9p\u00e9e.",
+          "text": "J'utilise une épée.",
           "annotation": null
         }
       ],
@@ -45,19 +45,19 @@
       ],
       [
         {
-          "text": "C'est tr\u00e8s amusant !",
+          "text": "C'est très amusant !",
           "annotation": null
         }
       ]
     ],
     "vocab": [
       {
-        "word": "le jeu vid\u00e9o",
+        "word": "le jeu vidéo",
         "annotation": "m",
         "english": "video game"
       },
       {
-        "word": "le jeu de r\u00f4le",
+        "word": "le jeu de rôle",
         "annotation": "m",
         "english": "role-playing game"
       },
@@ -72,7 +72,7 @@
         "english": "monster"
       },
       {
-        "word": "l'\u00e9p\u00e9e",
+        "word": "l'épée",
         "annotation": "f",
         "english": "sword"
       },
@@ -94,7 +94,7 @@
     "index": 1,
     "title_native": "J'aime les chats",
     "title_en": "I like cats",
-    "emoji": "\ud83d\udc31",
+    "emoji": "🐱",
     "sentences": [
       [
         {
@@ -116,7 +116,7 @@
       ],
       [
         {
-          "text": "Momo dort toute la journ\u00e9e.",
+          "text": "Momo dort toute la journée.",
           "annotation": null
         }
       ],
@@ -172,7 +172,7 @@
     "index": 2,
     "title_native": "Le temps aujourd'hui",
     "title_en": "Today's weather",
-    "emoji": "\u2600\ufe0f",
+    "emoji": "☀️",
     "sentences": [
       [
         {
@@ -200,7 +200,7 @@
       ],
       [
         {
-          "text": "Demain, il pleuvra peut-\u00eatre.",
+          "text": "Demain, il pleuvra peut-être.",
           "annotation": null
         }
       ],
@@ -248,13 +248,13 @@
     "lang": "fr",
     "level": 0,
     "index": 3,
-    "title_native": "Mon petit-d\u00e9jeuner",
+    "title_native": "Mon petit-déjeuner",
     "title_en": "My breakfast",
-    "emoji": "\ud83c\udf73",
+    "emoji": "🍳",
     "sentences": [
       [
         {
-          "text": "Le matin, je prends le petit-d\u00e9jeuner.",
+          "text": "Le matin, je prends le petit-déjeuner.",
           "annotation": null
         }
       ],
@@ -266,26 +266,26 @@
       ],
       [
         {
-          "text": "Je bois du caf\u00e9.",
+          "text": "Je bois du café.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "Parfois, je mange un \u0153uf.",
+          "text": "Parfois, je mange un œuf.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "Le petit-d\u00e9jeuner est mon repas pr\u00e9f\u00e9r\u00e9.",
+          "text": "Le petit-déjeuner est mon repas préféré.",
           "annotation": null
         }
       ]
     ],
     "vocab": [
       {
-        "word": "le petit-d\u00e9jeuner",
+        "word": "le petit-déjeuner",
         "annotation": "m",
         "english": "breakfast"
       },
@@ -300,12 +300,12 @@
         "english": "butter"
       },
       {
-        "word": "le caf\u00e9",
+        "word": "le café",
         "annotation": "m",
         "english": "coffee"
       },
       {
-        "word": "l'\u0153uf",
+        "word": "l'œuf",
         "annotation": "m",
         "english": "egg"
       },
@@ -322,7 +322,7 @@
     "index": 4,
     "title_native": "Ma famille",
     "title_en": "My family",
-    "emoji": "\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc66",
+    "emoji": "👨‍👩‍👧‍👦",
     "sentences": [
       [
         {
@@ -332,19 +332,19 @@
       ],
       [
         {
-          "text": "Ma m\u00e8re s'appelle Julia.",
+          "text": "Ma mère s'appelle Julia.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "Mon p\u00e8re s'appelle Thomas.",
+          "text": "Mon père s'appelle Thomas.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "J'ai un fr\u00e8re et une s\u0153ur.",
+          "text": "J'ai un frère et une sœur.",
           "annotation": null
         }
       ],
@@ -356,7 +356,7 @@
       ],
       [
         {
-          "text": "Ma famille est tr\u00e8s importante pour moi.",
+          "text": "Ma famille est très importante pour moi.",
           "annotation": null
         }
       ]
@@ -368,22 +368,22 @@
         "english": "family"
       },
       {
-        "word": "la m\u00e8re",
+        "word": "la mère",
         "annotation": "f",
         "english": "mother"
       },
       {
-        "word": "le p\u00e8re",
+        "word": "le père",
         "annotation": "m",
         "english": "father"
       },
       {
-        "word": "le fr\u00e8re",
+        "word": "le frère",
         "annotation": "m",
         "english": "brother"
       },
       {
-        "word": "la s\u0153ur",
+        "word": "la sœur",
         "annotation": "f",
         "english": "sister"
       },
@@ -391,6 +391,485 @@
         "word": "important",
         "annotation": null,
         "english": "important"
+      }
+    ]
+  },
+  {
+    "lang": "fr",
+    "level": 0,
+    "index": 5,
+    "title_native": "Mon premier tournoi Pokémon",
+    "title_en": "My first Pokémon tournament",
+    "emoji": "🏆",
+    "sentences": [
+      [
+        {
+          "text": "Je m'appelle Théo.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Aujourd'hui, je participe à un tournoi Pokémon.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Mon dresseur adverse a une équipe très forte.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Mon Pokémon feu attaque en premier.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Le combat dure plusieurs minutes.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "À la fin, je remporte la victoire !",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Je suis très fier de mon équipe.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "le tournoi",
+        "annotation": "m",
+        "english": "tournament"
+      },
+      {
+        "word": "le dresseur",
+        "annotation": "m",
+        "english": "trainer"
+      },
+      {
+        "word": "adverse",
+        "annotation": null,
+        "english": "opposing"
+      },
+      {
+        "word": "le combat",
+        "annotation": "m",
+        "english": "battle"
+      },
+      {
+        "word": "durer",
+        "annotation": null,
+        "english": "to last"
+      },
+      {
+        "word": "remporter",
+        "annotation": null,
+        "english": "to win/achieve"
+      },
+      {
+        "word": "la victoire",
+        "annotation": "f",
+        "english": "victory"
+      }
+    ]
+  },
+  {
+    "lang": "fr",
+    "level": 0,
+    "index": 6,
+    "title_native": "Le festival de cosplay",
+    "title_en": "The cosplay festival",
+    "emoji": "🎭",
+    "sentences": [
+      [
+        {
+          "text": "Je m'appelle Camille.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Chaque année, je vais à un festival d'animation.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Cette année, je porte un costume de ninja.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Ma mère m'aide à coudre le costume à la maison.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Beaucoup de gens prennent des photos de moi.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Je rencontre d'autres fans qui aiment les mêmes animes.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "le festival",
+        "annotation": "m",
+        "english": "festival"
+      },
+      {
+        "word": "le costume",
+        "annotation": "m",
+        "english": "costume"
+      },
+      {
+        "word": "coudre",
+        "annotation": null,
+        "english": "to sew"
+      },
+      {
+        "word": "prendre une photo",
+        "annotation": null,
+        "english": "to take a photo"
+      },
+      {
+        "word": "le fan",
+        "annotation": "m",
+        "english": "fan"
+      },
+      {
+        "word": "rencontrer",
+        "annotation": null,
+        "english": "to meet"
+      }
+    ]
+  },
+  {
+    "lang": "fr",
+    "level": 0,
+    "index": 7,
+    "title_native": "Les cinq sens",
+    "title_en": "The five senses",
+    "emoji": "👃",
+    "sentences": [
+      [
+        {
+          "text": "Le corps humain a cinq sens.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "La vue nous permet de voir les couleurs.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "L'ouïe nous permet d'entendre la musique.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Le nez sert à sentir les odeurs.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "La langue goûte les aliments sucrés ou salés.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "La peau sent le chaud et le froid grâce au toucher.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "le sens",
+        "annotation": "m",
+        "english": "sense"
+      },
+      {
+        "word": "la vue",
+        "annotation": "f",
+        "english": "sight"
+      },
+      {
+        "word": "l'ouïe",
+        "annotation": "f",
+        "english": "hearing"
+      },
+      {
+        "word": "sentir",
+        "annotation": null,
+        "english": "to smell/feel"
+      },
+      {
+        "word": "goûter",
+        "annotation": null,
+        "english": "to taste"
+      },
+      {
+        "word": "le toucher",
+        "annotation": "m",
+        "english": "touch"
+      }
+    ]
+  },
+  {
+    "lang": "fr",
+    "level": 0,
+    "index": 8,
+    "title_native": "Une partie en ligne avec des amis",
+    "title_en": "An online match with friends",
+    "emoji": "🎧",
+    "sentences": [
+      [
+        {
+          "text": "Je m'appelle Nathan.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Le samedi soir, je joue en ligne avec mon équipe.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Mes coéquipiers habitent dans un autre pays.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Nous parlons avec des micros pendant la partie.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Ma manette vibre quand je gagne un point.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Après la partie, nous discutons de la stratégie.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "en ligne",
+        "annotation": null,
+        "english": "online"
+      },
+      {
+        "word": "le coéquipier",
+        "annotation": "m",
+        "english": "teammate"
+      },
+      {
+        "word": "le micro",
+        "annotation": "m",
+        "english": "microphone"
+      },
+      {
+        "word": "la manette",
+        "annotation": "f",
+        "english": "game controller"
+      },
+      {
+        "word": "vibrer",
+        "annotation": null,
+        "english": "to vibrate"
+      },
+      {
+        "word": "la stratégie",
+        "annotation": "f",
+        "english": "strategy"
+      }
+    ]
+  },
+  {
+    "lang": "fr",
+    "level": 0,
+    "index": 9,
+    "title_native": "Les volcans",
+    "title_en": "Volcanoes",
+    "emoji": "🌋",
+    "sentences": [
+      [
+        {
+          "text": "Un volcan est une montagne qui peut exploser.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Sous la terre, la roche est tellement chaude qu'elle fond.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Cette roche fondue s'appelle la lave.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Pendant une éruption, la lave sort de la montagne.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "La fumée monte très haut dans le ciel.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Certains volcans dorment pendant des centaines d'années.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "le volcan",
+        "annotation": "m",
+        "english": "volcano"
+      },
+      {
+        "word": "fondre",
+        "annotation": null,
+        "english": "to melt"
+      },
+      {
+        "word": "la lave",
+        "annotation": "f",
+        "english": "lava"
+      },
+      {
+        "word": "l'éruption",
+        "annotation": "f",
+        "english": "eruption"
+      },
+      {
+        "word": "la fumée",
+        "annotation": "f",
+        "english": "smoke"
+      },
+      {
+        "word": "dormir",
+        "annotation": null,
+        "english": "to sleep (dormant)"
+      }
+    ]
+  },
+  {
+    "lang": "fr",
+    "level": 0,
+    "index": 10,
+    "title_native": "Je dessine ma propre bande dessinée",
+    "title_en": "I draw my own comic",
+    "emoji": "✏️",
+    "sentences": [
+      [
+        {
+          "text": "Je m'appelle Inès.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "J'invente une histoire avec des super-héros.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Je dessine chaque personnage sur mon carnet.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Mon personnage principal peut voler dans le ciel.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Je colorie les dessins avec des crayons.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Un jour, je veux publier ma bande dessinée.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "inventer",
+        "annotation": null,
+        "english": "to invent"
+      },
+      {
+        "word": "le carnet",
+        "annotation": "m",
+        "english": "notebook"
+      },
+      {
+        "word": "le personnage principal",
+        "annotation": "m",
+        "english": "main character"
+      },
+      {
+        "word": "voler",
+        "annotation": null,
+        "english": "to fly"
+      },
+      {
+        "word": "colorier",
+        "annotation": null,
+        "english": "to color"
+      },
+      {
+        "word": "publier",
+        "annotation": null,
+        "english": "to publish"
       }
     ]
   }

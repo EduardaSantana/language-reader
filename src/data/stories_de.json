@@ -5,7 +5,7 @@
     "index": 0,
     "title_native": "Ich mag Videospiele",
     "title_en": "I like video games",
-    "emoji": "\ud83c\udfae",
+    "emoji": "🎮",
     "sentences": [
       [
         {
@@ -19,7 +19,7 @@
           "gloss": null
         },
         {
-          "text": "hei\u00dfe",
+          "text": "heiße",
           "annotation": null,
           "gloss": null
         },
@@ -135,7 +135,7 @@
           "gloss": null
         },
         {
-          "text": "k\u00e4mpfe",
+          "text": "kämpfe",
           "annotation": null,
           "gloss": null
         },
@@ -321,7 +321,7 @@
           "gloss": null
         },
         {
-          "text": "Spa\u00df",
+          "text": "Spaß",
           "annotation": null,
           "gloss": null
         },
@@ -364,7 +364,7 @@
         "english": "friend"
       },
       {
-        "word": "Spa\u00df machen",
+        "word": "Spaß machen",
         "annotation": null,
         "english": "to be fun"
       }
@@ -376,7 +376,7 @@
     "index": 1,
     "title_native": "Ich mag Katzen",
     "title_en": "I like cats",
-    "emoji": "\ud83d\udc31",
+    "emoji": "🐱",
     "sentences": [
       [
         {
@@ -442,7 +442,7 @@
           "gloss": null
         },
         {
-          "text": "hei\u00dft",
+          "text": "heißt",
           "annotation": null,
           "gloss": null
         },
@@ -526,7 +526,7 @@
           "gloss": null
         },
         {
-          "text": "schl\u00e4ft",
+          "text": "schläft",
           "annotation": null,
           "gloss": null
         },
@@ -700,7 +700,7 @@
     "index": 2,
     "title_native": "Das Wetter heute",
     "title_en": "Today's weather",
-    "emoji": "\u2600\ufe0f",
+    "emoji": "☀️",
     "sentences": [
       [
         {
@@ -818,7 +818,7 @@
           "gloss": null
         },
         {
-          "text": "drau\u00dfen",
+          "text": "draußen",
           "annotation": null,
           "gloss": null
         },
@@ -992,9 +992,9 @@
     "lang": "de",
     "level": 0,
     "index": 3,
-    "title_native": "Mein Fr\u00fchst\u00fcck",
+    "title_native": "Mein Frühstück",
     "title_en": "My breakfast",
-    "emoji": "\ud83c\udf73",
+    "emoji": "🍳",
     "sentences": [
       [
         {
@@ -1038,7 +1038,7 @@
           "gloss": null
         },
         {
-          "text": "Fr\u00fchst\u00fcck",
+          "text": "Frühstück",
           "annotation": "n",
           "gloss": "breakfast"
         },
@@ -1216,7 +1216,7 @@
       ],
       [
         {
-          "text": "Fr\u00fchst\u00fcck",
+          "text": "Frühstück",
           "annotation": "n",
           "gloss": "breakfast"
         },
@@ -1269,7 +1269,7 @@
     ],
     "vocab": [
       {
-        "word": "das Fr\u00fchst\u00fcck",
+        "word": "das Frühstück",
         "annotation": "n",
         "english": "breakfast"
       },
@@ -1306,7 +1306,7 @@
     "index": 4,
     "title_native": "Meine Familie",
     "title_en": "My family",
-    "emoji": "\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc66",
+    "emoji": "👨‍👩‍👧‍👦",
     "sentences": [
       [
         {
@@ -1340,7 +1340,7 @@
           "gloss": null
         },
         {
-          "text": "gro\u00dfe",
+          "text": "große",
           "annotation": null,
           "gloss": null
         },
@@ -1382,7 +1382,7 @@
           "gloss": null
         },
         {
-          "text": "hei\u00dft",
+          "text": "heißt",
           "annotation": null,
           "gloss": null
         },
@@ -1424,7 +1424,7 @@
           "gloss": null
         },
         {
-          "text": "hei\u00dft",
+          "text": "heißt",
           "annotation": null,
           "gloss": null
         },
@@ -1651,6 +1651,474 @@
         "word": "wichtig",
         "annotation": null,
         "english": "important"
+      }
+    ]
+  },
+  {
+    "lang": "de",
+    "level": 0,
+    "index": 5,
+    "title_native": "Ein Abend in der Spielhalle",
+    "title_en": "An evening at the arcade",
+    "emoji": "🕹️",
+    "sentences": [
+      [
+        {
+          "text": "Ich heiße Jonas.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Freitags gehe ich mit meinem Bruder in die Spielhalle.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Wir spielen ein altes Rennspiel mit einem Joystick.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Die Musik in der Spielhalle ist sehr laut.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Ich sammle Punkte für einen hohen Highscore.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Am Ende teilen wir uns eine Portion Pommes.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "die Spielhalle",
+        "annotation": "f",
+        "english": "arcade"
+      },
+      {
+        "word": "der Joystick",
+        "annotation": "m",
+        "english": "joystick"
+      },
+      {
+        "word": "laut",
+        "annotation": null,
+        "english": "loud"
+      },
+      {
+        "word": "sammeln",
+        "annotation": null,
+        "english": "to collect"
+      },
+      {
+        "word": "der Highscore",
+        "annotation": "m",
+        "english": "high score"
+      },
+      {
+        "word": "teilen",
+        "annotation": null,
+        "english": "to share"
+      }
+    ]
+  },
+  {
+    "lang": "de",
+    "level": 0,
+    "index": 6,
+    "title_native": "Anime schauen an einem Regentag",
+    "title_en": "Watching anime on a rainy day",
+    "emoji": "🌧️",
+    "sentences": [
+      [
+        {
+          "text": "Draußen regnet es den ganzen Tag.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Ich bleibe zu Hause und mache es mir gemütlich.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Ich schaue eine ganze Anime-Serie auf einmal.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Meine Katze schläft neben mir auf dem Sofa.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Zwischen den Folgen trinke ich heißen Tee.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "So ein Regentag kann auch schön sein.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "regnen",
+        "annotation": null,
+        "english": "to rain"
+      },
+      {
+        "word": "gemütlich",
+        "annotation": null,
+        "english": "cozy"
+      },
+      {
+        "word": "die Serie",
+        "annotation": "f",
+        "english": "series"
+      },
+      {
+        "word": "das Sofa",
+        "annotation": "n",
+        "english": "sofa"
+      },
+      {
+        "word": "die Folge",
+        "annotation": "f",
+        "english": "episode"
+      },
+      {
+        "word": "heiß",
+        "annotation": null,
+        "english": "hot"
+      }
+    ]
+  },
+  {
+    "lang": "de",
+    "level": 0,
+    "index": 7,
+    "title_native": "Pokémon in der Stadt fangen",
+    "title_en": "Catching Pokémon around the city",
+    "emoji": "📱",
+    "sentences": [
+      [
+        {
+          "text": "Ich heiße Lea.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Mit meinem Handy gehe ich durch die ganze Stadt.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Auf dem Bildschirm erscheint plötzlich ein wildes Pokémon.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Ich werfe einen Ball, um es zu fangen.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Im Park treffe ich andere Spieler mit demselben Hobby.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Nach zwei Stunden habe ich zehn neue Pokémon.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "das Handy",
+        "annotation": "n",
+        "english": "phone"
+      },
+      {
+        "word": "der Bildschirm",
+        "annotation": "m",
+        "english": "screen"
+      },
+      {
+        "word": "erscheinen",
+        "annotation": null,
+        "english": "to appear"
+      },
+      {
+        "word": "werfen",
+        "annotation": null,
+        "english": "to throw"
+      },
+      {
+        "word": "der Spieler",
+        "annotation": "m",
+        "english": "player"
+      },
+      {
+        "word": "das Hobby",
+        "annotation": "n",
+        "english": "hobby"
+      }
+    ]
+  },
+  {
+    "lang": "de",
+    "level": 0,
+    "index": 8,
+    "title_native": "Die Sonnenfinsternis",
+    "title_en": "The solar eclipse",
+    "emoji": "🌑",
+    "sentences": [
+      [
+        {
+          "text": "Heute Morgen wird der Himmel plötzlich dunkel.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Der Mond schiebt sich genau vor die Sonne.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Man darf nicht direkt in die Sonne schauen.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Ich trage eine spezielle Schutzbrille.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Für ein paar Minuten sieht man nur einen leuchtenden Ring.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Danach wird der Himmel langsam wieder hell.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "der Himmel",
+        "annotation": "m",
+        "english": "sky"
+      },
+      {
+        "word": "dunkel",
+        "annotation": null,
+        "english": "dark"
+      },
+      {
+        "word": "der Mond",
+        "annotation": "m",
+        "english": "moon"
+      },
+      {
+        "word": "die Schutzbrille",
+        "annotation": "f",
+        "english": "protective glasses"
+      },
+      {
+        "word": "leuchten",
+        "annotation": null,
+        "english": "to glow"
+      },
+      {
+        "word": "hell",
+        "annotation": null,
+        "english": "bright"
+      }
+    ]
+  },
+  {
+    "lang": "de",
+    "level": 0,
+    "index": 9,
+    "title_native": "Der Schachclub in der Schule",
+    "title_en": "The chess club at school",
+    "emoji": "♟️",
+    "sentences": [
+      [
+        {
+          "text": "Jeden Mittwoch treffe ich mich mit dem Schachclub.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Unser Lehrer erklärt uns einen neuen Zug.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Ich spiele gegen einen Mitschüler aus der achten Klasse.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Er denkt sehr lange vor jedem Zug nach.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Am Ende gewinne ich mit meinem letzten Läufer.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Nächste Woche gibt es ein kleines Turnier.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "der Mittwoch",
+        "annotation": "m",
+        "english": "Wednesday"
+      },
+      {
+        "word": "erklären",
+        "annotation": null,
+        "english": "to explain"
+      },
+      {
+        "word": "der Zug",
+        "annotation": "m",
+        "english": "move (in a game)"
+      },
+      {
+        "word": "der Mitschüler",
+        "annotation": "m",
+        "english": "classmate"
+      },
+      {
+        "word": "der Läufer",
+        "annotation": "m",
+        "english": "bishop (chess piece)"
+      },
+      {
+        "word": "das Turnier",
+        "annotation": "n",
+        "english": "tournament"
+      }
+    ]
+  },
+  {
+    "lang": "de",
+    "level": 0,
+    "index": 10,
+    "title_native": "Das menschliche Skelett",
+    "title_en": "The human skeleton",
+    "emoji": "🦴",
+    "sentences": [
+      [
+        {
+          "text": "Der menschliche Körper hat mehr als zweihundert Knochen.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Die Knochen geben dem Körper seine Form.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Das größte Skelettteil ist der Oberschenkelknochen.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Die kleinsten Knochen sitzen im Ohr.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Knochen wachsen langsam während der Kindheit.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Ein starkes Skelett schützt unsere inneren Organe.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "der Körper",
+        "annotation": "m",
+        "english": "body"
+      },
+      {
+        "word": "der Knochen",
+        "annotation": "m",
+        "english": "bone"
+      },
+      {
+        "word": "die Form",
+        "annotation": "f",
+        "english": "shape"
+      },
+      {
+        "word": "der Oberschenkelknochen",
+        "annotation": "m",
+        "english": "thigh bone"
+      },
+      {
+        "word": "wachsen",
+        "annotation": null,
+        "english": "to grow"
+      },
+      {
+        "word": "schützen",
+        "annotation": null,
+        "english": "to protect"
       }
     ]
   }

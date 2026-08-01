@@ -398,6 +398,12 @@ ruby rt {
   animation: save-pulse 0.3s ease-out;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .save-word-button {
+    animation: none;
+  }
+}
+
 .save-word-button.saved {
   background: var(--accent-secondary);
   color: #04140e;
@@ -723,6 +729,15 @@ ruby rt {
 .entry-card-clickable:hover,
 .entry-card-clickable:focus-visible {
   border-color: var(--accent);
+}
+
+.entry-card-oddity {
+  border-color: #a97ee0;
+  background: linear-gradient(180deg, rgba(169, 126, 224, 0.08), transparent 60%);
+}
+
+.entry-card-oddity .entry-pos {
+  color: #c9a3f0;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1176,6 +1191,25 @@ ruby rt {
   z-index: 9;
 }
 
+.surprise-fab {
+  position: fixed;
+  left: 16px;
+  bottom: calc(88px + env(safe-area-inset-bottom));
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: #a97ee0;
+  color: #1a0a10;
+  font-size: 22px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 9;
+}
+
+.surprise-modal .entry-card {
+  margin-bottom: 12px;
+}
+
 .companion-overlay-backdrop {
   align-items: flex-end;
 }
@@ -1350,6 +1384,13 @@ ruby rt {
   color: var(--text-success);
   border-color: var(--bg-success);
   transform: scale(1.04);
+  animation: save-pulse 0.3s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .game-choice-correct {
+    animation: none;
+  }
 }
 
 .game-choice-wrong {
@@ -1496,6 +1537,13 @@ ruby rt {
   color: var(--text-success);
   border-color: var(--bg-success);
   opacity: 0.7;
+  animation: save-pulse 0.3s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .match-card.matched {
+    animation: none;
+  }
 }
 
 /* Sentence order */
@@ -1627,6 +1675,13 @@ ruby rt {
   background: var(--bg-success);
   color: var(--text-success);
   border-color: var(--bg-success);
+  animation: save-pulse 0.3s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-item-correct {
+    animation: none;
+  }
 }
 
 .category-item-wrong {

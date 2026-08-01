@@ -3,86 +3,86 @@
     "lang": "ru",
     "level": 0,
     "index": 0,
-    "title_native": "\u041c\u043d\u0435 \u043d\u0440\u0430\u0432\u044f\u0442\u0441\u044f \u0432\u0438\u0434\u0435\u043e\u0438\u0433\u0440\u044b",
+    "title_native": "Мне нравятся видеоигры",
     "title_en": "I like video games",
-    "emoji": "\ud83c\udfae",
+    "emoji": "🎮",
     "sentences": [
       [
         {
-          "text": "\u041c\u0435\u043d\u044f \u0437\u043e\u0432\u0443\u0442 \u0410\u043d\u043d\u0430.",
+          "text": "Меня зовут Анна.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u041a\u0430\u0436\u0434\u044b\u0439 \u0434\u0435\u043d\u044c \u044f \u0438\u0433\u0440\u0430\u044e \u0432 \u0432\u0438\u0434\u0435\u043e\u0438\u0433\u0440\u044b.",
+          "text": "Каждый день я играю в видеоигры.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u041c\u043d\u0435 \u043d\u0440\u0430\u0432\u044f\u0442\u0441\u044f \u0440\u043e\u043b\u0435\u0432\u044b\u0435 \u0438\u0433\u0440\u044b.",
+          "text": "Мне нравятся ролевые игры.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u042f \u0441\u0440\u0430\u0436\u0430\u044e\u0441\u044c \u0441 \u0441\u0438\u043b\u044c\u043d\u044b\u043c\u0438 \u043c\u043e\u043d\u0441\u0442\u0440\u0430\u043c\u0438.",
+          "text": "Я сражаюсь с сильными монстрами.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u042f \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u044e \u043c\u0435\u0447.",
+          "text": "Я использую меч.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u042f \u0438\u0433\u0440\u0430\u044e \u0432\u043c\u0435\u0441\u0442\u0435 \u0441 \u0434\u0440\u0443\u0437\u044c\u044f\u043c\u0438.",
+          "text": "Я играю вместе с друзьями.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u042d\u0442\u043e \u043e\u0447\u0435\u043d\u044c \u0432\u0435\u0441\u0435\u043b\u043e!",
+          "text": "Это очень весело!",
           "annotation": null
         }
       ]
     ],
     "vocab": [
       {
-        "word": "\u0432\u0438\u0434\u0435\u043e\u0438\u0433\u0440\u0430",
+        "word": "видеоигра",
         "annotation": "f",
         "english": "video game"
       },
       {
-        "word": "\u0440\u043e\u043b\u0435\u0432\u0430\u044f \u0438\u0433\u0440\u0430",
+        "word": "ролевая игра",
         "annotation": "f",
         "english": "role-playing game"
       },
       {
-        "word": "\u0441\u0438\u043b\u044c\u043d\u044b\u0439",
+        "word": "сильный",
         "annotation": null,
         "english": "strong"
       },
       {
-        "word": "\u043c\u043e\u043d\u0441\u0442\u0440",
+        "word": "монстр",
         "annotation": "m",
         "english": "monster"
       },
       {
-        "word": "\u043c\u0435\u0447",
+        "word": "меч",
         "annotation": "m",
         "english": "sword"
       },
       {
-        "word": "\u0434\u0440\u0443\u0433",
+        "word": "друг",
         "annotation": "m",
         "english": "friend"
       },
       {
-        "word": "\u0432\u0435\u0441\u0435\u043b\u043e",
+        "word": "весело",
         "annotation": null,
         "english": "fun"
       }
@@ -92,75 +92,75 @@
     "lang": "ru",
     "level": 0,
     "index": 1,
-    "title_native": "\u041c\u043d\u0435 \u043d\u0440\u0430\u0432\u044f\u0442\u0441\u044f \u043a\u043e\u0448\u043a\u0438",
+    "title_native": "Мне нравятся кошки",
     "title_en": "I like cats",
-    "emoji": "\ud83d\udc31",
+    "emoji": "🐱",
     "sentences": [
       [
         {
-          "text": "\u0423 \u043c\u0435\u043d\u044f \u0435\u0441\u0442\u044c \u043a\u043e\u0448\u043a\u0430.",
+          "text": "У меня есть кошка.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u041c\u043e\u044e \u043a\u043e\u0448\u043a\u0443 \u0437\u043e\u0432\u0443\u0442 \u041c\u043e\u043c\u043e.",
+          "text": "Мою кошку зовут Момо.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u041e\u043d\u0430 \u043c\u0430\u043b\u0435\u043d\u044c\u043a\u0430\u044f \u0438 \u043c\u044f\u0433\u043a\u0430\u044f.",
+          "text": "Она маленькая и мягкая.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u041c\u043e\u043c\u043e \u0441\u043f\u0438\u0442 \u0432\u0435\u0441\u044c \u0434\u0435\u043d\u044c.",
+          "text": "Момо спит весь день.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u0412\u0435\u0447\u0435\u0440\u043e\u043c \u043e\u043d\u0430 \u043b\u044e\u0431\u0438\u0442 \u0438\u0433\u0440\u0430\u0442\u044c.",
+          "text": "Вечером она любит играть.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u042f \u043e\u0447\u0435\u043d\u044c \u043b\u044e\u0431\u043b\u044e \u0441\u0432\u043e\u044e \u043a\u043e\u0448\u043a\u0443.",
+          "text": "Я очень люблю свою кошку.",
           "annotation": null
         }
       ]
     ],
     "vocab": [
       {
-        "word": "\u043a\u043e\u0448\u043a\u0430",
+        "word": "кошка",
         "annotation": "f",
         "english": "cat"
       },
       {
-        "word": "\u043c\u0430\u043b\u0435\u043d\u044c\u043a\u0438\u0439",
+        "word": "маленький",
         "annotation": null,
         "english": "small"
       },
       {
-        "word": "\u043c\u044f\u0433\u043a\u0438\u0439",
+        "word": "мягкий",
         "annotation": null,
         "english": "soft"
       },
       {
-        "word": "\u0441\u043f\u0430\u0442\u044c",
+        "word": "спать",
         "annotation": null,
         "english": "to sleep"
       },
       {
-        "word": "\u0438\u0433\u0440\u0430\u0442\u044c",
+        "word": "играть",
         "annotation": null,
         "english": "to play"
       },
       {
-        "word": "\u043b\u044e\u0431\u0438\u0442\u044c",
+        "word": "любить",
         "annotation": null,
         "english": "to love"
       }
@@ -170,75 +170,75 @@
     "lang": "ru",
     "level": 0,
     "index": 2,
-    "title_native": "\u041a\u0430\u043a\u0430\u044f \u0441\u0435\u0433\u043e\u0434\u043d\u044f \u043f\u043e\u0433\u043e\u0434\u0430",
+    "title_native": "Какая сегодня погода",
     "title_en": "Today's weather",
-    "emoji": "\u2600\ufe0f",
+    "emoji": "☀️",
     "sentences": [
       [
         {
-          "text": "\u0421\u0435\u0433\u043e\u0434\u043d\u044f \u0441\u043e\u043b\u043d\u0435\u0447\u043d\u043e.",
+          "text": "Сегодня солнечно.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u041d\u0435\u0431\u043e \u0433\u043e\u043b\u0443\u0431\u043e\u0435.",
+          "text": "Небо голубое.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u041d\u0430 \u0443\u043b\u0438\u0446\u0435 \u0442\u0435\u043f\u043b\u043e.",
+          "text": "На улице тепло.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u042f \u043b\u044e\u0431\u043b\u044e \u0433\u0443\u043b\u044f\u0442\u044c.",
+          "text": "Я люблю гулять.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u0417\u0430\u0432\u0442\u0440\u0430, \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c, \u0431\u0443\u0434\u0435\u0442 \u0434\u043e\u0436\u0434\u044c.",
+          "text": "Завтра, может быть, будет дождь.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u041c\u043d\u0435 \u043d\u0440\u0430\u0432\u044f\u0442\u0441\u044f \u0434\u043e\u0436\u0434\u043b\u0438\u0432\u044b\u0435 \u0434\u043d\u0438 \u0442\u043e\u0436\u0435.",
+          "text": "Мне нравятся дождливые дни тоже.",
           "annotation": null
         }
       ]
     ],
     "vocab": [
       {
-        "word": "\u0441\u043e\u043b\u043d\u0435\u0447\u043d\u043e",
+        "word": "солнечно",
         "annotation": null,
         "english": "sunny"
       },
       {
-        "word": "\u043d\u0435\u0431\u043e",
+        "word": "небо",
         "annotation": "n",
         "english": "sky"
       },
       {
-        "word": "\u0442\u0435\u043f\u043b\u043e",
+        "word": "тепло",
         "annotation": null,
         "english": "warm"
       },
       {
-        "word": "\u0433\u0443\u043b\u044f\u0442\u044c",
+        "word": "гулять",
         "annotation": null,
         "english": "to go for a walk"
       },
       {
-        "word": "\u0434\u043e\u0436\u0434\u044c",
+        "word": "дождь",
         "annotation": "m",
         "english": "rain"
       },
       {
-        "word": "\u0434\u043e\u0436\u0434\u043b\u0438\u0432\u044b\u0439",
+        "word": "дождливый",
         "annotation": null,
         "english": "rainy"
       }
@@ -248,69 +248,69 @@
     "lang": "ru",
     "level": 0,
     "index": 3,
-    "title_native": "\u041c\u043e\u0439 \u0437\u0430\u0432\u0442\u0440\u0430\u043a",
+    "title_native": "Мой завтрак",
     "title_en": "My breakfast",
-    "emoji": "\ud83c\udf73",
+    "emoji": "🍳",
     "sentences": [
       [
         {
-          "text": "\u0423\u0442\u0440\u043e\u043c \u044f \u0435\u043c \u0437\u0430\u0432\u0442\u0440\u0430\u043a.",
+          "text": "Утром я ем завтрак.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u042f \u043b\u044e\u0431\u043b\u044e \u0445\u043b\u0435\u0431 \u0441 \u043c\u0430\u0441\u043b\u043e\u043c.",
+          "text": "Я люблю хлеб с маслом.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u042f \u043f\u044c\u044e \u043a\u043e\u0444\u0435.",
+          "text": "Я пью кофе.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u0418\u043d\u043e\u0433\u0434\u0430 \u044f \u0435\u043c \u044f\u0439\u0446\u043e.",
+          "text": "Иногда я ем яйцо.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u0417\u0430\u0432\u0442\u0440\u0430\u043a \u2014 \u043c\u043e\u0439 \u043b\u044e\u0431\u0438\u043c\u044b\u0439 \u043f\u0440\u0438\u0451\u043c \u043f\u0438\u0449\u0438.",
+          "text": "Завтрак — мой любимый приём пищи.",
           "annotation": null
         }
       ]
     ],
     "vocab": [
       {
-        "word": "\u0437\u0430\u0432\u0442\u0440\u0430\u043a",
+        "word": "завтрак",
         "annotation": "m",
         "english": "breakfast"
       },
       {
-        "word": "\u0445\u043b\u0435\u0431",
+        "word": "хлеб",
         "annotation": "m",
         "english": "bread"
       },
       {
-        "word": "\u043c\u0430\u0441\u043b\u043e",
+        "word": "масло",
         "annotation": "n",
         "english": "butter"
       },
       {
-        "word": "\u043a\u043e\u0444\u0435",
+        "word": "кофе",
         "annotation": "m",
         "english": "coffee"
       },
       {
-        "word": "\u044f\u0439\u0446\u043e",
+        "word": "яйцо",
         "annotation": "n",
         "english": "egg"
       },
       {
-        "word": "\u043f\u0440\u0438\u0451\u043c \u043f\u0438\u0449\u0438",
+        "word": "приём пищи",
         "annotation": "m",
         "english": "meal"
       }
@@ -320,77 +320,545 @@
     "lang": "ru",
     "level": 0,
     "index": 4,
-    "title_native": "\u041c\u043e\u044f \u0441\u0435\u043c\u044c\u044f",
+    "title_native": "Моя семья",
     "title_en": "My family",
-    "emoji": "\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc66",
+    "emoji": "👨‍👩‍👧‍👦",
     "sentences": [
       [
         {
-          "text": "\u0423 \u043c\u0435\u043d\u044f \u0431\u043e\u043b\u044c\u0448\u0430\u044f \u0441\u0435\u043c\u044c\u044f.",
+          "text": "У меня большая семья.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u041c\u043e\u044e \u043c\u0430\u043c\u0443 \u0437\u043e\u0432\u0443\u0442 \u042e\u043b\u0438\u044f.",
+          "text": "Мою маму зовут Юлия.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u041c\u043e\u0435\u0433\u043e \u043f\u0430\u043f\u0443 \u0437\u043e\u0432\u0443\u0442 \u0422\u043e\u043c\u0430\u0441.",
+          "text": "Моего папу зовут Томас.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u0423 \u043c\u0435\u043d\u044f \u0435\u0441\u0442\u044c \u0431\u0440\u0430\u0442 \u0438 \u0441\u0435\u0441\u0442\u0440\u0430.",
+          "text": "У меня есть брат и сестра.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u041c\u044b \u0447\u0430\u0441\u0442\u043e \u0435\u0434\u0438\u043c \u0432\u043c\u0435\u0441\u0442\u0435.",
+          "text": "Мы часто едим вместе.",
           "annotation": null
         }
       ],
       [
         {
-          "text": "\u041c\u043e\u044f \u0441\u0435\u043c\u044c\u044f \u043e\u0447\u0435\u043d\u044c \u0432\u0430\u0436\u043d\u0430 \u0434\u043b\u044f \u043c\u0435\u043d\u044f.",
+          "text": "Моя семья очень важна для меня.",
           "annotation": null
         }
       ]
     ],
     "vocab": [
       {
-        "word": "\u0441\u0435\u043c\u044c\u044f",
+        "word": "семья",
         "annotation": "f",
         "english": "family"
       },
       {
-        "word": "\u043c\u0430\u043c\u0430",
+        "word": "мама",
         "annotation": "f",
         "english": "mom"
       },
       {
-        "word": "\u043f\u0430\u043f\u0430",
+        "word": "папа",
         "annotation": "m",
         "english": "dad"
       },
       {
-        "word": "\u0431\u0440\u0430\u0442",
+        "word": "брат",
         "annotation": "m",
         "english": "brother"
       },
       {
-        "word": "\u0441\u0435\u0441\u0442\u0440\u0430",
+        "word": "сестра",
         "annotation": "f",
         "english": "sister"
       },
       {
-        "word": "\u0432\u0430\u0436\u043d\u044b\u0439",
+        "word": "важный",
         "annotation": null,
         "english": "important"
+      }
+    ]
+  },
+  {
+    "lang": "ru",
+    "level": 0,
+    "index": 5,
+    "title_native": "Обмен карточками покемонов",
+    "title_en": "Trading Pokémon cards",
+    "emoji": "🎴",
+    "sentences": [
+      [
+        {
+          "text": "Меня зовут Артём.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "После школы я хожу в гости к другу.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "У него много карточек с покемонами.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Мы меняем карточки друг с другом.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Одна карточка очень редкая и ценная.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Я очень рад новой карточке в моей коллекции.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "карточка",
+        "annotation": "f",
+        "english": "card"
+      },
+      {
+        "word": "меняться",
+        "annotation": null,
+        "english": "to trade/exchange"
+      },
+      {
+        "word": "редкий",
+        "annotation": null,
+        "english": "rare"
+      },
+      {
+        "word": "ценный",
+        "annotation": null,
+        "english": "valuable"
+      },
+      {
+        "word": "рад",
+        "annotation": null,
+        "english": "glad"
+      },
+      {
+        "word": "коллекция",
+        "annotation": "f",
+        "english": "collection"
+      }
+    ]
+  },
+  {
+    "lang": "ru",
+    "level": 0,
+    "index": 6,
+    "title_native": "Я учу японские слова из аниме",
+    "title_en": "I learn Japanese words from anime",
+    "emoji": "🈺",
+    "sentences": [
+      [
+        {
+          "text": "Меня зовут Полина.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Я смотрю аниме с субтитрами.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Иногда я слышу одно и то же японское слово много раз.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Я записываю новые слова в тетрадь.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Так я выучила несколько простых фраз.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Мне нравится узнавать новый язык таким весёлым способом.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "субтитры",
+        "annotation": null,
+        "english": "subtitles"
+      },
+      {
+        "word": "слышать",
+        "annotation": null,
+        "english": "to hear"
+      },
+      {
+        "word": "записывать",
+        "annotation": null,
+        "english": "to write down"
+      },
+      {
+        "word": "тетрадь",
+        "annotation": "f",
+        "english": "notebook"
+      },
+      {
+        "word": "фраза",
+        "annotation": "f",
+        "english": "phrase"
+      },
+      {
+        "word": "язык",
+        "annotation": "m",
+        "english": "language"
+      }
+    ]
+  },
+  {
+    "lang": "ru",
+    "level": 0,
+    "index": 7,
+    "title_native": "Городки с дедушкой",
+    "title_en": "Gorodki with grandfather",
+    "emoji": "🪵",
+    "sentences": [
+      [
+        {
+          "text": "Летом я езжу в деревню к дедушке.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Дедушка учит меня играть в городки.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Нужно бросать биту и сбивать деревянные фигуры.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Сначала у меня совсем не получалось.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "После многих попыток я наконец сбил все фигуры.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Дедушка гордится моим первым успехом.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "деревня",
+        "annotation": "f",
+        "english": "village"
+      },
+      {
+        "word": "бросать",
+        "annotation": null,
+        "english": "to throw"
+      },
+      {
+        "word": "сбивать",
+        "annotation": null,
+        "english": "to knock down"
+      },
+      {
+        "word": "фигура",
+        "annotation": "f",
+        "english": "shape/figure"
+      },
+      {
+        "word": "попытка",
+        "annotation": "f",
+        "english": "attempt"
+      },
+      {
+        "word": "гордиться",
+        "annotation": null,
+        "english": "to be proud"
+      }
+    ]
+  },
+  {
+    "lang": "ru",
+    "level": 0,
+    "index": 8,
+    "title_native": "Первый полёт человека в космос",
+    "title_en": "The first human spaceflight",
+    "emoji": "🚀",
+    "sentences": [
+      [
+        {
+          "text": "Давно люди мечтали полететь в космос.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Юрий Гагарин стал первым человеком в космосе.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Его полёт длился всего сто восемь минут.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Ракета летела очень быстро вокруг Земли.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Из космоса Земля выглядела маленькой и голубой.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Этот полёт изменил историю навсегда.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "мечтать",
+        "annotation": null,
+        "english": "to dream"
+      },
+      {
+        "word": "полёт",
+        "annotation": "m",
+        "english": "flight"
+      },
+      {
+        "word": "ракета",
+        "annotation": "f",
+        "english": "rocket"
+      },
+      {
+        "word": "быстро",
+        "annotation": null,
+        "english": "fast"
+      },
+      {
+        "word": "голубой",
+        "annotation": null,
+        "english": "light blue"
+      },
+      {
+        "word": "история",
+        "annotation": "f",
+        "english": "history"
+      }
+    ]
+  },
+  {
+    "lang": "ru",
+    "level": 0,
+    "index": 9,
+    "title_native": "Я рисую фан-арт",
+    "title_en": "I draw fan art",
+    "emoji": "🖌️",
+    "sentences": [
+      [
+        {
+          "text": "Меня зовут Настя.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "По вечерам я рисую любимых персонажей.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Я использую разные цветные карандаши.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Иногда я рисую нового персонажа для косплея.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Друзья говорят, что мои рисунки очень похожи на оригинал.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Я мечтаю стать настоящей художницей.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "персонаж",
+        "annotation": "m",
+        "english": "character"
+      },
+      {
+        "word": "цветной",
+        "annotation": null,
+        "english": "colored"
+      },
+      {
+        "word": "карандаш",
+        "annotation": "m",
+        "english": "pencil"
+      },
+      {
+        "word": "рисунок",
+        "annotation": "m",
+        "english": "drawing"
+      },
+      {
+        "word": "похожий",
+        "annotation": null,
+        "english": "similar"
+      },
+      {
+        "word": "художница",
+        "annotation": "f",
+        "english": "artist (female)"
+      }
+    ]
+  },
+  {
+    "lang": "ru",
+    "level": 0,
+    "index": 10,
+    "title_native": "Океан и его обитатели",
+    "title_en": "The ocean and its creatures",
+    "emoji": "🐙",
+    "sentences": [
+      [
+        {
+          "text": "Океан покрывает большую часть Земли.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "В глубине океана очень темно и холодно.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Осьминог может менять цвет своего тела.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Киты — самые большие животные на планете.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Некоторые рыбы светятся в темноте.",
+          "annotation": null
+        }
+      ],
+      [
+        {
+          "text": "Учёные до сих пор изучают тайны океана.",
+          "annotation": null
+        }
+      ]
+    ],
+    "vocab": [
+      {
+        "word": "океан",
+        "annotation": "m",
+        "english": "ocean"
+      },
+      {
+        "word": "глубина",
+        "annotation": "f",
+        "english": "depth"
+      },
+      {
+        "word": "осьминог",
+        "annotation": "m",
+        "english": "octopus"
+      },
+      {
+        "word": "кит",
+        "annotation": "m",
+        "english": "whale"
+      },
+      {
+        "word": "светиться",
+        "annotation": null,
+        "english": "to glow"
+      },
+      {
+        "word": "тайна",
+        "annotation": "f",
+        "english": "secret/mystery"
       }
     ]
   }

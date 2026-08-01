@@ -77,5 +77,44 @@
     "bridge_note": "English relies on rigid subject-verb-object order to show who's doing what to whom, so reordering a sentence changes its meaning. Russian can reorder freely because the case endings — not the position — carry that information.",
     "related_game_id": null,
     "confidence": "first_pass"
+  },
+  {
+    "id": "ru-adjective-agreement-01",
+    "lang": "ru",
+    "difficulty": 2,
+    "title": "Adjectives agree in gender, number, and case with their noun",
+    "explanation": "An adjective isn't one fixed word — its ending changes to match whatever noun it describes, across all three genders, both numbers, and all six cases.",
+    "example_native": "большой стол, большая книга, большое окно",
+    "example_gloss": "big table (m), big book (f), big window (n) — same adjective, three different endings",
+    "bridge_lang": "en",
+    "bridge_note": "English adjectives never change form no matter what they describe. Russian adjectives carry the same agreement burden nouns do — learning a noun's gender also means learning how every adjective attached to it will need to flex.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-instrumental-01",
+    "lang": "ru",
+    "difficulty": 2,
+    "title": "\"With\" or \"by means of\" is a noun ending, not a preposition",
+    "explanation": "The instrumental case marks the tool or means by which something is done, often with no preposition needed at all — the case ending alone does the job.",
+    "example_native": "Я пишу ручкой.",
+    "example_gloss": "I write with a pen. (ручка → ручкой, instrumental)",
+    "bridge_lang": "en",
+    "bridge_note": "English always needs the word \"with\" to introduce a tool. Russian can fold that entire meaning into how the noun itself ends.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-reflexive-verbs-01",
+    "lang": "ru",
+    "difficulty": 2,
+    "title": "Reflexive verbs carry a fixed suffix, not a separate pronoun",
+    "explanation": "Verbs describing an action done to oneself (or with a passive/reciprocal flavor) attach a permanent -ся/-сь ending rather than pairing with a separate reflexive pronoun like \"myself.\"",
+    "example_native": "Я умываюсь.",
+    "example_gloss": "I wash (myself). (умывать \"to wash [someone]\" → умываться \"to wash oneself\")",
+    "bridge_lang": "en",
+    "bridge_note": "English bolts on a separate word (\"myself,\" \"each other\") after the verb. Russian bakes the same meaning directly into the verb's own ending, so the reflexive verb is really its own vocabulary word to learn, not a formula.",
+    "related_game_id": null,
+    "confidence": "first_pass"
   }
 ]

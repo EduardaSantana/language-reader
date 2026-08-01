@@ -76,5 +76,44 @@
     "bridge_note": "English signals formality through word choice and tone (\"grab a bite\" vs \"would you care to dine\"), never through the verb's grammatical ending. Japanese makes register a fixed grammatical choice on every single verb, not just a style preference.",
     "related_game_id": null,
     "confidence": "first_pass"
+  },
+  {
+    "id": "ja-te-form-01",
+    "lang": "ja",
+    "difficulty": 2,
+    "title": "One verb form links actions, makes requests, and builds other grammar",
+    "explanation": "The て (te) form is a connector shape every verb has — it links a sequence of actions together, forms polite requests, and combines with other words to build tenses and moods (like the ongoing-action ~ている).",
+    "example_native": "朝起きて、顔を洗って、朝ごはんを食べます。",
+    "example_gloss": "I get up, wash my face, and eat breakfast. (three verbs chained with て, only the last one fully conjugated)",
+    "bridge_lang": "en",
+    "bridge_note": "English repeats \"and\" between each verb (\"I get up and wash and eat\"). Japanese instead shifts every verb but the last into this one shared connector shape — a single form doing several jobs at once.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ja-relative-clauses-01",
+    "lang": "ja",
+    "difficulty": 3,
+    "title": "Relative clauses sit before the noun, with no \"that/which\" needed",
+    "explanation": "To describe a noun with a clause (\"the book that I read\"), Japanese just places the whole clause directly in front of the noun — no relative pronoun, no separate connecting word at all.",
+    "example_native": "私が読んだ本",
+    "example_gloss": "the book that I read (literally: I read book)",
+    "bridge_lang": "en",
+    "bridge_note": "English needs \"that\"/\"which\" to glue the clause onto the noun. Japanese doesn't glue anything — the clause just sits where an adjective would, doing the same job with zero extra words.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ja-transitive-intransitive-01",
+    "lang": "ja",
+    "difficulty": 2,
+    "title": "Many verbs come in matched pairs — one for \"do it,\" one for \"it happens\"",
+    "explanation": "A large set of verbs exist in two closely related forms: a transitive version (someone acts on something) and an intransitive version (it just happens on its own), often differing by only a syllable.",
+    "example_native": "ドアを開ける。 / ドアが開く。",
+    "example_gloss": "[Someone] opens the door. / The door opens (by itself).",
+    "bridge_lang": "en",
+    "bridge_note": "English usually reuses the exact same verb for both (\"I open the door\" / \"the door opens\") and lets context sort out who's doing what. Japanese marks the difference with a genuinely different verb, learned as its own pair.",
+    "related_game_id": null,
+    "confidence": "first_pass"
   }
 ]

@@ -1,5 +1,11 @@
 import { Fragment, useEffect, useMemo, useState } from 'react'
-import { buildExploreGraph, EXPLORE_LANGS, grammarPointsForLang, vocabNodeId } from '../lib/exploreGraph'
+import {
+  buildExploreGraph,
+  EXPLORE_LANGS,
+  grammarPointsForLang,
+  oddityPointsForLang,
+  vocabNodeId,
+} from '../lib/exploreGraph'
 import { buildGrammarPath, buildVocabPath, classifyVocab } from '../lib/explorePaths'
 import { buildDictionary } from '../lib/vocabIndex'
 import {
@@ -13,6 +19,7 @@ import {
 import { getDigDeeperSuggestions } from '../lib/companion'
 import { langMeta } from '../lib/langs'
 import BottomNav from './BottomNav'
+import EntryCard from './EntryCard'
 
 const CATEGORIES = [
   { key: 'grammar', label: 'Grammar' },
@@ -37,6 +44,23 @@ function grammarPointToNode(g) {
   }
 }
 
+function oddityToNode(o) {
+  return {
+    id: `${o.lang}:oddity:${o.id}`,
+    lang: o.lang,
+    type: 'oddity',
+    pos: null,
+    title: o.title,
+    reading: null,
+    subtitle: null,
+    example: { native: o.example_native, gloss: o.example_gloss, source: null },
+    note: o.bridge_note ?? null,
+    relatedGameId: o.related_game_id ?? null,
+    vocabEntry: null,
+    related: [],
+  }
+}
+
 function vocabEntryToNode(entry) {
   const pos = classifyVocab(entry)
   return {
@@ -55,116 +79,8 @@ function vocabEntryToNode(entry) {
   }
 }
 
-function EntryCard({
-  node,
-  stepLabel,
-  showRefs,
-  onNavigate,
-  onSave,
-  saved,
-  onPractice,
-  onDigDeeper,
-  diggingDeeper,
-  onOpenRabbitHole,
-}) {
-  const { avatar, label } = langMeta(node.lang)
-  const posLabel = node.type === 'grammar' ? 'grammar point' : node.pos
 
-  return (
-    <div
-      className={`entry-card ${onOpenRabbitHole ? 'entry-card-clickable' : ''}`}
-      onClick={onOpenRabbitHole}
-      role={onOpenRabbitHole ? 'button' : undefined}
-      tabIndex={onOpenRabbitHole ? 0 : undefined}
-    >
-      <div className="entry-eyebrow">
-        <span className={`lang-tag lang-tag-${node.lang}`}>
-          {avatar} {label}
-        </span>
-        {posLabel && <span className="entry-pos">{posLabel}</span>}
-        {stepLabel && <span className="step-badge">{stepLabel}</span>}
-      </div>
-
-      <div className="entry-headword" lang={node.lang}>
-        {node.title}
-      </div>
-      {node.reading && <div className="entry-reading">{node.reading}</div>}
-      {node.subtitle && <p className="entry-definition">{node.subtitle}</p>}
-
-      {node.example?.native && (
-        <div className="citation">
-          <div className="citation-native" lang={node.lang}>
-            {node.example.native}
-          </div>
-          {node.example.gloss && <div className="citation-gloss">{node.example.gloss}</div>}
-          {node.example.source && <div className="citation-source">— {node.example.source}</div>}
-        </div>
-      )}
-
-      {node.note && (
-        <div className="bridge-note">
-          <div className="bridge-note-label">Bridge note</div>
-          <div className="bridge-note-text">{node.note}</div>
-        </div>
-      )}
-
-      {node.type === 'vocab' && onSave && (
-        <button
-          className={`save-word-button ${saved ? 'saved' : ''}`}
-          disabled={saved}
-          onClick={(e) => {
-            e.stopPropagation()
-            onSave()
-          }}
-        >
-          {saved ? '✓ Saved' : '+ Save'}
-        </button>
-      )}
-
-      {node.relatedGameId && onPractice && (
-        <button
-          className="explore-link-button"
-          onClick={(e) => {
-            e.stopPropagation()
-            onPractice()
-          }}
-        >
-          Practice this →
-        </button>
-      )}
-
-      {showRefs && (
-        <>
-          {node.related.length > 0 && (
-            <>
-              <div className="refs-label">See also</div>
-              <div className="refs-list">
-                {node.related.map((rel) => {
-                  const relMeta = langMeta(rel.lang)
-                  return (
-                    <button key={rel.id} className="ref-button" onClick={() => onNavigate(rel.id)}>
-                      <span className={`ref-mark lang-tag-${rel.lang}`}>{relMeta.avatar}</span>
-                      <span className="ref-word" lang={rel.lang}>
-                        {rel.title}
-                      </span>
-                    </button>
-                  )
-                })}
-              </div>
-            </>
-          )}
-          {onDigDeeper && (
-            <button className="dig-deeper-button" onClick={onDigDeeper} disabled={diggingDeeper}>
-              {diggingDeeper ? 'Digging…' : '🔮 Dig deeper'}
-            </button>
-          )}
-        </>
-      )}
-    </div>
-  )
-}
-
-export default function ExploreScreen({ stories, wordSeed, onOpenGame, activeTab, onChangeTab }) {
+export default function ExploreScreen({ stories, wordSeed, nodeSeed, onOpenGame, activeTab, onChangeTab }) {
   const graph = useMemo(() => buildExploreGraph(stories), [stories])
   const unseenCount = useMemo(() => getUnseenSavedWords().size, [])
 
@@ -190,6 +106,15 @@ export default function ExploreScreen({ stories, wordSeed, onOpenGame, activeTab
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wordSeed])
+
+  useEffect(() => {
+    if (!nodeSeed) return
+    if (graph.getNode(nodeSeed.id)) {
+      setMode('random')
+      setTrail([nodeSeed.id])
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [nodeSeed])
 
   function resolveNode(id) {
     return aiNodes.get(id) ?? graph.getNode(id)
@@ -276,6 +201,7 @@ export default function ExploreScreen({ stories, wordSeed, onOpenGame, activeTab
     onOpenGame?.('sentence-build', node.relatedGameId, node.lang)
   }
 
+  const oddities = useMemo(() => oddityPointsForLang(pathLang), [pathLang])
   const grammarPath = useMemo(() => buildGrammarPath(grammarPointsForLang(pathLang)), [pathLang])
   const vocabDictForPathLang = useMemo(
     () => buildDictionary(stories.filter((s) => s.lang === pathLang)),
@@ -298,6 +224,9 @@ export default function ExploreScreen({ stories, wordSeed, onOpenGame, activeTab
         </button>
         <button className={mode === 'paths' ? 'active' : ''} onClick={() => setMode('paths')}>
           Paths
+        </button>
+        <button className={mode === 'oddities' ? 'active' : ''} onClick={() => setMode('oddities')}>
+          ✨ Oddities
         </button>
       </div>
 
@@ -342,7 +271,7 @@ export default function ExploreScreen({ stories, wordSeed, onOpenGame, activeTab
             <p className="favorites-empty">Nothing here yet — try "Begin elsewhere."</p>
           )}
         </>
-      ) : (
+      ) : mode === 'paths' ? (
         <>
           <div className="pill-row">
             {EXPLORE_LANGS.map((l) => (
@@ -410,6 +339,29 @@ export default function ExploreScreen({ stories, wordSeed, onOpenGame, activeTab
                 )
               })}
             </>
+          )}
+        </>
+      ) : (
+        <>
+          <div className="pill-row">
+            {EXPLORE_LANGS.map((l) => (
+              <button
+                key={l}
+                className={`level-pill-button ${pathLang === l ? 'active' : ''}`}
+                onClick={() => setPathLang(l)}
+              >
+                {langMeta(l).avatar} {langMeta(l).label}
+              </button>
+            ))}
+          </div>
+
+          {oddities.length === 0 ? (
+            <p className="path-empty">No oddities charted for this language yet.</p>
+          ) : (
+            oddities.map((o) => {
+              const node = oddityToNode(o)
+              return <EntryCard key={o.id} node={node} onOpenRabbitHole={() => startRabbitHole(node.id)} />
+            })
           )}
         </>
       )}

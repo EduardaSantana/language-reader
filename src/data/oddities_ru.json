@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ru-odd-no-have-verb",
+    "lang": "ru",
+    "title": "There is no verb \"to have\"",
+    "example_native": "У меня есть кошка.",
+    "example_gloss": "I have a cat. (literally: at me, [there] exists, a cat)",
+    "bridge_note": "Possession isn't a verb you do in Russian — it's a location you're near. \"Having\" something is just that thing existing in your vicinity.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-odd-toska",
+    "lang": "ru",
+    "title": "The word Nabokov said English couldn't translate",
+    "example_native": "тоска",
+    "example_gloss": "a deep spiritual anguish, often with no specific cause — Nabokov called it \"a sensation of great spiritual anguish\" that no single English word captures",
+    "bridge_note": "It sits somewhere between longing, melancholy, and existential ache — close to all three, fully none of them.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-odd-motion-verbs",
+    "lang": "ru",
+    "title": "There's no single verb for \"to go\"",
+    "example_native": "идти / ходить / ехать / ездить",
+    "example_gloss": "go on foot one-way / go on foot habitually / go by vehicle one-way / go by vehicle habitually — four different verbs for what English calls just \"go\"",
+    "bridge_note": "Russian has 14+ paired verbs of motion, splitting by manner (on foot vs. by vehicle) and by whether the trip is a single occurrence or a repeated/round-trip habit — English folds all of this into context and extra words.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-odd-hard-sign",
+    "lang": "ru",
+    "title": "A letter that makes no sound of its own",
+    "example_native": "ъ (твёрдый знак)",
+    "example_gloss": "the \"hard sign\" — pronounced as nothing; it just blocks the consonant before it from softening",
+    "bridge_note": "It's a purely grammatical instruction with zero sound of its own — the opposite of what a letter is usually for.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-odd-patronymic",
+    "lang": "ru",
+    "title": "Everyone's middle name is literally \"child of ___\"",
+    "example_native": "Иван Петрович",
+    "example_gloss": "Ivan, son of Pyotr (Petrovich = \"son of Pyotr\") — used instead of Mr./Mrs. in formal address",
+    "bridge_note": "Formal Russian address uses first name + patronymic together, no surname needed — it's simultaneously a name and a small family tree.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ru-odd-numbers-case",
+    "lang": "ru",
+    "title": "Numbers force the noun after them to change form",
+    "example_native": "один стол, два стола, пять столов",
+    "example_gloss": "one table, two tables, five tables — three different grammatical endings on \"table,\" triggered purely by which number precedes it",
+    "bridge_note": "1 takes singular, 2-4 take a special \"counting\" form, 5+ take full plural genitive — the number itself dictates the noun's grammar, not just its meaning.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  }
+]

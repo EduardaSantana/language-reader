@@ -1,0 +1,62 @@
+[
+  {
+    "id": "de-odd-kummerspeck",
+    "lang": "de",
+    "title": "Kummerspeck — \"grief bacon\"",
+    "example_native": "Kummerspeck",
+    "example_gloss": "literally \"grief bacon\" — the weight you gain from emotional overeating",
+    "bridge_note": "German just... has a word for this. One compound noun, no explanation needed if you're German.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-odd-backpfeifengesicht",
+    "lang": "de",
+    "title": "A face that begs to be slapped",
+    "example_native": "Backpfeifengesicht",
+    "example_gloss": "literally \"a face in need of a slap\"",
+    "bridge_note": "Compound nouns let German build extremely specific insults in a single word — no phrase required.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-odd-madchen-neuter",
+    "lang": "de",
+    "title": "\"Girl\" is grammatically neither male nor female",
+    "example_native": "das Mädchen",
+    "example_gloss": "the girl (grammatically neuter, das — not feminine, die)",
+    "bridge_note": "The diminutive suffix -chen always forces neuter gender, no matter what it's attached to. It overrides the natural gender of the word entirely — grammar wins over meaning.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-odd-doch",
+    "lang": "de",
+    "title": "A word that exists just to contradict \"no\"",
+    "example_native": "Hast du keine Zeit? — Doch!",
+    "example_gloss": "You don't have time? — Yes I do! (doch specifically answers a negative question with a positive)",
+    "bridge_note": "English has to add a whole extra word (\"yes I do\") to override a negative question. German just has a dedicated single-word rebuttal.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-odd-compound-length",
+    "lang": "de",
+    "title": "Compound nouns can run absurdly long",
+    "example_native": "Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz",
+    "example_gloss": "\"law on the delegation of duties for the supervision of cattle marking and beef labeling\" — a real, formerly official law name",
+    "bridge_note": "German lets you glue nouns together indefinitely to build one exact-fit word instead of a phrase. There's no hard grammatical limit — just a limit on human patience.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "de-odd-schadenfreude",
+    "lang": "de",
+    "title": "The word English had to borrow whole",
+    "example_native": "Schadenfreude",
+    "example_gloss": "literally \"harm-joy\" — pleasure taken in someone else's misfortune",
+    "bridge_note": "English speaks this word in German because English never bothered to compress the concept into one word of its own.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  }
+]

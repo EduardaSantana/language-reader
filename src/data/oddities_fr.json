@@ -1,0 +1,62 @@
+[
+  {
+    "id": "fr-odd-esprit-escalier",
+    "lang": "fr",
+    "title": "\"Staircase wit\" — the perfect comeback, too late",
+    "example_native": "l'esprit de l'escalier",
+    "example_gloss": "literally \"staircase wit\" — thinking of the perfect retort only after you've already left, on the stairs",
+    "bridge_note": "English has no single word for this at all — it borrows the French phrase wholesale when it needs one.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "fr-odd-silent-letters",
+    "lang": "fr",
+    "title": "A graveyard of silent letters",
+    "example_native": "beaucoup, temps, vingt",
+    "example_gloss": "a lot, time, twenty — each ends in one or more letters that are simply never pronounced",
+    "bridge_note": "French spelling often preserves how a word used to sound centuries ago, even after the pronunciation itself moved on — you're reading a fossil.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "fr-odd-il-y-a",
+    "lang": "fr",
+    "title": "\"There is\" is literally \"it there has\"",
+    "example_native": "Il y a un chat.",
+    "example_gloss": "There is a cat. (literally: it there has a cat)",
+    "bridge_note": "English's \"there is\" already hides a similar oddity (why \"there\"?), but French makes it stranger by routing it through \"avoir\" (to have) instead of \"to be.\"",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "fr-odd-liaison",
+    "lang": "fr",
+    "title": "Consonants that only exist between words",
+    "example_native": "les amis",
+    "example_gloss": "the friends — pronounced \"lez-ami\": the normally-silent -s of \"les\" appears only because \"amis\" starts with a vowel",
+    "bridge_note": "The consonant is a kind of grammatical ghost — invisible on its own, audible only when summoned by the next word.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "fr-odd-depaysement",
+    "lang": "fr",
+    "title": "The specific disorientation of being somewhere foreign",
+    "example_native": "le dépaysement",
+    "example_gloss": "literally \"un-country-ment\" — the disoriented, not-quite-yourself feeling of being outside your own country/culture",
+    "bridge_note": "It's not quite homesickness and not quite culture shock — English has to describe around it, French just names it.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "fr-odd-base-twenty",
+    "lang": "fr",
+    "title": "A base-20 counting system hiding inside French",
+    "example_native": "quatre-vingt-dix-neuf",
+    "example_gloss": "99 = literally \"four-twenty-ten-nine\" (4×20 + 10 + 9)",
+    "bridge_note": "This is a leftover from a Celtic/Norman base-20 counting system that never got fully replaced — French counts normally 1-60, then switches counting systems mid-language for 70-99.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  }
+]

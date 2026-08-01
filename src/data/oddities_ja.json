@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ja-odd-pitch-accent",
+    "lang": "ja",
+    "title": "The exact same word can mean three different things — by pitch alone",
+    "example_native": "橋 (はし) / 箸 (はし) / 端 (はし)",
+    "example_gloss": "bridge / chopsticks / edge — all pronounced \"hashi,\" distinguished only by which syllable is pitched higher",
+    "bridge_note": "There's no spelling or stress difference like English has (\"record\" the noun vs. \"record\" the verb) — the entire distinction lives in pitch, something most learners don't even hear at first.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ja-odd-counters",
+    "lang": "ja",
+    "title": "You can't just count things — you need the right counting word for their shape",
+    "example_native": "一本 (いっぽん) / 一枚 (いちまい) / 一匹 (いっぴき)",
+    "example_gloss": "one [long thin thing] / one [flat thing] / one [small animal] — three completely different words all meaning \"one,\" chosen by the shape/category of what's being counted",
+    "bridge_note": "English has a few of these (\"a school of fish,\" \"a herd of cattle\") but only for specific nouns. Japanese requires picking the right counter for nearly everything you count, every time.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ja-odd-komorebi",
+    "lang": "ja",
+    "title": "A word for sunlight filtering through leaves",
+    "example_native": "木漏れ日 (こもれび)",
+    "example_gloss": "literally \"tree-leaking sun\" — sunlight filtering down through the leaves of trees",
+    "bridge_note": "It's not \"sunlight\" and not \"shade\" — it's specifically the dappled effect of both together, common enough in everyday Japanese to have earned its own word.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ja-odd-keigo",
+    "lang": "ja",
+    "title": "Politeness can swap out the verb entirely, not just the tone",
+    "example_native": "食べる → 召し上がる / いただく",
+    "example_gloss": "to eat → to eat (respectfully, about someone else) / to eat (humbly, about yourself) — three unrelated-looking verbs for the same action",
+    "bridge_note": "English adjusts tone and word choice for politeness (\"eat\" vs. \"dine\"), but keigo goes further: an entirely different verb depending on whether you're elevating the other person or lowering yourself.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ja-odd-no-plural",
+    "lang": "ja",
+    "title": "Nouns usually don't mark whether there's one or many",
+    "example_native": "猫 (ねこ)",
+    "example_gloss": "cat, or cats — identical either way, with number left entirely to context",
+    "bridge_note": "English never lets you leave this ambiguous (cat/cats is mandatory). Japanese treats it as something you only bother specifying if it actually matters for what you're saying.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  },
+  {
+    "id": "ja-odd-onomatopoeia",
+    "lang": "ja",
+    "title": "A huge class of sound/mood words used in completely ordinary speech",
+    "example_native": "きらきら / わくわく",
+    "example_gloss": "sparkling, twinkling / the feeling of excited anticipation",
+    "bridge_note": "English onomatopoeia is mostly for literal sounds (boom, buzz) and feels a bit childish in adult speech. Japanese mimetic words extend to describing moods, textures, and manners — and are used constantly, at every age, in ordinary conversation.",
+    "related_game_id": null,
+    "confidence": "first_pass"
+  }
+]

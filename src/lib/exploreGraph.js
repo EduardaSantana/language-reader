@@ -2,14 +2,23 @@ import grammarFr from '../data/grammar_points_fr.json'
 import grammarDe from '../data/grammar_points_de.json'
 import grammarRu from '../data/grammar_points_ru.json'
 import grammarJa from '../data/grammar_points_ja_bites.json'
+import oddityFr from '../data/oddities_fr.json'
+import oddityDe from '../data/oddities_de.json'
+import oddityRu from '../data/oddities_ru.json'
+import oddityJa from '../data/oddities_ja.json'
 import { buildDictionary, stripLeadingArticle } from './vocabIndex'
 import { classifyVocab } from './explorePaths'
 
 const GRAMMAR_BY_LANG = { fr: grammarFr, de: grammarDe, ru: grammarRu, ja: grammarJa }
+const ODDITIES_BY_LANG = { fr: oddityFr, de: oddityDe, ru: oddityRu, ja: oddityJa }
 export const EXPLORE_LANGS = Object.keys(GRAMMAR_BY_LANG)
 
 export function grammarPointsForLang(lang) {
   return GRAMMAR_BY_LANG[lang] ?? []
+}
+
+export function oddityPointsForLang(lang) {
+  return ODDITIES_BY_LANG[lang] ?? []
 }
 
 export function vocabNodeId(lang, word) {
@@ -18,6 +27,10 @@ export function vocabNodeId(lang, word) {
 
 export function grammarNodeId(lang, id) {
   return `${lang}:grammar:${id}`
+}
+
+export function oddityNodeId(lang, id) {
+  return `${lang}:oddity:${id}`
 }
 
 function sentenceText(sentence) {
@@ -89,6 +102,11 @@ export function buildExploreGraph(stories) {
         related.push({ id: grammarNodeId(lang, g.id), lang, type: 'grammar', title: g.title })
       }
     }
+    for (const o of ODDITIES_BY_LANG[lang] ?? []) {
+      if (o.example_native?.includes(wordKey)) {
+        related.push({ id: oddityNodeId(lang, o.id), lang, type: 'oddity', title: o.title })
+      }
+    }
     const pos = classifyVocab(entry)
     return {
       id: vocabNodeId(lang, word),
@@ -138,17 +156,65 @@ export function buildExploreGraph(stories) {
     }
   }
 
+  function getOddityNode(lang, id) {
+    const o = (ODDITIES_BY_LANG[lang] ?? []).find((p) => p.id === id)
+    if (!o) return null
+    const related = []
+    for (const word of mentionedVocab(lang, o.example_native)) {
+      related.push({ id: vocabNodeId(lang, word), lang, type: 'vocab', title: word })
+    }
+    for (const ref of o.see_also ?? []) {
+      const target =
+        (GRAMMAR_BY_LANG[ref.lang] ?? []).find((p) => p.id === ref.id) ??
+        (ODDITIES_BY_LANG[ref.lang] ?? []).find((p) => p.id === ref.id)
+      if (target) {
+        const isGrammar = (GRAMMAR_BY_LANG[ref.lang] ?? []).includes(target)
+        related.push({
+          id: isGrammar ? grammarNodeId(ref.lang, ref.id) : oddityNodeId(ref.lang, ref.id),
+          lang: ref.lang,
+          type: isGrammar ? 'grammar' : 'oddity',
+          title: target.title,
+        })
+      }
+    }
+    return {
+      id: oddityNodeId(lang, id),
+      lang,
+      type: 'oddity',
+      pos: null,
+      title: o.title,
+      reading: null,
+      subtitle: null,
+      example: { native: o.example_native, gloss: o.example_gloss, source: null },
+      note: o.bridge_note ?? null,
+      relatedGameId: o.related_game_id ?? null,
+      vocabEntry: null,
+      related,
+    }
+  }
+
   function getNode(id) {
     const [lang, type, ...rest] = id.split(':')
     const key = rest.join(':')
-    return type === 'grammar' ? getGrammarNode(lang, key) : getVocabNode(lang, key)
+    if (type === 'grammar') return getGrammarNode(lang, key)
+    if (type === 'oddity') return getOddityNode(lang, key)
+    return getVocabNode(lang, key)
   }
 
   const startingIds = []
+  const allIds = []
   for (const lang of EXPLORE_LANGS) {
-    for (const g of GRAMMAR_BY_LANG[lang]) startingIds.push(grammarNodeId(lang, g.id))
+    for (const g of GRAMMAR_BY_LANG[lang]) {
+      startingIds.push(grammarNodeId(lang, g.id))
+      allIds.push(grammarNodeId(lang, g.id))
+    }
+    for (const o of ODDITIES_BY_LANG[lang] ?? []) {
+      startingIds.push(oddityNodeId(lang, o.id))
+      allIds.push(oddityNodeId(lang, o.id))
+    }
     for (const entry of dictByLang[lang].slice(0, 15)) startingIds.push(vocabNodeId(lang, entry.word))
+    for (const entry of dictByLang[lang]) allIds.push(vocabNodeId(lang, entry.word))
   }
 
-  return { getNode, startingIds }
+  return { getNode, startingIds, allIds }
 }
