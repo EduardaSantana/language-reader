@@ -16,7 +16,8 @@ function normalizeStory(raw, defaultLang) {
     ),
     vocab: raw.vocab.map((v) => ({
       word: v.word,
-      reading: v.reading ?? v.annotation ?? null,
+      reading: v.reading ?? null,
+      gender: v.gender ?? null,
       english: v.english,
     })),
   }

@@ -9,6 +9,7 @@ const LEVELS = [
   { key: 'all', label: 'All levels' },
   { key: 'N5', label: 'N5' },
   { key: 'N4', label: 'N4' },
+  { key: 'Not Sorted', label: 'Not Sorted' },
 ]
 
 function poolForLevel(kanjiComponents, level) {

@@ -249,6 +249,33 @@
   flex-shrink: 0;
 }
 
+/* Read tab redesign — rebuilt again to match the design spec artifact
+   exactly (docs/ENCYCLOPEDIA_IMPLEMENTATION_PLAN.md): a browsable chaptered
+   list of story tiles, not an inline eyebrow on a swipe-feed cover. See the
+   `.story-tile`/`.story-list`/`.story-reader-*` rules further below. */
+
+.story-tile-chips {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.teach-chip {
+  font-size: 10.5px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  border-radius: 999px;
+  padding: 3px 8px;
+}
+
+.teach-chip:hover,
+.teach-chip:focus-visible {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
 .story-card-title {
   text-align: center;
 }
@@ -965,6 +992,24 @@ ruby rt {
 .ref-word {
   font-size: 14px;
   font-weight: 600;
+}
+
+.kanji-example-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.kanji-example-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 12px;
 }
 
 .path-progress {
@@ -2177,5 +2222,692 @@ ruby rt {
   color: var(--text-dim);
   font-style: italic;
   margin-bottom: 8px;
+}
+
+/* Encyclopedia screen (Phase 2, docs/ENCYCLOPEDIA_IMPLEMENTATION_PLAN.md) */
+
+/* Encyclopedia's search input reused the old .dictionary-search class,
+   which has no real styling of its own (relies on the browser's dark
+   `color-scheme` default chrome) — doesn't match the mockup's explicit
+   pill-shaped `.search-bar`. Scoped to Encyclopedia only, not a global
+   input style, so Bookmarks' existing dictionary search is untouched. */
+.encyclopedia-screen input.dictionary-search {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 9px 15px;
+  font-size: 12.5px;
+  color: var(--text);
+}
+
+.hub-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.hub-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+.hub-card:hover,
+.hub-card:focus-visible {
+  border-color: var(--accent);
+}
+
+.hub-card-icon {
+  font-size: 20px;
+}
+
+.hub-card-title {
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.hub-card-count {
+  font-size: 10.5px;
+  color: var(--text-dim);
+}
+
+.hub-card-wide {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.encyclopedia-screen-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.encyclopedia-back {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 13px;
+  padding: 4px 6px 4px 0;
+}
+
+.encyclopedia-screen-title {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* Curriculum unit-list row (docs/ENCYCLOPEDIA_MOCKUP.html frame 03,
+   rebuilt for real 2026-08-04 — was a single-screen accordion, now a
+   proper unit-list screen matching the mockup exactly). */
+.unit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 11px 2px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  color: inherit;
+  text-align: left;
+}
+
+.unit-row-num {
+  color: var(--text-dim);
+  font-size: 11px;
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.unit-row-title {
+  flex: 1;
+}
+
+.unit-row-count {
+  font-size: 10.5px;
+  color: var(--text-dim);
+}
+
+.lesson-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 2px;
+  border-bottom: 1px solid var(--border);
+  width: 100%;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  color: inherit;
+  text-align: left;
+}
+
+.lesson-row-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-secondary);
+  flex: none;
+}
+
+.lesson-row-dot.todo {
+  background: var(--border);
+}
+
+.lesson-row-title {
+  flex: 1;
+  font-size: 13px;
+}
+
+.lesson-row-meta {
+  font-size: 10px;
+  color: var(--text-dim);
+}
+
+.dict-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 2px;
+  border-bottom: 1px solid var(--border);
+}
+
+.dict-row-word {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.dict-row-annot {
+  font-size: 12px;
+  color: var(--text-dim);
+  font-weight: 400;
+}
+
+.dict-row-gloss {
+  font-size: 11.5px;
+  color: var(--text-dim);
+}
+
+/* Letter-jump sidebar (docs/ENCYCLOPEDIA_MOCKUP.html's `.dict-layout`,
+   built for real 2026-08-04). Adapted from the mockup's confined-phone-
+   frame version: the real Encyclopedia screen scrolls at the window level
+   (`.screen` has no overflow of its own), so `.dict-list` doesn't clip
+   (the mockup's `overflow: hidden` was specific to its fixed-height phone
+   frame) and the sidebar is sticky so it stays reachable while scrolling
+   a long dictionary instead of scrolling away with the list. */
+.dict-layout {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.dict-list {
+  flex: 1;
+  min-width: 0;
+}
+
+.dict-jump {
+  position: sticky;
+  top: calc(env(safe-area-inset-top, 16px) + 100px);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 9px;
+  color: var(--text-dim);
+  font-weight: 700;
+  padding-top: 2px;
+  flex: none;
+}
+
+.dict-jump span {
+  cursor: pointer;
+  padding: 1px 2px;
+}
+
+.dict-jump span.on {
+  color: var(--accent);
+}
+
+.char-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.char-cell {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 2px;
+  text-align: center;
+}
+
+.char-cell-big {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.char-cell-small {
+  font-size: 9px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.kanji-hero {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.kanji-hero-glyph {
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.kanji-hero-meta {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+/* Alphabet-hero (docs/ENCYCLOPEDIA_MOCKUP.html frame 07c, redone 2026-08-04)
+   — right-sized for a single letter, not kanji's giant-glyph treatment
+   applied to something that doesn't need it. */
+.alpha-hero {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.alpha-hero-pair {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1;
+  flex: none;
+}
+
+.alpha-hero-name {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.alpha-hero-rom {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.comp-row {
+  display: flex;
+  gap: 6px;
+  margin: 8px 0 12px;
+  flex-wrap: wrap;
+}
+
+.comp-chip {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px 9px;
+  font-size: 14px;
+}
+
+.reading-block {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+
+.reading-block-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+  font-weight: 700;
+}
+
+.reading-block-value {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 3px 0;
+}
+
+.reading-block-example {
+  font-size: 11.5px;
+  color: var(--text-dim);
+}
+
+.disclosure {
+  border-top: 1px solid var(--border);
+  margin-top: 4px;
+  padding-top: 8px;
+}
+
+.disclosure-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 7px 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: none;
+  border: none;
+  text-align: left;
+}
+
+.disclosure-row.open {
+  color: var(--text);
+}
+
+.disclosure-caret {
+  font-size: 11px;
+}
+
+.disclosure-body {
+  font-size: 11.5px;
+  color: var(--text-dim);
+  padding: 0 0 8px 18px;
+  line-height: 1.5;
+}
+
+.disclosure-body-source {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.backlinks {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.backlink-chip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 10.5px;
+  color: var(--text-dim);
+}
+
+.result-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 2px;
+  border-bottom: 1px solid var(--border);
+  width: 100%;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  text-align: left;
+  color: inherit;
+}
+
+.result-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  flex: none;
+}
+
+.result-title {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.result-subtitle {
+  font-size: 10.5px;
+  color: var(--text-dim);
+}
+
+.journal-stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 2px;
+  border-bottom: 1px solid var(--border);
+}
+
+.journal-stat-label {
+  font-size: 13px;
+}
+
+.journal-stat-value {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.game-cluster-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 16px 0 8px;
+}
+.game-cluster-label:first-child {
+  margin-top: 4px;
+}
+
+/* Phase 5 (docs/ENCYCLOPEDIA_IMPLEMENTATION_PLAN.md) */
+
+/* Long-form reading mode: a serif face + a drop cap on the entry's opening
+   paragraph, for when curriculum explanations get the "extensive text" the
+   user has planned — reads as a considered reference passage rather than a
+   card-UI label. Applied via ::first-letter so it needs no JS text-splitting
+   and degrades gracefully (plain serif paragraph) on shorter text. */
+.reading-mode-text {
+  font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  line-height: 1.65;
+}
+
+.reading-mode-lede::first-letter {
+  float: left;
+  font-size: 2.6em;
+  line-height: 0.85;
+  font-weight: 700;
+  padding: 2px 6px 0 0;
+  color: var(--accent);
+}
+
+/* Long-form reading screen (docs/ENCYCLOPEDIA_MOCKUP.html frame 17) — a
+   dedicated full-screen essay view, not another disclosure section bolted
+   onto the entry card. Exact values from the mockup's coded `.reading-mode`. */
+.reading-mode-screen {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 4px 20px calc(env(safe-area-inset-bottom, 20px) + 150px);
+}
+
+.reading-mode-eyebrow {
+  font-family: system-ui, sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+
+.reading-mode-heading {
+  font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  line-height: 1.25;
+}
+
+.reading-mode-text {
+  font-size: 13.5px;
+  margin: 0 0 12px;
+}
+
+.reading-mode-cite {
+  font-family: system-ui, sans-serif;
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 8px 10px;
+  font-size: 12px;
+  color: var(--text-dim);
+  margin: 10px 0;
+}
+
+/* Wide comparison table: horizontal-scroll, one language per column — scales
+   past 4 columns without the vertical-stack scrolling a card-per-language
+   layout would need once PT/ES/IT/RO land. */
+.wide-table-wrap {
+  overflow-x: auto;
+  margin: 10px -2px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.wide-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.wide-table th,
+.wide-table td {
+  padding: 10px 14px;
+  text-align: left;
+  vertical-align: top;
+  min-width: 150px;
+}
+
+.wide-table th {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.wide-table td {
+  font-size: 13px;
+  border-top: 1px solid var(--border);
+}
+
+.wide-table-rowhead {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+/* Read tab: rebuilt to match the design spec artifact exactly — a browsable,
+   chaptered list of story tiles rather than a full-bleed swipe-per-story
+   feed. Tapping a tile opens a dedicated reading view (mirrors Encyclopedia's
+   list -> entry pattern). Bites mode is untouched — still the original
+   swipe feed, since the artifact never addressed Bites' shape. */
+
+.feed-container-static {
+  height: 100dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.read-story-list {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: calc(env(safe-area-inset-top, 16px) + 96px) 20px calc(env(safe-area-inset-bottom, 20px) + 150px);
+}
+
+/* Exact values from the design spec artifact's coded `.chapter-band` /
+   `.story-tile` (docs/ENCYCLOPEDIA_IMPLEMENTATION_PLAN.md) — not
+   approximated. */
+.read-chapter-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0 10px;
+}
+
+.read-chapter-header-icon {
+  font-size: 22px;
+}
+
+.read-chapter-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.read-chapter-header-lang {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+}
+
+.read-chapter-header-level {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.story-tile {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+  margin-bottom: 10px;
+  color: inherit;
+  font: inherit;
+}
+
+.story-tile:hover,
+.story-tile:focus-visible {
+  border-color: var(--accent);
+}
+
+.story-tile-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.story-tile-sub {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+
+.story-reader-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 480px;
+  margin: 0 auto;
+  /* Must clear the fixed .top-bar (Stories/Bites toggle) above it — same
+     tuned offset .story-list already uses, or the back button renders
+     underneath the fixed bar and eats its pointer events. */
+  padding: calc(env(safe-area-inset-top, 16px) + 96px) 20px 6px;
+}
+
+.story-reader-head-lang {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.story-reader-heart {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--accent);
+  padding: 0;
+}
+
+.story-reader-body {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 4px 20px calc(env(safe-area-inset-bottom, 20px) + 150px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 

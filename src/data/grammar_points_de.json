@@ -6,6 +6,7 @@
     "cefr": "A1",
     "title": "The V2 rule (finite verb second in statements)",
     "explanation": "In a German main-clause statement the conjugated verb is always the second element — not necessarily the second word, but the second slot. Whatever you put first (subject, time phrase, object), the verb follows immediately, and the subject then jumps behind the verb if it wasn't first.",
+    "long_form": "The trap in the word \"second\" is that it sounds like a word-count rule, and it isn't. German syntax is organized into topological fields: a Vorfeld (\"pre-field\") that holds exactly one constituent, then the finite verb, then everything else (the Mittelfeld), then — if there's a second verbal part — the very end. That one constituent in the Vorfeld can be a single word (Morgens) or an entire clause (Weil ich müde war, blieb ich zu Hause — the whole weil-clause counts as slot one, and blieb still lands immediately after it). Once you see V2 as \"one thing, then the verb,\" rather than \"word two is the verb,\" the rule stops being an arbitrary counting exercise and starts being a genuine architectural constraint you can build sentences against.\n\nV2 isn't a German idiosyncrasy; it's the default Germanic inheritance. Old English had it too — Þa comon hi to þæm munte (\"Then came they to the mountain\") inverts subject and verb after a fronted adverb exactly the way modern German does. Dutch, Danish, Swedish, Norwegian, Icelandic, and Frisian all still have it in full force. What actually happened is that English is the outlier: during the Middle English period, as inflectional endings eroded and word order took over the job those endings used to do, English generalized rigid Subject-Verb-Object order and largely abandoned V2, keeping only a handful of frozen exceptions (Never have I seen such a mess; Here comes the bus; Only then did she understand). So when a German sentence with fronted material feels weirdly inverted, the more accurate reaction isn't \"German is doing something strange\" — it's \"my own language dropped the ancestral pattern, and I'm relearning what every other Germanic language still does natively.\"\n\nThe standard beginner error is exactly what you'd predict from an SVO-locked brain: front a time phrase or object and then just carry on with subject-verb-object anyway, producing Morgens ich trinke Kaffee (verb in slot three). This isn't really a vocabulary or memorization problem; it's that English speakers have automatized \"subject launches the sentence\" so deeply that even after they've memorized the V2 rule abstractly, production under time pressure reverts to the L1 habit. The fix that actually works pedagogically is drilling the inversion physically — starting sentences with something other than the subject on purpose, over and over, until \"front something → verb → subject\" becomes its own automatized reflex rather than a rule you have to consciously apply.\n\nOne nuance that rarely makes it into a short explanation: yes/no questions and imperatives are V1 (verb occupies the very first slot, with nothing in the Vorfeld at all), and coordinating conjunctions like und, aber, oder, denn, and sondern are said to sit in \"position zero\" — they don't count as the Vorfeld's occupant, so the clause after them still needs its own separate V2 slot filled. That's why Ich bleibe zu Hause, denn ich bin müde keeps ich in first position after denn rather than inverting to *denn bin ich müde* — denn hasn't used up the Vorfeld, it's just glue between two independently V2-compliant clauses. Missing this distinction is exactly what causes the classic denn/weil mix-up covered in Unit 12, so this rule and that one are really two faces of the same underlying architecture.",
     "examples": [
       {
         "native": "Ich trinke morgens Kaffee.",
@@ -23,7 +24,8 @@
     "related_game_id": "order",
     "branch": "Sentence Skeleton & Verb Position (V2, the Satzklammer)",
     "prerequisites": [],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-1"
   },
   {
     "id": "de-u1-w-questions",
@@ -47,7 +49,8 @@
     "prerequisites": [
       "de-u1-the-v2-rule"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-1"
   },
   {
     "id": "de-u1-yesno-questions",
@@ -71,7 +74,8 @@
     "prerequisites": [
       "de-u1-w-questions"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-1"
   },
   {
     "id": "de-u1-imperative",
@@ -95,7 +99,8 @@
     "prerequisites": [
       "de-u1-yesno-questions"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-1"
   },
   {
     "id": "de-u1-the-satzklammer",
@@ -104,6 +109,7 @@
     "cefr": "A1",
     "title": "The Satzklammer (sentence bracket)",
     "explanation": "German routinely splits the verb into two poles: the finite verb in slot 2 and a second verbal element (infinitive, participle, or separable prefix) pushed to the very end. Everything in between is the Mittelfeld. This is the single most important structural template in the language.",
+    "long_form": "Think of the Satzklammer as a pair of bookends that a German speaker sets down before deciding what goes on the shelf between them. The finite, conjugated verb goes down first, in slot 2 (the linke Klammer, \"left bracket\"); the non-finite remainder of the predicate — an infinitive, a past participle, or a detached separable prefix — is reserved for the very end (the rechte Klammer, \"right bracket\") before a single word of the Mittelfeld is chosen. This is a genuinely different planning strategy from English, where the verb phrase usually stays clustered together (I will call you tomorrow keeps \"will call\" adjacent) and everything else trails after it. German instead front-loads the auxiliary/modal information and back-loads the lexical payload, with an open slot in between that can absorb an arbitrary amount of material — objects, time expressions, adverbs, entire prepositional phrases — without ever threatening the integrity of the frame.\n\nThis two-part verb isn't a late innovation bolted onto German; it's the same structural instinct that produces separable-prefix verbs (Unit 2), the perfect tenses (Unit 10), modal constructions (Unit 8), and eventually verb-final subordinate clauses (Unit 12) — all of them are, at bottom, applications of \"reserve the clause-final position for a verbal element.\" Mark Twain's famous complaint in \"The Awful German Language\" captures the psychological experience of a listener waiting for that bracket to close: he describes German prose piling up parenthetical material \"between a couple of king-parentheses,\" after which \"comes the verb, and you find out for the first time what the man has been talking about.\" That's not just a joke about verbosity — it's an accurate description of how German syntax genuinely defers the resolution of meaning until the sentence-final slot, in a way English essentially never does.\n\nEnglish isn't entirely innocent of split predicates, though — phrasal verbs like \"call up,\" \"turn off,\" and \"figure out\" can also separate their particle from the verb (\"I called my sister up\"), and this turns out to be a genuinely useful bridge for teaching separable prefixes specifically. But English never extends the principle to a language-wide, obligatory template the way German does; the split is optional and lexically restricted, not a universal clause-shape rule that every sentence with an auxiliary, modal, or separable verb must obey.\n\nThe most common learner error is closing the bracket too early — saying Ich habe gesehen den Film instead of Ich habe den Film gesehen — which is really just the English instinct to keep the verb phrase together reasserting itself. The deeper nuance that a short explanation skips is what happens when several verbal elements stack up at once: modals with a passive infinitive (Das muss gemacht werden), or a modal in the perfect tense triggering the Ersatzinfinitiv (Unit 10's \"double infinitive\"), pile multiple non-finite forms into the same right-bracket slot, in a fixed internal order that itself has to be learned. The Satzklammer, in other words, isn't just \"verb second, verb last\" — it's a container that can nest additional verbal machinery inside it, and everything else the course teaches about complex verb forms is really about what's allowed to live inside that final bracket.",
     "examples": [
       {
         "native": "Ich rufe dich morgen an.",
@@ -123,7 +129,8 @@
     "prerequisites": [
       "de-u1-imperative"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-1"
   },
   {
     "id": "de-u2-regular-present-tense-conjugation",
@@ -145,7 +152,8 @@
     "related_game_id": null,
     "branch": "The Present Tense & the Verb Engine",
     "prerequisites": [],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-2"
   },
   {
     "id": "de-u2-sein-and-haben",
@@ -169,7 +177,8 @@
     "prerequisites": [
       "de-u2-regular-present-tense-conjugation"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-2"
   },
   {
     "id": "de-u2-stem-vowel-changing-verbs",
@@ -193,7 +202,8 @@
     "prerequisites": [
       "de-u2-sein-and-haben"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-2"
   },
   {
     "id": "de-u2-separable-prefix-verbs",
@@ -221,7 +231,8 @@
     "related_oddity_id": {
       "lang": "de",
       "id": "de-odd-separable-verb-distance"
-    }
+    },
+    "source_doc": "docs/german_curriculum.md#unit-2"
   },
   {
     "id": "de-u2-inseparable-prefix-verbs",
@@ -237,15 +248,16 @@
       }
     ],
     "bridge_lang": "en",
-    "bridge_note": "Stress is the reliable signal: stressed prefix = separable, unstressed = inseparable.",
-    "mistake": "separating them; adding ge- (\"gevertanden\").",
+    "bridge_note": "Stress is the reliable signal: stressed prefix = separable, unstressed = inseparable. A handful of prefixes (um-, unter-, über-, durch-, wieder-, wider-, voll-) can go either way on the very same verb, splitting the meaning: übersetzen with unstressed über- (inseparable) means \"to translate\" (ich übersetze, ich habe übersetzt), while stressed über- (separable) means \"to ferry/cross over\" (ich setze über, ich bin übergesetzt). Learners must listen for the stress on a case-by-case basis rather than assume every verb with these prefixes behaves the same way.",
+    "mistake": "separating them; adding ge- (\"gevertanden\"); assuming a prefix like über- or durch- is always one or the other instead of checking the specific verb's stress and meaning.",
     "source": "officially, the B1 word list supplies Infinitiv, 3rd-sg Präsens, 3rd-sg Präteritum and Partizip Perfekt for every verb, confirming present tense as baseline",
     "related_game_id": null,
     "branch": "The Present Tense & the Verb Engine",
     "prerequisites": [
       "de-u2-separable-prefix-verbs"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-2"
   },
   {
     "id": "de-u2-present-tense-for-future",
@@ -269,7 +281,8 @@
     "prerequisites": [
       "de-u2-inseparable-prefix-verbs"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-2"
   },
   {
     "id": "de-u3-the-three-genders",
@@ -278,6 +291,7 @@
     "cefr": "A1",
     "title": "The three genders",
     "explanation": "German nouns are der, die, or das. Gender is grammatical, not (mostly) natural: das Mädchen (the girl) is neuter.",
+    "long_form": "The single hardest habit for an English speaker to build is treating gender as a property of the word, not of the world it describes. In English, grammatical gender essentially vanished, so the only \"gender\" left is natural — pronouns track biological sex or, for most things, are just \"it.\" German gender is a formal classification system: every noun, including das Buch (book) and der Tisch (table), belongs to one of three noun classes for reasons that are sometimes semantic, sometimes purely morphological, and sometimes just historical accident with no synchronic logic at all. Das Mädchen (the girl) being neuter is the textbook illustration of this mismatch — a female human referred to with das and later, in discourse, with es — and it's neuter not because German is being coy about girlhood but because -chen is a diminutive suffix, and all -chen/-lein diminutives are neuter regardless of what they name (das Fräulein, \"young lady,\" is the same pattern). Form outranks meaning.\n\nThis wasn't always an alien concept to English. Old English had the same three-way der/die/das-style system — masculine, feminine, and neuter — inherited from the shared Proto-Germanic ancestor. Old English sēo sunne (\"the sun\") was feminine and se mōna (\"the moon\") was masculine, the reverse of modern German's assignment for those two nouns, which is itself a useful reminder that gender assignment can drift over centuries even within a single language family. English lost the whole system during the profound inflectional simplification of the late Old English and Middle English periods — the same general erosion, driven partly by heavy contact with Old Norse in the Danelaw, that also stripped out most of the case endings discussed in Unit 4. German underwent a comparable phonetic erosion of unstressed endings but never had the same intensity of cross-linguistic contact forcing speakers to abandon distinctions that confused each other, so gender (like case) survived intact where English shed it.\n\nThe predictable mistake for a learner is assuming gender must track meaning and either hunting for a semantic reason where none exists, or defaulting everything to der out of sheer decision fatigue — a very common coping strategy that native listeners notice immediately, since der/die/das errors are one of the most salient markers of a foreign accent in otherwise fluent German. The more productive strategy, covered in the next point in this unit, is learning the high-yield formal cues (suffixes like -ung, -heit, -chen) that predict gender with much better than chance accuracy, precisely because gender in German is a formal system first and a semantic one only incidentally.\n\nThe genuinely interesting nuance is that natural and grammatical gender can openly conflict without the language treating it as an error to be fixed — das Mädchen and das Weib (an older, now somewhat pejorative word for \"woman\") are both grammatically neuter while denoting female humans, and speakers happily switch pronoun reference for such nouns depending on whether they're tracking the grammatical gender of the word or the natural gender of the referent in ongoing discourse (a girl introduced as das Mädchen is very often referred to as sie, \"she,\" a sentence or two later, once the formal noun-tracking pressure relaxes). That flexibility — form dictates the noun's own agreement, but sense can reassert itself once you're a few words removed from the noun itself — is a genuinely advanced-level nuance that a compact grammar card has no room to mention, but it's exactly the kind of detail that explains why native speakers don't experience das Mädchen as a contradiction the way a beginner initially does.",
     "examples": [
       {
         "native": "der Mann, die Frau, das Mädchen",
@@ -295,7 +309,8 @@
     "related_oddity_id": {
       "lang": "de",
       "id": "de-odd-madchen-neuter"
-    }
+    },
+    "source_doc": "docs/german_curriculum.md#unit-3"
   },
   {
     "id": "de-u3-gender-cues-by-form",
@@ -323,7 +338,8 @@
     "related_oddity_id": {
       "lang": "de",
       "id": "de-odd-see-gender-flip"
-    }
+    },
+    "source_doc": "docs/german_curriculum.md#unit-3"
   },
   {
     "id": "de-u3-noun-plurals",
@@ -347,7 +363,8 @@
     "prerequisites": [
       "de-u3-gender-cues-by-form"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-3"
   },
   {
     "id": "de-u3-compound-nouns-and-capitalization",
@@ -375,7 +392,8 @@
     "related_oddity_id": {
       "lang": "de",
       "id": "de-odd-capitalize-nouns"
-    }
+    },
+    "source_doc": "docs/german_curriculum.md#unit-3"
   },
   {
     "id": "de-u3-the-n-declension",
@@ -399,7 +417,8 @@
     "prerequisites": [
       "de-u3-compound-nouns-and-capitalization"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-3"
   },
   {
     "id": "de-u4-what-case-is",
@@ -408,6 +427,7 @@
     "cefr": "A1",
     "title": "What case is (and why German has it)",
     "explanation": "Case is a marking on articles/adjectives/pronouns/some nouns that signals a word's job in the clause. Because case carries that information, German word order can flex in ways English cannot.",
+    "long_form": "The cleanest way to feel what case actually does is to notice what English is missing when it disambiguates a sentence purely by position. In The man sees the dog, you know who's doing the seeing only because \"the man\" comes before the verb and \"the dog\" comes after — swap their order and you've swapped subject and object. German doesn't need to rely on that positional trick, because the article itself carries the grammatical role: Der Mann sieht den Hund and Den Hund sieht der Mann mean the exact same thing, because den unambiguously marks \"the dog\" as the accusative object no matter where it sits in the clause. Case is, in effect, a portable label sewn onto a noun phrase that tells you its job — subject, direct object, indirect object, possessor — independent of word order, which is precisely why German can front almost anything into the Vorfeld (Unit 1) for emphasis without ever becoming ambiguous about who did what to whom.\n\nThis isn't a German invention; it's the shared inheritance both languages started with. English and German both descend from Proto-Germanic, which itself inherited a rich case system from Proto-Indo-European, and Old English marked four-plus cases on its nouns, articles, and adjectives in a system not unlike modern German's. What happened to English is a genuinely fascinating and still partly debated piece of linguistic history: the unstressed final syllables that carried case endings gradually weakened and flattened toward a generic schwa sound and then disappeared entirely, a purely phonetic erosion that was underway well before the Norman Conquest. That erosion was very plausibly accelerated by intense contact with Old Norse-speaking settlers in the Danelaw during the Viking Age — two mutually intelligible-ish languages with different case endings on cognate words creates strong pressure to simply drop the confusing endings and lean on word order and prepositions instead, which is exactly what Middle English did. German never went through anything as intense as the Danelaw contact situation, and its standardization happened later and more conservatively, so the four-case system that English discarded survived largely intact.\n\nThis is the single biggest reframe an English-speaking learner needs for the entire course: case isn't an extra layer of grammar bolted onto German for difficulty's sake, it's the very same information English still expresses — English just outsourced the job to strict word order and a larger inventory of prepositions instead of to endings. Once that reframe lands, the four-case system stops looking like arbitrary memorization and starts looking like relearning, in a more overt form, a distinction your own language already makes silently every time you say \"whom\" or \"his\" instead of \"who\" or \"him.\"\n\nThe common beginner mistake — assuming whichever noun shows up first must be the subject/nominative — is a direct symptom of unconsciously importing English's positional logic into German, where position carries far less grammatical weight. The nuance a short card can't fit in is that German case marking is riddled with syncretism: many forms look identical across different cases (feminine and plural nominative/accusative articles are indistinguishable, for instance), so in practice fluent listeners aren't parsing every case ending in real time so much as using a mix of case cues, verb semantics, and plausibility to figure out who's doing what — meaning that even native speakers occasionally rely on the same kind of contextual guessing English speakers do by default, just far less often and with a much stronger fallback system when word order alone would be ambiguous.",
     "examples": [
       {
         "native": "Der Mann sieht den Hund.",
@@ -421,7 +441,8 @@
     "related_game_id": null,
     "branch": "The Four-Case System (Core Engine)",
     "prerequisites": [],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-4"
   },
   {
     "id": "de-u4-nominative-the-subject-case",
@@ -445,7 +466,8 @@
     "prerequisites": [
       "de-u4-what-case-is"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-4"
   },
   {
     "id": "de-u4-accusative-the-direct-object-case",
@@ -469,7 +491,8 @@
     "prerequisites": [
       "de-u4-nominative-the-subject-case"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-4"
   },
   {
     "id": "de-u4-dative-the-indirect-object-case",
@@ -493,7 +516,8 @@
     "prerequisites": [
       "de-u4-accusative-the-direct-object-case"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-4"
   },
   {
     "id": "de-u4-two-object-order",
@@ -517,7 +541,8 @@
     "prerequisites": [
       "de-u4-dative-the-indirect-object-case"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-4"
   },
   {
     "id": "de-u4-genitive-the-possessor-case",
@@ -541,7 +566,8 @@
     "prerequisites": [
       "de-u4-two-object-order"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-4"
   },
   {
     "id": "de-u4-verbs-governing-the-dative",
@@ -565,7 +591,8 @@
     "prerequisites": [
       "de-u4-genitive-the-possessor-case"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-4"
   },
   {
     "id": "de-u5-definite-article-declension",
@@ -587,7 +614,8 @@
     "related_game_id": null,
     "branch": "Articles & Determiners (der-words and ein-words)",
     "prerequisites": [],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-5"
   },
   {
     "id": "de-u5-indefinite-article-and-its",
@@ -611,7 +639,8 @@
     "prerequisites": [
       "de-u5-definite-article-declension"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-5"
   },
   {
     "id": "de-u5-kein",
@@ -635,7 +664,8 @@
     "prerequisites": [
       "de-u5-indefinite-article-and-its"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-5"
   },
   {
     "id": "de-u5-der-words",
@@ -659,7 +689,8 @@
     "prerequisites": [
       "de-u5-kein"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-5"
   },
   {
     "id": "de-u5-ein-words",
@@ -683,7 +714,8 @@
     "prerequisites": [
       "de-u5-der-words"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-5"
   },
   {
     "id": "de-u5-interrogative-determiners-welch-and",
@@ -707,7 +739,8 @@
     "prerequisites": [
       "de-u5-ein-words"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-5"
   },
   {
     "id": "de-u6-personal-pronouns-in-all",
@@ -729,7 +762,8 @@
     "related_game_id": null,
     "branch": "Pronouns (Personal, Possessive, Reflexive, Demonstrative)",
     "prerequisites": [],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-6"
   },
   {
     "id": "de-u6-formal-vs-informal-address",
@@ -753,7 +787,8 @@
     "prerequisites": [
       "de-u6-personal-pronouns-in-all"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-6"
   },
   {
     "id": "de-u6-third-person-pronouns-track-grammatical",
@@ -777,7 +812,8 @@
     "prerequisites": [
       "de-u6-formal-vs-informal-address"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-6"
   },
   {
     "id": "de-u6-possessive-pronouns",
@@ -801,7 +837,8 @@
     "prerequisites": [
       "de-u6-third-person-pronouns-track-grammatical"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-6"
   },
   {
     "id": "de-u6-reflexive-pronouns-and-reflexive",
@@ -809,7 +846,7 @@
     "difficulty": 2,
     "cefr": "A2–B1",
     "title": "Reflexive pronouns and reflexive verbs",
-    "explanation": "mich/dich/sich/uns/euch/sich (accusative) and mir/dir/sich… (dative). Many verbs are inherently reflexive (sich freuen, sich erinnern, sich beeilen).",
+    "explanation": "mich/dich/sich/uns/euch/sich (accusative) and mir/dir/sich… (dative). Many verbs are inherently reflexive (sich freuen, sich erinnern, sich beeilen). The reflexive is accusative by default, but switches to dative whenever the clause already has a separate accusative direct object — the reflexive then marks the \"for/to myself\" role instead: Ich wasche mich (acc., nothing else to mark) vs. Ich wasche mir die Hände (dat., because die Hände is already the accusative object).",
     "examples": [
       {
         "native": "Ich freue mich. Ich wasche mir die Hände.",
@@ -825,7 +862,8 @@
     "prerequisites": [
       "de-u6-possessive-pronouns"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-6"
   },
   {
     "id": "de-u6-demonstrative-pronouns",
@@ -849,7 +887,8 @@
     "prerequisites": [
       "de-u6-reflexive-pronouns-and-reflexive"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-6"
   },
   {
     "id": "de-u7-the-core-principle-the",
@@ -858,6 +897,7 @@
     "cefr": "A2",
     "title": "The core principle: the case/gender signal appears once",
     "explanation": "If the determiner shows case and gender clearly, the adjective \"relaxes\" (weak endings). If there's no determiner, the adjective must do the work (strong endings). After ein-words, they share the job (mixed).",
+    "long_form": "Adjective endings have a reputation as the single most feared table in German, and the reputation is deserved right up until you stop treating it as a table. The 48 cells of weak/mixed/strong endings across four cases and three genders plus plural aren't 48 independent facts to memorize; they're one division-of-labor principle applied consistently. Somewhere in the noun phrase, case and gender have to get signaled exactly once, clearly, so the listener knows the noun's grammatical job. If the determiner already does that job unambiguously (der, die, das and their relatives), the adjective is free to relax into a minimal two-way -e/-en contrast, because repeating the signal would be redundant. If there's no determiner at all — bare plurals, mass nouns, adjectives after numbers — nobody else is signaling case and gender, so the adjective has to step up and borrow the definite article's own endings wholesale. And after ein-words, which are famously silent in exactly three cells (nominative masculine, nominative/accusative neuter), the adjective and determiner split the job: the adjective stays quiet where ein already spoke, and fills in precisely the gaps where ein went mute.\n\nThis \"signal once\" logic isn't unique to adjectives — it's the same underlying principle that governs German noun-phrase agreement generally, and it echoes a genuinely old typological pattern in the Germanic languages sometimes called Sievers' or Wackernagel-era \"strong vs. weak\" declension, which also shows up, confusingly but not coincidentally, in the strong-vs-weak terminology for verb conjugation (Unit 2's stem-vowel-changing vs. regular verbs). In both domains, \"weak\" originally meant \"reduced/less marked\" and \"strong\" meant \"fully marked,\" and German adjectives inherited a genuinely parallel weak/strong split from the same broader Germanic morphological toolkit, just applied to a different word class.\n\nEnglish adjectives, by contrast, don't agree with their nouns at all — \"the good man,\" \"a good woman,\" \"good children\" all use the identical uninflected \"good,\" a simplification that happened for the same general reason English lost case and gender marking elsewhere. That absence of agreement is exactly why the German system feels so unmotivated to an English speaker at first: there's no felt need in your native grammar for an adjective to \"know\" the gender or case of the noun it's sitting next to, so the entire enterprise initially seems like pure arbitrary decoration rather than functional redundancy-avoidance.\n\nThe most common error by a wide margin is \"ein gute Mann\" instead of ein guter Mann — forgetting that the ein-word's silence in the masculine nominative is exactly the gap the adjective must fill, which is really a mixed-declension-specific case of a more general beginner tendency to treat all determiners as behaviorally identical to der-words. The genuinely useful nuance a compact card skips is the predicate/attributive boundary (covered as its own point in this unit) and the genitive-singular exception in the strong declension, where guten Weines takes -en rather than the expected -es specifically because the noun's own genitive -s ending is already carrying the case information, so the adjective doesn't need to repeat it — yet another instance of the same \"signal appears once\" logic reaching even into a cell that looks, on the surface, like an exception to the pattern rather than a confirmation of it.",
     "examples": [
       {
         "native": "Why this is the master insight: teach this before the tables. It converts 48 cells into one idea: strong = adjective does the grammar; weak = article does it; mixed = they split it",
@@ -871,7 +911,8 @@
     "related_game_id": null,
     "branch": "Adjective Endings (Weak / Mixed / Strong Declension)",
     "prerequisites": [],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-7"
   },
   {
     "id": "de-u7-weak-declension",
@@ -895,7 +936,8 @@
     "prerequisites": [
       "de-u7-the-core-principle-the"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-7"
   },
   {
     "id": "de-u7-mixed-declension",
@@ -919,7 +961,8 @@
     "prerequisites": [
       "de-u7-weak-declension"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-7"
   },
   {
     "id": "de-u7-strong-declension",
@@ -943,7 +986,8 @@
     "prerequisites": [
       "de-u7-mixed-declension"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-7"
   },
   {
     "id": "de-u7-parallel-adjectives-and-dative-plural",
@@ -967,7 +1011,8 @@
     "prerequisites": [
       "de-u7-strong-declension"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-7"
   },
   {
     "id": "de-u7-participles-as-adjectives",
@@ -991,7 +1036,8 @@
     "prerequisites": [
       "de-u7-parallel-adjectives-and-dative-plural"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-7"
   },
   {
     "id": "de-u8-the-six-modals-möchten",
@@ -1013,7 +1059,8 @@
     "related_game_id": null,
     "branch": "Modal Verbs",
     "prerequisites": [],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-8"
   },
   {
     "id": "de-u8-the-irregular-present-singular",
@@ -1022,6 +1069,7 @@
     "cefr": "A1",
     "title": "The irregular present singular",
     "explanation": "Modals change stem vowel in singular and take no ending in ich- and er/sie/es-forms: ich kann, du kannst, er kann; ich muss, er muss; ich darf, er darf. (sollen doesn't change vowel.)",
+    "long_form": "There's a reason ich kann and er kann look identical while every regular verb in the language distinguishes ich lerne from er lernt: German modal verbs aren't really irregular present-tense verbs at all, they're a fossil of an entirely different, older verb class called preterite-presents. In Proto-Germanic, these verbs' present-tense meaning was expressed using forms that were originally past-tense (strong-preterite) in shape — think of English \"strong\" past tenses like sang or wrote, which never take a personal ending in the first and third person singular (I sang, he sang, never \"he sangs\"). The modals borrowed that old past-tense morphology to express present meaning, and because strong preterites never had a personal ending on their singular forms, the modern reflexes of those verbs still don't: ich kann, er kann, ich muss, er muss are all missing the -e/-t a regular verb would carry, not because German got sloppy with this one verb class, but because that morphological slot was never there to begin with.\n\nThe vowel change itself (können → ich kann, wollen → ich will) is a related but separate residue of the same strong-verb ancestry: preterite-present verbs inherited an ablaut alternation between singular and plural forms from the strong verb paradigm they came from, which is why kann/können, muss/müssen, darf/dürfen all show a singular-vs-plural vowel split that looks superficially like the stem-vowel-changing verbs of Unit 2 but has a genuinely different historical source. Sollen is the outlier that proves the pattern is historical rather than a live rule: it happens to come from a preterite-present verb whose singular and plural stem vowels never diverged in the first place, so soll simply lacks a vowel change to show — not an exception to memorize separately, but a case where the same underlying history produced no visible alternation.\n\nEnglish speakers actually carry the identical fossil around in their own grammar without ever being taught it as a \"rule\": can, must, shall, may, and will are themselves the modern descendants of the same Germanic preterite-present class, which is exactly why \"he cans\" and \"he musts\" sound so wrong to a native English ear — English modals never took the third-person -s either, for precisely the historical reason German's modals lack their ich-/er-form endings. Pointing this out to a learner does real pedagogical work: instead of asking them to memorize an arbitrary irregularity in a foreign language, you're asking them to notice that their own language already behaves this way, for the same reason, and they've simply never had to name the pattern before.\n\nThe predictable production error — \"ich kanne,\" \"er kannt\" — comes from over-regularizing modals back onto the weak-verb template the learner has already drilled hard in Unit 2, which is a sign of real progress being slightly overshot rather than a sign of not understanding modals at all. The nuance worth flagging here that a short explanation skips entirely: because these forms are historically past-tense in shape, the actual simple-past (Präteritum) of the modals has to go a further step back and re-mark tense with the ordinary weak-verb -te- ending on top of the already-fossilized present stem, dropping the vowel change in the process (konnte, musste, durfte) — which is covered as its own point in this unit, but is worth knowing is not an unrelated fact: it's the modal system, having spent its \"native\" past-tense marking on the present tense already, having to borrow a completely different (regular, weak) strategy to mark the actual past.",
     "examples": [
       {
         "native": "ich kann, du kannst, er kann",
@@ -1037,7 +1085,8 @@
     "prerequisites": [
       "de-u8-the-six-modals-möchten"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-8"
   },
   {
     "id": "de-u8-modals-in-the-simple",
@@ -1061,7 +1110,8 @@
     "prerequisites": [
       "de-u8-the-irregular-present-singular"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-8"
   },
   {
     "id": "de-u8-möchten-vs-mögen",
@@ -1085,7 +1135,8 @@
     "prerequisites": [
       "de-u8-modals-in-the-simple"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-8"
   },
   {
     "id": "de-u9-accusative-prepositions",
@@ -1107,7 +1158,8 @@
     "related_game_id": null,
     "branch": "Prepositions by Case",
     "prerequisites": [],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-9"
   },
   {
     "id": "de-u9-dative-prepositions",
@@ -1131,7 +1183,8 @@
     "prerequisites": [
       "de-u9-accusative-prepositions"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-9"
   },
   {
     "id": "de-u9-two-way-prepositions",
@@ -1140,6 +1193,7 @@
     "cefr": "A2",
     "title": "Two-way prepositions (Wechselpräpositionen)",
     "explanation": "an, auf, hinter, in, neben, über, unter, vor, zwischen. Take accusative for motion toward a goal (answers wohin?), dative for location (answers wo?).",
+    "long_form": "The two-way prepositions are the point where German case stops being about who's doing what to whom (Unit 4's core use) and starts encoding something closer to an event's internal structure — whether a boundary was crossed or not. The same nine prepositions, the same physical relationship (\"at,\" \"on,\" \"in,\" \"under,\" and so on), toggle between accusative and dative purely based on whether the sentence describes a change of location or a static one: an die Wand hängen (to hang something onto the wall, accusative — a new location is achieved) versus an der Wand hängen (to hang, i.e., be affixed, on the wall, dative — a state that just persists). This isn't really about physical motion at all, which is why the crude \"is anyone moving?\" heuristic breaks down on sentences like im Zimmer tanzen (to dance in the room, dative) — there's plenty of kinetic energy in dancing, but no boundary is crossed and no new location is reached, so the location reading wins. The real test is aspectual: does the sentence describe arriving somewhere (telic, goal-oriented, accusative) or existing/acting somewhere (atelic, ongoing, dative)?\n\nThis accusative-for-goal / dative-for-location split has real depth in the history of Indo-European case systems: many old IE languages used the accusative case specifically to mark \"motion toward,\" a use sometimes called the accusative of direction, which survives residually even in Latin (in with the accusative for motion into, versus in with the ablative for static location — a strikingly similar two-way system to German's, inherited independently from the shared ancestor rather than borrowed). German's two-way prepositions are, in effect, a well-preserved fossil of a much older, more general case function that most of German's case system has otherwise narrowed down to strictly grammatical-role marking (subject, object, and so on).\n\nEnglish has nothing structurally comparable, because English prepositions don't interact with case marking at all — \"in the room\" is identical whether you're dancing static circles or running into it from the hallway, and English instead disambiguates the goal/location distinction lexically, with different prepositions (\"into\" vs. \"in,\" \"onto\" vs. \"on\") rather than the same preposition changing the case of its object. That absence of a native parallel is exactly why the concept feels unusually abstract to English speakers at first — there's no existing mental slot to hang it on, unlike, say, the accusative/dative split for direct vs. indirect objects, which at least maps loosely onto direct-object vs. \"to/for\"-phrase intuitions English speakers already have.\n\nThe contraction forms are worth teaching as a genuine shortcut rather than an afterthought: ins and ans are always accusative/goal, im and am are always dative/location, no exceptions, so a learner who's shaky on the boundary-crossing test can often get the right case just from which contraction sounds idiomatic. The deeper nuance a compact explanation has no room for is that a small family of verb pairs is built entirely around this same accusative/dative logic — stellen/stehen, legen/liegen, setzen/sitzen, hängen (transitive)/hängen (intransitive) — where the transitive, causative member of the pair (\"to put/set/lay something down,\" always with an accusative two-way-preposition phrase) systematically pairs with an intransitive, stative member (\"to be standing/lying/sitting,\" always dative). Learning that pairing explicitly turns the two-way prepositions from an isolated case-choice quirk into a whole mini-system of causative/stative verb pairs that native speakers deploy together as a single conceptual unit.",
     "examples": [
       {
         "native": "Ich hänge das Bild an die Wand (acc., motion) / Das Bild hängt an der Wand (dat., location)",
@@ -1155,7 +1209,8 @@
     "prerequisites": [
       "de-u9-dative-prepositions"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-9"
   },
   {
     "id": "de-u9-genitive-prepositions",
@@ -1179,7 +1234,8 @@
     "prerequisites": [
       "de-u9-two-way-prepositions"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-9"
   },
   {
     "id": "de-u9-verbs-with-fixed-prepositions",
@@ -1203,7 +1259,8 @@
     "prerequisites": [
       "de-u9-genitive-prepositions"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-9"
   },
   {
     "id": "de-u10-the-perfekt-the-spoken",
@@ -1225,7 +1282,8 @@
     "related_game_id": "blank",
     "branch": "The Past-Tense System (Perfekt, Präteritum, Plusquamperfekt)",
     "prerequisites": [],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-10"
   },
   {
     "id": "de-u10-past-participle-formation",
@@ -1249,7 +1307,8 @@
     "prerequisites": [
       "de-u10-the-perfekt-the-spoken"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-10"
   },
   {
     "id": "de-u10-haben-vs-sein-as",
@@ -1258,6 +1317,7 @@
     "cefr": "A2",
     "title": "haben vs sein as auxiliary",
     "explanation": "sein with verbs of motion/change of state and sein/bleiben/werden (gefahren, gegangen, aufgestanden, gestorben); haben with the rest (esp. transitive verbs).",
+    "long_form": "It's worth pausing on how strange it is, from an English-speaker's vantage point, that a language would need two different \"helper\" verbs to build one past tense at all. English long ago generalized \"have\" as the sole auxiliary for the perfect (I have eaten, I have gone, I have become), so the very idea that gehen and sterben would need a fundamentally different auxiliary from essen and sehen doesn't map onto any live distinction in modern English grammar. German's split tracks a genuine semantic class: sein-verbs denote motion from one place to another (gehen, fahren, fliegen, aufstehen) or a change of state, including the ultimate change of state (werden, sterben, bleiben — bleiben, \"to remain,\" is the interesting edge case, taking sein despite denoting the absence of change, because it patterns with the \"resulting state\" class rather than the \"action performed on something\" class). Haben covers everything else, especially ordinary transitive verbs where a subject acts on an object — the perfectly ordinary case of \"doing\" rather than \"becoming\" or \"going.\"\n\nThe fact that this distinction feels arbitrary to a modern English speaker is itself a historical accident, because English used to make exactly the same split. Older stages of English built the perfect of motion and change-of-state verbs with \"be,\" not \"have\" — a pattern that survives, fossilized, in the King James Bible's \"He is risen\" (not \"He has risen\") and \"the sun is risen,\" and in the archaic-sounding but still grammatical \"Winter is come.\" This was the ordinary, productive rule in Middle and Early Modern English, directly parallel to German's sein-perfect, and it only died out gradually as English generalized \"have\" across the board — a simplification German never underwent. So the sein/haben split isn't an invented complication; it's the same ancestral Germanic system that English abandoned within the last few centuries, meaning a learner encountering Ich bin gefahren for the first time is looking at a living relative of a construction their own language quietly retired.\n\nThe predictable mistake — defaulting to haben for everything, since that's the only lever English has left — is therefore not really an error of German comprehension so much as an accurate reflection of what English grammar currently offers as a template. The fix isn't memorizing an arbitrary list so much as internalizing the semantic class: if the verb answers \"where did the subject end up, or what did the subject become,\" reach for sein; if it answers \"what did the subject do to something else,\" reach for haben.\n\nThe genuine nuance that trips up learners well past the beginner stage is that a meaningful number of verbs can take either auxiliary depending on whether they're used transitively or intransitively in that particular sentence — fahren is the classic case: Ich bin nach Berlin gefahren (I drove/went to Berlin, intransitive motion, sein) versus Ich habe das Auto gefahren (I drove the car, transitive — there's a direct object being acted upon, haben). The same split shows up with fliegen, schwimmen, and a handful of others: the verb's basic meaning doesn't change auxiliary choice, the sentence's transitivity does. A short explanation can only give the two clean poles of the rule; the actual skill of choosing the right auxiliary in real speech is really the skill of noticing, sentence by sentence, whether this particular use of the verb has a direct object or not.",
     "examples": [
       {
         "native": "Ich bin gefahren. Ich habe gegessen.",
@@ -1273,7 +1333,8 @@
     "prerequisites": [
       "de-u10-past-participle-formation"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-10"
   },
   {
     "id": "de-u10-the-präteritum-the-writtennarrative",
@@ -1297,7 +1358,8 @@
     "prerequisites": [
       "de-u10-haben-vs-sein-as"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-10"
   },
   {
     "id": "de-u10-seinhabenmodals-in-the-präteritum",
@@ -1321,7 +1383,8 @@
     "prerequisites": [
       "de-u10-the-präteritum-the-writtennarrative"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-10"
   },
   {
     "id": "de-u10-the-plusquamperfekt",
@@ -1345,7 +1408,8 @@
     "prerequisites": [
       "de-u10-seinhabenmodals-in-the-präteritum"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-10"
   },
   {
     "id": "de-u11-futur-i",
@@ -1367,7 +1431,8 @@
     "related_game_id": null,
     "branch": "Future, Passive & the Conditional/Subjunctive II",
     "prerequisites": [],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-11"
   },
   {
     "id": "de-u11-futur-ii",
@@ -1391,7 +1456,8 @@
     "prerequisites": [
       "de-u11-futur-i"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-11"
   },
   {
     "id": "de-u11-vorgangspassiv",
@@ -1415,7 +1481,8 @@
     "prerequisites": [
       "de-u11-futur-ii"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-11"
   },
   {
     "id": "de-u11-zustandspassiv",
@@ -1439,7 +1506,8 @@
     "prerequisites": [
       "de-u11-vorgangspassiv"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-11"
   },
   {
     "id": "de-u11-passive-with-modals",
@@ -1463,7 +1531,8 @@
     "prerequisites": [
       "de-u11-zustandspassiv"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-11"
   },
   {
     "id": "de-u11-konjunktiv-ii-formation",
@@ -1487,7 +1556,8 @@
     "prerequisites": [
       "de-u11-passive-with-modals"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-11"
   },
   {
     "id": "de-u11-konjunktiv-ii-uses",
@@ -1496,6 +1566,7 @@
     "cefr": "B1",
     "title": "Konjunktiv II — uses",
     "explanation": "Hypotheticals/irreal conditions (Wenn ich Zeit hätte, würde ich kommen), polite requests (Könnten Sie mir helfen? Ich hätte gern…), wishes (Ich wäre gern reich), and past irrealis (Hätte ich das gewusst, wäre ich gekommen).",
+    "long_form": "What ties together Konjunktiv II's seemingly disparate uses — hypotheticals, polite requests, wishes, contrary-to-fact pasts — is a single underlying concept: distance from reality. Every one of these functions marks a proposition as something other than a plain assertion of fact: a condition that isn't (yet, or ever) true, a request framed as merely hypothetical rather than a direct demand, a wish for a state of affairs that doesn't currently hold. Once you see \"marks non-actuality\" as the throughline, the jump from Wenn ich Zeit hätte, würde ich kommen (\"if I had time, I'd come\" — a condition presented as unmet) to Könnten Sie mir helfen? (\"could you help me?\" — a request softened by casting it as hypothetical rather than a blunt imperative) stops looking like two unrelated grammar topics glued together under one label and starts looking like one mood doing one consistent job in several different pragmatic contexts.\n\nThis isn't a German-specific insight — the connection between hypothetical distance and politeness is a genuinely cross-linguistic pattern, and English has its own, much shrunken version of the same mood. \"If I were rich\" (not \"was\") is a fossilized English subjunctive surviving in exactly the irrealis-condition use Konjunktiv II covers, and English politeness famously reaches for the same distancing strategy: \"Could you help me?\" is felt as more polite than \"Can you help me?\" precisely because the past-tense-shaped modal \"could\" signals hypothetical remoteness rather than a flat, present-tense demand, exactly mirroring why Könnten Sie…? outranks Können Sie…? in German politeness. The metaphor at work in both languages is the same: distance in time (past tense) gets recruited to express distance from certainty or bluntness, because psychologically, \"remote in time\" and \"remote from reality/directness\" are treated as the same kind of remoteness.\n\nGerman just runs this strategy far more systematically and morphologically than the shrunken English remnant does. Where English politeness relies on a handful of memorized modal-verb pairs (can/could, will/would, shall/should) and one surviving irregular verb form (\"were\"), German maintains a productive mood with its own synthetic forms for the high-frequency verbs (wäre, hätte, könnte, müsste, sollte, gäbe, käme) plus a fully general würde + infinitive periphrastic route that can, in principle, apply to any verb — meaning a German speaker can express hypothetical distance on essentially any predicate, not just the small set of English modals that happen to have preserved a past-tense-shaped polite form.\n\nThe most consequential production mistake is reaching for würde + haben or würde + sein instead of the required synthetic hätte/wäre — a mistake that happens because würde + infinitive is taught as the \"default, works-for-everything\" formation route, so learners generalize it past the two verbs (plus a handful of high-frequency modals) that idiomatically insist on their own dedicated synthetic forms instead. The subtler trap, worth flagging explicitly because a short explanation has no room for it, is the near-collision between müsste (Konjunktiv II of müssen, \"would have to\") and musste (simple past of müssen, \"had to\") — two forms separated by a single umlaut that carry genuinely different meanings (hypothetical obligation vs. a real past obligation that actually occurred), and conflating them doesn't just sound slightly off, it can flip a sentence's truth conditions entirely, turning a statement about something that actually happened into a statement about something that merely might.",
     "examples": [
       {
         "native": "An deiner Stelle würde ich das nicht machen.",
@@ -1511,7 +1582,8 @@
     "prerequisites": [
       "de-u11-konjunktiv-ii-formation"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-11"
   },
   {
     "id": "de-u12-coordinating-conjunctions",
@@ -1533,7 +1605,8 @@
     "related_game_id": null,
     "branch": "Clause Combination: Coordination, Subordination, Relative Clauses & Word Order",
     "prerequisites": [],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-12"
   },
   {
     "id": "de-u12-subordinating-conjunctions-and-verb-final",
@@ -1542,6 +1615,7 @@
     "cefr": "B1",
     "title": "Subordinating conjunctions and verb-final order",
     "explanation": "weil, dass, wenn, als, obwohl, damit, ob, während, bevor, nachdem, seit(dem) push the finite verb to the end of their clause.",
+    "long_form": "There's a real temptation to treat main-clause V2 (Unit 1) as \"the German word order rule\" and subordinate-clause verb-final order as some separate, unrelated complication tacked on for good measure. It's more illuminating to flip that framing around: many linguists analyzing the Germanic languages actually treat clause-final verb placement as the more basic, underlying pattern, with V2 as a later, specifically main-clause innovation — the finite verb gets pulled forward out of its \"natural\" final resting place and raised into second position, but only in independent clauses making an assertion. A subordinate clause introduced by weil, dass, wenn, and the rest doesn't get that promotion, because it isn't performing an independent speech act of its own — it's embedded inside a larger clause, and so the verb simply stays where the deeper, older pattern would put it: at the end. Seen this way, Ich bleibe zu Hause, weil ich müde bin isn't \"the normal rule, plus a strange exception for weil-clauses\" — it's two different environments each showing their appropriate, historically motivated verb position, and the subordinate clause is arguably the more conservative, less altered one of the two.\n\nThis reframing does real explanatory work for a specific, very common error: keeping V2 inside the subordinate clause (…weil ich bin müde). That mistake isn't just \"forgetting a rule\" — it's the overwhelmingly natural default for a speaker whose entire linguistic experience treats verb-second as the baseline pattern for every clause, subordinate or not, which describes essentially every English speaker, since English never developed (or, on the V2-is-basic view, never lost) a verb-final subordinate-clause pattern to contrast against its main clauses. Framing subordinate verb-final order as \"what the language does by default when nothing promotes the verb\" rather than \"an arbitrary extra rule for clauses starting with certain words\" gives learners a reason the pattern exists, not just an instruction to obey it.\n\nEnglish subordinate clauses, notably, don't reorder their verb at all relative to the main clause — \"I'm staying home because I'm tired\" keeps identical SVO order in both halves, which is precisely why English offers no toehold for predicting German's behavior here and the error is so persistent even among otherwise advanced learners: there's no partial cognate pattern in English to generalize from, unlike, say, the sein/haben auxiliary split, which at least has a fossilized English ancestor to point to.\n\nThe nuance a compact grammar card skips is what happens once verb-final order has to interact with everything else the course has already taught: separable prefixes reunite with their verb at the very end rather than detaching (weil ich morgen abfahre stays one word, unlike the main-clause Ich fahre morgen ab), and modal or perfect-tense constructions stack their non-finite elements immediately before the finite verb, which itself moves to the true final position rather than staying in slot two — …, weil ich das nicht habe machen können, not …, weil ich das nicht machen können habe (see this file's Ersatzinfinitiv entry for exactly why the auxiliary, in that specific double-infinitive case, gets a further exception to even this rule). Subordinate-clause word order, in other words, isn't a standalone fact to memorize once and be done with — it's a template that every later, more complex verb construction in the language has to be re-learned inside of.",
     "examples": [
       {
         "native": "Ich bleibe zu Hause, weil ich müde bin.",
@@ -1557,7 +1631,8 @@
     "prerequisites": [
       "de-u12-coordinating-conjunctions"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-12"
   },
   {
     "id": "de-u12-wenn-vs-als-vs",
@@ -1581,7 +1656,8 @@
     "prerequisites": [
       "de-u12-subordinating-conjunctions-and-verb-final"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-12"
   },
   {
     "id": "de-u12-fronted-subordinate-clauses",
@@ -1605,7 +1681,8 @@
     "prerequisites": [
       "de-u12-wenn-vs-als-vs"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-12"
   },
   {
     "id": "de-u12-relative-clauses",
@@ -1614,6 +1691,7 @@
     "cefr": "B1",
     "title": "Relative clauses",
     "explanation": "Introduced by der/die/das (or welcher); the pronoun takes its gender/number from the antecedent but its case from its job inside the relative clause; verb goes to the end; commas obligatory; the pronoun is never omitted.",
+    "long_form": "The elegant, slightly counterintuitive design of German relative pronouns is that they're built from two independent pieces of information glued onto one word: gender and number come from outside the relative clause (from whatever noun the clause is describing), while case comes from entirely inside it (from the pronoun's own grammatical job within the clause it introduces). In Die Frau, deren Sohn ich kenne, the relative pronoun deren is feminine singular because die Frau is feminine singular — that part looks backward, at the antecedent — but it's genitive because inside the relative clause it's functioning as a possessor of Sohn, a role entirely local to that clause and unrelated to what case die Frau itself happens to be playing in the sentence outside it. This split-sourcing is the entire skill of relative clauses in German: you have to hold two separate grammatical questions in mind simultaneously — \"what is the antecedent's gender/number?\" and \"what job does the pronoun do in the clause I'm about to build?\" — and answer them independently before the correct pronoun form falls out.\n\nThat two nouns can look identical (der as both the masculine nominative definite article and the masculine nominative relative pronoun) is not a coincidence: German relative pronouns are, historically and synchronically, simply the demonstrative der/die/das pressed into a second grammatical job, a very old and cross-linguistically common strategy — many Indo-European languages recruit demonstratives or interrogatives for relative-clause use, which is also, separately, why English \"that\" (originally a demonstrative) and \"who/which\" (originally interrogatives) both do relative-clause duty in English as well. Welcher, the more formal alternative German offers, is transparently the interrogative \"which\" doing exactly the analogous job, giving German two parallel systems — demonstrative-based and interrogative-based — where English essentially merged its own two historical strategies into a single fuzzy set of relative words.\n\nEnglish's relative-clause system looks deceptively similar on the surface but actually asks for far less grammatical bookkeeping: \"the man I saw\" can drop the relative pronoun entirely (a genuine option German never allows — the pronoun is always obligatory), and even when English keeps a pronoun, it marks case only in the vestigial who/whom distinction, itself increasingly optional in casual speech, and never marks the gender or number of the antecedent on the pronoun at all (\"which\" serves for masculine, feminine, and neuter alike). German, by contrast, demands the pronoun every time and forces the full case system (Unit 4) to do real disambiguating work inside the relative clause — which is exactly why relative clauses are placed as late as they are in this curriculum: they're really a stress-test of whether the learner's case intuitions from Units 4–7 have actually solidified enough to apply them inside a subordinate structure at the same time as tracking gender/number agreement from a different source.\n\nThe classic mistakes follow directly from this dual-sourcing design: dropping the pronoun by English habit, or — more diagnostically interesting — matching the pronoun's case to the antecedent's case instead of to its own role inside the clause, which happens when a learner correctly identifies gender and number from the antecedent but then, under cognitive load, lets that same backward-looking logic bleed into the case decision too, rather than switching mental gears to ask a locally-scoped question about the clause being built. The nuance rarely covered in a compact explanation is that relative pronouns can also follow a preposition, and when they do, the preposition's case requirement (Unit 9) simply overrides everything else — in dem Haus, in dem ich wohne (\"the house I live in\") uses dem not because of anything about das Haus's role in the main clause, but purely because in governs the dative, meaning a fully fluent relative clause requires juggling antecedent agreement, the pronoun's clause-internal role, and potentially a governing preposition's case demand, all at once, in a single small word.",
     "examples": [
       {
         "native": "Der Mann, der dort steht, ist mein Lehrer. (nom.) / Das Buch, das ich lese… (acc.) / Die Frau, deren Sohn ich kenne… (gen., B2)",
@@ -1629,7 +1707,8 @@
     "prerequisites": [
       "de-u12-fronted-subordinate-clauses"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-12"
   },
   {
     "id": "de-u12-tekamolo",
@@ -1653,7 +1732,8 @@
     "prerequisites": [
       "de-u12-relative-clauses"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-12"
   },
   {
     "id": "de-u12-infinitive-clauses-with-zu",
@@ -1677,7 +1757,8 @@
     "prerequisites": [
       "de-u12-tekamolo"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-12"
   },
   {
     "id": "de-u12-the-position-of-nicht",
@@ -1701,7 +1782,8 @@
     "prerequisites": [
       "de-u12-infinitive-clauses-with-zu"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-12"
   },
   {
     "id": "de-u13-nicht-vs-kein",
@@ -1723,7 +1805,8 @@
     "related_game_id": null,
     "branch": "Negation, Comparison, da-/wo-Compounds & Discourse Glue",
     "prerequisites": [],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-13"
   },
   {
     "id": "de-u13-comparative-and-superlative",
@@ -1731,23 +1814,28 @@
     "difficulty": 1,
     "cefr": "A2",
     "title": "Comparative and superlative",
-    "explanation": "Comparative + -er (+ often umlaut: älter, größer) + als for \"than\"; superlative am …-sten (predicative) or der/die/das …-ste (attributive). Irregulars: gut/besser/best-, viel/mehr/meist-, gern/lieber/liebst-, hoch/höher/höchst-.",
+    "explanation": "Comparative + -er (+ often umlaut: älter, größer) + als for \"than\"; superlative am …-sten (predicative) or der/die/das …-ste (attributive). Irregulars: gut/besser/best-, viel/mehr/meist-, gern/lieber/liebst-, hoch/höher/höchst-. Equality (not comparison) is a separate pattern: (genau)so + adjective + wie (\"just as … as\"), which uses the plain adjective, never the comparative form.",
     "examples": [
       {
         "native": "Sie ist größer als ich. Das ist der schönste Tag",
         "gloss": null
+      },
+      {
+        "native": "Er ist genauso groß wie du.",
+        "gloss": "He's just as tall as you. (equality: so + adjective + wie, not a comparative)"
       }
     ],
     "bridge_lang": "en",
-    "bridge_note": "English -er/-est and better/best are the exact Germanic cognate patterns; the umlaut in älter is (again) i-umlaut.",
-    "mistake": "using wie instead of als for \"than\"; regularizing irregulars; forgetting the attributive superlative still takes adjective endings.",
+    "bridge_note": "English -er/-est and better/best are the exact Germanic cognate patterns; the umlaut in älter is (again) i-umlaut. English \"as tall as\" and German so groß wie are likewise a direct structural match, which makes it an easy point — the real risk is learners over-applying als by analogy to equality statements too.",
+    "mistake": "using wie instead of als for \"than\"; regularizing irregulars; forgetting the attributive superlative still takes adjective endings; using als instead of wie for equality (\"so groß als du\" is wrong — als is only for unequal comparison).",
     "source": null,
     "related_game_id": "blank",
     "branch": "Negation, Comparison, da-/wo-Compounds & Discourse Glue",
     "prerequisites": [
       "de-u13-nicht-vs-kein"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-13"
   },
   {
     "id": "de-u13-da-wo-compounds",
@@ -1771,7 +1859,8 @@
     "prerequisites": [
       "de-u13-comparative-and-superlative"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-13"
   },
   {
     "id": "de-u13-conjunctional-adverbs",
@@ -1795,7 +1884,8 @@
     "prerequisites": [
       "de-u13-da-wo-compounds"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-13"
   },
   {
     "id": "de-u14-konjunktiv-i",
@@ -1804,6 +1894,7 @@
     "cefr": "B2",
     "title": "Konjunktiv I (indirect/reported speech)",
     "explanation": "Formed from the infinitive stem + subjunctive endings (er komme, er habe, er sei); signals that the writer is relaying a claim without endorsing it. When Konjunktiv I coincides with the indicative, German substitutes Konjunktiv II.",
+    "long_form": "Konjunktiv I solves a communicative problem that English handles only clumsily: how do you report someone else's claim while visibly, grammatically, refusing to co-sign it? English's main tool is backshifting tense (\"she said she was confident\" for an original \"I am confident\") plus a scattering of hedging adverbs (\"reportedly,\" \"allegedly\"), and both are optional and easy to drop, which is exactly why English news writing so often blurs into stating other people's claims as flat fact after a sentence or two of quotation marks. German instead has a dedicated grammatical mood whose entire job is marking exactly this distinction, on every single verb in the reported material, for as long as the report continues — der Minister sagte, er sei zuversichtig und werde die Reform unterstützen keeps sei and werde in the reporting mood across the whole sentence, continuously flagging \"this is what he claims, not what I'm asserting as true.\" That's a structurally more robust distancing device than English's optional, easily-forgotten hedges, and it's exactly why German journalism can sustain long stretches of attributed claims — political statements, court testimony, scientific hedging — without the reader ever losing track of who actually believes what.\n\nThe formation itself is transparent once you see the pattern: take the infinitive stem and add a fixed set of subjunctive personal endings (komme, kommest, komme, kommen, kommet, kommen for kommen), which is why sein produces the famously irregular-looking but perfectly rule-following er sei (from the stem sei-, historically related to sein's own irregular paradigm) rather than a form built off ist. The deeper logic that makes this mood genuinely elegant rather than just another memorized paradigm is its self-correcting mechanism: whenever a Konjunktiv I form would be indistinguishable from the ordinary indicative — which happens constantly, since most persons' Konjunktiv I endings collide with everyday present-tense endings — German doesn't just let the ambiguity stand. It substitutes Konjunktiv II instead, precisely so the \"this is reported, not asserted\" signal never silently disappears just because two verb paradigms happen to look alike for a particular person. Sie haben (indicative \"they have\") and the theoretical Konjunktiv I sie haben are identical in form, so a reported claim about what \"they\" have gets bumped to sie hätten (Konjunktiv II) instead — not because the meaning shifts toward hypothetical, but purely to keep the reporting-mood signal audible.\n\nThis is a genuinely rare design choice among the world's languages, and it's worth sitting with why English never developed anything comparable: English's tense-backshifting strategy for reported speech relies on an ambient, one-time cue (the reporting verb \"said,\" plus a shift from present to past tense) rather than a mood marked continuously on every subsequent verb, so once a sentence has drifted a few clauses away from its \"she said that…\" anchor, English has no ongoing grammatical signal left to remind the reader that everything since is still attributed rather than asserted — which is a real source of ambiguity in English journalism and legal writing that Konjunktiv I structurally prevents in German.\n\nThe practical trap for learners is less about producing Konjunktiv I from scratch — the official Goethe/ÖSD B1 inventory explicitly says active mastery of it isn't required below B2, precisely because it's a genuinely advanced, mostly written-register structure — and more about two recognition failures: mistaking an indicative report for something the writer is personally vouching for, since English speakers have no reflex to scan for a subjunctive-mood cue signaling otherwise; and, once producing it, forgetting the Konjunktiv-I-to-Konjunktiv-II substitution rule and leaving an ambiguous form standing, which quietly defeats the entire purpose of using the mood in the first place. Recognizing Konjunktiv I fluently while reading — in newspapers, in reported courtroom testimony, in academic writing summarizing other scholars' claims — is arguably a more valuable and more immediately useful skill for a learner at this level than producing it actively ever will be, which is exactly why this curriculum places it as a foundational bridge into C1 material rather than as a core B1/B2 production target.",
     "examples": [
       {
         "native": "Der Minister sagte, er sei zuversichtlich und werde die Reform unterstützen.",
@@ -1817,7 +1908,8 @@
     "related_game_id": null,
     "branch": "Register, Reported Speech & Foundational C1 Structures",
     "prerequisites": [],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/german_curriculum.md#unit-14"
   },
   {
     "id": "de-u14-extended-participial-attributes",
@@ -1841,7 +1933,8 @@
     "prerequisites": [
       "de-u14-konjunktiv-i"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-14"
   },
   {
     "id": "de-u14-nominal-style-and-nominalization",
@@ -1865,7 +1958,8 @@
     "prerequisites": [
       "de-u14-extended-participial-attributes"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-14"
   },
   {
     "id": "de-u14-funktionsverbgefüge",
@@ -1889,7 +1983,8 @@
     "prerequisites": [
       "de-u14-nominal-style-and-nominalization"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-14"
   },
   {
     "id": "de-u14-concessivecausal-register-connectors-and",
@@ -1913,6 +2008,265 @@
     "prerequisites": [
       "de-u14-funktionsverbgefüge"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/german_curriculum.md#unit-14"
+  },
+  {
+    "id": "de-u1-expletive-es",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Placeholder es (expletive subject) and Es gibt",
+    "explanation": "German main clauses must fill the first slot even when there is no real subject to put there. A dummy es steps in: for weather (Es regnet, Es schneit), for the fixed existential phrase es gibt + accusative (\"there is/are\"), and to front an otherwise subjectless sentence (Es klingelt.). This placeholder es is NOT the same as referential es (\"it\") and disappears the moment something else occupies slot 1.",
+    "examples": [
+      {
+        "native": "Es regnet. Es gibt hier kein Café.",
+        "gloss": "It's raining. There's no café here. (es gibt + accusative, not nominative)"
+      },
+      {
+        "native": "Heute regnet es. / Hier gibt es kein Café.",
+        "gloss": "Today it's raining. / Here there's no café. — the placeholder es vanishes once another element is fronted; it never doubles up"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "English \"there is/are\" and weather \"it\" are the same placeholder-subject strategy, but English keeps \"there\" even after fronting (\"Here there is a café\"), while German's placeholder es is purely a slot-filler and drops out entirely once the slot is taken by something else — a genuine trap for English speakers who instinctively keep translating \"there.\"",
+    "mistake": "keeping es after fronting another element (\"Hier es gibt kein Café\"); confusing existential es gibt (+accusative) with the copula \"es ist\" (+nominative) — es gibt einen Mann, not es gibt ein Mann.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Sentence Skeleton & Verb Position (V2, the Satzklammer)",
+    "prerequisites": [
+      "de-u1-the-v2-rule"
+    ],
+    "confidence": "first_pass",
+    "source_doc": null
+  },
+  {
+    "id": "de-u8-brauchen-nicht-zu",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "brauchen (nicht) zu — the semi-modal negative of müssen",
+    "explanation": "brauchen behaves like a seventh modal only in its negated form: nicht/kein… brauchen + zu + infinitive means \"don't need to,\" functioning as a near-synonym of the negated true modal (nicht müssen, \"don't have to\"). Unlike the true modals, brauchen historically takes zu before the infinitive, though colloquial spoken German increasingly drops the zu, mirroring the true modals.",
+    "examples": [
+      {
+        "native": "Du brauchst nicht zu kommen.",
+        "gloss": "You don't need to come."
+      },
+      {
+        "native": "Du brauchst nicht kommen. (colloquial)",
+        "gloss": "You don't need to come. (zu dropped, treating brauchen like a true modal)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "English \"need\" shows the identical split: the full verb (\"He needs to go\") vs. the bare modal-like negative (\"He needn't go\") that drops \"to.\" German brauchen is on the same historical trajectory, caught between the two behaviors — which is exactly why usage is inconsistent even among native speakers.",
+    "mistake": "using brauchen affirmatively as a plain synonym of müssen (\"Ich brauche zu arbeiten\" for \"I need to work\" is not idiomatic — use müssen); forgetting brauchen needs a negation (nicht/kein/nur) to carry the \"don't need to\" meaning at all.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Modal Verbs",
+    "prerequisites": [
+      "de-u8-möchten-vs-mögen"
+    ],
+    "confidence": "first_pass",
+    "source_doc": null
+  },
+  {
+    "id": "de-u10-ersatzinfinitiv",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "The double infinitive (Ersatzinfinitiv) with modals and similar verbs in the Perfekt",
+    "explanation": "When a modal verb (or lassen, sehen, hören, helfen used with a bare infinitive) appears in the Perfekt or Plusquamperfekt alongside another verb, the modal does NOT take its normal past participle (gemusst, gekonnt). Instead it appears as a second infinitive at the very end of the clause — an \"Ersatzinfinitiv\" (substitute infinitive) that stands in for the participle, producing a stack of two infinitives after haben.",
+    "long_form": "This is one of the few genuinely idiosyncratic corners of German syntax — a rule with no obvious functional payoff, just a structural necessity the grammar quietly works around. Ich habe nicht kommen können looks, at first glance, like it's simply missing a participle: shouldn't it be gekonnt, the way every other modal forms its perfect (Ich habe das gekonnt, \"I was able to do that\")? The reason it isn't is that können here isn't standing alone — it's governing a dependent infinitive, kommen, and German syntax has a hard constraint that a governing verb's dependent infinitive must appear as a bare infinitive right next to it, never with a participle wedged in between doing something else grammatically. If können surfaced as gekonnt, there would be no legal way to attach kommen to it in the required bare-infinitive form; the sentence would have no slot left for the thing kommen is supposed to modify. German's fix is to let können itself surface as a second infinitive instead of a participle — an \"Ersatzinfinitiv,\" substitute infinitive — purely so the two verbs can sit together in the shape the syntax demands. It isn't marking anything semantically; it's a repair strategy for a structural conflict that only modals, and the small family of verbs that behave like them (lassen, and the perception/causation verbs sehen, hören, helfen used with a bare infinitive), ever run into.\n\nLinguists studying the Germanic and Continental West Germanic languages call this general phenomenon IPP — Infinitivus Pro Participio, \"infinitive in place of a participle\" — and it isn't unique to German; Dutch has a strikingly similar pattern (Ik heb het niet kunnen doen mirrors Ich habe es nicht tun können almost word for word), which suggests this is a genuinely old, shared Continental Germanic solution to the same underlying syntactic pressure, not a one-off German quirk. English speakers have no native intuition to draw on here at all, because English perfect constructions never run into the conflict in the first place — \"I haven't been able to come\" simply stacks two ordinary participles (\"been,\" \"able\") with no competing bare-infinitive requirement anywhere in the chain, so there's nothing in English grammar that would even hint at why German needs this workaround.\n\nThe rule gets a second, even less intuitive layer once you put the same sentence in a subordinate clause. Ordinarily, every verbal element in a German subordinate clause marches to the very end (Unit 12) — but when a double infinitive is present, the finite auxiliary haben is specifically exempted from that rule and jumps in front of the double infinitive instead of following it: …, weil ich nicht habe kommen können is correct, while the \"regularly\" verb-final …, weil ich nicht kommen können habe is not. This auxiliary-fronting exception exists for the same reason the Ersatzinfinitiv itself exists — putting haben after a stack of two infinitives would bury the one finite, tensed element of the clause at the very end, several words past where a listener needs it to correctly parse the whole clause's tense in real time, so German lets the auxiliary break rank and move earlier specifically in this construction.\n\nThe two mistakes this produces are really the same mistake wearing different hats: reaching for the \"normal\" participle (gekonnt) instead of the infinitive, and then, once that's fixed, reflexively sending haben to the true clause-final position out of habit from every other subordinate clause the learner has ever produced. Both come from applying a rule (regular participle formation, or regular verb-final order) in exactly the one structural environment engineered to be the exception to it — which is precisely why this point rewards being taught explicitly as its own topic rather than folded quietly into the general Perfekt or subordinate-clause rules, where it would just look like an unexplained irregularity rather than the coherent repair strategy it actually is.",
+    "examples": [
+      {
+        "native": "Ich habe nicht kommen können.",
+        "gloss": "I wasn't able to come. (not \"gekonnt\" — the modal surfaces as an infinitive because it has a dependent infinitive of its own)"
+      },
+      {
+        "native": "Er hat das Auto reparieren lassen.",
+        "gloss": "He had the car repaired. (lassen stays an infinitive too, not \"gelassen,\" for the same reason)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "English has nothing quite like this — \"I haven't been able to come\" just stacks ordinary participles. The German double-infinitive is a pure syntactic quirk: whenever a modal (or lassen/sehen/hören/helfen) governs a bare infinitive, using its own past participle would strand the dependent infinitive with no verb to attach to, so German substitutes a second infinitive instead. The real trap: this Ersatzinfinitiv also displaces the auxiliary — in a subordinate clause it forces haben to jump in FRONT of the double infinitive instead of going to the very end like every other subordinate-clause verb.",
+    "mistake": "using the normal participle instead (\"Ich habe nicht kommen gekonnt\"); in subordinate clauses, sending haben to the very end as usual instead of placing it before the double infinitive (correct: \"…, weil ich nicht habe kommen können\", not \"…weil ich nicht kommen können habe\").",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Past-Tense System (Perfekt, Präteritum, Plusquamperfekt)",
+    "prerequisites": [
+      "de-u10-the-plusquamperfekt",
+      "de-u8-the-six-modals-möchten"
+    ],
+    "confidence": "first_pass",
+    "source_doc": null
+  },
+  {
+    "id": "de-u7-predicate-adjectives-no-ending",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Predicate adjectives never take an ending",
+    "explanation": "All the weak/mixed/strong endings in this unit apply only to an ATTRIBUTIVE adjective — one sitting directly in front of its noun. An adjective used PREDICATIVELY, after sein, werden, or bleiben with no following noun, is always bare: no ending, no exceptions, regardless of the subject's gender, number, or case.",
+    "examples": [
+      {
+        "native": "Die Frau ist klug. Der Film war gut.",
+        "gloss": "The woman is smart. The film was good. (bare adjective — compare die kluge Frau, der gute Film when attributive)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "English adjectives never change form either way, so this isn't a new mistake pattern so much as a relief: once a learner has drilled the attributive tables hard enough, the natural next error is over-applying them and adding an ending after sein out of sheer momentum. Flagging the predicate/attributive split explicitly heads that off.",
+    "mistake": "adding an ending after sein/werden/bleiben by over-generalizing from attributive practice (\"Die Frau ist kluge\"); conversely, forgetting to add the ending when the same adjective moves in front of the noun (die kluge Frau).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Adjective Endings (Weak / Mixed / Strong Declension)",
+    "prerequisites": [
+      "de-u7-the-core-principle-the"
+    ],
+    "confidence": "first_pass",
+    "source_doc": null
+  },
+  {
+    "id": "de-u7-nominalized-adjectives",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Nominalized adjectives (der Deutsche, ein Deutscher, die Kranke)",
+    "explanation": "A number of German \"nouns\" for people and abstractions are really adjectives pressed into service as nouns, and they still decline exactly like attributive adjectives (weak/mixed/strong) rather than like ordinary nouns — they just happen to stand alone, with the noun itself dropped. The determiner (or its absence) still decides which of the three declension patterns applies, and the ending still tracks case/gender/number of the person referred to.",
+    "examples": [
+      {
+        "native": "der Deutsche, die Deutsche, ein Deutscher, eine Deutsche, die Deutschen",
+        "gloss": "the German man / the German woman / a German man / a German woman / the Germans — the same endings a normal adjective would take before an implied noun"
+      },
+      {
+        "native": "Ich helfe einem Kranken. Die Angestellten sind da.",
+        "gloss": "I'm helping a sick person (dat., mixed declension). The employees are here. (der/die Angestellte behaves the same way)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "English does something similar only with plurals-as-groups (\"the poor,\" \"the French\") and never inflects them further. German nominalized adjectives stay fully adjective-shaped in the singular too, which is why der Deutsche/ein Deutscher look so unlike a normal noun's der/ein pairing — because grammatically they aren't nouns at all, just adjectives doing a noun's job.",
+    "mistake": "declining them like regular nouns (adding -s or leaving them invariant); forgetting the ein-word \"gap\" still applies, so ein Deutscher (not \"ein Deutsche\") in the masculine nominative, exactly as in ein guter Mann.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Adjective Endings (Weak / Mixed / Strong Declension)",
+    "prerequisites": [
+      "de-u7-parallel-adjectives-and-dative-plural"
+    ],
+    "confidence": "first_pass",
+    "source_doc": null
+  },
+  {
+    "id": "de-u11-lassen-constructions",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "lassen + infinitive: causative \"have something done\" and the passive-substitute sich lassen",
+    "explanation": "lassen + bare infinitive covers two distinct high-frequency uses English speakers need as separate patterns, not one. (1) Causative: someone arranges for an action to be done by someone else — Ich lasse mir die Haare schneiden (\"I'm having my hair cut\"), structurally parallel to modals (finite lassen in slot 2, infinitive at the end). (2) sich lassen + infinitive as a near-synonym for a possibility passive — Das lässt sich reparieren (\"That can be repaired\" / \"That's fixable\"), a lighter, more idiomatic alternative to Das kann repariert werden.",
+    "examples": [
+      {
+        "native": "Er lässt sein Auto reparieren.",
+        "gloss": "He's having his car repaired. (causative — someone else does it)"
+      },
+      {
+        "native": "Das Problem lässt sich lösen.",
+        "gloss": "The problem can be solved. (sich lassen = possibility, not \"lets itself\")"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "English \"let\" only covers permission (\"let him go\"); the causative sense is carried by a completely different verb, \"have\" (\"have my hair cut\"), so English speakers must learn that German lassen quietly does the job of three different English verbs (let / have something done / can be done reflexively) depending on the construction. Missing the sich lassen pattern is the more consequential gap — its absence pushes learners toward over-using the full werden-passive where native speakers would reach for the lighter reflexive.",
+    "mistake": "translating the causative literally as \"lets\" (\"He lets his car repair\"); misreading sich lassen as reflexive \"to let oneself\" rather than recognizing it as a possibility-passive idiom.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Future, Passive & the Conditional/Subjunctive II",
+    "prerequisites": [
+      "de-u11-passive-with-modals"
+    ],
+    "confidence": "first_pass",
+    "source_doc": null
+  },
+  {
+    "id": "de-u13-modal-particles",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Modal particles (Abtönungspartikeln): ja, doch, mal, denn, eigentlich, halt",
+    "explanation": "A small set of unstressed, largely untranslatable little words color a sentence's tone/attitude without changing its literal content: ja (\"you know, as we both already know\"), doch (contradicting an assumption, or softening a command), mal (\"just,\" casualizing a request), denn (curiosity/interest, added to questions only), eigentlich (\"actually,\" mild topic-shift or genuine curiosity), halt/eben (\"that's just how it is,\" resignation). They sit in the Mittelfeld, typically right after the finite verb/subject, and are one of the last things that make learner German sound stiff even after the grammar is otherwise solid.",
+    "long_form": "Modal particles are a genuinely different kind of learning problem from everything else in this curriculum, because up to this point almost every grammar point has had a truth-conditional payoff — get the case wrong and you change who did what to whom; get verb position wrong and the sentence may become ungrammatical or ambiguous. Modal particles change none of that. Komm her! and Komm doch mal her! describe the identical literal request, and a listener who somehow missed doch and mal entirely would still know exactly what action was being asked for. What the particles change is the social and emotional framing around that identical proposition: doch signals \"I'm gently overriding some reluctance or assumption you seem to have\"; mal signals \"this is a small, casual, low-stakes ask, not a big deal\"; together they turn a request that would otherwise read as a bare, almost military command into something closer to \"oh, come here, would you?\" This is precisely why they're so hard to teach explicitly and so easy to underestimate: there's no grammatical test that reveals their absence as \"wrong,\" only a vague, hard-to-name sense that speech without them is flat, correct, and slightly robotic.\n\nEvery one of these particles is etymologically an ordinary content word that has been pressed into a second, purely pragmatic job through a historical process linguists call grammaticalization — a word or phrase gradually bleaches out its original literal meaning and specializes into a functional, often unstressed grammatical marker. Ja is literally \"yes\"; as a modal particle it doesn't answer anything, it flags that the speaker assumes the listener already shares the information being stated (Das ist ja schön! roughly means \"that's nice, as I'm sure you'll agree/notice too,\" not a yes/no anything). Mal is literally \"once/a time\" (einmal, \"one time\"); as a particle it strips away the numerical meaning entirely and keeps only the residual sense of something small, occasional, low-commitment. Denn is etymologically related to the causal conjunction \"because\" (and to dann, \"then\"), but as a question-particle its causal meaning has evaporated into pure curiosity-flavoring (Was machst du denn hier? is not asking anyone to explain a cause, it's signaling genuine interest rather than confrontation). This is the same grammaticalization process, incidentally, that produced Sie as a polite pronoun out of the third-person plural (Unit 6) — German has repeatedly recycled ordinary vocabulary into pure social/functional machinery, and modal particles are simply the largest, most productive corner of that same tendency.\n\nEnglish does the identical communicative work — softening commands, signaling shared assumptions, flagging genuine versus rhetorical curiosity — almost entirely through intonation, stress, and a scattering of filler words and tags (\"come ON,\" \"what are you doing here, anyway?\", \"well, actually…\", \"you know\") rather than through a dedicated, unstressed, syntactically fixed word class sitting in a predictable slot in the clause. That structural difference is exactly why modal particles are so persistently under-taught and under-noticed by learners: English speakers already know how to convey all this pragmatic nuance, just via prosody rather than vocabulary, so there's no felt gap prompting them to go looking for a German equivalent — the gap only becomes visible once you notice that fluent native German at conversational speed contains several particles per sentence and grammatically flawless learner German contains none.\n\nThe mistakes cluster around three failure modes, and none of them are really \"grammar\" mistakes in the usual sense: omitting the particles entirely, which produces speech that's correct but reads as oddly blunt or stilted, closer to a legal document than a conversation; translating them compositionally as if they still carried their historical literal meaning, which is how a learner ends up rendering the question-particle denn as \"because\" or reading ja as a literal \"yes\" tacked onto an unrelated statement; and, at the more advanced end, overloading a single sentence with several particles at once in an attempt to sound more native, which paradoxically reads as try-hard rather than natural, since fluent speakers deploy them with a kind of unconscious restraint that's genuinely difficult to reverse-engineer as an explicit rule. There's a real argument that this is the single largest remaining gap between technically correct learner German and genuinely natural-sounding German even at a B2 level where every other grammatical system in this curriculum has already been mastered — which is exactly why it's worth a long-form treatment rather than being folded into a single line on comparative adverbs.",
+    "examples": [
+      {
+        "native": "Komm doch mal her!",
+        "gloss": "Oh, come here, would you? (doch softens the command, mal makes it casual — bare \"Komm her!\" reads as a bark)"
+      },
+      {
+        "native": "Das ist ja schön! Was machst du denn hier?",
+        "gloss": "Oh, that's nice! (ja = noticing/mild surprise) What are you doing here, then? (denn = genuine curiosity, not confrontation)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "English does the identical job with intonation and filler words (\"come ON,\" \"what are you doing here, anyway?\", \"well, actually…\") rather than a dedicated closed word class — so these particles have no one-to-one English translation and are systematically under-taught, yet native speakers use several per sentence in casual speech. Textbook German that omits them is grammatically perfect and sounds subtly robotic; this is arguably the single biggest remaining gap between \"correct\" and \"natural-sounding\" learner German at B1–B2.",
+    "mistake": "omitting them entirely (grammatically fine, but flat/stilted); translating them word-for-word as if they carried literal meaning (rendering denn as \"because\" in a question, or ja as \"yes\"); overusing several at once, which sounds try-hard rather than natural.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Negation, Comparison, da-/wo-Compounds & Discourse Glue",
+    "prerequisites": [
+      "de-u13-conjunctional-adverbs"
+    ],
+    "confidence": "first_pass",
+    "source_doc": null
+  },
+  {
+    "id": "de-u15-numbers-and-telling-time",
+    "lang": "de",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Cardinal numbers, ordinal numbers, and telling time",
+    "explanation": "Cardinal numbers (eins, zwei, drei…) are written as one compound word however long (einhunderteinundzwanzig), with the units digit read before the tens (\"one-and-twenty\" logic: einundzwanzig). Ordinals add -te (4–19: der vierte) or -ste (20+: der zwanzigste) and decline like regular attributive adjectives. Clock time has two registers: the 24-hour/official system just states the numeral (14:30 Uhr = vierzehn Uhr dreißig), while colloquial time uses halb + the NEXT hour (halb drei = 2:30, not 3:30) plus Viertel vor/nach.",
+    "examples": [
+      {
+        "native": "einundzwanzig, der einundzwanzigste",
+        "gloss": "twenty-one (units before tens, one word), the twenty-first"
+      },
+      {
+        "native": "Es ist halb drei. Es ist Viertel vor acht.",
+        "gloss": "It's 2:30 (\"half toward three\" — halb points at the upcoming hour, not the one just passed). It's a quarter to eight."
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "halb is the single most consequential trap: English \"half past two\" looks back to 2:00, but German halb drei looks forward to 3:00 — they name the same clock time using opposite reference points, so a literal translation is off by a full hour. The units-before-tens number order (einundzwanzig = \"one-and-twenty\") is likewise a fossil of the same older Germanic counting pattern English abandoned (it survives only in English nursery rhyme, \"four-and-twenty blackbirds\").",
+    "mistake": "reading halb drei as 3:30 by analogy with \"half past three\"; writing multi-word numbers as separate words (German never spaces or hyphens them); using the cardinal instead of the declined ordinal for dates (der 3. Mai is spoken \"der dritte Mai,\" not \"der drei Mai\").",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Numbers, Time & Dates",
+    "prerequisites": [],
+    "confidence": "first_pass",
+    "source_doc": null
+  },
+  {
+    "id": "de-u15-time-expressions-and-case",
+    "lang": "de",
+    "difficulty": 2,
+    "cefr": "A2",
+    "title": "Time expressions and case: accusative for duration/point, genitive for indefinite time",
+    "explanation": "Time phrases without a preposition take a specific case depending on what they express, independent of the prepositional system in Unit 9. A definite point or duration of time takes the accusative: jeden Tag (\"every day\"), letzten Sommer (\"last summer\"), den ganzen Tag (\"all day\"). A vague, unspecified point in time takes the genitive, mostly frozen in a handful of set phrases: eines Tages (\"one day\"), eines Morgens.",
+    "examples": [
+      {
+        "native": "Ich arbeite jeden Tag. Wir bleiben eine Woche.",
+        "gloss": "I work every day. We're staying (for) a week. (bare accusative — no preposition needed, unlike English \"for a week\")"
+      },
+      {
+        "native": "Eines Tages kam er nicht mehr.",
+        "gloss": "One day he stopped coming. (fixed genitive expression for a vague point in time)"
+      }
+    ],
+    "bridge_lang": "en",
+    "bridge_note": "English needs \"for\"/\"on\"/\"in\" to glue a time expression into the sentence (\"for a week,\" \"on Tuesday\"); German frequently just cases the noun phrase directly with no preposition at all, so English speakers instinctively over-insert a preposition (\"für jeden Tag\") where German wants a bare accusative.",
+    "mistake": "inserting an unnecessary preposition modeled on English \"for\"/\"during\" (\"für die ganze Woche\" instead of die ganze Woche); using nominative or dative instead of accusative for duration phrases.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Numbers, Time & Dates",
+    "prerequisites": [
+      "de-u15-numbers-and-telling-time"
+    ],
+    "confidence": "first_pass",
+    "source_doc": null
   }
 ]

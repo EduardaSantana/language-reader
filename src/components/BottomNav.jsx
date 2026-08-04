@@ -1,8 +1,10 @@
+// Phase 4 cutover (docs/ENCYCLOPEDIA_IMPLEMENTATION_PLAN.md): Encyclopedia is
+// the landing tab; Bookmarks/Explore/Curriculum are retired from the nav bar
+// (their functionality lives inside Encyclopedia now) but deliberately kept
+// mounted-but-unreachable in App.jsx as a rollback safety net, not deleted.
 const TABS = [
-  { key: 'feed', icon: '📖', label: 'Feed' },
-  { key: 'bookmarks', icon: '🔖', label: 'Bookmarks' },
-  { key: 'explore', icon: '🧭', label: 'Explore' },
-  { key: 'curriculum', icon: '🎓', label: 'Curriculum' },
+  { key: 'encyclopedia', icon: '📚', label: 'Encyclopedia' },
+  { key: 'feed', icon: '📖', label: 'Read' },
   { key: 'games', icon: '🎮', label: 'Games' },
   { key: 'profile', icon: '👤', label: 'Profile' },
 ]

@@ -335,38 +335,38 @@
     "vocab": [
       {
         "word": "das Videospiel",
-        "annotation": "n",
-        "english": "video game"
+        "english": "video game",
+        "gender": "n"
       },
       {
         "word": "das Rollenspiel",
-        "annotation": "n",
-        "english": "role-playing game"
+        "english": "role-playing game",
+        "gender": "n"
       },
       {
         "word": "stark",
-        "annotation": null,
-        "english": "strong"
+        "english": "strong",
+        "gender": null
       },
       {
         "word": "das Monster",
-        "annotation": "n",
-        "english": "monster"
+        "english": "monster",
+        "gender": "n"
       },
       {
         "word": "das Schwert",
-        "annotation": "n",
-        "english": "sword"
+        "english": "sword",
+        "gender": "n"
       },
       {
         "word": "der Freund",
-        "annotation": "m",
-        "english": "friend"
+        "english": "friend",
+        "gender": "m"
       },
       {
         "word": "Spaß machen",
-        "annotation": null,
-        "english": "to be fun"
+        "english": "to be fun",
+        "gender": null
       }
     ]
   },
@@ -664,33 +664,33 @@
     "vocab": [
       {
         "word": "die Katze",
-        "annotation": "f",
-        "english": "cat"
+        "english": "cat",
+        "gender": "f"
       },
       {
         "word": "klein",
-        "annotation": null,
-        "english": "small"
+        "english": "small",
+        "gender": null
       },
       {
         "word": "weich",
-        "annotation": null,
-        "english": "soft"
+        "english": "soft",
+        "gender": null
       },
       {
         "word": "schlafen",
-        "annotation": null,
-        "english": "to sleep"
+        "english": "to sleep",
+        "gender": null
       },
       {
         "word": "spielen",
-        "annotation": null,
-        "english": "to play"
+        "english": "to play",
+        "gender": null
       },
       {
         "word": "lieben",
-        "annotation": null,
-        "english": "to love"
+        "english": "to love",
+        "gender": null
       }
     ]
   },
@@ -958,33 +958,33 @@
     "vocab": [
       {
         "word": "sonnig",
-        "annotation": null,
-        "english": "sunny"
+        "english": "sunny",
+        "gender": null
       },
       {
         "word": "der Himmel",
-        "annotation": "m",
-        "english": "sky"
+        "english": "sky",
+        "gender": "m"
       },
       {
         "word": "warm",
-        "annotation": null,
-        "english": "warm"
+        "english": "warm",
+        "gender": null
       },
       {
         "word": "spazieren gehen",
-        "annotation": null,
-        "english": "to go for a walk"
+        "english": "to go for a walk",
+        "gender": null
       },
       {
         "word": "regnen",
-        "annotation": null,
-        "english": "to rain"
+        "english": "to rain",
+        "gender": null
       },
       {
         "word": "der Regentag",
-        "annotation": "m",
-        "english": "rainy day"
+        "english": "rainy day",
+        "gender": "m"
       }
     ]
   },
@@ -1270,33 +1270,33 @@
     "vocab": [
       {
         "word": "das Frühstück",
-        "annotation": "n",
-        "english": "breakfast"
+        "english": "breakfast",
+        "gender": "n"
       },
       {
         "word": "das Brot",
-        "annotation": "n",
-        "english": "bread"
+        "english": "bread",
+        "gender": "n"
       },
       {
         "word": "die Butter",
-        "annotation": "f",
-        "english": "butter"
+        "english": "butter",
+        "gender": "f"
       },
       {
         "word": "der Kaffee",
-        "annotation": "m",
-        "english": "coffee"
+        "english": "coffee",
+        "gender": "m"
       },
       {
         "word": "das Ei",
-        "annotation": "n",
-        "english": "egg"
+        "english": "egg",
+        "gender": "n"
       },
       {
         "word": "die Mahlzeit",
-        "annotation": "f",
-        "english": "meal"
+        "english": "meal",
+        "gender": "f"
       }
     ]
   },
@@ -1624,33 +1624,33 @@
     "vocab": [
       {
         "word": "die Familie",
-        "annotation": "f",
-        "english": "family"
+        "english": "family",
+        "gender": "f"
       },
       {
         "word": "die Mutter",
-        "annotation": "f",
-        "english": "mother"
+        "english": "mother",
+        "gender": "f"
       },
       {
         "word": "der Vater",
-        "annotation": "m",
-        "english": "father"
+        "english": "father",
+        "gender": "m"
       },
       {
         "word": "der Bruder",
-        "annotation": "m",
-        "english": "brother"
+        "english": "brother",
+        "gender": "m"
       },
       {
         "word": "die Schwester",
-        "annotation": "f",
-        "english": "sister"
+        "english": "sister",
+        "gender": "f"
       },
       {
         "word": "wichtig",
-        "annotation": null,
-        "english": "important"
+        "english": "important",
+        "gender": null
       }
     ]
   },
@@ -1702,33 +1702,33 @@
     "vocab": [
       {
         "word": "die Spielhalle",
-        "annotation": "f",
-        "english": "arcade"
+        "english": "arcade",
+        "gender": "f"
       },
       {
         "word": "der Joystick",
-        "annotation": "m",
-        "english": "joystick"
+        "english": "joystick",
+        "gender": "m"
       },
       {
         "word": "laut",
-        "annotation": null,
-        "english": "loud"
+        "english": "loud",
+        "gender": null
       },
       {
         "word": "sammeln",
-        "annotation": null,
-        "english": "to collect"
+        "english": "to collect",
+        "gender": null
       },
       {
         "word": "der Highscore",
-        "annotation": "m",
-        "english": "high score"
+        "english": "high score",
+        "gender": "m"
       },
       {
         "word": "teilen",
-        "annotation": null,
-        "english": "to share"
+        "english": "to share",
+        "gender": null
       }
     ]
   },
@@ -1780,33 +1780,33 @@
     "vocab": [
       {
         "word": "regnen",
-        "annotation": null,
-        "english": "to rain"
+        "english": "to rain",
+        "gender": null
       },
       {
         "word": "gemütlich",
-        "annotation": null,
-        "english": "cozy"
+        "english": "cozy",
+        "gender": null
       },
       {
         "word": "die Serie",
-        "annotation": "f",
-        "english": "series"
+        "english": "series",
+        "gender": "f"
       },
       {
         "word": "das Sofa",
-        "annotation": "n",
-        "english": "sofa"
+        "english": "sofa",
+        "gender": "n"
       },
       {
         "word": "die Folge",
-        "annotation": "f",
-        "english": "episode"
+        "english": "episode",
+        "gender": "f"
       },
       {
         "word": "heiß",
-        "annotation": null,
-        "english": "hot"
+        "english": "hot",
+        "gender": null
       }
     ]
   },
@@ -1858,33 +1858,33 @@
     "vocab": [
       {
         "word": "das Handy",
-        "annotation": "n",
-        "english": "phone"
+        "english": "phone",
+        "gender": "n"
       },
       {
         "word": "der Bildschirm",
-        "annotation": "m",
-        "english": "screen"
+        "english": "screen",
+        "gender": "m"
       },
       {
         "word": "erscheinen",
-        "annotation": null,
-        "english": "to appear"
+        "english": "to appear",
+        "gender": null
       },
       {
         "word": "werfen",
-        "annotation": null,
-        "english": "to throw"
+        "english": "to throw",
+        "gender": null
       },
       {
         "word": "der Spieler",
-        "annotation": "m",
-        "english": "player"
+        "english": "player",
+        "gender": "m"
       },
       {
         "word": "das Hobby",
-        "annotation": "n",
-        "english": "hobby"
+        "english": "hobby",
+        "gender": "n"
       }
     ]
   },
@@ -1936,33 +1936,33 @@
     "vocab": [
       {
         "word": "der Himmel",
-        "annotation": "m",
-        "english": "sky"
+        "english": "sky",
+        "gender": "m"
       },
       {
         "word": "dunkel",
-        "annotation": null,
-        "english": "dark"
+        "english": "dark",
+        "gender": null
       },
       {
         "word": "der Mond",
-        "annotation": "m",
-        "english": "moon"
+        "english": "moon",
+        "gender": "m"
       },
       {
         "word": "die Schutzbrille",
-        "annotation": "f",
-        "english": "protective glasses"
+        "english": "protective glasses",
+        "gender": "f"
       },
       {
         "word": "leuchten",
-        "annotation": null,
-        "english": "to glow"
+        "english": "to glow",
+        "gender": null
       },
       {
         "word": "hell",
-        "annotation": null,
-        "english": "bright"
+        "english": "bright",
+        "gender": null
       }
     ]
   },
@@ -2014,33 +2014,33 @@
     "vocab": [
       {
         "word": "der Mittwoch",
-        "annotation": "m",
-        "english": "Wednesday"
+        "english": "Wednesday",
+        "gender": "m"
       },
       {
         "word": "erklären",
-        "annotation": null,
-        "english": "to explain"
+        "english": "to explain",
+        "gender": null
       },
       {
         "word": "der Zug",
-        "annotation": "m",
-        "english": "move (in a game)"
+        "english": "move (in a game)",
+        "gender": "m"
       },
       {
         "word": "der Mitschüler",
-        "annotation": "m",
-        "english": "classmate"
+        "english": "classmate",
+        "gender": "m"
       },
       {
         "word": "der Läufer",
-        "annotation": "m",
-        "english": "bishop (chess piece)"
+        "english": "bishop (chess piece)",
+        "gender": "m"
       },
       {
         "word": "das Turnier",
-        "annotation": "n",
-        "english": "tournament"
+        "english": "tournament",
+        "gender": "n"
       }
     ]
   },
@@ -2092,33 +2092,33 @@
     "vocab": [
       {
         "word": "der Körper",
-        "annotation": "m",
-        "english": "body"
+        "english": "body",
+        "gender": "m"
       },
       {
         "word": "der Knochen",
-        "annotation": "m",
-        "english": "bone"
+        "english": "bone",
+        "gender": "m"
       },
       {
         "word": "die Form",
-        "annotation": "f",
-        "english": "shape"
+        "english": "shape",
+        "gender": "f"
       },
       {
         "word": "der Oberschenkelknochen",
-        "annotation": "m",
-        "english": "thigh bone"
+        "english": "thigh bone",
+        "gender": "m"
       },
       {
         "word": "wachsen",
-        "annotation": null,
-        "english": "to grow"
+        "english": "to grow",
+        "gender": null
       },
       {
         "word": "schützen",
-        "annotation": null,
-        "english": "to protect"
+        "english": "to protect",
+        "gender": null
       }
     ]
   }

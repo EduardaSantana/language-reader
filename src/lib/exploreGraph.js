@@ -81,6 +81,31 @@ function exampleText(entry) {
     .join(' ')
 }
 
+/** For each story, up to 3 grammar points (same language) whose example
+ * sentence actually appears verbatim in that story's text — the reverse of
+ * findStoryForExample's grammar→story lookup above, same "only a real
+ * textual match counts" rule (no fabricated "this story teaches X" claims).
+ * Powers Read's "teaches" chips (docs/ENCYCLOPEDIA_IMPLEMENTATION_PLAN.md
+ * Phase 3). Cheap enough to memoize once per `stories` array, not per story. */
+export function storyTeachesMap(stories) {
+  const map = new Map()
+  for (const story of stories) {
+    const points = grammarPointsForLang(story.lang)
+    const found = []
+    for (const g of points) {
+      const hasMatch = exampleList(g).some(
+        (ex) => ex.native && story.sentences.some((s) => sentenceText(s).includes(ex.native)),
+      )
+      if (hasMatch) {
+        found.push({ id: grammarNodeId(story.lang, g.id), lang: story.lang, title: g.title })
+        if (found.length >= 3) break
+      }
+    }
+    map.set(story.idx, found)
+  }
+  return map
+}
+
 /** Builds a lookup graph of vocab + grammar entries across all four languages,
  * linked by shared story context (vocab-vocab) and shared example wording
  * (vocab-grammar), plus a small set of hand-curated cross-language `see_also` links. */
@@ -161,7 +186,8 @@ export function buildExploreGraph(stories) {
       type: 'vocab',
       pos: pos === 'other' ? null : pos,
       title: word,
-      reading: entry.reading && !/^[mfn]$/i.test(entry.reading.trim()) ? entry.reading : null,
+      reading: entry.reading ?? null,
+      gender: entry.gender ?? null,
       subtitle: entry.english,
       examples: (() => {
         const native = story ? findExampleSentence(story, word, lang) : null
@@ -261,6 +287,7 @@ export function buildExploreGraph(stories) {
       examples: exampleList(o),
       note: o.bridge_note ?? null,
       relatedGameId: o.related_game_id ?? null,
+      confidence: o.confidence ?? null,
       vocabEntry: null,
       related,
     }
@@ -295,6 +322,7 @@ export function buildExploreGraph(stories) {
       examples: [],
       note: null,
       relatedGameId: null,
+      confidence: c.confidence ?? null,
       vocabEntry: null,
       entries: c.entries,
       related,

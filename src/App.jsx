@@ -4,15 +4,21 @@ import storiesDe from './data/stories_de.json'
 import storiesFr from './data/stories_fr.json'
 import storiesRu from './data/stories_ru.json'
 import { mergeStorySets } from './lib/data'
-import ReadingScreen from './components/ReadingScreen'
-import CompanionOverlay from './components/CompanionOverlay'
-import SurpriseMeOverlay from './components/SurpriseMeOverlay'
+import EncyclopediaScreen from './components/EncyclopediaScreen'
 import BottomNav from './components/BottomNav'
 import { getUnseenSavedWords, getActiveLanguages, setActiveLanguages, getActiveLevels, setActiveLevels } from './lib/storage'
 import { getAvailableLangs } from './lib/langs'
 import { syncAppBadge } from './lib/badge'
 import './App.css'
 
+// Phase 4 cutover (docs/ENCYCLOPEDIA_IMPLEMENTATION_PLAN.md): Encyclopedia is
+// now the landing tab (eagerly imported, always mounted — the role Feed used
+// to have), Read is lazy like every other non-landing tab. Bookmarks/Explore/
+// Curriculum are deliberately kept mounted-but-unreachable (no BottomNav
+// button, no seed ever routes to them) rather than deleted — a safety net
+// until their replacement coverage inside Encyclopedia is fully confirmed
+// (Phase 4.3 in the plan).
+const ReadingScreen = lazy(() => import('./components/ReadingScreen'))
 const BookmarksScreen = lazy(() => import('./components/BookmarksScreen'))
 const ExploreScreen = lazy(() => import('./components/ExploreScreen'))
 const CurriculumScreen = lazy(() => import('./components/CurriculumScreen'))
@@ -20,21 +26,25 @@ const GamesScreen = lazy(() => import('./components/GamesScreen'))
 const ProfileScreen = lazy(() => import('./components/ProfileScreen'))
 
 function App() {
-  const [tab, setTab] = useState('feed')
+  const [tab, setTab] = useState('encyclopedia')
   // Every tab stays mounted once visited — switching away and back preserves
   // whatever that screen's own internal state was (open modals, filters,
   // scroll position, mid-game state), instead of losing it. A tab only
   // resets when the user deliberately re-taps the tab they're already on
   // (see changeTab below) — that's the one remaining "arrive fresh" case.
-  const [visitedTabs, setVisitedTabs] = useState(() => new Set(['feed']))
+  const [visitedTabs, setVisitedTabs] = useState(() => new Set(['encyclopedia']))
   const [tabResetNonces, setTabResetNonces] = useState({})
   const [jumpToIndex, setJumpToIndex] = useState(null)
   const [exploreWordSeed, setExploreWordSeed] = useState(null)
   const [exploreNodeSeed, setExploreNodeSeed] = useState(null)
+  const [encyclopediaWordSeed, setEncyclopediaWordSeed] = useState(null)
+  const [encyclopediaNodeSeed, setEncyclopediaNodeSeed] = useState(null)
   const [gameSeed, setGameSeed] = useState(null)
-  // Only the very first Feed mount of the session resumes the last reading
-  // position (app reopen); re-tapping the Feed tab to force a fresh remount
-  // still starts fresh at the top, like any other explicit tab reset.
+  // Only the very first Read mount of the session resumes the last reading
+  // position; re-tapping the Read tab to force a fresh remount still starts
+  // fresh at the top, like any other explicit tab reset. Read is lazy now
+  // (Encyclopedia is the landing tab), so "first mount" may happen well
+  // after app start — still correct: resume on whenever you first visit.
   const [canRestoreFeedPosition, setCanRestoreFeedPosition] = useState(true)
 
   useEffect(() => {
@@ -100,14 +110,18 @@ function App() {
     setTab('feed')
   }
 
+  // Renamed in spirit, not in signature — every existing caller (Curriculum,
+  // Bookmarks, Read's teach-chips, SurpriseMeOverlay) already calls these by
+  // these names; only the destination tab changed, from the now-unreachable
+  // Explore to the new Encyclopedia landing tab.
   function openExploreForWord(lang, word) {
-    setExploreWordSeed({ lang, word })
-    setTab('explore')
+    setEncyclopediaWordSeed({ lang, word })
+    setTab('encyclopedia')
   }
 
   function openExploreForNode(nodeId) {
-    setExploreNodeSeed({ id: nodeId })
-    setTab('explore')
+    setEncyclopediaNodeSeed({ id: nodeId })
+    setTab('encyclopedia')
   }
 
   function openGame(gameKey, puzzleId, lang) {
@@ -141,19 +155,36 @@ function App() {
 
   return (
     <>
-      <div style={visibility('feed')}>
-        <ReadingScreen
-          key={tabResetNonces.feed ?? 0}
-          stories={feedStories}
-          jumpToIndex={jumpToIndex}
-          onConsumedJump={() => setJumpToIndex(null)}
-          onStoryFinished={(lang, context) => companionRef.current?.notifyStoryFinished(lang, context)}
+      <div style={visibility('encyclopedia')}>
+        <EncyclopediaScreen
+          key={tabResetNonces.encyclopedia ?? 0}
+          stories={allStories}
           onOpenGame={openGame}
-          restorePosition={canRestoreFeedPosition}
-          onConsumedRestore={() => setCanRestoreFeedPosition(false)}
+          onOpenStory={openStoryFromElsewhere}
           onSavedWordsChange={refreshUnseenCount}
+          wordSeed={encyclopediaWordSeed}
+          nodeSeed={encyclopediaNodeSeed}
         />
       </div>
+
+      {visitedTabs.has('feed') && (
+        <div style={visibility('feed')}>
+          <Suspense fallback={null}>
+            <ReadingScreen
+              key={tabResetNonces.feed ?? 0}
+              stories={feedStories}
+              jumpToIndex={jumpToIndex}
+              onConsumedJump={() => setJumpToIndex(null)}
+              onStoryFinished={(lang, context) => companionRef.current?.notifyStoryFinished(lang, context)}
+              onOpenGame={openGame}
+              restorePosition={canRestoreFeedPosition}
+              onConsumedRestore={() => setCanRestoreFeedPosition(false)}
+              onSavedWordsChange={refreshUnseenCount}
+              onExploreNode={openExploreForNode}
+            />
+          </Suspense>
+        </div>
+      )}
 
       {visitedTabs.has('bookmarks') && (
         <div style={visibility('bookmarks')}>
@@ -228,9 +259,7 @@ function App() {
         </div>
       )}
 
-      <CompanionOverlay ref={companionRef} langs={allLangs} />
-      <SurpriseMeOverlay stories={allStories} onOpenNode={openExploreForNode} />
-      <BottomNav active={tab} onChange={changeTab} badges={{ bookmarks: unseenSavedCount }} />
+      <BottomNav active={tab} onChange={changeTab} badges={{ encyclopedia: unseenSavedCount }} />
     </>
   )
 }

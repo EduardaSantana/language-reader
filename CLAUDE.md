@@ -6,10 +6,10 @@ small serverless companion-chat API. Dark theme only (no light mode).
 
 ## Architecture map
 
-**5 tabs**, switched via `tab` state in `src/App.jsx`: Feed (`ReadingScreen`),
-Bookmarks (`BookmarksScreen`), Explore (`ExploreScreen`), Games
-(`GamesScreen`), Profile (`ProfileScreen`). `BottomNav` renders the tab bar on
-every screen.
+**6 tabs**, switched via `tab` state in `src/App.jsx`: Feed (`ReadingScreen`),
+Bookmarks (`BookmarksScreen`), Explore (`ExploreScreen`), Curriculum
+(`CurriculumScreen`), Games (`GamesScreen`), Profile (`ProfileScreen`).
+`BottomNav` renders the tab bar on every screen.
 
 **Cross-screen navigation** is done via "seed" state lifted into `App.jsx`:
 a setter stashes a payload and switches tabs (e.g. `openExploreForWord(lang,
@@ -45,6 +45,15 @@ very first Feed mount of the session (`App.jsx`'s `canRestoreFeedPosition`)
 — but now that Feed rarely remounts at all, scroll position mostly just
 stays put on its own; re-tapping Feed while already on it is still the one
 way to force it back to the top.
+
+**`BottomNav` is a single global instance**, rendered once in `App.jsx`
+(not per-screen) since every tab now stays mounted simultaneously — one
+instance per screen would mean up to six simultaneously in the DOM. Its
+unseen-saved-words badge is owned by `App.jsx` (`unseenSavedCount` state +
+`refreshUnseenCount()`), passed down as `onSavedWordsChange` to every screen
+that can save/clear saved words (`ReadingScreen`, `BookmarksScreen`,
+`ExploreScreen`) — each calls it after its own save/clear action instead of
+computing a local, mount-once copy of the count.
 
 **Global floating overlays** (mounted as siblings after the tab screens in
 `App.jsx`, so reachable from every tab): `CompanionOverlay` (AI chat bubble,
@@ -109,7 +118,24 @@ points link to each other) — not automatic. **Important**:
 (`pattern`/`explanation`/`examples[]` mined from the corpus with real story
 citations) — it's only consumed by nothing anymore after the Explore
 rewrite; don't confuse the two files. `grammar_points_ja_bites.json` is the
-one everything (Bites, Bookmarks-era Grammar section, Explore) actually uses.
+one everything (Bites, Bookmarks-era Grammar section, Explore, Curriculum)
+actually uses — despite the `_bites` name it now holds the full sourced
+Japanese curriculum (132 points), not just short "bites": 13 core
+prerequisite-ordered units (Writing System through Passive/Causative,
+sourced against Genki/Tobira/JF Standard lesson numbers where the source
+doc cites one), a `"N3–N2 Pattern Library"` branch (~40 points,
+deliberately *not* prerequisite-chained — it's a searchable reference of
+atomic bunkei like そうだ/ようだ/らしい, not a linear track, matching how
+N3–N2 grammar is actually taught), a `"Sentence-Final Particles &
+Register"` capstone (ね/よ/わ/ぞ・ぜ/かな/でしょう), and one preserved
+`"Verb Forms & Conjugation Patterns"` unit (person/number-invariant verbs,
+transitive/intransitive pairs) carried over from the old 11-entry file
+because the sourced curriculum doc doesn't cover that topic at all — don't
+delete it thinking it's leftover cruft. Confidence is deliberately mostly
+`"first_pass"` (121/132) with `"verified"` reserved for points the source
+doc explicitly ties to a specific Genki lesson number or calls
+"well-corroborated" — the doc itself stresses no official JLPT grammar
+syllabus exists, so over-claiming `"verified"` would misrepresent that.
 
 **Oddities** (`src/data/oddities_{fr,de,ru,ja}.json`) — same shape as
 grammar points minus `difficulty`/`bridge_lang`'s role in ordering (oddities
@@ -147,6 +173,36 @@ scroll-tracking, since the whole list is already visible at once. Drives the
 **Dictionary entries** (built by `lib/vocabIndex.js` `buildDictionary(stories)`
 from every story's `vocab[]`, deduped by `${lang}:${word}`): `{ word,
 reading, english, lang, level, storyIndex }`.
+
+**Kanji reference** (Bookmarks' "Kanji" tab, Japanese-only) — three parallel
+files keyed by the kanji character, not one combined schema:
+- `src/data/kanji_components.json` — flat array, `{ kanji, components: [...],
+  level, onyomi, kunyomi }`. `level` is `"N5"`/`"N4"`/`"Not Sorted"` (no
+  official JLPT kanji list exists; N5/N4 are tagged against
+  community-consensus lists, "Not Sorted" means likely N3+ or otherwise
+  untagged rather than a guessed level). `onyomi`/`kunyomi` are **real kana**
+  (on'yomi in katakana, kun'yomi in hiragana), comma-separated for multiple
+  readings, with okurigana kept in the source's parenthetical convention
+  (e.g. `たか(い)`, prefix/suffix forms keep a leading hyphen like `-どき`).
+  These were converted from a romaji source via a one-off mora-tokenizing
+  script (not part of the repo) — if re-deriving readings from a new source,
+  remember on'yomi long vowels are always spelled `-ou`/`-ei`-style (お+う,
+  え+い), while kun'yomi occasionally has a genuine doubled vowel (`こおり`,
+  `おおやけ`) that must NOT be collapsed to the `-ou` spelling.
+- `src/data/kanji_meanings.json` — `{ kanji: {char: meaning}, components:
+  {char: meaning} }`.
+- `src/data/kanji_examples.json` — `{ [kanji]: { on?: {word, reading,
+  meaning}, kun?: {word, reading, meaning} } }`, one example compound (or
+  standalone word for kun'yomi adjectives/verbs) per reading type,
+  demonstrating it in actual use rather than just restating the bare
+  reading. Either key can be absent — some kanji have no clean on'yomi
+  compound, some kun'yomi entries are rare enough that no example was added
+  rather than guess. **First-pass, unverified** like the rest of the app's
+  hand-authored content (see below) — hasn't had native-speaker review.
+`BookmarksScreen.jsx`'s `KanjiReference` component is the only consumer of
+all three; `KanjiBuildGame.jsx` also reads `kanji_components.json` for its
+own N5/N4/Not Sorted level filter (kept in sync with Bookmarks' filter for
+consistency, not because the two share state).
 
 ## Established conventions
 
@@ -205,7 +261,11 @@ reading, english, lang, level, storyIndex }`.
   (calls a serverless API endpoint).
 - `storage.js` — all `localStorage` reads/writes behind named functions
   (saved words, read stories, explore trail, feed order, etc.) — never touch
-  `localStorage` directly elsewhere.
+  `localStorage` directly elsewhere. `getBookmarksView`/`setBookmarksView`
+  persist Bookmarks' `{mode, alphabetLang, kanjiLevel}` as belt-and-suspenders
+  on top of the in-memory tab persistence (survives a full page reload, not
+  just a tab switch) — deliberately not in `PROGRESS_KEYS` since it's UI
+  state, not learning progress, so it's untouched by "Delete all progress."
 - `langs.js` / `levels.js` — display metadata (avatar/label/color) for
   languages and reading levels.
 - `search.js` — story search matching for the Feed search modal.
@@ -222,3 +282,17 @@ reading, english, lang, level, storyIndex }`.
   code — several real bugs this session (dictionary letter filter,
   word-tap mismatches, Explore citation mismatches) only surfaced by
   actually clicking through the running app.
+- **Always use the mockup.** `docs/ENCYCLOPEDIA_MOCKUP.html` is the
+  locked design spec (also referenced from `docs/ENCYCLOPEDIA_
+  DIRECTIONS.md`) — before building or changing any Encyclopedia/Read/
+  Games/Profile UI, open it and check the actual coded HTML/CSS for that
+  screen, not a remembered impression of it. When no frame exists for
+  what you're building (e.g. a Kanji browsing grid), design it *in the
+  mockup file first* — as a new frame, matching its existing tokens/
+  classes — then implement to match that frame exactly. "Approximately
+  matches" is not the bar; a real side-by-side (screenshot the mockup
+  frame and the running app, compare pixel values) is. This rule exists
+  because every UI phase this session drifted from the mockup when built
+  from memory instead of checked against it — see
+  `docs/ENCYCLOPEDIA_IMPLEMENTATION_PLAN.md`'s "Design fidelity audit"
+  for the concrete pattern of bugs that caused.

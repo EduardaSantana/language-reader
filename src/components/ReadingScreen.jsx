@@ -1,10 +1,9 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import {
   getReadingPosition,
+  hasReadingPosition,
   setReadingPosition,
   markDayReadIfNeeded,
-  hasSeenLoopMilestone,
-  markLoopMilestoneSeen,
   getFavoriteStories,
   toggleFavoriteStory,
   getUnseenSavedWords,
@@ -15,17 +14,12 @@ import {
   setFeedOrder,
 } from '../lib/storage'
 import { syncAppBadge } from '../lib/badge'
-import { GAMES_REQUIRING_READ_STORY } from '../lib/games'
+import { storyTeachesMap } from '../lib/exploreGraph'
+import { langFlag, langMeta } from '../lib/langs'
+import { levelMeta } from '../lib/levels'
 import StoryCard from './StoryCard'
-import BiteCard from './BiteCard'
+import StoryTile from './StoryTile'
 import SearchModal from './SearchModal'
-import BiteSearchModal from './BiteSearchModal'
-import grammarFr from '../data/grammar_points_fr.json'
-import grammarDe from '../data/grammar_points_de.json'
-import grammarRu from '../data/grammar_points_ru.json'
-import grammarJa from '../data/grammar_points_ja_bites.json'
-
-const BITE_LANGS = { fr: grammarFr, de: grammarDe, ru: grammarRu, ja: grammarJa }
 
 function shuffleArray(arr) {
   const copy = [...arr]
@@ -36,66 +30,72 @@ function shuffleArray(arr) {
   return copy
 }
 
-function buildBiteCards() {
-  const points = Object.values(BITE_LANGS).flat()
-  return shuffleArray(points).map((point) => ({ key: `bite-${point.id}`, type: 'bite', point }))
-}
-
-function buildCards(stories, milestoneAlreadySeen) {
-  const cards = stories.map((story) => ({
-    key: `story-${story.idx}`,
-    type: 'story',
-    story,
-    storyIndex: story.idx,
-  }))
-  if (!milestoneAlreadySeen) {
-    cards.push({ key: 'milestone', type: 'milestone' })
+// Groups an already-ordered story list into (lang, level) chapters — only
+// meaningful in sequential order, where that's a real progression; the
+// caller gates this behind `showChapters`. Real derivation, not fabricated
+// theming (see docs/ENCYCLOPEDIA_IMPLEMENTATION_PLAN.md's Phase 3 findings
+// on why "themed" chapters like the mockup's "Friends & Pets" aren't used).
+function groupIntoChapters(stories) {
+  const groups = []
+  let current = null
+  for (const story of stories) {
+    const key = `${story.lang}:${story.level}`
+    if (!current || current.key !== key) {
+      current = { key, lang: story.lang, level: story.level, stories: [] }
+      groups.push(current)
+    }
+    current.stories.push(story)
   }
-  cards.push({ key: 'wrap-0', type: 'story', story: stories[0], storyIndex: stories[0]?.idx })
-  return cards
+  return groups
 }
 
-function buildFavoritesCards(stories, favorites) {
-  return stories
-    .filter((story) => favorites.has(story.idx))
-    .map((story) => ({
-      key: `story-${story.idx}`,
-      type: 'story',
-      story,
-      storyIndex: story.idx,
-    }))
-}
-
-const ACTIVE_THRESHOLD = 0.6
-
+// Bites mode (a swipeable feed of grammar-point cards) was removed —
+// Encyclopedia's Curriculum now owns grammar-point browsing, so a second,
+// separate grammar feed inside Read was redundant. Removed by request; see
+// docs/ENCYCLOPEDIA_IMPLEMENTATION_PLAN.md's post-launch feedback section.
 export default function ReadingScreen({
   stories,
   jumpToIndex,
   onConsumedJump,
   onStoryFinished,
-  onOpenGame,
   restorePosition,
   onConsumedRestore,
   onSavedWordsChange,
+  onExploreNode,
 }) {
-  const [feedMode, setFeedMode] = useState('stories')
   const [showFurigana, setShowFurigana] = useState(true)
   const [searchOpen, setSearchOpen] = useState(false)
   const [favorites, setFavorites] = useState(() => getFavoriteStories())
   const [readStories, setReadStories] = useState(() => getReadStories())
-  const [activeIndex, setActiveIndex] = useState(-1)
   const [favoritesOnly, setFavoritesOnly] = useState(false)
   const [feedOrder, setFeedOrderState] = useState(() => getFeedOrder())
   const [shuffledStories, setShuffledStories] = useState(() =>
     getFeedOrder() === 'shuffled' ? shuffleArray(stories) : null,
   )
-  const [biteCards, setBiteCards] = useState(() => buildBiteCards())
+  const [openStoryIndex, setOpenStoryIndex] = useState(null)
 
   const isFiltering = favoritesOnly
   const orderedStories = feedOrder === 'shuffled' && shuffledStories ? shuffledStories : stories
 
+  // "Teaches" chips + chapter grouping (Phase 3, docs/ENCYCLOPEDIA_IMPLEMENTATION_PLAN.md).
+  // teachesMap only lists a grammar point if its example sentence genuinely
+  // appears in that story's text (same rule lib/exploreGraph.js uses
+  // elsewhere) — chapters only render in the feed's natural (lang, level)
+  // order, since shuffled/favorites-filtered adjacency isn't a meaningful
+  // progression.
+  const teachesMap = useMemo(() => storyTeachesMap(stories), [stories])
+  const showChapters = feedOrder === 'sequential' && !isFiltering
+
+  const displayedStories = useMemo(
+    () => (isFiltering ? orderedStories.filter((s) => favorites.has(s.idx)) : orderedStories),
+    [orderedStories, isFiltering, favorites],
+  )
+  const chapters = useMemo(
+    () => (showChapters ? groupIntoChapters(displayedStories) : [{ key: 'all', stories: displayedStories }]),
+    [displayedStories, showChapters],
+  )
+
   const containerRef = useRef(null)
-  const cardRefs = useRef([])
 
   function handleShuffleTap() {
     setShuffledStories(shuffleArray(stories))
@@ -111,65 +111,31 @@ export default function ReadingScreen({
     containerRef.current?.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const storyCards = useMemo(() => {
-    if (isFiltering) return buildFavoritesCards(orderedStories, favorites)
-    return buildCards(orderedStories, hasSeenLoopMilestone())
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [orderedStories, isFiltering, favorites])
-
-  const cards = feedMode === 'bites' ? biteCards : storyCards
-
-  function handleFeedModeChange(next) {
-    if (next === feedMode) return
-    setFeedMode(next)
-    containerRef.current?.scrollTo({ top: 0, behavior: 'instant' })
-  }
-
-  function canPracticeBite(point) {
-    if (!point.related_game_id) return false
-    if (!GAMES_REQUIRING_READ_STORY.has(point.related_game_id)) return true
-    return stories.some((s) => s.lang === point.lang && readStories.has(s.idx))
-  }
-
-  function handlePracticeBite(point) {
-    onOpenGame?.(point.related_game_id, null, point.lang)
-  }
-
-  function handleShuffleBites() {
-    setBiteCards(buildBiteCards())
-    containerRef.current?.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
-  function handleJumpToBite(pointId) {
-    const targetIndex = biteCards.findIndex((c) => c.point.id === pointId)
-    if (targetIndex >= 0) {
-      cardRefs.current[targetIndex]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-    setSearchOpen(false)
+  function handleOpenStory(storyIndex) {
+    setOpenStoryIndex(storyIndex)
+    setReadingPosition(storyIndex)
+    markDayReadIfNeeded()
   }
 
   useLayoutEffect(() => {
-    // Tapping the Feed tab should feel like a fresh arrival (scroll to top),
-    // same as any other tab reset — resuming the last reading position only
-    // makes sense on the very first mount of the whole session (app reopen).
-    const targetStoryIndex = jumpToIndex ?? (restorePosition ? getReadingPosition().storyIndex : null)
-    const targetIndex = cards.findIndex(
-      (c) => c.type === 'story' && c.storyIndex === targetStoryIndex && c.key !== 'wrap-0',
-    )
-    const el = cardRefs.current[targetIndex >= 0 ? targetIndex : 0]
-    el?.scrollIntoView({ behavior: 'instant', block: 'start' })
+    // Resume the last-read story on the very first mount of the session
+    // (Read is lazy now — "first mount" may happen well after app start,
+    // whenever the user first taps the Read tab, which is still correct) —
+    // but only if a position was ever genuinely saved. getReadingPosition()
+    // defaults to storyIndex 0 even when nothing was ever read, which would
+    // otherwise drop a brand-new reader straight into a story instead of
+    // showing them the list first.
+    const targetStoryIndex =
+      jumpToIndex ?? (restorePosition && hasReadingPosition() ? getReadingPosition().storyIndex : null)
+    if (targetStoryIndex != null && stories.some((s) => s.idx === targetStoryIndex)) {
+      setOpenStoryIndex(targetStoryIndex)
+    }
     if (jumpToIndex != null) onConsumedJump?.()
     onConsumedRestore?.()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
-    if (isFiltering) containerRef.current?.scrollTo({ top: 0, behavior: 'instant' })
-  }, [isFiltering])
-
-  useEffect(() => {
-    // Any real scroll interaction that day is enough — no separate
-    // "done for today" action required.
     const container = containerRef.current
     if (!container) return
     function handleScroll() {
@@ -178,45 +144,10 @@ export default function ReadingScreen({
     }
     container.addEventListener('scroll', handleScroll, { passive: true })
     return () => container.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  function activateCard(card, index) {
-    setActiveIndex(index)
-    if (card.type === 'story') {
-      if (!isFiltering) setReadingPosition(card.storyIndex)
-    } else if (card.type === 'milestone') {
-      markLoopMilestoneSeen()
-    }
-  }
-
-  useEffect(() => {
-    const container = containerRef.current
-    if (!container) return
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting && e.intersectionRatio >= ACTIVE_THRESHOLD)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
-        if (!visible) return
-        const index = Number(visible.target.dataset.cardIndex)
-        activateCard(cards[index], index)
-      },
-      { root: container, threshold: [ACTIVE_THRESHOLD] },
-    )
-
-    cardRefs.current.forEach((el) => el && observer.observe(el))
-    return () => observer.disconnect()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cards])
+  }, [openStoryIndex])
 
   function handleJump(storyIndex) {
-    const targetIndex = cards.findIndex(
-      (c) => c.type === 'story' && c.storyIndex === storyIndex && c.key !== 'wrap-0',
-    )
-    if (targetIndex >= 0) {
-      cardRefs.current[targetIndex]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
+    setOpenStoryIndex(storyIndex)
     setSearchOpen(false)
   }
 
@@ -228,6 +159,7 @@ export default function ReadingScreen({
     addSavedWord({
       word: vocab.word,
       reading: vocab.reading,
+      gender: vocab.gender,
       english: vocab.english,
       lang: story.lang,
       storyIndex: story.idx,
@@ -241,21 +173,12 @@ export default function ReadingScreen({
     onStoryFinished?.(story.lang, { type: 'story_finished', title_en: story.titleEn })
   }
 
+  const openStoryData = openStoryIndex != null ? stories.find((s) => s.idx === openStoryIndex) : null
+
   return (
     <div className="feed-screen">
       <div className="top-bar">
-        <div className="feed-mode-toggle">
-          <button
-            className={feedMode === 'stories' ? 'active' : ''}
-            onClick={() => handleFeedModeChange('stories')}
-          >
-            Stories
-          </button>
-          <button className={feedMode === 'bites' ? 'active' : ''} onClick={() => handleFeedModeChange('bites')}>
-            Bites
-          </button>
-        </div>
-        {feedMode === 'stories' && (
+        {!openStoryData && (
           <div className="top-bar-icons">
             <button className="icon-button-bar" onClick={() => setSearchOpen(true)} aria-label="Search stories">
               🔍
@@ -291,80 +214,55 @@ export default function ReadingScreen({
             </button>
           </div>
         )}
-        {feedMode === 'bites' && (
-          <div className="top-bar-icons">
-            <button className="icon-button-bar" onClick={() => setSearchOpen(true)} aria-label="Search grammar bites">
-              🔍
-            </button>
-            <button className="icon-button-bar shuffle-toggle" onClick={handleShuffleBites} aria-label="Shuffle bites order">
-              🔀
-            </button>
-          </div>
-        )}
       </div>
 
-      <div className="feed-container" ref={containerRef}>
-        {cards.length === 0 && feedMode === 'stories' && (
-          <div className="empty-results">No favorites yet — tap the heart on a story to save it here.</div>
-        )}
-        {cards.length === 0 && feedMode === 'bites' && (
-          <div className="empty-results">No grammar bites yet for the languages you're reading.</div>
-        )}
-        {feedMode === 'bites'
-          ? cards.map((card, i) => (
-              <BiteCard
-                key={card.key}
-                cardRef={(el) => (cardRefs.current[i] = el)}
-                cardIndex={i}
-                entry={card.point}
-                onPractice={canPracticeBite(card.point) ? () => handlePracticeBite(card.point) : null}
-              />
-            ))
-          : cards.map((card, i) => {
-              if (card.type === 'milestone') {
-                return (
-                  <section
-                    className="milestone-card"
-                    key={card.key}
-                    ref={(el) => (cardRefs.current[i] = el)}
-                    data-card-index={i}
-                  >
-                    <div className="milestone-emoji">🎉</div>
-                    <div className="milestone-title">You've read the whole set!</div>
-                    <div className="milestone-subtitle">
-                      All {stories.length} stories, done. Keep going — it loops right back to the start.
+      {openStoryData ? (
+        <div className="feed-container-static" ref={containerRef}>
+          <StoryCard
+            story={openStoryData}
+            showFurigana={showFurigana}
+            isFavorite={favorites.has(openStoryData.idx)}
+            isRead={readStories.has(openStoryData.idx)}
+            onToggleFavorite={() => handleToggleFavorite(openStoryData.idx)}
+            onSaveWord={(vocab) => handleSaveWord(vocab, openStoryData)}
+            onMarkRead={() => handleMarkRead(openStoryData)}
+            onBack={() => setOpenStoryIndex(null)}
+          />
+        </div>
+      ) : (
+        <div className="feed-container" ref={containerRef}>
+          {displayedStories.length === 0 && (
+            <div className="empty-results">No favorites yet — tap the heart on a story to save it here.</div>
+          )}
+
+          <div className="read-story-list">
+            {chapters.map((chapter) => (
+              <div key={chapter.key}>
+                {showChapters && (
+                  <div className="read-chapter-header">
+                    <span className="read-chapter-header-icon">{langFlag(chapter.lang)}</span>
+                    <div className="read-chapter-header-text">
+                      <div className="read-chapter-header-lang">{langMeta(chapter.lang).label}</div>
+                      <div className="read-chapter-header-level">{levelMeta(chapter.level).name}</div>
                     </div>
-                  </section>
-                )
-              }
-              return (
-                <StoryCard
-                  key={card.key}
-                  cardRef={(el) => (cardRefs.current[i] = el)}
-                  cardIndex={i}
-                  story={card.story}
-                  showFurigana={showFurigana}
-                  isActive={i === activeIndex}
-                  isFavorite={favorites.has(card.storyIndex)}
-                  isRead={readStories.has(card.storyIndex)}
-                  onToggleFavorite={() => handleToggleFavorite(card.storyIndex)}
-                  onSaveWord={(vocab) => handleSaveWord(vocab, card.story)}
-                  onMarkRead={() => handleMarkRead(card.story)}
-                />
-              )
-            })}
-      </div>
+                  </div>
+                )}
+                {chapter.stories.map((story) => (
+                  <StoryTile
+                    key={story.idx}
+                    story={story}
+                    teaches={teachesMap.get(story.idx)}
+                    onOpen={() => handleOpenStory(story.idx)}
+                    onExploreNode={onExploreNode}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
-      {searchOpen && feedMode === 'stories' && (
-        <SearchModal stories={stories} onSelect={handleJump} onClose={() => setSearchOpen(false)} />
-      )}
-      {searchOpen && feedMode === 'bites' && (
-        <BiteSearchModal
-          points={biteCards.map((c) => c.point)}
-          onSelect={handleJumpToBite}
-          onClose={() => setSearchOpen(false)}
-        />
-      )}
+      {searchOpen && <SearchModal stories={stories} onSelect={handleJump} onClose={() => setSearchOpen(false)} />}
     </div>
   )
 }

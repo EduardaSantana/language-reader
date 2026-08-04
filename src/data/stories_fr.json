@@ -53,38 +53,38 @@
     "vocab": [
       {
         "word": "le jeu vidéo",
-        "annotation": "m",
-        "english": "video game"
+        "english": "video game",
+        "gender": "m"
       },
       {
         "word": "le jeu de rôle",
-        "annotation": "m",
-        "english": "role-playing game"
+        "english": "role-playing game",
+        "gender": "m"
       },
       {
         "word": "puissant",
-        "annotation": null,
-        "english": "powerful"
+        "english": "powerful",
+        "gender": null
       },
       {
         "word": "le monstre",
-        "annotation": "m",
-        "english": "monster"
+        "english": "monster",
+        "gender": "m"
       },
       {
         "word": "l'épée",
-        "annotation": "f",
-        "english": "sword"
+        "english": "sword",
+        "gender": "f"
       },
       {
         "word": "l'ami",
-        "annotation": "m",
-        "english": "friend"
+        "english": "friend",
+        "gender": "m"
       },
       {
         "word": "amusant",
-        "annotation": null,
-        "english": "fun"
+        "english": "fun",
+        "gender": null
       }
     ]
   },
@@ -136,33 +136,33 @@
     "vocab": [
       {
         "word": "le chat",
-        "annotation": "m",
-        "english": "cat"
+        "english": "cat",
+        "gender": "m"
       },
       {
         "word": "petit",
-        "annotation": null,
-        "english": "small"
+        "english": "small",
+        "gender": null
       },
       {
         "word": "doux",
-        "annotation": null,
-        "english": "soft"
+        "english": "soft",
+        "gender": null
       },
       {
         "word": "dormir",
-        "annotation": null,
-        "english": "to sleep"
+        "english": "to sleep",
+        "gender": null
       },
       {
         "word": "jouer",
-        "annotation": null,
-        "english": "to play"
+        "english": "to play",
+        "gender": null
       },
       {
         "word": "aimer",
-        "annotation": null,
-        "english": "to love"
+        "english": "to love",
+        "gender": null
       }
     ]
   },
@@ -214,33 +214,33 @@
     "vocab": [
       {
         "word": "le soleil",
-        "annotation": "m",
-        "english": "sun / sunny"
+        "english": "sun / sunny",
+        "gender": "m"
       },
       {
         "word": "le ciel",
-        "annotation": "m",
-        "english": "sky"
+        "english": "sky",
+        "gender": "m"
       },
       {
         "word": "chaud",
-        "annotation": null,
-        "english": "warm"
+        "english": "warm",
+        "gender": null
       },
       {
         "word": "se promener",
-        "annotation": null,
-        "english": "to go for a walk"
+        "english": "to go for a walk",
+        "gender": null
       },
       {
         "word": "pleuvoir",
-        "annotation": null,
-        "english": "to rain"
+        "english": "to rain",
+        "gender": null
       },
       {
         "word": "la pluie",
-        "annotation": "f",
-        "english": "rain"
+        "english": "rain",
+        "gender": "f"
       }
     ]
   },
@@ -286,33 +286,33 @@
     "vocab": [
       {
         "word": "le petit-déjeuner",
-        "annotation": "m",
-        "english": "breakfast"
+        "english": "breakfast",
+        "gender": "m"
       },
       {
         "word": "le pain",
-        "annotation": "m",
-        "english": "bread"
+        "english": "bread",
+        "gender": "m"
       },
       {
         "word": "le beurre",
-        "annotation": "m",
-        "english": "butter"
+        "english": "butter",
+        "gender": "m"
       },
       {
         "word": "le café",
-        "annotation": "m",
-        "english": "coffee"
+        "english": "coffee",
+        "gender": "m"
       },
       {
         "word": "l'œuf",
-        "annotation": "m",
-        "english": "egg"
+        "english": "egg",
+        "gender": "m"
       },
       {
         "word": "le repas",
-        "annotation": "m",
-        "english": "meal"
+        "english": "meal",
+        "gender": "m"
       }
     ]
   },
@@ -364,33 +364,33 @@
     "vocab": [
       {
         "word": "la famille",
-        "annotation": "f",
-        "english": "family"
+        "english": "family",
+        "gender": "f"
       },
       {
         "word": "la mère",
-        "annotation": "f",
-        "english": "mother"
+        "english": "mother",
+        "gender": "f"
       },
       {
         "word": "le père",
-        "annotation": "m",
-        "english": "father"
+        "english": "father",
+        "gender": "m"
       },
       {
         "word": "le frère",
-        "annotation": "m",
-        "english": "brother"
+        "english": "brother",
+        "gender": "m"
       },
       {
         "word": "la sœur",
-        "annotation": "f",
-        "english": "sister"
+        "english": "sister",
+        "gender": "f"
       },
       {
         "word": "important",
-        "annotation": null,
-        "english": "important"
+        "english": "important",
+        "gender": null
       }
     ]
   },
@@ -448,38 +448,38 @@
     "vocab": [
       {
         "word": "le tournoi",
-        "annotation": "m",
-        "english": "tournament"
+        "english": "tournament",
+        "gender": "m"
       },
       {
         "word": "le dresseur",
-        "annotation": "m",
-        "english": "trainer"
+        "english": "trainer",
+        "gender": "m"
       },
       {
         "word": "adverse",
-        "annotation": null,
-        "english": "opposing"
+        "english": "opposing",
+        "gender": null
       },
       {
         "word": "le combat",
-        "annotation": "m",
-        "english": "battle"
+        "english": "battle",
+        "gender": "m"
       },
       {
         "word": "durer",
-        "annotation": null,
-        "english": "to last"
+        "english": "to last",
+        "gender": null
       },
       {
         "word": "remporter",
-        "annotation": null,
-        "english": "to win/achieve"
+        "english": "to win/achieve",
+        "gender": null
       },
       {
         "word": "la victoire",
-        "annotation": "f",
-        "english": "victory"
+        "english": "victory",
+        "gender": "f"
       }
     ]
   },
@@ -531,33 +531,33 @@
     "vocab": [
       {
         "word": "le festival",
-        "annotation": "m",
-        "english": "festival"
+        "english": "festival",
+        "gender": "m"
       },
       {
         "word": "le costume",
-        "annotation": "m",
-        "english": "costume"
+        "english": "costume",
+        "gender": "m"
       },
       {
         "word": "coudre",
-        "annotation": null,
-        "english": "to sew"
+        "english": "to sew",
+        "gender": null
       },
       {
         "word": "prendre une photo",
-        "annotation": null,
-        "english": "to take a photo"
+        "english": "to take a photo",
+        "gender": null
       },
       {
         "word": "le fan",
-        "annotation": "m",
-        "english": "fan"
+        "english": "fan",
+        "gender": "m"
       },
       {
         "word": "rencontrer",
-        "annotation": null,
-        "english": "to meet"
+        "english": "to meet",
+        "gender": null
       }
     ]
   },
@@ -609,33 +609,33 @@
     "vocab": [
       {
         "word": "le sens",
-        "annotation": "m",
-        "english": "sense"
+        "english": "sense",
+        "gender": "m"
       },
       {
         "word": "la vue",
-        "annotation": "f",
-        "english": "sight"
+        "english": "sight",
+        "gender": "f"
       },
       {
         "word": "l'ouïe",
-        "annotation": "f",
-        "english": "hearing"
+        "english": "hearing",
+        "gender": "f"
       },
       {
         "word": "sentir",
-        "annotation": null,
-        "english": "to smell/feel"
+        "english": "to smell/feel",
+        "gender": null
       },
       {
         "word": "goûter",
-        "annotation": null,
-        "english": "to taste"
+        "english": "to taste",
+        "gender": null
       },
       {
         "word": "le toucher",
-        "annotation": "m",
-        "english": "touch"
+        "english": "touch",
+        "gender": "m"
       }
     ]
   },
@@ -687,33 +687,33 @@
     "vocab": [
       {
         "word": "en ligne",
-        "annotation": null,
-        "english": "online"
+        "english": "online",
+        "gender": null
       },
       {
         "word": "le coéquipier",
-        "annotation": "m",
-        "english": "teammate"
+        "english": "teammate",
+        "gender": "m"
       },
       {
         "word": "le micro",
-        "annotation": "m",
-        "english": "microphone"
+        "english": "microphone",
+        "gender": "m"
       },
       {
         "word": "la manette",
-        "annotation": "f",
-        "english": "game controller"
+        "english": "game controller",
+        "gender": "f"
       },
       {
         "word": "vibrer",
-        "annotation": null,
-        "english": "to vibrate"
+        "english": "to vibrate",
+        "gender": null
       },
       {
         "word": "la stratégie",
-        "annotation": "f",
-        "english": "strategy"
+        "english": "strategy",
+        "gender": "f"
       }
     ]
   },
@@ -765,33 +765,33 @@
     "vocab": [
       {
         "word": "le volcan",
-        "annotation": "m",
-        "english": "volcano"
+        "english": "volcano",
+        "gender": "m"
       },
       {
         "word": "fondre",
-        "annotation": null,
-        "english": "to melt"
+        "english": "to melt",
+        "gender": null
       },
       {
         "word": "la lave",
-        "annotation": "f",
-        "english": "lava"
+        "english": "lava",
+        "gender": "f"
       },
       {
         "word": "l'éruption",
-        "annotation": "f",
-        "english": "eruption"
+        "english": "eruption",
+        "gender": "f"
       },
       {
         "word": "la fumée",
-        "annotation": "f",
-        "english": "smoke"
+        "english": "smoke",
+        "gender": "f"
       },
       {
         "word": "dormir",
-        "annotation": null,
-        "english": "to sleep (dormant)"
+        "english": "to sleep (dormant)",
+        "gender": null
       }
     ]
   },
@@ -843,33 +843,33 @@
     "vocab": [
       {
         "word": "inventer",
-        "annotation": null,
-        "english": "to invent"
+        "english": "to invent",
+        "gender": null
       },
       {
         "word": "le carnet",
-        "annotation": "m",
-        "english": "notebook"
+        "english": "notebook",
+        "gender": "m"
       },
       {
         "word": "le personnage principal",
-        "annotation": "m",
-        "english": "main character"
+        "english": "main character",
+        "gender": "m"
       },
       {
         "word": "voler",
-        "annotation": null,
-        "english": "to fly"
+        "english": "to fly",
+        "gender": null
       },
       {
         "word": "colorier",
-        "annotation": null,
-        "english": "to color"
+        "english": "to color",
+        "gender": null
       },
       {
         "word": "publier",
-        "annotation": null,
-        "english": "to publish"
+        "english": "to publish",
+        "gender": null
       }
     ]
   }

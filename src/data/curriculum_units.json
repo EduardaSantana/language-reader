@@ -253,6 +253,18 @@
   },
   {
     "lang": "fr",
+    "branch": "Time & Duration Expressions",
+    "narrative": "French carves up \"time\" with several non-interchangeable prepositions, and English's all-purpose \"in\"/\"for\" masks distinctions French treats as separate grammar. On completion the learner can correctly place a future point with dans, measure completion time with en, and state an ongoing or finished duration with depuis, pendant, and il y a (que).",
+    "confidence": "first_pass"
+  },
+  {
+    "lang": "fr",
+    "branch": "Indefinite Adjectives, Pronouns & Quantifiers",
+    "narrative": "This unit covers the small quantifier words — chaque/chacun, quelque(s), plusieurs, certain(e)s, and the shape-shifting tout — that let a learner say \"each,\" \"some,\" \"several,\" and \"all/everything\" precisely instead of falling back on des or beaucoup de. On completion the learner can pick the right quantifier and get its agreement (or invariability) right, including tout's notorious adverbial exception.",
+    "confidence": "first_pass"
+  },
+  {
+    "lang": "fr",
     "branch": "The French–Portuguese Bridge",
     "narrative": "For learners moving between French and Portuguese, this unit maps the true structural cognates and the real divergences, so that transfer helps rather than misleads. On completion the learner can leverage shared Romance architecture while sidestepping the specific traps.",
     "confidence": "first_pass"

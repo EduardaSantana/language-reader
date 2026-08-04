@@ -23,6 +23,7 @@ import kanaJa from '../data/kana_ja.json'
 import alphabetRu from '../data/alphabet_ru.json'
 import kanjiComponents from '../data/kanji_components.json'
 import kanjiMeanings from '../data/kanji_meanings.json'
+import kanjiExamples from '../data/kanji_examples.json'
 
 const PAGE_SIZE = 40
 
@@ -35,6 +36,7 @@ const KANJI_LEVELS = [
   { key: 'all', label: 'All levels' },
   { key: 'N5', label: 'N5' },
   { key: 'N4', label: 'N4' },
+  { key: 'Not Sorted', label: 'Not Sorted' },
 ]
 
 function KANA_ROW_GROUPS() {
@@ -72,7 +74,9 @@ function SavedWordCard({ entry, story, onOpen }) {
       <WordImage entry={entry} fallbackEmoji={story?.emoji || '📗'} />
       <div className="saved-word-text">
         <div className="saved-word-word">{entry.word}</div>
-        {entry.reading && <div className="saved-word-reading">{entry.reading}</div>}
+        {(entry.reading || entry.gender) && (
+          <div className="saved-word-reading">{entry.reading || entry.gender}</div>
+        )}
         <div className="saved-word-english">{entry.english}</div>
       </div>
     </button>
@@ -85,7 +89,9 @@ function DictionaryRow({ entry, onSave }) {
     <li className="dictionary-row">
       <div>
         <span className="story-list-title-ja">{entry.word}</span>
-        {entry.reading && <span className="dictionary-reading"> ({entry.reading})</span>}
+        {(entry.reading || entry.gender) && (
+          <span className="dictionary-reading"> ({entry.reading || entry.gender})</span>
+        )}
         <div className="story-list-title-en">{entry.english}</div>
       </div>
       <button
@@ -248,6 +254,33 @@ function KanjiReference({ level, onLevelChange }) {
                 {selected.onyomi && <>On'yomi: <strong>{selected.onyomi}</strong></>}
               </p>
             )}
+            {(() => {
+              const ex = kanjiExamples[selected.kanji]
+              if (!ex || (!ex.on && !ex.kun)) return null
+              return (
+                <>
+                  <div className="refs-label">Example words</div>
+                  <div className="kanji-example-list">
+                    {ex.on && (
+                      <div className="kanji-example-row">
+                        <span className="cefr-badge">on</span>
+                        <span className="ref-word">{ex.on.word}</span>
+                        <span className="dictionary-reading">{ex.on.reading}</span>
+                        <span className="alphabet-card-romaji">{ex.on.meaning}</span>
+                      </div>
+                    )}
+                    {ex.kun && (
+                      <div className="kanji-example-row">
+                        <span className="cefr-badge">kun</span>
+                        <span className="ref-word">{ex.kun.word}</span>
+                        <span className="dictionary-reading">{ex.kun.reading}</span>
+                        <span className="alphabet-card-romaji">{ex.kun.meaning}</span>
+                      </div>
+                    )}
+                  </div>
+                </>
+              )
+            })()}
             {selected.components?.length > 0 && (
               <>
                 <div className="refs-label">Built from</div>
@@ -361,6 +394,7 @@ export default function BookmarksScreen({ stories, activeTab, onExploreWord, onO
     const updated = addSavedWord({
       word: entry.word,
       reading: entry.reading,
+      gender: entry.gender,
       english: entry.english,
       lang: entry.lang,
       storyIndex: entry.storyIndex,
@@ -540,7 +574,9 @@ export default function BookmarksScreen({ stories, activeTab, onExploreWord, onO
               </button>
             </div>
             <WordImage entry={selectedWord} fallbackEmoji={stories[selectedWord.storyIndex]?.emoji || '📗'} />
-            {selectedWord.reading && <p className="story-list-title-en">{selectedWord.reading}</p>}
+            {(selectedWord.reading || selectedWord.gender) && (
+              <p className="story-list-title-en">{selectedWord.reading || selectedWord.gender}</p>
+            )}
             <p>{selectedWord.english}</p>
             <p>From: {stories[selectedWord.storyIndex]?.titleEn}</p>
             <div className="modal-actions">

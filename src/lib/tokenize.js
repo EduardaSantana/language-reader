@@ -42,7 +42,7 @@ export function buildVocabLookup(vocab) {
   }
 
   for (const v of vocab ?? []) {
-    const entry = { word: v.word, reading: v.reading, english: v.english }
+    const entry = { word: v.word, reading: v.reading, gender: v.gender, english: v.english }
     set(v.word, entry)
 
     const words = v.word.split(/\s+/).filter(Boolean)

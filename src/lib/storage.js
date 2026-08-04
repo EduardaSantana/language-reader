@@ -49,6 +49,15 @@ export function getReadingPosition() {
   return { storyIndex: stored.storyIndex ?? 0 }
 }
 
+// getReadingPosition() always returns a usable {storyIndex: 0} fallback, so
+// it can't distinguish "genuinely at story 0" from "never opened anything" —
+// needed once Read became a browsable list (docs/ENCYCLOPEDIA_IMPLEMENTATION_PLAN.md):
+// without this check, a brand-new reader would get auto-dropped straight
+// into story 0's detail view instead of seeing the list first.
+export function hasReadingPosition() {
+  return localStorage.getItem(KEYS.readingPosition) !== null
+}
+
 export function setReadingPosition(storyIndex) {
   writeJSON(KEYS.readingPosition, { storyIndex })
 }

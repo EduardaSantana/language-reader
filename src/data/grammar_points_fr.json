@@ -27,7 +27,8 @@
     "related_game_id": null,
     "branch": "Foundations: The Sentence Skeleton",
     "prerequisites": [],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-1"
   },
   {
     "id": "fr-u1-basic-word-order-and",
@@ -55,7 +56,8 @@
     "prerequisites": [
       "fr-u1-subject-pronouns"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/french_curriculum.md#unit-1"
   },
   {
     "id": "fr-u1-être-present",
@@ -63,7 +65,7 @@
     "difficulty": 1,
     "cefr": "A1",
     "title": "être (to be) — present",
-    "explanation": "",
+    "explanation": "être ('to be') is a core irregular verb (je suis, tu es, il/elle est, nous sommes, vous êtes, ils/elles sont) used for identity, nationality, profession, and location. Unlike English, no article appears before an unmodified profession (je suis étudiant, not je suis un étudiant).",
     "examples": [
       {
         "native": "Je suis étudiant.",
@@ -75,7 +77,7 @@
       }
     ],
     "bridge_lang": "pt",
-    "bridge_note": null,
+    "bridge_note": "French collapses \"to be\" into a single verb, but Portuguese splits it into ser (identity, profession, characteristics) and estar (temporary states, location) — so je suis étudiant maps to sou estudante (ser) while nous sommes en France maps to estamos na França (estar), a distinction French speakers must learn to make.",
     "mistake": "inserting un/une before a bare profession (\"Je suis un étudiant\" is marked/emphatic, not the default).",
     "source": null,
     "related_game_id": null,
@@ -83,7 +85,8 @@
     "prerequisites": [
       "fr-u1-basic-word-order-and"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-1"
   },
   {
     "id": "fr-u1-avoir-present-and-its",
@@ -111,7 +114,8 @@
     "prerequisites": [
       "fr-u1-être-present"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-1"
   },
   {
     "id": "fr-u1-cest-vs-ilelle-est",
@@ -139,7 +143,8 @@
     "prerequisites": [
       "fr-u1-avoir-present-and-its"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-1"
   },
   {
     "id": "fr-u2-grammatical-gender-of-nouns",
@@ -148,6 +153,7 @@
     "cefr": "A1",
     "title": "Grammatical gender of nouns",
     "explanation": "Every noun is masculine or feminine, including inanimate objects (le livre = the book, la table = the table). Word endings are a strong predictor: per Roy Lyster's 2006 corpus analysis of 9,961 nouns in Le Robert Junior Illustré (published in Journal of French Language Studies 16, Cambridge University Press), \"81 per cent of all feminine nouns and 80 per cent of all masculine nouns in the corpus are rule governed, having endings that systematically predict their gender.\" Endings in -tion/-té/-ette/-ence tend feminine; -age/-ment/-eau/-isme tend masculine.",
+    "long_form": "The first thing to unlearn about French gender is the idea that it's about sex. Le livre isn't masculine because books are somehow male, any more than la table is feminine because tables are somehow female — grammatical gender is a formal classification system, a set of noun \"boxes\" that happens to be labeled masculine and feminine, and every noun has to live in one of the two boxes whether or not it names a living thing. What makes the system learnable rather than arbitrary is that the boxes correlate strongly with word endings: Lyster's corpus study found roughly four in five nouns rule-governed by their ending alone, which means fluent gender intuition in French is much closer to a spelling pattern you absorb than a fact you memorize noun by noun.\n\nWhy two boxes, and why does French default to masculine when in doubt? Latin actually had three genders — masculine, feminine, and neuter — and French descends from Vulgar Latin's slow erosion of case and gender marking. As Latin's neuter nouns lost their distinct endings, most of them were reassigned to the masculine class, which is the direct historical reason masculine functions as French's \"unmarked\" or default gender today (in mixed-gender groups, in impersonal constructions, in borrowed and new words). Traces of the old neuter occasionally surface as genuine oddities: a word like amour is masculine in the singular (un grand amour) but can take feminine agreement in the literary plural (de folles amours) — a fossil of an intermediate stage in the collapse, not a rule anyone applies consciously anymore.\n\nEnglish went through its own, more radical version of this collapse: Old English had a full three-gender system much like Latin's, assigning gender to inanimate nouns exactly as French still does, but it was lost almost entirely during the Middle English period, leaving only \"natural\" gender (he/she for people and some animals, it for everything else). So an English speaker isn't approaching French gender from some entirely alien mental category — English simply gave up a system French kept. Portuguese, by contrast, preserved the same two-gender Latin-derived architecture as French, which is why the two languages line up on so many cognates (informação/l'information, both feminine) — but the correlation isn't guaranteed, and cognate nouns can and do carry different genders in the two languages, so a Lusophone learner has to resist the reflex of assuming gender transfers automatically just because the word does.\n\nThe most persistent mistakes come from exactly this instinct to import a rule from somewhere else — treating inanimate gender as arbitrary noise not worth learning systematically (the English-speaker's trap), or assuming a cognate keeps its home-language gender (the bridge-language trap). A subtler nuance sits on top of the ending-based rules: a small set of French words change meaning depending on which gender you give them — le mode (method/mood, grammatical) versus la mode (fashion); le tour (a turn, a trick) versus la tour (a tower); le critique (the critic, the person) versus la critique (the criticism, the review). These aren't exceptions to \"real\" gender rules so much as proof that gender in French is doing genuine semantic work, distinguishing otherwise-identical words — which is also exactly why contemporary debates over écriture inclusive (inclusive writing) are as fraught as they are: they're proposing to modify a grammatical system that, unlike in English, touches nearly every sentence a French speaker produces.",
     "examples": [
       {
         "native": "le livre, la table",
@@ -161,11 +167,12 @@
     "related_game_id": null,
     "branch": "Gender, Number & Noun Agreement",
     "prerequisites": [],
-    "confidence": "verified",
+    "confidence": "first_pass",
     "related_oddity_id": {
       "lang": "fr",
       "id": "fr-odd-gender-flip"
-    }
+    },
+    "source_doc": "docs/french_curriculum.md#unit-2"
   },
   {
     "id": "fr-u2-plural-of-nouns",
@@ -197,7 +204,8 @@
     "related_oddity_id": {
       "lang": "fr",
       "id": "fr-odd-liaison"
-    }
+    },
+    "source_doc": "docs/french_curriculum.md#unit-2"
   },
   {
     "id": "fr-u2-the-agreement-principle",
@@ -216,7 +224,8 @@
     "prerequisites": [
       "fr-u2-plural-of-nouns"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/french_curriculum.md#unit-2"
   },
   {
     "id": "fr-u3-definite-articles",
@@ -242,7 +251,8 @@
     "related_game_id": null,
     "branch": "Articles & Determiners",
     "prerequisites": [],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-3"
   },
   {
     "id": "fr-u3-indefinite-articles",
@@ -266,7 +276,8 @@
     "prerequisites": [
       "fr-u3-definite-articles"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-3"
   },
   {
     "id": "fr-u3-partitive-articles",
@@ -275,6 +286,7 @@
     "cefr": "A2",
     "title": "Partitive articles (du, de la, de l', des)",
     "explanation": "\"Some/any\" of an uncountable mass. Contrast with definite: j'aime le café (coffee in general) vs je bois du café (some coffee).",
+    "long_form": "The partitive is one of French's most genuinely original contributions to Romance grammar, and it's worth pausing on why it exists at all. Latin had no articles whatsoever — no le, no un, no du — so a Roman speaker distinguished \"I like coffee in general\" from \"I'm drinking some coffee\" purely through context and word choice, not through a dedicated grammatical marker. French built its entire article system from scratch during the medieval period, recruiting the Latin demonstrative ille/illa (\"that\") to become le/la, the numeral unus/una to become un/une, and — this is the interesting part — the preposition de (\"of, from\") plus the definite article to build a brand-new category: du, de la, de l', literally \"of the.\" The partitive names an unmeasured slice of a mass or category by describing it as a portion drawn \"from the\" whole, which is exactly what je bois du café means if you unpack it literally: \"I drink [some] of the coffee.\"\n\nThat literal transparency is also why the definite/partitive contrast feels so sharp once you see it: j'aime le café talks about coffee as a category or an abstraction (the whole \"the\" that du later carves a piece out of), while je bois du café talks about an actual, physical, unspecified quantity of it sitting in a cup. English speakers don't have a real equivalent decision to make here, because English simply doesn't require an article at all for this meaning — \"I drink coffee\" and \"I'm drinking some coffee\" are both grammatical, and \"some\" is optional, stylistic, almost always droppable. That optionality is precisely the trap: English gives learners no formal signal that a choice is even being made, so the instinct is to treat du/de la as decorative rather than structurally required.\n\nPortuguese complicates the transfer in the opposite direction from English. Portuguese, like French, descends from Latin and built its own indefinite plural (uns, umas) and occasionally uses de-constructions for partitive-like meaning, but it does not have an obligatory partitive article the way French does — Como pão (\"I eat bread\") is perfectly natural and complete without any word corresponding to du. So a Lusophone learner approaching French partitives isn't transferring a habit from Portuguese so much as acquiring a genuinely new obligatory category that neither of their languages forces on them the same way — which makes this one of the harder points in the whole curriculum to get by instinct, no matter which side of the bridge you're coming from.\n\nThe deepest A2-level trap, as the curriculum note says, is using the definite where the partitive belongs and vice versa — but the more interesting nuance for an intermediate learner is that abstract nouns don't behave uniformly. Some abstractions default to the definite because French treats them as named, whole concepts (aimer la liberté, respecter la nature), while others regularly take the partitive because French treats them as a variable quantity someone can have more or less of on a given occasion (avoir du courage, avoir de la patience, avoir de la chance) — the same noun, courage, can appear with le when discussed as a virtue in the abstract and with du when describing how much of it someone is currently displaying. Getting a feel for that line is less about memorizing a list and more about learning to ask, every time: am I naming the whole category, or scooping out an unmeasured piece of it?",
     "examples": [
       {
         "native": "Je mange du pain et de la confiture.",
@@ -290,7 +302,8 @@
     "prerequisites": [
       "fr-u3-indefinite-articles"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-3"
   },
   {
     "id": "fr-u3-articles-become-de-after",
@@ -322,7 +335,8 @@
     "prerequisites": [
       "fr-u3-partitive-articles"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-3"
   },
   {
     "id": "fr-u3-contractions-à-le-au",
@@ -350,7 +364,8 @@
     "prerequisites": [
       "fr-u3-articles-become-de-after"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-3"
   },
   {
     "id": "fr-u3-demonstrative-adjectives",
@@ -378,7 +393,8 @@
     "prerequisites": [
       "fr-u3-contractions-à-le-au"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-3"
   },
   {
     "id": "fr-u3-possessive-adjectives",
@@ -406,7 +422,8 @@
     "prerequisites": [
       "fr-u3-demonstrative-adjectives"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-3"
   },
   {
     "id": "fr-u4-adjective-agreement",
@@ -432,7 +449,8 @@
     "related_game_id": null,
     "branch": "Adjectives: Agreement, Placement, Comparison",
     "prerequisites": [],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-4"
   },
   {
     "id": "fr-u4-adjective-placement-the-bangsbags",
@@ -441,6 +459,7 @@
     "cefr": "A1–A2",
     "title": "Adjective placement: the BANGS/BAGS exception",
     "explanation": "Most adjectives FOLLOW the noun (une voiture rouge). A small high-frequency set precedes it: Beauty, Age, Numbers, Goodness, Size (beau, jeune/vieux, premier, bon/mauvais, grand/petit).",
+    "long_form": "The default rule — adjectives follow the noun — is itself the more interesting historical fact, because it's the opposite of what English speakers expect from any language and yet it's the ordinary Romance pattern: Spanish, Italian, and Portuguese all put descriptive adjectives after the noun by default too. What actually needs explaining isn't why French postposes adjectives; it's why a small cluster of them refuses to. The BANGS/BAGS set — beauty, age, number, goodness, size — isn't a random grab bag someone assembled for a mnemonic. It's a genuine linguistic pattern: cross-linguistically, the adjectives most likely to sit in a fixed, unusual position next to a noun tend to be exactly the short, extremely frequent, semantically \"inherent\" ones — words so old and so constantly used that they behave more like part of the noun phrase's core than like an added description, the way English still says \"a big deal\" rather than \"a deal big\" even though English adjectives are otherwise always prenominal anyway.\n\nHistorically, Latin word order was far freer than French's, because Latin's case endings did the job that word order does in French — you could tell subject from object from the endings, not the position, so an adjective could sit almost anywhere for stylistic or emphatic effect. As French lost virtually all of its case marking and locked into a strict word-order grammar to compensate, adjective position had to be fixed too — and the pattern that emerged split along frequency lines: the oldest, shortest, most habitually paired adjective-noun combinations (grand-mère, petit-déjeuner, bon vin) fossilized in their inherited front position, while the much larger and more productive class of descriptive adjectives — colors, shapes, nationalities, textures, anything coined or borrowed more recently — settled into the newer, more \"regular\" post-nominal slot.\n\nFor an English speaker this is one of the more disorienting asymmetries in French, precisely because English never made this split: every English adjective goes before its noun, full stop, so there's no internal category to map BANGS onto. Portuguese offers a genuinely useful comparison instead of a false-friend trap here, because Portuguese preserves an almost parallel phenomenon with its own small set of frequently-preposed adjectives (grande, bom, mau, velho, novo) — grande homem (a great man) versus homem grande (a big/tall man) works on exactly the same logic as French's own position-sensitive adjectives, so a Lusophone learner already has the right mental category, just not the identical membership list.\n\nThe most common mistake isn't just picking the wrong side for an individual adjective — it's treating the whole rule as either universal (postposing everything, the safe English-speaker's overcorrection) or as freely stylistic (front-loading adjectives at will, mistaking BANGS for a suggestion rather than a fixed lexical fact about specific words). The genuinely useful nuance, and the bridge to the next point in this unit, is that BANGS membership isn't airtight even within itself: grand can sit in front for a qualitative, non-literal sense (un grand homme, a great man) and behind for a literal, physical one (un homme grand, a tall man) — which is really adjectives-that-change-meaning-by-position showing up early, a preview that placement in French is never just decorative; it's carrying real, sometimes subtle, semantic weight.",
     "examples": [
       {
         "native": "une grande maison blanche",
@@ -456,7 +475,8 @@
     "prerequisites": [
       "fr-u4-adjective-agreement"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/french_curriculum.md#unit-4"
   },
   {
     "id": "fr-u4-adjectives-that-change-meaning",
@@ -469,6 +489,10 @@
       {
         "native": "mon ancien appartement (my former flat) vs un meuble ancien (an antique)",
         "gloss": null
+      },
+      {
+        "native": "un cher ami vs une robe chère",
+        "gloss": "a dear friend vs an expensive dress"
       }
     ],
     "bridge_lang": "pt",
@@ -480,7 +504,8 @@
     "prerequisites": [
       "fr-u4-adjective-placement-the-bangsbags"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-4"
   },
   {
     "id": "fr-u4-comparatives",
@@ -488,7 +513,7 @@
     "difficulty": 1,
     "cefr": "A2",
     "title": "Comparatives (plus/moins/aussi … que)",
-    "explanation": "",
+    "explanation": "Comparisons use plus/moins/aussi before the adjective and que after it (\"more/less/as … as\"), and the adjective still agrees with the noun as it normally would. bon and bien are irregular: they become meilleur (adjective) and mieux (adverb) instead of plus bon / plus bien.",
     "examples": [
       {
         "native": "Elle est plus grande que moi.",
@@ -508,7 +533,8 @@
     "prerequisites": [
       "fr-u4-adjectives-that-change-meaning"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-4"
   },
   {
     "id": "fr-u4-superlatives",
@@ -516,7 +542,7 @@
     "difficulty": 2,
     "cefr": "A2–B1",
     "title": "Superlatives (le plus / le moins …)",
-    "explanation": "",
+    "explanation": "The superlative is the comparative with a definite article added (le/la/les plus/moins + adjective), so it agrees with the noun in gender and number the same way. When ranking within a place or group, French uses de (\"in/of\") after the superlative rather than dans.",
     "examples": [
       {
         "native": "C'est le restaurant le plus cher de la ville.",
@@ -532,7 +558,8 @@
     "prerequisites": [
       "fr-u4-comparatives"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-4"
   },
   {
     "id": "fr-u5-regular-er-verbs",
@@ -554,7 +581,8 @@
     "related_game_id": null,
     "branch": "The Present-Tense Verb System",
     "prerequisites": [],
-    "confidence": "verified"
+    "confidence": "first_pass",
+    "source_doc": "docs/french_curriculum.md#unit-5"
   },
   {
     "id": "fr-u5-regular-ir-verbs-and",
@@ -578,7 +606,8 @@
     "prerequisites": [
       "fr-u5-regular-er-verbs"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-5"
   },
   {
     "id": "fr-u5-key-irregular-verbs-aller",
@@ -602,7 +631,8 @@
     "prerequisites": [
       "fr-u5-regular-ir-verbs-and"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-5"
   },
   {
     "id": "fr-u5-reflexivepronominal-verbs",
@@ -611,6 +641,7 @@
     "cefr": "A1–A2",
     "title": "Reflexive/pronominal verbs (se laver, se lever)",
     "explanation": "The subject acts on itself; the reflexive pronoun (me/te/se/nous/vous/se) sits before the verb.",
+    "long_form": "Calling se laver and se lever \"reflexive\" undersells how much work this one pronoun does in French. A true reflexive — the subject acting on itself, like washing oneself — is really just one job among several that the se-construction handles. There's the reciprocal use (ils se parlent, \"they talk to each other,\" where two or more subjects act on each other rather than themselves); there's a broad class of verbs that are pronominal by nature and have no independent non-reflexive meaning at all (se souvenir, \"to remember,\" doesn't mean anything as a bare verb *souvenir); and there's a generic, agentless use covered elsewhere in this curriculum (le vin se boit frais) that shades into something closer to a passive. One small grammatical device, several distinct jobs — which is the hallmark of what linguists call a grammaticalized marker, a form that started narrow and widened its coverage over time.\n\nThat widening has a real historical source: Latin had a genuine middle voice, partly preserved through a set of \"deponent\" verbs (passive in form but active in meaning) and partly expressed with a reflexive pronoun for actions where the subject is affected by its own action without a separate object being acted upon. French's se-verbs are the direct continuation of that Latin reflexive/middle system, and the \"inherently pronominal\" verbs with no independent meaning — se souvenir, se moquer de, se plaindre, s'en aller — are effectively living fossils of Latin deponents: verbs whose grammatical form is reflexive but whose actual meaning has drifted so far from literal self-action that a learner has to just memorize them as vocabulary, the reflexive pronoun functioning as an inseparable part of the verb rather than as a meaningful \"self\" anymore.\n\nEnglish never grammaticalized a middle voice at all — it either uses a genuine reflexive pronoun only when the reflexivity needs to be made explicit and would otherwise be ambiguous (\"he shaved himself,\" as opposed to the far more common \"he shaved,\" which is understood as reflexive by default with no pronoun at all), or it reaches for a completely different strategy, the \"get\"-passive (\"the door got stuck\") or a plain intransitive (\"the door opened\"), to express the same middle-voice meaning of a subject undergoing rather than performing an action. Portuguese, by contrast, inherited essentially the same se-system directly and in parallel with French — se lavar, se lembrar, se queixar de map almost verb-for-verb onto their French cousins — making this one of the more reliably transferable points in the entire curriculum for a learner coming from Portuguese, with the caveat that everyday spoken Portuguese sometimes drops the reflexive pronoun more casually with body-care verbs than formal French ever allows.\n\nThe most common learner mistakes both stem from treating se as optional decoration rather than a grammatical requirement that changes meaning: omitting it turns a reflexive verb into an entirely different, usually transitive, verb (je lève means \"I lift [something else]\"; je me lève means \"I get [myself] up\"), and getting the pronoun's person wrong (using se instead of me/te with a first- or second-person subject) breaks the agreement the construction depends on. The deeper nuance worth sitting with is that you can't reliably predict from a verb's English translation whether French will require se — \"I remember\" has no reflexive shape in English at all, so nothing in the English sentence warns a learner that se souvenir needs one, which is exactly why these verbs have to be learned as fixed lexical units, se and all, rather than derived on the fly from a general reflexivity rule.",
     "examples": [
       {
         "native": "Je me lève à sept heures.",
@@ -630,7 +661,8 @@
     "prerequisites": [
       "fr-u5-key-irregular-verbs-aller"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-5"
   },
   {
     "id": "fr-u5-modal-infinitive",
@@ -638,7 +670,7 @@
     "difficulty": 1,
     "cefr": "A2",
     "title": "Modal + infinitive (pouvoir/vouloir/devoir/savoir + inf.)",
-    "explanation": "",
+    "explanation": "The modals pouvoir, vouloir, devoir, and savoir are followed directly by a bare infinitive with no linking preposition, and that second verb never conjugates, no matter who the subject is.",
     "examples": [
       {
         "native": "Je peux venir. Je veux partir. Je dois travailler. Je sais nager",
@@ -654,7 +686,8 @@
     "prerequisites": [
       "fr-u5-reflexivepronominal-verbs"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-5"
   },
   {
     "id": "fr-u5-futur-proche",
@@ -678,7 +711,8 @@
     "prerequisites": [
       "fr-u5-modal-infinitive"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-5"
   },
   {
     "id": "fr-u5-passé-récent",
@@ -702,7 +736,8 @@
     "prerequisites": [
       "fr-u5-futur-proche"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-5"
   },
   {
     "id": "fr-u5-present-progressive",
@@ -726,7 +761,8 @@
     "prerequisites": [
       "fr-u5-passé-récent"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-5"
   },
   {
     "id": "fr-u5-impératif",
@@ -750,7 +786,8 @@
     "prerequisites": [
       "fr-u5-present-progressive"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-5"
   },
   {
     "id": "fr-u6-ne-pas",
@@ -759,6 +796,7 @@
     "cefr": "A1",
     "title": "ne … pas",
     "explanation": "The verb sits inside the clamp; in compound tenses the clamp wraps the auxiliary.",
+    "long_form": "French negation looks like a two-part \"clamp\" around the verb because it is, quite literally, a snapshot of a language-change process caught in mid-transition — a pattern the Danish linguist Otto Jespersen described so thoroughly across so many languages that it now bears his name, Jespersen's Cycle. The cycle runs like this: a plain negator erodes phonetically over time until it's weak and easy to miss in speech, so speakers start reinforcing it with some emphatic word for extra force; that reinforcing word gets used so constantly that it stops feeling emphatic and becomes just part of ordinary negation; eventually the original negator can be dropped entirely, leaving the former reinforcement to carry the whole job alone — at which point the cycle is free to start again with some new intensifier.\n\nFrench is presently living through two stages of exactly this cycle at once. The original Latin negator non became French's ne, which by the medieval period had already worn down phonetically (in casual speech today it's often reduced to barely a vowel, or dropped in writing as n'). To compensate, French speakers began reinforcing ne with concrete nouns for emphasis, the way English still says \"I don't care one bit\" or \"I didn't sleep a wink\" — French tried several of these: pas (\"a step,\" used with verbs of motion, \"not walk a step\"), goutte (\"a drop,\" with boire, \"drink\"), mie (\"a crumb,\" with manger, \"eat\"). Pas simply won the competition and generalized to all verbs, losing its literal \"step\" meaning entirely along the way — which is why modern French genuinely negates with two words, ne and pas, that jointly clamp the verb. And right now, in casual spoken French, the cycle is quietly completing its next lap: ne is being dropped (je sais pas), leaving pas alone to do what ne used to do by itself, exactly the fate that originally befell non.\n\nEnglish underwent the identical cycle centuries earlier and simply finished it: Old English ne was reinforced by naht/nawiht (\"no thing,\" the ancestor of \"not\"), that reinforcement became obligatory, and eventually ne dropped out altogether, leaving modern English with a single-word negator, not, that nobody perceives as a reinforcement anymore because its origin as a noun (\"thing\") has been completely forgotten. So an English speaker hearing colloquial French drop ne isn't watching some alien erosion of grammar — they're watching French catch up to a step English took hundreds of years ago, just via a different reinforcing word. Portuguese, notably, never developed this two-part system at all; não has functioned as a single, stable negator throughout its documented history, which means this entire cyclical story is a genuinely French-specific complication with nothing to transfer from the bridge language — if anything, a Lusophone learner has to actively acquire an unfamiliar structural habit rather than lean on an existing one.\n\nThe practical upshot for a learner is that dropping ne isn't sloppiness to be corrected out of a student — it's the expected, productive form in casual registers, and treating it as an error misses what's actually going on; the real skill is controlling both ends of an ongoing sound change, keeping ne in writing and formal speech while allowing it to disappear in relaxed conversation. The more mechanical trap is placing pas in the wrong slot in compound tenses: because the clamp wraps whichever verb is conjugated, pas sits after the auxiliary and before the participle (je n'ai pas mangé), not after the participle the way an English speaker instinctively wants to append a negator at the end (\"I have not eaten\" tempts \"j'ai mangé pas,\" which is simply ungrammatical) — a reminder that the clamp isn't wrapping \"the verb\" loosely but very specifically the finite, conjugated form.",
     "examples": [
       {
         "native": "Je ne parle pas anglais.",
@@ -781,7 +819,13 @@
       "lang": "fr",
       "id": "fr-odd-ne-dropping"
     },
-    "see_also": [{ "lang": "de", "id": "de-u1-the-v2-rule" }]
+    "see_also": [
+      {
+        "lang": "de",
+        "id": "de-u1-the-v2-rule"
+      }
+    ],
+    "source_doc": "docs/french_curriculum.md#unit-6"
   },
   {
     "id": "fr-u6-ne-jamais-rien-personne",
@@ -813,7 +857,8 @@
     "prerequisites": [
       "fr-u6-ne-pas"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-6"
   },
   {
     "id": "fr-u6-ne-que",
@@ -837,7 +882,8 @@
     "prerequisites": [
       "fr-u6-ne-jamais-rien-personne"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-6"
   },
   {
     "id": "fr-u6-ne-aucun-ni-ni",
@@ -845,7 +891,7 @@
     "difficulty": 2,
     "cefr": "B1",
     "title": "ne … aucun, ni … ni",
-    "explanation": "",
+    "explanation": "ne … aucun is a stronger, more emphatic \"no/none whatsoever\" than ne … pas de, and aucun(e) agrees in gender with the noun it modifies. ne … ni … ni negates two or more items in parallel (\"neither … nor\"), with ni placed directly before each negated item.",
     "examples": [
       {
         "native": "Je n'ai aucune idée.",
@@ -865,7 +911,8 @@
     "prerequisites": [
       "fr-u6-ne-que"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-6"
   },
   {
     "id": "fr-u7-the-three-yesno-question",
@@ -887,7 +934,8 @@
     "related_game_id": "order",
     "branch": "Question Formation",
     "prerequisites": [],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-7"
   },
   {
     "id": "fr-u7-information-words-qui-quequoi",
@@ -895,7 +943,7 @@
     "difficulty": 1,
     "cefr": "A1–A2",
     "title": "Information words: qui, que/quoi, où, quand, comment, combien, pourquoi, quel",
-    "explanation": "",
+    "explanation": "These words slot into any of the three question strategies to ask for specific information rather than a yes/no answer. quel is an adjective that agrees with the noun it modifies, unlike the other, invariable words in this set.",
     "examples": [
       {
         "native": "Où habites-tu ? / Tu habites où ?",
@@ -915,7 +963,8 @@
     "prerequisites": [
       "fr-u7-the-three-yesno-question"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-7"
   },
   {
     "id": "fr-u7-quest-ce-que-cest-quest-ce",
@@ -943,7 +992,8 @@
     "prerequisites": [
       "fr-u7-information-words-qui-quequoi"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-7"
   },
   {
     "id": "fr-u7-lequel-and-inversion-in",
@@ -951,7 +1001,7 @@
     "difficulty": 3,
     "cefr": "B1–B2",
     "title": "lequel (which one) and inversion in compound tenses",
-    "explanation": "",
+    "explanation": "lequel/laquelle/lesquels/lesquelles mean \"which one(s)\" and agree in gender and number with the noun they replace, letting a speaker single out an item from a known set. In an inversion question built on a compound tense, the subject pronoun attaches after the conjugated auxiliary, not after the past participle.",
     "examples": [
       {
         "native": "Lequel préfères-tu ?",
@@ -971,7 +1021,8 @@
     "prerequisites": [
       "fr-u7-quest-ce-que-cest-quest-ce"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-7"
   },
   {
     "id": "fr-u8-direct-object-pronouns",
@@ -980,6 +1031,7 @@
     "cefr": "A2",
     "title": "Direct object pronouns (me, te, le, la, nous, vous, les)",
     "explanation": "Placed BEFORE the conjugated verb (unlike English, which puts objects after).",
+    "long_form": "French object pronouns going before the verb feels like an arbitrary quirk until you see it as the last visible remnant of a grammatical system French otherwise abandoned completely: case. Latin marked a noun's grammatical role — subject, direct object, indirect object — with endings (case suffixes) that let word order stay remarkably free, because the ending itself told you who did what to whom regardless of position. As spoken Latin evolved into Old French, those noun-case endings eroded away almost entirely, and word order hardened into the strict Subject-Verb-Object pattern French uses today to compensate. Pronouns, though, didn't go quietly: because they're short, extremely frequent, and phonologically light, they resisted the general erosion longer than full nouns did, and instead of losing their case distinctions they fossilized them into a fixed position — leaning (procliticizing, in the technical term) onto the verb they depend on, the way an unstressed syllable leans onto the stressed syllable next to it. That's the deep reason French still visibly distinguishes je (subject) from me (object) from moi (stressed/tonic) for the exact same first-person referent, long after French nouns lost every trace of case marking: pronouns are, cross-linguistically, always the last holdout of a dying case system, because they're the words a language's speakers use too often and too automatically to simplify away easily.\n\nThe clitic's fixed pre-verbal position is what actually produces the word-order clash English speakers feel most acutely: Je le vois literally reads \"I him see\" if you translate word for word, because English pronouns, unlike French ones, never fused onto the verb this way — English kept a vestige of pronoun case (I/me, he/him, they/them) but simply slotted it into the ordinary post-verbal object position that any noun would occupy, since English's word order rigidified around the verb-then-object pattern without ever developing a special pre-verbal parking spot for light pronouns the way French did. So the mismatch isn't really about pronouns at all — English and French agree that pronouns keep a form distinct from nouns — the mismatch is specifically about where that pronoun physically sits relative to the verb.\n\nPortuguese makes the comparison genuinely illuminating rather than just confusing, because it shows that \"clitic goes before or after the verb\" is a real structural choice languages make differently, not a fixed law of Romance grammar. European Portuguese has a three-way system: enclisis (attaching after the verb, the unmarked default — vejo-o, \"I see him\"), proclisis (attaching before, triggered by negation, question words, and certain subordinating conjunctions — não o vejo), and even mesoclisis, where the clitic is inserted inside the verb itself in the future and conditional (vê-lo-ei, \"I will see him\"). French, by contrast, simplified this whole three-way system down to essentially one fixed rule: the clitic goes before the conjugated verb, full stop, with no default/triggered split. That means a French speaker's instinct to always front the pronoun is only sometimes right for Portuguese — correct for the triggered proclisis contexts, wrong for the far more common default enclitic case — while a Portuguese speaker learning French gets the easier end of the deal, since French never asks them to choose.\n\nThe classic beginner mistake is straightforward English-order substitution (\"je vois le\" for \"I see him\"), but the more durable trap shows up once modal or semi-auxiliary constructions enter the picture: the pronoun still has to attach to whichever verb it's logically the object of, not simply to \"the verb\" in some vague sense, which is why je veux le voir (\"I want to see it,\" pronoun before the infinitive it belongs to) contrasts with constructions like the causative faire, where all pronoun objects front onto faire itself regardless of which embedded verb they logically belong to. And the whole fixed-position rule flips entirely in the affirmative imperative (Donne-le-moi!, pronoun after the verb, hyphenated) — not a contradiction so much as a separate historical layer, since the imperative in the Romance languages restructured its clitic placement independently of the ordinary declarative clause, a wrinkle worth knowing exists even before drilling the specific commands where it applies.",
     "examples": [
       {
         "native": "Je le vois.",
@@ -997,7 +1049,8 @@
     "related_game_id": "order",
     "branch": "Object Pronouns, y/en, and Pronoun Ordering",
     "prerequisites": [],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-8"
   },
   {
     "id": "fr-u8-indirect-object-pronouns",
@@ -1025,7 +1078,8 @@
     "prerequisites": [
       "fr-u8-direct-object-pronouns"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-8"
   },
   {
     "id": "fr-u8-y",
@@ -1053,7 +1107,8 @@
     "prerequisites": [
       "fr-u8-indirect-object-pronouns"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-8"
   },
   {
     "id": "fr-u8-en",
@@ -1081,7 +1136,8 @@
     "prerequisites": [
       "fr-u8-y"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-8"
   },
   {
     "id": "fr-u8-double-object-pronoun-ordering",
@@ -1109,7 +1165,8 @@
     "prerequisites": [
       "fr-u8-en"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-8"
   },
   {
     "id": "fr-u8-pronouns-in-affirmative-commands",
@@ -1137,7 +1194,8 @@
     "prerequisites": [
       "fr-u8-double-object-pronoun-ordering"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-8"
   },
   {
     "id": "fr-u8-stresstonic-pronouns",
@@ -1161,7 +1219,8 @@
     "prerequisites": [
       "fr-u8-pronouns-in-affirmative-commands"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-8"
   },
   {
     "id": "fr-u9-passé-composé-with-avoir",
@@ -1183,7 +1242,8 @@
     "related_game_id": "blank",
     "branch": "The Past-Tense System",
     "prerequisites": [],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-9"
   },
   {
     "id": "fr-u9-passé-composé-with-être",
@@ -1191,7 +1251,8 @@
     "difficulty": 1,
     "cefr": "A2",
     "title": "Passé composé with être (the DR & MRS VANDERTRAMP verbs)",
-    "explanation": "The standard \"DR MRS VANDERTRAMP\" mnemonic covers the 17 intransitive motion/state-change verbs (aller, venir, naître, mourir, monter, descendre, rester, partir, arriver, entrer, sortir, tomber, retourner, passer, devenir, revenir, and the reflexives) that conjugate with être; the participle then agrees with the SUBJECT. Of these, only naître→né, mourir→mort, and venir→venu have irregular participles.",
+    "explanation": "The standard \"DR MRS VANDERTRAMP\" mnemonic covers 16 intransitive motion/state-change verbs (aller, venir, naître, mourir, monter, descendre, rester, partir, arriver, entrer, sortir, tomber, retourner, rentrer, devenir, revenir) plus the reflexives — all conjugate with être, and the participle then agrees with the SUBJECT. Of these, only naître→né, mourir→mort, and venir→venu (and its regular compounds devenir→devenu, revenir→revenu) have irregular participles. Several — notably monter, descendre, sortir, rentrer, and passer (often tacked on as an informal 17th member of the list) — switch to avoir when used transitively with a direct object, with a shift in meaning: elle est descendue (\"she went down\") vs elle a descendu l'escalier (\"she went/brought down the stairs\").",
+    "long_form": "The DR MRS VANDERTRAMP list looks, on first encounter, like a random collection of verbs someone needed a mnemonic to memorize — but it isn't random at all, and seeing why is more useful than memorizing the acronym. Every verb on the list shares one property: its subject doesn't perform an action on something else, it undergoes a change of state or location itself. Aller, venir, monter, descendre, naître, mourir, tomber — in every case the grammatical subject is the thing changing, moving, appearing, or vanishing, not an agent acting on a separate target. Linguists call this class of verbs \"unaccusative,\" and the label is doing real work: an unaccusative verb's subject behaves, underneath the syntax, more like the object of a transitive sentence than like a true agentive subject (compare \"the door opened\" — the door didn't do anything, it changed state — with \"she opened the door,\" where she is a genuine agent). Because the subject of an unaccusative verb is playing an object-like role, French treats it the way it treats any object-like element: with agreement, the same way an adjective agrees with the noun it describes through a copula. Elle est allée literally patterns like a predicate adjective (\"she is [in a state of] gone\"), which is exactly why the participle takes -e for a feminine subject the way an adjective would.\n\nThis isn't a French idiosyncrasy; it's a well-documented pattern across the languages that historically had two auxiliaries to choose from. Italian preserves an essere/avere split along nearly identical lines, and earlier stages of German and Dutch made the same sein/haben distinction that modern standard German has since largely abandoned. All of these languages inherited (or independently developed) the insight that unaccusative, subject-affected verbs deserve grammatical treatment different from ordinary transitive, agent-driven ones — French's être-list is simply the version of that split that survived intact into the modern standard language.\n\nEnglish lost this auxiliary split completely — have now covers every verb regardless of unaccusativity — but it didn't lose it without leaving fossils behind. Older or more formal English still occasionally uses be + past participle for exactly this class of verb: \"he is risen,\" \"she is gone,\" \"Christ is come\" are all be-constructions, precisely the English cousins of French's être-perfect, preserved mainly in liturgical and archaic registers (the King James Bible is full of them) after the ordinary spoken language generalized to have everywhere else. Portuguese offers no such parallel at all: ter (with haver surviving only in fossilized or very formal contexts) has been Portuguese's sole compound-past auxiliary throughout its documented history, with no be-verb alternation ever developed for unaccusatives — so a Lusophone learner isn't transferring a habit here so much as acquiring an entirely new category that their own language never grammaticalized, which is precisely why the instinct to reach for a single all-purpose auxiliary (mirroring ter) is the most persistent error this point produces for that group of learners.\n\nThe mnemonic itself is a teaching artifact, not a fact about how native speakers store the list — nobody consciously recites DR MRS VANDERTRAMP while conjugating; the class simply is unaccusative and être-taking, full stop, in a fluent speaker's grammar. Two nuances repay attention once the basic list is solid. First, the reflexives (ils se sont levés) take être for a historically separate reason from the intransitive-motion verbs — an unrelated Latin-era convention about reflexive/middle-voice constructions generally taking a \"be\"-type auxiliary — which is why the mnemonic doesn't (and shouldn't) try to fold reflexives into the same explanatory story even though they end up using the same auxiliary. Second, several of the list's core verbs — monter, descendre, sortir, rentrer, and colloquially passer — genuinely switch camp when they pick up a direct object, because a direct object turns the unaccusative motion verb into an ordinary transitive one with a real agent (elle est descendue, she herself changed location, versus elle a descendu l'escalier, she acted on the stairs by bringing something down them) — the auxiliary switch is tracking the same underlying grammatical logic the whole list is built on, not contradicting it.",
     "examples": [
       {
         "native": "Elle est allée.",
@@ -1204,14 +1265,15 @@
     ],
     "bridge_lang": "pt",
     "bridge_note": "the être-verbs describe change of state/location — their subject undergoes the action, so French treats it like a predicate adjective that agrees, mirroring the Latin/Romance \"unaccusative\" pattern.",
-    "mistake": "using avoir with these (\"Elle a allé\" ✗); forgetting subject agreement.",
+    "mistake": "using avoir with these (\"Elle a allé\" ✗); forgetting subject agreement; and for monter/descendre/sortir/rentrer, wrongly keeping être even when there's a direct object — these switch to avoir when transitive (j'ai monté les valises, not je suis monté les valises).",
     "source": null,
     "related_game_id": null,
     "branch": "The Past-Tense System",
     "prerequisites": [
       "fr-u9-passé-composé-with-avoir"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-9"
   },
   {
     "id": "fr-u9-past-participle-agreement-with-a",
@@ -1220,6 +1282,7 @@
     "cefr": "B1–B2",
     "title": "Past-participle agreement with a preceding direct object (avoir)",
     "explanation": "With avoir, the participle agrees with a direct object ONLY when that object comes before the verb.",
+    "long_form": "Of every rule in this curriculum, this is the one native French speakers themselves most often get wrong in casual writing — which is a useful fact to lead with, because it reframes the rule from \"a trap for learners\" to \"a genuinely difficult piece of French grammar that even educated adults have to think about.\" The logic, once stated plainly, is orderly: with avoir, the participle behaves like an ordinary verb form (invariable) by default, EXCEPT when the direct object it belongs to has already been mentioned earlier in the sentence — a pronoun, or a relative pronoun standing in for a noun already named — in which case the participle retroactively agrees with that object the way an adjective would agree with a noun it describes. J'ai acheté les fleurs has no agreement because the object follows the verb; les fleurs que j'ai achetées agrees because fleurs was already named before achetées arrives.\n\nThere's a well-known story about where this rule comes from, worth repeating with the caveat that it's tradition rather than settled fact: French teachers and grammar histories often credit the Renaissance poet Clément Marot with formulating the principle for the court of King François I, reasoning that a participle can only \"look back\" and agree with an object whose gender and number are already known to the speaker at the moment of speaking — an object still to come hasn't been specified yet, so there's nothing for the participle to agree with. Whether or not the anecdote about Marot is literally accurate (it's often treated as at least partly legendary), it captures the rule's actual logic exactly, and more importantly it points to something true about how this rule entered the language: unlike most French grammar, which emerged organically from sound change and usage, this is a rule imposed by prescriptive grammarians during French's 16th–17th century codification, in the era when the Académie française and its predecessors were actively standardizing \"correct\" French — one of the relatively few places where a grammar committee, not centuries of unplanned drift, shaped the exact rule millions of French schoolchildren still drill today.\n\nNeither English nor Portuguese has anything resembling this rule, which means there's no useful transfer available from either side of the bridge — if anything, both languages actively work against the instinct needed here. English past participles never inflect for gender or number under any circumstances (\"the letters I wrote,\" never \"wrote-s\"), and Portuguese's ter-based compound past is similarly invariable regardless of where the object sits (as tenho comprado, \"I have been buying,\" never changes for a preceding object). So a learner from either background is acquiring a genuinely new category, not adapting an existing one — a fair explanation for why this particular rule is flagged as the single most error-prone spelling convention in French even for native speakers.\n\nThe nuance that makes this rule stranger still is that it is, in a meaningful sense, invisible in speech. Many of the relevant feminine and plural participle endings are spelled differently but pronounced identically to the masculine singular — vu, vue, vus, vues are all /vy/, so a fluent speaker saying les fleurs que j'ai vues aloud produces exactly the same sounds whether or not they're \"getting the agreement right.\" (A smaller set, like pris/prise or fait/faite, does audibly change.) That means this is one of the rare corners of French grammar preserved almost entirely for the eye rather than the ear — a spelling convention with real orthographic consequences on a dictée or in formal writing, but close to undetectable in ordinary conversation, which is exactly why even native speakers who speak flawlessly can stumble on it the moment they pick up a pen.",
     "examples": [
       {
         "native": "Les fleurs que j'ai achetées.",
@@ -1239,7 +1302,8 @@
     "prerequisites": [
       "fr-u9-passé-composé-with-être"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-9"
   },
   {
     "id": "fr-u9-imparfait",
@@ -1267,7 +1331,8 @@
     "prerequisites": [
       "fr-u9-past-participle-agreement-with-a"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-9"
   },
   {
     "id": "fr-u9-passé-composé-vs-imparfait",
@@ -1276,6 +1341,7 @@
     "cefr": "A2–B1",
     "title": "Passé composé vs imparfait (the aspect contrast)",
     "explanation": "PC = completed, bounded events (foreground); imparfait = ongoing/repeated/descriptive (background). One often interrupts the other.",
+    "long_form": "The passé composé/imparfait contrast is the single point in this entire curriculum where English grammar simply offers no equivalent category to lean on, and it's worth being precise about why. Tense answers the question \"when did this happen\" (past, present, future); aspect answers a different question entirely — \"how is this event structured internally: as a completed whole, or as something ongoing, repeated, or in the background?\" English marks tense obligatorily but treats aspect as mostly optional and periphrastic (the choice between \"it rained\" and \"it was raining\" exists, but nothing forces an English speaker to choose one over the other the way French forces a choice between a plu and pleuvait every single time a past event is described). French, like Latin before it, grammaticalizes aspect as a genuinely obligatory category: you cannot describe a past event in French without simultaneously committing to whether you're presenting it as bounded/completed (passé composé) or as ongoing/habitual/descriptive background (imparfait).\n\nThat obligatory split is a direct continuation of Latin's own perfect/imperfect verb stems, which is real historical continuity — but the passé composé itself is not the direct descendant of the Latin perfect in form. That role actually belongs to the passé simple (the literary past covered elsewhere in this unit), a synthetic, one-word tense that continues Latin's perfect morphology in a fairly straight line. The passé composé is a French innovation: a newer, compound formation (avoir/être + participle) that gradually took over the everyday, spoken job of narrating completed past events, pushing the older synthetic passé simple into an increasingly literary and eventually purely written register. So French actually renewed the machinery expressing the perfective aspect while preserving the aspectual distinction itself essentially unchanged from Latin — the concept is ancient, the tool that carries it in speech is comparatively recent.\n\nFor an English speaker, the honest way to build intuition is to notice that English already makes exactly this same kind of distinction, just optionally and unconsciously, with \"was ...-ing\": \"I was eating when the phone rang\" already separates a backgrounded, ongoing action from a foregrounded, completed one, using almost the same logic French grammaticalizes with imparfait versus passé composé — the difference is that English lets you skip the distinction (\"I ate when the phone rang\" is also fine and means something close enough), while French simply never lets you skip it. Portuguese, by contrast, draws the identical line with the identical values using its own pretérito perfeito and pretérito imperfeito, which means a Lusophone learner isn't building a new mental category at all — the conceptual work is already done, and the task reduces to learning which French verb forms map onto which side of a distinction they already feel natively, one of the most direct and complete transfer points anywhere in this curriculum.\n\nThe genuinely advanced nuance — the one that separates a B1 learner drilling the rule from a fluent speaker using it — is that the \"correct\" choice between passé composé and imparfait isn't always dictated by the objective facts of what happened; it's dictated by how the speaker chooses to frame the event within a narrative. Il pleuvait (\"it was raining,\" background, ongoing) and il a plu (\"it rained,\" a completed event in the story's timeline) can, in principle, both be said of literally the same rainfall — the difference is whether the speaker is treating the rain as scenery the story happens against, or as an event that itself moves the story forward. That's not a fact about the weather; it's a narrative choice, and it's exactly why two native speakers can describe the same afternoon using different aspectual choices and both be entirely correct while meaning subtly different things.",
     "examples": [
       {
         "native": "Je regardais la télé quand le téléphone a sonné.",
@@ -1291,7 +1357,8 @@
     "prerequisites": [
       "fr-u9-imparfait"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-9"
   },
   {
     "id": "fr-u9-plus-que-parfait",
@@ -1315,7 +1382,8 @@
     "prerequisites": [
       "fr-u9-passé-composé-vs-imparfait"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-9"
   },
   {
     "id": "fr-u9-passé-simple",
@@ -1333,13 +1401,14 @@
     "bridge_lang": "pt",
     "bridge_note": null,
     "mistake": null,
-    "source": "Eaquals explicitly rejected teacher intuition to teach it at B1; Kwiziq B2–C1",
+    "source": "Kwiziq B2–C1; a claim that Eaquals surveyed teachers and rejected teaching it earlier (citing a ~26% figure) appears in the source doc's prose but could not be traced to a specific URL or confirmed independently",
     "related_game_id": null,
     "branch": "The Past-Tense System",
     "prerequisites": [
       "fr-u9-plus-que-parfait"
     ],
-    "confidence": "verified"
+    "confidence": "first_pass",
+    "source_doc": "docs/french_curriculum.md#unit-9"
   },
   {
     "id": "fr-u10-futur-simple",
@@ -1361,7 +1430,8 @@
     "related_game_id": null,
     "branch": "Future & Conditional, and the si-Clause System",
     "prerequisites": [],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-10"
   },
   {
     "id": "fr-u10-conditionnel-présent",
@@ -1389,7 +1459,8 @@
     "prerequisites": [
       "fr-u10-futur-simple"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-10"
   },
   {
     "id": "fr-u10-conditionnel-passé",
@@ -1417,7 +1488,8 @@
     "prerequisites": [
       "fr-u10-conditionnel-présent"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-10"
   },
   {
     "id": "fr-u10-futur-antérieur",
@@ -1441,7 +1513,8 @@
     "prerequisites": [
       "fr-u10-conditionnel-passé"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-10"
   },
   {
     "id": "fr-u10-the-three-si-clause-types",
@@ -1449,7 +1522,8 @@
     "difficulty": 3,
     "cefr": "A2/B1/B2",
     "title": "The three si-clause types",
-    "explanation": "",
+    "explanation": "French has three parallel si-constructions for hypotheticals, each pairing a specific tense in the si clause with a specific tense in the result clause: si + present for real/possible conditions, si + imperfect for present-unreal conditions (paired with the present conditional), and si + pluperfect for past-unreal conditions (paired with the past conditional). In practice, spoken French also freely mixes plus-que-parfait with the present conditional when a hypothetical past condition has a present-time consequence (Si tu avais étudié, tu aurais un meilleur travail aujourd'hui — \"If you had studied, you'd have a better job today\"); the three matched pairs above are the clean textbook pattern, but real usage sometimes crosses type 2 and type 3 depending on when the result is meant to hold.",
+    "long_form": "The conditional mood that anchors types 2 and 3 doesn't exist in Latin at all as a distinct category — which is a genuinely striking fact once you notice it, because French treats the conditional as such a basic, everyday mood that it's easy to assume it's as old as the language itself. It isn't. The conditional is a Romance-era innovation, built during the transition from Vulgar Latin to Old French out of a periphrasis: the infinitive of the main verb plus a form of avoir's imperfect (habebam, \"I had\" or \"I was to\"), fused together over time into a single word. That's also, not coincidentally, exactly how the futur simple was built, just with avoir's present instead of its imperfect (infinitive + habeo, \"I have\"). Which is why je parlerai (I will speak) and je parlerais (I would speak) aren't just similar-looking by accident — they're morphological siblings sharing the same infinitive-plus-avoir skeleton, differing only in which tense of avoir got fused onto the end, present for simple certainty about the future, imperfect for a future viewed from a hypothetical or past vantage point. The conditional is, quite literally, \"future-in-the-past\" encoded directly into its own verb ending.\n\nOnce you see the conditional's real job — expressing a future stance taken from an unreal or past standpoint — the three-way si-system stops looking like three unrelated memorized patterns and starts looking like one consistent logic applied at three different levels of reality: a real, live possibility stays in ordinary tenses (si + présent); an imagined present that isn't real needs the imperfect in the si-clause paired with the \"future-in-a-hypothetical-present\" conditional in the result; and an imagined past that didn't happen needs the pluperfect paired with the \"future-in-a-hypothetical-past\" conditionnel passé. The si-clause itself, notably, never touches the conditional mood at all in any of the three types — it stays indicative (présent, imparfait, or plus-que-parfait), because French treats the hypothesis as a stated fact-pattern to reason from, reserving the conditional exclusively for the consequence that follows from it. That's the entire content behind the classroom chant \"les si n'aiment pas les -rais\" (\"si's don't like -rais endings\"): the rule isn't arbitrary, it's protecting a real division of labor between the clause that states the premise and the clause that draws the hypothetical conclusion.\n\nEnglish does essentially the same conceptual work with a completely different toolkit, periphrastic rather than a dedicated mood: \"if X, Y will\" / \"if X did, Y would\" / \"if X had done, Y would have,\" shifting tense backward by one step as its own marker of unreality — and even preserves a fossilized subjunctive in \"if I were,\" a genuine, if isolated, echo of the fact that English once also had a mood dedicated to unreal conditions before losing it almost everywhere else. Portuguese runs the identical three-tier logic with essentially the same tense values, but with one real point of interference for a bridge learner to watch for: Portuguese uses subjunctive forms inside its own se-clause (se eu tivesse, se eu for), where French insists on the plain indicative imperfect or pluperfect — so a Lusophone learner's instinct to reach for a subjunctive-feeling form in the si-clause itself is a transfer error waiting to happen, even though the overall three-way architecture transfers beautifully.\n\nTwo nuances round out the picture. First, real spoken French doesn't always respect the clean type-2/type-3 boundary the textbook draws: when a hypothetical past condition produces a consequence meant to hold in the present rather than the past, fluent speakers freely pair the plus-que-parfait si-clause with the present conditional rather than the past one (si tu avais étudié, tu aurais un meilleur travail aujourd'hui — \"if you had studied, you'd have a better job today,\" the studying is past-hypothetical but the better job is a present-time consequence) — a genuine, common, and grammatical blend that a purely rule-based drill won't prepare a learner for. Second, si doesn't always mean \"if\" at all — the identical word also introduces indirect yes/no questions (elle demande si tu viens, \"she asks whether you're coming\"), a completely unrelated grammatical function that has nothing to do with hypotheticals or tense-pairing, and beginners sometimes get tangled trying to apply the si-clause tense rules to a sentence that isn't conditional in the first place.",
     "examples": [
       {
         "native": "Type 1 (real): Si + présent → présent/futur/impératif. Si tu viens, je serai content",
@@ -1473,7 +1547,8 @@
     "prerequisites": [
       "fr-u10-futur-antérieur"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-10"
   },
   {
     "id": "fr-u11-subjonctif-présent-formation",
@@ -1495,7 +1570,8 @@
     "related_game_id": "blank",
     "branch": "The Subjunctive Mood",
     "prerequisites": [],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-11"
   },
   {
     "id": "fr-u11-core-triggers-il-faut",
@@ -1503,7 +1579,8 @@
     "difficulty": 3,
     "cefr": "B1–B2",
     "title": "Core triggers: il faut que, vouloir que, necessity/will",
-    "explanation": "",
+    "explanation": "Verbs and expressions of necessity or will (il faut que, vouloir que) trigger the subjunctive in the clause that follows que, because they impose the speaker's will on an action that hasn't necessarily happened. This only applies when the subject changes between the two clauses; when the subject stays the same, French uses an infinitive instead (je veux venir, not je veux que je vienne).",
+    "long_form": "The subjunctive is inherited, not invented — Latin had a rich, fully productive subjunctive mood covering hypotheticals, wishes, polite commands, and purpose clauses, and French is one of the Romance languages that kept that mood as a normal, everyday piece of grammar rather than letting it wither. English took the opposite path: its own Old English subjunctive eroded almost to nothing, surviving today only in a handful of fossilized expressions (\"if I were you,\" \"God save the Queen,\" \"I insist that he go\" rather than \"goes\") that most English speakers can't consciously identify as subjunctive at all. That asymmetry is exactly why the subjunctive is documented as the \"grammar plateau\" separating B1 from B2 French learners: English speakers arrive with no working mental category for a mood that isn't about tense or fact, only habit and rote fossils, so the whole idea that a verb form can encode the speaker's stance toward an event — rather than simply when it happened — has to be built from nothing.\n\nWhat makes il faut que and vouloir que a sound place to start building that category is that French's subjunctive usage is, in practice, heavily rule-based rather than purely semantic: a fixed inventory of governing verbs and expressions mechanically requires the subjunctive in whatever follows que, largely independent of whether the situation actually feels doubtful, hypothetical, or emotionally charged in the way older grammar books liked to claim. Il faut que tu partes doesn't feel uncertain at all — it's a flat statement of necessity — and yet it triggers the subjunctive just as reliably as an expression of genuine doubt does, because what actually matters isn't the emotional temperature of the sentence but whether the main clause presents the subordinate content as an established fact or as something the main clause's subject wants, requires, or is reacting to rather than simply reporting. That's a more accurate way to think about the mood than \"subjunctive means unreality,\" and it's also why French teachers increasingly describe the mood in terms of memorized trigger lists rather than a single unifying meaning: the trigger-based description actually predicts real usage better.\n\nFor an English speaker this genuinely is closer to learning a new grammatical instinct than learning new vocabulary, precisely because there's no live, productive English subjunctive to draw an analogy from. Portuguese offers the opposite experience almost entirely: it preserves a subjunctive mood at least as robust and pervasive as French's, triggered by the same broad categories — necessity, volition, emotion, doubt — so a Lusophone learner typically already has stronger native intuition for when a subjunctive-shaped mental category should apply than an English-speaking classmate does, even before learning a single French verb ending. The challenge for that learner isn't discovering that the mood exists; it's mapping the two languages' trigger lists onto each other precisely, because they don't align perfectly — a mismatch covered directly by the exception where espérer que unexpectedly takes the indicative in French despite behaving like a desire verb in both languages elsewhere.\n\nThe most common structural mistake by far is the failure to swap to an infinitive when the subject doesn't actually change between the two clauses: English \"I want him to come\" maps naturally onto a subject-plus-infinitive shape that French simply doesn't have (there is no way to say \"je veux lui venir\"), while \"I want to come\" (same subject throughout) correctly collapses to je veux venir with no que and no subjunctive at all — the subjunctive-plus-que construction exists specifically to handle the case where the wanting and the wanted action have two different subjects, and reaching for it when the subject hasn't actually changed is the single most common way learners overuse the mood rather than underuse it. The deeper nuance, worth flagging even at this early trigger-list stage, is that the whole system is more gradient than a fixed list suggests: opinion verbs like penser and croire flip between indicative and subjunctive depending on whether they're affirmed or denied, showing that the underlying logic — does the main clause assert the subordinate content as fact, or hold it at arm's length — can apply to essentially any verb of assertion once its certainty or polarity changes, not just to the closed set of trigger words a beginner first memorizes.",
     "examples": [
       {
         "native": "Il faut que tu partes.",
@@ -1523,7 +1600,8 @@
     "prerequisites": [
       "fr-u11-subjonctif-présent-formation"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-11"
   },
   {
     "id": "fr-u11-triggers-emotion-doubt-subjective",
@@ -1531,23 +1609,28 @@
     "difficulty": 3,
     "cefr": "B2",
     "title": "Triggers: emotion, doubt, subjective judgment",
-    "explanation": "aimer que, être content que, avoir peur que, douter que, il est important que.",
+    "explanation": "aimer que, être content que, avoir peur que, douter que, il est important que. One important exception: espérer que (\"to hope that\") takes the INDICATIVE, not the subjunctive, despite being a desire/emotion verb — unlike souhaiter que, which does trigger the subjunctive (je souhaite qu'il vienne).",
     "examples": [
       {
         "native": "Je suis content que tu sois là.",
         "gloss": "I'm glad you're here."
+      },
+      {
+        "native": "J'espère qu'il viendra.",
+        "gloss": "I hope he'll come. (indicative, not subjunctive — espérer is the exception)"
       }
     ],
     "bridge_lang": "pt",
     "bridge_note": null,
-    "mistake": null,
+    "mistake": "assuming espérer que triggers the subjunctive by analogy with other hope/desire verbs (\"J'espère qu'il vienne\" is widely heard in casual speech but considered non-standard; the expected form is j'espère qu'il viendra/vient).",
     "source": "Eaquals B2 \"différents emplois\"",
     "related_game_id": null,
     "branch": "The Subjunctive Mood",
     "prerequisites": [
       "fr-u11-core-triggers-il-faut"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-11"
   },
   {
     "id": "fr-u11-opinion-verbs-indicative-when",
@@ -1555,7 +1638,7 @@
     "difficulty": 3,
     "cefr": "B2",
     "title": "Opinion verbs: indicative when affirmative, subjunctive when negated/questioned",
-    "explanation": "",
+    "explanation": "Opinion verbs like penser and croire take the indicative when stated affirmatively, since the speaker is asserting something as fact. Negating or questioning the same verb casts doubt on the claim, which flips the following clause to the subjunctive.",
     "examples": [
       {
         "native": "Je pense qu'il est là. (indicative) BUT Je ne pense pas qu'il soit là. (subjunctive)",
@@ -1571,7 +1654,8 @@
     "prerequisites": [
       "fr-u11-triggers-emotion-doubt-subjective"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-11"
   },
   {
     "id": "fr-u11-subjunctive-after-conjunctions",
@@ -1579,7 +1663,7 @@
     "difficulty": 3,
     "cefr": "B2",
     "title": "Subjunctive after conjunctions (bien que, pour que, avant que, jusqu'à ce que)",
-    "explanation": "",
+    "explanation": "A fixed set of subordinating conjunctions — bien que, pour que, avant que, jusqu'à ce que — always require the subjunctive in the clause they introduce, regardless of what the main clause means. après que is a frequent exception in careful usage: despite looking like the others, it historically takes the indicative. As with il faut que/vouloir que, several of these have an infinitive alternative used when the subject doesn't change across clauses: avant de + infinitive, pour + infinitive, and sans + infinitive replace avant que/pour que/sans que + subjunctive when both clauses share a subject (il est parti avant de manger, not avant qu'il mange).",
     "examples": [
       {
         "native": "Bien qu'il soit fatigué, il travaille.",
@@ -1591,15 +1675,16 @@
       }
     ],
     "bridge_lang": "pt",
-    "bridge_note": null,
-    "mistake": "using indicative after these; note après que historically takes the indicative.",
+    "bridge_note": "Portuguese draws the same line for concessive conjunctions — bien que + subjunctive corresponds closely to embora + subjuntivo — so the trigger-based logic transfers directly, even though the exact conjunction list and edge cases (like après que) differ.",
+    "mistake": "using indicative after these; note après que historically takes the indicative; using the que + subjunctive form even when the subject is the same across both clauses, where the infinitive form is expected instead (\"il est parti avant qu'il mange\" ✗ when the subject is the same → avant de manger).",
     "source": "Kwiziq/Eaquals B2",
     "related_game_id": null,
     "branch": "The Subjunctive Mood",
     "prerequisites": [
       "fr-u11-opinion-verbs-indicative-when"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-11"
   },
   {
     "id": "fr-u11-subjonctif-passé",
@@ -1623,7 +1708,8 @@
     "prerequisites": [
       "fr-u11-subjunctive-after-conjunctions"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-11"
   },
   {
     "id": "fr-u11-subjonctif-imparfait",
@@ -1647,7 +1733,8 @@
     "prerequisites": [
       "fr-u11-subjonctif-passé"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-11"
   },
   {
     "id": "fr-u12-qui-and-que",
@@ -1656,6 +1743,7 @@
     "cefr": "B1",
     "title": "qui and que (simple relative pronouns)",
     "explanation": "qui = subject (\"who/which\"), que = direct object (\"whom/which\"). que elides to qu'; qui never does.",
+    "long_form": "Qui and que descend directly from a Latin pair, qui (nominative, the subject-marking case) and quem (accusative, the object-marking case) — and what's genuinely striking, once you know that, is that French kept this old case-based contrast as the organizing logic for its relative pronouns for centuries after it dismantled case marking almost everywhere else in the language. Nouns, adjectives, definite articles — all lost their Latin case endings as French developed, leaving word order to do the job case endings used to do. But the qui/que split survived, precisely because relative pronouns, like personal object pronouns discussed elsewhere in this curriculum, are frequent and grammatically load-bearing enough to resist a language's general drift toward simplification. A grammatical distinction can quietly outlive the very case system that originally motivated it, as long as the words carrying it are used constantly enough to stay fixed in speakers' memory as a pair rather than dissolving into a single all-purpose form.\n\nThe organizing principle itself — subject versus object, not any semantic property of the noun being replaced — is exactly what trips up English speakers, because English's relative pronoun system runs on a completely different axis: animacy. English chooses who/whom for people and which for things, largely regardless of whether that person or thing is the subject or object of the relative clause; French couldn't care less whether l'homme qui parle names a person or que je vois names a thing, and cares entirely about whether the pronoun is doing the subject's job or the object's. That's a genuine category mismatch, not just a vocabulary gap, which is why simply translating \"who\" as qui and \"which\" as que produces wrong answers roughly half the time — le livre qui est sur la table (\"the book that is on the table,\" qui because livre is the subject of est) is exactly as correct as l'homme que je vois (\"the man that I see,\" que because homme is the object of vois), even though English instinct would want \"who\" for the man and something else for the book.\n\nInterestingly, English already possesses the role-neutral relative pronoun French is asking for — it's \"that,\" which works for subjects and objects alike, for people and things alike (\"the book that is on the table\"; \"the man that I see\") — so the raw grammatical resource for thinking role-first rather than animacy-first already exists in English, it's just not the pronoun learners reach for by default. Portuguese, meanwhile, complicates the transfer from the other direction: its relative pronoun que is fully invariant for both subject and object roles (o livro que eu li, \"the book that I read,\" object; o homem que fala, \"the man who speaks,\" subject — the identical word, que, doing both jobs). That means a Lusophone learner isn't bringing over a habit that helps here; Portuguese under-differentiates exactly the distinction French requires, so learning qui versus que is acquiring a genuinely new grammatical contrast rather than transferring or unlearning an existing one.\n\nBeyond the core who/which-versus-role confusion, the second persistent mistake is trying to drop the relative pronoun the way casual English allows (\"the book I read,\" no connector at all) — French relative clauses can never omit qui or que, the connector is structurally obligatory every time, no matter how short or obvious the clause. A smaller, easy-to-miss trap sits in the two words' different behavior around vowels: que elides to qu' before any vowel sound (que + il becomes qu'il), while qui never elides under any circumstances, even directly before a vowel-initial verb — qui a dit ça? stays qui a, never contracting to qu'a in this relative/interrogative function, which matters because qu'a does exist in French as an entirely different fixed expression, making this one of the places where over-applying French's general elision habit produces a form that looks plausible but is simply wrong.",
     "examples": [
       {
         "native": "L'homme qui parle est mon prof.",
@@ -1673,7 +1761,8 @@
     "related_game_id": "order",
     "branch": "Relative & Complex Clauses",
     "prerequisites": [],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-12"
   },
   {
     "id": "fr-u12-où-and-dont",
@@ -1705,7 +1794,8 @@
     "prerequisites": [
       "fr-u12-qui-and-que"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-12"
   },
   {
     "id": "fr-u12-lequellaquelle-and-preposition-relative",
@@ -1733,7 +1823,8 @@
     "prerequisites": [
       "fr-u12-où-and-dont"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-12"
   },
   {
     "id": "fr-u12-ce-qui-ce-que",
@@ -1761,7 +1852,8 @@
     "prerequisites": [
       "fr-u12-lequellaquelle-and-preposition-relative"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-12"
   },
   {
     "id": "fr-u13-the-passive-voice",
@@ -1770,6 +1862,7 @@
     "cefr": "B2",
     "title": "The passive voice (être + past participle + par/de)",
     "explanation": "Participle agrees with subject. Only verbs with a direct object can be passivized (unlike English, indirect objects cannot become passive subjects).",
+    "long_form": "Latin had a genuine synthetic passive voice — a whole dedicated set of verb endings, amor, amaris, amatur (\"I am loved, you are loved, he/she is loved\"), built directly into the verb the same way active endings were, with no separate auxiliary needed at all. That entire system was lost as spoken Latin's verb morphology simplified into the Romance languages, and French — like Spanish, Italian, and Portuguese — had to rebuild passive meaning analytically, from scratch, using être plus a past participle: essentially the exact same strategy English independently settled on with be plus past participle. This is a case of convergent grammatical evolution rather than shared inheritance or borrowing: two language families facing the same problem (how do you express \"the letter was written\" once your verb endings no longer distinguish active from passive) and arriving at structurally identical solutions. That convergence is also, refreshingly, why French and English passive syntax actually line up better than almost any other construction the two languages share — la lettre a été écrite par Marie maps onto \"the letter was written by Marie\" almost word for word, agent phrase and all.\n\nThe real divergence isn't the passive's shape, then, but a restriction on what it can promote to subject position. English readily passivizes an indirect object — \"I was given a book,\" \"she was told the news\" — because English's object pronouns don't syntactically distinguish direct from indirect objects the sharp way French's do (compare je le vois, direct, with je lui parle, indirect: French keeps these grammatically separate at every level, including in the passive). French's être-passive can only ever promote a genuine direct object to subject position, which means \"I was given a book\" simply has no direct French passive translation at all — French speakers reach for on instead (on m'a donné un livre, literally \"one gave me a book\") or keep the indirect object pronoun active in some other construction. Portuguese shares this exact restriction — ser plus particípio is likewise limited to direct objects — so this particular constraint is a shared Romance inheritance, not a French idiosyncrasy, which means a Lusophone learner will find the restriction intuitive on arrival while an English speaker has to actively unlearn a habit their own grammar makes effortless.\n\nThere's a second, more idiomatic divergence layered on top of the structural one: French simply prefers the passive far less often than English does in everyday usage, especially for generic or habitual statements. Where English comfortably says \"French is spoken here,\" French speakers gravitate toward the active on-construction (on parle français ici) as the natural, unmarked way to make an agentless general statement — the être-passive exists and is grammatical, but reaching for it in contexts like this tends to read as stiff or visibly \"translated\" rather than as native phrasing, a stylistic fact that goes beyond strict grammaticality and is easy to miss if you only learn the passive's mechanics without also learning when native speakers actually reach for it (there's a third alternative, too, the pronominal passive with se, that often sounds even more natural than either option for describing general facts and rules).\n\nOne nuance rarely surfaces until a learner has had real exposure to written French: the choice between par and de after a passive participle isn't free variation, it's carrying its own distinction. Par introduces a genuine agent performing a specific, identifiable action — la lettre a été écrite par Marie, Marie actually did the writing — while de tends to appear with more static, descriptive relationships, especially with verbs of covering, accompanying, or feeling (la montagne est couverte de neige, \"the mountain is covered in snow,\" where snow isn't an agent performing an act of covering so much as a state the mountain is described as being in). Textbooks rarely spell this out at the point the passive is first introduced, but it's exactly the kind of distinction a learner starts noticing by ear once they've read enough real French to feel when par sounds wrong and de sounds right, or vice versa.",
     "examples": [
       {
         "native": "La lettre a été écrite par Marie.",
@@ -1783,7 +1876,8 @@
     "related_game_id": null,
     "branch": "Advanced Verb Structures: Passive, Reported Speech, Gérondif, Causative",
     "prerequisites": [],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-13"
   },
   {
     "id": "fr-u13-reportedindirect-speech-present",
@@ -1815,7 +1909,8 @@
     "prerequisites": [
       "fr-u13-the-passive-voice"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-13"
   },
   {
     "id": "fr-u13-reported-speech-in-the",
@@ -1839,7 +1934,8 @@
     "prerequisites": [
       "fr-u13-reportedindirect-speech-present"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-13"
   },
   {
     "id": "fr-u13-gérondif",
@@ -1867,7 +1963,8 @@
     "prerequisites": [
       "fr-u13-reported-speech-in-the"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-13"
   },
   {
     "id": "fr-u13-present-participle-adjectif-verbal",
@@ -1891,7 +1988,8 @@
     "prerequisites": [
       "fr-u13-gérondif"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-13"
   },
   {
     "id": "fr-u13-causative-faire-infinitive",
@@ -1923,7 +2021,8 @@
     "prerequisites": [
       "fr-u13-present-participle-adjectif-verbal"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-13"
   },
   {
     "id": "fr-u13-infinitive-constructions-verbs-à",
@@ -1947,7 +2046,8 @@
     "prerequisites": [
       "fr-u13-causative-faire-infinitive"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-13"
   },
   {
     "id": "fr-u14-tu-vs-vous",
@@ -1956,6 +2056,7 @@
     "cefr": "A1",
     "title": "tu vs vous",
     "explanation": "tu = singular familiar (friends, family, children, peers, animals); vous = formal singular AND all plurals.",
+    "long_form": "Sociolinguists have a name for the pattern French's tu/vous distinction belongs to: the \"T/V distinction,\" coined directly from the Latin pronouns tu and vos in Roger Brown and Albert Gilman's influential 1960 study \"The Pronouns of Power and Solidarity,\" which traced this exact phenomenon across dozens of European languages. The pattern's origin is genuinely political: in the late Roman Empire, the plural pronoun vos began to be used to address a single emperor, on the logic that an emperor who ruled jointly (or who was felt to embody the entire state) deserved to be addressed as though he were more than one person — a grammatical inflation of respect through grammatical plurality. That imperial habit spread outward across medieval Europe as a marker of social hierarchy generally, and French inherited and generalized it into the vous a commoner used toward anyone of higher status, eventually softening from a strict power marker into today's broader familiarity/formality axis that governs friends versus strangers as much as it once governed subjects versus kings.\n\nFrench's relationship with this system is more politically charged than a modern textbook entry lets on: during the Revolution, the National Convention actually pushed to abolish vous altogether, mandating universal tu between citizens as a deliberate grammatical enactment of equality — the logic being that a truly equal society has no linguistic room for hierarchy, not even a pronoun's worth. The experiment didn't survive the fall of the Terror, and vous returned to ordinary use, but the episode is a genuinely telling data point about how much cultural and political weight French speakers have, at various points, invested in what looks from the outside like a purely mechanical grammatical choice.\n\nEnglish actually had this exact same system until surprisingly recently in linguistic-historical terms: \"thou\" was the intimate, singular form and \"you\" the polite, plural form, mapping onto tu/vous almost perfectly, before \"thou\" died out of ordinary use by roughly the 18th century, surviving only in religious and archaic registers — which produces the ironic modern effect that addressing God as \"Thou\" now reads as elevated and formal to English ears, even though \"thou\" was originally the intimate, familiar form and its disappearance from everyday speech is precisely why it now feels reserved for the most formal occasions imaginable. So an English speaker isn't learning an alien category here so much as relearning a distinction their own language once had and voluntarily gave up. Portuguese offers a richer, still-active comparison instead of a clean transfer: depending on region, Portuguese runs a three- or four-way system — tu, você, o senhor/a senhora, and regionally a fossilized vós — with você itself descending from a formal address, vossa mercê (\"your mercy\"), that has since drifted all the way to becoming the ordinary, unmarked pronoun of everyday address in Brazilian Portuguese. That's the T/V drift playing out on a different timeline and a different regional map than either French or English took, which makes it a genuinely rewarding comparison for a bridge learner to sit with rather than something that maps cleanly onto tu/vous.\n\nThe practical mistakes worth naming go beyond simple over-familiarity: choosing tu with a stranger or a superior reads as presumptuous, but the reverse — staying rigidly on vous with someone who has signaled, explicitly or through repeated informal cues, that they'd welcome the switch to tu — can itself read as coldness or a refusal of the relationship the other person is offering, which is exactly why French has dedicated verbs, tutoyer and vouvoyer, for the act of choosing (or renegotiating) this pronoun with someone; the choice is a live communicative act, not a fixed setting decided once and forgotten. A smaller structural nuance worth knowing: the \"polite plural\" vous addressing a single person still triggers a plural verb conjugation but, in careful usage, singular adjective agreement (vous êtes content, said to one man, keeps the adjective singular even though the verb form is vous's own) — a small grammatical tell that underneath its plural verb form, the polite vous is still, semantically, addressing exactly one person, unlike a genuine plural vous addressing several people at once (vous êtes contents).",
     "examples": [
       {
         "native": "Tu viens ? (à un ami) / Vous venez ? (à un professeur)",
@@ -1973,7 +2074,8 @@
     "related_oddity_id": {
       "lang": "fr",
       "id": "fr-odd-tu-vous"
-    }
+    },
+    "source_doc": "docs/french_curriculum.md#unit-14"
   },
   {
     "id": "fr-u14-register-in-negation-dropping",
@@ -1997,7 +2099,8 @@
     "prerequisites": [
       "fr-u14-tu-vs-vous"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/french_curriculum.md#unit-14"
   },
   {
     "id": "fr-u14-register-in-questions",
@@ -2021,7 +2124,8 @@
     "prerequisites": [
       "fr-u14-register-in-negation-dropping"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/french_curriculum.md#unit-14"
   },
   {
     "id": "fr-u14-on-for-nous",
@@ -2045,7 +2149,8 @@
     "prerequisites": [
       "fr-u14-register-in-questions"
     ],
-    "confidence": "verified"
+    "confidence": "verified",
+    "source_doc": "docs/french_curriculum.md#unit-14"
   },
   {
     "id": "fr-u14-formal-vs-familiar-vocabulary",
@@ -2069,7 +2174,8 @@
     "prerequisites": [
       "fr-u14-on-for-nous"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/french_curriculum.md#unit-14"
   },
   {
     "id": "fr-u15-shared-architecture",
@@ -2091,7 +2197,8 @@
     "related_game_id": null,
     "branch": "The French–Portuguese Bridge",
     "prerequisites": [],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/french_curriculum.md#unit-15"
   },
   {
     "id": "fr-u15-cognate-grammar-point-the",
@@ -2115,7 +2222,8 @@
     "prerequisites": [
       "fr-u15-shared-architecture"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/french_curriculum.md#unit-15"
   },
   {
     "id": "fr-u15-cognate-grammar-point-clitic",
@@ -2139,7 +2247,8 @@
     "prerequisites": [
       "fr-u15-cognate-grammar-point-the"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/french_curriculum.md#unit-15"
   },
   {
     "id": "fr-u15-cognate-grammar-point-compound",
@@ -2163,7 +2272,8 @@
     "prerequisites": [
       "fr-u15-cognate-grammar-point-clitic"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/french_curriculum.md#unit-15"
   },
   {
     "id": "fr-u15-false-friend-traps",
@@ -2187,6 +2297,327 @@
     "prerequisites": [
       "fr-u15-cognate-grammar-point-compound"
     ],
-    "confidence": "first_pass"
+    "confidence": "first_pass",
+    "source_doc": "docs/french_curriculum.md#unit-15"
+  },
+  {
+    "id": "fr-u1-il-y-a",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A1",
+    "title": "Il y a (there is/are) — the existential construction",
+    "explanation": "Il y a is French's all-purpose \"there is/are,\" built from the impersonal il + y (\"there\") + a (\"has\") — literally \"it there has.\" It never changes for the noun that follows (no agreement, no plural verb), and the same phrase also means \"ago\" when it follows a duration.",
+    "examples": [
+      {
+        "native": "Il y a un problème.",
+        "gloss": "There is a problem."
+      },
+      {
+        "native": "Il y a des enfants dans le jardin.",
+        "gloss": "There are children in the garden."
+      },
+      {
+        "native": "Il y a trois ans, j'habitais à Lyon.",
+        "gloss": "Three years ago, I was living in Lyon."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "Portuguese's equivalent, há (from haver), works the same impersonal, invariable way (há um problema, há três anos) — a rare case where the two languages line up almost exactly, unlike most existential constructions.",
+    "mistake": "conjugating il y a for number (\"il y ont des enfants\" ✗ — it never changes, even before a plural noun); confusing this \"ago\" use with depuis, which needs the present tense for an action still ongoing (see Time & Duration Expressions).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Foundations: The Sentence Skeleton",
+    "prerequisites": [
+      "fr-u1-avoir-present-and-its"
+    ],
+    "confidence": "first_pass",
+    "source_doc": null
+  },
+  {
+    "id": "fr-u3-prepositions-place-names",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "Prepositions with place names (en France, au Japon, à Paris)",
+    "explanation": "The preposition for \"to/in\" a place depends on the place's gender and number, not on a single general rule: à before cities, en before feminine countries (and masculine countries starting with a vowel), au before masculine countries, aux before plural-named countries. Most country names ending in -e are feminine (la France, la Chine); most others are masculine (le Japon, le Canada) — with well-known exceptions (le Mexique).",
+    "examples": [
+      {
+        "native": "Je vais à Paris.",
+        "gloss": "I'm going to Paris."
+      },
+      {
+        "native": "Elle habite en France. / Il travaille au Japon.",
+        "gloss": "She lives in France. / He works in Japan."
+      },
+      {
+        "native": "Ils voyagent aux États-Unis.",
+        "gloss": "They're traveling to the United States."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "Portuguese uses a similarly gender-driven system (na França, no Japão), but the genders don't always match French's — a cognate country name can carry a different grammatical gender in the two languages, so the pattern transfers but each country's gender still has to be checked individually.",
+    "mistake": "defaulting to à for every place (\"à France\" ✗ → en France); guessing gender wrong for countries with irregular gender (le Mexique, not *la Mexique).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Articles & Determiners",
+    "prerequisites": [
+      "fr-u3-contractions-à-le-au"
+    ],
+    "confidence": "first_pass",
+    "source_doc": null
+  },
+  {
+    "id": "fr-time-dans-vs-en",
+    "lang": "fr",
+    "difficulty": 1,
+    "cefr": "A2",
+    "title": "dans vs en (time until vs. time to complete)",
+    "explanation": "dans + a duration means \"in/after X time\" — a future point counted from now (dans dix minutes = ten minutes from now). en + a duration measures how long an action takes to complete (en dix minutes = within a ten-minute span, start to finish). English \"in\" covers both, which is exactly why English speakers reach for the wrong one.",
+    "examples": [
+      {
+        "native": "Je reviens dans une heure.",
+        "gloss": "I'll be back in an hour (from now)."
+      },
+      {
+        "native": "J'ai fini le rapport en une heure.",
+        "gloss": "I finished the report in an hour (it took an hour)."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "Portuguese draws a comparable line (daqui a uma hora for a future point vs em uma hora for duration-to-complete), so the underlying logic transfers even though the prepositions don't map word-for-word.",
+    "mistake": "using en for a future point (\"Je reviens en une heure\" ✗ when you mean \"an hour from now\"); using dans for elapsed duration.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Time & Duration Expressions",
+    "prerequisites": [],
+    "confidence": "first_pass",
+    "source_doc": null
+  },
+  {
+    "id": "fr-time-depuis-pendant-il-y-a",
+    "lang": "fr",
+    "difficulty": 2,
+    "cefr": "A2–B1",
+    "title": "depuis, pendant, and il y a (que) for duration",
+    "explanation": "depuis + present tense expresses an action that started in the past and is STILL going on now — where English switches to a perfect tense (\"I have been living here for three years\" = j'habite ici depuis trois ans, present tense, not a past tense). pendant states a bounded duration for a completed or habitual action, with no claim about \"still going on.\" depuis and il y a … que / ça fait … que are interchangeable for the \"still ongoing\" meaning, just with different word order.",
+    "examples": [
+      {
+        "native": "J'habite ici depuis trois ans.",
+        "gloss": "I've been living here for three years (and still do)."
+      },
+      {
+        "native": "J'ai travaillé pendant trois ans à Lyon.",
+        "gloss": "I worked in Lyon for three years (a finished period)."
+      },
+      {
+        "native": "Il y a trois ans que j'habite ici. / Ça fait trois ans que j'habite ici.",
+        "gloss": "I've been living here for three years."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "This is a genuine French/Portuguese-vs-English trap: Portuguese also keeps the present for an ongoing duration (moro aqui há três anos / faz três anos que moro aqui), so the depuis-logic transfers well from Portuguese, even though English grammar pulls in the opposite direction.",
+    "mistake": "translating \"have been doing\" literally into a French compound past (\"J'ai habité ici depuis trois ans\" ✗ for an action still ongoing — French wants the present: j'habite ici depuis trois ans); using pendant where the action is still continuing.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Time & Duration Expressions",
+    "prerequisites": [
+      "fr-time-dans-vs-en"
+    ],
+    "confidence": "first_pass",
+    "source_doc": null
+  },
+  {
+    "id": "fr-u9-adverb-placement-compound-tenses",
+    "lang": "fr",
+    "difficulty": 2,
+    "cefr": "A2–B1",
+    "title": "Adverb placement in compound tenses (déjà, bien, encore, souvent between avoir/être and the participle)",
+    "explanation": "Short, high-frequency adverbs of time, quantity, and manner — déjà, bien, encore, toujours, souvent, presque, trop, beaucoup — normally slide inside the compound tense, between the conjugated auxiliary and the past participle, not after the participle the way English puts them after the main verb.",
+    "examples": [
+      {
+        "native": "J'ai déjà mangé.",
+        "gloss": "I've already eaten. (not: J'ai mangé déjà ✗)"
+      },
+      {
+        "native": "Elle a bien compris.",
+        "gloss": "She understood well."
+      },
+      {
+        "native": "Nous avons beaucoup voyagé.",
+        "gloss": "We've traveled a lot."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": null,
+    "mistake": "placing the adverb after the participle by analogy with English word order (\"J'ai mangé déjà\" ✗, \"Il a fini déjà\" ✗); note that longer -ment adverbs of manner (rapidement, calmement) and most place/time adverbs (hier, ici, demain) instead follow the participle or sit at the sentence edge, so this rule is specifically for the short high-frequency set, not adverbs in general.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "The Past-Tense System",
+    "prerequisites": [
+      "fr-u9-passé-composé-with-avoir"
+    ],
+    "confidence": "first_pass",
+    "source_doc": null
+  },
+  {
+    "id": "fr-indef-chaque-chacun-quelque-plusieurs",
+    "lang": "fr",
+    "difficulty": 2,
+    "cefr": "A2–B1",
+    "title": "Indefinite adjectives and pronouns (chaque/chacun, quelque(s), plusieurs, certain(e)s)",
+    "explanation": "chaque (\"each\") is an adjective and never takes a plural; its pronoun counterpart chacun(e) stands alone. quelque(s) (\"some/a few\") is an adjective agreeing in number only. plusieurs (\"several\") and certain(e)s (\"certain/some\") are inherently plural, and certain(e)s additionally agrees in gender.",
+    "examples": [
+      {
+        "native": "Chaque étudiant a son propre livre. Chacun a le sien.",
+        "gloss": "Each student has their own book. Each one has theirs."
+      },
+      {
+        "native": "J'ai quelques questions. Plusieurs personnes sont venues.",
+        "gloss": "I have a few questions. Several people came."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "Portuguese's cada (\"each\") is likewise invariable for both gender and number (cada aluno, cada aluna), so the \"never pluralizes\" instinct transfers directly from chaque; but Portuguese has no one-word equivalent to plusieurs, typically using vários/várias instead, which does agree in gender unlike French's plusieurs.",
+    "mistake": "pluralizing chaque (\"chaques étudiants\" ✗ — it's invariable for number, always singular); confusing quelque (adjective, before a noun) with quelqu'un (pronoun, \"someone\").",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Indefinite Adjectives, Pronouns & Quantifiers",
+    "prerequisites": [
+      "fr-u3-possessive-adjectives"
+    ],
+    "confidence": "first_pass",
+    "source_doc": null
+  },
+  {
+    "id": "fr-indef-tout-agreement",
+    "lang": "fr",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "tout / toute / tous / toutes — adjective, pronoun, and invariable adverb",
+    "explanation": "tout changes function and agreement depending on its role. As an adjective meaning \"all/every,\" it agrees normally (tout le monde, toute la classe, tous les jours, toutes les filles). As a pronoun meaning \"everything/everyone,\" it's tout (singular) or tous/toutes (plural, with the -s of tous pronounced /tus/ unlike the adjective's silent -s). As an adverb meaning \"completely/very,\" it's normally invariable (tout content) — EXCEPT before a feminine adjective that starts with a consonant or aspirate h, where it agrees for euphony (elle est toute contente, but elle est tout heureuse stays invariable because heureuse starts with a vowel sound).",
+    "examples": [
+      {
+        "native": "Tous les jours, je cours. Tout va bien.",
+        "gloss": "Every day, I run. Everything's fine."
+      },
+      {
+        "native": "Elle est tout heureuse.",
+        "gloss": "She's completely happy. (invariable: heureuse starts with a vowel sound)"
+      },
+      {
+        "native": "Elle est toute contente.",
+        "gloss": "She's completely pleased. (agrees: contente starts with a consonant)"
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "Portuguese's tudo/todo(a)(s) splits along a similar adjective/pronoun line (todo o mundo vs tudo bem), but Portuguese has no equivalent to the French adverbial tout at all, so this specific euphonic-agreement exception is a purely French wrinkle with no Portuguese shortcut.",
+    "mistake": "treating tout as always invariable when used as an adverb (missing the feminine-consonant agreement exception); mispronouncing the pronoun tous as silent -s (it's the one context where the final -s of tous IS pronounced).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Indefinite Adjectives, Pronouns & Quantifiers",
+    "prerequisites": [
+      "fr-indef-chaque-chacun-quelque-plusieurs"
+    ],
+    "confidence": "first_pass",
+    "source_doc": null
+  },
+  {
+    "id": "fr-u8-reversed-construction-verbs",
+    "lang": "fr",
+    "difficulty": 2,
+    "cefr": "B1",
+    "title": "Verbs with a \"reversed\" subject (manquer, plaire)",
+    "explanation": "A small set of common verbs — manquer (to miss), plaire (to please/like), and suffire (to be enough) — put the French grammatical subject where English would put the object, and vice versa. \"I miss you\" is really \"you are lacking to me\": tu me manques, with tu as the subject of manquer and me as the indirect object. Getting the pronoun order and verb agreement right requires thinking in French logic, not translating English word for word.",
+    "examples": [
+      {
+        "native": "Tu me manques.",
+        "gloss": "I miss you. (literally: you are lacking to me)"
+      },
+      {
+        "native": "Ce film me plaît.",
+        "gloss": "I like this movie. (literally: this movie pleases me)"
+      },
+      {
+        "native": "Mes amis me manquent.",
+        "gloss": "I miss my friends. (manquent agrees with mes amis, the grammatical subject)"
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "Portuguese's equivalents split: faltar mirrors French exactly (Tu me faltas = \"I miss you,\" the same reversed logic as manquer), but gostar de reverses back to a normal subject-verb-object pattern (eu gosto deste filme, \"I like this film,\" with \"I\" as the ordinary subject) — so plaire's reversed logic does NOT transfer from gostar, even though manquer/faltar's does.",
+    "mistake": "translating word-for-word and swapping the roles (\"Je manque toi\" ✗ for \"I miss you\"); forgetting the verb must agree with the person/thing doing the missing/pleasing, not with the English subject.",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Object Pronouns, y/en, and Pronoun Ordering",
+    "prerequisites": [
+      "fr-u8-indirect-object-pronouns"
+    ],
+    "confidence": "first_pass",
+    "source_doc": null
+  },
+  {
+    "id": "fr-u7-exclamatives",
+    "lang": "fr",
+    "difficulty": 2,
+    "cefr": "A2–B1",
+    "title": "Exclamative constructions (que, comme, qu'est-ce que + clause)",
+    "explanation": "French turns a statement into an exclamation with que, comme, or qu'est-ce que placed at the front of the clause — all roughly \"how...!\" or \"what a...!\" — with no inversion and no change to the clause's normal word order. quel(le)(s) is used instead directly in front of a noun, agreeing like the question word it doubles as.",
+    "examples": [
+      {
+        "native": "Que c'est beau !",
+        "gloss": "How beautiful it is!"
+      },
+      {
+        "native": "Comme il fait froid !",
+        "gloss": "It's so cold! (lit. How it makes cold!)"
+      },
+      {
+        "native": "Quelle bonne idée !",
+        "gloss": "What a good idea!"
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "Portuguese uses the same que/como pattern for exclamations (Que lindo!, Como está frio!), so the construction transfers almost word for word from Portuguese — one of the more forgiving corners of French syntax for a Lusophone learner.",
+    "mistake": "inverting subject and verb as if it were a question (\"Est-ce beau !\" ✗ is a question, not an exclamation); using quel with a full clause instead of directly before a noun (quel belongs in quelle bonne idée !, not in front of an adjective clause).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Question Formation",
+    "prerequisites": [
+      "fr-u7-information-words-qui-quequoi"
+    ],
+    "confidence": "first_pass",
+    "source_doc": null
+  },
+  {
+    "id": "fr-u13-pronominal-passive",
+    "lang": "fr",
+    "difficulty": 2,
+    "cefr": "B1–B2",
+    "title": "The pronominal (reflexive) passive: se + verb for generic statements",
+    "explanation": "Alongside the être + participle passive and the active on-construction, French has a third passive-avoidance strategy: a reflexive verb used impersonally to state what \"is done\" to something as a general fact or rule, not a one-time event with a named agent. It's especially common for describing how things are used, said, sold, or eaten in general.",
+    "examples": [
+      {
+        "native": "Ça ne se dit pas.",
+        "gloss": "That's not said / You don't say that."
+      },
+      {
+        "native": "Le vin blanc se boit frais.",
+        "gloss": "White wine is drunk chilled."
+      },
+      {
+        "native": "Les billets se vendent en ligne.",
+        "gloss": "Tickets are sold online."
+      }
+    ],
+    "bridge_lang": "pt",
+    "bridge_note": "Portuguese has the identical strategy — the reflexive passive with se (Vende-se vinho / O vinho branco bebe-se fresco) — making this one of the most directly transferable constructions between the two languages, right down to the impersonal, agent-less use.",
+    "mistake": "reaching for the être + participle passive for general/habitual statements where French prefers this reflexive form (\"Le vin blanc est bu frais\" reads like a translated sentence, not natural French); trying to add a named agent to it (this construction has no par phrase — for a specific agent, use the être-passive or on instead).",
+    "source": null,
+    "related_game_id": null,
+    "branch": "Advanced Verb Structures: Passive, Reported Speech, Gérondif, Causative",
+    "prerequisites": [
+      "fr-u13-the-passive-voice"
+    ],
+    "confidence": "first_pass",
+    "source_doc": null
   }
 ]

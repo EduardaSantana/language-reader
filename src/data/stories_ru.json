@@ -53,38 +53,38 @@
     "vocab": [
       {
         "word": "видеоигра",
-        "annotation": "f",
-        "english": "video game"
+        "english": "video game",
+        "gender": "f"
       },
       {
         "word": "ролевая игра",
-        "annotation": "f",
-        "english": "role-playing game"
+        "english": "role-playing game",
+        "gender": "f"
       },
       {
         "word": "сильный",
-        "annotation": null,
-        "english": "strong"
+        "english": "strong",
+        "gender": null
       },
       {
         "word": "монстр",
-        "annotation": "m",
-        "english": "monster"
+        "english": "monster",
+        "gender": "m"
       },
       {
         "word": "меч",
-        "annotation": "m",
-        "english": "sword"
+        "english": "sword",
+        "gender": "m"
       },
       {
         "word": "друг",
-        "annotation": "m",
-        "english": "friend"
+        "english": "friend",
+        "gender": "m"
       },
       {
         "word": "весело",
-        "annotation": null,
-        "english": "fun"
+        "english": "fun",
+        "gender": null
       }
     ]
   },
@@ -136,33 +136,33 @@
     "vocab": [
       {
         "word": "кошка",
-        "annotation": "f",
-        "english": "cat"
+        "english": "cat",
+        "gender": "f"
       },
       {
         "word": "маленький",
-        "annotation": null,
-        "english": "small"
+        "english": "small",
+        "gender": null
       },
       {
         "word": "мягкий",
-        "annotation": null,
-        "english": "soft"
+        "english": "soft",
+        "gender": null
       },
       {
         "word": "спать",
-        "annotation": null,
-        "english": "to sleep"
+        "english": "to sleep",
+        "gender": null
       },
       {
         "word": "играть",
-        "annotation": null,
-        "english": "to play"
+        "english": "to play",
+        "gender": null
       },
       {
         "word": "любить",
-        "annotation": null,
-        "english": "to love"
+        "english": "to love",
+        "gender": null
       }
     ]
   },
@@ -214,33 +214,33 @@
     "vocab": [
       {
         "word": "солнечно",
-        "annotation": null,
-        "english": "sunny"
+        "english": "sunny",
+        "gender": null
       },
       {
         "word": "небо",
-        "annotation": "n",
-        "english": "sky"
+        "english": "sky",
+        "gender": "n"
       },
       {
         "word": "тепло",
-        "annotation": null,
-        "english": "warm"
+        "english": "warm",
+        "gender": null
       },
       {
         "word": "гулять",
-        "annotation": null,
-        "english": "to go for a walk"
+        "english": "to go for a walk",
+        "gender": null
       },
       {
         "word": "дождь",
-        "annotation": "m",
-        "english": "rain"
+        "english": "rain",
+        "gender": "m"
       },
       {
         "word": "дождливый",
-        "annotation": null,
-        "english": "rainy"
+        "english": "rainy",
+        "gender": null
       }
     ]
   },
@@ -286,33 +286,33 @@
     "vocab": [
       {
         "word": "завтрак",
-        "annotation": "m",
-        "english": "breakfast"
+        "english": "breakfast",
+        "gender": "m"
       },
       {
         "word": "хлеб",
-        "annotation": "m",
-        "english": "bread"
+        "english": "bread",
+        "gender": "m"
       },
       {
         "word": "масло",
-        "annotation": "n",
-        "english": "butter"
+        "english": "butter",
+        "gender": "n"
       },
       {
         "word": "кофе",
-        "annotation": "m",
-        "english": "coffee"
+        "english": "coffee",
+        "gender": "m"
       },
       {
         "word": "яйцо",
-        "annotation": "n",
-        "english": "egg"
+        "english": "egg",
+        "gender": "n"
       },
       {
         "word": "приём пищи",
-        "annotation": "m",
-        "english": "meal"
+        "english": "meal",
+        "gender": "m"
       }
     ]
   },
@@ -364,33 +364,33 @@
     "vocab": [
       {
         "word": "семья",
-        "annotation": "f",
-        "english": "family"
+        "english": "family",
+        "gender": "f"
       },
       {
         "word": "мама",
-        "annotation": "f",
-        "english": "mom"
+        "english": "mom",
+        "gender": "f"
       },
       {
         "word": "папа",
-        "annotation": "m",
-        "english": "dad"
+        "english": "dad",
+        "gender": "m"
       },
       {
         "word": "брат",
-        "annotation": "m",
-        "english": "brother"
+        "english": "brother",
+        "gender": "m"
       },
       {
         "word": "сестра",
-        "annotation": "f",
-        "english": "sister"
+        "english": "sister",
+        "gender": "f"
       },
       {
         "word": "важный",
-        "annotation": null,
-        "english": "important"
+        "english": "important",
+        "gender": null
       }
     ]
   },
@@ -442,33 +442,33 @@
     "vocab": [
       {
         "word": "карточка",
-        "annotation": "f",
-        "english": "card"
+        "english": "card",
+        "gender": "f"
       },
       {
         "word": "меняться",
-        "annotation": null,
-        "english": "to trade/exchange"
+        "english": "to trade/exchange",
+        "gender": null
       },
       {
         "word": "редкий",
-        "annotation": null,
-        "english": "rare"
+        "english": "rare",
+        "gender": null
       },
       {
         "word": "ценный",
-        "annotation": null,
-        "english": "valuable"
+        "english": "valuable",
+        "gender": null
       },
       {
         "word": "рад",
-        "annotation": null,
-        "english": "glad"
+        "english": "glad",
+        "gender": null
       },
       {
         "word": "коллекция",
-        "annotation": "f",
-        "english": "collection"
+        "english": "collection",
+        "gender": "f"
       }
     ]
   },
@@ -520,33 +520,33 @@
     "vocab": [
       {
         "word": "субтитры",
-        "annotation": null,
-        "english": "subtitles"
+        "english": "subtitles",
+        "gender": null
       },
       {
         "word": "слышать",
-        "annotation": null,
-        "english": "to hear"
+        "english": "to hear",
+        "gender": null
       },
       {
         "word": "записывать",
-        "annotation": null,
-        "english": "to write down"
+        "english": "to write down",
+        "gender": null
       },
       {
         "word": "тетрадь",
-        "annotation": "f",
-        "english": "notebook"
+        "english": "notebook",
+        "gender": "f"
       },
       {
         "word": "фраза",
-        "annotation": "f",
-        "english": "phrase"
+        "english": "phrase",
+        "gender": "f"
       },
       {
         "word": "язык",
-        "annotation": "m",
-        "english": "language"
+        "english": "language",
+        "gender": "m"
       }
     ]
   },
@@ -598,33 +598,33 @@
     "vocab": [
       {
         "word": "деревня",
-        "annotation": "f",
-        "english": "village"
+        "english": "village",
+        "gender": "f"
       },
       {
         "word": "бросать",
-        "annotation": null,
-        "english": "to throw"
+        "english": "to throw",
+        "gender": null
       },
       {
         "word": "сбивать",
-        "annotation": null,
-        "english": "to knock down"
+        "english": "to knock down",
+        "gender": null
       },
       {
         "word": "фигура",
-        "annotation": "f",
-        "english": "shape/figure"
+        "english": "shape/figure",
+        "gender": "f"
       },
       {
         "word": "попытка",
-        "annotation": "f",
-        "english": "attempt"
+        "english": "attempt",
+        "gender": "f"
       },
       {
         "word": "гордиться",
-        "annotation": null,
-        "english": "to be proud"
+        "english": "to be proud",
+        "gender": null
       }
     ]
   },
@@ -676,33 +676,33 @@
     "vocab": [
       {
         "word": "мечтать",
-        "annotation": null,
-        "english": "to dream"
+        "english": "to dream",
+        "gender": null
       },
       {
         "word": "полёт",
-        "annotation": "m",
-        "english": "flight"
+        "english": "flight",
+        "gender": "m"
       },
       {
         "word": "ракета",
-        "annotation": "f",
-        "english": "rocket"
+        "english": "rocket",
+        "gender": "f"
       },
       {
         "word": "быстро",
-        "annotation": null,
-        "english": "fast"
+        "english": "fast",
+        "gender": null
       },
       {
         "word": "голубой",
-        "annotation": null,
-        "english": "light blue"
+        "english": "light blue",
+        "gender": null
       },
       {
         "word": "история",
-        "annotation": "f",
-        "english": "history"
+        "english": "history",
+        "gender": "f"
       }
     ]
   },
@@ -754,33 +754,33 @@
     "vocab": [
       {
         "word": "персонаж",
-        "annotation": "m",
-        "english": "character"
+        "english": "character",
+        "gender": "m"
       },
       {
         "word": "цветной",
-        "annotation": null,
-        "english": "colored"
+        "english": "colored",
+        "gender": null
       },
       {
         "word": "карандаш",
-        "annotation": "m",
-        "english": "pencil"
+        "english": "pencil",
+        "gender": "m"
       },
       {
         "word": "рисунок",
-        "annotation": "m",
-        "english": "drawing"
+        "english": "drawing",
+        "gender": "m"
       },
       {
         "word": "похожий",
-        "annotation": null,
-        "english": "similar"
+        "english": "similar",
+        "gender": null
       },
       {
         "word": "художница",
-        "annotation": "f",
-        "english": "artist (female)"
+        "english": "artist (female)",
+        "gender": "f"
       }
     ]
   },
@@ -832,33 +832,33 @@
     "vocab": [
       {
         "word": "океан",
-        "annotation": "m",
-        "english": "ocean"
+        "english": "ocean",
+        "gender": "m"
       },
       {
         "word": "глубина",
-        "annotation": "f",
-        "english": "depth"
+        "english": "depth",
+        "gender": "f"
       },
       {
         "word": "осьминог",
-        "annotation": "m",
-        "english": "octopus"
+        "english": "octopus",
+        "gender": "m"
       },
       {
         "word": "кит",
-        "annotation": "m",
-        "english": "whale"
+        "english": "whale",
+        "gender": "m"
       },
       {
         "word": "светиться",
-        "annotation": null,
-        "english": "to glow"
+        "english": "to glow",
+        "gender": null
       },
       {
         "word": "тайна",
-        "annotation": "f",
-        "english": "secret/mystery"
+        "english": "secret/mystery",
+        "gender": "f"
       }
     ]
   }

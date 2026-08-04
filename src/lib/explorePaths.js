@@ -1,10 +1,9 @@
 import { hasLeadingArticle, stripLeadingArticle } from './vocabIndex'
 
-// French/German/Russian vocab entries store grammatical gender (m/f/n) in the
-// `reading` field when there's no real phonetic reading to show (see data.js) —
-// a noun-only property, so its presence is a reliable noun signal.
+// French/Russian vocab entries carry grammatical gender (m/f/n) in `entry.gender`
+// (see lib/data.js) — a noun-only property, so its presence is a reliable noun signal.
 function hasGenderCode(entry) {
-  return typeof entry.reading === 'string' && /^[mfn]$/i.test(entry.reading.trim())
+  return typeof entry.gender === 'string' && /^[mfn]$/i.test(entry.gender.trim())
 }
 
 // German nouns are always capitalized, but are stored with their leading

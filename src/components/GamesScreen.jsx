@@ -41,6 +41,17 @@ const GAMES = [
   },
 ]
 
+// Grouped by what kind of pattern-play each game actually is (per the
+// child-language-acquisition design digest in the encyclopedia design spec:
+// "ritual repetition, not a review queue" — a clubhouse you browse by mood,
+// not a flat alphabetical tile list) rather than by unrelated mechanics.
+const GAME_CLUSTERS = [
+  { label: 'Spot the pattern', keys: ['odd', 'category'] },
+  { label: 'Match & build', keys: ['match', 'kanji', 'compound', 'onomatopoeia', 'alphabet'] },
+  { label: 'From the story', keys: ['order', 'blank'] },
+  { label: 'Picture & word', keys: ['guess', 'image'] },
+]
+
 export default function GamesScreen({ stories, activeLanguages, gameSeed }) {
   const savedWords = useMemo(() => getSavedWords(), [])
   const dictionary = useMemo(() => buildDictionary(stories), [stories])
@@ -90,14 +101,32 @@ export default function GamesScreen({ stories, activeLanguages, gameSeed }) {
       </div>
 
       {!activeGame ? (
-        <div className="games-hub">
-          {availableGames.map((g) => (
-            <button key={g.key} className="game-hub-card" onClick={() => setActiveGame(g.key)} title={g.description}>
-              <div className="game-hub-icon">{g.icon}</div>
-              <div className="game-hub-title">{g.title}</div>
-            </button>
-          ))}
-        </div>
+        <>
+          {GAME_CLUSTERS.map((cluster) => {
+            const gamesInCluster = cluster.keys
+              .map((k) => availableGames.find((g) => g.key === k))
+              .filter(Boolean)
+            if (gamesInCluster.length === 0) return null
+            return (
+              <div key={cluster.label}>
+                <div className="game-cluster-label">{cluster.label}</div>
+                <div className="games-hub">
+                  {gamesInCluster.map((g) => (
+                    <button
+                      key={g.key}
+                      className="game-hub-card"
+                      onClick={() => setActiveGame(g.key)}
+                      title={g.description}
+                    >
+                      <div className="game-hub-icon">{g.icon}</div>
+                      <div className="game-hub-title">{g.title}</div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )
+          })}
+        </>
       ) : activeGame === 'guess' ? (
         <GuessWordGame key={lang} pool={pool} stories={stories} lang={lang} />
       ) : activeGame === 'image' ? (

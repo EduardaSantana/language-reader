@@ -7,6 +7,7 @@ export function buildDictionary(stories) {
       seen.set(key, {
         word: v.word,
         reading: v.reading,
+        gender: v.gender,
         english: v.english,
         lang: story.lang,
         level: story.level,
@@ -80,8 +81,8 @@ export function hasLeadingArticle(word, lang) {
 export { stripLeadingArticle }
 
 // Only Japanese vocab carries a real phonetic reading (furigana) worth sorting by.
-// French/German/Russian reuse this field for grammatical gender (m/f/n), which must
-// never drive alphabetical order or letter grouping.
+// French/German/Russian store gender separately (`entry.gender`), so `reading` is
+// never anything but a real reading — see lib/data.js.
 function sortKeySource(entry) {
   if (entry.lang === 'ja') return entry.reading || entry.word
   return stripLeadingArticle(entry.word, entry.lang)
