@@ -1,0 +1,234 @@
+{
+  "families": [
+    {
+      "id": "romance",
+      "name": "Romance",
+      "subtitle": "Vulgar Latin · 1 of 5 shipped",
+      "drafted": true,
+      "origin": {
+        "eyebrow": "✨ where it comes from",
+        "text": "All five descend from Vulgar Latin, the everyday spoken language of the Roman Empire — not the polished Latin of Cicero's speeches, but the version soldiers and merchants actually used, which is why \"horse\" is <i>cheval/caballo</i> (from vulgar <i>caballus</i>, \"nag\") in most of them instead of the classical <i>equus</i>."
+      },
+      "pattern": {
+        "eyebrow": "🎯 a pattern you'll keep noticing",
+        "text": "Romanian breaks from the other four more often than any other member here — a suffixed article, a fourth verb class, gender-bending plurals, no <i>-mente</i> adverb suffix, even its own calendar-naming habit. Once you spot it once, expect it again on Articles, Prepositions, Verbs, Nouns, Adverbs, and Calendar."
+      },
+      "members": [
+        { "code": "fr", "flag": "🇫🇷", "name": "French", "tag": "has content →", "active": true },
+        { "code": "pt", "flag": "🇵🇹", "name": "Portuguese", "tag": "planned", "active": false },
+        { "code": "es", "flag": "🇪🇸", "name": "Spanish", "tag": "planned", "active": false },
+        { "code": "it", "flag": "🇮🇹", "name": "Italian", "tag": "planned", "active": false },
+        { "code": "ro", "flag": "🇷🇴", "name": "Romanian", "tag": "planned", "active": false }
+      ],
+      "history": {
+        "intro": "Vulgar Latin was the everyday spoken language across Rome's western provinces — Iberia, Gaul, Italy, Dacia. Once the Empire's central authority collapsed, nothing held those regional dialects together anymore, and they began drifting apart on their own.",
+        "tree": {
+          "label": "Vulgar Latin",
+          "children": [
+            { "label": "Gallo-Romance", "children": [ { "label": "French", "flag": "🇫🇷" } ] },
+            { "label": "Ibero-Romance", "children": [ { "label": "Portuguese", "flag": "🇵🇹" }, { "label": "Spanish", "flag": "🇪🇸" } ] },
+            { "label": "Italo-Romance", "children": [ { "label": "Italian", "flag": "🇮🇹" } ] },
+            { "label": "Eastern Romance", "children": [ { "label": "Romanian", "flag": "🇷🇴" } ] }
+          ]
+        },
+        "timeline": [
+          { "when": "75 BCE–476 CE", "text": "Latin spreads with Roman conquest into Iberia, Gaul, Italy, and Dacia; the everyday \"Vulgar Latin\" spoken there already drifts from literary Latin as new populations adopt it." },
+          { "when": "476 CE", "text": "The Western Roman Empire falls — with no shared administration left, Vulgar Latin's regional dialects start diverging into what will become separate languages." },
+          { "when": "9th–10th c.", "text": "The first texts recognizably not-Latin appear: the Oaths of Strasbourg (842) for early French; Portuguese, Spanish, Italian, and Romanian vernacular writing follow over the next few centuries." },
+          { "when": "16th c.+", "text": "Each region standardizes a national literary language — the direct ancestors of the five compared here." }
+        ]
+      },
+      "elements": [
+        {
+          "key": "articles", "icon": "▤", "title": "Articles", "group": "Grammar elements", "kind": "pattern-outlier",
+          "items": [
+            { "label": "\"the\" (m.sg)", "cells": { "fr": "le", "pt": "o", "es": "el", "it": "il", "ro": "-ul (suffix)" } },
+            { "label": "\"the\" (f.sg)", "cells": { "fr": "la", "pt": "a", "es": "la", "it": "la", "ro": "-a (suffix)" } },
+            { "label": "\"a/an\" (m.sg)", "cells": { "fr": "un", "pt": "um", "es": "un", "it": "un", "ro": "un" } },
+            { "label": "position", "cells": { "fr": "before noun", "pt": "before noun", "es": "before noun", "it": "before noun", "ro": "after noun" } }
+          ],
+          "outlier": { "code": "ro", "flag": "🇷🇴", "headline": "Romanian attaches \"the\" as a suffix", "text": "<i>lup</i> \"wolf\" → <i>lupul</i> \"the wolf\" (<i>-ul</i> m.sg, <i>-a</i> f.sg) — it kept Latin's word order everywhere else, but glues the definite article onto the end of the noun instead of putting a separate word in front of it.", "backref": "↳ part of a recurring pattern — see Family overview" },
+          "transfer": "Next time you see <i>-ul</i> or <i>-a</i> hanging off a Romanian noun in a story, you'll recognize it as \"the,\" not part of the word itself."
+        },
+        {
+          "key": "prepositions", "icon": "▤", "title": "Prepositions", "group": "Grammar elements", "kind": "pattern-outlier",
+          "items": [
+            { "label": "\"in\"", "cells": { "fr": "dans", "pt": "em", "es": "en", "it": "in", "ro": "în" } },
+            { "label": "\"with\"", "cells": { "fr": "avec", "pt": "com", "es": "con", "it": "con", "ro": "cu" } },
+            { "label": "\"of + the\" (fused)", "cells": { "fr": "du", "pt": "do", "es": "del", "it": "del", "ro": "-" } },
+            { "label": "\"to/at + the\" (fused)", "cells": { "fr": "au", "pt": "ao", "es": "al", "it": "al", "ro": "-" } }
+          ],
+          "outlier": { "code": "ro", "flag": "🇷🇴", "headline": "Romanian never fuses preposition + article", "text": "Fusing a preposition with the article that follows it (French <i>du</i> = <i>de</i>+<i>le</i>) is a habit French, Portuguese, Spanish, and Italian all share — Romanian says <i>al</i>, no fusion, because its article is a suffix glued to the noun rather than a separate word a preposition could fuse with.", "backref": "↳ part of a recurring pattern — see Family overview" },
+          "transfer": "Spotting <i>al</i> instead of a fused word in Romanian text is your cue: no preposition-article fusion here."
+        },
+        {
+          "key": "conjunctions", "icon": "▤", "title": "Conjunctions", "group": "Grammar elements", "kind": "pattern-insight",
+          "items": [
+            { "label": "\"and\"", "cells": { "fr": "et", "pt": "e", "es": "y", "it": "e", "ro": "și" } },
+            { "label": "\"or\"", "cells": { "fr": "ou", "pt": "ou", "es": "o", "it": "o", "ro": "sau" } },
+            { "label": "\"but\"", "cells": { "fr": "mais", "pt": "mas", "es": "pero", "it": "ma", "ro": "dar" } },
+            { "label": "\"that\" (subordinator)", "cells": { "fr": "que", "pt": "que", "es": "que", "it": "che", "ro": "că" } }
+          ],
+          "insight": { "eyebrow": "🧬 shared root", "text": "\"That\" as a subordinator — <i>que/que/que/che/că</i> — is the same Latin root (<i>quid/quia</i>) surviving in all five almost unchanged; the connective glue holding subordinate clauses together across the whole family, and one of the most stable words here despite thousands of years of drift." },
+          "transfer": "When a Romance sentence pivots on <i>que/che/că</i>, you're looking at the same fossil word every time — recognize it once, recognize it everywhere."
+        },
+        {
+          "key": "pronouns", "icon": "▤", "title": "Pronouns", "group": "Grammar elements", "kind": "pattern-outlier",
+          "items": [
+            { "label": "\"I\"", "cells": { "fr": "je", "pt": "eu", "es": "yo", "it": "io", "ro": "eu" } },
+            { "label": "subject pronoun droppable?", "cells": { "fr": "no", "pt": "yes", "es": "yes", "it": "yes", "ro": "yes" } },
+            { "label": "\"I see it\" (clitic order)", "cells": { "fr": "je le vois", "pt": "vejo-o", "es": "lo veo", "it": "lo vedo", "ro": "îl văd" } }
+          ],
+          "outlier": { "code": "fr", "flag": "🇫🇷", "headline": "French is the one non-pro-drop member", "text": "French requires the subject pronoun (<i>je le vois</i>) even though the other four can drop it — likely because centuries of sound erosion left French verb endings too similar to tell person apart by ear alone, so the pronoun became mandatory to compensate.", "backref": "French breaks the pattern here too — a reminder it isn't always Romanian that's the odd one out." },
+          "transfer": "Seeing an explicit <i>je/tu/il</i> in French is normal — if you're used to Portuguese/Spanish/Italian dropping it, don't expect that freedom in French."
+        },
+        {
+          "key": "verbs", "icon": "✎", "title": "Verbs", "group": "Lexical elements", "kind": "pattern-outlier",
+          "items": [
+            { "label": "conjugation classes", "cells": { "fr": "-er/-ir/-re", "pt": "-ar/-er/-ir", "es": "-ar/-er/-ir", "it": "-are/-ere/-ire", "ro": "4 classes" } },
+            { "label": "\"I speak\"", "cells": { "fr": "je parle", "pt": "eu falo", "es": "yo hablo", "it": "io parlo", "ro": "eu vorbesc" } }
+          ],
+          "outlier": { "code": "ro", "flag": "🇷🇴", "headline": "Romanian kept a fourth conjugation class", "text": "Many Romanian verbs (<i>eu vorbesc</i>, \"I speak\") carry an extra <i>-esc</i> infix inherited from a Latin \"inchoative\" pattern originally marking an action's onset — a wrinkle the other four simplified away centuries ago.", "backref": "↳ part of a recurring pattern — see Family overview" },
+          "transfer": "That <i>-esc</i> syllable inside a Romanian verb like <i>vorbesc</i> isn't random — it's the fourth-conjugation marker, a flag that this verb behaves differently."
+        },
+        {
+          "key": "nouns", "icon": "✎", "title": "Nouns", "group": "Lexical elements", "kind": "pattern-outlier",
+          "items": [
+            { "label": "plural marker", "cells": { "fr": "-s", "pt": "-s", "es": "-s", "it": "vowel change", "ro": "-i/-e + shifts" } },
+            { "label": "example (\"cats\")", "cells": { "fr": "chats", "pt": "gatos", "es": "gatos", "it": "gatti", "ro": "pisici" } }
+          ],
+          "outlier": { "code": "ro", "flag": "🇷🇴", "headline": "Romanian goes furthest: a hidden third gender", "text": "Its plural marker is <i>-i/-e</i> plus internal shifts (<i>pisică → pisici</i>), and its neuter nouns behave masculine in the singular but switch to the feminine plural pattern — a genuinely odd third gender hiding in plain sight.", "backref": "↳ part of a recurring pattern — see Family overview" },
+          "transfer": "A Romanian plural that doesn't just add <i>-s</i> is a signal to check gender — RO's plurals hide a fossilized neuter class."
+        },
+        {
+          "key": "adjectives", "icon": "✎", "title": "Adjectives", "group": "Lexical elements", "kind": "consensus",
+          "consensus": { "text": "Adjectives agree with the noun in gender and number — one of the most stubbornly conserved Latin habits in the whole family, and the single thing that trips up English speakers most, since English dropped agreement entirely centuries ago." },
+          "mistake": "a beginner reflex: saying <i>la chat noir</i> — forgetting it needs to match <i>la chatte noire</i>.",
+          "diffLabel": "Where they differ: word order",
+          "diffItems": [ { "label": "typical position", "cells": { "fr": "mixed", "pt": "after noun", "es": "after noun", "it": "after noun", "ro": "after noun" } } ],
+          "transfer": "Next time you read a French adjective before the noun (<i>une belle chatte</i>), remember that's the exception, not the rule, across the family."
+        },
+        {
+          "key": "adverbs", "icon": "✎", "title": "Adverbs", "group": "Lexical elements", "kind": "pattern-outlier",
+          "items": [
+            { "label": "\"-ly\" suffix", "cells": { "fr": "-ment", "pt": "-mente", "es": "-mente", "it": "-mente", "ro": "no fixed suffix" } },
+            { "label": "\"clearly\"", "cells": { "fr": "clairement", "pt": "claramente", "es": "claramente", "it": "chiaramente", "ro": "clar" } }
+          ],
+          "outlier": { "code": "ro", "flag": "🇷🇴", "headline": "Romanian has no fixed \"-ly\" suffix", "text": "<i>-ment(e)</i> started life as a real Latin noun, <i>mente</i> (\"with a mind/manner\"), that fused onto a feminine adjective and eventually grammaticalized into a suffix everywhere but Romanian (<i>clar</i>), which mostly drifted away from using it productively.", "backref": "↳ part of a recurring pattern — see Family overview" },
+          "transfer": "Spotting <i>-mente</i> at the end of a word in PT/ES/IT is a free vocabulary win — it's always an adverb, always meaning \"-ly.\""
+        },
+        {
+          "key": "numerals", "icon": "#", "title": "Numerals", "group": "Appendix", "kind": "vocab-strip",
+          "insightLead": "Your first free win: 1 through 3 are instantly recognizable across all five Romance languages — real, visible proof intercomprehension isn't a stretch, before the grammar gets harder.",
+          "items": [
+            { "label": "1", "cells": { "fr": "un", "pt": "um", "es": "uno", "it": "uno", "ro": "unu" } },
+            { "label": "2", "cells": { "fr": "deux", "pt": "dois", "es": "dos", "it": "due", "ro": "doi" } },
+            { "label": "3", "cells": { "fr": "trois", "pt": "três", "es": "tres", "it": "tre", "ro": "trei" } }
+          ],
+          "transfer": "Numbers are the easiest foothold when skimming a story in a language you don't know yet — start there."
+        },
+        {
+          "key": "calendar", "icon": "#", "title": "Calendar", "group": "Appendix", "kind": "pattern-outlier",
+          "items": [
+            { "label": "\"Monday\"", "cells": { "fr": "lundi", "pt": "segunda-feira", "es": "lunes", "it": "lunedì", "ro": "luni" } },
+            { "label": "named after", "cells": { "fr": "the Moon", "pt": "\"second day\"", "es": "the Moon", "it": "the Moon", "ro": "the Moon" } }
+          ],
+          "outlier": { "code": "pt", "flag": "🇵🇹", "headline": "Portuguese renamed the whole week", "text": "Early Church reformers replaced the pagan planetary-god weekday names (Moon-day, Mars-day…) with plain church-numbered <i>\"feira\"</i> days (<i>segunda-feira</i> = \"second [church] day\"), while French, Spanish, Italian, and Romanian all quietly kept the Roman gods.", "backref": "This time it's Portuguese breaking the pattern, not Romanian." },
+          "transfer": "A Portuguese weekday name won't rhyme with the others' Moon/Mars/Mercury pattern — that's expected, not a gap in your memory."
+        },
+        {
+          "key": "sounds", "icon": "#", "title": "Sounds & spelling", "group": "Appendix", "kind": "pattern-insight",
+          "items": [
+            { "label": "signature quirk", "cells": { "fr": "nasal vowels", "pt": "swallowed vowels", "es": "5 pure vowels", "it": "geminate consonants", "ro": "ă / î sounds" } }
+          ],
+          "insight": { "eyebrow": "🔊 five distinct quirks", "text": "Each language kept one sound the others didn't: French's nasal vowels (<i>an/on/in</i>), Portuguese's habit of dropping unstressed vowels in fast speech, Italian's phonemic double consonants (<i>sono</i> \"I am\" vs <i>sonno</i> \"sleep\"), and Romanian's two extra vowels (<i>ă, î</i>) picked up from centuries of Slavic contact." },
+          "transfer": "If a Romance language sounds unusually nasal, swallowed, doubled, or has an extra vowel — that's not noise, it's the fingerprint telling you which one you're hearing."
+        }
+      ]
+    },
+    {
+      "id": "slavic",
+      "name": "Slavic",
+      "subtitle": "Proto-Slavic · 1 of 6 in the app",
+      "drafted": false,
+      "origin": {
+        "eyebrow": "✨ where it comes from",
+        "text": "Sourced from Proto-Slavic, spoken roughly 1,500 years ago before splitting into the West/East/South Slavic branches spread across Central and Eastern Europe today."
+      },
+      "members": [
+        { "code": "ru", "flag": "🇷🇺", "name": "Russian", "tag": "no family content yet", "active": false },
+        { "code": "pl", "flag": "🇵🇱", "name": "Polish", "tag": "planned", "active": false },
+        { "code": "uk", "flag": "🇺🇦", "name": "Ukrainian", "tag": "planned", "active": false },
+        { "code": "cz", "flag": "🇨🇿", "name": "Czech", "tag": "planned", "active": false },
+        { "code": "sr", "flag": "🇷🇸", "name": "Serbian/Croatian", "tag": "planned", "active": false },
+        { "code": "bg", "flag": "🇧🇬", "name": "Bulgarian", "tag": "planned", "active": false }
+      ],
+      "history": {
+        "intro": "Proto-Slavic was spoken by a relatively small, unified group somewhere around modern Ukraine/Belarus before Slavic tribes expanded rapidly across Central and Eastern Europe — outrunning the language's ability to stay one thing as they spread.",
+        "tree": {
+          "label": "Proto-Slavic",
+          "children": [
+            { "label": "West Slavic", "children": [ { "label": "Polish", "flag": "🇵🇱" }, { "label": "Czech", "flag": "🇨🇿" } ] },
+            { "label": "East Slavic", "children": [ { "label": "Russian", "flag": "🇷🇺" }, { "label": "Ukrainian", "flag": "🇺🇦" } ] },
+            { "label": "South Slavic", "children": [ { "label": "Serbian/Croatian", "flag": "🇷🇸" }, { "label": "Bulgarian", "flag": "🇧🇬" } ] }
+          ]
+        },
+        "timeline": [
+          { "when": "~1st mill. CE", "text": "Proto-Slavic spoken as a single, relatively uniform language." },
+          { "when": "6th–9th c.", "text": "Rapid Slavic migration across Europe splits the language into West, East, and South Slavic branches." },
+          { "when": "9th–10th c.", "text": "Old Church Slavonic becomes the first written Slavic language, based on a South Slavic dialect — still used liturgically in Orthodox churches today." },
+          { "when": "Medieval+", "text": "Each branch standardizes into today's national languages: Polish/Czech (West), Russian/Ukrainian (East), Serbian-Croatian/Bulgarian (South)." }
+        ]
+      },
+      "elements": []
+    },
+    {
+      "id": "germanic",
+      "name": "Germanic",
+      "subtitle": "Proto-Germanic · 1 of 10 in the app",
+      "drafted": false,
+      "origin": {
+        "eyebrow": "✨ where it comes from",
+        "text": "Proto-Germanic split off from the wider Indo-European family after a set of sound changes (known today as Grimm's Law) shifted its consonants away from Latin, Greek, and Sanskrit's pattern — the reason \"father\" and \"pater\" are cousins that sound so different."
+      },
+      "members": [
+        { "code": "de", "flag": "🇩🇪", "name": "German", "tag": "no family content yet", "active": false, "branch": "West Germanic" },
+        { "code": "en", "flag": "🇬🇧", "name": "English", "tag": "planned", "active": false, "branch": "West Germanic" },
+        { "code": "nl", "flag": "🇳🇱", "name": "Dutch", "tag": "planned", "active": false, "branch": "West Germanic" },
+        { "code": "af", "flag": "🇿🇦", "name": "Afrikaans", "tag": "planned", "active": false, "branch": "West Germanic" },
+        { "code": "yi", "flag": "🏳️", "name": "Yiddish", "tag": "planned", "active": false, "branch": "West Germanic" },
+        { "code": "se", "flag": "🇸🇪", "name": "Swedish", "tag": "planned", "active": false, "branch": "North Germanic" },
+        { "code": "dk", "flag": "🇩🇰", "name": "Danish", "tag": "planned", "active": false, "branch": "North Germanic" },
+        { "code": "no", "flag": "🇳🇴", "name": "Norwegian", "tag": "planned", "active": false, "branch": "North Germanic" },
+        { "code": "is", "flag": "🇮🇸", "name": "Icelandic", "tag": "planned", "active": false, "branch": "North Germanic" },
+        { "code": "fo", "flag": "🇫🇴", "name": "Faroese", "tag": "planned", "active": false, "branch": "North Germanic" }
+      ],
+      "branchNotes": [
+        { "branch": "West Germanic", "note": "Includes English, German, Dutch, Afrikaans, and Yiddish — the highest speaker count of any branch in either family the app covers." },
+        { "branch": "North Germanic", "note": "Includes Swedish, Danish, Norwegian, Icelandic, and Faroese — also known as the Scandinavian or Nordic languages." }
+      ],
+      "history": {
+        "intro": "Proto-Germanic split off from the wider Indo-European family after a set of sound changes (known today as Grimm's Law) shifted its consonants away from Latin, Greek, and Sanskrit's pattern — the reason \"father\" and \"pater\" are cousins that sound so different.",
+        "tree": {
+          "label": "Proto-Germanic",
+          "children": [
+            { "label": "West Germanic", "children": [ { "label": "German", "flag": "🇩🇪" }, { "label": "English", "flag": "🇬🇧" }, { "label": "Dutch", "flag": "🇳🇱" }, { "label": "Afrikaans", "flag": "🇿🇦" }, { "label": "Yiddish", "flag": "🏳️" } ] },
+            { "label": "North Germanic", "children": [ { "label": "Swedish", "flag": "🇸🇪" }, { "label": "Danish", "flag": "🇩🇰" }, { "label": "Norwegian", "flag": "🇳🇴" }, { "label": "Icelandic", "flag": "🇮🇸" }, { "label": "Faroese", "flag": "🇫🇴" } ] }
+          ]
+        },
+        "timeline": [
+          { "when": "~500 BCE", "text": "Proto-Germanic emerges in southern Scandinavia/northern Germany, already set apart from other Indo-European branches by Grimm's Law." },
+          { "when": "~1st c. CE+", "text": "West Germanic (ancestor of German/English/Dutch/Afrikaans/Yiddish) and North Germanic (ancestor of the five Nordic languages) begin diverging." },
+          { "when": "5th–9th c.", "text": "Old English, Old High German, and Old Norse appear as distinct written languages." },
+          { "when": "17th c.+", "text": "Afrikaans develops from Dutch settler speech in southern Africa; Yiddish develops from Middle High German among Ashkenazi Jewish communities in Central/Eastern Europe — both West Germanic, both far from Germany's borders today." },
+          { "when": "Medieval–modern", "text": "Centuries of separate standardization produce today's ten West and North Germanic languages." }
+        ]
+      },
+      "elements": []
+    }
+  ],
+  "japanese": {
+    "name": "Japanese",
+    "note": "Japanese has no confirmed living relatives — proposed links to Korean, Ainu, or Austronesian languages remain unproven and contested among linguists. There's no family here to compare against, which is exactly why Japanese doesn't get an element breakdown like the others: not a scope gap to fill later, a genuine dead end."
+  }
+}

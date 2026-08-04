@@ -7,6 +7,7 @@ import { addSavedWord, isWordSaved, getReadStories } from '../lib/storage'
 import { GAMES_REQUIRING_READ_STORY } from '../lib/games'
 import { langFlag, langMeta } from '../lib/langs'
 import kanjiComponents from '../data/kanji_components.json'
+import FamiliesScreen from './FamiliesScreen'
 
 const KANJI_LEVELS = ['All', 'N5', 'N4', 'Not Sorted']
 
@@ -147,6 +148,13 @@ export default function EncyclopediaScreen({ stories, onOpenGame, onOpenStory, o
       setView(hubLang ? 'hub' : 'home')
       return
     }
+    if (view === 'families') {
+      // FamiliesScreen owns its own internal back-stack (list → family →
+      // element/history) and only calls this when Back is pressed at its
+      // own root, same as Comparative — no hubLang involved either.
+      goHome()
+      return
+    }
     if (view === 'hub') {
       goHome()
     }
@@ -254,11 +262,19 @@ export default function EncyclopediaScreen({ stories, onOpenGame, onOpenStory, o
                   </span>
                   <span className="hub-card-count">cross-language concepts →</span>
                 </button>
+                <button className="hub-card hub-card-wide" onClick={() => setView('families')}>
+                  <span>
+                    <span className="hub-card-icon">🌳</span> <span className="hub-card-title">Families</span>
+                  </span>
+                  <span className="hub-card-count">grouped by ancestry →</span>
+                </button>
               </div>
             </>
           )}
         </>
       )}
+
+      {view === 'families' && <FamiliesScreen onExit={goBack} />}
 
       {view === 'hub' && hubLang && (
         <>

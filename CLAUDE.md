@@ -161,6 +161,42 @@ without changing it. `EntryCard.jsx` has an early-return branch for
 instead of the normal single-citation layout — don't thread comparative
 nodes through the normal citation/eyebrow rendering path, it doesn't fit.
 
+**Language families** (`src/data/language_families.json`, rendered by
+`components/FamiliesScreen.jsx`, reached via a "🌳 Families" card on
+Encyclopedia's home hub next to "🌐 Compared") — a fifth, genealogical
+grouping distinct from the other four: `{ families: [{ id, name, subtitle,
+drafted, origin, pattern?, members: [{ code, flag, name, tag, active,
+branch? }], branchNotes?, history: { intro, tree, timeline }, elements: [...]
+}], japanese: { name, note } }`. `drafted` gates whether `FamilyDetail` shows
+real element rows or a "🚧 not yet drafted" placeholder card — Slavic and
+Germanic ship with real `members`/`history` but `elements: []` today; only
+Romance has real content. `elements[].kind` is one of four shape-specific
+templates (`pattern-outlier`, `consensus`, `vocab-strip`, `pattern-insight`)
+chosen per element based on its actual content shape (a clean 4-agree/
+1-diverges split vs. a barely-worth-a-table consensus vs. a pure vocab list
+vs. no single outlier) — don't force every element through one generic
+table+prose layout, that was an earlier, since-abandoned design. Every
+comparison table (`CompareTable` in `FamiliesScreen.jsx`, styled via the
+existing `.wide-table`) shows all of that family's languages per row, using
+a literal `"-"` cell value for a genuine non-equivalent (e.g. Romanian has
+no fused preposition+article form) rather than silently omitting a column —
+missing-without-explanation reads as a data bug, an explicit dash doesn't.
+`FamiliesScreen` owns its own internal back-stack (list → family detail →
+element/history) independently of `EncyclopediaScreen`'s single-level `view`
+state machine, since Families is the one multi-level drill-down among
+otherwise-flat entry types; it only calls the `onExit` prop when Back is
+pressed at its own list root. Germanic's `members` carry a `branch` field
+(`"West Germanic"` — German/English/Dutch/Afrikaans/Yiddish; `"North
+Germanic"` — Swedish/Danish/Norwegian/Icelandic/Faroese) with matching
+`branchNotes`; Slavic stays a flat 6-member list (Russian + Polish/
+Ukrainian/Czech/Serbian-Croatian/Bulgarian) since no branch split was
+requested for it. Design lineage: drafted in `docs/ENCYCLOPEDIA_MOCKUP.html`
+frames 19–34, iterated as a real click-through prototype at
+`docs/FAMILIES_FLOW_PROTOTYPE.html` (also a published Claude Artifact)
+before any `src/` code was written, per the mockup-first sign-off rule
+below. Next step per `docs/BACKLOG.md`: draft Slavic's and Germanic's own
+11 element tables now that Germanic's branch structure is settled.
+
 **Seen-oddities tracking** (`lib/storage.js` `getSeenOddities`/
 `markOdditySeen`/`markOdditiesSeen`) — a Set persisted under `seen_oddities`,
 same pattern as `getReadStories`. Deliberately zero-pressure: pure
@@ -296,3 +332,16 @@ consistency, not because the two share state).
   from memory instead of checked against it — see
   `docs/ENCYCLOPEDIA_IMPLEMENTATION_PLAN.md`'s "Design fidelity audit"
   for the concrete pattern of bugs that caused.
+- **Design in the mockup, get explicit sign-off, only then touch real
+  app code.** For any new feature or nontrivial redesign (not a small
+  copy/CSS fix to something already built), the sequence is: (1) draft
+  the new frame(s) in `docs/ENCYCLOPEDIA_MOCKUP.html`, (2) stop and
+  describe the design back to the user in plain terms, (3) wait for
+  explicit agreement, and only after that (4) write `src/` code. Do not
+  self-authorize the jump from "design looks done to me" to
+  implementation — a design that feels finished is not the same as one
+  the user has actually confirmed. This rule exists because a session
+  went straight from drafting the Language Families mockup frames into
+  writing real data files and components without asking first, and had
+  to revert that work when the user stopped it ("we need to agree on
+  the design first before doing anything").
