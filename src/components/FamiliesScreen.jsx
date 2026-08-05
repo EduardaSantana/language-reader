@@ -1,12 +1,17 @@
 import { useState } from 'react'
 import familiesData from '../data/language_families.json'
+import { EXPLORE_LANGS } from '../lib/exploreGraph'
 
 // Self-contained sub-navigation (list → family → element/history → back),
 // mirroring EncyclopediaScreen's own view-machine pattern but kept local
 // since Families is a multi-level drill-down unlike every other single-level
 // entry type unifiedEntries.js models. `onExit` is called only when Back is
 // pressed at this screen's own root — every deeper level pops its own stack.
-export default function FamiliesScreen({ onExit }) {
+// `onOpenLanguageHub(lang)` jumps straight out to that language's Encyclopedia
+// hub — only ever wired up for codes in EXPLORE_LANGS (the 4 shipped
+// languages); every other code in this data (Portuguese, Swedish, Yiddish...)
+// has nothing to jump to and stays inert text.
+export default function FamiliesScreen({ onExit, onOpenLanguageHub }) {
   const [stack, setStack] = useState([{ type: 'list' }])
   const top = stack[stack.length - 1]
 
@@ -26,6 +31,7 @@ export default function FamiliesScreen({ onExit }) {
         onBack={pop}
         onOpenElement={(key) => push({ type: 'element', familyId: family.id, key })}
         onOpenHistory={() => push({ type: 'history', familyId: family.id })}
+        onOpenLanguageHub={onOpenLanguageHub}
       />
     )
   }
@@ -36,10 +42,10 @@ export default function FamiliesScreen({ onExit }) {
   }
   if (top.type === 'history') {
     const family = familiesData.families.find((f) => f.id === top.familyId)
-    return <FamilyHistory family={family} onBack={pop} />
+    return <FamilyHistory family={family} onBack={pop} onOpenLanguageHub={onOpenLanguageHub} />
   }
   if (top.type === 'japanese') {
-    return <JapaneseIsolate onBack={pop} />
+    return <JapaneseIsolate onBack={pop} onOpenLanguageHub={onOpenLanguageHub} />
   }
   return (
     <FamiliesList
@@ -99,7 +105,7 @@ function FamiliesList({ families, onOpenFamily, onOpenJapanese, onBack }) {
   )
 }
 
-function JapaneseIsolate({ onBack }) {
+function JapaneseIsolate({ onBack, onOpenLanguageHub }) {
   return (
     <>
       <FamiliesScreenHead title="🏝️ Japanese" onBack={onBack} />
@@ -109,17 +115,36 @@ function JapaneseIsolate({ onBack }) {
       </div>
       <div className="section-label">Members</div>
       <div className="member-list">
-        <div className="member-chip member-chip-active">
-          <span className="member-chip-flag">🇯🇵</span>
-          <span className="member-chip-name">Japanese</span>
-          <span className="member-chip-tag">the only member</span>
-        </div>
+        <MemberChip
+          member={{ code: familiesData.japanese.code, flag: familiesData.japanese.flag, name: 'Japanese', tag: 'the only member', active: true }}
+          onOpenLanguageHub={onOpenLanguageHub}
+        />
       </div>
     </>
   )
 }
 
-function FamilyDetail({ family, onBack, onOpenElement, onOpenHistory }) {
+function MemberChip({ member: m, onOpenLanguageHub }) {
+  const clickable = onOpenLanguageHub && EXPLORE_LANGS.includes(m.code)
+  const className = `member-chip ${m.active ? 'member-chip-active' : 'member-chip-planned'}`
+  const content = (
+    <>
+      <span className="member-chip-flag">{m.flag}</span>
+      <span className="member-chip-name">{m.name}</span>
+      <span className="member-chip-tag">{clickable ? 'open →' : m.tag}</span>
+    </>
+  )
+  if (clickable) {
+    return (
+      <button className={`${className} member-chip-clickable`} onClick={() => onOpenLanguageHub(m.code)}>
+        {content}
+      </button>
+    )
+  }
+  return <div className={className}>{content}</div>
+}
+
+function FamilyDetail({ family, onBack, onOpenElement, onOpenHistory, onOpenLanguageHub }) {
   const groups = ['Grammar elements', 'Lexical elements', 'Appendix']
   return (
     <>
@@ -134,16 +159,6 @@ function FamilyDetail({ family, onBack, onOpenElement, onOpenHistory }) {
           <div className="family-card-text" dangerouslySetInnerHTML={{ __html: family.pattern.text }} />
         </div>
       )}
-      {family.branchNotes && (
-        <>
-          <div className="section-label">Branches</div>
-          {family.branchNotes.map((b) => (
-            <div key={b.branch} className="family-branch-note">
-              <b>{b.branch}.</b> {b.note}
-            </div>
-          ))}
-        </>
-      )}
       <button className="unit-row" onClick={onOpenHistory}>
         <span className="unit-row-num">🕐</span>
         <span className="unit-row-title">History of the family</span>
@@ -152,11 +167,7 @@ function FamilyDetail({ family, onBack, onOpenElement, onOpenHistory }) {
       <div className="section-label">Members</div>
       <div className="member-list">
         {family.members.map((m) => (
-          <div key={m.code} className={`member-chip ${m.active ? 'member-chip-active' : 'member-chip-planned'}`}>
-            <span className="member-chip-flag">{m.flag}</span>
-            <span className="member-chip-name">{m.name}</span>
-            <span className="member-chip-tag">{m.tag}</span>
-          </div>
+          <MemberChip key={m.code} member={m} onOpenLanguageHub={onOpenLanguageHub} />
         ))}
       </div>
       {family.elements.length > 0 ? (
@@ -189,7 +200,7 @@ function FamilyDetail({ family, onBack, onOpenElement, onOpenHistory }) {
   )
 }
 
-function FamilyHistory({ family, onBack }) {
+function FamilyHistory({ family, onBack, onOpenLanguageHub }) {
   return (
     <>
       <FamiliesScreenHead title="🕐 History" onBack={onBack} />
@@ -198,9 +209,10 @@ function FamilyHistory({ family, onBack }) {
       <div className="section-label">How the family split</div>
       <div className="hist-tree">
         <ul>
-          <TreeNode node={family.history.tree} />
+          <TreeNode node={family.history.tree} onOpenLanguageHub={onOpenLanguageHub} />
         </ul>
       </div>
+      {family.history.treeNote && <div className="hist-tree-note">{family.history.treeNote}</div>}
       <div className="section-label">Timeline</div>
       {family.history.timeline.map((t, i) => (
         <div key={i} className="hist-item">
@@ -216,17 +228,27 @@ function FamilyHistory({ family, onBack }) {
   )
 }
 
-function TreeNode({ node }) {
+function TreeNode({ node, onOpenLanguageHub }) {
+  const clickable = !node.children && onOpenLanguageHub && node.code && EXPLORE_LANGS.includes(node.code)
+  const label = (
+    <>
+      {node.flag ? `${node.flag} ` : ''}
+      {node.label}
+    </>
+  )
   return (
     <li>
-      <span className={node.children ? 'hist-tree-root' : 'hist-tree-leaf'}>
-        {node.flag ? `${node.flag} ` : ''}
-        {node.label}
-      </span>
+      {clickable ? (
+        <button className="hist-tree-leaf hist-tree-leaf-clickable" onClick={() => onOpenLanguageHub(node.code)}>
+          {label}
+        </button>
+      ) : (
+        <span className={node.children ? 'hist-tree-root' : 'hist-tree-leaf'}>{label}</span>
+      )}
       {node.children && (
         <ul>
           {node.children.map((child, i) => (
-            <TreeNode key={i} node={child} />
+            <TreeNode key={i} node={child} onOpenLanguageHub={onOpenLanguageHub} />
           ))}
         </ul>
       )}

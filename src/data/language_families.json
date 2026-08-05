@@ -25,10 +25,10 @@
         "tree": {
           "label": "Vulgar Latin",
           "children": [
-            { "label": "Gallo-Romance", "children": [ { "label": "French", "flag": "🇫🇷" } ] },
-            { "label": "Ibero-Romance", "children": [ { "label": "Portuguese", "flag": "🇵🇹" }, { "label": "Spanish", "flag": "🇪🇸" } ] },
-            { "label": "Italo-Romance", "children": [ { "label": "Italian", "flag": "🇮🇹" } ] },
-            { "label": "Eastern Romance", "children": [ { "label": "Romanian", "flag": "🇷🇴" } ] }
+            { "label": "Gallo-Romance", "children": [ { "label": "French", "flag": "🇫🇷", "code": "fr" } ] },
+            { "label": "Ibero-Romance", "children": [ { "label": "Portuguese", "flag": "🇵🇹", "code": "pt" }, { "label": "Spanish", "flag": "🇪🇸", "code": "es" } ] },
+            { "label": "Italo-Romance", "children": [ { "label": "Italian", "flag": "🇮🇹", "code": "it" } ] },
+            { "label": "Eastern Romance", "children": [ { "label": "Romanian", "flag": "🇷🇴", "code": "ro" } ] }
           ]
         },
         "timeline": [
@@ -168,9 +168,9 @@
         "tree": {
           "label": "Proto-Slavic",
           "children": [
-            { "label": "West Slavic", "children": [ { "label": "Polish", "flag": "🇵🇱" }, { "label": "Czech", "flag": "🇨🇿" } ] },
-            { "label": "East Slavic", "children": [ { "label": "Russian", "flag": "🇷🇺" }, { "label": "Ukrainian", "flag": "🇺🇦" } ] },
-            { "label": "South Slavic", "children": [ { "label": "Serbian/Croatian", "flag": "🇷🇸" }, { "label": "Bulgarian", "flag": "🇧🇬" } ] }
+            { "label": "West Slavic", "children": [ { "label": "Polish", "flag": "🇵🇱", "code": "pl" }, { "label": "Czech", "flag": "🇨🇿", "code": "cz" } ] },
+            { "label": "East Slavic", "children": [ { "label": "Russian", "flag": "🇷🇺", "code": "ru" }, { "label": "Ukrainian", "flag": "🇺🇦", "code": "uk" } ] },
+            { "label": "South Slavic", "children": [ { "label": "Serbian/Croatian", "flag": "🇷🇸", "code": "sr" }, { "label": "Bulgarian", "flag": "🇧🇬", "code": "bg" } ] }
           ]
         },
         "timeline": [
@@ -185,43 +185,79 @@
     {
       "id": "germanic",
       "name": "Germanic",
-      "subtitle": "Proto-Germanic · 1 of 10 in the app",
+      "subtitle": "West Germanic · 1 of 5 in the app",
       "drafted": false,
       "origin": {
         "eyebrow": "✨ where it comes from",
-        "text": "Proto-Germanic split off from the wider Indo-European family after a set of sound changes (known today as Grimm's Law) shifted its consonants away from Latin, Greek, and Sanskrit's pattern — the reason \"father\" and \"pater\" are cousins that sound so different."
+        "text": "West Germanic descends from a Proto-Germanic dialect continuum in what's now northern Germany and the Low Countries. Its defining internal event came later than the split from North/East Germanic: the High German consonant shift (roughly 3rd–8th c. CE), a second wave of sound changes that only spread through the southern, inland dialects — the reason \"water/Wasser,\" \"make/machen,\" and \"pound/Pfund\" look different across German versus English and Dutch, even though all three share this one West Germanic parent."
+      },
+      "pattern": {
+        "eyebrow": "🎯 a pattern you'll keep noticing",
+        "text": "Afrikaans shed almost all inflectional morphology within roughly 300 years — no verb conjugation for person/number, no grammatical gender, barely any irregular plurals. It's West Germanic's grammatical outlier the way Romanian is Romance's: German keeps a full four-case, three-gender system; Dutch is already simplified; English simplified further; Afrikaans went furthest of all."
       },
       "members": [
-        { "code": "de", "flag": "🇩🇪", "name": "German", "tag": "no family content yet", "active": false, "branch": "West Germanic" },
-        { "code": "en", "flag": "🇬🇧", "name": "English", "tag": "planned", "active": false, "branch": "West Germanic" },
-        { "code": "nl", "flag": "🇳🇱", "name": "Dutch", "tag": "planned", "active": false, "branch": "West Germanic" },
-        { "code": "af", "flag": "🇿🇦", "name": "Afrikaans", "tag": "planned", "active": false, "branch": "West Germanic" },
-        { "code": "yi", "flag": "🏳️", "name": "Yiddish", "tag": "planned", "active": false, "branch": "West Germanic" },
-        { "code": "se", "flag": "🇸🇪", "name": "Swedish", "tag": "planned", "active": false, "branch": "North Germanic" },
-        { "code": "dk", "flag": "🇩🇰", "name": "Danish", "tag": "planned", "active": false, "branch": "North Germanic" },
-        { "code": "no", "flag": "🇳🇴", "name": "Norwegian", "tag": "planned", "active": false, "branch": "North Germanic" },
-        { "code": "is", "flag": "🇮🇸", "name": "Icelandic", "tag": "planned", "active": false, "branch": "North Germanic" },
-        { "code": "fo", "flag": "🇫🇴", "name": "Faroese", "tag": "planned", "active": false, "branch": "North Germanic" }
-      ],
-      "branchNotes": [
-        { "branch": "West Germanic", "note": "Includes English, German, Dutch, Afrikaans, and Yiddish — the highest speaker count of any branch in either family the app covers." },
-        { "branch": "North Germanic", "note": "Includes Swedish, Danish, Norwegian, Icelandic, and Faroese — also known as the Scandinavian or Nordic languages." }
+        { "code": "de", "flag": "🇩🇪", "name": "German", "tag": "no family content yet", "active": false },
+        { "code": "en", "flag": "🇬🇧", "name": "English", "tag": "planned", "active": false },
+        { "code": "nl", "flag": "🇳🇱", "name": "Dutch", "tag": "planned", "active": false },
+        { "code": "af", "flag": "🇿🇦", "name": "Afrikaans", "tag": "planned", "active": false },
+        { "code": "yi", "flag": "🏳️", "name": "Yiddish", "tag": "planned", "active": false }
       ],
       "history": {
-        "intro": "Proto-Germanic split off from the wider Indo-European family after a set of sound changes (known today as Grimm's Law) shifted its consonants away from Latin, Greek, and Sanskrit's pattern — the reason \"father\" and \"pater\" are cousins that sound so different.",
+        "intro": "West Germanic split from its North and East Germanic siblings while still on the continent, then split again internally: the High German consonant shift pulled Old High German away from Low Franconian and Anglo-Frisian, the ancestors of Dutch and English. Two much later, well-dated offshoots — Yiddish and Afrikaans — round out the five languages compared here.",
         "tree": {
-          "label": "Proto-Germanic",
+          "label": "West Germanic",
           "children": [
-            { "label": "West Germanic", "children": [ { "label": "German", "flag": "🇩🇪" }, { "label": "English", "flag": "🇬🇧" }, { "label": "Dutch", "flag": "🇳🇱" }, { "label": "Afrikaans", "flag": "🇿🇦" }, { "label": "Yiddish", "flag": "🏳️" } ] },
-            { "label": "North Germanic", "children": [ { "label": "Swedish", "flag": "🇸🇪" }, { "label": "Danish", "flag": "🇩🇰" }, { "label": "Norwegian", "flag": "🇳🇴" }, { "label": "Icelandic", "flag": "🇮🇸" }, { "label": "Faroese", "flag": "🇫🇴" } ] }
+            { "label": "Anglo-Frisian", "children": [ { "label": "English", "flag": "🇬🇧", "code": "en" } ] },
+            { "label": "High German lineage", "children": [ { "label": "German", "flag": "🇩🇪", "code": "de" }, { "label": "Yiddish", "flag": "🏳️", "code": "yi" } ] },
+            { "label": "Low Franconian", "children": [ { "label": "Dutch", "flag": "🇳🇱", "code": "nl" }, { "label": "Afrikaans", "flag": "🇿🇦", "code": "af" } ] }
           ]
         },
         "timeline": [
-          { "when": "~500 BCE", "text": "Proto-Germanic emerges in southern Scandinavia/northern Germany, already set apart from other Indo-European branches by Grimm's Law." },
-          { "when": "~1st c. CE+", "text": "West Germanic (ancestor of German/English/Dutch/Afrikaans/Yiddish) and North Germanic (ancestor of the five Nordic languages) begin diverging." },
-          { "when": "5th–9th c.", "text": "Old English, Old High German, and Old Norse appear as distinct written languages." },
-          { "when": "17th c.+", "text": "Afrikaans develops from Dutch settler speech in southern Africa; Yiddish develops from Middle High German among Ashkenazi Jewish communities in Central/Eastern Europe — both West Germanic, both far from Germany's borders today." },
-          { "when": "Medieval–modern", "text": "Centuries of separate standardization produce today's ten West and North Germanic languages." }
+          { "when": "~500 BCE–100 CE", "text": "Proto-Germanic differentiates from Indo-European via Grimm's Law — the consonant shift shared by every Germanic language, North/East/West alike." },
+          { "when": "~200–500 CE", "text": "A West Germanic dialect continuum consolidates on the continent, distinct from North Germanic (Scandinavia) and the now-extinct East Germanic (Gothic)." },
+          { "when": "5th c. CE", "text": "Anglo-Saxon migration to Britain begins pulling Old English away from the continental West Germanic dialects." },
+          { "when": "~3rd–8th c. CE", "text": "The High German consonant shift progressively splits Old High German (ancestor of German) from Low Franconian (ancestor of Dutch) — West Germanic's defining internal fault line." },
+          { "when": "9th c.+", "text": "Yiddish emerges among Ashkenazi Jewish communities in the Rhineland from a Middle High German base plus Hebrew/Aramaic components; centuries later (1652+), Dutch colonists at the Cape of Good Hope give rise to Afrikaans." }
+        ]
+      },
+      "elements": []
+    },
+    {
+      "id": "nordic",
+      "name": "Nordic",
+      "subtitle": "Old Norse · 0 of 5 in the app",
+      "drafted": false,
+      "origin": {
+        "eyebrow": "✨ where it comes from",
+        "text": "The Nordic languages descend from Old Norse, the language of Viking-Age Scandinavia preserved in an unusually large body of sagas and Eddic poetry — mostly written down in Iceland, whose isolation let the language change so little that Icelandic readers can still make sense of 13th-century sagas in the original with only modest difficulty. Old Norse itself grew out of Proto-Norse, first attested in Scandinavia's earliest runic inscriptions around the 2nd–3rd century CE."
+      },
+      "pattern": {
+        "eyebrow": "🎯 a pattern you'll keep noticing",
+        "text": "Swedish, Danish, and Norwegian are close enough to functionally share one dialect continuum — a speaker of one can largely follow the other two. Icelandic (and to a lesser degree Faroese) is not: despite a shared ancestor only ~1,200 years back, Icelandic kept Old Norse's case system and coins native words instead of borrowing, while the mainland languages leveled their grammar down through centuries of mutual contact."
+      },
+      "members": [
+        { "code": "se", "flag": "🇸🇪", "name": "Swedish", "tag": "planned", "active": false },
+        { "code": "dk", "flag": "🇩🇰", "name": "Danish", "tag": "planned", "active": false },
+        { "code": "no", "flag": "🇳🇴", "name": "Norwegian", "tag": "planned", "active": false },
+        { "code": "is", "flag": "🇮🇸", "name": "Icelandic", "tag": "planned", "active": false },
+        { "code": "fo", "flag": "🇫🇴", "name": "Faroese", "tag": "planned", "active": false }
+      ],
+      "history": {
+        "intro": "Old Norse split early into a western and an eastern dialect group as Vikings settled Iceland and the Faroes. The tree below groups the five modern languages by how mutually intelligible they actually are today — Insular vs. Mainland Scandinavian — since that split matters more to a learner than the older, purely genetic West/East Norse division (where Norwegian genuinely complicates things — see the note below).",
+        "tree": {
+          "label": "Old Norse",
+          "children": [
+            { "label": "Insular Nordic", "children": [ { "label": "Icelandic", "flag": "🇮🇸", "code": "is" }, { "label": "Faroese", "flag": "🇫🇴", "code": "fo" } ] },
+            { "label": "Mainland Nordic", "children": [ { "label": "Swedish", "flag": "🇸🇪", "code": "se" }, { "label": "Danish", "flag": "🇩🇰", "code": "dk" }, { "label": "Norwegian", "flag": "🇳🇴", "code": "no" } ] }
+          ]
+        },
+        "treeNote": "Norwegian is genetically West Norse (like Icelandic and Faroese), but ~400 years of political union with Denmark reshaped its majority written standard, Bokmål, toward Danish — while Nynorsk, built in the 1800s from conservative western dialects, stays closer to the older West Norse line. The \"Mainland\" grouping above reflects modern mutual intelligibility, not strict descent.",
+        "timeline": [
+          { "when": "~2nd–3rd c. CE", "text": "Proto-Norse is attested in Scandinavia's earliest runic inscriptions (Elder Futhark) — the first written trace of North Germanic as its own branch." },
+          { "when": "~700–800 CE", "text": "Proto-Norse develops into Old Norse right around the start of the Viking Age." },
+          { "when": "793–1050 CE", "text": "Viking expansion spreads Old Norse — Iceland is settled in the 870s, the Faroes shortly before — splitting it into West Norse (Norway/Iceland/Faroes) and East Norse (Denmark/Sweden) dialects." },
+          { "when": "13th–14th c.", "text": "Icelandic sagas and Eddas are committed to writing, fixing Old West Norse in a form modern Icelandic readers can still largely parse." },
+          { "when": "1397–1814 CE", "text": "Danish-dominated political unions reshape written Norwegian toward Danish; 19th-century Nynorsk is built from western dialects specifically to reconnect with the older West Norse line." }
         ]
       },
       "elements": []
@@ -229,6 +265,8 @@
   ],
   "japanese": {
     "name": "Japanese",
+    "code": "ja",
+    "flag": "🇯🇵",
     "note": "Japanese has no confirmed living relatives — proposed links to Korean, Ainu, or Austronesian languages remain unproven and contested among linguists. There's no family here to compare against, which is exactly why Japanese doesn't get an element breakdown like the others: not a scope gap to fill later, a genuine dead end."
   }
 }

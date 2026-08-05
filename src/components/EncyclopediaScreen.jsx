@@ -36,6 +36,7 @@ export default function EncyclopediaScreen({ stories, onOpenGame, onOpenStory, o
   const unified = useMemo(() => buildUnifiedEntries(stories), [stories])
   const [view, setView] = useState('home')
   const [hubLang, setHubLang] = useState(null)
+  const [hubOrigin, setHubOrigin] = useState(null)
   const [listType, setListType] = useState(null)
   const [openBranch, setOpenBranch] = useState(null)
   const [kanjiLevel, setKanjiLevel] = useState('All')
@@ -103,6 +104,18 @@ export default function EncyclopediaScreen({ stories, onOpenGame, onOpenStory, o
   }
 
   function openHub(lang) {
+    setHubOrigin(null)
+    setHubLang(lang)
+    setView('hub')
+    setOpenBranch(null)
+  }
+
+  // Families jumps straight to a language's hub (see FamiliesScreen's
+  // onOpenLanguageHub) rather than going through the normal home → hub path,
+  // so Back from that hub must return to Families, not home — otherwise
+  // "the previous page" the user actually came from gets skipped entirely.
+  function openHubFromFamilies(lang) {
+    setHubOrigin('families')
     setHubLang(lang)
     setView('hub')
     setOpenBranch(null)
@@ -156,6 +169,13 @@ export default function EncyclopediaScreen({ stories, onOpenGame, onOpenStory, o
       return
     }
     if (view === 'hub') {
+      if (hubOrigin === 'families') {
+        // FamiliesScreen stays mounted (see the render below), so returning
+        // to 'families' lands exactly back on whatever screen its own
+        // back-stack was showing — no reset to the Families list.
+        setView('families')
+        return
+      }
       goHome()
     }
   }
@@ -274,7 +294,14 @@ export default function EncyclopediaScreen({ stories, onOpenGame, onOpenStory, o
         </>
       )}
 
-      {view === 'families' && <FamiliesScreen onExit={goBack} />}
+      {/* Stays mounted even while a different view is showing (unlike every
+          other sub-view here, which unmounts on navigate-away) so its own
+          internal back-stack survives a detour into a language hub via
+          onOpenLanguageHub — see openHubFromFamilies/goBack's 'families'
+          origin handling above. */}
+      <div style={{ display: view === 'families' ? 'block' : 'none' }}>
+        <FamiliesScreen onExit={goBack} onOpenLanguageHub={openHubFromFamilies} />
+      </div>
 
       {view === 'hub' && hubLang && (
         <>

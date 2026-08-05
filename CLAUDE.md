@@ -165,37 +165,55 @@ nodes through the normal citation/eyebrow rendering path, it doesn't fit.
 `components/FamiliesScreen.jsx`, reached via a "🌳 Families" card on
 Encyclopedia's home hub next to "🌐 Compared") — a fifth, genealogical
 grouping distinct from the other four: `{ families: [{ id, name, subtitle,
-drafted, origin, pattern?, members: [{ code, flag, name, tag, active,
-branch? }], branchNotes?, history: { intro, tree, timeline }, elements: [...]
-}], japanese: { name, note } }`. `drafted` gates whether `FamilyDetail` shows
-real element rows or a "🚧 not yet drafted" placeholder card — Slavic and
-Germanic ship with real `members`/`history` but `elements: []` today; only
-Romance has real content. `elements[].kind` is one of four shape-specific
-templates (`pattern-outlier`, `consensus`, `vocab-strip`, `pattern-insight`)
-chosen per element based on its actual content shape (a clean 4-agree/
-1-diverges split vs. a barely-worth-a-table consensus vs. a pure vocab list
-vs. no single outlier) — don't force every element through one generic
-table+prose layout, that was an earlier, since-abandoned design. Every
-comparison table (`CompareTable` in `FamiliesScreen.jsx`, styled via the
-existing `.wide-table`) shows all of that family's languages per row, using
-a literal `"-"` cell value for a genuine non-equivalent (e.g. Romanian has
-no fused preposition+article form) rather than silently omitting a column —
-missing-without-explanation reads as a data bug, an explicit dash doesn't.
-`FamiliesScreen` owns its own internal back-stack (list → family detail →
-element/history) independently of `EncyclopediaScreen`'s single-level `view`
-state machine, since Families is the one multi-level drill-down among
-otherwise-flat entry types; it only calls the `onExit` prop when Back is
-pressed at its own list root. Germanic's `members` carry a `branch` field
-(`"West Germanic"` — German/English/Dutch/Afrikaans/Yiddish; `"North
-Germanic"` — Swedish/Danish/Norwegian/Icelandic/Faroese) with matching
-`branchNotes`; Slavic stays a flat 6-member list (Russian + Polish/
-Ukrainian/Czech/Serbian-Croatian/Bulgarian) since no branch split was
-requested for it. Design lineage: drafted in `docs/ENCYCLOPEDIA_MOCKUP.html`
-frames 19–34, iterated as a real click-through prototype at
+drafted, origin, pattern?, members: [{ code, flag, name, tag, active }],
+history: { intro, tree, treeNote?, timeline }, elements: [...] }], japanese:
+{ name, code, flag, note } }`. Four families ship today: Romance, Slavic,
+Germanic, Nordic — Germanic and Nordic used to be one 10-member "Germanic"
+entry with West/North branches nested inside it, split into two independent
+peer families 2026-08-05 (Nordic — North Germanic: Swedish/Danish/Norwegian/
+Icelandic/Faroese, subtitle "Old Norse · 0 of 5 in the app" — and Germanic
+now West-only: German/English/Dutch/Afrikaans/Yiddish) per explicit request;
+don't reintroduce a `branch` field on members or nest Nordic back inside
+Germanic without being asked. `drafted` gates whether `FamilyDetail` shows
+real element rows or a "🚧 not yet drafted" placeholder card — only Romance
+has real element content today. `elements[].kind` is one of four
+shape-specific templates (`pattern-outlier`, `consensus`, `vocab-strip`,
+`pattern-insight`) chosen per element based on its actual content shape (a
+clean 4-agree/1-diverges split vs. a barely-worth-a-table consensus vs. a
+pure vocab list vs. no single outlier) — don't force every element through
+one generic table+prose layout, that was an earlier, since-abandoned
+design. Every comparison table (`CompareTable` in `FamiliesScreen.jsx`,
+styled via the existing `.wide-table`) shows all of that family's languages
+per row, using a literal `"-"` cell value for a genuine non-equivalent
+(e.g. Romanian has no fused preposition+article form) rather than silently
+omitting a column — missing-without-explanation reads as a data bug, an
+explicit dash doesn't. `history.tree` nodes may carry a `code` (e.g. `"fr"`,
+`"de"`); any leaf whose `code` is one of the app's shipped languages
+(`EXPLORE_LANGS` — currently ja/de/fr/ru) renders as a real link (underlined
+in the tree, an "open →" `MemberChip` in the Members list) that calls
+`onOpenLanguageHub` to jump straight to that language's Encyclopedia hub —
+every other code (Portuguese, Swedish, Yiddish, ...) has nothing to link to
+and stays inert text; don't wire up a code that isn't actually shipped.
+`history.treeNote`, when present (currently only Nordic, explaining
+Norwegian's Bokmål/Nynorsk complication), renders as a small callout below
+the tree — optional, only add it where a family's simplified tree
+(grouped by mutual intelligibility, say) diverges from strict genetic
+descent enough to need a caveat. `FamiliesScreen` owns its own internal
+back-stack (list → family detail → element/history) independently of
+`EncyclopediaScreen`'s single-level `view` state machine, since Families is
+the one multi-level drill-down among otherwise-flat entry types; it only
+calls the `onExit` prop when Back is pressed at its own list root — separate
+from `onOpenLanguageHub`, which jumps all the way out to a different tab
+section entirely (mapped to `EncyclopediaScreen`'s existing `openHub`).
+Design lineage: drafted in `docs/ENCYCLOPEDIA_MOCKUP.html` frames 19–34,
+iterated as a real click-through prototype at
 `docs/FAMILIES_FLOW_PROTOTYPE.html` (also a published Claude Artifact)
 before any `src/` code was written, per the mockup-first sign-off rule
-below. Next step per `docs/BACKLOG.md`: draft Slavic's and Germanic's own
-11 element tables now that Germanic's branch structure is settled.
+below. Next step per `docs/BACKLOG.md`: draft Slavic/Germanic/Nordic's own
+11 element tables now that Germanic/Nordic's member structure is settled;
+separately, `docs/BACKLOG.md` also has a brainstorm list (Uralic, Turkic,
+Austronesian, Sino-Tibetan, Semitic) of other real families worth adding
+someday — unscoped, don't build from it without being asked.
 
 **Seen-oddities tracking** (`lib/storage.js` `getSeenOddities`/
 `markOdditySeen`/`markOdditiesSeen`) — a Set persisted under `seen_oddities`,

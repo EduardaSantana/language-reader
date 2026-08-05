@@ -3060,6 +3060,50 @@ ruby rt {
   color: var(--accent-secondary);
 }
 
+.member-chip-clickable {
+  width: 100%;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.member-chip-clickable:hover,
+.member-chip-clickable:focus-visible {
+  border-color: var(--accent);
+}
+
+.member-chip-clickable .member-chip-tag {
+  color: var(--accent);
+}
+
+.hist-tree-leaf-clickable {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--accent);
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.hist-tree-leaf-clickable:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.hist-tree-note {
+  font-size: 11.5px;
+  color: var(--text-dim);
+  line-height: 1.5;
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 2px solid var(--oddity);
+  border-radius: 0 8px 8px 0;
+  padding: 8px 10px;
+  margin: -6px 0 14px;
+}
+
 .wide-table-missing {
   color: var(--text-dim);
   opacity: 0.55;
